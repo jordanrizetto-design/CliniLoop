@@ -1,0 +1,239 @@
+  <section id="painel" class="painel-sec">
+    <div class="wrap">
+      <div class="hoje" id="hoje" aria-labelledby="hoje-titulo">
+        <div class="hoje-head">
+          <h2 id="hoje-titulo">Hoje</h2>
+          <span class="hoje-data" id="hoje-data"></span>
+        </div>
+        <div class="hoje-grid">
+          <article class="hoje-card hoje-next" aria-live="polite">
+            <p class="hoje-label">Próxima ação recomendada</p>
+            <p class="hoje-where" id="hj-onde"></p>
+            <h3 id="hj-acao"></h3>
+            <div class="form-actions">
+              <button type="button" id="hj-fazer" class="btn btn-gold btn-sm" data-ico="arrow">Fazer agora</button>
+              <button type="button" id="hj-outra" class="btn btn-outline btn-sm">Outra sugestão</button>
+            </div>
+            <p class="hoje-foot" id="hj-count"></p>
+          </article>
+          <article class="hoje-card" aria-live="polite">
+            <p class="hoje-label">Próximos passos vencidos</p>
+            <p class="hoje-big" id="hj-atr-n">0</p>
+            <ul class="hoje-list" id="hj-atr-list"></ul>
+            <button type="button" id="hj-rastreador" class="btn btn-outline btn-sm" data-ico="bell">Abrir rastreador</button>
+          </article>
+          <article class="hoje-card">
+            <p class="hoje-label">Esta semana</p>
+            <p class="hoje-big"><span id="hj-posts">0</span><span class="hoje-of"> de <label class="visually-hidden" for="hj-meta-n">Meta de conteúdos na semana</label><input type="number" id="hj-meta-n" min="1" max="30" inputmode="numeric"> conteúdos</span></p>
+            <div class="meter" role="progressbar" aria-label="Conteúdos publicados na semana" aria-valuemin="0" id="hj-meter"><span id="hj-meta-bar"></span></div>
+            <p class="hoje-rate" id="hj-semana"></p>
+            <div class="post-row">
+              <button type="button" class="btn btn-outline btn-sm" id="hj-conteudo" data-ico="plus">Registrar conteúdo</button>
+              <button type="button" class="btn btn-outline btn-sm" id="hj-contato" data-ico="plus">Novo contato</button>
+            </div>
+          </article>
+        </div>
+        <div class="hoje-backup" id="hj-backup" hidden></div>
+      </div>
+
+      <div class="config-panel" id="config">
+        <div class="config-head">
+          <span class="pin pin-dark">00</span>
+          <div class="config-title">
+            <h3>Comece aqui</h3>
+            <span class="sub" id="cfg-sub">Três passos para o BuscaLoop Saúde entender seu consultório. Fica salvo neste navegador.</span>
+          </div>
+          <button type="button" id="cfg-edit" class="btn btn-outline btn-sm" hidden>Editar objetivo e perfil</button>
+        </div>
+        <p class="cfg-summary" id="cfg-summary" hidden></p>
+
+        <div class="onb-body" id="onb-body">
+          <section class="onb-step" aria-labelledby="onb1">
+            <div class="step-head">
+              <span class="step-n">1</span>
+              <div>
+                <h4 id="onb1">Qual resultado você quer alcançar?</h4>
+                <p>Escolha o objetivo dos próximos 90 dias. Ele define as prioridades do funil e a ordem das próximas ações.</p>
+              </div>
+            </div>
+            <fieldset class="field">
+              <legend>Objetivo principal</legend>
+              <div class="type-grid obj-grid" role="radiogroup">
+                <label class="type-card"><input type="radio" name="objetivo" value="agenda" checked><span class="t-name">Encher a agenda</span><span class="t-hint">Mais primeiras consultas</span></label>
+                <label class="type-card"><input type="radio" name="objetivo" value="ticket"><span class="t-name">Tratamentos de maior valor</span><span class="t-hint">Atrair o caso certo</span></label>
+                <label class="type-card"><input type="radio" name="objetivo" value="autoridade"><span class="t-name">Virar referência no tema</span><span class="t-hint">Autoridade e influência</span></label>
+                <label class="type-card"><input type="radio" name="objetivo" value="online"><span class="t-name">Atender online</span><span class="t-hint">Pacientes de outras cidades</span></label>
+                <label class="type-card"><input type="radio" name="objetivo" value="fidelizar"><span class="t-name">Fidelizar e gerar indicações</span><span class="t-hint">Pacientes e colegas</span></label>
+              </div>
+            </fieldset>
+            <div class="field">
+              <label for="cfg-meta">Em uma frase: qual resultado, para qual serviço e em quanto tempo? *</label>
+              <input type="text" id="cfg-meta" name="metaFrase" placeholder="Ex: 8 novas avaliações de implante por mês, em Sorocaba, nos próximos 90 dias">
+              <small>Quanto mais concreto, melhores as recomendações. Não use dados de pacientes reais.</small>
+            </div>
+          </section>
+
+          <section class="onb-step" aria-labelledby="onb2">
+            <div class="step-head">
+              <span class="step-n">2</span>
+              <div>
+                <h4 id="onb2">Configure seu consultório</h4>
+                <p>O tipo de profissional define as regras do conselho que todos os geradores respeitam e a ordem recomendada das ferramentas.</p>
+              </div>
+            </div>
+            <fieldset class="field">
+              <legend>Tipo de profissional *</legend>
+              <div class="type-grid prof-grid" role="radiogroup">
+                <label class="type-card"><input type="radio" name="profissional" value="medico"><span class="t-name">Médico(a)</span><span class="t-hint">CFM · CRM e RQE</span></label>
+                <label class="type-card"><input type="radio" name="profissional" value="psiquiatra"><span class="t-name">Psiquiatra</span><span class="t-hint">CFM · CRM e RQE</span></label>
+                <label class="type-card"><input type="radio" name="profissional" value="dentista"><span class="t-name">Dentista</span><span class="t-hint">CFO · CRO</span></label>
+                <label class="type-card"><input type="radio" name="profissional" value="psicologo"><span class="t-name">Psicólogo(a)</span><span class="t-hint">CFP · CRP</span></label>
+                <label class="type-card"><input type="radio" name="profissional" value="fisioterapeuta"><span class="t-name">Fisioterapeuta</span><span class="t-hint">COFFITO · CREFITO</span></label>
+                <label class="type-card"><input type="radio" name="profissional" value="multi"><span class="t-name">Clínica multiprofissional</span><span class="t-hint">Regras de cada conselho</span></label>
+              </div>
+            </fieldset>
+            <fieldset class="field" id="cfg-multi" hidden>
+              <legend>Profissões na clínica</legend>
+              <div class="checks">
+                <label><input type="checkbox" name="multiProf" value="medico" checked> Medicina</label>
+                <label><input type="checkbox" name="multiProf" value="dentista"> Odontologia</label>
+                <label><input type="checkbox" name="multiProf" value="psicologo"> Psicologia</label>
+                <label><input type="checkbox" name="multiProf" value="fisioterapeuta"> Fisioterapia</label>
+              </div>
+            </fieldset>
+            <div class="row2">
+              <div class="field">
+                <label for="cfg-nome">Nome do profissional ou da clínica</label>
+                <input type="text" id="cfg-nome" name="nome" placeholder="Ex: Dra. Ana Lima · Clínica Sorriso Vivo">
+              </div>
+              <div class="field">
+                <label for="cfg-registro">Registro no conselho</label>
+                <input type="text" id="cfg-registro" name="registro" placeholder="Ex: CRM-SP 00000 · RQE 0000 · CRO-SP 00000 · CRP 06/00000 · CREFITO-3 0000">
+                <small>Obrigatório na publicidade de todas as profissões. Clínica: inclua o responsável técnico.</small>
+              </div>
+            </div>
+            <div class="row2">
+              <div class="field">
+                <label for="cfg-espec">Especialidade ou área de atuação *</label>
+                <input type="text" id="cfg-espec" name="especialidade" placeholder="Ex: implantodontia · dermatologia · terapia de casal · fisioterapia pélvica">
+                <small>Só anuncie como especialidade o que estiver registrado no seu conselho.</small>
+              </div>
+              <div class="field">
+                <label for="cfg-cidade">Cidade e bairro *</label>
+                <input type="text" id="cfg-cidade" name="cidade" placeholder="Ex: Moema, São Paulo">
+              </div>
+            </div>
+            <div class="row3">
+              <fieldset class="field">
+                <legend>Atendimento</legend>
+                <div class="checks">
+                  <label><input type="checkbox" name="atendimento" value="presencial" checked> Presencial</label>
+                  <label><input type="checkbox" name="atendimento" value="online"> Online</label>
+                  <label><input type="checkbox" name="atendimento" value="domiciliar"> Domiciliar</label>
+                </div>
+              </fieldset>
+              <div class="field">
+                <label for="cfg-pagamento">Forma de pagamento</label>
+                <select id="cfg-pagamento" name="pagamento">
+                  <option value="particular">Particular</option>
+                  <option value="convênios">Convênios</option>
+                  <option value="particular e convênios">Particular e convênios</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="cfg-equipe">Profissionais da equipe (opcional)</label>
+                <input type="text" id="cfg-equipe" name="equipe" placeholder="Ex: Dra. Ana, Dr. Paulo, recepção">
+              </div>
+            </div>
+          </section>
+
+          <section class="onb-step" aria-labelledby="onb3">
+            <div class="step-head">
+              <span class="step-n">3</span>
+              <div>
+                <h4 id="onb3">Perfil do consultório</h4>
+                <p>Preencha uma vez: serviços, público, transformação e baldes de conteúdo entram em todos os prompts, no rastreador e no playbook.</p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="cfg-servicos">Serviços que você quer divulgar *</label>
+              <input type="text" id="cfg-servicos" name="servicos" placeholder="Separe por vírgula. Ex: implantes, lentes de contato dental, clareamento">
+              <small>Viram as opções de serviço no Rastreador de pacientes e nas campanhas.</small>
+            </div>
+            <div class="row2">
+              <div class="field">
+                <label for="cfg-publico">Público ideal</label>
+                <input type="text" id="cfg-publico" name="publico" placeholder="Ex: adultos de 40 a 65 anos que perderam dentes, da zona sul">
+              </div>
+              <div class="field">
+                <label for="cfg-transf">Transformação</label>
+                <input type="text" id="cfg-transf" name="transformacao" placeholder="Ajudo [público] a [resultado] com [diferencial]">
+              </div>
+            </div>
+            <div class="row2">
+              <div class="field">
+                <label for="cfg-baldes">Baldes de conteúdo (até 3)</label>
+                <input type="text" id="cfg-baldes" name="baldes" placeholder="Ex: dúvidas sobre tratamentos, bastidores e cuidado, mitos e erros comuns">
+              </div>
+              <div class="field">
+                <label for="cfg-arroba">Seu @ principal</label>
+                <input type="text" id="cfg-arroba" name="arroba" placeholder="Ex: @dra.analima">
+              </div>
+            </div>
+            <fieldset class="field">
+              <legend>Canais que você já usa</legend>
+              <div class="chip-grid">
+                <label class="chip"><input type="checkbox" name="canais" value="Instagram" checked><span>Instagram</span></label>
+                <label class="chip"><input type="checkbox" name="canais" value="WhatsApp Business"><span>WhatsApp Business</span></label>
+                <label class="chip"><input type="checkbox" name="canais" value="Perfil da Empresa no Google"><span>Google (Perfil da Empresa)</span></label>
+                <label class="chip"><input type="checkbox" name="canais" value="YouTube"><span>YouTube</span></label>
+                <label class="chip"><input type="checkbox" name="canais" value="LinkedIn"><span>LinkedIn</span></label>
+                <label class="chip"><input type="checkbox" name="canais" value="TikTok"><span>TikTok</span></label>
+                <label class="chip"><input type="checkbox" name="canais" value="site ou blog"><span>Site ou blog</span></label>
+                <label class="chip"><input type="checkbox" name="canais" value="Doctoralia ou plataforma de agendamento"><span>Doctoralia ou similar</span></label>
+                <label class="chip"><input type="checkbox" name="canais" value="indicação de colegas"><span>Indicação de colegas</span></label>
+              </div>
+            </fieldset>
+            <div class="row3">
+              <div class="field">
+                <label for="cfg-tempo">Tempo por semana para conteúdo</label>
+                <select id="cfg-tempo" name="tempo">
+                  <option value="ate1">Até 1 hora</option>
+                  <option value="2a3" selected>2 a 3 horas</option>
+                  <option value="4a6">4 a 6 horas</option>
+                  <option value="7mais">7 horas ou mais</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="cfg-produtor">Quem vai produzir</label>
+                <select id="cfg-produtor" name="produtor">
+                  <option value="eu">Eu mesmo(a)</option>
+                  <option value="equipe">Eu, com ajuda da equipe</option>
+                  <option value="terceiro">Vou contratar agência ou social media</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="cfg-camera">Conforto em aparecer na câmera</label>
+                <select id="cfg-camera" name="camera">
+                  <option value="alto">Gosto de aparecer</option>
+                  <option value="medio" selected>Apareço, sem muita exposição</option>
+                  <option value="baixo">Prefiro não aparecer</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="cfg-sobre">Formação, experiência e diferenciais *</label>
+              <textarea id="cfg-sobre" name="sobre" rows="4" placeholder="Ex: 12 anos de formada, especialização em implantes, escaneamento digital, atendimento sem pressa; pacientes dizem que explico tudo com calma"></textarea>
+              <small>Não inclua nomes ou dados de pacientes.</small>
+            </div>
+          </section>
+
+          <div class="obj-hint" id="obj-hint" hidden></div>
+
+          <div class="form-actions">
+            <span id="cfg-status" class="save-status" aria-live="polite">Salvo automaticamente neste navegador.</span>
+            <button type="button" id="cfg-fill-all" class="btn btn-outline btn-sm" data-ico="fill">Preencher todas as ferramentas</button>
+            <button type="button" id="cfg-done" class="btn btn-gold btn-sm" data-ico="arrow">Ver minha próxima ação</button>
+          </div>
+        </div>
+

@@ -1,0 +1,123 @@
+
+  <section id="como-funciona">
+    <div class="wrap">
+      <p class="eyebrow">Como funciona</p>
+      <div class="lead-block">
+        <h2>Sem cadastro e sem servidor próprio. Você decide o que vai para a IA.</h2>
+        <p>O PacienteLoop monta os prompts, o briefing e o e-book no seu navegador. Seus dados só saem dele quando você escolhe usar um serviço externo, e cada caso funciona de um jeito, como mostra a tabela abaixo.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="num">01</span>
+          <h3>Defina seu objetivo</h3>
+          <p>Em "Comece aqui": objetivo, profissão, especialidade, cidade e sua realidade de tempo. O painel "Hoje" passa a mostrar a próxima ação recomendada.</p>
+        </div>
+        <div class="step">
+          <span class="num">02</span>
+          <h3>Gere, converse e guarde</h3>
+          <p>Abra uma ferramenta e clique em "Gerar prompt". Cole no Claude.ai, ajuste na conversa e guarde a versão final no próprio PacienteLoop: ela alimenta as próximas ferramentas.</p>
+        </div>
+        <div class="step">
+          <span class="num">03</span>
+          <h3>Publique, atenda e meça</h3>
+          <p>Marque no painel "Hoje" o que publicou e quantos contatos, agendamentos e atendimentos teve. A cada 2 semanas, gere o e-book e ajuste o plano.</p>
+        </div>
+      </div>
+
+      <div class="data-flow" id="dados-fluxo">
+        <h3>Para onde vão seus dados</h3>
+        <table class="data-table">
+          <tr><th>Você preenche campos, guarda decisões, registra números ou gera o briefing e o e-book</th><td>Tudo é processado e guardado neste navegador. O PacienteLoop não tem servidor nem banco de dados para receber essas informações.</td></tr>
+          <tr><th>Você cola um prompt no Claude.ai (modos gratuito e Pro/Max)</th><td>O texto vai para a Anthropic quando você envia a mensagem, como em qualquer conversa no Claude, e segue as configurações de privacidade da sua conta.</td></tr>
+          <tr><th>Você usa o modo API ("Gerar resposta aqui")</th><td>O prompt, com os dados que você preencheu, e a sua chave vão do navegador direto para a API da Anthropic, que processa o pedido e cobra na sua conta.</td></tr>
+          <tr><th>Você abre a página</th><td>A página é hospedada no GitHub Pages e as fontes vêm do Google Fonts. Como em qualquer site, esses serviços recebem dados técnicos de acesso, como o endereço IP.</td></tr>
+          <tr><th>Você troca de aparelho ou limpa o navegador</th><td>Os dados não acompanham você. Use Configurações → Seus dados → Fazer backup e restaure o arquivo no outro aparelho.</td></tr>
+        </table>
+      </div>
+
+      <div class="callout">
+        <strong>Dados de pacientes ficam fora daqui</strong>
+        Nome, foto, diagnóstico e qualquer informação de saúde de pacientes são dados pessoais sensíveis pela LGPD. Não cole esses dados nos campos nem nos prompts. Para descrever casos, use padrões gerais ("adultos com dor lombar crônica"), nunca uma pessoa identificável. Os números do painel Hoje são só contagens, sem nomes.
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Primeiros passos</p>
+      <div class="lead-block">
+        <h2>Nunca usou uma IA? Comece por aqui.</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="num">01</span>
+          <h3>Entre no Claude</h3>
+          <p>Acesse <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> e entre na sua conta, gratuita (só e-mail, sem cartão) ou com assinatura Pro ou Max, se já tiver. O PacienteLoop começa no modo gratuito; se tiver assinatura ou chave de API, troque em Configurações.</p>
+        </div>
+        <div class="step">
+          <span class="num">02</span>
+          <h3>Gere e copie um prompt</h3>
+          <p>Siga a próxima ação do painel Hoje, preencha o formulário da ferramenta e clique em "Gerar prompt" e depois em "Copiar prompt".</p>
+        </div>
+        <div class="step">
+          <span class="num">03</span>
+          <h3>Cole, converse e guarde</h3>
+          <p>Cole na caixa de mensagem do Claude e envie. Peça ajustes na mesma conversa ("mais simples", "refaça o item 3"). Quando gostar, cole a versão final em "Guardar a versão final" na ferramenta.</p>
+        </div>
+      </div>
+      <div class="callout teal">
+        <strong>Dica</strong>
+        O plano gratuito do Claude tem um limite de mensagens que se renova depois de algumas horas. Se atingir o limite, espere um pouco antes do próximo prompt. Com Pro ou Max o limite é maior e você ainda pode usar o Research nas ferramentas que pesquisam na web.
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="faq">
+    <div class="wrap">
+      <p class="eyebrow">Perguntas frequentes</p>
+      <div class="lead-block">
+        <h2>Antes de começar</h2>
+      </div>
+      <details class="faq">
+        <summary>Isso é realmente gratuito? <span class="chevron">▸</span></summary>
+        <div class="faq-body">Sim. A página não cobra nada, e o Claude.ai tem um plano gratuito com limite de mensagens que se renova periodicamente, sem chave de API nem cartão. Quem tem Claude Pro ou Max pode trocar o modo em Configurações para aproveitar o Research e os Projetos. Quem preferir ver as respostas na própria página pode usar a própria chave da API da Anthropic, paga por uso e cobrada à parte da assinatura.</div>
+      </details>
+      <details class="faq">
+        <summary>O PacienteLoop garante mais pacientes ou seguidores? <span class="chevron">▸</span></summary>
+        <div class="faq-body">Não, e desconfie de quem garante. Alcance depende do algoritmo das plataformas, da concorrência e da sua região. O que o PacienteLoop organiza é o que depende de você: clareza de público e posicionamento, conteúdo constante e útil, perfil pronto para receber visitas, atendimento rápido e acompanhamento dos números. É isso que costuma melhorar a conversão de seguidor em consulta ao longo dos meses.</div>
+      </details>
+      <details class="faq">
+        <summary>Posso postar antes e depois, preços ou depoimentos? <span class="chevron">▸</span></summary>
+        <div class="faq-body">Depende da sua profissão, e as regras mudam com o tempo. Em resumo, pelo que conferimos em outubro de 2026: na medicina, antes e depois só com finalidade educativa e várias condições, e é permitido informar o valor da consulta; na odontologia, preço continua proibido na publicidade e antes e depois só no perfil do profissional, com termo de consentimento; na psicologia, preço não pode ser chamariz e pacientes nunca devem ser expostos; na fisioterapia, valores não podem ser divulgados fora do local de atendimento e imagens de pacientes não podem ser usadas para autopromoção. Veja os detalhes e as fontes na ferramenta 12 e confirme com o seu conselho.</div>
+      </details>
+      <details class="faq">
+        <summary>Meus dados ficam salvos em algum servidor? <span class="chevron">▸</span></summary>
+        <div class="faq-body">O PacienteLoop não tem servidor: objetivo, perfil, decisões guardadas e números ficam neste navegador, neste aparelho. Eles só saem daqui quando você usa um serviço externo, ao colar um prompt no Claude.ai ou ao usar o modo API (o prompt e a chave vão direto para a Anthropic). Veja a tabela "Para onde vão seus dados". Para continuar em outro aparelho, faça um backup em Configurações → Seus dados. Em computador compartilhado, apague os dados ao terminar.</div>
+      </details>
+      <details class="faq">
+        <summary>Não tenho tempo para produzir. Ainda serve para mim? <span class="chevron">▸</span></summary>
+        <div class="faq-body">Serve. Defina os fundamentos (ferramentas 1 a 4) e use o Briefing para terceiros (ferramenta 13) para contratar agência, social media ou videomaker com escopo, regras do conselho, processo de aprovação e métricas claras. O briefing também traz perguntas para avaliar o fornecedor e sinais de alerta, como promessa de seguidores ou sugestão de comprar engajamento.</div>
+      </details>
+      <details class="faq">
+        <summary>Por que o PacienteLoop não publica direto no Instagram? <span class="chevron">▸</span></summary>
+        <div class="faq-body">Porque cada publicação em saúde precisa passar pelo seu olhar antes de ir ao ar. O PacienteLoop prepara roteiro, texto e revisão de ética; a publicação fica com você ou com quem você delegar, usando as ferramentas oficiais das plataformas.</div>
+      </details>
+      <details class="faq">
+        <summary>A IA pode errar informações de saúde? <span class="chevron">▸</span></summary>
+        <div class="faq-body">Pode. Os prompts pedem para a IA não inventar dados, sinalizar com [CONFIRMAR] o que precisa ser verificado e evitar promessas. Ainda assim, todo conteúdo técnico deve ser revisado por você, que é o profissional responsável pelo que publica.</div>
+      </details>
+      <details class="faq">
+        <summary>Posso usar com outra IA em vez do Claude? <span class="chevron">▸</span></summary>
+        <div class="faq-body">Sim. Os prompts são texto simples e funcionam em qualquer assistente de IA. A página foi pensada para o Claude, gratuito ou com assinatura, porque ele pesquisa na web, o que ajuda nas ferramentas de público, nicho, linha editorial, CRM e ética.</div>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>PacienteLoop: roda 100% no navegador, sem backend. Não substitui orientação do seu conselho profissional nem assessoria jurídica.</span>
+    <span>Publicado com GitHub Pages · <a href="#" id="foot-github" target="_blank" rel="noopener" hidden>código aberto no GitHub</a><span id="foot-license">licença MIT</span></span>
+  </div>
+</footer>

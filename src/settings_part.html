@@ -1,0 +1,98 @@
+        <details class="settings" id="ajustes">
+          <summary>
+            <span class="set-title">Configurações</span>
+            <span class="set-sub">Modo de IA, Projeto no Claude.ai e backup dos seus dados</span>
+            <span class="chevron">▸</span>
+          </summary>
+          <div class="settings-body">
+            <section class="set-block" id="modo" aria-labelledby="modo-titulo2">
+              <h4 id="modo-titulo2">Como você usa a IA</h4>
+              <p class="plan-note">O padrão é o Claude gratuito: o PacienteLoop monta o prompt e você cola no Claude.ai. Troque se tiver assinatura ou chave de API.</p>
+              <div class="type-grid plan-grid" role="radiogroup" aria-labelledby="modo-titulo2">
+                <label class="type-card mode-card">
+                  <input type="radio" name="plano" value="free" checked>
+                  <span class="t-name">Claude gratuito</span>
+                  <span class="t-hint">Você gera o prompt aqui e cola no Claude.ai.</span>
+                  <span class="t-meta"><b>Custo:</b> grátis, com limite de mensagens</span>
+                  <span class="t-meta"><b>Ideal para:</b> começar agora</span>
+                </label>
+                <label class="type-card mode-card">
+                  <input type="radio" name="plano" value="pro">
+                  <span class="t-name">Claude Pro ou Max</span>
+                  <span class="t-hint">Mesmo copiar e colar, com Research e respostas mais completas.</span>
+                  <span class="t-meta"><b>Custo:</b> sua assinatura atual</span>
+                  <span class="t-meta"><b>Ideal para:</b> quem já assina o Claude</span>
+                </label>
+                <label class="type-card mode-card">
+                  <input type="radio" name="plano" value="api">
+                  <span class="t-name">API da Anthropic</span>
+                  <span class="t-hint">A resposta aparece aqui na página, sem copiar e colar.</span>
+                  <span class="t-meta"><b>Custo:</b> pago por uso, à parte da assinatura</span>
+                  <span class="t-meta"><b>Ideal para:</b> quem tem chave de API</span>
+                </label>
+              </div>
+              <p class="mode-status" id="mode-status" aria-live="polite"></p>
+              <div class="plan-panel" id="plan-pro" hidden>
+                <h4>Aproveitando o Claude Pro ou Max</h4>
+                <ul>
+                  <li><b>Research:</b> nas ferramentas que pesquisam na web (público, nicho, linha editorial, CRM, ferramentas e ética), ative o Research antes de enviar o prompt. No Claude.ai, clique em "+" na caixa de mensagem e escolha Research. Leva alguns minutos e vai mais fundo.</li>
+                  <li><b>Prompts mais completos:</b> neste modo os prompts pedem mais ideias, mais fontes e entregas em documento para baixar.</li>
+                  <li><b>Projeto PacienteLoop:</b> veja abaixo. Com ele, o Claude já conhece seu consultório em toda conversa do projeto.</li>
+                </ul>
+              </div>
+              <div class="plan-panel" id="plan-api" hidden>
+                <h4>Respostas direto nesta página com a API da Anthropic</h4>
+                <p class="plan-note">A API é cobrada à parte da assinatura do Claude.ai (Pro e Max não incluem créditos de API). Crie uma chave no <a href="https://platform.claude.com/" target="_blank" rel="noopener">Claude Console</a>, em API Keys, e defina lá um limite de gastos mensal. Cada resposta custa, em geral, alguns centavos de dólar; o custo aproximado aparece embaixo de cada resposta.</p>
+                <div class="row2">
+                  <div class="field">
+                    <label for="api-key">Chave da API</label>
+                    <input type="password" id="api-key" autocomplete="off" spellcheck="false" placeholder="sk-ant-...">
+                  </div>
+                  <div class="field">
+                    <label for="api-model">Modelo</label>
+                    <select id="api-model">
+                      <option value="claude-sonnet-5-5" selected>Claude Sonnet 5.5 — equilíbrio (recomendado)</option>
+                      <option value="claude-opus-5-5">Claude Opus 5.5 — mais profundo</option>
+                      <option value="claude-haiku-4-5">Claude Haiku 4.5 — mais rápido e barato</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="checks">
+                  <label><input type="checkbox" id="api-search" checked> Permitir pesquisa na web (US$ 10 por mil pesquisas, além dos tokens)</label>
+                  <label><input type="checkbox" id="api-remember"> Lembrar a chave neste navegador</label>
+                </div>
+                <p class="plan-note warn">Como funciona neste modo: ao clicar em "Gerar resposta aqui", o prompt, com os dados que você preencheu, e a sua chave vão do seu navegador direto para a API da Anthropic, que processa o pedido e cobra na sua conta. O PacienteLoop não tem servidor próprio no meio. Por padrão a chave some ao fechar a página; só marque "lembrar" em computador pessoal e nunca compartilhe a tela com a chave visível.</p>
+                <span id="api-status" class="save-status"></span>
+              </div>
+            </section>
+
+            <section class="set-block" id="kit-block">
+              <div class="plan-panel kit" id="plan-kit">
+                <h4>Projeto PacienteLoop no Claude.ai <span class="kit-tag">também no plano gratuito</span></h4>
+                <p class="plan-note">No Claude.ai, crie um Projeto chamado "PacienteLoop", cole as instruções no campo de instruções do projeto e adicione o arquivo de conhecimento. Toda conversa do projeto já começa sabendo sua profissão, regras do conselho, público, personas e tom de voz que você guardou. Baixe o arquivo de novo quando guardar decisões novas.</p>
+                <div class="form-actions">
+                  <button type="button" id="kit-copy" class="btn btn-outline btn-sm">Copiar instruções do projeto</button>
+                  <button type="button" id="kit-download" class="btn btn-outline btn-sm">Baixar arquivo de conhecimento (.md)</button>
+                  <a class="btn btn-outline btn-sm" href="https://claude.ai/projects" target="_blank" rel="noopener">Abrir Projetos no Claude.ai ↗</a>
+                </div>
+              </div>
+            </section>
+
+            <section class="set-block" id="dados">
+              <h4>Seus dados</h4>
+              <p class="plan-note">Objetivo, perfil, decisões guardadas e números da semana ficam no armazenamento deste navegador. Eles não passam para o celular ou outro computador sozinhos e podem sumir se você limpar os dados do navegador. Faça um backup e restaure onde quiser continuar. A chave da API nunca entra no backup.</p>
+              <div class="form-actions">
+                <button type="button" id="bk-save" class="btn btn-teal btn-sm" data-ico="download">Fazer backup (.json)</button>
+                <label class="btn btn-outline btn-sm bk-load" data-ico="upload">Restaurar backup<input type="file" id="bk-file" accept=".json,application/json" hidden></label>
+                <span class="save-status" id="bk-status" aria-live="polite"></span>
+              </div>
+              <div class="form-actions danger-zone">
+                <button type="button" id="cfg-clear" class="btn btn-outline btn-sm">Apagar meus dados deste navegador</button>
+              </div>
+            </section>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </section>
