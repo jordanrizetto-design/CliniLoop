@@ -234,17 +234,21 @@
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
-          <p class="desc">Estrutura que funciona em vídeo: gancho de até 3 segundos, contexto em uma frase, 3 a 5 pontos, um único pedido no final e um encerramento que conecta ao início. Em texto, três versões com estruturas diferentes. Um tema por peça, sempre com revisão ética.</p>
+          <p class="desc">Uma promessa verdadeira e uma pergunta por peça. Em vídeo: abertura específica, resposta cedo, demonstração segura, limite da orientação, um único pedido e um final que conecta ao início. Toda peça passa por duas revisões, primeiro a editorial, depois a clínica e ética, e sai com versão curta, legenda, pendências e hipótese de teste.</p>
           <form class="tool-form" data-tool="roteiro">
             <div class="row2">
               <div class="field">
                 <label for="ro-formato">Formato</label>
                 <select id="ro-formato" name="formato">
-                  <option value="Reels de até 60 segundos">Reels até 60 s</option>
+                  <option value="Reels de 30 a 60 segundos">Reels 30 a 60 s</option>
                   <option value="Reels de 60 a 90 segundos">Reels 60 a 90 s</option>
+                  <option value="Reels em tela dividida ou tela verde, explicando uma ilustração autorizada">Reels em tela dividida ou tela verde</option>
+                  <option value="Reels Lo-Fi, gravado com o celular na mão, como resposta próxima">Reels Lo-Fi (resposta próxima)</option>
+                  <option value="Reels quadro a quadro, mostrando etapas ou o ambiente sem terceiros">Reels quadro a quadro</option>
+                  <option value="Reels de ranking, com critério e fonte declarados">Reels de ranking (com critério e fonte)</option>
                   <option value="carrossel de 7 slides">Carrossel de 7 slides</option>
                   <option value="sequência de 5 a 8 Stories">Sequência de Stories</option>
-                  <option value="vídeo de YouTube de 5 a 10 minutos">YouTube 5 a 10 min</option>
+                  <option value="vídeo de YouTube de 6 a 10 minutos">YouTube 6 a 10 min</option>
                   <option value="post de LinkedIn">Post de LinkedIn</option>
                   <option value="legenda de post">Legenda de post</option>
                   <option value="texto de página de agendamento ou site">Página de agendamento ou site</option>
@@ -291,13 +295,44 @@
                 </select>
               </div>
               <div class="field">
-                <label for="ro-notas">Pontos técnicos que não podem faltar (opcional)</label>
-                <input type="text" id="ro-notas" name="notas" placeholder="Ex: cada caso precisa de avaliação; explicar a anestesia">
+                <label for="ro-quadro">Quadro recorrente (opcional)</label>
+                <input type="text" id="ro-quadro" name="quadro" placeholder="Ex: Pergunta do consultório · Como funciona a avaliação?">
+              </div>
+            </div>
+            <div class="row2">
+              <div class="field">
+                <label for="ro-notas">Pontos técnicos e fontes (opcional)</label>
+                <input type="text" id="ro-notas" name="notas" placeholder="Ex: cada caso precisa de avaliação; fonte: diretriz da sociedade X">
+              </div>
+              <div class="field">
+                <label for="ro-ref">Referência para modelar (opcional)</label>
+                <input type="text" id="ro-ref" name="referencia" placeholder="Descreva a estrutura (como começa, sustenta e termina), sem colar texto de terceiros">
               </div>
             </div>
             <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar prompt</button></div>
             <div class="output-block" hidden></div>
           </form>
+          <details class="profile-base ref-box">
+            <summary><span>Checklist antes de publicar</span> <span class="chevron">▸</span></summary>
+            <div class="profile-body"><ul class="check-list">
+              <li>Gancho claro nos 3 primeiros segundos, e a promessa é entregue</li>
+              <li>Legenda na tela, sem cobrir o que é demonstrado; termos clínicos revisados na legenda automática</li>
+              <li>Palavra-chave na fala, no texto na tela e na legenda; de 0 a 5 hashtags relevantes</li>
+              <li>Uma única chamada para ação, levando ao canal oficial</li>
+              <li>Fonte para cada afirmação clínica (ou marcada como pendente de validação)</li>
+              <li>Imagem autorizada e permitida para a sua profissão e o tipo de conta</li>
+              <li>Identificação profissional correta</li>
+              <li>Ressalvas preservadas na versão curta</li>
+              <li>Revisão editorial feita e revisão clínica e ética aprovada</li>
+              <li>Sem marca d'água de outra plataforma; capa legível em miniatura</li>
+              <li>Plano para a primeira hora: avisar nos Stories e responder os comentários</li>
+              <li>Registrado no Diário de conteúdo, com a variável testada</li>
+            </ul></div>
+          </details>
+          <details class="profile-base ref-box">
+            <summary><span>Referências de criadores de saúde (estrutura, não conteúdo clínico)</span> <span class="chevron">▸</span></summary>
+            <div class="profile-body" id="bench-box"></div>
+          </details>
         </div>
       </details>
 
@@ -690,7 +725,7 @@
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
-          <p class="desc">Os números do funil vêm do Rastreador; os de conteúdo, do diário abaixo. O gargalo é a passagem do funil com a menor conversão nas últimas 4 semanas.</p>
+          <p class="desc">Os números do funil vêm do Rastreador; os de conteúdo, do diário abaixo. O gargalo é a passagem do funil com a menor conversão nas últimas 4 semanas. Não compare Reels, Shorts e YouTube longo como a mesma unidade de atenção, e marque o que foi impulsionado.</p>
           <div class="risk-box" id="gargalo"></div>
           <div class="num-wrap"><table class="num-table" id="num-table"></table></div>
           <div class="form-actions" style="margin-top:12px">
@@ -716,7 +751,13 @@
               <div class="field"><label for="ct-salv">Salvamentos</label><input type="number" id="ct-salv" min="0"></div>
               <div class="field"><label for="ct-msgs">Mensagens geradas</label><input type="number" id="ct-msgs" min="0"></div>
             </div>
-            <div class="form-actions"><button type="submit" class="btn btn-outline btn-sm" data-ico="plus">Registrar conteúdo</button><span class="save-status">Volte depois de 2 a 7 dias para completar os números.</span></div>
+            <div class="row4">
+              <div class="field"><label for="ct-quadro">Quadro ou série</label><input type="text" id="ct-quadro" placeholder="Ex: Pergunta do consultório"></div>
+              <div class="field"><label for="ct-var">Variável testada</label><select id="ct-var"><option value="">Nenhuma</option><option>Pergunta</option><option>Abertura</option><option>Demonstração</option><option>Convite (CTA)</option><option>Formato</option></select></div>
+              <div class="field"><label for="ct-ret">Retenção média (%)</label><input type="number" id="ct-ret" min="0" max="100" placeholder="Dos Insights"></div>
+              <div class="field"><label class="inline-check" style="margin-top:26px"><input type="checkbox" id="ct-boost"> Impulsionado</label></div>
+            </div>
+            <div class="form-actions"><button type="submit" class="btn btn-outline btn-sm" data-ico="plus">Registrar conteúdo</button><span class="save-status">Volte depois de 2 a 7 dias para completar os números. Compare peças com exposição parecida.</span></div>
           </form>
           <div class="num-wrap"><table class="num-table" id="ct-table"></table></div>
 

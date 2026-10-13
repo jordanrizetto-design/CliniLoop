@@ -16,11 +16,30 @@ Muda o objeto: em vez de vagas, pacientes, colegas e campanhas.
 
 > Não substitui a orientação do seu conselho profissional nem assessoria jurídica. As regras de publicidade resumidas aqui foram conferidas em outubro de 2026; confirme a norma vigente antes de campanhas e formatos novos.
 
+## O método por trás
+
+| Base | Autoria | O que entra no CliniLoop |
+|---|---|---|
+| Método Foguete | Pat Machadu | Etapas de crescimento: fundamentos, planejamento (transformação, Ikigai, pesquisa de mercado, identidade, baldes), perfil, produção, análise, recursos da plataforma, metas S.M.A.R.T. e hábitos. Criado para o YouTube e adaptado ao Instagram. |
+| Efeito Di | Diandra Santos (@segueadi) | Inteligência de nicho, uma promessa e uma pergunta por peça, quadros e personagens recorrentes, biblioteca de formatos (tela dividida, tela verde, Lo-Fi, quadro a quadro, ranking com critério), marca pessoal, gravação no celular, confiança na câmera, revisão de roteiro em duas etapas, impulsionamento e o R.O.A.S. (Roteiro, Observação, Adaptação, Substituição) para modelar referências sem copiar. |
+| Pesquisa e normas | out/2026 | Sinais do algoritmo do Instagram (só tempo de visualização, curtidas por alcance e envios por alcance têm confirmação atribuída à Meta; o resto é heurística) e regras do CFM, CFO, CFP e COFFITO. |
+
+O CliniLoop usa princípios dessas fontes e não reproduz o material dos cursos. Rótulos pedagógicos como "viciante" não são métricas, e o R.O.A.S. do curso não é o ROAS de mídia paga.
+
+**Fluxo de cada peça:** ideia → roteiro → revisão editorial → revisão clínica e ética → gravação → revisão final → publicação → análise.
+
+**Princípios embutidos em todos os prompts:**
+- não prometer alcance, seguidores ou viralização;
+- separar princípio de método, adaptação, observação, informação clínica validada e hipótese, marcando afirmação clínica sem fonte como pendente de validação;
+- não usar medo, escassez ou vergonha para vender;
+- nunca apresentar imagem gerada como paciente real;
+- não diagnosticar por comentário, foto ou vídeo.
+
 ## Como funciona
 
 1. **Comece aqui**, em três passos:
    1. **Qual resultado você quer alcançar?** Objetivo dos próximos 90 dias e uma frase concreta.
-   2. **Configure seu consultório.** Tipo de profissional, registro, especialidade, cidade e bairro.
+   2. **Configure seu consultório.** Tipo de profissional, registro, tipo de conta (profissional ou clínica), especialidade, cidade e bairro.
    3. **Perfil do consultório.** Serviços, público ideal, transformação, baldes de conteúdo, canais, tempo disponível e diferenciais.
 2. **Hoje**, no topo da página, mostra três coisas:
    - a próxima ação recomendada;
@@ -39,15 +58,15 @@ O tipo de profissional define as regras do conselho embutidas em todos os gerado
 | 02 | Persona do profissional e marca | Arquétipo, adjetivos, tom de voz "faço / não faço", bios, história, bandeiras e limites |
 | 03 | Nicho e diferencial | Ikigai, três opções de nicho, proposta de valor, diferenciais verificáveis e pesquisa de concorrentes |
 | 04 | Perfis e presença | Auditoria e reescrita de Instagram, Perfil da Empresa no Google, YouTube e LinkedIn |
-| 05 | Pautas e palavras-chave | Banco de dúvidas reais (fica salvo), palavras-chave por serviço e cidade, 30 pautas, frequência e calendário |
-| 06 | Roteiros de conteúdo e copy | Reels, carrosséis, Stories, YouTube, LinkedIn, legendas, páginas, Google e lista de transmissão, com checagem ética |
+| 05 | Pautas e palavras-chave | Banco de dúvidas reais (fica salvo), palavras-chave por serviço e cidade, 30 pautas por momento da jornada, quadros recorrentes, metas S.M.A.R.T., frequência e calendário |
+| 06 | Roteiros de conteúdo e copy | Reels (inclusive tela dividida, Lo-Fi, quadro a quadro e ranking), carrosséis, Stories, YouTube, LinkedIn, legendas e páginas; quadro recorrente, R.O.A.S. para modelar referências, revisão em duas etapas, versão curta, pendências, hipótese de teste, checklist antes de publicar e referências de 11 criadores de saúde |
 | 07 | Formação e autoridade | Congressos, cursos, publicações e títulos, e como comunicá-los |
 | 08 | Gerador de campanhas | Ficha da campanha, quatro modelos, peças, anúncios Meta e Google, calendário e medição; registro das campanhas com resultados vindos do rastreador |
 | 09 | Rede de colegas | Funil de colegas, carta de apresentação, modelo de contrarreferência e agradecimentos |
 | 10 | Atendimento e agendamento | Respostas rápidas, roteiro de agendamento, régua de confirmação, retomadas e plano de tratamento compreensível |
 | 11 | Rastreador de pacientes | Funil de sete etapas, consentimento por finalidade, próximos passos vencidos, atividades, lembretes (.ics), planilha (.csv) e "Da conversa ao registro" |
 | 12 | Assistente da semana | Importa pendências anonimizadas e monta a agenda em blocos |
-| 13 | Painel e diagnóstico | Métricas de 8 semanas, diário de conteúdo, gargalo do funil e diagnóstico com IA |
+| 13 | Painel e diagnóstico | Métricas de 8 semanas, diário de conteúdo (quadro, variável testada, retenção, impulsionamento), gargalo do funil e diagnóstico com IA |
 | 14 | Verificador ético | Regras do conselho, LGPD e políticas da Meta e do Google; checagem rápida sem IA e revisão frase a frase |
 | 15 | Briefing para terceiros | Documento para agência, social media, videomaker, tráfego, designer, redator ou recepção |
 | 16 | Ferramentas recomendadas | Uma ferramenta por necessidade (listadas, não avaliadas) e prompt para montar a sua caixa |
@@ -84,10 +103,10 @@ As sete etapas do rastreador:
 
 | Conselho | Norma | Fontes |
 |---|---|---|
-| CFM | Resolução CFM nº 2.336/2023 | [Migalhas](https://www.migalhas.com.br/quentes/393424/cfm-muda-regra-e-permite-antes-e-depois-de-pacientes-na-internet), [CRM-PR](https://crmpr.org.br/uploadAddress/Publicidade-medica-apresentacao-coletiva-12-09-(1)[6052].pdf) |
-| CFO | Código de Ética Odontológica, com alterações da Res. CFO 271/2025, e orientações do CRO | [CROSP](https://site.crosp.org.br/uploads/arquivo/3724579826b71ed53e3c7d0ff3104a64.pdf), [Res. CFO 271/2025](https://sistemas.cfo.org.br/visualizar/atos/RESOLU%C3%87%C3%83O/SEC/2025/271), [LegisMap](https://legismap.com.br/conteudos/artigos-e-noticias/em-cumprimento-a-decisao-do-cade-cfo-realiza-alteracoes-pontuais-no-codigo-de-etica) |
+| CFM | Resolução CFM nº 2.336/2023 (revogou 1.974/2011, 2.126/2015 e 2.133/2015) | [Texto oficial](https://sistemas.cfm.org.br/normas/arquivos/resolucoes/BR/2023/2336_2023.pdf), [Migalhas](https://www.migalhas.com.br/quentes/393424/cfm-muda-regra-e-permite-antes-e-depois-de-pacientes-na-internet) |
+| CFO | Código de Ética Odontológica (alterado pela Res. CFO 271/2025) e Res. CFO 196/2019 (antes e depois: só pelo dentista que executou, nunca no perfil da clínica) | [FAQ do CFO sobre a 196/2019](https://website.cfo.org.br/resolucao-cfo-196-2019/), [CROSP](https://site.crosp.org.br/uploads/arquivo/3724579826b71ed53e3c7d0ff3104a64.pdf), [Res. CFO 271/2025](https://sistemas.cfo.org.br/visualizar/atos/RESOLU%C3%87%C3%83O/SEC/2025/271), [LegisMap](https://legismap.com.br/conteudos/artigos-e-noticias/em-cumprimento-a-decisao-do-cade-cfo-realiza-alteracoes-pontuais-no-codigo-de-etica) |
 | CFP | Código de Ética do Psicólogo (art. 20), Res. CFP 3/2007 e Nota Técnica CFP 1/2022 | [Cartilha CRP-MG, abril de 2026](https://acervodigital.crp04.org.br/wp-content/uploads/tainacan-items/9483/81624/CRP-MG_Cartilha-Publicidade-profissional-abril-2026.pdf), [CFP](https://site.cfp.org.br/cfp-divulga-orientacoes-a-categoria-sobre-publicidade-nas-redes-sociais/) |
-| COFFITO | Código de Ética e Deontologia da Fisioterapia (Res. COFFITO 424/2013) | [Normas Brasil](https://www.normasbrasil.com.br/norma/resolucao-424-2013_257114.html) |
+| COFFITO | Res. COFFITO 532/2021 (publicidade e imagem de pacientes) e Código de Ética da Fisioterapia (Res. 424/2013) | [COFFITO](https://www.coffito.gov.br/nsite/?p=18752), [Normas Brasil](https://www.normasbrasil.com.br/norma/resolucao-424-2013_257114.html) |
 
 ## Três modos de uso
 

@@ -586,6 +586,11 @@
   .kit-table td, .kit-table th{text-align:left !important;}
   .form-warn ul{margin:0 0 8px; padding-left:18px;}
   .track-item.pac{align-items:start;}
+  .field-note{font-size:.8rem; color:var(--ink-soft); margin:-6px 0 14px;}
+  .ref-box{margin-top:16px;}
+  .check-list{margin:0; padding-left:20px; font-size:.88rem; display:grid; gap:5px;}
+  .bench-table td:first-child{font-weight:600; white-space:nowrap;}
+  .bench-table td, .bench-table th{text-align:left !important;}
 
 </style>
 </head>
@@ -798,9 +803,18 @@
                 </select>
               </div>
               <div class="field">
-                <label for="cfg-equipe">Profissionais da equipe (opcional)</label>
-                <input type="text" id="cfg-equipe" name="equipe" placeholder="Ex: Dra. Ana, Dr. Paulo, recepção">
+                <label for="cfg-conta">Tipo de conta principal</label>
+                <select id="cfg-conta" name="conta">
+                  <option value="profissional">Perfil do profissional</option>
+                  <option value="clinica">Perfil da clínica (pessoa jurídica)</option>
+                  <option value="ambos">Os dois</option>
+                </select>
               </div>
+            </div>
+            <p class="field-note">O tipo de conta muda regras: na odontologia, por exemplo, antes e depois é proibido no perfil da clínica.</p>
+            <div class="field">
+              <label for="cfg-equipe">Profissionais da equipe (opcional)</label>
+              <input type="text" id="cfg-equipe" name="equipe" placeholder="Ex: Dra. Ana, Dr. Paulo, recepção">
             </div>
           </section>
 
@@ -1228,17 +1242,21 @@
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
-          <p class="desc">Estrutura que funciona em vídeo: gancho de até 3 segundos, contexto em uma frase, 3 a 5 pontos, um único pedido no final e um encerramento que conecta ao início. Em texto, três versões com estruturas diferentes. Um tema por peça, sempre com revisão ética.</p>
+          <p class="desc">Uma promessa verdadeira e uma pergunta por peça. Em vídeo: abertura específica, resposta cedo, demonstração segura, limite da orientação, um único pedido e um final que conecta ao início. Toda peça passa por duas revisões, primeiro a editorial, depois a clínica e ética, e sai com versão curta, legenda, pendências e hipótese de teste.</p>
           <form class="tool-form" data-tool="roteiro">
             <div class="row2">
               <div class="field">
                 <label for="ro-formato">Formato</label>
                 <select id="ro-formato" name="formato">
-                  <option value="Reels de até 60 segundos">Reels até 60 s</option>
+                  <option value="Reels de 30 a 60 segundos">Reels 30 a 60 s</option>
                   <option value="Reels de 60 a 90 segundos">Reels 60 a 90 s</option>
+                  <option value="Reels em tela dividida ou tela verde, explicando uma ilustração autorizada">Reels em tela dividida ou tela verde</option>
+                  <option value="Reels Lo-Fi, gravado com o celular na mão, como resposta próxima">Reels Lo-Fi (resposta próxima)</option>
+                  <option value="Reels quadro a quadro, mostrando etapas ou o ambiente sem terceiros">Reels quadro a quadro</option>
+                  <option value="Reels de ranking, com critério e fonte declarados">Reels de ranking (com critério e fonte)</option>
                   <option value="carrossel de 7 slides">Carrossel de 7 slides</option>
                   <option value="sequência de 5 a 8 Stories">Sequência de Stories</option>
-                  <option value="vídeo de YouTube de 5 a 10 minutos">YouTube 5 a 10 min</option>
+                  <option value="vídeo de YouTube de 6 a 10 minutos">YouTube 6 a 10 min</option>
                   <option value="post de LinkedIn">Post de LinkedIn</option>
                   <option value="legenda de post">Legenda de post</option>
                   <option value="texto de página de agendamento ou site">Página de agendamento ou site</option>
@@ -1285,13 +1303,44 @@
                 </select>
               </div>
               <div class="field">
-                <label for="ro-notas">Pontos técnicos que não podem faltar (opcional)</label>
-                <input type="text" id="ro-notas" name="notas" placeholder="Ex: cada caso precisa de avaliação; explicar a anestesia">
+                <label for="ro-quadro">Quadro recorrente (opcional)</label>
+                <input type="text" id="ro-quadro" name="quadro" placeholder="Ex: Pergunta do consultório · Como funciona a avaliação?">
+              </div>
+            </div>
+            <div class="row2">
+              <div class="field">
+                <label for="ro-notas">Pontos técnicos e fontes (opcional)</label>
+                <input type="text" id="ro-notas" name="notas" placeholder="Ex: cada caso precisa de avaliação; fonte: diretriz da sociedade X">
+              </div>
+              <div class="field">
+                <label for="ro-ref">Referência para modelar (opcional)</label>
+                <input type="text" id="ro-ref" name="referencia" placeholder="Descreva a estrutura (como começa, sustenta e termina), sem colar texto de terceiros">
               </div>
             </div>
             <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar prompt</button></div>
             <div class="output-block" hidden></div>
           </form>
+          <details class="profile-base ref-box">
+            <summary><span>Checklist antes de publicar</span> <span class="chevron">▸</span></summary>
+            <div class="profile-body"><ul class="check-list">
+              <li>Gancho claro nos 3 primeiros segundos, e a promessa é entregue</li>
+              <li>Legenda na tela, sem cobrir o que é demonstrado; termos clínicos revisados na legenda automática</li>
+              <li>Palavra-chave na fala, no texto na tela e na legenda; de 0 a 5 hashtags relevantes</li>
+              <li>Uma única chamada para ação, levando ao canal oficial</li>
+              <li>Fonte para cada afirmação clínica (ou marcada como pendente de validação)</li>
+              <li>Imagem autorizada e permitida para a sua profissão e o tipo de conta</li>
+              <li>Identificação profissional correta</li>
+              <li>Ressalvas preservadas na versão curta</li>
+              <li>Revisão editorial feita e revisão clínica e ética aprovada</li>
+              <li>Sem marca d'água de outra plataforma; capa legível em miniatura</li>
+              <li>Plano para a primeira hora: avisar nos Stories e responder os comentários</li>
+              <li>Registrado no Diário de conteúdo, com a variável testada</li>
+            </ul></div>
+          </details>
+          <details class="profile-base ref-box">
+            <summary><span>Referências de criadores de saúde (estrutura, não conteúdo clínico)</span> <span class="chevron">▸</span></summary>
+            <div class="profile-body" id="bench-box"></div>
+          </details>
         </div>
       </details>
 
@@ -1684,7 +1733,7 @@
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
-          <p class="desc">Os números do funil vêm do Rastreador; os de conteúdo, do diário abaixo. O gargalo é a passagem do funil com a menor conversão nas últimas 4 semanas.</p>
+          <p class="desc">Os números do funil vêm do Rastreador; os de conteúdo, do diário abaixo. O gargalo é a passagem do funil com a menor conversão nas últimas 4 semanas. Não compare Reels, Shorts e YouTube longo como a mesma unidade de atenção, e marque o que foi impulsionado.</p>
           <div class="risk-box" id="gargalo"></div>
           <div class="num-wrap"><table class="num-table" id="num-table"></table></div>
           <div class="form-actions" style="margin-top:12px">
@@ -1710,7 +1759,13 @@
               <div class="field"><label for="ct-salv">Salvamentos</label><input type="number" id="ct-salv" min="0"></div>
               <div class="field"><label for="ct-msgs">Mensagens geradas</label><input type="number" id="ct-msgs" min="0"></div>
             </div>
-            <div class="form-actions"><button type="submit" class="btn btn-outline btn-sm" data-ico="plus">Registrar conteúdo</button><span class="save-status">Volte depois de 2 a 7 dias para completar os números.</span></div>
+            <div class="row4">
+              <div class="field"><label for="ct-quadro">Quadro ou série</label><input type="text" id="ct-quadro" placeholder="Ex: Pergunta do consultório"></div>
+              <div class="field"><label for="ct-var">Variável testada</label><select id="ct-var"><option value="">Nenhuma</option><option>Pergunta</option><option>Abertura</option><option>Demonstração</option><option>Convite (CTA)</option><option>Formato</option></select></div>
+              <div class="field"><label for="ct-ret">Retenção média (%)</label><input type="number" id="ct-ret" min="0" max="100" placeholder="Dos Insights"></div>
+              <div class="field"><label class="inline-check" style="margin-top:26px"><input type="checkbox" id="ct-boost"> Impulsionado</label></div>
+            </div>
+            <div class="form-actions"><button type="submit" class="btn btn-outline btn-sm" data-ico="plus">Registrar conteúdo</button><span class="save-status">Volte depois de 2 a 7 dias para completar os números. Compare peças com exposição parecida.</span></div>
           </form>
           <div class="num-wrap"><table class="num-table" id="ct-table"></table></div>
 
@@ -1954,6 +2009,16 @@
         </table>
       </div>
 
+      <div class="data-flow" id="metodo">
+        <h3>O método por trás</h3>
+        <table class="data-table">
+          <tr><th>Método Foguete (Pat Machadu)</th><td>Crescimento em etapas: fundamentos, planejamento (transformação, Ikigai, pesquisa de mercado, identidade da marca, baldes de conteúdo), perfil, produção, análise, recursos da plataforma, metas S.M.A.R.T. e hábitos. Criado para o YouTube e adaptado ao Instagram.</td></tr>
+          <tr><th>Efeito Di (Diandra Santos, @segueadi)</th><td>Princípios do curso aplicados à saúde: inteligência de nicho, uma promessa e uma pergunta por peça, quadros e personagens recorrentes, biblioteca de formatos, marca pessoal, gravação no celular, confiança na câmera, revisão de roteiro em duas etapas, impulsionamento e o R.O.A.S. (Roteiro, Observação, Adaptação, Substituição) para modelar referências sem copiar.</td></tr>
+          <tr><th>Pesquisa e normas (outubro de 2026)</th><td>Sinais do algoritmo do Instagram, separando o que a Meta confirmou do que é estimativa de terceiros, e as regras de publicidade do CFM, CFO, CFP e COFFITO.</td></tr>
+        </table>
+        <p class="kit-note">O CliniLoop usa princípios dessas fontes e não reproduz o material dos cursos. Cada peça segue o mesmo fluxo: ideia → roteiro → revisão editorial → revisão clínica e ética → gravação → revisão final → publicação → análise.</p>
+      </div>
+
       <div class="callout">
         <strong>Dados de pacientes: o mínimo, só aqui e sem dado clínico</strong>
         O Rastreador guarda nome, telefone, origem, serviço, etapa e consentimento, apenas neste navegador. Diagnóstico, exames e evolução ficam no prontuário, nunca aqui nem nos prompts. Registre o consentimento por finalidade (atendimento, lembretes, conteúdos) e respeite a revogação. Em computador compartilhado, use um perfil de navegador só seu, faça backup e apague os dados ao sair. Uma clínica com recepção e vários usuários precisa de um sistema com servidor e controle de acesso: isso fica para uma versão futura.
@@ -2078,56 +2143,55 @@
   const COUNCILS = {
     medicina: {
       label: 'Medicina', sigla: 'CRM', conselho: 'CFM / CRM',
-      norma: 'Resolução CFM nº 2.336/2023 (publicidade médica), em vigor desde 2024',
-      ident: 'Nome, número do CRM e, se for especialista, o RQE. Especialista é quem fez residência reconhecida ou foi aprovado no exame de sociedade filiada à AMB. Pós-graduação lato sensu pode aparecer no currículo seguida de "NÃO ESPECIALISTA".',
+      norma: 'Resolução CFM nº 2.336/2023 (publicidade médica), em vigor desde 2024; revogou as Resoluções 1.974/2011, 2.126/2015 e 2.133/2015',
+      ident: 'Nome, número do CRM e a palavra "MÉDICO"; especialidade só com RQE. Estabelecimento: registro no CRM e nome do Diretor Técnico. Nas redes, esses dados ficam na página principal do perfil. Pós-graduação lato sensu pode aparecer no currículo seguida de "NÃO ESPECIALISTA".',
       pode: [
-        'Mostrar consultório, equipe e bastidores.',
-        'Selfies, inclusive com pacientes famosos, sem caráter sensacionalista ou de concorrência desleal.',
-        'Informar valor da consulta, formas de pagamento e descontos em campanhas.',
-        'Antes e depois com finalidade educativa: só da sua especialidade, com texto sobre indicações e fatores que podem prejudicar o resultado, mostrando também evoluções insatisfatórias e possíveis complicações, sem manipular a imagem e sem identificar o paciente (fotos do seu arquivo exigem autorização).',
-        'Divulgar equipamentos aprovados pela Anvisa.',
-        'Cursos educativos para leigos, com valor anunciado.'
+        'Mostrar consultório, equipe e bastidores; selfies sem caráter sensacionalista ou de concorrência desleal.',
+        'Informar valor da consulta, formas de pagamento e descontos em campanhas, sem venda casada nem premiação.',
+        'Imagens de pacientes só com finalidade educativa: antes e depois em conjunto, mostrando resultados satisfatórios, insatisfatórios e complicações, com texto educativo, sem identificar o paciente e sem editar ou "melhorar" a imagem. Fotos do seu arquivo exigem autorização e anonimato. "Antes e depois permitido" não é autorização irrestrita.',
+        'Divulgar equipamentos aprovados pela Anvisa e cursos educativos para leigos, com valor anunciado.'
       ],
       nao: [
-        'Sensacionalismo, autopromoção e conteúdo inverídico.',
-        'Atribuir capacidade privilegiada a aparelho ou técnica; prometer resultado.',
+        'Garantir ou insinuar resultado; "descobertas milagrosas".',
+        'Sensacionalismo, autopromoção e conteúdo inverídico; atribuir capacidade privilegiada a aparelho ou técnica.',
         'Tom pejorativo com colegas, especialidades ou procedimentos.',
         'Anunciar que trata órgãos ou doenças específicas sem ser especialista (RQE).',
-        'Promoções casadas, premiações e oferta por consórcio ou similares.',
+        'Serviços gratuitos em consultório privado como concorrência desleal; promoções casadas, premiações e consórcios.',
+        'Transmitir consultas ou procedimentos em tempo real.',
         'Publicidade de medicamentos, insumos, órteses, próteses e suas marcas.',
-        'Consultas em grupo ou informação que leve a diagnóstico, procedimento ou prognóstico pela rede.'
+        'Informação que leve a diagnóstico, procedimento ou prognóstico pela rede.'
       ],
-      extra: 'Repostar publicações de pacientes passa a contar como publicidade médica e segue as mesmas regras.',
-      resumo: 'Pela Res. CFM 2.336/2023: identificar nome, CRM e RQE (se especialista); sem sensacionalismo, autopromoção ou promessa de resultado; antes e depois só com finalidade educativa e nas condições da norma; sem falar mal de colegas; não anunciar área de especialista sem RQE; sem premiações ou promoções casadas.',
+      extra: 'Conteúdo de terceiros que você reposta passa a ser considerado seu, inclusive publicações de pacientes.',
+      resumo: 'Pela Res. CFM 2.336/2023: identificar nome, CRM, a palavra "MÉDICO" e RQE (se especialista); sem garantir ou insinuar resultado, sensacionalismo ou autopromoção; imagens de pacientes só educativas, com resultados satisfatórios, insatisfatórios e complicações, sem identificar nem editar; sem transmitir consultas ou procedimentos; sem falar mal de colegas; não anunciar área de especialista sem RQE; valores e descontos permitidos, sem venda casada nem premiação; o que reposto vira conteúdo meu.',
       fontes: [
-        ['Migalhas: CFM muda regra e permite antes e depois', 'https://www.migalhas.com.br/quentes/393424/cfm-muda-regra-e-permite-antes-e-depois-de-pacientes-na-internet'],
-        ['CRM-PR: apresentação sobre publicidade médica', 'https://crmpr.org.br/uploadAddress/Publicidade-medica-apresentacao-coletiva-12-09-(1)[6052].pdf']
+        ['CFM: Resolução 2.336/2023 (texto oficial)', 'https://sistemas.cfm.org.br/normas/arquivos/resolucoes/BR/2023/2336_2023.pdf'],
+        ['Migalhas: o que mudou na publicidade médica', 'https://www.migalhas.com.br/quentes/393424/cfm-muda-regra-e-permite-antes-e-depois-de-pacientes-na-internet']
       ]
     },
     odontologia: {
       label: 'Odontologia', sigla: 'CRO', conselho: 'CFO / CRO',
-      norma: 'Código de Ética Odontológica (Res. CFO 118/2012, com alterações da Res. CFO 271/2025) e orientações do CRO',
-      ident: 'Nome, categoria (cirurgião-dentista) e número do CRO. Clínica: nome e CRO da clínica, nome e CRO do responsável técnico. Especialidade só se registrada no CRO; sem ela, use "clínico geral" e informe as áreas de atuação. No antes e depois, a identificação vai na própria imagem.',
+      norma: 'Código de Ética Odontológica (Res. CFO 118/2012, com alterações da Res. CFO 271/2025), Res. CFO 196/2019 (antes e depois) e orientações do CRO',
+      ident: 'Nome, categoria (cirurgião-dentista) e número do CRO. Clínica: nome e CRO da clínica, nome e CRO do responsável técnico. Especialidade só se registrada no CRO; sem ela, use "clínico geral" e informe as áreas de atuação. No antes e depois, nome e CRO de quem fez o procedimento vão na própria imagem.',
       pode: [
         'Conteúdo educativo, bastidores, equipe e tecnologia da clínica.',
         'Endereço, telefone, e-mail e horário de atendimento.',
-        'Antes e depois só no perfil do profissional (pessoa física), do próprio trabalho, com autorização prévia e TCLE assinado e arquivado no prontuário, com caráter informativo (orientação do CROSP).'
+        'Antes e depois (Res. CFO 196/2019) só pelo cirurgião-dentista que executou o procedimento, com tratamento concluído (o registro do diagnóstico é o "antes"), com nome e CRO na imagem. O CFO não tem modelo de termo e recomenda, além da autorização verbal, autorização formal por escrito do paciente.'
       ],
       nao: [
+        'Antes e depois no perfil da clínica (pessoa jurídica): segue proibido. Também é vedado divulgar trabalho de outro dentista.',
+        'Publicações de "antes, durante e depois"; procedimentos complexos só em publicação científica.',
         'Divulgar preços, descontos, gratuidade ou frases de apelo a preço ("cabe no seu bolso").',
         'Promessa de resultado, sensacionalismo e autopromoção.',
-        'Fotos ou vídeos de procedimento em andamento (só em publicação científica).',
-        'Antes e depois no perfil da clínica (pessoa jurídica) ou de trabalho de outro dentista.',
         'Identificar marcas de materiais, equipamentos e instrumentais.',
-        'Influenciador em troca de tratamento; compra de seguidores.',
+        'Influenciador em troca de tratamento; compra de seguidores; exibir paciente sem autorização.',
         'Captação por telemarketing ativo, alto-falante ou plaqueteiros.'
       ],
-      extra: 'A Res. CFO 271/2025 mudou regras sobre cartões de desconto e sobre brindes, prêmios e sorteios. Confirme com o seu CRO antes de qualquer ação desse tipo.',
-      resumo: 'Pelo Código de Ética Odontológica e orientações do CRO: identificar nome, categoria e CRO (clínica: CRO da clínica e do responsável técnico); sem preços, descontos, gratuidade ou apelo a preço; sem promessa de resultado, sensacionalismo ou autopromoção; sem procedimento em andamento; antes e depois só no perfil pessoal do profissional, do próprio trabalho, com TCLE e sem marcas de materiais.',
+      extra: 'O antes e depois "não está liberado de forma indiscriminada" (FAQ do CFO). A Res. CFO 271/2025 mudou regras sobre cartões de desconto e sobre brindes, prêmios e sorteios: confirme com o seu CRO antes de qualquer ação desse tipo. O guia do CROSP não informa data; confirme a versão.',
+      resumo: 'Pelo Código de Ética Odontológica, Res. CFO 196/2019 e orientações do CRO: identificar nome, categoria e CRO (clínica: CRO da clínica e do responsável técnico); sem preços, descontos, gratuidade ou apelo a preço; sem promessa de resultado, sensacionalismo ou autopromoção; sem "antes, durante e depois"; antes e depois só pelo dentista que executou, tratamento concluído, com nome e CRO na imagem e autorização por escrito, nunca no perfil da clínica (pessoa jurídica); sem marcas de materiais.',
       fontes: [
+        ['CFO: FAQ da Resolução 196/2019', 'https://website.cfo.org.br/resolucao-cfo-196-2019/'],
         ['CROSP: regras de publicidade odontológica', 'https://site.crosp.org.br/uploads/arquivo/3724579826b71ed53e3c7d0ff3104a64.pdf'],
-        ['Resolução CFO-271/2025', 'https://sistemas.cfo.org.br/visualizar/atos/RESOLU%C3%87%C3%83O/SEC/2025/271'],
-        ['LegisMap: o que mudou no Código de Ética após o CADE', 'https://legismap.com.br/conteudos/artigos-e-noticias/em-cumprimento-a-decisao-do-cade-cfo-realiza-alteracoes-pontuais-no-codigo-de-etica']
+        ['Resolução CFO-271/2025', 'https://sistemas.cfo.org.br/visualizar/atos/RESOLU%C3%87%C3%83O/SEC/2025/271']
       ]
     },
     psicologia: {
@@ -2157,24 +2221,26 @@
     },
     fisioterapia: {
       label: 'Fisioterapia', sigla: 'CREFITO', conselho: 'COFFITO / CREFITO',
-      norma: 'Código de Ética e Deontologia da Fisioterapia (Res. COFFITO 424/2013)',
-      ident: 'Nome, a palavra "fisioterapeuta" e o número do CREFITO. Especialidade só se reconhecida pelo COFFITO. Não substitua o título por termos como "terapeuta corporal".',
+      norma: 'Res. COFFITO 532/2021 (publicidade e uso de imagem) e Código de Ética e Deontologia da Fisioterapia (Res. COFFITO 424/2013)',
+      ident: 'Toda publicação traz nome do profissional, número de inscrição no CREFITO e data. Use a palavra "fisioterapeuta"; especialidade só se reconhecida pelo COFFITO. Não substitua o título por termos como "terapeuta corporal".',
       pode: [
         'Endereço, telefone, horários, convênios, instalações, métodos e logomarca.',
-        'Textos, imagens e vídeos de orientação à população, dentro do Código.',
+        'Textos, imagens e vídeos de orientação à população.',
+        'Imagens, textos e áudios autênticos de pacientes só com autorização prévia por TCLE, do próprio paciente ou do representante legal.',
         'Divulgação coletiva em serviço multiprofissional.'
       ],
       nao: [
+        'Sensacionalismo, concorrência desleal e promessa de resultado ou de terapia "infalível".',
+        'Divulgar casos clínicos de autoria de terceiros.',
+        'Expor dados que identifiquem o paciente, inclusive antes e depois, sem autorização formal prévia. Divulgação irregular de imagem de paciente é infração ética de manifesta gravidade.',
+        'Usar depoimentos ou agradecimentos de pacientes para autopromoção.',
         'Divulgar valores fora do local de atendimento ou de forma que configure concorrência desleal.',
-        'Usar depoimentos, imagens ou agradecimentos de pacientes para autopromoção.',
-        'Antes e depois ou qualquer imagem que identifique o paciente (exceção: uso acadêmico com autorização formal).',
-        'Prometer terapia "infalível", "secreta" ou sem eficácia comprovada.',
-        'Consulta ou prescrição sem avaliação presencial, salvo casos regulamentados pelo COFFITO.',
-        'Títulos que você não pode comprovar.'
+        'Consulta ou prescrição sem avaliação, salvo casos regulamentados pelo COFFITO.'
       ],
       extra: 'Você responde ao conselho pelo conteúdo técnico de artigos, entrevistas e vídeos.',
-      resumo: 'Pelo Código de Ética e Deontologia da Fisioterapia (Res. COFFITO 424/2013): identificar nome, "fisioterapeuta" e CREFITO; sem divulgar valores fora do local de atendimento; sem depoimentos, imagens ou agradecimentos de pacientes para autopromoção; sem imagem que identifique paciente; sem prometer terapia infalível.',
+      resumo: 'Pela Res. COFFITO 532/2021 e pelo Código de Ética (Res. 424/2013): toda publicação com nome, número do CREFITO e data; imagem, texto ou áudio de paciente só com TCLE prévio; sem sensacionalismo, concorrência desleal ou promessa de resultado infalível; sem casos clínicos de terceiros; sem expor paciente identificável, inclusive antes e depois, sem autorização formal; sem depoimentos para autopromoção; sem valores fora do local de atendimento.',
       fontes: [
+        ['COFFITO: Resolução 532/2021', 'https://www.coffito.gov.br/nsite/?p=18752'],
         ['Resolução COFFITO nº 424/2013 (Código de Ética)', 'https://www.normasbrasil.com.br/norma/resolucao-424-2013_257114.html']
       ]
     }
@@ -2241,6 +2307,7 @@
     '4a6': { label: '4 a 6 horas por semana', meta: 4 },
     '7mais': { label: '7 horas ou mais por semana', meta: 5 }
   };
+  const CONTA = { profissional: 'perfil do profissional (pessoa física)', clinica: 'perfil da clínica (pessoa jurídica)', ambos: 'perfil do profissional e perfil da clínica' };
   const PRODUTOR = { eu: 'eu mesmo(a)', equipe: 'eu, com ajuda da equipe', terceiro: 'vou contratar agência ou social media' };
   const CAMERA = { alto: 'gosto de aparecer na câmera', medio: 'apareço, mas sem muita exposição', baixo: 'prefiro não aparecer na câmera' };
 
@@ -2299,6 +2366,34 @@
     ['Agenda e prontuário', 'iClinic, Feegow, Amplimed, Simples Dental, Clinicorp', 'Agenda, confirmação e prontuário eletrônico (fora do CRM)'],
     ['Assistentes de IA', 'Claude, ChatGPT, Gemini, Copilot', 'Nunca com dados de pacientes']
   ];
+
+  // Benchmarking editorial de criadores de saúde (12/10/2026): estrutura, não conteúdo clínico.
+  // Amostra pequena e observacional, não é ranking de engajamento.
+  const BENCH = [
+    ['José Arbex Filho', 'odontologia', 'Odontologia estética', '@arbexfilho', 'Analogia concreta para explicar raciocínio e acompanhamento, sem imagens clínicas ou procedimentos publicitários.'],
+    ['Roberto Viotto', 'odontologia', 'Odontologia estética', '@drviotto', 'Mostrar o ambiente e explicar uma tecnologia de forma permitida.'],
+    ['Bruna Conde', 'odontologia', 'Odontologia (halitose)', '@drabrunaconde', 'Quadro Mito/Verdade com afirmações verificadas, em linguagem comum.'],
+    ['Paulo Muzy', 'medicina', 'Ortopedia, medicina esportiva', '@paulomuzy', 'Responder dúvidas gerais com proximidade e ressalvas, sem caso individual em público.'],
+    ['Ana Escobar', 'medicina', 'Pediatria', '@draanaescobar', 'Pergunta específica, acolhimento, passos compreensíveis e CRM/RQE visível.'],
+    ['Dayan Siebra', 'medicina', 'Cirurgia vascular', '@dayansiebra', 'Dupla entrevistador e especialista, com objetos do cotidiano; reescrever ganchos sem ameaça exagerada.'],
+    ['José Carlos Souto', 'medicina', 'Medicina (metabólico e nutricional)', '@jcsouto', 'Aprofundamento para quem prefere escuta; citar um estudo não o valida.'],
+    ['Victor Sorrentino', 'medicina', 'Medicina funcional/integrativa (atuação declarada)', '@drvictorsorrentino', 'Sinalização visual de conceitos e de fontes realmente verificadas, sem importar conclusões clínicas.'],
+    ['Leonardo Ávila', 'medicina fisioterapia', 'Dor (Tudo Sobre Dor)', '@tudosobredor', 'Série temática com conversa e bibliografia; simplificar o jargão para pacientes.'],
+    ['Bernardo Sampaio', 'fisioterapia', 'Fisioterapia musculoesquelética', '@bernardosam', 'Pergunta real anonimizada e resposta concisa com limites, sem intervenção igual para todos.'],
+    ['Robson Sitta', 'fisioterapia', 'Fisioterapia ortopédica', '@dr.robsonsitta', 'Tornar o raciocínio observável com modelo ou representação segura; técnica não é prescrição universal.']
+  ];
+  const BENCH_PADROES = 'Padrões recorrentes: problema específico na abertura; explicação concreta (objetos, analogias, modelos), sem estilo único vencedor; autoridade visível, mas não autossuficiente; quadros e continuidade; um próximo passo por peça; limites clínicos que sobrevivem ao corte curto.';
+
+  // As bases do método (créditos)
+  const METODO = {
+    bases: [
+      ['Método Foguete', 'Pat Machadu', 'Crescimento em "planetas": fundamentos, planejamento (transformação, Ikigai, pesquisa de mercado, identidade, baldes), perfil, produção, análise, recursos da plataforma, metas S.M.A.R.T. e hábitos. Originalmente para YouTube, adaptado ao Instagram.'],
+      ['Efeito Di', 'Diandra Santos (@segueadi)', 'Síntese autoral do curso: inteligência de nicho, atenção + padrão + satisfação, direção criativa com estruturas replicáveis e banco de conteúdo, quadros e personagens recorrentes, biblioteca de formatos, marca pessoal, gravação no celular, confiança na câmera, revisão de roteiro em duas etapas, impulsionamento e o R.O.A.S. (Roteiro, Observação, Adaptação, Substituição) para modelar referências.'],
+      ['Pesquisa e normas', 'out/2026', 'Sinais do algoritmo do Instagram (só tempo de visualização, curtidas por alcance e envios por alcance têm confirmação atribuída à Meta; o resto é heurística de terceiros) e regras de publicidade do CFM, CFO, CFP e COFFITO.']
+    ],
+    fluxo: ['Ideia', 'Roteiro', 'Revisão editorial', 'Revisão clínica e ética', 'Gravação', 'Revisão final', 'Publicação', 'Análise'],
+    aviso: 'O CliniLoop usa princípios dessas fontes, não reproduz o material dos cursos. Rótulos pedagógicos (como "viciante") não são métricas, e linguagem sobre emoção e neuroquímica é editorial, não evidência científica. O R.O.A.S. do curso não é o ROAS de mídia paga.'
+  };
 
   // Quatro modelos de campanha
   const MODELOS = {
@@ -2382,7 +2477,7 @@
     const t = (k) => (fd.get(k) || '').toString().trim();
     return {
       objetivo: t('objetivo') || 'agenda', metaFrase: t('metaFrase'), profissional: t('profissional'), multiProf: fd.getAll('multiProf'),
-      nome: t('nome'), registro: t('registro'), especialidade: t('especialidade'), cidade: t('cidade'),
+      nome: t('nome'), registro: t('registro'), conta: t('conta') || 'profissional', especialidade: t('especialidade'), cidade: t('cidade'),
       atendimento: fd.getAll('atendimento'), pagamento: t('pagamento') || 'particular', equipe: t('equipe'),
       servicos: t('servicos'), publico: t('publico'), transformacao: t('transformacao'), baldes: t('baldes'), arroba: t('arroba'),
       canais: fd.getAll('canais'), tempo: t('tempo') || '2a3', produtor: t('produtor') || 'eu', camera: t('camera') || 'medio',
@@ -2450,6 +2545,7 @@
     L.push(`- Profissional: ${profLabel()}`);
     if (cfg.nome) L.push(`- Nome nas redes: ${cfg.nome}`);
     L.push(`- Registro no conselho: ${cfg.registro || '[CONFIRMAR: número de registro]'}`);
+    L.push(`- Tipo de conta: ${CONTA[cfg.conta] || CONTA.profissional}`);
     if (cfg.especialidade) L.push(`- Especialidade ou área: ${cfg.especialidade}`);
     if (cfg.cidade) L.push(`- Cidade e bairro: ${cfg.cidade}`);
     L.push(`- Atendimento: ${(cfg.atendimento || []).join(', ') || 'presencial'} · pagamento: ${cfg.pagamento}`);
@@ -2474,6 +2570,10 @@
     if (cfg.profissional === 'multi') R.push('- Peças institucionais da clínica seguem a regra mais restritiva entre os conselhos acima; cada profissional se identifica com o próprio registro.');
     if (isMental()) R.push('- ' + SAUDE_MENTAL);
     REGRAS_GERAIS.forEach((g) => R.push('- ' + g));
+    R.push('- Não prometa alcance, seguidores ou viralização. Em saúde, o objetivo é clareza, confiança e o próximo passo adequado.');
+    R.push('- Procedência: distinga princípio de método, adaptação, observação de outros criadores, informação clínica validada e hipótese de desempenho. Afirmação clínica sem fonte fica marcada como [PENDENTE DE VALIDAÇÃO], nunca como fato.');
+    R.push('- Sem medo, escassez, vergonha ou insegurança corporal para vender; humor nunca ridiculariza quem sente dor. Imagem gerada nunca aparece como paciente real nem como evidência clínica; personagem encenado é identificado como representação; não invente depoimentos nem histórias de pacientes.');
+    R.push('- Sem diagnóstico por comentário, foto ou vídeo; sem prescrição individual em conteúdo genérico; nunca peça histórico de saúde nos comentários (encaminhe para o atendimento).');
     R.push('- Se alguma ideia puder ferir essas regras, não a sugira, ou marque com [VERIFICAR NO CONSELHO] e explique por quê.');
     R.push('- Nunca use, peça ou invente dados que identifiquem pacientes. Não invente números, títulos ou casos: marque [CONFIRMAR] ou [ESTIMATIVA].');
 
@@ -2541,7 +2641,9 @@ Entregue:
 5. Três bandeiras que defendo e três mitos que combato, com base em evidência.
 6. Como aparecer de forma confortável para o meu nível de conforto com a câmera, incluindo formatos sem rosto se for o caso.
 7. Limites éticos e pessoais da marca (o que nunca publicar).
-8. Direção visual: cor principal pelo significado, tipografia e estilo de foto.
+8. Identidade de marca em 1 página: voz, paleta (cor principal pelo significado), tipografia, ambiente, padrões visuais e até 3 bordões, coerentes com o registro profissional. Mostrar cuidado e organização é diferente de sugerir que o ambiente garante resultado.
+9. Confiança na câmera: um plano de 2 semanas de ensaios curtos sem obrigação de publicar, revisando um aspecto por vez (clareza, velocidade, apoio visual), e como pedir feedback. Não é tratamento para ansiedade.
+10. Gravação no celular: ponto silencioso, luz suficiente, fundo sem dados de pacientes, teste de voz, conferir o recorte na tela e revisar termos clínicos nas legendas automáticas. Sem filtros que alterem a aparência de resultado clínico.
 
 Autoridade em saúde vem de clareza, constância e responsabilidade, não de autopromoção.`,
 
@@ -2557,7 +2659,7 @@ Entregue:
 2. Três opções de nicho (estreito, médio, amplo) com prós, contras, riscos e demanda local [ESTIMATIVA]; recomende uma.
 3. Proposta de valor em 3 versões no formato "Ajudo [público] a [resultado] com [diferencial]", sem promessa de resultado.
 4. Diferenciais verificáveis (formação, método, tecnologia, experiência, forma de atender) e como comunicá-los dentro das regras do conselho, sem superlativos.
-5. Mapa de concorrência: pesquise na web os concorrentes citados e outros da minha região (Instagram, Google, YouTube). Em tabela: posicionamento, formatos, frequência, o que os pacientes elogiam nas avaliações públicas e lacunas não exploradas.
+5. Inteligência de nicho: pesquise na web os concorrentes citados e outros 10 a 20 perfis da minha área e região (Instagram, Google, YouTube), incluindo referências de outros mercados e em inglês. Em tabela: URL, formato, pergunta central, tipo de abertura, apoio visual, limite clínico, frequência, o que os pacientes elogiam nas avaliações públicas e lacunas não exploradas. Separe observação ("há uma pergunta no começo") de hipótese ("a pergunta causou as visualizações", que exige teste). Leia estruturas, não copie texto nem identidade, e não sugira pauta só porque um vídeo teve pico de audiência se ele atrai um público que nunca buscará meu consultório.
 6. Posicionamento em uma frase e 10 palavras-chave para bio, Google e legendas (serviço + cidade ou bairro).
 7. Como testar o nicho em 30 dias antes de mudar tudo, e o que medir.`,
 
@@ -2572,7 +2674,7 @@ ${get('atual')}
 
 Entregue, para cada perfil escolhido:
 1. Nota de 0 a 10 para clareza (para quem é, o que faço, onde atendo, como agendar) e justificativa.
-2. Reescrita pronta para colar, com a identificação obrigatória do meu conselho:
+2. Reescrita pronta para colar, com a identificação obrigatória do meu conselho e do tipo de conta (profissional ou clínica). Em saúde, a bio traz identidade e credenciais corretas e leva ao canal oficial, sem slogan de resultado:
    - Instagram: 3 opções de nome do perfil com palavra-chave (o Instagram busca pelo nome), 3 bios de até 150 caracteres, Destaques na ordem do caminho do paciente (ex.: Comece aqui, Dúvidas, Tratamentos, Bastidores, Como agendar, Localização) com o que vai em cada um, 3 posts para fixar e o destino do link com mensagem pronta para o WhatsApp.
    - Perfil da Empresa no Google: categoria principal e secundárias, serviços, descrição de até 750 caracteres, fotos que faltam, perguntas e respostas, frequência de posts e como pedir avaliações sem oferecer vantagem e respeitando o conselho.
    - YouTube: nome e descrição do canal, palavras-chave, playlists por dúvida e ideia de trailer.
@@ -2590,58 +2692,78 @@ Formatos com que me sinto bem: ${getAll('formatos')}
 Datas importantes: ${nv(get('datas'), '(nenhuma)')}
 
 Entregue:
-1. Palavras-chave por serviço e por cidade ou bairro (Google, Instagram e YouTube), em tabela: termo, intenção (informar, comparar, agendar), serviço e onde usar. Pesquise na web as buscas relacionadas e indique a fonte.
-2. As dúvidas do banco organizadas por balde de conteúdo (${cfg.baldes || 'sugira até 3 baldes'}) e por etapa da jornada (descoberta, consideração, decisão, retorno), sem repetir.
-3. 30 pautas em tabela: título ou gancho, balde, etapa, formato, palavra-chave e chamada para ação.
-4. Frequência realista para ${(TEMPO[cfg.tempo] || TEMPO['2a3']).label}, com quem produz sendo ${PRODUTOR[cfg.produtor] || cfg.produtor}: versão mínima e ideal por canal. Constância vale mais que volume.
-5. Calendário de 4 semanas (dia, canal, formato, pauta) e rotina de produção em lote, com tempo estimado por etapa.
-6. Como reaproveitar uma pauta em vídeo, carrossel, Stories, post no Google e LinkedIn.
-7. Datas de conscientização dos próximos 3 meses relevantes para minha área, com abordagem educativa. Em Setembro Amarelo: comunicação responsável, CVV (188) e nada de captação.
+1. Palavras-chave por serviço e por cidade ou bairro (Google, Instagram e YouTube), em tabela: termo, intenção (informar, comparar, agendar), serviço e onde usar. Pesquise na web as buscas relacionadas (Google Trends, sugestões de busca, Answer The Public) e indique a fonte.
+2. As dúvidas do banco organizadas por balde de conteúdo (${cfg.baldes || 'sugira até 3 baldes'}) e pelo momento da jornada: entender um sintoma, compreender a avaliação, comparar caminhos de cuidado, preparar-se para a consulta, acompanhar o tratamento, conhecer a equipe. Sem repetir e sem afirmar "todo mundo pergunta" além do que está no banco.
+3. 30 pautas em tabela, cada uma registrada com: dúvida, público, estágio de decisão, formato, palavra-chave, fonte clínica necessária, imagem de apoio (eu, modelo anatômico ou ilustração), responsável pela revisão e CTA. Priorize por pertinência ao público, segurança clínica, possibilidade de explicar visualmente, originalidade e alinhamento com os serviços.
+4. Dois ou três quadros recorrentes (séries com nome, bordão e estrutura fixa, como "Pergunta do consultório"), com 4 episódios cada.
+5. Metas S.M.A.R.T. para 8 semanas (específicas, mensuráveis, alcançáveis, relevantes e com prazo), incluindo uma meta de tarefa e uma de contatos qualificados.
+6. Frequência realista para ${(TEMPO[cfg.tempo] || TEMPO['2a3']).label}, com quem produz sendo ${PRODUTOR[cfg.produtor] || cfg.produtor}: versão mínima e ideal por canal. Constância vale mais que volume.
+Referência: independentes, cerca de 3 publicações por semana (2 Reels e 1 carrossel); com equipe, 5 e Stories diários. Qualidade vence volume.
+7. Calendário de 4 semanas (dia, canal, formato, pauta) e rotina de produção em lote, com tempo estimado por etapa (cronometre e comprometa-se só com o que cabe).
+8. "Uma peça longa, quatro entregas": como transformar uma pauta em vídeo longo, Reel para uma dúvida, carrossel de preparação e Stories sobre quem atende, cada um fazendo sentido sozinho.
+9. Datas de conscientização dos próximos 3 meses relevantes para minha área, com abordagem educativa. Em Setembro Amarelo: comunicação responsável, CVV (188) e nada de captação.
 
 Alcance não é garantido; foque em sinais que dependem de mim (retenção, envios, salvamentos, conversas).`,
 
     roteiro: (get) => {
       const f = get('formato');
+      const video = /Reels|YouTube/.test(f);
       let instr;
-      if (/Reels|YouTube/.test(f)) {
-        instr = `1. 5 ganchos de até 3 segundos, de tipos diferentes (erro comum, mito, pergunta sobre a dúvida, dado verificável, prévia do que vai mostrar, sem prometer resultado), cada um com texto na tela de até 6 palavras. Diga qual testar primeiro.
-2. Roteiro com marcação de tempo: gancho, contexto em uma frase, 3 a 5 pontos, um único pedido no final e encerramento que conecta ao início.
-3. Texto na tela por bloco e sugestões de imagens de apoio sem expor pacientes.
-4. Direção de gravação: enquadramento, luz, áudio, cenário e roupa.
-5. Legenda com palavra-chave e chamada para ação, e texto da capa.${/YouTube/.test(f) ? '\n6. Título (3 opções), capítulos com tempo, descrição com palavras-chave e tela final.' : '\n6. Versão de 15 segundos.'}`;
+      if (/YouTube/.test(f)) {
+        instr = `1. Objetivo e público da peça, a promessa central (verdadeira) e a pergunta principal.
+2. Três títulos com a mesma promessa verdadeira e uma ideia de miniatura que acrescente contexto (sem radiografia nem transformação fictícia).
+3. Roteiro com fala e apoio visual: abertura de 0 a 20 s nomeando a dúvida; de 20 a 60 s respondendo o ponto central e o que depende de avaliação individual; 3 a 5 blocos (ideia, exemplo seguro, limitação); fechamento com recapitulação e próximo passo proporcional, sem urgência fictícia.
+4. Capítulos com tempo e descrição com palavras-chave, fontes, identificação profissional e canal oficial.
+5. Versão curta autossuficiente (Reels de 30 a 60 s): reescreva abertura e fechamento e mantenha as ressalvas. Um vídeo longo não vira bom Reel só por ser cortado.`;
+      } else if (video) {
+        instr = `1. Objetivo e público da peça, a promessa central (verdadeira) e a pergunta principal.
+2. Cinco aberturas de até 3 segundos, de tipos diferentes (dúvida específica, mito, diferença entre A e B, o que a avaliação precisa esclarecer, o que preparar antes da consulta), com texto na tela de até 6 palavras, e qual testar primeiro. Nada de cura em segundos, ameaça, "segredo que escondem" ou "todo mundo pergunta" sem observação.
+3. Três títulos ou capas com a mesma promessa.
+4. Roteiro com fala e apoio visual: pergunta específica → resposta cedo → demonstração ou exemplo seguro (eu mesmo, modelo anatômico ou ilustração identificada) → limite da orientação → um único pedido → final que conecta ao início. A ideia principal precisa estar no primeiro enquadramento.
+5. Texto na tela por bloco, sem cobrir o que é demonstrado, e direção de gravação no celular: ponto silencioso, luz, fundo sem dados de pacientes, teste de voz, conferir o recorte e não usar filtro que altere a aparência de resultado.
+6. Legenda com palavra-chave, identificação profissional e fontes; de 0 a 5 hashtags relevantes.
+7. Versão de 15 segundos autossuficiente, com as ressalvas.`;
       } else if (/carrossel/.test(f)) {
-        instr = `1. Slide a slide (7 slides): 1 gancho; 2 a 5 uma ideia por slide; 6 insight para compartilhar; 7 chamada para ação e identificação profissional.
-2. Texto de cada slide em até 25 palavras e sugestão visual.
-3. Legenda com palavra-chave e 3 opções de título para o slide 1.`;
+        instr = `1. Objetivo, promessa central e pergunta principal.
+2. Slide a slide (7 slides): capa com promessa precisa; uma ideia por slide; penúltimo com o insight para guardar ou enviar; último com um único pedido e a identificação profissional. Texto de até 25 palavras por slide e sugestão visual. Nunca uma árvore de autodiagnóstico.
+3. Três opções de capa e a legenda com palavra-chave e fontes.`;
       } else if (/Stories/.test(f)) {
-        instr = `1. Tela a tela (5 a 8), com figurinha interativa (enquete, caixa de perguntas ou quiz) onde fizer sentido.
-2. A última tela leva à conversa, com a frase exata.
-3. Indicação de qual tela salvar nos Destaques.`;
+        instr = `1. Tela a tela (5 a 8), com figurinha interativa onde fizer sentido. Enquete sobre temas, nunca sobre histórico sensível; resposta de caixinha não autoriza divulgar dados nem imagem.
+2. Bastidores sem pacientes identificáveis.
+3. A última tela leva à conversa no canal oficial, com a frase exata, e qual tela salvar nos Destaques.`;
       } else if (/LinkedIn/.test(f)) {
         instr = `1. Post de até 1.300 caracteres para colegas e parceiros: abertura forte, aprendizado ou caso genérico (sem identificar paciente), reflexão e pergunta final.
-2. 3 aberturas alternativas.
+2. Três aberturas alternativas.
 3. Como usar o post para iniciar conversas com colegas que indicam.`;
       } else {
-        instr = `1. 3 versões com estruturas diferentes (pergunta e resposta, história, problema e solução sem alarmismo), indicando a estrutura usada.
-2. Respeite o limite de caracteres do formato e use uma única chamada para ação.
-3. Sugestão de teste A/B.${/lista de transmissão/.test(f) ? '\n4. Inclua a forma de sair da lista em cada mensagem.' : ''}`;
+        instr = `1. Três versões com estruturas diferentes (pergunta e resposta, história, problema e solução sem alarmismo), indicando a estrutura usada.
+2. Respeite o limite de caracteres do formato e use uma única chamada para ação, levando ao canal oficial.
+3. Sugestão de teste A/B com uma variável só.${/lista de transmissão/.test(f) ? '\n4. Inclua a forma de sair da lista em cada mensagem.' : ''}`;
       }
-      return `Aja como roteirista e copywriter de conteúdo ético para profissionais de saúde.
+      const quadro = get('quadro');
+      const ref = get('referencia');
+      return `Aja como roteirista e copywriter de conteúdo ético para profissionais de saúde, seguindo o Método Foguete adaptado ao Instagram e os princípios do Efeito Di.
 
 Formato: ${f}
-Tema ou dúvida: ${get('tema')}
+Tema ou dúvida do paciente: ${get('tema')}
 Balde: ${nv(get('balde'), '(não definido)')} · Objetivo da peça: ${get('objetivoPeca')} · Como apareço: ${get('aparece')} · Tom: ${get('tom')}
-Pontos que não podem faltar: ${nv(get('notas'), '(nenhum)')}
+Pontos técnicos e fontes: ${nv(get('notas'), '(nenhum: marque afirmações clínicas como [PENDENTE DE VALIDAÇÃO])')}${quadro ? `\nQuadro recorrente: "${quadro}". Mantenha a série reconhecível: uma pergunta por episódio, resposta cedo, exemplo seguro, ressalva e o mesmo bordão de abertura ou fechamento.` : ''}${ref ? `\nReferência para modelar: ${ref}\nUse o R.O.A.S. (Roteiro, Observação, Adaptação, Substituição): leia a estrutura da referência, observe como ela começa, sustenta, contextualiza e encaminha, adapte ao meu tema e substitua conteúdo, exemplos e identidade. Não copie texto, imagem nem identidade de terceiros.` : ''}
 
 Entregue:
 ${instr}
 
-No final, inclua sempre:
-- Palavra-chave usada e onde ela aparece (fala, texto na tela, legenda).
-- Checagem ética: frases que poderiam ferir as regras do meu conselho ou as políticas da Meta e do Google, com a alternativa.
-- O que foi evitado: promessa de resultado, superlativos, medo, preço onde o conselho proíbe, afirmação sobre condição de saúde de quem lê, exposição de pacientes.
+Depois, em duas etapas separadas:
+A. Revisão editorial: a peça é específica, compreensível e entrega a promessa? Corrija o que precisar.
+B. Pendências para a revisão clínica e ética (que eu ou o responsável técnico faremos): afirmações que precisam de fonte, autorização de imagem, regra do conselho para minha profissão e tipo de conta. Separe o que impede a publicação do que são ajustes menores e não declare a peça pronta enquanto houver impedimento.
 
-Linguagem simples, termos técnicos explicados, frases curtas.`;
+No final, inclua sempre:
+- CTA único e o canal oficial.
+- Palavra-chave usada e onde ela aparece (fala, texto na tela, legenda).
+- Hipótese de teste com uma variável só (pergunta, abertura, demonstração ou convite) e as métricas para comparar (retenção, envios, salvamentos, mensagens).
+- Plano para a primeira hora: avisar nos Stories e responder os comentários.
+- O que foi evitado: promessa de resultado, superlativos, medo, vergonha, preço onde o conselho proíbe, afirmação sobre condição de saúde de quem lê, exposição de pacientes.
+
+Linguagem simples, termos técnicos explicados, frases curtas. Pontuação de roteiro, se usar, é ferramenta pedagógica, não previsão de viralidade.`;
     },
 
     formacao: (get, getAll) => `Aja como mentor(a) de carreira científica e de autoridade para profissionais de saúde.
@@ -2678,7 +2800,8 @@ Entregue:
 5. Mensagem de boas-vindas do WhatsApp e 3 respostas rápidas.
 6. Calendário dia a dia.
 7. Lista de verificação ética do ${conselhosTxt()}, da LGPD e das políticas da Meta e do Google, marcando o que precisa de atenção.
-8. Medição: contatos, agendados, comparecimentos e planos iniciados por origem, e o nome curto da campanha para eu registrar como origem no rastreador.${reativ ? '\n9. Mensagens de reativação só para quem consentiu receber lembretes, com opção de sair em cada mensagem.' : ''}
+8. Medição: contatos, agendados, comparecimentos e planos iniciados por origem, e o nome curto da campanha para eu registrar como origem no rastreador. Separe orçamento de mídia de custo de produção.
+9. Se houver impulsionamento: objetivo, qual peça educativa já revisada impulsionar, público com pertinência geográfica (para clínica local, vale mais que audiência nacional), a ação acompanhada (visita ao perfil ou contato qualificado) e quando pausar. Não autorize gasto automaticamente: eu aprovo cada valor.${reativ ? '\n10. Mensagens de reativação só para quem consentiu receber lembretes, com opção de sair em cada mensagem.' : ''}
 
 Regras: sem promessa de resultado, sem superlativos, sem medo, sem afirmar condição de saúde do usuário, sem preço onde o conselho proíbe. Marque com [CONFIRMAR] tudo que eu não informei.`;
     },
@@ -2791,12 +2914,17 @@ ${get('dados')}
 """
 O que mudou no período: ${nv(get('contexto'), '(nada informado)')}
 
+Regras de leitura:
+- Não compare Reels, Shorts e YouTube longo como a mesma unidade de atenção. Interação pública por visualização = (curtidas + comentários) ÷ visualizações × 100, e não é engajamento total. Prefira a mediana à média. Retenção vem dos dados da conta, não de números públicos.
+- Compare peças com exposição parecida e trate à parte as impulsionadas.
+- Muito alcance e pouca permanência: revise promessa × entrega. Permanência e poucas ações: revise clareza e convite. Muitos contatos e poucos atendimentos: revise adequação ao público, localização e processo de agendamento antes de culpar o roteiro.
+
 Entregue:
 1. Leitura do funil: conversões entre etapas (contato → agendado → avaliado → plano proposto → em tratamento), comparadas com referências do setor marcadas como [ESTIMATIVA].
-2. O gargalo da semana e as 3 causas mais prováveis.
+2. O gargalo da semana e as 3 causas mais prováveis, aplicando as regras acima.
 3. Três ações para a próxima semana, cada uma com responsável, prazo e métrica de sucesso.
-4. Conteúdo: quais baldes e formatos geram mais envios, salvamentos e mensagens, e o que repetir.
-5. Um teste com uma variável só: o que mudar, como medir e quando decidir.`,
+4. Conteúdo: quais baldes, quadros e formatos geram mais retenção, envios, salvamentos e mensagens, e o que repetir. Atribua receita só se houver rastreamento.
+5. O próximo ciclo de testes: série, hipótese, lote pequeno comparável e uma variável só (pergunta, abertura, demonstração ou convite), como medir e quando decidir.`,
 
     etica: (get) => {
       const anuncio = /anúncio/.test(get('tipo'));
@@ -2808,7 +2936,7 @@ Entregue:
       return `Revise o texto abaixo como se fosse a comissão de ética do ${conselhosTxt()}.
 Tipo de peça: ${get('tipo')}. Imagens ou vídeo: ${get('imagem')}.
 
-Aponte, frase a frase: promessa de resultado, superlativo, sensacionalismo, medo, exposição de paciente, preço ou promoção vedados, falta de identificação profissional, afirmação sobre condição de saúde do leitor.${anuncio ? ' Confira também as políticas de anúncios da Meta (atributos pessoais e saúde) e do Google (saúde e medicamentos).' : ''}
+Aponte, frase a frase: promessa de resultado, superlativo, sensacionalismo, medo, exposição de paciente, preço ou promoção vedados, falta de identificação profissional, afirmação sobre condição de saúde do leitor. Confira também: cura em segundos, ameaça, "segredo que médicos escondem", diagnóstico por comentário ou aparência, pedido de histórico nos comentários, comparação depreciativa com colegas, percentual sem fonte, exploração de vergonha, medo ou insegurança corporal, imagem gerada apresentada como paciente real, depoimento ou caso inventado, humor que ridiculariza quem sente dor, e afirmação clínica sem fonte (marque [PENDENTE DE VALIDAÇÃO]). Tipo de conta: ${CONTA[cfg.conta] || CONTA.profissional} (algumas regras mudam para a conta da clínica).${anuncio ? ' Confira também as políticas de anúncios da Meta (atributos pessoais e saúde) e do Google (saúde e medicamentos).' : ''}
 
 Regras que valem para mim (resumo conferido em outubro de 2026):
 ${regras}
@@ -2819,7 +2947,7 @@ Entregue:
 3. Versão corrigida completa, com a identificação profissional obrigatória.
 4. Se houver imagem de paciente, antes e depois ou depoimento: autorizações necessárias e cuidados.
 
-Lembre que esta revisão não substitui a consulta à norma vigente. Se puder, confira na web se as normas citadas foram atualizadas e cite a fonte.
+Não afirme conformidade legal integral: esta revisão não substitui a consulta à norma vigente nem a avaliação de um profissional competente. Se puder, confira na web se as normas citadas foram atualizadas e cite a fonte.
 
 Texto:
 """
@@ -3060,17 +3188,21 @@ Entregue:
       psicologia: 'Sorteios são vedados na publicidade de psicologia.',
       fisioterapia: 'Sorteios e brindes podem configurar captação incompatível com a dignidade da profissão. Confirme com o CREFITO.' } },
     { re: /\bantes e depois\b/, by: {
-      medicina: 'Antes e depois: só educativo, da sua especialidade, com texto sobre indicações e fatores que prejudicam o resultado, mostrando também evoluções insatisfatórias e complicações, sem manipular nem identificar o paciente.',
-      odontologia: 'Antes e depois: só no perfil do profissional (não da clínica), do próprio trabalho, com TCLE, sem marcas de materiais e com nome e CRO na imagem.',
+      medicina: 'Antes e depois: só educativo, em conjunto com resultados satisfatórios, insatisfatórios e complicações, com texto educativo, sem editar a imagem nem identificar o paciente.',
+      odontologia: 'Antes e depois (Res. CFO 196/2019): só pelo dentista que executou, tratamento concluído, com nome e CRO na imagem e autorização por escrito; proibido no perfil da clínica (pessoa jurídica) e em "antes, durante e depois".',
       psicologia: 'Psicologia não usa antes e depois: nada que identifique ou exponha pacientes.',
-      fisioterapia: 'Antes e depois que identifique o paciente é vedado (exceto uso acadêmico autorizado).' } },
+      fisioterapia: 'Antes e depois ou imagem que identifique o paciente: só com TCLE prévio (Res. COFFITO 532/2021); divulgação irregular é infração de manifesta gravidade.' } },
     { re: /\b(depoimentos?|testemunhos?|paciente (disse|falou|contou)|meus pacientes dizem)\b/, by: {
       psicologia: 'Depoimentos de pacientes são desaconselhados mesmo com consentimento.',
-      fisioterapia: 'Depoimentos e agradecimentos de pacientes não podem ser usados para autopromoção.',
+      fisioterapia: 'Depoimentos e agradecimentos de pacientes não podem ser usados para autopromoção; texto ou áudio de paciente só com TCLE prévio.',
       medicina: 'Depoimentos: sem tom sensacionalista ou de promessa; repostar paciente conta como publicidade médica.',
       odontologia: 'Depoimentos: só com autorização, sem promessa de resultado nem sensacionalismo. Confirme com o CRO.' } },
-    { re: /\b(me mande (uma )?foto|diagnostico (pelo|por) (direct|whatsapp)|consulta pelo direct)\b/, msg: 'Diagnóstico ou orientação individual por mensagem: convide para avaliação.' },
-    { re: /\b(durante o procedimento|cirurgia ao vivo|procedimento em andamento)\b/, by: { odontologia: 'Procedimento em andamento: só em publicação científica.' }, msg: 'Procedimento sendo realizado: confira a regra do seu conselho e a autorização do paciente.' }
+    { re: /\b(me mande (uma )?foto|diagnostico (pelo|por) (direct|whatsapp|comentario)|consulta pelo direct|conte (seu|sua) (historico|caso) nos comentarios)\b/, msg: 'Diagnóstico por foto, comentário ou mensagem, ou pedido de histórico nos comentários: encaminhe para o atendimento.' },
+    { re: /\b(segredo que|medicos (nao contam|escondem)|dentistas (nao contam|escondem)|cura em|em segundos|nunca mais (sinta|tenha))/, msg: 'Promessa sensacionalista ("segredo que escondem", "cura em segundos", "nunca mais").' },
+    { re: /\b(vergonha d[eo]|feio|feia|horrivel|ultima chance|so hoje|vagas limitadas|corra)\b/, msg: 'Apelo a vergonha, medo ou escassez: não entra em conteúdo de saúde.' },
+    { re: /\b\d{1,3} ?% (dos|das|de) /, msg: 'Percentual: só com fonte citada.' },
+    { re: /\bcomente (agenda|eu quero|quero|sim)\b/, msg: '"Comente AGENDA": comum em guias, mas confira se o fluxo respeita as regras do seu conselho e não expõe quem comenta.' },
+    { re: /\b(durante o procedimento|cirurgia ao vivo|procedimento em andamento|ao vivo da consulta|antes, durante e depois)\b/, by: { odontologia: 'Procedimento em andamento e "antes, durante e depois": só em publicação científica.', medicina: 'Transmitir consultas ou procedimentos em tempo real é vedado (Res. CFM 2.336/2023).' }, msg: 'Procedimento sendo realizado: confira a regra do seu conselho e a autorização do paciente.' }
   ];
   const IMG_RISK = {
     'antes e depois': ' antes e depois ',
@@ -3088,6 +3220,7 @@ Entregue:
         if (msgs.length) msgs.forEach((m) => out.push(m)); else if (r.msg) out.push(r.msg);
       } else out.push(r.msg);
     });
+    if (/\bantes e depois\b/.test(t) && ks.includes('odontologia') && cfg.conta === 'clinica') out.push('Sua conta principal é da clínica (pessoa jurídica): antes e depois é proibido nela pela Res. CFO 196/2019.');
     return [...new Set(out)];
   }
   function riskWarn(form, msg) {
@@ -3237,6 +3370,7 @@ Entregue:
     updatePlanUI();
     prefillFields(false);
     renderCouncil();
+    renderBench();
     renderObjHint();
     renderOrigemOptions();
     notifyData();
@@ -3476,6 +3610,7 @@ Atualizado em ${fmtDate(todayISO())}.
 
 ## Perfil do consultório
 - Profissional: ${profLabel()}
+- Tipo de conta: ${CONTA[cfg.conta] || CONTA.profissional}
 - Nome: ${cfg.nome || '(não informado)'} · Registro: ${cfg.registro || '(não informado)'}
 - Especialidade ou área: ${cfg.especialidade || '(não informada)'}
 - Cidade e bairro: ${cfg.cidade || '(não informado)'}
@@ -3493,6 +3628,11 @@ Atualizado em ${fmtDate(todayISO())}.
 ${councilObjs().map((c) => `### ${c.conselho}\n${c.norma}\n- Identificação: ${c.ident}\n- Pode: ${c.pode.join(' ')}\n- Não pode: ${c.nao.join(' ')}\n- ${c.extra}`).join('\n\n') || '(tipo de profissional não definido)'}
 ${isMental() ? '\n- ' + SAUDE_MENTAL : ''}
 ${REGRAS_GERAIS.map((g) => '- ' + g).join('\n')}
+
+## Método
+${METODO.bases.map(([n, a, d]) => `- ${n} (${a}): ${d}`).join('\n')}
+- Fluxo de cada peça: ${METODO.fluxo.join(' → ')}
+- ${METODO.aviso}
 
 ## Decisões guardadas
 ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtDate(res[id].d)})\n${res[id].t}`).join('\n\n') || '(nenhuma ainda)'}
@@ -3760,10 +3900,11 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     if (!validate(form)) return;
     const v = (id) => document.getElementById(id).value.trim();
     const n = (id) => Math.max(0, Math.round(Number(v(id)) || 0));
-    conteudos.unshift({ id: uid(), data: v('ct-data'), canal: v('ct-canal'), formato: v('ct-formato'), balde: v('ct-balde'), gancho: v('ct-gancho'), kw: v('ct-kw'), alcance: n('ct-alcance'), envios: n('ct-envios'), salv: n('ct-salv'), msgs: n('ct-msgs') });
+    conteudos.unshift({ id: uid(), data: v('ct-data'), canal: v('ct-canal'), formato: v('ct-formato'), balde: v('ct-balde'), gancho: v('ct-gancho'), kw: v('ct-kw'), quadro: v('ct-quadro'), variavel: v('ct-var'), ret: v('ct-ret') === '' ? '' : Math.min(100, n('ct-ret')), boost: document.getElementById('ct-boost').checked, alcance: n('ct-alcance'), envios: n('ct-envios'), salv: n('ct-salv'), msgs: n('ct-msgs') });
     conteudos = conteudos.slice(0, 2000);
     saveCont();
-    ['ct-gancho', 'ct-kw', 'ct-alcance', 'ct-envios', 'ct-salv', 'ct-msgs'].forEach((id) => { document.getElementById(id).value = ''; });
+    ['ct-gancho', 'ct-kw', 'ct-quadro', 'ct-ret', 'ct-alcance', 'ct-envios', 'ct-salv', 'ct-msgs'].forEach((id) => { document.getElementById(id).value = ''; });
+    document.getElementById('ct-var').value = ''; document.getElementById('ct-boost').checked = false;
     const msg = formMsg(form); msg.className = 'form-msg ok'; msg.textContent = '✓ Conteúdo registrado.';
     renderConteudos();
   });
@@ -3771,11 +3912,11 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     const t = document.getElementById('ct-table');
     if (!conteudos.length) { t.innerHTML = '<tr><td class="track-empty" style="text-align:center">Nenhum conteúdo registrado ainda.</td></tr>'; return; }
     const sorted = conteudos.slice().sort((a, b) => b.data.localeCompare(a.data)).slice(0, 15);
-    t.innerHTML = '<tr><th>Data</th><th>Canal e formato</th><th>Gancho</th><th>Alcance</th><th>Envios</th><th>Salv.</th><th>Msgs</th><th></th></tr>' +
-      sorted.map((c) => `<tr data-id="${escapeHtml(c.id)}"><td>${fmtShort(c.data)}</td><td>${escapeHtml(c.canal)} · ${escapeHtml(c.formato)}${c.balde ? '<br><small>' + escapeHtml(c.balde) + '</small>' : ''}</td><td style="text-align:left">${escapeHtml(c.gancho)}</td>${['alcance', 'envios', 'salv', 'msgs'].map((k) => `<td><input type="number" min="0" data-k="${k}" value="${c[k] || 0}" aria-label="${k}"></td>`).join('')}<td><button type="button" class="icon-btn" data-del="1" aria-label="Excluir conteúdo">×</button></td></tr>`).join('');
+    t.innerHTML = '<tr><th>Data</th><th>Canal e formato</th><th>Gancho</th><th>Retenção %</th><th>Alcance</th><th>Envios</th><th>Salv.</th><th>Msgs</th><th></th></tr>' +
+      sorted.map((c) => `<tr data-id="${escapeHtml(c.id)}"><td>${fmtShort(c.data)}${c.boost ? '<br><small>impulsionado</small>' : ''}</td><td>${escapeHtml(c.canal)} · ${escapeHtml(c.formato)}${c.balde ? '<br><small>' + escapeHtml(c.balde) + '</small>' : ''}</td><td style="text-align:left">${escapeHtml(c.gancho)}${c.quadro || c.variavel ? `<br><small>${[c.quadro, c.variavel ? 'testando: ' + c.variavel : ''].filter(Boolean).map(escapeHtml).join(' · ')}</small>` : ''}</td>${['ret', 'alcance', 'envios', 'salv', 'msgs'].map((k) => `<td><input type="number" min="0" data-k="${k}" value="${c[k] === '' || c[k] == null ? '' : c[k]}" aria-label="${k}"></td>`).join('')}<td><button type="button" class="icon-btn" data-del="1" aria-label="Excluir conteúdo">×</button></td></tr>`).join('');
     t.querySelectorAll('tr[data-id]').forEach((tr) => {
       const c = conteudos.find((x) => x.id === tr.dataset.id);
-      tr.querySelectorAll('input[data-k]').forEach((inp) => inp.addEventListener('change', () => { c[inp.dataset.k] = Math.max(0, Math.round(Number(inp.value) || 0)); saveCont(); }));
+      tr.querySelectorAll('input[data-k]').forEach((inp) => inp.addEventListener('change', () => { const k = inp.dataset.k; c[k] = k === 'ret' && inp.value === '' ? '' : Math.max(0, Math.min(k === 'ret' ? 100 : 1e9, Math.round(Number(inp.value) || 0))); saveCont(); }));
       tr.querySelector('[data-del]').addEventListener('click', () => { conteudos = conteudos.filter((x) => x.id !== c.id); saveCont(); renderConteudos(); });
     });
   }
@@ -3812,9 +3953,11 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
   }
   function metricasTxt() {
     const ws = lastWeeks(8).reverse();
+    const pecas = conteudos.slice().sort((a, b) => b.data.localeCompare(a.data)).slice(0, 15);
     return 'Semana | ' + METRIC_COLS.map((c) => c[1]).join(' | ') + '\n' +
       ws.map((w) => `${fmtShort(w.seg)} a ${fmtShort(addDays(w.seg, 6))} | ` + METRIC_COLS.map((c) => w[c[0]]).join(' | ')).join('\n') +
-      `\n\nGargalo calculado pelo app: ${gargalo().txt}`;
+      `\n\nGargalo calculado pelo app: ${gargalo().txt}` +
+      (pecas.length ? '\n\nÚltimas peças (data | canal e formato | balde | quadro | variável testada | impulsionado | retenção % | alcance | envios | salvamentos | mensagens | gancho):\n' + pecas.map((c) => [fmtShort(c.data), c.canal + ' ' + c.formato, c.balde || '-', c.quadro || '-', c.variavel || '-', c.boost ? 'sim' : 'não', c.ret === '' || c.ret == null ? '-' : c.ret, c.alcance, c.envios, c.salv, c.msgs, c.gancho].join(' | ')).join('\n') : '');
   }
   function renderPainel() {
     const ws = lastWeeks(8);
@@ -3864,6 +4007,15 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     document.getElementById('as-pend').value = L.join('\n');
     document.getElementById('as-status').textContent = 'Importado. Os pacientes aparecem como Contato 1, 2… sem nome nem telefone.';
   });
+
+  // ===================== Referências de criadores =====================
+  function renderBench() {
+    const ks = councilKeys();
+    let rows = BENCH.filter((b) => !ks.length || ks.some((k) => b[1].includes(k)));
+    const nota = rows.length ? '' : '<p class="plan-note">Ainda não há referências da sua área nesta amostra. Veja as de outras áreas: o que se adapta é a estrutura.</p>';
+    if (!rows.length) rows = BENCH;
+    document.getElementById('bench-box').innerHTML = `<p class="plan-note">Amostra editorial de 11 perfis (12/10/2026), <b>não é ranking de engajamento</b>. Use as estruturas, não os conselhos clínicos, e não atribua resultado a elas. ${escapeHtml(BENCH_PADROES)}</p>${nota}<div class="num-wrap"><table class="num-table bench-table"><tr><th>Criador</th><th>Área</th><th>Instagram</th><th>O que dá para adaptar</th></tr>${rows.map((b) => `<tr><td>${escapeHtml(b[0])}</td><td>${escapeHtml(b[2])}</td><td>${escapeHtml(b[3])}</td><td>${escapeHtml(b[4])}</td></tr>`).join('')}</table></div>`;
+  }
 
   // ===================== Ferramentas (tabela) =====================
   document.getElementById('kit-table').innerHTML = '<tr><th>Necessidade</th><th>Ferramentas</th><th>Observação</th></tr>' + KIT.map((k) => `<tr><td>${escapeHtml(k[0])}</td><td>${escapeHtml(k[1])}</td><td>${escapeHtml(k[2])}</td></tr>`).join('');
@@ -4048,7 +4200,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     const sec = (titulo, corpoMd) => secoes.push([titulo, corpoMd]);
     sec('Quem sou', [
       `- **Profissional:** ${profLabel()}`, `- **Nome:** ${cfg.nome || '[CONFIRMAR]'}`, `- **Registro:** ${cfg.registro || '[CONFIRMAR]'}`,
-      `- **Especialidade ou área:** ${cfg.especialidade || '[CONFIRMAR]'}`, `- **Onde atendo:** ${cfg.cidade || '[CONFIRMAR]'} · ${(cfg.atendimento || []).join(', ')} · ${cfg.pagamento}`,
+      `- **Especialidade ou área:** ${cfg.especialidade || '[CONFIRMAR]'}`, `- **Tipo de conta:** ${CONTA[cfg.conta] || CONTA.profissional}`, `- **Onde atendo:** ${cfg.cidade || '[CONFIRMAR]'} · ${(cfg.atendimento || []).join(', ')} · ${cfg.pagamento}`,
       `- **Serviços a divulgar:** ${cfg.servicos || '[CONFIRMAR]'}`, `- **Canais atuais:** ${(cfg.canais || []).join(', ') || '—'} ${cfg.arroba || ''}`,
       `- **Formação e diferenciais:** ${cfg.sobre || '[CONFIRMAR]'}`].join('\n'));
     sec('Objetivo dos próximos 90 dias', `**${objInfo().label}.** ${cfg.metaFrase || ''}\n\n${objInfo().guia}`);
@@ -4059,6 +4211,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     sec('Conteúdo: baldes, pautas e frequência', `${cfg.baldes ? `**Baldes:** ${cfg.baldes}\n\n` : ''}**Meta:** ${metaSemana()} conteúdos por semana (${(TEMPO[cfg.tempo] || TEMPO['2a3']).label} disponíveis da minha parte; ${CAMERA[cfg.camera]}).\n\n${bloco('pautas', 'Recomendação: gerar palavras-chave, 30 pautas e calendário com a ferramenta 05.')}`);
     if (['atendimento', 'agencia', 'trafego'].includes(get('para'))) sec('Atendimento', bloco('atendimento', 'Recomendação: aprovar respostas rápidas e roteiros com a ferramenta 10.'));
     sec('Escopo e entregas', `${get('entregas')}\n\n- **Orçamento:** ${get('orcamento') || '[CONFIRMAR]'}\n- **Início e período de teste:** ${get('prazo') || '[CONFIRMAR]'}\n- **Aprovação:** ${get('aprovacao') || 'Nada é publicado sem a minha aprovação.'}\n- **Acessos:** ${get('acessos') || '[CONFIRMAR]'} (prefira acesso de parceiro em vez de senha pessoal)\n- **O que não pode:** ${get('restricoes') || '—'}`);
+    sec('Fluxo de produção e aprovação', `${METODO.fluxo.map((x, i) => `${i + 1}. ${x}`).join('\n')}\n\n- A revisão editorial (a peça é específica, compreensível e entrega a promessa) vem antes da revisão clínica e ética, que é sempre minha ou do responsável técnico.\n- Cada pauta chega com: dúvida do paciente, público, estágio de decisão, formato, fonte clínica, imagem de apoio e autorização, responsável pela revisão e CTA.\n- Afirmação clínica sem fonte fica marcada como pendente de validação. Nada vai ao ar com pendência que impeça a publicação.\n- Toda peça longa sai com versão curta autossuficiente, com as ressalvas.\n- Impulsionamento só de peça educativa já revisada, com valor aprovado por mim e público com pertinência geográfica.`);
     sec('Regras inegociáveis', `${cs.map((c) => `**${c.conselho}** — ${c.norma}\n- Identificação obrigatória: ${c.ident}\n${c.nao.map((x) => '- Não: ' + x).join('\n')}\n- Observação: ${c.extra}`).join('\n\n') || 'Tipo de profissional não definido: [CONFIRMAR as regras do conselho].'}\n\n${REGRAS_GERAIS.map((g) => '- ' + g).join('\n')}${isMental() ? '\n- ' + SAUDE_MENTAL : ''}${cfg.profissional === 'multi' ? '\n- Peças institucionais da clínica seguem a regra mais restritiva entre os conselhos envolvidos.' : ''}\n- Toda peça passa pelo Verificador ético e pela minha aprovação antes de ir ao ar.\n- Dados de pacientes (nomes, fotos, conversas, prontuário) nunca são usados sem autorização por escrito e nunca saem dos canais oficiais da clínica (LGPD). O fornecedor assina termo de confidencialidade.`);
     sec('Como vamos medir', `${role.metricas.map((m) => '- ' + m).join('\n')}\n- E, acima de tudo: contatos, agendados, comparecimentos e tratamentos iniciados por origem, que eu acompanho no meu rastreador.\n\nRelatório mensal com esses números e as 3 decisões para o mês seguinte. Seguidores e curtidas, sozinhos, não são métrica de sucesso.`);
     sec('Perguntas para avaliar o fornecedor', ['Que trabalhos fizeram para profissionais de saúde (com autorização para mostrar)?', `Como conhecem e aplicam as regras do ${conselhosTxt()}? Quem revisa?`, 'Qual é o processo de aprovação e o prazo de cada etapa?', 'Quem é o responsável pela minha conta e como é o contato no dia a dia?', 'O que vem no relatório mensal e quais métricas consideram sucesso?', 'Qual o prazo mínimo de contrato e como é o encerramento?', 'De quem são as contas, os arquivos e os criativos ao final do contrato?', 'Como tratam dados de pacientes e o que diz o contrato sobre LGPD?'].map((q, i) => `${i + 1}. ${q}`).join('\n'));
@@ -4184,7 +4337,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     const acoes = computeActions();
     const metaN = metaSemana();
     const ciclos = [1, 2, 3].map((k) => addDays(hoje, CICLO * k));
-    const capitulos = ['Como usar este playbook', 'Perfil do consultório', 'Posicionamento', 'Presença e conteúdo', 'Captação: campanhas e colegas', 'Conversão: atendimento e rastreador', 'Painel e gargalo', 'Regras do seu conselho', 'Plano de ação', 'Plano de 90 dias', 'Rotina semanal e quinzenal'];
+    const capitulos = ['Como usar este playbook', 'O método', 'Perfil do consultório', 'Posicionamento', 'Presença e conteúdo', 'Captação: campanhas e colegas', 'Conversão: atendimento e rastreador', 'Painel e gargalo', 'Regras do seu conselho', 'Plano de ação', 'Plano de 90 dias', 'Rotina semanal e quinzenal'];
     const titulo = cfg.metaFrase ? cfg.metaFrase : 'Do primeiro contato ao tratamento';
     let n = 0;
     const cap = (t, body) => { n++; return `<section class="chapter"><div class="chap-n">Capítulo ${n}</div><h2>${E(t)}</h2>${body}</section>`; };
@@ -4207,9 +4360,10 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
 <div class="content">
   <section class="chapter toc"><div class="chap-n">Sumário</div><h2>Neste playbook</h2><ol>${capitulos.map((c) => `<li>${E(c)}</li>`).join('')}</ol></section>
   ${cap('Como usar este playbook', `<p>Atrair pacientes é um funil: muita gente vê o conteúdo, algumas conversam, menos agendam, comparecem e iniciam o tratamento. O CliniLoop transforma isso num ritual: <b>toda semana</b>, Assistente da semana e Painel; <b>a cada 2 semanas</b>, este playbook. ${E(objInfo().porque)}</p><div class="box"><b>Como ler os selos:</b> <span class="pill ok">Feito</span> mostra quando você usou a ferramenta e até quando revisar; <span class="pill pend">Pendente</span> traz uma recomendação para concluir; <span class="pill late">Revisão atrasada</span> indica que se passaram mais de 2 semanas.</div><p>Este documento não contém nomes nem dados de pacientes: os números do funil são contagens.</p>`)}
+  ${cap('O método', `<p>O CliniLoop organiza o trabalho com três bases:</p>${METODO.bases.map(([n, a, d]) => `<h3>${E(n)} <span style="font-weight:400;font-size:.85rem">(${E(a)})</span></h3><p>${E(d)}</p>`).join('')}<h3>Fluxo de cada peça</h3><p>${METODO.fluxo.map(E).join(' → ')}</p><h3>Princípios que valem sempre</h3><ul><li>Viralizar não se garante: em saúde, o objetivo é clareza, confiança e o próximo passo adequado.</li><li>Estratégia antes de produção: transformação, público e baldes antes de roteiros em série.</li><li>Uma promessa verdadeira e uma pergunta por peça; resposta cedo; limite da orientação; um único pedido.</li><li>Procedência: princípio de método, adaptação, observação, informação clínica validada e hipótese são coisas diferentes. Afirmação clínica sem fonte fica pendente de validação.</li><li>Revisão em duas etapas: editorial, depois clínica e ética. A IA aponta problemas, mas não assume responsabilidade profissional.</li><li>Teste uma variável por vez (pergunta, abertura, demonstração ou convite) e compare peças com exposição parecida.</li></ul><h3>Metas S.M.A.R.T. sugeridas para 8 semanas</h3><ul><li>Publicar ${metaN} conteúdos por semana, por 8 semanas, a partir do banco de dúvidas.</li><li>Registrar 100% dos novos contatos no rastreador, com próximo passo e data.</li><li>Responder todo contato novo no mesmo dia.</li><li>Mapear 10 colegas e enviar a carta de apresentação a 5 até o fim do segundo mês.</li></ul><p><i>${E(METODO.aviso)}</i></p>`)}
   ${cap('Perfil do consultório', `<table><tr><th>Item</th><th>Situação</th><th>O que fazer</th></tr>${cfgRows.map(([a, b, c]) => `<tr><td>${E(a)}</td><td>${E(b)}</td><td>${c ? E(c) : '<span class="pill ok">Ok</span>'}</td></tr>`).join('')}</table>`)}
   ${cap('Posicionamento', ['publico', 'profissional', 'nicho'].map(toolCard).join(''))}
-  ${cap('Presença e conteúdo', ['perfil', 'pautas', 'roteiro', 'formacao'].map(toolCard).join('') + `<h3>Estrutura de vídeo que funciona</h3><ol><li>Gancho de até 3 segundos, com texto na tela.</li><li>Contexto em uma frase.</li><li>De 3 a 5 pontos, um por bloco.</li><li>Um único pedido no final (salvar, enviar, chamar no WhatsApp).</li><li>Encerramento que conecta ao início.</li></ol><h3>Antes de publicar</h3><ul class="checklist"><li>Gancho claro nos 3 primeiros segundos</li><li>Legenda na tela e palavra-chave na legenda</li><li>Uma única chamada para ação</li><li>Identificação profissional (bio ou na própria imagem)</li><li>Passou pelo Verificador ético</li><li>Registrado no Diário de conteúdo</li></ul><p><b>Meta:</b> ${metaN} conteúdos por semana (${E((TEMPO[cfg.tempo] || TEMPO['2a3']).label)}).</p>`)}
+  ${cap('Presença e conteúdo', ['perfil', 'pautas', 'roteiro', 'formacao'].map(toolCard).join('') + `<h3>Estrutura de vídeo que funciona</h3><ol><li>Gancho de até 3 segundos, com texto na tela.</li><li>Contexto em uma frase.</li><li>De 3 a 5 pontos, um por bloco.</li><li>Um único pedido no final (salvar, enviar, chamar no WhatsApp).</li><li>Encerramento que conecta ao início.</li></ol><h3>Antes de publicar</h3><ul class="checklist"><li>Gancho claro nos 3 primeiros segundos, e a promessa é entregue</li><li>Legenda na tela e palavra-chave na legenda; de 0 a 5 hashtags</li><li>Uma única chamada para ação, para o canal oficial</li><li>Fonte para cada afirmação clínica</li><li>Imagem autorizada e permitida para a profissão e o tipo de conta</li><li>Identificação profissional correta</li><li>Ressalvas preservadas na versão curta</li><li>Revisão editorial e revisão clínica e ética feitas</li><li>Plano para a primeira hora</li><li>Registrado no Diário de conteúdo, com a variável testada</li></ul><p><b>Meta:</b> ${metaN} conteúdos por semana (${E((TEMPO[cfg.tempo] || TEMPO['2a3']).label)}).</p>`)}
   ${cap('Captação: campanhas e colegas', ['campanha', 'colegas'].map(toolCard).join('') + (campanhas.length ? `<h3>Campanhas registradas</h3><div class="tbl"><table class="num"><tr><th>Campanha</th><th>Plataforma</th><th>Contatos</th><th>Agendados</th><th>Compareceram</th><th>Iniciaram</th></tr>${campanhas.map((c) => { const s = campStats(c); return `<tr><td>${E(c.nome)}</td><td>${E(c.plat)}</td><td>${s.contatos}</td><td>${s.agendados}</td><td>${s.avaliados}</td><td>${s.iniciados}</td></tr>`; }).join('')}</table></div>` : '') + (colegas.length ? `<h3>Rede de colegas</h3><div class="tbl"><table class="num"><tr>${ETAPAS_COLEGA.map((e) => `<th>${E(e)}</th>`).join('')}</tr><tr>${ETAPAS_COLEGA.map((e) => `<td>${colegas.filter((c) => c.etapa === e).length}</td>`).join('')}</tr></table></div><p>Contrarreferências pendentes: ${colegas.filter((c) => !c.contra && recebidas(c)).length}. Indicações recebidas no total: ${pacientes.filter((p) => p.colega).length}.</p>` : ''))}
   ${cap('Conversão: atendimento e rastreador', ['atendimento', 'rastreador'].map(toolCard).join('') + `<h3>Funil de pacientes hoje</h3><div class="tbl"><table class="num"><tr>${ativos.map(([e]) => `<th>${E(e)}</th>`).join('')}</tr><tr>${ativos.map(([, v]) => `<td>${v}</td>`).join('')}</tr></table></div><p>Próximos passos vencidos: <b>${pacientes.filter(isLate).length}</b>. Contatos que consentiram receber lembretes: ${consent.lemb}; conteúdos e novidades: ${consent.cont}.</p>`)}
   ${cap('Painel e gargalo', `${['assistente', 'painel'].map(toolCard).join('')}<div class="box"><b>Gargalo da semana:</b> ${E(g.txt)}</div><div class="tbl"><table class="num"><tr><th>Semana</th>${METRIC_COLS.map((c) => `<th>${E(c[1])}</th>`).join('')}</tr>${ws.map((w) => `<tr><td>${fmtShort(w.seg)}</td>${METRIC_COLS.map((c) => `<td>${w[c[0]]}</td>`).join('')}</tr>`).join('')}</table></div>`)}
@@ -4218,8 +4372,8 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
   ${cap('Plano de 90 dias', `<table><tr><th>Semanas</th><th>Foco</th><th>Entregas</th></tr>
     <tr><td>1 e 2</td><td>Fundamentos</td><td>Público, ICP e persona; marca e tom de voz; nicho e diferencial; perfis e Google revisados; respostas rápidas e rastreador em uso desde o primeiro contato.</td></tr>
     <tr><td>3 a 6</td><td>Constância</td><td>${metaN} conteúdos por semana a partir do banco de dúvidas; gravação em lote uma vez por semana; ritual de segunda (Assistente) e de sexta (Diário e Painel); toda peça pelo Verificador ético; primeiros 5 colegas mapeados.</td></tr>
-    <tr><td>7 a 10</td><td>Ajuste</td><td>Comparar baldes e formatos por envios, salvamentos e mensagens; testar dois ganchos por tema; atacar o gargalo do funil; primeira campanha medida (orgânica ou paga).</td></tr>
-    <tr><td>11 a 13</td><td>Escala</td><td>Repetir o que funcionou; collab ou palestra local; ampliar a rede de colegas; considerar delegar com o Briefing; novo playbook e metas do próximo trimestre.</td></tr></table>`)}
+    <tr><td>7 a 10</td><td>Ajuste</td><td>Comparar baldes, quadros e formatos por retenção, envios, salvamentos e mensagens; testar uma variável por vez (com Trial Reels, se a conta tiver 1.000 seguidores ou mais); atacar o gargalo do funil; primeira campanha medida (orgânica ou paga).</td></tr>
+    <tr><td>11 a 13</td><td>Escala</td><td>Repetir o que funcionou; collab com público sobreposto ou palestra local; impulsionar só peças educativas já revisadas; ampliar a rede de colegas; considerar delegar com o Briefing; novo playbook e metas S.M.A.R.T. do próximo trimestre.</td></tr></table>`)}
   ${cap('Rotina semanal e quinzenal', `<h3>Toda semana</h3><ul class="checklist"><li>Segunda: Assistente da semana (importar pendências e montar a agenda)</li><li>Todo dia: responder rápido e atualizar etapas e próximos passos no Rastreador</li><li>Sexta: Diário de conteúdo com os números e Painel com o gargalo</li></ul><h3>A cada 2 semanas</h3><p>Próximas datas: <b>${ciclos.map(fmtDate).join(' · ')}</b>.</p><ul class="checklist"><li>Atualizar o perfil do consultório e o banco de dúvidas</li><li>Gerar as próximas pautas e o calendário</li><li>Revisar campanhas por agendados e tratamentos iniciados</li><li>Devolver contrarreferências e agradecer indicações</li><li>Retomar pacientes pausados que consentiram receber lembretes</li><li>Conferir se as regras do conselho mudaram</li><li>Fazer backup e gerar um novo playbook</li></ul>`)}
 </div>
 <div class="foot">Montado pelo CliniLoop em ${E(fmtDate(hoje))}, no seu navegador, a partir dos dados salvos nele. Revise sempre as recomendações antes de aplicá-las.</div>`);
@@ -4272,7 +4426,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     })),
     [COL_KEY]: (a) => a.slice(0, 1000).map((c) => ({ id: S(c.id, 40).replace(/[^a-z0-9]/gi, '') || uid(), nome: S(c.nome, 120), prof: S(c.prof, 120), reg: S(c.reg, 60), canal: S(c.canal, 80), end: S(c.end, 200), etapa: ETAPAS_COLEGA.includes(c.etapa) ? c.etapa : 'Mapeado', prox: D(c.prox), enviadas: N(c.enviadas), contra: D(c.contra), criado: D(c.criado) })),
     [CAMP_KEY]: (a) => a.slice(0, 500).map((c) => ({ id: S(c.id, 40).replace(/[^a-z0-9]/gi, '') || uid(), nome: S(c.nome, 80), plat: S(c.plat, 40), ini: D(c.ini), fim: D(c.fim), obj: S(c.obj, 200), inv: S(String(c.inv || ''), 20), criativos: S(c.criativos, 200) })),
-    [CONT_KEY]: (a) => a.slice(0, 2000).map((c) => ({ id: S(c.id, 40).replace(/[^a-z0-9]/gi, '') || uid(), data: D(c.data) || todayISO(), canal: S(c.canal, 40), formato: S(c.formato, 40), balde: S(c.balde, 80), gancho: S(c.gancho, 200), kw: S(c.kw, 120), alcance: N(c.alcance), envios: N(c.envios), salv: N(c.salv), msgs: N(c.msgs) }))
+    [CONT_KEY]: (a) => a.slice(0, 2000).map((c) => ({ id: S(c.id, 40).replace(/[^a-z0-9]/gi, '') || uid(), data: D(c.data) || todayISO(), canal: S(c.canal, 40), formato: S(c.formato, 40), balde: S(c.balde, 80), gancho: S(c.gancho, 200), kw: S(c.kw, 120), quadro: S(c.quadro, 80), variavel: S(c.variavel, 40), ret: c.ret === '' || c.ret == null ? '' : Math.min(100, N(c.ret)), boost: c.boost === true, alcance: N(c.alcance), envios: N(c.envios), salv: N(c.salv), msgs: N(c.msgs) }))
   };
   document.getElementById('bk-file').addEventListener('change', (e) => {
     const input = e.target;
@@ -4339,6 +4493,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     updatePlanUI();
     prefillFields(false);
     renderCouncil();
+    renderBench();
     renderObjHint();
     renderOrigemOptions();
     renderTracker();

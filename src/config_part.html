@@ -141,9 +141,18 @@
                 </select>
               </div>
               <div class="field">
-                <label for="cfg-equipe">Profissionais da equipe (opcional)</label>
-                <input type="text" id="cfg-equipe" name="equipe" placeholder="Ex: Dra. Ana, Dr. Paulo, recepção">
+                <label for="cfg-conta">Tipo de conta principal</label>
+                <select id="cfg-conta" name="conta">
+                  <option value="profissional">Perfil do profissional</option>
+                  <option value="clinica">Perfil da clínica (pessoa jurídica)</option>
+                  <option value="ambos">Os dois</option>
+                </select>
               </div>
+            </div>
+            <p class="field-note">O tipo de conta muda regras: na odontologia, por exemplo, antes e depois é proibido no perfil da clínica.</p>
+            <div class="field">
+              <label for="cfg-equipe">Profissionais da equipe (opcional)</label>
+              <input type="text" id="cfg-equipe" name="equipe" placeholder="Ex: Dra. Ana, Dr. Paulo, recepção">
             </div>
           </section>
 

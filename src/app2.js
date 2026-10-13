@@ -11,7 +11,7 @@
     const t = (k) => (fd.get(k) || '').toString().trim();
     return {
       objetivo: t('objetivo') || 'agenda', metaFrase: t('metaFrase'), profissional: t('profissional'), multiProf: fd.getAll('multiProf'),
-      nome: t('nome'), registro: t('registro'), especialidade: t('especialidade'), cidade: t('cidade'),
+      nome: t('nome'), registro: t('registro'), conta: t('conta') || 'profissional', especialidade: t('especialidade'), cidade: t('cidade'),
       atendimento: fd.getAll('atendimento'), pagamento: t('pagamento') || 'particular', equipe: t('equipe'),
       servicos: t('servicos'), publico: t('publico'), transformacao: t('transformacao'), baldes: t('baldes'), arroba: t('arroba'),
       canais: fd.getAll('canais'), tempo: t('tempo') || '2a3', produtor: t('produtor') || 'eu', camera: t('camera') || 'medio',
@@ -79,6 +79,7 @@
     L.push(`- Profissional: ${profLabel()}`);
     if (cfg.nome) L.push(`- Nome nas redes: ${cfg.nome}`);
     L.push(`- Registro no conselho: ${cfg.registro || '[CONFIRMAR: número de registro]'}`);
+    L.push(`- Tipo de conta: ${CONTA[cfg.conta] || CONTA.profissional}`);
     if (cfg.especialidade) L.push(`- Especialidade ou área: ${cfg.especialidade}`);
     if (cfg.cidade) L.push(`- Cidade e bairro: ${cfg.cidade}`);
     L.push(`- Atendimento: ${(cfg.atendimento || []).join(', ') || 'presencial'} · pagamento: ${cfg.pagamento}`);
@@ -103,6 +104,10 @@
     if (cfg.profissional === 'multi') R.push('- Peças institucionais da clínica seguem a regra mais restritiva entre os conselhos acima; cada profissional se identifica com o próprio registro.');
     if (isMental()) R.push('- ' + SAUDE_MENTAL);
     REGRAS_GERAIS.forEach((g) => R.push('- ' + g));
+    R.push('- Não prometa alcance, seguidores ou viralização. Em saúde, o objetivo é clareza, confiança e o próximo passo adequado.');
+    R.push('- Procedência: distinga princípio de método, adaptação, observação de outros criadores, informação clínica validada e hipótese de desempenho. Afirmação clínica sem fonte fica marcada como [PENDENTE DE VALIDAÇÃO], nunca como fato.');
+    R.push('- Sem medo, escassez, vergonha ou insegurança corporal para vender; humor nunca ridiculariza quem sente dor. Imagem gerada nunca aparece como paciente real nem como evidência clínica; personagem encenado é identificado como representação; não invente depoimentos nem histórias de pacientes.');
+    R.push('- Sem diagnóstico por comentário, foto ou vídeo; sem prescrição individual em conteúdo genérico; nunca peça histórico de saúde nos comentários (encaminhe para o atendimento).');
     R.push('- Se alguma ideia puder ferir essas regras, não a sugira, ou marque com [VERIFICAR NO CONSELHO] e explique por quê.');
     R.push('- Nunca use, peça ou invente dados que identifiquem pacientes. Não invente números, títulos ou casos: marque [CONFIRMAR] ou [ESTIMATIVA].');
 
@@ -170,7 +175,9 @@ Entregue:
 5. Três bandeiras que defendo e três mitos que combato, com base em evidência.
 6. Como aparecer de forma confortável para o meu nível de conforto com a câmera, incluindo formatos sem rosto se for o caso.
 7. Limites éticos e pessoais da marca (o que nunca publicar).
-8. Direção visual: cor principal pelo significado, tipografia e estilo de foto.
+8. Identidade de marca em 1 página: voz, paleta (cor principal pelo significado), tipografia, ambiente, padrões visuais e até 3 bordões, coerentes com o registro profissional. Mostrar cuidado e organização é diferente de sugerir que o ambiente garante resultado.
+9. Confiança na câmera: um plano de 2 semanas de ensaios curtos sem obrigação de publicar, revisando um aspecto por vez (clareza, velocidade, apoio visual), e como pedir feedback. Não é tratamento para ansiedade.
+10. Gravação no celular: ponto silencioso, luz suficiente, fundo sem dados de pacientes, teste de voz, conferir o recorte na tela e revisar termos clínicos nas legendas automáticas. Sem filtros que alterem a aparência de resultado clínico.
 
 Autoridade em saúde vem de clareza, constância e responsabilidade, não de autopromoção.`,
 
@@ -186,7 +193,7 @@ Entregue:
 2. Três opções de nicho (estreito, médio, amplo) com prós, contras, riscos e demanda local [ESTIMATIVA]; recomende uma.
 3. Proposta de valor em 3 versões no formato "Ajudo [público] a [resultado] com [diferencial]", sem promessa de resultado.
 4. Diferenciais verificáveis (formação, método, tecnologia, experiência, forma de atender) e como comunicá-los dentro das regras do conselho, sem superlativos.
-5. Mapa de concorrência: pesquise na web os concorrentes citados e outros da minha região (Instagram, Google, YouTube). Em tabela: posicionamento, formatos, frequência, o que os pacientes elogiam nas avaliações públicas e lacunas não exploradas.
+5. Inteligência de nicho: pesquise na web os concorrentes citados e outros 10 a 20 perfis da minha área e região (Instagram, Google, YouTube), incluindo referências de outros mercados e em inglês. Em tabela: URL, formato, pergunta central, tipo de abertura, apoio visual, limite clínico, frequência, o que os pacientes elogiam nas avaliações públicas e lacunas não exploradas. Separe observação ("há uma pergunta no começo") de hipótese ("a pergunta causou as visualizações", que exige teste). Leia estruturas, não copie texto nem identidade, e não sugira pauta só porque um vídeo teve pico de audiência se ele atrai um público que nunca buscará meu consultório.
 6. Posicionamento em uma frase e 10 palavras-chave para bio, Google e legendas (serviço + cidade ou bairro).
 7. Como testar o nicho em 30 dias antes de mudar tudo, e o que medir.`,
 
@@ -201,7 +208,7 @@ ${get('atual')}
 
 Entregue, para cada perfil escolhido:
 1. Nota de 0 a 10 para clareza (para quem é, o que faço, onde atendo, como agendar) e justificativa.
-2. Reescrita pronta para colar, com a identificação obrigatória do meu conselho:
+2. Reescrita pronta para colar, com a identificação obrigatória do meu conselho e do tipo de conta (profissional ou clínica). Em saúde, a bio traz identidade e credenciais corretas e leva ao canal oficial, sem slogan de resultado:
    - Instagram: 3 opções de nome do perfil com palavra-chave (o Instagram busca pelo nome), 3 bios de até 150 caracteres, Destaques na ordem do caminho do paciente (ex.: Comece aqui, Dúvidas, Tratamentos, Bastidores, Como agendar, Localização) com o que vai em cada um, 3 posts para fixar e o destino do link com mensagem pronta para o WhatsApp.
    - Perfil da Empresa no Google: categoria principal e secundárias, serviços, descrição de até 750 caracteres, fotos que faltam, perguntas e respostas, frequência de posts e como pedir avaliações sem oferecer vantagem e respeitando o conselho.
    - YouTube: nome e descrição do canal, palavras-chave, playlists por dúvida e ideia de trailer.
@@ -219,58 +226,78 @@ Formatos com que me sinto bem: ${getAll('formatos')}
 Datas importantes: ${nv(get('datas'), '(nenhuma)')}
 
 Entregue:
-1. Palavras-chave por serviço e por cidade ou bairro (Google, Instagram e YouTube), em tabela: termo, intenção (informar, comparar, agendar), serviço e onde usar. Pesquise na web as buscas relacionadas e indique a fonte.
-2. As dúvidas do banco organizadas por balde de conteúdo (${cfg.baldes || 'sugira até 3 baldes'}) e por etapa da jornada (descoberta, consideração, decisão, retorno), sem repetir.
-3. 30 pautas em tabela: título ou gancho, balde, etapa, formato, palavra-chave e chamada para ação.
-4. Frequência realista para ${(TEMPO[cfg.tempo] || TEMPO['2a3']).label}, com quem produz sendo ${PRODUTOR[cfg.produtor] || cfg.produtor}: versão mínima e ideal por canal. Constância vale mais que volume.
-5. Calendário de 4 semanas (dia, canal, formato, pauta) e rotina de produção em lote, com tempo estimado por etapa.
-6. Como reaproveitar uma pauta em vídeo, carrossel, Stories, post no Google e LinkedIn.
-7. Datas de conscientização dos próximos 3 meses relevantes para minha área, com abordagem educativa. Em Setembro Amarelo: comunicação responsável, CVV (188) e nada de captação.
+1. Palavras-chave por serviço e por cidade ou bairro (Google, Instagram e YouTube), em tabela: termo, intenção (informar, comparar, agendar), serviço e onde usar. Pesquise na web as buscas relacionadas (Google Trends, sugestões de busca, Answer The Public) e indique a fonte.
+2. As dúvidas do banco organizadas por balde de conteúdo (${cfg.baldes || 'sugira até 3 baldes'}) e pelo momento da jornada: entender um sintoma, compreender a avaliação, comparar caminhos de cuidado, preparar-se para a consulta, acompanhar o tratamento, conhecer a equipe. Sem repetir e sem afirmar "todo mundo pergunta" além do que está no banco.
+3. 30 pautas em tabela, cada uma registrada com: dúvida, público, estágio de decisão, formato, palavra-chave, fonte clínica necessária, imagem de apoio (eu, modelo anatômico ou ilustração), responsável pela revisão e CTA. Priorize por pertinência ao público, segurança clínica, possibilidade de explicar visualmente, originalidade e alinhamento com os serviços.
+4. Dois ou três quadros recorrentes (séries com nome, bordão e estrutura fixa, como "Pergunta do consultório"), com 4 episódios cada.
+5. Metas S.M.A.R.T. para 8 semanas (específicas, mensuráveis, alcançáveis, relevantes e com prazo), incluindo uma meta de tarefa e uma de contatos qualificados.
+6. Frequência realista para ${(TEMPO[cfg.tempo] || TEMPO['2a3']).label}, com quem produz sendo ${PRODUTOR[cfg.produtor] || cfg.produtor}: versão mínima e ideal por canal. Constância vale mais que volume.
+Referência: independentes, cerca de 3 publicações por semana (2 Reels e 1 carrossel); com equipe, 5 e Stories diários. Qualidade vence volume.
+7. Calendário de 4 semanas (dia, canal, formato, pauta) e rotina de produção em lote, com tempo estimado por etapa (cronometre e comprometa-se só com o que cabe).
+8. "Uma peça longa, quatro entregas": como transformar uma pauta em vídeo longo, Reel para uma dúvida, carrossel de preparação e Stories sobre quem atende, cada um fazendo sentido sozinho.
+9. Datas de conscientização dos próximos 3 meses relevantes para minha área, com abordagem educativa. Em Setembro Amarelo: comunicação responsável, CVV (188) e nada de captação.
 
 Alcance não é garantido; foque em sinais que dependem de mim (retenção, envios, salvamentos, conversas).`,
 
     roteiro: (get) => {
       const f = get('formato');
+      const video = /Reels|YouTube/.test(f);
       let instr;
-      if (/Reels|YouTube/.test(f)) {
-        instr = `1. 5 ganchos de até 3 segundos, de tipos diferentes (erro comum, mito, pergunta sobre a dúvida, dado verificável, prévia do que vai mostrar, sem prometer resultado), cada um com texto na tela de até 6 palavras. Diga qual testar primeiro.
-2. Roteiro com marcação de tempo: gancho, contexto em uma frase, 3 a 5 pontos, um único pedido no final e encerramento que conecta ao início.
-3. Texto na tela por bloco e sugestões de imagens de apoio sem expor pacientes.
-4. Direção de gravação: enquadramento, luz, áudio, cenário e roupa.
-5. Legenda com palavra-chave e chamada para ação, e texto da capa.${/YouTube/.test(f) ? '\n6. Título (3 opções), capítulos com tempo, descrição com palavras-chave e tela final.' : '\n6. Versão de 15 segundos.'}`;
+      if (/YouTube/.test(f)) {
+        instr = `1. Objetivo e público da peça, a promessa central (verdadeira) e a pergunta principal.
+2. Três títulos com a mesma promessa verdadeira e uma ideia de miniatura que acrescente contexto (sem radiografia nem transformação fictícia).
+3. Roteiro com fala e apoio visual: abertura de 0 a 20 s nomeando a dúvida; de 20 a 60 s respondendo o ponto central e o que depende de avaliação individual; 3 a 5 blocos (ideia, exemplo seguro, limitação); fechamento com recapitulação e próximo passo proporcional, sem urgência fictícia.
+4. Capítulos com tempo e descrição com palavras-chave, fontes, identificação profissional e canal oficial.
+5. Versão curta autossuficiente (Reels de 30 a 60 s): reescreva abertura e fechamento e mantenha as ressalvas. Um vídeo longo não vira bom Reel só por ser cortado.`;
+      } else if (video) {
+        instr = `1. Objetivo e público da peça, a promessa central (verdadeira) e a pergunta principal.
+2. Cinco aberturas de até 3 segundos, de tipos diferentes (dúvida específica, mito, diferença entre A e B, o que a avaliação precisa esclarecer, o que preparar antes da consulta), com texto na tela de até 6 palavras, e qual testar primeiro. Nada de cura em segundos, ameaça, "segredo que escondem" ou "todo mundo pergunta" sem observação.
+3. Três títulos ou capas com a mesma promessa.
+4. Roteiro com fala e apoio visual: pergunta específica → resposta cedo → demonstração ou exemplo seguro (eu mesmo, modelo anatômico ou ilustração identificada) → limite da orientação → um único pedido → final que conecta ao início. A ideia principal precisa estar no primeiro enquadramento.
+5. Texto na tela por bloco, sem cobrir o que é demonstrado, e direção de gravação no celular: ponto silencioso, luz, fundo sem dados de pacientes, teste de voz, conferir o recorte e não usar filtro que altere a aparência de resultado.
+6. Legenda com palavra-chave, identificação profissional e fontes; de 0 a 5 hashtags relevantes.
+7. Versão de 15 segundos autossuficiente, com as ressalvas.`;
       } else if (/carrossel/.test(f)) {
-        instr = `1. Slide a slide (7 slides): 1 gancho; 2 a 5 uma ideia por slide; 6 insight para compartilhar; 7 chamada para ação e identificação profissional.
-2. Texto de cada slide em até 25 palavras e sugestão visual.
-3. Legenda com palavra-chave e 3 opções de título para o slide 1.`;
+        instr = `1. Objetivo, promessa central e pergunta principal.
+2. Slide a slide (7 slides): capa com promessa precisa; uma ideia por slide; penúltimo com o insight para guardar ou enviar; último com um único pedido e a identificação profissional. Texto de até 25 palavras por slide e sugestão visual. Nunca uma árvore de autodiagnóstico.
+3. Três opções de capa e a legenda com palavra-chave e fontes.`;
       } else if (/Stories/.test(f)) {
-        instr = `1. Tela a tela (5 a 8), com figurinha interativa (enquete, caixa de perguntas ou quiz) onde fizer sentido.
-2. A última tela leva à conversa, com a frase exata.
-3. Indicação de qual tela salvar nos Destaques.`;
+        instr = `1. Tela a tela (5 a 8), com figurinha interativa onde fizer sentido. Enquete sobre temas, nunca sobre histórico sensível; resposta de caixinha não autoriza divulgar dados nem imagem.
+2. Bastidores sem pacientes identificáveis.
+3. A última tela leva à conversa no canal oficial, com a frase exata, e qual tela salvar nos Destaques.`;
       } else if (/LinkedIn/.test(f)) {
         instr = `1. Post de até 1.300 caracteres para colegas e parceiros: abertura forte, aprendizado ou caso genérico (sem identificar paciente), reflexão e pergunta final.
-2. 3 aberturas alternativas.
+2. Três aberturas alternativas.
 3. Como usar o post para iniciar conversas com colegas que indicam.`;
       } else {
-        instr = `1. 3 versões com estruturas diferentes (pergunta e resposta, história, problema e solução sem alarmismo), indicando a estrutura usada.
-2. Respeite o limite de caracteres do formato e use uma única chamada para ação.
-3. Sugestão de teste A/B.${/lista de transmissão/.test(f) ? '\n4. Inclua a forma de sair da lista em cada mensagem.' : ''}`;
+        instr = `1. Três versões com estruturas diferentes (pergunta e resposta, história, problema e solução sem alarmismo), indicando a estrutura usada.
+2. Respeite o limite de caracteres do formato e use uma única chamada para ação, levando ao canal oficial.
+3. Sugestão de teste A/B com uma variável só.${/lista de transmissão/.test(f) ? '\n4. Inclua a forma de sair da lista em cada mensagem.' : ''}`;
       }
-      return `Aja como roteirista e copywriter de conteúdo ético para profissionais de saúde.
+      const quadro = get('quadro');
+      const ref = get('referencia');
+      return `Aja como roteirista e copywriter de conteúdo ético para profissionais de saúde, seguindo o Método Foguete adaptado ao Instagram e os princípios do Efeito Di.
 
 Formato: ${f}
-Tema ou dúvida: ${get('tema')}
+Tema ou dúvida do paciente: ${get('tema')}
 Balde: ${nv(get('balde'), '(não definido)')} · Objetivo da peça: ${get('objetivoPeca')} · Como apareço: ${get('aparece')} · Tom: ${get('tom')}
-Pontos que não podem faltar: ${nv(get('notas'), '(nenhum)')}
+Pontos técnicos e fontes: ${nv(get('notas'), '(nenhum: marque afirmações clínicas como [PENDENTE DE VALIDAÇÃO])')}${quadro ? `\nQuadro recorrente: "${quadro}". Mantenha a série reconhecível: uma pergunta por episódio, resposta cedo, exemplo seguro, ressalva e o mesmo bordão de abertura ou fechamento.` : ''}${ref ? `\nReferência para modelar: ${ref}\nUse o R.O.A.S. (Roteiro, Observação, Adaptação, Substituição): leia a estrutura da referência, observe como ela começa, sustenta, contextualiza e encaminha, adapte ao meu tema e substitua conteúdo, exemplos e identidade. Não copie texto, imagem nem identidade de terceiros.` : ''}
 
 Entregue:
 ${instr}
 
-No final, inclua sempre:
-- Palavra-chave usada e onde ela aparece (fala, texto na tela, legenda).
-- Checagem ética: frases que poderiam ferir as regras do meu conselho ou as políticas da Meta e do Google, com a alternativa.
-- O que foi evitado: promessa de resultado, superlativos, medo, preço onde o conselho proíbe, afirmação sobre condição de saúde de quem lê, exposição de pacientes.
+Depois, em duas etapas separadas:
+A. Revisão editorial: a peça é específica, compreensível e entrega a promessa? Corrija o que precisar.
+B. Pendências para a revisão clínica e ética (que eu ou o responsável técnico faremos): afirmações que precisam de fonte, autorização de imagem, regra do conselho para minha profissão e tipo de conta. Separe o que impede a publicação do que são ajustes menores e não declare a peça pronta enquanto houver impedimento.
 
-Linguagem simples, termos técnicos explicados, frases curtas.`;
+No final, inclua sempre:
+- CTA único e o canal oficial.
+- Palavra-chave usada e onde ela aparece (fala, texto na tela, legenda).
+- Hipótese de teste com uma variável só (pergunta, abertura, demonstração ou convite) e as métricas para comparar (retenção, envios, salvamentos, mensagens).
+- Plano para a primeira hora: avisar nos Stories e responder os comentários.
+- O que foi evitado: promessa de resultado, superlativos, medo, vergonha, preço onde o conselho proíbe, afirmação sobre condição de saúde de quem lê, exposição de pacientes.
+
+Linguagem simples, termos técnicos explicados, frases curtas. Pontuação de roteiro, se usar, é ferramenta pedagógica, não previsão de viralidade.`;
     },
 
     formacao: (get, getAll) => `Aja como mentor(a) de carreira científica e de autoridade para profissionais de saúde.
@@ -307,7 +334,8 @@ Entregue:
 5. Mensagem de boas-vindas do WhatsApp e 3 respostas rápidas.
 6. Calendário dia a dia.
 7. Lista de verificação ética do ${conselhosTxt()}, da LGPD e das políticas da Meta e do Google, marcando o que precisa de atenção.
-8. Medição: contatos, agendados, comparecimentos e planos iniciados por origem, e o nome curto da campanha para eu registrar como origem no rastreador.${reativ ? '\n9. Mensagens de reativação só para quem consentiu receber lembretes, com opção de sair em cada mensagem.' : ''}
+8. Medição: contatos, agendados, comparecimentos e planos iniciados por origem, e o nome curto da campanha para eu registrar como origem no rastreador. Separe orçamento de mídia de custo de produção.
+9. Se houver impulsionamento: objetivo, qual peça educativa já revisada impulsionar, público com pertinência geográfica (para clínica local, vale mais que audiência nacional), a ação acompanhada (visita ao perfil ou contato qualificado) e quando pausar. Não autorize gasto automaticamente: eu aprovo cada valor.${reativ ? '\n10. Mensagens de reativação só para quem consentiu receber lembretes, com opção de sair em cada mensagem.' : ''}
 
 Regras: sem promessa de resultado, sem superlativos, sem medo, sem afirmar condição de saúde do usuário, sem preço onde o conselho proíbe. Marque com [CONFIRMAR] tudo que eu não informei.`;
     },
@@ -420,12 +448,17 @@ ${get('dados')}
 """
 O que mudou no período: ${nv(get('contexto'), '(nada informado)')}
 
+Regras de leitura:
+- Não compare Reels, Shorts e YouTube longo como a mesma unidade de atenção. Interação pública por visualização = (curtidas + comentários) ÷ visualizações × 100, e não é engajamento total. Prefira a mediana à média. Retenção vem dos dados da conta, não de números públicos.
+- Compare peças com exposição parecida e trate à parte as impulsionadas.
+- Muito alcance e pouca permanência: revise promessa × entrega. Permanência e poucas ações: revise clareza e convite. Muitos contatos e poucos atendimentos: revise adequação ao público, localização e processo de agendamento antes de culpar o roteiro.
+
 Entregue:
 1. Leitura do funil: conversões entre etapas (contato → agendado → avaliado → plano proposto → em tratamento), comparadas com referências do setor marcadas como [ESTIMATIVA].
-2. O gargalo da semana e as 3 causas mais prováveis.
+2. O gargalo da semana e as 3 causas mais prováveis, aplicando as regras acima.
 3. Três ações para a próxima semana, cada uma com responsável, prazo e métrica de sucesso.
-4. Conteúdo: quais baldes e formatos geram mais envios, salvamentos e mensagens, e o que repetir.
-5. Um teste com uma variável só: o que mudar, como medir e quando decidir.`,
+4. Conteúdo: quais baldes, quadros e formatos geram mais retenção, envios, salvamentos e mensagens, e o que repetir. Atribua receita só se houver rastreamento.
+5. O próximo ciclo de testes: série, hipótese, lote pequeno comparável e uma variável só (pergunta, abertura, demonstração ou convite), como medir e quando decidir.`,
 
     etica: (get) => {
       const anuncio = /anúncio/.test(get('tipo'));
@@ -437,7 +470,7 @@ Entregue:
       return `Revise o texto abaixo como se fosse a comissão de ética do ${conselhosTxt()}.
 Tipo de peça: ${get('tipo')}. Imagens ou vídeo: ${get('imagem')}.
 
-Aponte, frase a frase: promessa de resultado, superlativo, sensacionalismo, medo, exposição de paciente, preço ou promoção vedados, falta de identificação profissional, afirmação sobre condição de saúde do leitor.${anuncio ? ' Confira também as políticas de anúncios da Meta (atributos pessoais e saúde) e do Google (saúde e medicamentos).' : ''}
+Aponte, frase a frase: promessa de resultado, superlativo, sensacionalismo, medo, exposição de paciente, preço ou promoção vedados, falta de identificação profissional, afirmação sobre condição de saúde do leitor. Confira também: cura em segundos, ameaça, "segredo que médicos escondem", diagnóstico por comentário ou aparência, pedido de histórico nos comentários, comparação depreciativa com colegas, percentual sem fonte, exploração de vergonha, medo ou insegurança corporal, imagem gerada apresentada como paciente real, depoimento ou caso inventado, humor que ridiculariza quem sente dor, e afirmação clínica sem fonte (marque [PENDENTE DE VALIDAÇÃO]). Tipo de conta: ${CONTA[cfg.conta] || CONTA.profissional} (algumas regras mudam para a conta da clínica).${anuncio ? ' Confira também as políticas de anúncios da Meta (atributos pessoais e saúde) e do Google (saúde e medicamentos).' : ''}
 
 Regras que valem para mim (resumo conferido em outubro de 2026):
 ${regras}
@@ -448,7 +481,7 @@ Entregue:
 3. Versão corrigida completa, com a identificação profissional obrigatória.
 4. Se houver imagem de paciente, antes e depois ou depoimento: autorizações necessárias e cuidados.
 
-Lembre que esta revisão não substitui a consulta à norma vigente. Se puder, confira na web se as normas citadas foram atualizadas e cite a fonte.
+Não afirme conformidade legal integral: esta revisão não substitui a consulta à norma vigente nem a avaliação de um profissional competente. Se puder, confira na web se as normas citadas foram atualizadas e cite a fonte.
 
 Texto:
 """

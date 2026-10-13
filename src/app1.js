@@ -30,56 +30,55 @@
   const COUNCILS = {
     medicina: {
       label: 'Medicina', sigla: 'CRM', conselho: 'CFM / CRM',
-      norma: 'Resolução CFM nº 2.336/2023 (publicidade médica), em vigor desde 2024',
-      ident: 'Nome, número do CRM e, se for especialista, o RQE. Especialista é quem fez residência reconhecida ou foi aprovado no exame de sociedade filiada à AMB. Pós-graduação lato sensu pode aparecer no currículo seguida de "NÃO ESPECIALISTA".',
+      norma: 'Resolução CFM nº 2.336/2023 (publicidade médica), em vigor desde 2024; revogou as Resoluções 1.974/2011, 2.126/2015 e 2.133/2015',
+      ident: 'Nome, número do CRM e a palavra "MÉDICO"; especialidade só com RQE. Estabelecimento: registro no CRM e nome do Diretor Técnico. Nas redes, esses dados ficam na página principal do perfil. Pós-graduação lato sensu pode aparecer no currículo seguida de "NÃO ESPECIALISTA".',
       pode: [
-        'Mostrar consultório, equipe e bastidores.',
-        'Selfies, inclusive com pacientes famosos, sem caráter sensacionalista ou de concorrência desleal.',
-        'Informar valor da consulta, formas de pagamento e descontos em campanhas.',
-        'Antes e depois com finalidade educativa: só da sua especialidade, com texto sobre indicações e fatores que podem prejudicar o resultado, mostrando também evoluções insatisfatórias e possíveis complicações, sem manipular a imagem e sem identificar o paciente (fotos do seu arquivo exigem autorização).',
-        'Divulgar equipamentos aprovados pela Anvisa.',
-        'Cursos educativos para leigos, com valor anunciado.'
+        'Mostrar consultório, equipe e bastidores; selfies sem caráter sensacionalista ou de concorrência desleal.',
+        'Informar valor da consulta, formas de pagamento e descontos em campanhas, sem venda casada nem premiação.',
+        'Imagens de pacientes só com finalidade educativa: antes e depois em conjunto, mostrando resultados satisfatórios, insatisfatórios e complicações, com texto educativo, sem identificar o paciente e sem editar ou "melhorar" a imagem. Fotos do seu arquivo exigem autorização e anonimato. "Antes e depois permitido" não é autorização irrestrita.',
+        'Divulgar equipamentos aprovados pela Anvisa e cursos educativos para leigos, com valor anunciado.'
       ],
       nao: [
-        'Sensacionalismo, autopromoção e conteúdo inverídico.',
-        'Atribuir capacidade privilegiada a aparelho ou técnica; prometer resultado.',
+        'Garantir ou insinuar resultado; "descobertas milagrosas".',
+        'Sensacionalismo, autopromoção e conteúdo inverídico; atribuir capacidade privilegiada a aparelho ou técnica.',
         'Tom pejorativo com colegas, especialidades ou procedimentos.',
         'Anunciar que trata órgãos ou doenças específicas sem ser especialista (RQE).',
-        'Promoções casadas, premiações e oferta por consórcio ou similares.',
+        'Serviços gratuitos em consultório privado como concorrência desleal; promoções casadas, premiações e consórcios.',
+        'Transmitir consultas ou procedimentos em tempo real.',
         'Publicidade de medicamentos, insumos, órteses, próteses e suas marcas.',
-        'Consultas em grupo ou informação que leve a diagnóstico, procedimento ou prognóstico pela rede.'
+        'Informação que leve a diagnóstico, procedimento ou prognóstico pela rede.'
       ],
-      extra: 'Repostar publicações de pacientes passa a contar como publicidade médica e segue as mesmas regras.',
-      resumo: 'Pela Res. CFM 2.336/2023: identificar nome, CRM e RQE (se especialista); sem sensacionalismo, autopromoção ou promessa de resultado; antes e depois só com finalidade educativa e nas condições da norma; sem falar mal de colegas; não anunciar área de especialista sem RQE; sem premiações ou promoções casadas.',
+      extra: 'Conteúdo de terceiros que você reposta passa a ser considerado seu, inclusive publicações de pacientes.',
+      resumo: 'Pela Res. CFM 2.336/2023: identificar nome, CRM, a palavra "MÉDICO" e RQE (se especialista); sem garantir ou insinuar resultado, sensacionalismo ou autopromoção; imagens de pacientes só educativas, com resultados satisfatórios, insatisfatórios e complicações, sem identificar nem editar; sem transmitir consultas ou procedimentos; sem falar mal de colegas; não anunciar área de especialista sem RQE; valores e descontos permitidos, sem venda casada nem premiação; o que reposto vira conteúdo meu.',
       fontes: [
-        ['Migalhas: CFM muda regra e permite antes e depois', 'https://www.migalhas.com.br/quentes/393424/cfm-muda-regra-e-permite-antes-e-depois-de-pacientes-na-internet'],
-        ['CRM-PR: apresentação sobre publicidade médica', 'https://crmpr.org.br/uploadAddress/Publicidade-medica-apresentacao-coletiva-12-09-(1)[6052].pdf']
+        ['CFM: Resolução 2.336/2023 (texto oficial)', 'https://sistemas.cfm.org.br/normas/arquivos/resolucoes/BR/2023/2336_2023.pdf'],
+        ['Migalhas: o que mudou na publicidade médica', 'https://www.migalhas.com.br/quentes/393424/cfm-muda-regra-e-permite-antes-e-depois-de-pacientes-na-internet']
       ]
     },
     odontologia: {
       label: 'Odontologia', sigla: 'CRO', conselho: 'CFO / CRO',
-      norma: 'Código de Ética Odontológica (Res. CFO 118/2012, com alterações da Res. CFO 271/2025) e orientações do CRO',
-      ident: 'Nome, categoria (cirurgião-dentista) e número do CRO. Clínica: nome e CRO da clínica, nome e CRO do responsável técnico. Especialidade só se registrada no CRO; sem ela, use "clínico geral" e informe as áreas de atuação. No antes e depois, a identificação vai na própria imagem.',
+      norma: 'Código de Ética Odontológica (Res. CFO 118/2012, com alterações da Res. CFO 271/2025), Res. CFO 196/2019 (antes e depois) e orientações do CRO',
+      ident: 'Nome, categoria (cirurgião-dentista) e número do CRO. Clínica: nome e CRO da clínica, nome e CRO do responsável técnico. Especialidade só se registrada no CRO; sem ela, use "clínico geral" e informe as áreas de atuação. No antes e depois, nome e CRO de quem fez o procedimento vão na própria imagem.',
       pode: [
         'Conteúdo educativo, bastidores, equipe e tecnologia da clínica.',
         'Endereço, telefone, e-mail e horário de atendimento.',
-        'Antes e depois só no perfil do profissional (pessoa física), do próprio trabalho, com autorização prévia e TCLE assinado e arquivado no prontuário, com caráter informativo (orientação do CROSP).'
+        'Antes e depois (Res. CFO 196/2019) só pelo cirurgião-dentista que executou o procedimento, com tratamento concluído (o registro do diagnóstico é o "antes"), com nome e CRO na imagem. O CFO não tem modelo de termo e recomenda, além da autorização verbal, autorização formal por escrito do paciente.'
       ],
       nao: [
+        'Antes e depois no perfil da clínica (pessoa jurídica): segue proibido. Também é vedado divulgar trabalho de outro dentista.',
+        'Publicações de "antes, durante e depois"; procedimentos complexos só em publicação científica.',
         'Divulgar preços, descontos, gratuidade ou frases de apelo a preço ("cabe no seu bolso").',
         'Promessa de resultado, sensacionalismo e autopromoção.',
-        'Fotos ou vídeos de procedimento em andamento (só em publicação científica).',
-        'Antes e depois no perfil da clínica (pessoa jurídica) ou de trabalho de outro dentista.',
         'Identificar marcas de materiais, equipamentos e instrumentais.',
-        'Influenciador em troca de tratamento; compra de seguidores.',
+        'Influenciador em troca de tratamento; compra de seguidores; exibir paciente sem autorização.',
         'Captação por telemarketing ativo, alto-falante ou plaqueteiros.'
       ],
-      extra: 'A Res. CFO 271/2025 mudou regras sobre cartões de desconto e sobre brindes, prêmios e sorteios. Confirme com o seu CRO antes de qualquer ação desse tipo.',
-      resumo: 'Pelo Código de Ética Odontológica e orientações do CRO: identificar nome, categoria e CRO (clínica: CRO da clínica e do responsável técnico); sem preços, descontos, gratuidade ou apelo a preço; sem promessa de resultado, sensacionalismo ou autopromoção; sem procedimento em andamento; antes e depois só no perfil pessoal do profissional, do próprio trabalho, com TCLE e sem marcas de materiais.',
+      extra: 'O antes e depois "não está liberado de forma indiscriminada" (FAQ do CFO). A Res. CFO 271/2025 mudou regras sobre cartões de desconto e sobre brindes, prêmios e sorteios: confirme com o seu CRO antes de qualquer ação desse tipo. O guia do CROSP não informa data; confirme a versão.',
+      resumo: 'Pelo Código de Ética Odontológica, Res. CFO 196/2019 e orientações do CRO: identificar nome, categoria e CRO (clínica: CRO da clínica e do responsável técnico); sem preços, descontos, gratuidade ou apelo a preço; sem promessa de resultado, sensacionalismo ou autopromoção; sem "antes, durante e depois"; antes e depois só pelo dentista que executou, tratamento concluído, com nome e CRO na imagem e autorização por escrito, nunca no perfil da clínica (pessoa jurídica); sem marcas de materiais.',
       fontes: [
+        ['CFO: FAQ da Resolução 196/2019', 'https://website.cfo.org.br/resolucao-cfo-196-2019/'],
         ['CROSP: regras de publicidade odontológica', 'https://site.crosp.org.br/uploads/arquivo/3724579826b71ed53e3c7d0ff3104a64.pdf'],
-        ['Resolução CFO-271/2025', 'https://sistemas.cfo.org.br/visualizar/atos/RESOLU%C3%87%C3%83O/SEC/2025/271'],
-        ['LegisMap: o que mudou no Código de Ética após o CADE', 'https://legismap.com.br/conteudos/artigos-e-noticias/em-cumprimento-a-decisao-do-cade-cfo-realiza-alteracoes-pontuais-no-codigo-de-etica']
+        ['Resolução CFO-271/2025', 'https://sistemas.cfo.org.br/visualizar/atos/RESOLU%C3%87%C3%83O/SEC/2025/271']
       ]
     },
     psicologia: {
@@ -109,24 +108,26 @@
     },
     fisioterapia: {
       label: 'Fisioterapia', sigla: 'CREFITO', conselho: 'COFFITO / CREFITO',
-      norma: 'Código de Ética e Deontologia da Fisioterapia (Res. COFFITO 424/2013)',
-      ident: 'Nome, a palavra "fisioterapeuta" e o número do CREFITO. Especialidade só se reconhecida pelo COFFITO. Não substitua o título por termos como "terapeuta corporal".',
+      norma: 'Res. COFFITO 532/2021 (publicidade e uso de imagem) e Código de Ética e Deontologia da Fisioterapia (Res. COFFITO 424/2013)',
+      ident: 'Toda publicação traz nome do profissional, número de inscrição no CREFITO e data. Use a palavra "fisioterapeuta"; especialidade só se reconhecida pelo COFFITO. Não substitua o título por termos como "terapeuta corporal".',
       pode: [
         'Endereço, telefone, horários, convênios, instalações, métodos e logomarca.',
-        'Textos, imagens e vídeos de orientação à população, dentro do Código.',
+        'Textos, imagens e vídeos de orientação à população.',
+        'Imagens, textos e áudios autênticos de pacientes só com autorização prévia por TCLE, do próprio paciente ou do representante legal.',
         'Divulgação coletiva em serviço multiprofissional.'
       ],
       nao: [
+        'Sensacionalismo, concorrência desleal e promessa de resultado ou de terapia "infalível".',
+        'Divulgar casos clínicos de autoria de terceiros.',
+        'Expor dados que identifiquem o paciente, inclusive antes e depois, sem autorização formal prévia. Divulgação irregular de imagem de paciente é infração ética de manifesta gravidade.',
+        'Usar depoimentos ou agradecimentos de pacientes para autopromoção.',
         'Divulgar valores fora do local de atendimento ou de forma que configure concorrência desleal.',
-        'Usar depoimentos, imagens ou agradecimentos de pacientes para autopromoção.',
-        'Antes e depois ou qualquer imagem que identifique o paciente (exceção: uso acadêmico com autorização formal).',
-        'Prometer terapia "infalível", "secreta" ou sem eficácia comprovada.',
-        'Consulta ou prescrição sem avaliação presencial, salvo casos regulamentados pelo COFFITO.',
-        'Títulos que você não pode comprovar.'
+        'Consulta ou prescrição sem avaliação, salvo casos regulamentados pelo COFFITO.'
       ],
       extra: 'Você responde ao conselho pelo conteúdo técnico de artigos, entrevistas e vídeos.',
-      resumo: 'Pelo Código de Ética e Deontologia da Fisioterapia (Res. COFFITO 424/2013): identificar nome, "fisioterapeuta" e CREFITO; sem divulgar valores fora do local de atendimento; sem depoimentos, imagens ou agradecimentos de pacientes para autopromoção; sem imagem que identifique paciente; sem prometer terapia infalível.',
+      resumo: 'Pela Res. COFFITO 532/2021 e pelo Código de Ética (Res. 424/2013): toda publicação com nome, número do CREFITO e data; imagem, texto ou áudio de paciente só com TCLE prévio; sem sensacionalismo, concorrência desleal ou promessa de resultado infalível; sem casos clínicos de terceiros; sem expor paciente identificável, inclusive antes e depois, sem autorização formal; sem depoimentos para autopromoção; sem valores fora do local de atendimento.',
       fontes: [
+        ['COFFITO: Resolução 532/2021', 'https://www.coffito.gov.br/nsite/?p=18752'],
         ['Resolução COFFITO nº 424/2013 (Código de Ética)', 'https://www.normasbrasil.com.br/norma/resolucao-424-2013_257114.html']
       ]
     }
@@ -193,6 +194,7 @@
     '4a6': { label: '4 a 6 horas por semana', meta: 4 },
     '7mais': { label: '7 horas ou mais por semana', meta: 5 }
   };
+  const CONTA = { profissional: 'perfil do profissional (pessoa física)', clinica: 'perfil da clínica (pessoa jurídica)', ambos: 'perfil do profissional e perfil da clínica' };
   const PRODUTOR = { eu: 'eu mesmo(a)', equipe: 'eu, com ajuda da equipe', terceiro: 'vou contratar agência ou social media' };
   const CAMERA = { alto: 'gosto de aparecer na câmera', medio: 'apareço, mas sem muita exposição', baixo: 'prefiro não aparecer na câmera' };
 
@@ -251,6 +253,34 @@
     ['Agenda e prontuário', 'iClinic, Feegow, Amplimed, Simples Dental, Clinicorp', 'Agenda, confirmação e prontuário eletrônico (fora do CRM)'],
     ['Assistentes de IA', 'Claude, ChatGPT, Gemini, Copilot', 'Nunca com dados de pacientes']
   ];
+
+  // Benchmarking editorial de criadores de saúde (12/10/2026): estrutura, não conteúdo clínico.
+  // Amostra pequena e observacional, não é ranking de engajamento.
+  const BENCH = [
+    ['José Arbex Filho', 'odontologia', 'Odontologia estética', '@arbexfilho', 'Analogia concreta para explicar raciocínio e acompanhamento, sem imagens clínicas ou procedimentos publicitários.'],
+    ['Roberto Viotto', 'odontologia', 'Odontologia estética', '@drviotto', 'Mostrar o ambiente e explicar uma tecnologia de forma permitida.'],
+    ['Bruna Conde', 'odontologia', 'Odontologia (halitose)', '@drabrunaconde', 'Quadro Mito/Verdade com afirmações verificadas, em linguagem comum.'],
+    ['Paulo Muzy', 'medicina', 'Ortopedia, medicina esportiva', '@paulomuzy', 'Responder dúvidas gerais com proximidade e ressalvas, sem caso individual em público.'],
+    ['Ana Escobar', 'medicina', 'Pediatria', '@draanaescobar', 'Pergunta específica, acolhimento, passos compreensíveis e CRM/RQE visível.'],
+    ['Dayan Siebra', 'medicina', 'Cirurgia vascular', '@dayansiebra', 'Dupla entrevistador e especialista, com objetos do cotidiano; reescrever ganchos sem ameaça exagerada.'],
+    ['José Carlos Souto', 'medicina', 'Medicina (metabólico e nutricional)', '@jcsouto', 'Aprofundamento para quem prefere escuta; citar um estudo não o valida.'],
+    ['Victor Sorrentino', 'medicina', 'Medicina funcional/integrativa (atuação declarada)', '@drvictorsorrentino', 'Sinalização visual de conceitos e de fontes realmente verificadas, sem importar conclusões clínicas.'],
+    ['Leonardo Ávila', 'medicina fisioterapia', 'Dor (Tudo Sobre Dor)', '@tudosobredor', 'Série temática com conversa e bibliografia; simplificar o jargão para pacientes.'],
+    ['Bernardo Sampaio', 'fisioterapia', 'Fisioterapia musculoesquelética', '@bernardosam', 'Pergunta real anonimizada e resposta concisa com limites, sem intervenção igual para todos.'],
+    ['Robson Sitta', 'fisioterapia', 'Fisioterapia ortopédica', '@dr.robsonsitta', 'Tornar o raciocínio observável com modelo ou representação segura; técnica não é prescrição universal.']
+  ];
+  const BENCH_PADROES = 'Padrões recorrentes: problema específico na abertura; explicação concreta (objetos, analogias, modelos), sem estilo único vencedor; autoridade visível, mas não autossuficiente; quadros e continuidade; um próximo passo por peça; limites clínicos que sobrevivem ao corte curto.';
+
+  // As bases do método (créditos)
+  const METODO = {
+    bases: [
+      ['Método Foguete', 'Pat Machadu', 'Crescimento em "planetas": fundamentos, planejamento (transformação, Ikigai, pesquisa de mercado, identidade, baldes), perfil, produção, análise, recursos da plataforma, metas S.M.A.R.T. e hábitos. Originalmente para YouTube, adaptado ao Instagram.'],
+      ['Efeito Di', 'Diandra Santos (@segueadi)', 'Síntese autoral do curso: inteligência de nicho, atenção + padrão + satisfação, direção criativa com estruturas replicáveis e banco de conteúdo, quadros e personagens recorrentes, biblioteca de formatos, marca pessoal, gravação no celular, confiança na câmera, revisão de roteiro em duas etapas, impulsionamento e o R.O.A.S. (Roteiro, Observação, Adaptação, Substituição) para modelar referências.'],
+      ['Pesquisa e normas', 'out/2026', 'Sinais do algoritmo do Instagram (só tempo de visualização, curtidas por alcance e envios por alcance têm confirmação atribuída à Meta; o resto é heurística de terceiros) e regras de publicidade do CFM, CFO, CFP e COFFITO.']
+    ],
+    fluxo: ['Ideia', 'Roteiro', 'Revisão editorial', 'Revisão clínica e ética', 'Gravação', 'Revisão final', 'Publicação', 'Análise'],
+    aviso: 'O CliniLoop usa princípios dessas fontes, não reproduz o material dos cursos. Rótulos pedagógicos (como "viciante") não são métricas, e linguagem sobre emoção e neuroquímica é editorial, não evidência científica. O R.O.A.S. do curso não é o ROAS de mídia paga.'
+  };
 
   // Quatro modelos de campanha
   const MODELOS = {

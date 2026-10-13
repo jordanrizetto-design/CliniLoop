@@ -201,17 +201,21 @@
       psicologia: 'Sorteios são vedados na publicidade de psicologia.',
       fisioterapia: 'Sorteios e brindes podem configurar captação incompatível com a dignidade da profissão. Confirme com o CREFITO.' } },
     { re: /\bantes e depois\b/, by: {
-      medicina: 'Antes e depois: só educativo, da sua especialidade, com texto sobre indicações e fatores que prejudicam o resultado, mostrando também evoluções insatisfatórias e complicações, sem manipular nem identificar o paciente.',
-      odontologia: 'Antes e depois: só no perfil do profissional (não da clínica), do próprio trabalho, com TCLE, sem marcas de materiais e com nome e CRO na imagem.',
+      medicina: 'Antes e depois: só educativo, em conjunto com resultados satisfatórios, insatisfatórios e complicações, com texto educativo, sem editar a imagem nem identificar o paciente.',
+      odontologia: 'Antes e depois (Res. CFO 196/2019): só pelo dentista que executou, tratamento concluído, com nome e CRO na imagem e autorização por escrito; proibido no perfil da clínica (pessoa jurídica) e em "antes, durante e depois".',
       psicologia: 'Psicologia não usa antes e depois: nada que identifique ou exponha pacientes.',
-      fisioterapia: 'Antes e depois que identifique o paciente é vedado (exceto uso acadêmico autorizado).' } },
+      fisioterapia: 'Antes e depois ou imagem que identifique o paciente: só com TCLE prévio (Res. COFFITO 532/2021); divulgação irregular é infração de manifesta gravidade.' } },
     { re: /\b(depoimentos?|testemunhos?|paciente (disse|falou|contou)|meus pacientes dizem)\b/, by: {
       psicologia: 'Depoimentos de pacientes são desaconselhados mesmo com consentimento.',
-      fisioterapia: 'Depoimentos e agradecimentos de pacientes não podem ser usados para autopromoção.',
+      fisioterapia: 'Depoimentos e agradecimentos de pacientes não podem ser usados para autopromoção; texto ou áudio de paciente só com TCLE prévio.',
       medicina: 'Depoimentos: sem tom sensacionalista ou de promessa; repostar paciente conta como publicidade médica.',
       odontologia: 'Depoimentos: só com autorização, sem promessa de resultado nem sensacionalismo. Confirme com o CRO.' } },
-    { re: /\b(me mande (uma )?foto|diagnostico (pelo|por) (direct|whatsapp)|consulta pelo direct)\b/, msg: 'Diagnóstico ou orientação individual por mensagem: convide para avaliação.' },
-    { re: /\b(durante o procedimento|cirurgia ao vivo|procedimento em andamento)\b/, by: { odontologia: 'Procedimento em andamento: só em publicação científica.' }, msg: 'Procedimento sendo realizado: confira a regra do seu conselho e a autorização do paciente.' }
+    { re: /\b(me mande (uma )?foto|diagnostico (pelo|por) (direct|whatsapp|comentario)|consulta pelo direct|conte (seu|sua) (historico|caso) nos comentarios)\b/, msg: 'Diagnóstico por foto, comentário ou mensagem, ou pedido de histórico nos comentários: encaminhe para o atendimento.' },
+    { re: /\b(segredo que|medicos (nao contam|escondem)|dentistas (nao contam|escondem)|cura em|em segundos|nunca mais (sinta|tenha))/, msg: 'Promessa sensacionalista ("segredo que escondem", "cura em segundos", "nunca mais").' },
+    { re: /\b(vergonha d[eo]|feio|feia|horrivel|ultima chance|so hoje|vagas limitadas|corra)\b/, msg: 'Apelo a vergonha, medo ou escassez: não entra em conteúdo de saúde.' },
+    { re: /\b\d{1,3} ?% (dos|das|de) /, msg: 'Percentual: só com fonte citada.' },
+    { re: /\bcomente (agenda|eu quero|quero|sim)\b/, msg: '"Comente AGENDA": comum em guias, mas confira se o fluxo respeita as regras do seu conselho e não expõe quem comenta.' },
+    { re: /\b(durante o procedimento|cirurgia ao vivo|procedimento em andamento|ao vivo da consulta|antes, durante e depois)\b/, by: { odontologia: 'Procedimento em andamento e "antes, durante e depois": só em publicação científica.', medicina: 'Transmitir consultas ou procedimentos em tempo real é vedado (Res. CFM 2.336/2023).' }, msg: 'Procedimento sendo realizado: confira a regra do seu conselho e a autorização do paciente.' }
   ];
   const IMG_RISK = {
     'antes e depois': ' antes e depois ',
@@ -229,6 +233,7 @@
         if (msgs.length) msgs.forEach((m) => out.push(m)); else if (r.msg) out.push(r.msg);
       } else out.push(r.msg);
     });
+    if (/\bantes e depois\b/.test(t) && ks.includes('odontologia') && cfg.conta === 'clinica') out.push('Sua conta principal é da clínica (pessoa jurídica): antes e depois é proibido nela pela Res. CFO 196/2019.');
     return [...new Set(out)];
   }
   function riskWarn(form, msg) {
@@ -378,6 +383,7 @@
     updatePlanUI();
     prefillFields(false);
     renderCouncil();
+    renderBench();
     renderObjHint();
     renderOrigemOptions();
     notifyData();
@@ -617,6 +623,7 @@ Atualizado em ${fmtDate(todayISO())}.
 
 ## Perfil do consultório
 - Profissional: ${profLabel()}
+- Tipo de conta: ${CONTA[cfg.conta] || CONTA.profissional}
 - Nome: ${cfg.nome || '(não informado)'} · Registro: ${cfg.registro || '(não informado)'}
 - Especialidade ou área: ${cfg.especialidade || '(não informada)'}
 - Cidade e bairro: ${cfg.cidade || '(não informado)'}
@@ -634,6 +641,11 @@ Atualizado em ${fmtDate(todayISO())}.
 ${councilObjs().map((c) => `### ${c.conselho}\n${c.norma}\n- Identificação: ${c.ident}\n- Pode: ${c.pode.join(' ')}\n- Não pode: ${c.nao.join(' ')}\n- ${c.extra}`).join('\n\n') || '(tipo de profissional não definido)'}
 ${isMental() ? '\n- ' + SAUDE_MENTAL : ''}
 ${REGRAS_GERAIS.map((g) => '- ' + g).join('\n')}
+
+## Método
+${METODO.bases.map(([n, a, d]) => `- ${n} (${a}): ${d}`).join('\n')}
+- Fluxo de cada peça: ${METODO.fluxo.join(' → ')}
+- ${METODO.aviso}
 
 ## Decisões guardadas
 ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtDate(res[id].d)})\n${res[id].t}`).join('\n\n') || '(nenhuma ainda)'}
@@ -901,10 +913,11 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     if (!validate(form)) return;
     const v = (id) => document.getElementById(id).value.trim();
     const n = (id) => Math.max(0, Math.round(Number(v(id)) || 0));
-    conteudos.unshift({ id: uid(), data: v('ct-data'), canal: v('ct-canal'), formato: v('ct-formato'), balde: v('ct-balde'), gancho: v('ct-gancho'), kw: v('ct-kw'), alcance: n('ct-alcance'), envios: n('ct-envios'), salv: n('ct-salv'), msgs: n('ct-msgs') });
+    conteudos.unshift({ id: uid(), data: v('ct-data'), canal: v('ct-canal'), formato: v('ct-formato'), balde: v('ct-balde'), gancho: v('ct-gancho'), kw: v('ct-kw'), quadro: v('ct-quadro'), variavel: v('ct-var'), ret: v('ct-ret') === '' ? '' : Math.min(100, n('ct-ret')), boost: document.getElementById('ct-boost').checked, alcance: n('ct-alcance'), envios: n('ct-envios'), salv: n('ct-salv'), msgs: n('ct-msgs') });
     conteudos = conteudos.slice(0, 2000);
     saveCont();
-    ['ct-gancho', 'ct-kw', 'ct-alcance', 'ct-envios', 'ct-salv', 'ct-msgs'].forEach((id) => { document.getElementById(id).value = ''; });
+    ['ct-gancho', 'ct-kw', 'ct-quadro', 'ct-ret', 'ct-alcance', 'ct-envios', 'ct-salv', 'ct-msgs'].forEach((id) => { document.getElementById(id).value = ''; });
+    document.getElementById('ct-var').value = ''; document.getElementById('ct-boost').checked = false;
     const msg = formMsg(form); msg.className = 'form-msg ok'; msg.textContent = '✓ Conteúdo registrado.';
     renderConteudos();
   });
@@ -912,11 +925,11 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     const t = document.getElementById('ct-table');
     if (!conteudos.length) { t.innerHTML = '<tr><td class="track-empty" style="text-align:center">Nenhum conteúdo registrado ainda.</td></tr>'; return; }
     const sorted = conteudos.slice().sort((a, b) => b.data.localeCompare(a.data)).slice(0, 15);
-    t.innerHTML = '<tr><th>Data</th><th>Canal e formato</th><th>Gancho</th><th>Alcance</th><th>Envios</th><th>Salv.</th><th>Msgs</th><th></th></tr>' +
-      sorted.map((c) => `<tr data-id="${escapeHtml(c.id)}"><td>${fmtShort(c.data)}</td><td>${escapeHtml(c.canal)} · ${escapeHtml(c.formato)}${c.balde ? '<br><small>' + escapeHtml(c.balde) + '</small>' : ''}</td><td style="text-align:left">${escapeHtml(c.gancho)}</td>${['alcance', 'envios', 'salv', 'msgs'].map((k) => `<td><input type="number" min="0" data-k="${k}" value="${c[k] || 0}" aria-label="${k}"></td>`).join('')}<td><button type="button" class="icon-btn" data-del="1" aria-label="Excluir conteúdo">×</button></td></tr>`).join('');
+    t.innerHTML = '<tr><th>Data</th><th>Canal e formato</th><th>Gancho</th><th>Retenção %</th><th>Alcance</th><th>Envios</th><th>Salv.</th><th>Msgs</th><th></th></tr>' +
+      sorted.map((c) => `<tr data-id="${escapeHtml(c.id)}"><td>${fmtShort(c.data)}${c.boost ? '<br><small>impulsionado</small>' : ''}</td><td>${escapeHtml(c.canal)} · ${escapeHtml(c.formato)}${c.balde ? '<br><small>' + escapeHtml(c.balde) + '</small>' : ''}</td><td style="text-align:left">${escapeHtml(c.gancho)}${c.quadro || c.variavel ? `<br><small>${[c.quadro, c.variavel ? 'testando: ' + c.variavel : ''].filter(Boolean).map(escapeHtml).join(' · ')}</small>` : ''}</td>${['ret', 'alcance', 'envios', 'salv', 'msgs'].map((k) => `<td><input type="number" min="0" data-k="${k}" value="${c[k] === '' || c[k] == null ? '' : c[k]}" aria-label="${k}"></td>`).join('')}<td><button type="button" class="icon-btn" data-del="1" aria-label="Excluir conteúdo">×</button></td></tr>`).join('');
     t.querySelectorAll('tr[data-id]').forEach((tr) => {
       const c = conteudos.find((x) => x.id === tr.dataset.id);
-      tr.querySelectorAll('input[data-k]').forEach((inp) => inp.addEventListener('change', () => { c[inp.dataset.k] = Math.max(0, Math.round(Number(inp.value) || 0)); saveCont(); }));
+      tr.querySelectorAll('input[data-k]').forEach((inp) => inp.addEventListener('change', () => { const k = inp.dataset.k; c[k] = k === 'ret' && inp.value === '' ? '' : Math.max(0, Math.min(k === 'ret' ? 100 : 1e9, Math.round(Number(inp.value) || 0))); saveCont(); }));
       tr.querySelector('[data-del]').addEventListener('click', () => { conteudos = conteudos.filter((x) => x.id !== c.id); saveCont(); renderConteudos(); });
     });
   }
@@ -953,9 +966,11 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
   }
   function metricasTxt() {
     const ws = lastWeeks(8).reverse();
+    const pecas = conteudos.slice().sort((a, b) => b.data.localeCompare(a.data)).slice(0, 15);
     return 'Semana | ' + METRIC_COLS.map((c) => c[1]).join(' | ') + '\n' +
       ws.map((w) => `${fmtShort(w.seg)} a ${fmtShort(addDays(w.seg, 6))} | ` + METRIC_COLS.map((c) => w[c[0]]).join(' | ')).join('\n') +
-      `\n\nGargalo calculado pelo app: ${gargalo().txt}`;
+      `\n\nGargalo calculado pelo app: ${gargalo().txt}` +
+      (pecas.length ? '\n\nÚltimas peças (data | canal e formato | balde | quadro | variável testada | impulsionado | retenção % | alcance | envios | salvamentos | mensagens | gancho):\n' + pecas.map((c) => [fmtShort(c.data), c.canal + ' ' + c.formato, c.balde || '-', c.quadro || '-', c.variavel || '-', c.boost ? 'sim' : 'não', c.ret === '' || c.ret == null ? '-' : c.ret, c.alcance, c.envios, c.salv, c.msgs, c.gancho].join(' | ')).join('\n') : '');
   }
   function renderPainel() {
     const ws = lastWeeks(8);
@@ -1005,6 +1020,15 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     document.getElementById('as-pend').value = L.join('\n');
     document.getElementById('as-status').textContent = 'Importado. Os pacientes aparecem como Contato 1, 2… sem nome nem telefone.';
   });
+
+  // ===================== Referências de criadores =====================
+  function renderBench() {
+    const ks = councilKeys();
+    let rows = BENCH.filter((b) => !ks.length || ks.some((k) => b[1].includes(k)));
+    const nota = rows.length ? '' : '<p class="plan-note">Ainda não há referências da sua área nesta amostra. Veja as de outras áreas: o que se adapta é a estrutura.</p>';
+    if (!rows.length) rows = BENCH;
+    document.getElementById('bench-box').innerHTML = `<p class="plan-note">Amostra editorial de 11 perfis (12/10/2026), <b>não é ranking de engajamento</b>. Use as estruturas, não os conselhos clínicos, e não atribua resultado a elas. ${escapeHtml(BENCH_PADROES)}</p>${nota}<div class="num-wrap"><table class="num-table bench-table"><tr><th>Criador</th><th>Área</th><th>Instagram</th><th>O que dá para adaptar</th></tr>${rows.map((b) => `<tr><td>${escapeHtml(b[0])}</td><td>${escapeHtml(b[2])}</td><td>${escapeHtml(b[3])}</td><td>${escapeHtml(b[4])}</td></tr>`).join('')}</table></div>`;
+  }
 
   // ===================== Ferramentas (tabela) =====================
   document.getElementById('kit-table').innerHTML = '<tr><th>Necessidade</th><th>Ferramentas</th><th>Observação</th></tr>' + KIT.map((k) => `<tr><td>${escapeHtml(k[0])}</td><td>${escapeHtml(k[1])}</td><td>${escapeHtml(k[2])}</td></tr>`).join('');
