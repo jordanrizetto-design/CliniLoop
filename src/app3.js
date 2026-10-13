@@ -599,19 +599,19 @@
 
   // ===================== Projeto no Claude.ai =====================
   function projectInstructions() {
-    return `Você é meu copiloto de marketing ético e relacionamento com pacientes dentro do projeto BuscaLoop Saúde.
+    return `Você é meu copiloto de marketing ético e relacionamento com pacientes dentro do projeto CliniLoop.
 
-- Use o arquivo "buscaloop-saude-consultorio.md", no conhecimento do projeto, como fonte do meu perfil, das regras do meu conselho e das decisões que já tomei (público, persona, marca, nicho, pautas, atendimento). Não peça essas informações de novo.
+- Use o arquivo "cliniloop-consultorio.md", no conhecimento do projeto, como fonte do meu perfil, das regras do meu conselho e das decisões que já tomei (público, persona, marca, nicho, pautas, atendimento). Não peça essas informações de novo.
 - Siga sempre as regras do conselho descritas no arquivo, a LGPD e as políticas da Meta e do Google. Se algo puder ferir essas regras, não sugira ou marque [VERIFICAR NO CONSELHO].
 - Nunca use, peça ou invente dados que identifiquem pacientes. Não invente números, títulos ou casos: marque [CONFIRMAR] ou [ESTIMATIVA].
 - Sem promessa de resultado, sem superlativos, sem medo e sem afirmar condição de saúde de quem lê.
-- Quando eu colar um prompt gerado pelo BuscaLoop Saúde, siga-o e complemente com o arquivo do projeto.
+- Quando eu colar um prompt gerado pelo CliniLoop, siga-o e complemente com o arquivo do projeto.
 - Seja direto e prático. Responda em português do Brasil.`;
   }
   function projectKnowledge() {
     const res = resultados();
     const s = weekStats(mondayISO());
-    return `# Consultório no BuscaLoop Saúde
+    return `# Consultório no CliniLoop
 
 Atualizado em ${fmtDate(todayISO())}.
 
@@ -644,7 +644,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
   }
   document.getElementById('kit-copy').addEventListener('click', (e) => copyText(projectInstructions(), e.currentTarget));
   document.getElementById('kit-download').addEventListener('click', () => {
-    download('buscaloop-saude-consultorio.md', projectKnowledge(), 'text/markdown;charset=utf-8');
+    download('cliniloop-consultorio.md', projectKnowledge(), 'text/markdown;charset=utf-8');
   });
 
   // ===================== Rastreador de pacientes =====================
@@ -791,7 +791,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     if (!pacientes.length) { alert('O rastreador está vazio.'); return; }
     const head = ['Nome', 'Telefone', 'Canal', 'Serviço', 'Origem', 'Colega que indicou', 'Profissional', 'Etapa', 'Resultado', 'Motivo', 'Próximo passo', 'Data', 'Valor do plano', 'Consent. atendimento', 'Consent. lembretes', 'Consent. conteúdos', 'Criado', 'Atualizado', 'Observações'];
     const rows = pacientes.map((p) => [p.nome, p.tel, p.canal, p.servico, p.origem, (colegaPorId(p.colega) || {}).nome || '', p.prof, p.etapa, p.resultado, p.motivo, p.passo, p.data, p.valor, (p.consent || {}).atendimento, (p.consent || {}).lembretes, (p.consent || {}).conteudo, p.criado, p.atualizado, p.notas]);
-    download(`buscaloop-saude-rastreador-${todayISO()}.csv`, '\ufeff' + [head].concat(rows).map((r) => r.map(csvCell).join(';')).join('\n'), 'text/csv;charset=utf-8');
+    download(`cliniloop-rastreador-${todayISO()}.csv`, '\ufeff' + [head].concat(rows).map((r) => r.map(csvCell).join(';')).join('\n'), 'text/csv;charset=utf-8');
   });
   function icsEsc(s) { return String(s || '').replace(/\\/g, '\\\\').replace(/,/g, '\\,').replace(/;/g, '\\;').replace(/\n/g, ' '); }
   document.getElementById('t-ics').addEventListener('click', () => {
@@ -799,12 +799,12 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     const cols = colegas.filter((c) => c.prox);
     if (!itens.length && !cols.length) { alert('Nenhum próximo passo com data. Defina datas no rastreador ou na rede de colegas.'); return; }
     const stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d+/, '');
-    const ev = (uidv, data, sum, desc) => ['BEGIN:VEVENT', `UID:${uidv}@buscaloopsaude`, `DTSTAMP:${stamp}`, `DTSTART;VALUE=DATE:${data.replace(/-/g, '')}`, `DTEND;VALUE=DATE:${addDays(data, 1).replace(/-/g, '')}`, `SUMMARY:${icsEsc(sum)}`, `DESCRIPTION:${icsEsc(desc)}`, 'BEGIN:VALARM', 'TRIGGER:PT8H', 'ACTION:DISPLAY', `DESCRIPTION:${icsEsc(sum)}`, 'END:VALARM', 'END:VEVENT'];
-    const lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//BuscaLoop Saude//PT-BR', 'CALSCALE:GREGORIAN'];
+    const ev = (uidv, data, sum, desc) => ['BEGIN:VEVENT', `UID:${uidv}@cliniloop`, `DTSTAMP:${stamp}`, `DTSTART;VALUE=DATE:${data.replace(/-/g, '')}`, `DTEND;VALUE=DATE:${addDays(data, 1).replace(/-/g, '')}`, `SUMMARY:${icsEsc(sum)}`, `DESCRIPTION:${icsEsc(desc)}`, 'BEGIN:VALARM', 'TRIGGER:PT8H', 'ACTION:DISPLAY', `DESCRIPTION:${icsEsc(sum)}`, 'END:VALARM', 'END:VEVENT'];
+    const lines = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//CliniLoop//PT-BR', 'CALSCALE:GREGORIAN'];
     itens.forEach((p) => lines.push(...ev(p.id, p.data, `${p.passo || 'Próximo passo'}: ${p.nome}`, `Etapa: ${p.etapa}. Serviço: ${p.servico || '-'}. Canal: ${p.canal}.`)));
     cols.forEach((c) => lines.push(...ev('col-' + c.id, c.prox, `Colega: ${c.nome}`, `Etapa: ${c.etapa}.`)));
     lines.push('END:VCALENDAR');
-    download('buscaloop-saude-proximos-passos.ics', lines.join('\r\n'), 'text/calendar;charset=utf-8');
+    download('cliniloop-proximos-passos.ics', lines.join('\r\n'), 'text/calendar;charset=utf-8');
   });
 
   // ===================== Rede de colegas =====================
@@ -972,7 +972,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
   document.getElementById('num-csv').addEventListener('click', () => {
     const ws = lastWeeks(12).reverse();
     const csv = [['Início da semana'].concat(METRIC_COLS.map((c) => c[1]))].concat(ws.map((w) => [w.seg].concat(METRIC_COLS.map((c) => w[c[0]])))).map((r) => r.map(csvCell).join(';')).join('\n');
-    download(`buscaloop-saude-metricas-${todayISO()}.csv`, '\ufeff' + csv, 'text/csv;charset=utf-8');
+    download(`cliniloop-metricas-${todayISO()}.csv`, '\ufeff' + csv, 'text/csv;charset=utf-8');
   });
 
   // ===================== Assistente da semana =====================

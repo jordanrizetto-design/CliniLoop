@@ -1,10 +1,10 @@
-<img src="buscaloop-saude-logo.svg" alt="BuscaLoop Saúde" height="72">
+<img src="cliniloop-logo.svg" alt="CliniLoop" height="72">
 
-# BuscaLoop Saúde
+# CliniLoop
 
 Pacientes, colegas e campanhas, do primeiro contato ao tratamento, com ética e método. Para **médicos, psiquiatras, dentistas, psicólogos, fisioterapeutas e clínicas multiprofissionais**. Funciona com o **Claude gratuito ou com assinatura** (Pro ou Max) e, se você quiser, com a API da Anthropic.
 
-O BuscaLoop Saúde mantém a lógica do [BuscaLoop](https://github.com/jordanrizetto-design/Otimizador-de-Oportunidades) original:
+O CliniLoop mantém a lógica do [BuscaLoop](https://github.com/jordanrizetto-design/Otimizador-de-Oportunidades) original:
 - um perfil base que alimenta todas as ferramentas;
 - um funil por etapa;
 - prompts personalizados;
@@ -101,7 +101,7 @@ O modo fica em **Configurações → Como você usa a IA**. O padrão é o Claud
 
 No modo API, o prompt e a sua chave vão do navegador direto para a API da Anthropic. Por padrão a chave não fica salva, e ela nunca entra no backup.
 
-**Projeto no Claude.ai** (funciona também no plano gratuito): copie as instruções e baixe o arquivo `buscaloop-saude-consultorio.md`. Ele traz o perfil do consultório, as regras do conselho, as decisões guardadas e as contagens da semana, sem nomes de pacientes.
+**Projeto no Claude.ai** (funciona também no plano gratuito): copie as instruções e baixe o arquivo `cliniloop-consultorio.md`. Ele traz o perfil do consultório, as regras do conselho, as decisões guardadas e as contagens da semana, sem nomes de pacientes.
 
 ## Para onde vão seus dados
 
@@ -136,8 +136,8 @@ Uma clínica com recepção e dados compartilhados vai precisar dessa versão, c
 
 ## Como publicar no GitHub Pages
 
-1. No GitHub, crie um repositório **público** (por exemplo `buscaloop-saude`), sem README.
-2. Em **Add file → Upload files**, envie `index.html`, `README.md`, `LICENSE` e `buscaloop-saude-logo.svg` e clique em **Commit changes**.
+1. No GitHub, crie um repositório **público** (por exemplo `cliniloop`), sem README.
+2. Em **Add file → Upload files**, envie `index.html`, `README.md`, `LICENSE` e `cliniloop-logo.svg` e clique em **Commit changes**.
 3. Em **Settings → Pages**, escolha **Deploy from a branch**, branch **main**, pasta **/ (root)**, e salve.
 4. Em 1 a 2 minutos o site fica em `https://SEU-USUARIO.github.io/NOME-DO-REPOSITORIO/`.
 5. Para mostrar o link do GitHub no menu e no rodapé, preencha `REPO_URL` em `src/app1.js` e rode `python3 build.py`, ou edite a constante `REPO_URL` direto no `index.html`.
@@ -145,7 +145,7 @@ Uma clínica com recepção e dados compartilhados vai precisar dessa versão, c
 ## Como usar (para quem nunca usou IA)
 
 1. Entre em [claude.ai](https://claude.ai) com uma conta gratuita (só e-mail).
-2. No BuscaLoop Saúde, clique em **"Começar: defina seu objetivo"**, preencha os três passos e clique em **"Ver minha próxima ação"**.
+2. No CliniLoop, clique em **"Começar: defina seu objetivo"**, preencha os três passos e clique em **"Ver minha próxima ação"**.
 3. Siga o painel **Hoje**: abra a ferramenta indicada, preencha e clique em **"Gerar prompt"**.
 4. Clique em **"Copiar prompt"**, cole no Claude e envie. Peça ajustes na mesma conversa.
 5. Cole a versão final em **"Guardar a versão final"**, na própria ferramenta.

@@ -1,4 +1,4 @@
-  /* ===== BuscaLoop Saúde: extras ===== */
+  /* ===== CliniLoop: extras ===== */
   .hero-note{font-size:.84rem; color:#C9D6DA; margin-top:18px; max-width:52ch;}
   .prof-grid{grid-template-columns:repeat(5,1fr);}
   @media (max-width:900px){ .prof-grid{grid-template-columns:repeat(2,1fr);} }

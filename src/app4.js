@@ -63,7 +63,7 @@
     const c = configEl.classList.contains('collapsed');
     cfgSummary.hidden = !c;
     cfgEdit.hidden = !c;
-    document.getElementById('cfg-sub').textContent = c ? 'Tudo pronto. Edite quando seu objetivo ou seus serviços mudarem.' : 'Três passos para o BuscaLoop Saúde entender seu consultório. Fica salvo neste navegador.';
+    document.getElementById('cfg-sub').textContent = c ? 'Tudo pronto. Edite quando seu objetivo ou seus serviços mudarem.' : 'Três passos para o CliniLoop entender seu consultório. Fica salvo neste navegador.';
     cfgSummary.innerHTML = `<b>Objetivo:</b> ${escapeHtml(objInfo().label)}${cfg.metaFrase ? ' — ' + escapeHtml(cfg.metaFrase) : ''} · ${escapeHtml(profInfo() ? profInfo().label : 'profissão não definida')} · ${escapeHtml(cfg.especialidade || '')} · ${escapeHtml(cfg.cidade || '')}`;
   }
   cfgEdit.addEventListener('click', () => { configEl.classList.remove('collapsed'); syncCollapseUI(); document.getElementById('cfg-meta').focus(); });
@@ -195,12 +195,12 @@
     sec('Perguntas para avaliar o fornecedor', ['Que trabalhos fizeram para profissionais de saúde (com autorização para mostrar)?', `Como conhecem e aplicam as regras do ${conselhosTxt()}? Quem revisa?`, 'Qual é o processo de aprovação e o prazo de cada etapa?', 'Quem é o responsável pela minha conta e como é o contato no dia a dia?', 'O que vem no relatório mensal e quais métricas consideram sucesso?', 'Qual o prazo mínimo de contrato e como é o encerramento?', 'De quem são as contas, os arquivos e os criativos ao final do contrato?', 'Como tratam dados de pacientes e o que diz o contrato sobre LGPD?'].map((q, i) => `${i + 1}. ${q}`).join('\n'));
     sec('Sinais de alerta', ['Promete número de seguidores, viralização ou de pacientes.', 'Sugere comprar seguidores ou engajamento.', 'Propõe preço, promoção, sorteio, antes e depois ou depoimento sem checar o conselho.', 'Quer publicar sem a sua aprovação.', 'Só fala de curtidas e alcance, nunca de conversas e agendamentos.', 'Pede sua senha pessoal em vez de acesso de parceiro.', 'Não aceita termo de confidencialidade.'].map((x) => '- ' + x).join('\n'));
 
-    lastBriefingMd = `# Briefing — ${role.label}\n\n${cfg.nome || profLabel()} · ${fmtDate(todayISO())}\n\n` + secoes.map(([t, c]) => `## ${t}\n\n${c}`).join('\n\n') + '\n\n_Montado com o BuscaLoop Saúde. Não substitui orientação do conselho profissional nem assessoria jurídica._\n';
+    lastBriefingMd = `# Briefing — ${role.label}\n\n${cfg.nome || profLabel()} · ${fmtDate(todayISO())}\n\n` + secoes.map(([t, c]) => `## ${t}\n\n${c}`).join('\n\n') + '\n\n_Montado com o CliniLoop. Não substitui orientação do conselho profissional nem assessoria jurídica._\n';
     lastBriefingHtml = docShell(`Briefing — ${role.label}`, `
-      <section class="cover small"><div class="brand">${brandMark()}<span>Busca<span class="loop">Loop</span> Saúde</span></div>
+      <section class="cover small"><div class="brand">${brandMark()}<span>Clini<span class="loop">Loop</span></span></div>
       <div><div class="kicker">Briefing · ${E(fmtDate(todayISO()))}</div><h1>Briefing para ${E(role.label.toLowerCase())}</h1><p>${E(cfg.nome || profLabel())}${cfg.cidade ? ' · ' + E(cfg.cidade) : ''}</p></div></section>
       <div class="content">${secoes.map(([t, c]) => `<section class="chapter flow"><h2>${E(t)}</h2>${mdToHtml(c)}</section>`).join('')}</div>
-      <div class="foot">Montado com o BuscaLoop Saúde em ${E(fmtDate(todayISO()))}, no seu navegador. Não substitui orientação do conselho profissional nem assessoria jurídica.</div>`);
+      <div class="foot">Montado com o CliniLoop em ${E(fmtDate(todayISO()))}, no seu navegador. Não substitui orientação do conselho profissional nem assessoria jurídica.</div>`);
     document.getElementById('bf-area').hidden = false;
     document.getElementById('bf-frame').srcdoc = lastBriefingHtml;
     markUsed('briefing');
@@ -213,7 +213,7 @@
     setTimeout(() => URL.revokeObjectURL(url), 60000);
   }
   document.getElementById('bf-pdf').addEventListener('click', () => printDoc(lastBriefingHtml, formMsg(document.querySelector('form[data-tool="briefing"]'))));
-  document.getElementById('bf-html').addEventListener('click', () => download(`briefing-buscaloop-saude-${todayISO()}.html`, lastBriefingHtml, 'text/html;charset=utf-8'));
+  document.getElementById('bf-html').addEventListener('click', () => download(`briefing-cliniloop-${todayISO()}.html`, lastBriefingHtml, 'text/html;charset=utf-8'));
   document.getElementById('bf-md').addEventListener('click', (e) => copyText(lastBriefingMd, e.currentTarget));
 
   function brandMark() {
@@ -323,7 +323,7 @@
 
     return docShell(`Playbook da clínica — ${fmtDate(hoje)}`, `
 <section class="cover">
-  <div class="brand">${brandMark()}<span>Busca<span class="loop">Loop</span> Saúde</span></div>
+  <div class="brand">${brandMark()}<span>Clini<span class="loop">Loop</span></span></div>
   <div>
     <div class="kicker">Playbook da clínica · ${E(fmtDate(hoje))}</div>
     <h1>${E(titulo)}</h1>
@@ -337,7 +337,7 @@
 </section>
 <div class="content">
   <section class="chapter toc"><div class="chap-n">Sumário</div><h2>Neste playbook</h2><ol>${capitulos.map((c) => `<li>${E(c)}</li>`).join('')}</ol></section>
-  ${cap('Como usar este playbook', `<p>Atrair pacientes é um funil: muita gente vê o conteúdo, algumas conversam, menos agendam, comparecem e iniciam o tratamento. O BuscaLoop Saúde transforma isso num ritual: <b>toda semana</b>, Assistente da semana e Painel; <b>a cada 2 semanas</b>, este playbook. ${E(objInfo().porque)}</p><div class="box"><b>Como ler os selos:</b> <span class="pill ok">Feito</span> mostra quando você usou a ferramenta e até quando revisar; <span class="pill pend">Pendente</span> traz uma recomendação para concluir; <span class="pill late">Revisão atrasada</span> indica que se passaram mais de 2 semanas.</div><p>Este documento não contém nomes nem dados de pacientes: os números do funil são contagens.</p>`)}
+  ${cap('Como usar este playbook', `<p>Atrair pacientes é um funil: muita gente vê o conteúdo, algumas conversam, menos agendam, comparecem e iniciam o tratamento. O CliniLoop transforma isso num ritual: <b>toda semana</b>, Assistente da semana e Painel; <b>a cada 2 semanas</b>, este playbook. ${E(objInfo().porque)}</p><div class="box"><b>Como ler os selos:</b> <span class="pill ok">Feito</span> mostra quando você usou a ferramenta e até quando revisar; <span class="pill pend">Pendente</span> traz uma recomendação para concluir; <span class="pill late">Revisão atrasada</span> indica que se passaram mais de 2 semanas.</div><p>Este documento não contém nomes nem dados de pacientes: os números do funil são contagens.</p>`)}
   ${cap('Perfil do consultório', `<table><tr><th>Item</th><th>Situação</th><th>O que fazer</th></tr>${cfgRows.map(([a, b, c]) => `<tr><td>${E(a)}</td><td>${E(b)}</td><td>${c ? E(c) : '<span class="pill ok">Ok</span>'}</td></tr>`).join('')}</table>`)}
   ${cap('Posicionamento', ['publico', 'profissional', 'nicho'].map(toolCard).join(''))}
   ${cap('Presença e conteúdo', ['perfil', 'pautas', 'roteiro', 'formacao'].map(toolCard).join('') + `<h3>Estrutura de vídeo que funciona</h3><ol><li>Gancho de até 3 segundos, com texto na tela.</li><li>Contexto em uma frase.</li><li>De 3 a 5 pontos, um por bloco.</li><li>Um único pedido no final (salvar, enviar, chamar no WhatsApp).</li><li>Encerramento que conecta ao início.</li></ol><h3>Antes de publicar</h3><ul class="checklist"><li>Gancho claro nos 3 primeiros segundos</li><li>Legenda na tela e palavra-chave na legenda</li><li>Uma única chamada para ação</li><li>Identificação profissional (bio ou na própria imagem)</li><li>Passou pelo Verificador ético</li><li>Registrado no Diário de conteúdo</li></ul><p><b>Meta:</b> ${metaN} conteúdos por semana (${E((TEMPO[cfg.tempo] || TEMPO['2a3']).label)}).</p>`)}
@@ -345,7 +345,7 @@
   ${cap('Conversão: atendimento e rastreador', ['atendimento', 'rastreador'].map(toolCard).join('') + `<h3>Funil de pacientes hoje</h3><div class="tbl"><table class="num"><tr>${ativos.map(([e]) => `<th>${E(e)}</th>`).join('')}</tr><tr>${ativos.map(([, v]) => `<td>${v}</td>`).join('')}</tr></table></div><p>Próximos passos vencidos: <b>${pacientes.filter(isLate).length}</b>. Contatos que consentiram receber lembretes: ${consent.lemb}; conteúdos e novidades: ${consent.cont}.</p>`)}
   ${cap('Painel e gargalo', `${['assistente', 'painel'].map(toolCard).join('')}<div class="box"><b>Gargalo da semana:</b> ${E(g.txt)}</div><div class="tbl"><table class="num"><tr><th>Semana</th>${METRIC_COLS.map((c) => `<th>${E(c[1])}</th>`).join('')}</tr>${ws.map((w) => `<tr><td>${fmtShort(w.seg)}</td>${METRIC_COLS.map((c) => `<td>${w[c[0]]}</td>`).join('')}</tr>`).join('')}</table></div>`)}
   ${cap('Regras do seu conselho', `${['etica'].map(toolCard).join('')}${conselhoHtml}<h3>Vale para todas as profissões</h3><ul>${REGRAS_GERAIS.map((x) => `<li>${E(x)}</li>`).join('')}${isMental() ? `<li>${E(SAUDE_MENTAL)}</li>` : ''}</ul><p><i>Resumo conferido em outubro de 2026. Não substitui a norma vigente nem orientação do conselho ou de advogado.</i></p>`)}
-  ${cap('Plano de ação', `<p>Todos os passos e mudanças pendentes, na ordem recomendada para o seu objetivo e o seu tipo de profissional. Comece pelo primeiro e avance um por vez.</p>${acoes.length ? `<ol class="acoes">${acoes.map((a) => `<li><span class="onde">${E(a.onde)}</span>${E(a.txt)}</li>`).join('')}</ol>` : '<p>Tudo o que o BuscaLoop Saúde acompanha está em dia. Siga a rotina abaixo.</p>'}${cfg.produtor === 'terceiro' ? toolCard('briefing') : ''}`)}
+  ${cap('Plano de ação', `<p>Todos os passos e mudanças pendentes, na ordem recomendada para o seu objetivo e o seu tipo de profissional. Comece pelo primeiro e avance um por vez.</p>${acoes.length ? `<ol class="acoes">${acoes.map((a) => `<li><span class="onde">${E(a.onde)}</span>${E(a.txt)}</li>`).join('')}</ol>` : '<p>Tudo o que o CliniLoop acompanha está em dia. Siga a rotina abaixo.</p>'}${cfg.produtor === 'terceiro' ? toolCard('briefing') : ''}`)}
   ${cap('Plano de 90 dias', `<table><tr><th>Semanas</th><th>Foco</th><th>Entregas</th></tr>
     <tr><td>1 e 2</td><td>Fundamentos</td><td>Público, ICP e persona; marca e tom de voz; nicho e diferencial; perfis e Google revisados; respostas rápidas e rastreador em uso desde o primeiro contato.</td></tr>
     <tr><td>3 a 6</td><td>Constância</td><td>${metaN} conteúdos por semana a partir do banco de dúvidas; gravação em lote uma vez por semana; ritual de segunda (Assistente) e de sexta (Diário e Painel); toda peça pelo Verificador ético; primeiros 5 colegas mapeados.</td></tr>
@@ -353,7 +353,7 @@
     <tr><td>11 a 13</td><td>Escala</td><td>Repetir o que funcionou; collab ou palestra local; ampliar a rede de colegas; considerar delegar com o Briefing; novo playbook e metas do próximo trimestre.</td></tr></table>`)}
   ${cap('Rotina semanal e quinzenal', `<h3>Toda semana</h3><ul class="checklist"><li>Segunda: Assistente da semana (importar pendências e montar a agenda)</li><li>Todo dia: responder rápido e atualizar etapas e próximos passos no Rastreador</li><li>Sexta: Diário de conteúdo com os números e Painel com o gargalo</li></ul><h3>A cada 2 semanas</h3><p>Próximas datas: <b>${ciclos.map(fmtDate).join(' · ')}</b>.</p><ul class="checklist"><li>Atualizar o perfil do consultório e o banco de dúvidas</li><li>Gerar as próximas pautas e o calendário</li><li>Revisar campanhas por agendados e tratamentos iniciados</li><li>Devolver contrarreferências e agradecer indicações</li><li>Retomar pacientes pausados que consentiram receber lembretes</li><li>Conferir se as regras do conselho mudaram</li><li>Fazer backup e gerar um novo playbook</li></ul>`)}
 </div>
-<div class="foot">Montado pelo BuscaLoop Saúde em ${E(fmtDate(hoje))}, no seu navegador, a partir dos dados salvos nele. Revise sempre as recomendações antes de aplicá-las.</div>`);
+<div class="foot">Montado pelo CliniLoop em ${E(fmtDate(hoje))}, no seu navegador, a partir dos dados salvos nele. Revise sempre as recomendações antes de aplicá-las.</div>`);
   }
   document.getElementById('pb-build').addEventListener('click', () => {
     lastEbook = buildEbook();
@@ -365,17 +365,17 @@
     markUsed('ebook');
     document.getElementById('pb-area').scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
-  document.getElementById('pb-html').addEventListener('click', () => { if (!lastEbook) lastEbook = buildEbook(); download(`playbook-buscaloop-saude-${todayISO()}.html`, lastEbook, 'text/html;charset=utf-8'); });
+  document.getElementById('pb-html').addEventListener('click', () => { if (!lastEbook) lastEbook = buildEbook(); download(`playbook-cliniloop-${todayISO()}.html`, lastEbook, 'text/html;charset=utf-8'); });
   document.getElementById('pb-pdf').addEventListener('click', () => { if (!lastEbook) lastEbook = buildEbook(); printDoc(lastEbook, document.getElementById('pb-msg')); });
   document.getElementById('pb-ics').addEventListener('click', () => {
     const start = addDays(todayISO(), CICLO);
     const stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d+/, '');
-    const desc = icsEsc('Revisão quinzenal do BuscaLoop Saúde: atualizar perfil e banco de dúvidas; gerar pautas; revisar campanhas; contrarreferências e agradecimentos; retomadas com consentimento; conferir regras do conselho; backup e novo playbook.');
-    const ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//BuscaLoop Saude//PT-BR', 'CALSCALE:GREGORIAN', 'BEGIN:VEVENT',
-      `UID:revisao-${todayISO()}@buscaloopsaude`, `DTSTAMP:${stamp}`, `DTSTART;VALUE=DATE:${start.replace(/-/g, '')}`, `DTEND;VALUE=DATE:${addDays(start, 1).replace(/-/g, '')}`,
-      'RRULE:FREQ=WEEKLY;INTERVAL=2;COUNT=13', 'SUMMARY:Revisão quinzenal (BuscaLoop Saúde)', `DESCRIPTION:${desc}`,
+    const desc = icsEsc('Revisão quinzenal do CliniLoop: atualizar perfil e banco de dúvidas; gerar pautas; revisar campanhas; contrarreferências e agradecimentos; retomadas com consentimento; conferir regras do conselho; backup e novo playbook.');
+    const ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//CliniLoop//PT-BR', 'CALSCALE:GREGORIAN', 'BEGIN:VEVENT',
+      `UID:revisao-${todayISO()}@cliniloop`, `DTSTAMP:${stamp}`, `DTSTART;VALUE=DATE:${start.replace(/-/g, '')}`, `DTEND;VALUE=DATE:${addDays(start, 1).replace(/-/g, '')}`,
+      'RRULE:FREQ=WEEKLY;INTERVAL=2;COUNT=13', 'SUMMARY:Revisão quinzenal (CliniLoop)', `DESCRIPTION:${desc}`,
       'BEGIN:VALARM', 'TRIGGER:PT9H', 'ACTION:DISPLAY', 'DESCRIPTION:Revisão quinzenal', 'END:VALARM', 'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
-    download('buscaloop-saude-revisao-quinzenal.ics', ics, 'text/calendar;charset=utf-8');
+    download('cliniloop-revisao-quinzenal.ics', ics, 'text/calendar;charset=utf-8');
   });
 
   // ===================== Backup, restauração e limpeza =====================
@@ -383,7 +383,7 @@
     storeSet(BACKUP_KEY, todayISO());
     const dados = {};
     appKeys(false).forEach((k) => { try { dados[k] = window.localStorage.getItem(k); } catch (e) { /* noop */ } });
-    download(`buscaloop-saude-backup-${todayISO()}.json`, JSON.stringify({ app: APP_ID, versao: 1, criadoEm: new Date().toISOString(), dados }, null, 2), 'application/json');
+    download(`cliniloop-backup-${todayISO()}.json`, JSON.stringify({ app: APP_ID, versao: 1, criadoEm: new Date().toISOString(), dados }, null, 2), 'application/json');
     document.getElementById('bk-status').textContent = `Backup feito em ${fmtDate(todayISO())}. O arquivo contém nomes e telefones de pacientes: guarde em local seguro e não envie por mensagem.`;
     renderHoje();
   }
@@ -410,15 +410,15 @@
     const f = input.files && input.files[0];
     const status = document.getElementById('bk-status');
     if (!f) return;
-    if (f.size > 8 * 1024 * 1024) { status.textContent = 'Arquivo grande demais para ser um backup do BuscaLoop Saúde.'; input.value = ''; return; }
+    if (f.size > 8 * 1024 * 1024) { status.textContent = 'Arquivo grande demais para ser um backup do CliniLoop.'; input.value = ''; return; }
     const reader = new FileReader();
     reader.onload = () => {
       let pack = null;
       try { pack = JSON.parse(reader.result); } catch (err) { pack = null; }
-      if (!pack || pack.app !== APP_ID || !pack.dados || typeof pack.dados !== 'object') { status.textContent = 'Este arquivo não é um backup válido do BuscaLoop Saúde.'; input.value = ''; return; }
+      if (!pack || pack.app !== APP_ID || !pack.dados || typeof pack.dados !== 'object') { status.textContent = 'Este arquivo não é um backup válido do CliniLoop.'; input.value = ''; return; }
       const entradas = [];
       Object.entries(pack.dados).forEach(([k, v]) => {
-        if (!/^buscaloopsaude\.[a-z0-9.\-]+$/i.test(k) || k === KEY_STORE || typeof v !== 'string' || v.length > 4000000) return;
+        if (!/^cliniloop\.[a-z0-9.\-]+$/i.test(k) || k === KEY_STORE || typeof v !== 'string' || v.length > 4000000) return;
         let parsed;
         try { parsed = JSON.parse(v); } catch (err) { return; }
         if (SANITIZE[k]) { if (!Array.isArray(parsed)) return; entradas.push([k, JSON.stringify(SANITIZE[k](parsed.filter((x) => x && typeof x === 'object')))]); return; }
@@ -480,5 +480,5 @@
     renderFunnel();
     if (onbComplete()) configEl.classList.add('collapsed');
     renderHoje();
-    document.addEventListener('buscaloopsaude:dados', () => { renderHoje(); renderFunnel(); renderPainel(); renderCampanhas(); renderColegas(); });
+    document.addEventListener('cliniloop:dados', () => { renderHoje(); renderFunnel(); renderPainel(); renderCampanhas(); renderColegas(); });
   })();

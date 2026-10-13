@@ -1,10 +1,10 @@
-  // ===================== BuscaLoop Saúde =====================
+  // ===================== CliniLoop =====================
   // Endereço do repositório no GitHub (preencha depois de criar). Vazio = link escondido.
   const REPO_URL = '';
 
-  const APP = 'BuscaLoop Saúde';
-  const APP_ID = 'BuscaLoopSaude';
-  const PREFIX = 'buscaloopsaude.';
+  const APP = 'CliniLoop';
+  const APP_ID = 'CliniLoop';
+  const PREFIX = 'cliniloop.';
   const STORE_KEY = PREFIX + 'config.v1';
   const RES_KEY = PREFIX + 'resultados.v1';
   const USO_KEY = PREFIX + 'uso.v1';
@@ -247,7 +247,7 @@
     ['Medição do site', 'Google Analytics 4, Google Tag Manager', 'Conversões de WhatsApp, ligação e formulário'],
     ['Presença local', 'Perfil da Empresa no Google, Doctoralia', 'Avaliações e agendamento online'],
     ['Atendimento', 'WhatsApp Business (app ou API oficial)', 'Respostas rápidas, etiquetas, catálogo de serviços'],
-    ['CRM comercial', 'BuscaLoop Saúde, RD Station CRM, Kommo, Pipedrive, HubSpot', 'Funil, próximos passos, automações'],
+    ['CRM comercial', 'CliniLoop, RD Station CRM, Kommo, Pipedrive, HubSpot', 'Funil, próximos passos, automações'],
     ['Agenda e prontuário', 'iClinic, Feegow, Amplimed, Simples Dental, Clinicorp', 'Agenda, confirmação e prontuário eletrônico (fora do CRM)'],
     ['Assistentes de IA', 'Claude, ChatGPT, Gemini, Copilot', 'Nunca com dados de pacientes']
   ];
@@ -320,4 +320,4 @@
     try { document.execCommand('copy'); } catch (e) { /* noop */ }
     ta.remove(); done();
   }
-  function notifyData() { document.dispatchEvent(new Event('buscaloopsaude:dados')); }
+  function notifyData() { document.dispatchEvent(new Event('cliniloop:dados')); }
