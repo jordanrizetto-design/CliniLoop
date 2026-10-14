@@ -2,7 +2,7 @@
 
 # CliniLoop
 
-Pacientes, colegas e campanhas, do primeiro contato ao tratamento, com ética e método. Para **médicos, psiquiatras, dentistas, psicólogos, fisioterapeutas e clínicas multiprofissionais**. Funciona com o **Claude gratuito ou com assinatura** (Pro ou Max) e, se você quiser, com a API da Anthropic.
+**O app do e-book _Prompt do Sim · Saúde_, de JR Tosoni.** Pacientes, colegas e campanhas, do primeiro contato ao tratamento, com ética e método. Para **médicos, psiquiatras, dentistas, psicólogos, fisioterapeutas, nutricionistas e clínicas multiprofissionais**. Funciona com o **Claude gratuito ou com assinatura** (Pro ou Max) e, se você quiser, com a API da Anthropic.
 
 O CliniLoop mantém a lógica do [BuscaLoop](https://github.com/jordanrizetto-design/Otimizador-de-Oportunidades) original:
 - um perfil base que alimenta todas as ferramentas;
@@ -16,13 +16,34 @@ Muda o objeto: em vez de vagas, pacientes, colegas e campanhas.
 
 > Não substitui a orientação do seu conselho profissional nem assessoria jurídica. As regras de publicidade resumidas aqui foram conferidas em outubro de 2026; confirme a norma vigente antes de campanhas e formatos novos.
 
+## O livro e o app
+
+O e-book _Prompt do Sim · Saúde_ ensina o roteiro; o CliniLoop guarda o registro. O livro tem **seis etapas e 14 partes**, e cada parte termina em três caixas: **Prompt do Sim** (o prompt pronto), **Na prática** (o passo de até 30 minutos para hoje) e **Sinergia CliniLoop** (a ferramenta do app).
+
+| Etapa do livro | Partes | Ferramentas do CliniLoop |
+|---|---|---|
+| 1. Entenda o jogo e as regras | 1 A jornada do Sim na saúde · 2 Ética primeiro: conselhos e LGPD | Comece aqui, Painel (os sete sins), Verificador ético |
+| 2. Posicione-se | 3 Os canais, um a um | Perfis e presença (com checklist de cada canal), Público, Persona do profissional, Nicho (Oceano Azul), Formação |
+| 3. Gere autoridade e demanda | 4 Conteúdo · 5 Reaproveitamento · 6 Colegas · 7 Tráfego pago | Pautas, Roteiros, Reaproveitamento de conteúdo, Rede de colegas, Gerador de campanhas (com impulsionamento) |
+| 4. Converta contatos em consultas | 8 Agendamento · 9 Comparecimento | Atendimento e agendamento, Rastreador de pacientes |
+| 5. Feche e acompanhe o tratamento | 10 Fechamento com ética | Plano de tratamento compreensível, Rastreador, Assistente da semana |
+| 6. Meça e escale com CRM | 11 CRM · 12 Especificação do app · 13 Campanhas e prompts · 14 Ferramentas | Rastreador, Painel, Playbook, Gerador de campanhas, Verificador ético, Ferramentas recomendadas |
+
+No app, a integração aparece em três lugares:
+- **Faixa "No livro" em cada ferramenta:** a parte e a etapa correspondentes, o passo "Na prática" e o prompt do livro já preenchido com o Perfil do consultório (copiar ou abrir direto no Claude).
+- **Seção "O livro":** o roteiro em seis etapas com o que você já usou, os sete sins com os números dos últimos 30 dias, a biblioteca com os 12 prompts da Parte 13, a estrutura de um bom prompt, as quatro regras de IA e o glossário de 75 termos (Anexo A).
+- **Comportamento do app alinhado ao livro:** próximo passo típico de cada etapa, planos sem decisão em 2, 7 e 15 dias, retomadas de 1, 3 e 7 dias, faltas registradas e mostradas por dia da semana, métricas da Parte 11 (taxas de agendamento, comparecimento, aceitação e conclusão, custo por paciente que compareceu, indicações por colega, receita por origem), funil de colegas do livro (Mapeado, Apresentado, Primeira indicação, Parceiro ativo, Inativo) e o ritual semanal de 30 minutos no Assistente e no Playbook.
+
 ## O método por trás
 
 | Base | Autoria | O que entra no CliniLoop |
 |---|---|---|
-| Método Foguete | Pat Machadu | Etapas de crescimento: fundamentos, planejamento (transformação, Ikigai, pesquisa de mercado, identidade, baldes), perfil, produção, análise, recursos da plataforma, metas S.M.A.R.T. e hábitos. Criado para o YouTube e adaptado ao Instagram. |
+| Prompt do Sim · Saúde | JR Tosoni | O e-book que o app acompanha: seis etapas, sete sins, três caixas por parte e as quatro regras de IA (não invente, revise sempre, proteja dados, mantenha a sua voz). |
+| Oceano Azul | W. Chan Kim e Renée Mauborgne | As quatro ações (eliminar, reduzir, elevar, criar) para uma proposta de valor própria e ética. |
+| Método Foguete | Pat Machadu | Sete etapas de crescimento: fundamentos, planejamento (transformação, adjetivos de marca, temas de conteúdo), perfil, produção, análise, recursos da plataforma e metas S.M.A.R.T. Criado para o YouTube e adaptado ao Instagram. |
 | Efeito Di | Diandra Santos (@segueadi) | Inteligência de nicho, uma promessa e uma pergunta por peça, quadros e personagens recorrentes, biblioteca de formatos (tela dividida, tela verde, Lo-Fi, quadro a quadro, ranking com critério), marca pessoal, gravação no celular, confiança na câmera, revisão de roteiro em duas etapas, impulsionamento e o R.O.A.S. (Roteiro, Observação, Adaptação, Substituição) para modelar referências sem copiar. |
-| Pesquisa e normas | out/2026 | Sinais do algoritmo do Instagram (só tempo de visualização, curtidas por alcance e envios por alcance têm confirmação atribuída à Meta; o resto é heurística) e regras do CFM, CFO, CFP e COFFITO. |
+| Reaproveitamento | Thiago Lemos e Alexandre Abramo | Uma aula, podcast ou entrevista vira carrossel, guia, Reel e Stories, com registro de ideias, autoria e pendências. |
+| Pesquisa e normas | out/2026 | Sinais do algoritmo do Instagram (tempo de visualização, envios por alcance e curtidas por alcance confirmados pela Meta; o resto é heurística) e regras do CFM, CFO, CFP, COFFITO e CFN. |
 
 O CliniLoop usa princípios dessas fontes e não reproduz o material dos cursos. Rótulos pedagógicos como "viciante" não são métricas, e o R.O.A.S. do curso não é o ROAS de mídia paga.
 
@@ -40,7 +61,7 @@ O CliniLoop usa princípios dessas fontes e não reproduz o material dos cursos.
 1. **Comece aqui**, em três passos:
    1. **Qual resultado você quer alcançar?** Objetivo dos próximos 90 dias e uma frase concreta.
    2. **Configure seu consultório.** Tipo de profissional, registro, tipo de conta (profissional ou clínica), especialidade, cidade e bairro.
-   3. **Perfil do consultório.** Serviços, público ideal, transformação, baldes de conteúdo, canais, tempo disponível e diferenciais.
+   3. **Perfil do consultório.** Serviços, público ideal, proposta de valor, temas de conteúdo (com a sugestão do livro para a sua profissão), canais, tempo disponível e diferenciais.
 2. **Hoje**, no topo da página, mostra três coisas:
    - a próxima ação recomendada;
    - os próximos passos vencidos (pacientes e colegas);
@@ -50,27 +71,28 @@ O CliniLoop usa princípios dessas fontes e não reproduz o material dos cursos.
 
 O tipo de profissional define as regras do conselho embutidas em todos os geradores e a ordem recomendada das ferramentas.
 
-## As 17 ferramentas
+## As 18 ferramentas
 
-| # | Ferramenta | O que faz |
-|---|---|---|
-| 01 | Público, ICP e persona do paciente | Público-alvo, ICP, anti-ICP, personas, mapa de empatia, jornada e perguntas de busca |
-| 02 | Persona do profissional e marca | Arquétipo, adjetivos, tom de voz "faço / não faço", bios, história, bandeiras e limites |
-| 03 | Nicho e diferencial | Ikigai, três opções de nicho, proposta de valor, diferenciais verificáveis e pesquisa de concorrentes |
-| 04 | Perfis e presença | Auditoria e reescrita de Instagram, Perfil da Empresa no Google, YouTube e LinkedIn |
-| 05 | Pautas e palavras-chave | Banco de dúvidas reais (fica salvo), palavras-chave por serviço e cidade, 30 pautas por momento da jornada, quadros recorrentes, metas S.M.A.R.T., frequência e calendário |
-| 06 | Roteiros de conteúdo e copy | Reels (inclusive tela dividida, Lo-Fi, quadro a quadro e ranking), carrosséis, Stories, YouTube, LinkedIn, legendas e páginas; quadro recorrente, R.O.A.S. para modelar referências, revisão em duas etapas, versão curta, pendências, hipótese de teste, checklist antes de publicar e referências de 11 criadores de saúde |
-| 07 | Formação e autoridade | Congressos, cursos, publicações e títulos, e como comunicá-los |
-| 08 | Gerador de campanhas | Ficha da campanha, quatro modelos, peças, anúncios Meta e Google, calendário e medição; registro das campanhas com resultados vindos do rastreador |
-| 09 | Rede de colegas | Funil de colegas, carta de apresentação, modelo de contrarreferência e agradecimentos |
-| 10 | Atendimento e agendamento | Respostas rápidas, roteiro de agendamento, régua de confirmação, retomadas e plano de tratamento compreensível |
-| 11 | Rastreador de pacientes | Funil de sete etapas, consentimento por finalidade, próximos passos vencidos, atividades, lembretes (.ics), planilha (.csv) e "Da conversa ao registro" |
-| 12 | Assistente da semana | Importa pendências anonimizadas e monta a agenda em blocos |
-| 13 | Painel e diagnóstico | Métricas de 8 semanas, diário de conteúdo (quadro, variável testada, retenção, impulsionamento), gargalo do funil e diagnóstico com IA |
-| 14 | Verificador ético | Regras do conselho, LGPD e políticas da Meta e do Google; checagem rápida sem IA e revisão frase a frase |
-| 15 | Briefing para terceiros | Documento para agência, social media, videomaker, tráfego, designer, redator ou recepção |
-| 16 | Ferramentas recomendadas | Uma ferramenta por necessidade (listadas, não avaliadas) e prompt para montar a sua caixa |
-| 17 | Playbook da clínica | E-book com perfil, decisões, regras, funil, campanhas, colegas, métricas, plano de ação, plano de 90 dias e rotina quinzenal |
+| # | Ferramenta | Parte do livro | O que faz |
+|---|---|---|---|
+| 01 | Público, ICP e persona do paciente | 3 | Público-alvo, ICP, anti-ICP, personas, mapa de empatia, jornada e perguntas de busca |
+| 02 | Persona do profissional e marca | 3 | Arquétipo, adjetivos, tom de voz "faço / não faço", bios, história, bandeiras e limites |
+| 03 | Nicho e diferencial | Apresentação e 3 | Oceano Azul, três opções de nicho, proposta de valor, diferenciais verificáveis e pesquisa de concorrentes |
+| 04 | Perfis e presença | 3 | Auditoria e reescrita de Google, Instagram, YouTube, LinkedIn e TikTok, checklist de configuração de cada canal e assistente da página da bio |
+| 05 | Pautas e palavras-chave | 4 | Banco de dúvidas reais, palavras-chave por serviço e cidade, 30 pautas por momento da jornada, quadros recorrentes, metas S.M.A.R.T., frequência do livro e calendário |
+| 06 | Roteiros de conteúdo e copy | 4 | Reel em seis tempos, carrosséis, Stories, YouTube, LinkedIn, legendas e páginas; quadro recorrente, R.O.A.S., revisão em duas etapas, checklist antes de publicar e referências de criadores clínicos |
+| 07 | Reaproveitamento de conteúdo | 5 | Da aula, podcast ou entrevista ao carrossel, guia, Reel em duas versões e Stories, com registro de ideias e pendências |
+| 08 | Formação e autoridade | 3 | Congressos, cursos, publicações e títulos, e como comunicá-los |
+| 09 | Gerador de campanhas | 7 e 13 | Campanha completa, plano de impulsionamento (Turbinar) ou só anúncios Meta e Google; registro de campanhas e impulsionamentos com custo por paciente que compareceu |
+| 10 | Rede de colegas | 6 | Quem indica quem, funil de colegas do livro, carta de apresentação, contrarreferência e agradecimentos |
+| 11 | Atendimento e agendamento | 8 e 10 | 12 respostas rápidas, agendamento em cinco mensagens, sequência de confirmação, retomadas e plano de tratamento compreensível |
+| 12 | Rastreador de pacientes | 9 e 11 | Funil de sete etapas, consentimento por finalidade, próximo passo típico, planos parados, faltas, lembretes (.ics), planilha (.csv) e "Da conversa ao registro" |
+| 13 | Assistente da semana | 10 e 11 | Ritual de 30 minutos: pendências anonimizadas, parados e agenda em blocos |
+| 14 | Painel e diagnóstico | 11 e 1 | Métricas de 8 semanas, métricas da Parte 11 por origem e profissional, faltas por dia da semana, diário de conteúdo, gargalo e diagnóstico com IA |
+| 15 | Verificador ético | 2 e 13 | Regras do conselho, LGPD e políticas da Meta e do Google; checagem rápida sem IA e revisão frase a frase |
+| 16 | Briefing para terceiros | 14 | Documento para agência, social media, videomaker, tráfego, designer, redator ou recepção |
+| 17 | Ferramentas recomendadas | 14 | Uma ferramenta por necessidade (listadas, não avaliadas) e prompt para montar a sua caixa |
+| 18 | Playbook da clínica | 11 | E-book com o livro e os sete sins, perfil, decisões, regras, funil, campanhas, colegas, métricas, plano de ação, 90 dias e ritual |
 
 ## Rastreador de pacientes
 
@@ -86,13 +108,15 @@ As sete etapas do rastreador:
 | Em tratamento | Iniciou o tratamento |
 | Encerrado | Com resultado (Alta e vínculo, Perdido ou Pausado) e motivo |
 
+Para médicos, psiquiatras e psicólogos sem planos por pacote, as etapas 5 e 6 aparecem como "Retorno agendado" e "Em acompanhamento", como na Parte 11 do livro.
+
 **Campos de cada contato:**
 - nome ou apelido, telefone e canal preferido;
 - origem (inclusive campanhas registradas e indicação de colega), serviço e profissional;
 - etapa, próximo passo e data;
 - valor do plano;
 - consentimento por finalidade (atendimento, lembretes, conteúdos), com data e revogação;
-- histórico de atividades (mensagem, ligação, confirmação, retomada), com responsável.
+- histórico de atividades (mensagem, ligação, confirmação, retomada, falta, remarcação), com responsável.
 
 **Requisitos de saúde atendidos:**
 1. **Nenhum dado clínico no CRM.** O campo de observações avisa quando o texto parece informação clínica, e os prompts nunca levam nomes ou telefones: no Assistente da semana os pacientes viram "Contato 1, 2…", e em "Da conversa ao registro" telefones, e-mails e CPF são trocados por marcadores.
@@ -107,6 +131,7 @@ As sete etapas do rastreador:
 | CFO | Código de Ética Odontológica (alterado pela Res. CFO 271/2025) e Res. CFO 196/2019 (antes e depois: só pelo dentista que executou, nunca no perfil da clínica) | [FAQ do CFO sobre a 196/2019](https://website.cfo.org.br/resolucao-cfo-196-2019/), [CROSP](https://site.crosp.org.br/uploads/arquivo/3724579826b71ed53e3c7d0ff3104a64.pdf), [Res. CFO 271/2025](https://sistemas.cfo.org.br/visualizar/atos/RESOLU%C3%87%C3%83O/SEC/2025/271), [LegisMap](https://legismap.com.br/conteudos/artigos-e-noticias/em-cumprimento-a-decisao-do-cade-cfo-realiza-alteracoes-pontuais-no-codigo-de-etica) |
 | CFP | Código de Ética do Psicólogo (art. 20), Res. CFP 3/2007 e Nota Técnica CFP 1/2022 | [Cartilha CRP-MG, abril de 2026](https://acervodigital.crp04.org.br/wp-content/uploads/tainacan-items/9483/81624/CRP-MG_Cartilha-Publicidade-profissional-abril-2026.pdf), [CFP](https://site.cfp.org.br/cfp-divulga-orientacoes-a-categoria-sobre-publicidade-nas-redes-sociais/) |
 | COFFITO | Res. COFFITO 532/2021 (publicidade e imagem de pacientes) e Código de Ética da Fisioterapia (Res. 424/2013) | [COFFITO](https://www.coffito.gov.br/nsite/?p=18752), [Normas Brasil](https://www.normasbrasil.com.br/norma/resolucao-424-2013_257114.html) |
+| CFN | Código de Ética e de Conduta do Nutricionista (Res. CFN 599/2018), capítulos IV e V | [Res. 599/2018](https://cfn.org.br/wp-content/uploads/resolucoes/Res_599_2018.html), [Código (PDF)](https://www.cfn.org.br/wp-content/uploads/2019/06/Novo_Codigo_de_Etica-e-de-Conduta-do-Nutricionista.pdf) |
 
 ## Três modos de uso
 
@@ -144,22 +169,15 @@ O painel Hoje lembra de fazer backup quando há dados e nenhum backup nos últim
 
 ## Limites desta versão
 
-Esta versão cobre o MVP e a v2 do roteiro: tudo o que funciona numa página no navegador.
+Esta versão cobre o MVP e a v2 da Parte 12 do livro: tudo o que funciona numa página no navegador.
 
-Ficam para uma versão com servidor (v3):
-- vários usuários com perfis de acesso (profissional, coordenação, recepção);
-- integração com WhatsApp Business e agenda (Google ou Outlook);
-- importação de conversões offline para Meta e Google.
+O modelo foi pensado para o profissional que trabalha sozinho: os dados ficam no navegador de quem usa e não são compartilhados. Clínicas em que recepção, coordenação e vários profissionais precisam acessar os mesmos registros precisam de outra solução; escreva para suporte_CliniLoop@gmail.com.
 
-Uma clínica com recepção e dados compartilhados vai precisar dessa versão, com as obrigações da LGPD que ela traz.
+Ficam para a v3: integração com WhatsApp e agenda e importação de conversões offline para Meta e Google.
 
-## Como publicar no GitHub Pages
+## Publicação
 
-1. No GitHub, crie um repositório **público** (por exemplo `cliniloop`), sem README.
-2. Em **Add file → Upload files**, envie `index.html`, `README.md`, `LICENSE` e `cliniloop-logo.svg` e clique em **Commit changes**.
-3. Em **Settings → Pages**, escolha **Deploy from a branch**, branch **main**, pasta **/ (root)**, e salve.
-4. Em 1 a 2 minutos o site fica em `https://SEU-USUARIO.github.io/NOME-DO-REPOSITORIO/`.
-5. Para mostrar o link do GitHub no menu e no rodapé, preencha `REPO_URL` em `src/app1.js` e rode `python3 build.py`, ou edite a constante `REPO_URL` direto no `index.html`.
+O app fica em **https://jordanrizetto-design.github.io/CliniLoop/** (GitHub Pages, branch `main`, pasta raiz). Para publicar uma cópia sua: crie um repositório público, envie `index.html`, `README.md`, `LICENSE` e `cliniloop-logo.svg`, e ative **Settings → Pages → Deploy from a branch → main / (root)**. Para mostrar o link do GitHub no menu, preencha `REPO_URL` em `src/app1.js` e rode `python3 build.py`.
 
 ## Como usar (para quem nunca usou IA)
 
@@ -174,11 +192,11 @@ Uma clínica com recepção e dados compartilhados vai precisar dessa versão, c
 ## Para desenvolvedores
 
 O código-fonte fica em `src/`:
-- `config_part.html`, `settings_part.html`, `tools.html`, `body2.html` e `head_part.html`;
-- `app1.js` a `app4.js`;
+- `config_part.html`, `settings_part.html`, `tools.html`, `livro.html`, `body2.html` e `head_part.html`;
+- `app1.js` a `app5.js` e `livro_data.js` (o mapa do livro: etapas, partes, caixas Na prática e Sinergia, os 12 prompts, as checklists e o glossário);
 - `extra.css` e `base.css`.
 
-O `python3 build.py` junta tudo em `index.html`. As regras dos conselhos ficam em `COUNCILS`, os tipos de profissional em `PROFISSIONAIS`, as prioridades em `OBJETIVOS` e `PROF_ROTA`, e os prompts em `promptBuilders`.
+O `python3 build.py` junta tudo em `index.html`. As regras dos conselhos ficam em `COUNCILS`, os tipos de profissional em `PROFISSIONAIS`, as prioridades em `OBJETIVOS` e `PROF_ROTA`, os prompts em `promptBuilders` e o livro em `LIVRO`, `TOOL_PARTES` e `PROMPTS_LIVRO`.
 
 ## Licença
 

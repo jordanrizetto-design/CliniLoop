@@ -78,7 +78,7 @@
               <span class="step-n">2</span>
               <div>
                 <h4 id="onb2">Configure seu consultório</h4>
-                <p>O tipo de profissional define as regras do conselho que todos os geradores respeitam e a ordem recomendada das ferramentas.</p>
+                <p>O tipo de profissional define as regras do conselho que todos os geradores respeitam e a ordem recomendada das ferramentas (Partes 1 e 2 do livro).</p>
               </div>
             </div>
             <fieldset class="field">
@@ -89,6 +89,7 @@
                 <label class="type-card"><input type="radio" name="profissional" value="dentista"><span class="t-name">Dentista</span><span class="t-hint">CFO · CRO</span></label>
                 <label class="type-card"><input type="radio" name="profissional" value="psicologo"><span class="t-name">Psicólogo(a)</span><span class="t-hint">CFP · CRP</span></label>
                 <label class="type-card"><input type="radio" name="profissional" value="fisioterapeuta"><span class="t-name">Fisioterapeuta</span><span class="t-hint">COFFITO · CREFITO</span></label>
+                <label class="type-card"><input type="radio" name="profissional" value="nutricionista"><span class="t-name">Nutricionista</span><span class="t-hint">CFN · CRN</span></label>
                 <label class="type-card"><input type="radio" name="profissional" value="multi"><span class="t-name">Clínica multiprofissional</span><span class="t-hint">Regras de cada conselho</span></label>
               </div>
             </fieldset>
@@ -99,6 +100,7 @@
                 <label><input type="checkbox" name="multiProf" value="dentista"> Odontologia</label>
                 <label><input type="checkbox" name="multiProf" value="psicologo"> Psicologia</label>
                 <label><input type="checkbox" name="multiProf" value="fisioterapeuta"> Fisioterapia</label>
+                <label><input type="checkbox" name="multiProf" value="nutricionista"> Nutrição</label>
               </div>
             </fieldset>
             <div class="row2">
@@ -108,7 +110,7 @@
               </div>
               <div class="field">
                 <label for="cfg-registro">Registro no conselho</label>
-                <input type="text" id="cfg-registro" name="registro" placeholder="Ex: CRM-SP 00000 · RQE 0000 · CRO-SP 00000 · CRP 06/00000 · CREFITO-3 0000">
+                <input type="text" id="cfg-registro" name="registro" placeholder="Ex: CRM-SP 00000 · RQE 0000 · CRO-SP 00000 · CRP 06/00000 · CREFITO-3 0000 · CRN-3 00000">
                 <small>Obrigatório na publicidade de todas as profissões. Clínica: inclua o responsável técnico.</small>
               </div>
             </div>
@@ -161,7 +163,7 @@
               <span class="step-n">3</span>
               <div>
                 <h4 id="onb3">Perfil do consultório</h4>
-                <p>Preencha uma vez: serviços, público, transformação e baldes de conteúdo entram em todos os prompts, no rastreador e no playbook.</p>
+                <p>Preencha uma vez: profissão, registro, especialidade, cidade, serviços, público ideal e temas de conteúdo. Como diz a Parte 12 do livro, ele alimenta todas as ferramentas, o rastreador e o playbook.</p>
               </div>
             </div>
             <div class="field">
@@ -175,14 +177,16 @@
                 <input type="text" id="cfg-publico" name="publico" placeholder="Ex: adultos de 40 a 65 anos que perderam dentes, da zona sul">
               </div>
               <div class="field">
-                <label for="cfg-transf">Transformação</label>
-                <input type="text" id="cfg-transf" name="transformacao" placeholder="Ajudo [público] a [resultado] com [diferencial]">
+                <label for="cfg-transf">Proposta de valor</label>
+                <input type="text" id="cfg-transf" name="transformacao" placeholder="Ajudo [público] a [entender ou cuidar de algo] com [diferencial]">
+                <small>Na saúde, a promessa é de informação e atendimento, nunca de resultado individual.</small>
               </div>
             </div>
             <div class="row2">
               <div class="field">
-                <label for="cfg-baldes">Baldes de conteúdo (até 3)</label>
+                <label for="cfg-baldes">Temas de conteúdo (até 3)</label>
                 <input type="text" id="cfg-baldes" name="baldes" placeholder="Ex: dúvidas sobre tratamentos, bastidores e cuidado, mitos e erros comuns">
+                <small id="cfg-temas-sug">Educar, humanizar e desmistificar (Parte 4). Todo post precisa caber em um deles.</small>
               </div>
               <div class="field">
                 <label for="cfg-arroba">Seu @ principal</label>

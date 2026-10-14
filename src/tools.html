@@ -1,10 +1,10 @@
 
   <section class="alt" id="ferramentas">
     <div class="wrap">
-      <p class="eyebrow">As 17 ferramentas</p>
+      <p class="eyebrow">As 18 ferramentas</p>
       <div class="lead-block">
         <h2>Do posicionamento ao paciente em tratamento.</h2>
-        <p>Cada ferramenta cobre uma etapa do funil. As prioridades seguem seu objetivo e o tipo de profissional escolhido em "Comece aqui". O que você guardar numa ferramenta passa a alimentar as seguintes, o briefing e o playbook.</p>
+        <p>Cada ferramenta cobre uma etapa do funil e uma parte do e-book <a href="#livro"><i>Prompt do Sim · Saúde</i></a>. As prioridades seguem seu objetivo e o tipo de profissional escolhido em "Comece aqui". O que você guardar numa ferramenta passa a alimentar as seguintes, o briefing e o playbook.</p>
       </div>
 
       <div class="route-panel funnel-panel" id="rota" aria-live="polite">
@@ -164,10 +164,11 @@
                 <label><input type="checkbox" name="redes" value="Perfil da Empresa no Google" checked> Perfil da Empresa no Google</label>
                 <label><input type="checkbox" name="redes" value="YouTube"> YouTube</label>
                 <label><input type="checkbox" name="redes" value="LinkedIn"> LinkedIn</label>
+                <label><input type="checkbox" name="redes" value="TikTok"> TikTok</label>
               </div>
             </fieldset>
             <div class="field">
-              <label for="pf-atual">Textos atuais: bio do Instagram, descrição do canal, título e "Sobre" do LinkedIn, descrição no Google *</label>
+              <label for="pf-atual">Textos atuais: bio do Instagram, descrição do canal, título e "Sobre" do LinkedIn, descrição no Google, TikTok *</label>
               <textarea id="pf-atual" name="atual" required rows="5" placeholder="Cole o que tiver. Se ainda não tem algum perfil, escreva 'não tenho'."></textarea>
             </div>
             <div class="row2">
@@ -186,10 +187,15 @@
                 <input type="text" id="pf-destaques" name="destaques" placeholder="Ex: Dúvidas, Clínica, Equipe">
               </div>
             </div>
+            <label class="inline-check"><input type="checkbox" name="assistenteBio" value="sim"> Incluir o texto-base de um assistente de orientação para a página da bio (Partes 3 e 5)</label>
             <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar prompt</button></div>
             <div class="output-block" hidden></div>
           </form>
           <div class="saved-slot" data-save="perfil" data-label="textos aprovados dos perfis"></div>
+          <details class="profile-base ref-box" open>
+            <summary><span>Checklist de configuração de cada canal (Parte 3)</span> <span class="chevron">▸</span></summary>
+            <div class="profile-body"><p class="plan-note">Comece pelo Perfil da Empresa no Google e pelo Instagram; YouTube, LinkedIn e TikTok entram à medida que a sua rotina permitir. As marcações ficam salvas neste navegador.</p><div id="canais-check" class="canais-check"></div></div>
+          </details>
         </div>
       </details>
 
@@ -263,7 +269,7 @@
             </div>
             <div class="row3">
               <div class="field">
-                <label for="ro-balde">Balde de conteúdo</label>
+                <label for="ro-balde">Tema de conteúdo</label>
                 <select id="ro-balde" name="balde" data-options="baldes"><option value="">(escolha)</option></select>
               </div>
               <div class="field">
@@ -282,6 +288,23 @@
                   <option value="narração em off com imagens de apoio">Narração com imagens</option>
                   <option value="só texto na tela, sem voz">Só texto na tela</option>
                 </select>
+              </div>
+            </div>
+            <div class="row2">
+              <div class="field">
+                <label for="ro-momento">Momento da jornada do paciente</label>
+                <select id="ro-momento" name="momento">
+                  <option value="entender um sintoma">Entender um sintoma</option>
+                  <option value="compreender a avaliação">Compreender a avaliação</option>
+                  <option value="comparar caminhos de cuidado">Comparar caminhos de cuidado</option>
+                  <option value="preparar-se para a consulta">Preparar-se para a consulta</option>
+                  <option value="acompanhar o tratamento">Acompanhar o tratamento</option>
+                  <option value="conhecer a equipe">Conhecer a equipe</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="ro-kw">Palavra-chave (serviço + cidade)</label>
+                <input type="text" id="ro-kw" name="kw" placeholder="Ex: fisioterapia para coluna em Campinas">
               </div>
             </div>
             <div class="row2">
@@ -336,9 +359,87 @@
         </div>
       </details>
 
+      <details class="tool" data-id="reaproveitamento">
+        <summary>
+          <div class="tool-title"><span class="pin">07</span><div><h3>Reaproveitamento de conteúdo</h3><span class="sub">Uma aula, podcast ou entrevista vira carrossel, guia, Reel e Stories</span></div></div>
+          <span class="chevron">▸</span>
+        </summary>
+        <div class="tool-body">
+          <p class="desc">O gargalo de quem já fala bem sobre saúde quase nunca é falta de ideia: é transformar o que já foi dito em conteúdo distribuído. Antes de criar do zero, procure o que já existe. A IA entra entre a experiência humana e a distribuição; você continua sendo a fonte, o revisor e quem grava.</p>
+          <div class="num-wrap"><table class="num-table fontes-table"><tr><th>Use</th><th>Não use sem autorização formal e anonimização</th></tr>
+            <tr><td>Aulas, palestras e participação em congressos</td><td>Gravações ou transcrições de consultas e atendimentos</td></tr>
+            <tr><td>Podcasts e entrevistas em que você participou</td><td>Lives em que pacientes contaram casos pessoais</td></tr>
+            <tr><td>Respostas a perguntas gerais, agregadas</td><td>Conversas privadas de Direct ou WhatsApp</td></tr>
+            <tr><td>Bastidores da rotina sem pacientes identificáveis</td><td>Telas, prontuários ou exames de terceiros</td></tr></table></div>
+          <form class="tool-form" data-tool="reaproveitamento">
+            <div class="row3">
+              <div class="field">
+                <label for="re-fonte">Fonte</label>
+                <select id="re-fonte" name="fonte">
+                  <option value="aula">Aula</option>
+                  <option value="palestra">Palestra</option>
+                  <option value="podcast">Podcast</option>
+                  <option value="entrevista">Entrevista</option>
+                  <option value="participação em congresso">Congresso</option>
+                  <option value="bastidor da rotina (notas e fotos, sem pacientes)">Bastidor da rotina</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="re-papel">Seu papel</label>
+                <select id="re-papel" name="papel">
+                  <option value="apresentador(a) ou professor(a)">Apresentador(a) ou professor(a)</option>
+                  <option value="convidado(a) ou entrevistado(a)">Convidado(a) ou entrevistado(a)</option>
+                  <option value="um(a) dos participantes de uma mesa">Participante de mesa</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="re-objetivo">Objetivo do conjunto</label>
+                <select id="re-objetivo" name="objetivo">
+                  <option value="gerar conversas para agendar">Gerar conversas para agendar</option>
+                  <option value="atrair seguidores qualificados">Atrair seguidores qualificados</option>
+                  <option value="encaminhar para o conteúdo completo">Encaminhar para o conteúdo completo</option>
+                </select>
+              </div>
+            </div>
+            <div class="row2">
+              <div class="field">
+                <label for="re-publico">Público</label>
+                <input type="text" id="re-publico" name="publico" data-prefill="publico" placeholder="Quem deve se interessar e que problema enfrenta">
+              </div>
+              <div class="field">
+                <label for="re-link">Link do episódio completo ou destino do guia</label>
+                <input type="text" id="re-link" name="link" placeholder="Sem link real, o guia não é divulgado">
+              </div>
+            </div>
+            <fieldset class="field">
+              <legend>Entregas</legend>
+              <div class="checks">
+                <label><input type="checkbox" name="entregas" value="carrossel" checked> Carrossel</label>
+                <label><input type="checkbox" name="entregas" value="guia" checked> Guia</label>
+                <label><input type="checkbox" name="entregas" value="Reel em duas versões" checked> Reel (duas versões)</label>
+                <label><input type="checkbox" name="entregas" value="Stories de bastidor"> Stories de bastidor</label>
+                <label><input type="checkbox" name="entregas" value="comentário com palavra-chave que leva ao guia"> Comentário que leva ao guia</label>
+              </div>
+            </fieldset>
+            <div class="field">
+              <label for="re-voz">Sua voz: como você fala, expressões que usa e o que evita</label>
+              <input type="text" id="re-voz" name="voz" placeholder="Ex: frases curtas, sem jargão, 'vamos combinar', evito 'milagre' e 'segredo'">
+            </div>
+            <div class="field">
+              <label for="re-transcricao">Transcrição ou anotações da fonte *</label>
+              <textarea id="re-transcricao" name="transcricao" required rows="7" placeholder="Cole a transcrição (o YouTube Studio e os apps de gravação geram automaticamente). Telefones e e-mails viram marcadores no prompt."></textarea>
+              <small>Nunca transcrições de consultas. Fala de convidado não vira experiência sua.</small>
+            </div>
+            <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar prompt</button></div>
+            <div class="output-block" hidden></div>
+          </form>
+          <p class="kit-note"><b>Comece com um piloto pequeno:</b> dois episódios ou aulas de que você gostou e em que participou bem, não necessariamente os mais vistos. Um por vez: gere, revise fidelidade, voz e utilidade, e publique só com destinos reais. Avalie o tempo por conjunto, o número de correções e a identificação com a sua voz. Um resultado isolado não prova que o método funciona.</p>
+        </div>
+      </details>
+
       <details class="tool" data-id="formacao">
         <summary>
-          <div class="tool-title"><span class="pin">07</span><div><h3>Formação e autoridade</h3><span class="sub">Congressos, cursos, publicações e títulos para o perfil e o LinkedIn</span></div></div>
+          <div class="tool-title"><span class="pin">08</span><div><h3>Formação e autoridade</h3><span class="sub">Congressos, cursos, publicações e títulos para o perfil e o LinkedIn</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -379,7 +480,7 @@
 
       <details class="tool" data-id="campanha" id="campanhas">
         <summary>
-          <div class="tool-title"><span class="pin">08</span><div><h3>Gerador de campanhas</h3><span class="sub">Ficha da campanha, peças, Meta Ads, Google Ads, atendimento e medição</span></div></div>
+          <div class="tool-title"><span class="pin">09</span><div><h3>Gerador de campanhas</h3><span class="sub">Ficha da campanha, peças, Meta Ads, Google Ads, atendimento e medição</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -392,6 +493,18 @@
             <button type="button" class="btn btn-outline btn-sm" data-modelo="reativacao">Reativação</button>
           </div>
           <form class="tool-form" data-tool="campanha">
+            <div class="field">
+              <label for="ca-tipo">O que você quer gerar</label>
+              <select id="ca-tipo" name="tipo">
+                <option value="completa">Campanha completa (ficha, peças, anúncios, atendimento e medição)</option>
+                <option value="impulsionamento">Plano de impulsionamento de um post (botão Turbinar)</option>
+                <option value="anuncios">Só os anúncios: Meta Ads e Google Ads</option>
+              </select>
+            </div>
+            <div class="field" id="ca-post-wrap" hidden>
+              <label for="ca-post">Post a impulsionar</label>
+              <textarea id="ca-post" name="post" rows="3" placeholder="Cole o texto e descreva o vídeo. Só peças educativas que já foram bem no orgânico e passaram pela revisão."></textarea>
+            </div>
             <div class="row3">
               <div class="field">
                 <label for="ca-servico">Serviço *</label>
@@ -438,14 +551,19 @@
             <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar prompt</button></div>
             <div class="output-block" hidden></div>
           </form>
+          <details class="profile-base ref-box">
+            <summary><span>Do livro: qual plataforma para qual intenção e o checklist do impulsionamento (Parte 7)</span> <span class="chevron">▸</span></summary>
+            <div class="profile-body" id="ref-trafego"></div>
+          </details>
           <p class="kit-note"><b>Datas de conscientização</b> (Setembro Amarelo, Outubro Rosa, Novembro Azul e outras) são boas para autoridade, desde que educativas. Em Setembro Amarelo, siga as recomendações de comunicação responsável sobre suicídio, informe o CVV (188) e não use o tema para captar pacientes.</p>
 
           <hr class="divider">
           <h4 style="margin:0 0 4px;font-family:var(--body)">Campanhas registradas</h4>
-          <p class="desc" style="margin-top:4px">Registre cada campanha ao publicar. Contatos, agendados, comparecimentos e tratamentos iniciados vêm do Rastreador, pelos pacientes com essa campanha como origem.</p>
+          <p class="desc" style="margin-top:4px">Registre cada campanha ou impulsionamento ao publicar. Contatos, agendados, comparecimentos e tratamentos iniciados vêm do Rastreador, pelos pacientes com essa origem. A métrica final não é clique nem mensagem: é custo por paciente que compareceu. Marque o que foi impulsionado, para não comparar peças pagas com orgânicas.</p>
           <form id="camp-form" class="tool-form">
-            <div class="row4">
-              <div class="field"><label for="cp-nome">Nome da campanha *</label><input type="text" id="cp-nome" required placeholder="Ex: Implante out/26"></div>
+            <div class="row5">
+              <div class="field"><label for="cp-nome">Nome *</label><input type="text" id="cp-nome" required placeholder="Ex: Implante out/26"></div>
+              <div class="field"><label for="cp-tipo">Tipo</label><select id="cp-tipo"><option value="Campanha">Campanha</option><option value="Impulsionamento">Impulsionamento</option></select></div>
               <div class="field"><label for="cp-plat">Plataforma</label>
                 <select id="cp-plat"><option>Orgânico</option><option>Meta Ads</option><option>Google Ads</option><option>YouTube</option><option>Colegas</option><option>WhatsApp</option><option>Várias</option></select></div>
               <div class="field"><label for="cp-ini">Início</label><input type="date" id="cp-ini"></div>
@@ -464,11 +582,12 @@
 
       <details class="tool" data-id="colegas" id="colegas">
         <summary>
-          <div class="tool-title"><span class="pin">09</span><div><h3>Rede de colegas</h3><span class="sub">Funil de colegas, carta de apresentação, contrarreferência e agradecimentos</span></div></div>
+          <div class="tool-title"><span class="pin">10</span><div><h3>Rede de colegas</h3><span class="sub">Funil de colegas, carta de apresentação, contrarreferência e agradecimentos</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
-          <p class="desc">Indicação de colega é o canal de maior confiança. Mapeie quem atende o mesmo paciente antes ou depois de você, apresente-se, devolva a contrarreferência e agradeça cada indicação.</p>
+          <p class="desc">A indicação de um colega é o paciente mais qualificado que existe: chega com confiança prévia, comparece mais e fecha mais. Ela se conquista com competência visível, comunicação de retorno e facilidade de encaminhar. Os cinco movimentos: mapear, apresentar-se com valor, facilitar o encaminhamento, devolver informação (contrarreferência) e manter o relacionamento.</p>
+          <div id="quem-indica"></div>
           <form id="col-form" class="tool-form">
             <div class="row4">
               <div class="field"><label for="cl-nome">Nome *</label><input type="text" id="cl-nome" required placeholder="Ex: Dr. Paulo Souza"></div>
@@ -483,7 +602,8 @@
             </div>
             <div class="form-actions"><button type="submit" class="btn btn-outline btn-sm" data-ico="plus">Adicionar colega</button></div>
           </form>
-          <div class="funnel" id="col-funnel"></div>
+          <div class="funnel funnel5" id="col-funnel"></div>
+          <p class="plan-note" id="col-metricas"></p>
           <div class="track-list" id="col-list"></div>
 
           <hr class="divider">
@@ -524,7 +644,7 @@
 
       <details class="tool" data-id="atendimento">
         <summary>
-          <div class="tool-title"><span class="pin">10</span><div><h3>Atendimento e agendamento</h3><span class="sub">Respostas rápidas, roteiro de agendamento, confirmação, retomadas e plano de tratamento</span></div></div>
+          <div class="tool-title"><span class="pin">11</span><div><h3>Atendimento e agendamento</h3><span class="sub">Respostas rápidas, roteiro de agendamento, confirmação, retomadas e plano de tratamento</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -581,12 +701,20 @@
             <div class="output-block" hidden></div>
           </form>
           <div class="saved-slot" data-save="atendimento" data-label="respostas rápidas e roteiros aprovados"></div>
+          <details class="profile-base ref-box">
+            <summary><span>Do livro: padrões de atendimento, cinco mensagens e sequência de confirmação (Partes 8 e 9)</span> <span class="chevron">▸</span></summary>
+            <div class="profile-body" id="ref-atend"></div>
+          </details>
 
           <hr class="divider">
           <h4 style="margin:0 0 4px;font-family:var(--body)">Plano de tratamento compreensível</h4>
           <p class="desc" style="margin-top:4px">Explica o plano em linguagem simples para o paciente decidir com segurança. Use dados genéricos: o texto volta com [NOME] e [DATA] para você completar fora daqui.</p>
           <form class="tool-form" data-tool="plano">
-            <div class="row2">
+            <div class="row3">
+              <div class="field">
+                <label for="pl-objetivo">Objetivo do paciente na vida real</label>
+                <input type="text" id="pl-objetivo" name="objetivo" placeholder="Ex: voltar a correr · brincar com o neto sem dor · mastigar sem medo">
+              </div>
               <div class="field">
                 <label for="pl-trat">Tratamento *</label>
                 <input type="text" id="pl-trat" name="tratamento" required list="lista-servicos" placeholder="Ex: implante unitário com coroa">
@@ -595,6 +723,10 @@
                 <label for="pl-duracao">Duração e número de sessões</label>
                 <input type="text" id="pl-duracao" name="duracao" placeholder="Ex: 4 a 6 meses, 5 consultas">
               </div>
+            </div>
+            <div class="field">
+              <label for="pl-criterios">Critérios de reavaliação e de alta</label>
+              <input type="text" id="pl-criterios" name="criterios" placeholder="Ex: reavaliar na sessão 5 com os mesmos testes; alta ao atingir o objetivo">
             </div>
             <div class="field">
               <label for="pl-etapas">Etapas, cuidados e alternativas *</label>
@@ -613,12 +745,16 @@
             <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar prompt</button></div>
             <div class="output-block" hidden></div>
           </form>
+          <details class="profile-base ref-box">
+            <summary><span>Do livro: o fechamento em cinco momentos e objeções comuns (Parte 10)</span> <span class="chevron">▸</span></summary>
+            <div class="profile-body" id="ref-fecha"></div>
+          </details>
         </div>
       </details>
 
       <details class="tool" data-id="rastreador" id="rastreador">
         <summary>
-          <div class="tool-title"><span class="pin">11</span><div><h3>Rastreador de pacientes</h3><span class="sub">Funil de sete etapas, consentimento, próximos passos vencidos, lembretes e planilha</span></div></div>
+          <div class="tool-title"><span class="pin">12</span><div><h3>Rastreador de pacientes</h3><span class="sub">Funil de sete etapas, consentimento, próximos passos vencidos, lembretes e planilha</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -689,11 +825,12 @@
 
       <details class="tool" data-id="assistente">
         <summary>
-          <div class="tool-title"><span class="pin">12</span><div><h3>Assistente da semana</h3><span class="sub">Agenda com acompanhamentos, conteúdo e contatos com colegas</span></div></div>
+          <div class="tool-title"><span class="pin">13</span><div><h3>Assistente da semana</h3><span class="sub">Agenda com acompanhamentos, conteúdo e contatos com colegas</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
-          <p class="desc">O ritual semanal: em 15 minutos, o Assistente junta os próximos passos do Rastreador, os colegas a contatar, as campanhas ativas e a meta de conteúdo, e monta a semana em blocos. Os pacientes entram anonimizados (Contato 1, Contato 2…).</p>
+          <p class="desc">O ritual semanal de 30 minutos (Parte 11), em horário fixo, de preferência sexta à tarde: o Assistente junta os próximos passos do Rastreador, os colegas a contatar, as campanhas ativas e a meta de conteúdo, e monta a semana em blocos. Os pacientes entram anonimizados (Contato 1, Contato 2…).</p>
+          <ol class="ritual-list" id="ritual-list"></ol>
           <form class="tool-form" data-tool="assistente">
             <div class="form-actions" style="margin-top:0">
               <button type="button" id="as-import" class="btn btn-outline btn-sm" data-ico="fill">Importar da semana</button>
@@ -721,13 +858,16 @@
 
       <details class="tool" data-id="painel" id="painel-semanal">
         <summary>
-          <div class="tool-title"><span class="pin">13</span><div><h3>Painel e diagnóstico</h3><span class="sub">Métricas da semana, diário de conteúdo e o gargalo do funil</span></div></div>
+          <div class="tool-title"><span class="pin">14</span><div><h3>Painel e diagnóstico</h3><span class="sub">Métricas da semana, diário de conteúdo e o gargalo do funil</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
           <p class="desc">Os números do funil vêm do Rastreador; os de conteúdo, do diário abaixo. O gargalo é a passagem do funil com a menor conversão nas últimas 4 semanas. Não compare Reels, Shorts e YouTube longo como a mesma unidade de atenção, e marque o que foi impulsionado.</p>
           <div class="risk-box" id="gargalo"></div>
           <div class="num-wrap"><table class="num-table" id="num-table"></table></div>
+          <h4 style="margin:18px 0 4px;font-family:var(--body)">Métricas que importam (Parte 11)</h4>
+          <p class="desc" style="margin-top:0">Últimos 90 dias, pela data do primeiro contato. Tempo da primeira resposta: meça no WhatsApp Business durante uma semana (o app não lê suas conversas).</p>
+          <div id="metricas-livro"></div>
           <div class="form-actions" style="margin-top:12px">
             <button type="button" id="num-csv" class="btn btn-outline btn-sm" data-ico="download">Baixar métricas (.csv)</button>
           </div>
@@ -739,7 +879,7 @@
               <div class="field"><label for="ct-data">Data *</label><input type="date" id="ct-data" required></div>
               <div class="field"><label for="ct-canal">Canal</label><select id="ct-canal"><option>Instagram</option><option>YouTube</option><option>LinkedIn</option><option>TikTok</option><option>Google</option><option>WhatsApp</option><option>Site</option></select></div>
               <div class="field"><label for="ct-formato">Formato</label><select id="ct-formato"><option>Reels</option><option>Carrossel</option><option>Stories</option><option>Vídeo longo</option><option>Post</option><option>Live</option></select></div>
-              <div class="field"><label for="ct-balde">Balde</label><select id="ct-balde" data-options="baldes"><option value="">(nenhum)</option></select></div>
+              <div class="field"><label for="ct-balde">Tema</label><select id="ct-balde" data-options="baldes"><option value="">(nenhum)</option></select></div>
             </div>
             <div class="row2">
               <div class="field"><label for="ct-gancho">Gancho ou título *</label><input type="text" id="ct-gancho" required></div>
@@ -781,7 +921,7 @@
 
       <details class="tool" data-id="etica" id="etica">
         <summary>
-          <div class="tool-title"><span class="pin">14</span><div><h3>Verificador ético</h3><span class="sub">Regras do seu conselho, LGPD e políticas da Meta e do Google</span></div></div>
+          <div class="tool-title"><span class="pin">15</span><div><h3>Verificador ético</h3><span class="sub">Regras do seu conselho, LGPD e políticas da Meta e do Google</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -829,7 +969,7 @@
 
       <details class="tool" data-id="briefing" id="briefing">
         <summary>
-          <div class="tool-title"><span class="pin">15</span><div><h3>Briefing para terceiros</h3><span class="sub">Para agência, social media, videomaker, tráfego ou recepção</span></div></div>
+          <div class="tool-title"><span class="pin">16</span><div><h3>Briefing para terceiros</h3><span class="sub">Para agência, social media, videomaker, tráfego ou recepção</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -896,7 +1036,7 @@
 
       <details class="tool" data-id="ferramentas">
         <summary>
-          <div class="tool-title"><span class="pin">16</span><div><h3>Ferramentas recomendadas</h3><span class="sub">O mínimo para criar, publicar, anunciar, atender e medir</span></div></div>
+          <div class="tool-title"><span class="pin">17</span><div><h3>Ferramentas recomendadas</h3><span class="sub">O mínimo para criar, publicar, anunciar, atender e medir</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -937,7 +1077,7 @@
 
       <details class="tool tool-featured" data-id="ebook" id="playbook" open>
         <summary>
-          <div class="tool-title"><span class="pin">17</span><div><h3>Playbook da clínica <span class="badge-feat">Destaque</span></h3><span class="sub">Tudo em um documento, o que falta concluir e revisões a cada 2 semanas</span></div></div>
+          <div class="tool-title"><span class="pin">18</span><div><h3>Playbook da clínica <span class="badge-feat">Destaque</span></h3><span class="sub">Tudo em um documento, o que falta concluir e revisões a cada 2 semanas</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">

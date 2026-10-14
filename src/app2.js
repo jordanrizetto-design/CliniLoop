@@ -55,6 +55,18 @@
   }
   function objInfo() { return OBJETIVOS[cfg.objetivo] || OBJETIVOS.agenda; }
   function metaPadrao() { return (TEMPO[cfg.tempo] || TEMPO['2a3']).meta; }
+  // Temas de conteúdo sugeridos pelo livro para a profissão (educar, humanizar, desmistificar)
+  function temasSugeridos() {
+    const ks = cfg.profissional === 'multi' ? (cfg.multiProf || []) : [cfg.profissional];
+    const t = ks.map((k) => TEMAS_PROF[k]).filter(Boolean)[0];
+    return t ? t.join('; ') : '';
+  }
+  // Para médicos, psiquiatras e psicólogos sem planos por pacote, as etapas 5 e 6 viram "Retorno agendado" e "Em acompanhamento" (Parte 11)
+  function semPacote() { return ['medico', 'psiquiatra', 'psicologo'].includes(cfg.profissional); }
+  function etapaLabel(e) {
+    if (semPacote()) { if (e === 'Plano proposto') return 'Retorno agendado'; if (e === 'Em tratamento') return 'Em acompanhamento'; }
+    return e;
+  }
   function trim(s, n) { s = String(s || ''); return s.length > n ? s.slice(0, n) + '…' : s; }
 
   // --- Resultados guardados (decisões que alimentam as próximas ferramentas)
@@ -86,8 +98,8 @@
     if (cfg.equipe) L.push(`- Equipe: ${cfg.equipe}`);
     if (cfg.servicos) L.push(`- Serviços a divulgar: ${cfg.servicos}`);
     if (cfg.publico) L.push(`- Público ideal: ${cfg.publico}`);
-    if (cfg.transformacao) L.push(`- Transformação: ${cfg.transformacao}`);
-    if (cfg.baldes) L.push(`- Baldes de conteúdo: ${cfg.baldes}`);
+    if (cfg.transformacao) L.push(`- Proposta de valor: ${cfg.transformacao}`);
+    if (cfg.baldes) L.push(`- Temas de conteúdo: ${cfg.baldes}`);
     if ((cfg.canais || []).length) L.push(`- Canais que uso: ${cfg.canais.join(', ')}${cfg.arroba ? ' (' + cfg.arroba + ')' : ''}`);
     L.push(`- Objetivo dos próximos 90 dias: ${o.label}${cfg.metaFrase ? ' — ' + cfg.metaFrase : ''}`);
     L.push(`- Realidade: ${(TEMPO[cfg.tempo] || TEMPO['2a3']).label} para conteúdo; quem produz: ${PRODUTOR[cfg.produtor] || cfg.produtor}; ${CAMERA[cfg.camera] || ''}`);
@@ -197,7 +209,7 @@ Entregue:
 6. Posicionamento em uma frase e 10 palavras-chave para bio, Google e legendas (serviço + cidade ou bairro).
 7. Como testar o nicho em 30 dias antes de mudar tudo, e o que medir.`,
 
-    perfil: (get, getAll) => `Aja como consultor(a) de presença digital para profissionais de saúde.
+    perfil: (get, getAll) => `Você é consultor de marketing ético para profissionais de saúde no Brasil.
 
 Perfis para revisar: ${getAll('redes')}
 Link da bio hoje: ${get('link')}. Destaques e fixados: ${nv(get('destaques'))}
@@ -206,15 +218,19 @@ Textos atuais:
 ${get('atual')}
 """
 
-Entregue, para cada perfil escolhido:
-1. Nota de 0 a 10 para clareza (para quem é, o que faço, onde atendo, como agendar) e justificativa.
-2. Reescrita pronta para colar, com a identificação obrigatória do meu conselho e do tipo de conta (profissional ou clínica). Em saúde, a bio traz identidade e credenciais corretas e leva ao canal oficial, sem slogan de resultado:
-   - Instagram: 3 opções de nome do perfil com palavra-chave (o Instagram busca pelo nome), 3 bios de até 150 caracteres, Destaques na ordem do caminho do paciente (ex.: Comece aqui, Dúvidas, Tratamentos, Bastidores, Como agendar, Localização) com o que vai em cada um, 3 posts para fixar e o destino do link com mensagem pronta para o WhatsApp.
-   - Perfil da Empresa no Google: categoria principal e secundárias, serviços, descrição de até 750 caracteres, fotos que faltam, perguntas e respostas, frequência de posts e como pedir avaliações sem oferecer vantagem e respeitando o conselho.
-   - YouTube: nome e descrição do canal, palavras-chave, playlists por dúvida e ideia de trailer.
-   - LinkedIn: título, "Sobre" e destaques pensados para colegas e parceiros que indicam.
-3. SEO local: palavras-chave com serviço + cidade ou bairro.
-4. Checklist final de 15 itens para eu marcar.`,
+Antes de postar ou anunciar, o paciente precisa encontrar, em qualquer canal, a mesma resposta para três perguntas: quem é você, quem você ajuda e como marcar uma consulta.
+
+Entregue, para cada canal escolhido:
+1. (a) O que impede um paciente ou colega de confiar, (b) o que impede de agendar ou encaminhar e (c) a correção sugerida.
+2. Reescrita pronta para colar, com a identificação obrigatória do meu conselho e do tipo de conta (profissional ou clínica), sem slogan de resultado, superlativos ou títulos e números inventados:
+   - Instagram: 3 opções de nome do perfil com nome + especialidade em palavras que o paciente pesquisa, 3 bios de até 150 caracteres em quatro linhas (quem ajudo, com o quê, onde atendo, registro), Destaques (Comece aqui, Como funciona a consulta, Convênios e valores quando permitido, Localização, Dúvidas, Equipe) com o que vai em cada um, até 3 posts para fixar e um destino único para o link, com mensagem pronta para o WhatsApp e origem rastreada.
+   - Perfil da Empresa no Google: nome exatamente como na fachada, categoria principal e secundárias, serviços com descrição informativa, descrição de até 750 caracteres, fotos que faltam (nunca de pacientes), atributos, e como pedir avaliações de forma neutra a todos os pacientes e respondê-las sem confirmar que a pessoa é paciente.
+   - YouTube: nome igual ao do Instagram, descrição com proposta de valor, registro e link de agendamento, playlists por problema do paciente (não por formato) e roteiro do vídeo de apresentação fixado.
+   - LinkedIn: 5 títulos de até 220 caracteres na fórmula [profissão e especialidade] | [área de atuação ou público] | [prova] | [onde atende], e um Sobre em quatro blocos (abertura, o que faço, provas, chamada para colegas que querem encaminhar), em primeira pessoa.
+   - TikTok: mesmos nome, foto, credenciais e proposta de valor do Instagram, conta empresarial e o cuidado de não responder dúvidas clínicas individuais nos comentários.
+3. SEO local: palavras-chave com serviço + cidade ou bairro, e onde usar cada uma (nome, bio, legendas, descrição).
+4. Checklist final para eu marcar.${get('assistenteBio') ? `
+5. Texto-base de um assistente de orientação para a página da bio: em uma ou duas perguntas, leva a pessoa ao destino certo (o guia, o vídeo completo, o agendamento). Ele se apresenta como assistente de IA, usa só a base aprovada de serviços e conteúdos, não inventa preços, resultados nem condições e nunca faz triagem clínica. Liste o que preciso aprovar antes de publicar e lembre que painel de conversas e métricas exigem implementação, hospedagem e proteção de dados.` : ''}`,
 
     pautas: (get, getAll) => `Aja como estrategista de conteúdo para saúde, com foco em SEO social e busca local.
 
@@ -227,12 +243,12 @@ Datas importantes: ${nv(get('datas'), '(nenhuma)')}
 
 Entregue:
 1. Palavras-chave por serviço e por cidade ou bairro (Google, Instagram e YouTube), em tabela: termo, intenção (informar, comparar, agendar), serviço e onde usar. Pesquise na web as buscas relacionadas (Google Trends, sugestões de busca, Answer The Public) e indique a fonte.
-2. As dúvidas do banco organizadas por balde de conteúdo (${cfg.baldes || 'sugira até 3 baldes'}) e pelo momento da jornada: entender um sintoma, compreender a avaliação, comparar caminhos de cuidado, preparar-se para a consulta, acompanhar o tratamento, conhecer a equipe. Sem repetir e sem afirmar "todo mundo pergunta" além do que está no banco.
+2. As dúvidas do banco organizadas por tema de conteúdo (${cfg.baldes || temasSugeridos() || 'sugira até 3 temas: educar, humanizar e desmistificar'}) e pelo momento da jornada: entender um sintoma, compreender a avaliação, comparar caminhos de cuidado, preparar-se para a consulta, acompanhar o tratamento, conhecer a equipe. Sem repetir e sem afirmar "todo mundo pergunta" além do que está no banco.
 3. 30 pautas em tabela, cada uma registrada com: dúvida, público, estágio de decisão, formato, palavra-chave, fonte clínica necessária, imagem de apoio (eu, modelo anatômico ou ilustração), responsável pela revisão e CTA. Priorize por pertinência ao público, segurança clínica, possibilidade de explicar visualmente, originalidade e alinhamento com os serviços.
 4. Dois ou três quadros recorrentes (séries com nome, bordão e estrutura fixa, como "Pergunta do consultório"), com 4 episódios cada.
 5. Metas S.M.A.R.T. para 8 semanas (específicas, mensuráveis, alcançáveis, relevantes e com prazo), incluindo uma meta de tarefa e uma de contatos qualificados.
 6. Frequência realista para ${(TEMPO[cfg.tempo] || TEMPO['2a3']).label}, com quem produz sendo ${PRODUTOR[cfg.produtor] || cfg.produtor}: versão mínima e ideal por canal. Constância vale mais que volume.
-Referência: independentes, cerca de 3 publicações por semana (2 Reels e 1 carrossel); com equipe, 5 e Stories diários. Qualidade vence volume.
+Referência do livro (Parte 4): profissional sozinho, 2 Reels + 1 carrossel por semana, Stories em dias de atendimento, 1 vídeo de YouTube por mês e 1 post de LinkedIn por semana; clínica com equipe, 3 Reels + 2 carrosséis por semana, Stories diários, 2 a 4 vídeos por mês e 2 posts de LinkedIn por semana. A frequência é a que eu consigo revisar.
 7. Calendário de 4 semanas (dia, canal, formato, pauta) e rotina de produção em lote, com tempo estimado por etapa (cronometre e comprometa-se só com o que cabe).
 8. "Uma peça longa, quatro entregas": como transformar uma pauta em vídeo longo, Reel para uma dúvida, carrossel de preparação e Stories sobre quem atende, cada um fazendo sentido sozinho.
 9. Datas de conscientização dos próximos 3 meses relevantes para minha área, com abordagem educativa. Em Setembro Amarelo: comunicação responsável, CVV (188) e nada de captação.
@@ -280,7 +296,7 @@ Alcance não é garantido; foque em sinais que dependem de mim (retenção, envi
 
 Formato: ${f}
 Tema ou dúvida do paciente: ${get('tema')}
-Balde: ${nv(get('balde'), '(não definido)')} · Objetivo da peça: ${get('objetivoPeca')} · Como apareço: ${get('aparece')} · Tom: ${get('tom')}
+Tema de conteúdo: ${nv(get('balde'), '(não definido)')} · Momento da jornada: ${nv(get('momento'))} · Palavra-chave: ${nv(get('kw'), '[sugira uma com serviço + cidade]')} · Objetivo da peça: ${get('objetivoPeca')} · Como apareço: ${get('aparece')} · Tom: ${get('tom')}
 Pontos técnicos e fontes: ${nv(get('notas'), '(nenhum: marque afirmações clínicas como [PENDENTE DE VALIDAÇÃO])')}${quadro ? `\nQuadro recorrente: "${quadro}". Mantenha a série reconhecível: uma pergunta por episódio, resposta cedo, exemplo seguro, ressalva e o mesmo bordão de abertura ou fechamento.` : ''}${ref ? `\nReferência para modelar: ${ref}\nUse o R.O.A.S. (Roteiro, Observação, Adaptação, Substituição): leia a estrutura da referência, observe como ela começa, sustenta, contextualiza e encaminha, adapte ao meu tema e substitua conteúdo, exemplos e identidade. Não copie texto, imagem nem identidade de terceiros.` : ''}
 
 Entregue:
@@ -300,6 +316,29 @@ No final, inclua sempre:
 Linguagem simples, termos técnicos explicados, frases curtas. Pontuação de roteiro, se usar, é ferramenta pedagógica, não previsão de viralidade.`;
     },
 
+    reaproveitamento: (get, getAll) => `Aja como editor(a) de conteúdo para profissionais de saúde, seguindo o método de reaproveitamento do e-book Prompt do Sim · Saúde (Parte 5): uma aula, quatro entregas.
+
+Vou colar a transcrição de ${get('fonte')} em que participei como ${get('papel')}.
+Público: ${nv(get('publico'), cfg.publico || '[PÚBLICO]')}. Objetivo: ${get('objetivo')}. Profissão e conselho: ${profLabel()}, ${conselhosTxt()}.
+Destino confirmado do CTA e do guia: ${nv(get('link'), '[SEM LINK: o guia não pode ser divulgado até eu informar um destino real]')}
+Minha voz: ${nv(get('voz'), '(não informei: pergunte "isso parece algo que eu realmente diria?" ao revisar)')}
+Entregas pedidas: ${getAll('entregas')}
+
+1. Registro de ideias: liste as ideias aproveitáveis em tabela com nome curto, trecho e tempo, quem disse (eu ou o convidado), síntese fiel, exemplo presente na fonte, ressalva a preservar e destino da peça.
+2. Escolha UM tema central para o conjunto (não junte assuntos desconexos só porque estão no mesmo episódio; se houver temas independentes, sugira outros conjuntos sem forçar quantidade).
+3. Distribua a profundidade:
+   - Carrossel: abertura com uma dúvida ou contradição sustentada na fonte, uma ideia por card, aplicação prática e fechamento com o próximo passo; legenda que complementa os cards, sem repetir.
+   - Guia: entrega valor sozinho e não repete os cards (para quem serve, o problema, como aplicar em passos, um exemplo da fonte ou marcado como proposto, checklist e o link do episódio completo).
+   - Reel de 30 a 45 s com gancho nos 3 primeiros segundos, em duas versões: roteiro falado e tópicos de gravação. Estime a duração lendo em voz alta.${/Stories/.test(getAll('entregas')) ? '\n   - Stories: bastidor de quem atende ou de como a aula foi preparada, sem pacientes.' : ''}${/comentário/.test(getAll('entregas')) ? '\n   - Comentário que leva ao guia: palavra-chave e mensagem automática, avisando que é preciso confirmar se a conta e a integração (ex.: Manychat) suportam o fluxo e testar o envio. Nada de sorteio, promoção ou preço onde for vedado, e nenhuma pergunta sobre histórico de saúde no Direct.' : ''}
+4. Preserve autoria e voz: fala de convidado não vira experiência minha; nada de "eu testei" ou "meus pacientes conseguiram" sem suporte na fonte.
+5. Pendências: afirmações clínicas sem fonte (marque [PENDENTE DE VALIDAÇÃO]; ressalvas precisam sobreviver ao corte curto), autoria a confirmar, links que faltam e pontos de compliance para a revisão clínica e ética, separada da revisão editorial.
+
+Não invente experiências, números nem depoimentos. Não use dados de pacientes.
+Transcrição:
+"""
+${mascarar(get('transcricao'))}
+"""`,
+
     formacao: (get, getAll) => `Aja como mentor(a) de carreira científica e de autoridade para profissionais de saúde.
 
 - Formação e títulos atuais: ${get('atual')}
@@ -318,9 +357,44 @@ Entregue:
     campanha: (get, getAll) => {
       const canais = getAll('canais');
       const reativ = /consentiram/.test(canais);
+      const tipo = get('tipo') || 'completa';
+      const onde = nv(cfg.cidade, '[BAIRRO, CIDADE]');
+      const quem = cfg.nome ? `${cfg.nome} (${profLabel()})` : profLabel();
+      const regras = `Regras: normas do ${conselhosTxt()}, políticas de saúde da Meta e do Google, sem promessa de resultado, sem superlativos, sem medo, sem afirmar condição de saúde do usuário (fale do tema, não da pessoa), sem preço onde o conselho proíbe, sem segmentar público por condição de saúde e sem subir listas de pacientes para públicos personalizados. Marque com [CONFIRMAR] tudo que eu não informei e não invente números.`;
+      if (tipo === 'impulsionamento') {
+        return `Sou ${quem} em ${onde} e quero impulsionar o post abaixo na Meta (botão Turbinar). Serviço: ${get('servico')}. Objetivo: ${get('n')} pacientes agendados em ${get('duracao')}. Orçamento: ${nv(get('orcamento'), '[VALOR]')}.
+Atendimento: ${nv(get('atendimento'), '[CONFIRMAR: quem responde no horário do anúncio]')}
+
+Devolva:
+1. Se o post é adequado para impulsionar e o que ajustar segundo as normas do ${conselhosTxt()} e as políticas de saúde da Meta. Só peças educativas que já foram bem no orgânico e passaram pela revisão clínica e ética.
+2. O objetivo único (visitas ao perfil ou mensagens no WhatsApp) e por quê.
+3. Público sugerido: raio em torno do consultório e faixa de idade, sem segmentar por condição de saúde; interesses em branco ou amplos.
+4. Orçamento diário e duração que eu consiga manter por pelo menos 7 dias sem mexer, separando orçamento de mídia do custo de produção.
+5. Mensagem de boas-vindas no WhatsApp, com uma pergunta simples que qualifica.
+6. Por que um impulsionamento costuma ser recusado (texto que afirma condição do leitor, antes e depois, promessa ou preço vedado, música protegida) e como evitar.
+7. O que medir, quando (não alterar nada nos dois ou três primeiros dias) e como registrar no CRM: origem "Impulsionamento: [post], [data]", custo por conversa, por agendamento e por paciente que compareceu.
+
+Post: ${nv(get('post'), '[COLE O TEXTO E DESCREVA O VÍDEO]')}
+
+${regras}`;
+      }
+      if (tipo === 'anuncios') {
+        return `Atue como gestor de tráfego ético para saúde no Brasil.
+
+Crie para ${quem} em ${onde}, serviço ${get('servico')}:
+(a) 3 textos principais de até 125 caracteres e 3 títulos de até 40 caracteres para Meta Ads com CTA "Enviar mensagem";
+(b) 15 títulos de até 30 caracteres e 4 descrições de até 90 caracteres para anúncio responsivo de pesquisa no Google, informativos e verificáveis;
+(c) 20 palavras-chave com intenção e local e 15 negativas (por exemplo: grátis, curso, emprego, salário);
+(d) recursos do Google (local, ligação, sitelinks, frases de destaque);
+(e) mensagem de boas-vindas do WhatsApp que qualifica, sem triagem clínica.
+Público e dúvida principal: ${nv(get('publico'), cfg.publico)}. Mensagem central: ${nv(get('mensagem'), '[CONFIRMAR]')}.
+Tipos de mensagem que funcionam e são éticos: educativa com convite, processo transparente, acesso e conveniência, autoridade sem superlativo, desmistificação.
+
+${regras} Psicólogos e psiquiatras: evite termos que impliquem diagnóstico do usuário.`;
+      }
       return `Atue como estrategista de marketing ético para saúde no Brasil.
 
-Monte uma campanha de ${get('duracao')} para ${profLabel()} em ${nv(cfg.cidade, '[BAIRRO, CIDADE]')}, serviço ${get('servico')}, objetivo ${get('n')} pacientes agendados, orçamento ${nv(get('orcamento'), 'sem anúncios pagos (só orgânico)')}.
+Monte uma campanha de ${get('duracao')} para ${quem} em ${onde}, serviço ${get('servico')}, objetivo ${get('n')} pacientes agendados, orçamento ${nv(get('orcamento'), 'sem anúncios pagos (só orgânico)')}.
 - Público e dúvida principal: ${nv(get('publico'), cfg.publico)}
 - Mensagem central: ${nv(get('mensagem'), '[CONFIRMAR]')}
 - Canais: ${canais}
@@ -330,14 +404,14 @@ Entregue:
 1. Ficha da campanha (objetivo, público, mensagem central, peças, canais, orçamento e duração, atendimento, medição e compliance).
 2. 3 roteiros de Reel (gancho, contexto, 3 a 5 pontos, CTA, legenda).
 3. 1 carrossel de 7 slides.
-4. Anúncios Meta (3 textos, 3 títulos) e Google (15 títulos, 4 descrições, 20 palavras-chave, 15 negativas). Se algum desses canais não estiver na lista acima, diga em uma linha se vale incluí-lo.
+4. Anúncios Meta (3 textos de até 125 caracteres, 3 títulos de até 40) e Google (15 títulos de até 30 caracteres, 4 descrições de até 90, 20 palavras-chave, 15 negativas). Se algum desses canais não estiver na lista acima, diga em uma linha se vale incluí-lo.
 5. Mensagem de boas-vindas do WhatsApp e 3 respostas rápidas.
 6. Calendário dia a dia.
 7. Lista de verificação ética do ${conselhosTxt()}, da LGPD e das políticas da Meta e do Google, marcando o que precisa de atenção.
-8. Medição: contatos, agendados, comparecimentos e planos iniciados por origem, e o nome curto da campanha para eu registrar como origem no rastreador. Separe orçamento de mídia de custo de produção.
-9. Se houver impulsionamento: objetivo, qual peça educativa já revisada impulsionar, público com pertinência geográfica (para clínica local, vale mais que audiência nacional), a ação acompanhada (visita ao perfil ou contato qualificado) e quando pausar. Não autorize gasto automaticamente: eu aprovo cada valor.${reativ ? '\n10. Mensagens de reativação só para quem consentiu receber lembretes, com opção de sair em cada mensagem.' : ''}
+8. Medição: contatos, agendados, comparecimentos e planos iniciados por origem, custo por paciente que compareceu, e o nome curto da campanha para eu registrar como origem no rastreador. Separe orçamento de mídia de custo de produção.
+9. Se houver impulsionamento: qual peça educativa já revisada impulsionar, objetivo único, público por raio e idade, a ação acompanhada e quando ler os resultados. Não autorize gasto automaticamente: eu aprovo cada valor.${reativ ? '\n10. Mensagens de reativação só para quem consentiu receber lembretes, com opção de sair ("responda SAIR") em cada mensagem.' : ''}
 
-Regras: sem promessa de resultado, sem superlativos, sem medo, sem afirmar condição de saúde do usuário, sem preço onde o conselho proíbe. Marque com [CONFIRMAR] tudo que eu não informei.`;
+${regras}`;
     },
 
     colegas: (get) => {
@@ -348,11 +422,11 @@ Regras: sem promessa de resultado, sem superlativos, sem medo, sem afirmar condi
       if (tipo === 'contrarreferencia') {
         return `Aja como profissional de saúde experiente em comunicação entre colegas.
 
-Crie um MODELO de relatório de contrarreferência para ${para}. Use apenas marcadores no lugar dos dados do paciente: [PACIENTE], [IDADE], [MOTIVO DO ENCAMINHAMENTO], [AVALIAÇÃO], [CONDUTA], [PLANO], [PRÓXIMA REAVALIAÇÃO], [SINAIS DE ALERTA].
+Crie um MODELO de relatório de contrarreferência de até 200 palavras para ${para}, que encaminhou o paciente. Use apenas iniciais e marcadores no lugar dos dados do paciente: [INICIAIS], [MOTIVO DO ENCAMINHAMENTO], [ACHADOS DA AVALIAÇÃO], [CONDUTA PROPOSTA], [PREVISÃO DE REAVALIAÇÃO].
 Contexto: ${get('contexto')}
 
 Entregue:
-1. O modelo, com estrutura clara, linguagem técnica adequada ao colega, espaço para assinatura e registro profissional, e uma frase de agradecimento pela confiança.
+1. O modelo, na estrutura: motivo do encaminhamento, achados da avaliação, conduta proposta, previsão de reavaliação, agradecimento. Linguagem técnica e objetiva, com espaço para assinatura e registro profissional. Uma versão para a avaliação e outra para a alta.
 2. Versão curta para ${formato}.
 3. Orientações de envio seguro: canal protegido, consentimento do paciente para compartilhar informações e o que a LGPD exige.`;
       }
@@ -366,12 +440,12 @@ Entregue 3 versões curtas, com tons diferentes. Sem brindes, comissões ou vant
       }
       return `Aja como especialista em relacionamento entre profissionais de saúde.
 
-Escreva uma carta de apresentação (${formato}) para ${para}.
+Escreva uma carta de apresentação (${formato}) de até 120 palavras, em tom cordial e técnico, de ${profLabel()}${cfg.especialidade ? ' especializado(a) em ' + cfg.especialidade : ''} para ${para}${cfg.cidade ? ', da região de ' + cfg.cidade : ''}.
 Contexto: ${get('contexto')}
 
-Inclua: quem sou e onde atendo, que tipo de paciente acompanho e em que momento a parceria ajuda o paciente, como faço a contrarreferência (o que devolvo e em quanto tempo), contato direto e uma proposta concreta e leve (café, visita ou conversa de 15 minutos). Tom profissional e colaborativo, sem autopromoção e sem oferecer vantagem financeira por indicação, o que os códigos de ética vedam.
+Objetivo: apresentar o serviço, explicar em quais casos o encaminhamento ajuda o paciente, como encaminhar (link ou WhatsApp exclusivo para colegas, com prioridade de agenda e um formulário simples) e que o colega receberá relatório de avaliação e alta com autorização do paciente. Sem bajulação, sem oferta de vantagem, sem superlativos. Não pague, não receba e não prometa vantagem financeira por encaminhamento: os códigos de ética vedam e isso configura captação indevida.
 
-Entregue 2 versões: uma completa e uma curta para ${formato === 'mensagem de WhatsApp' ? 'o primeiro contato' : 'WhatsApp'}, e um roteiro de follow-up para 7 dias depois.`;
+Entregue 2 versões: uma completa e uma curta para ${formato === 'mensagem de WhatsApp' ? 'o primeiro contato' : 'WhatsApp'}, um roteiro de follow-up para 7 dias depois e uma ideia de material técnico de uma página (o que trato, quando encaminhar, como encaminhar e o que o colega recebe de volta). Se fizer sentido, sugira uma collab com tema complementar.`;
     },
 
     atendimento: (get) => `Aja como consultor(a) de atendimento e experiência do paciente em clínicas e consultórios.
@@ -381,34 +455,38 @@ Entregue 2 versões: uma completa e uma curta para ${formato === 'mensagem de Wh
 - Como o paciente agenda: ${nv(get('agenda'))}; faltas: ${get('faltas')}
 - Perguntas que mais chegam: ${get('perguntas')}
 
+O paciente que chama no WhatsApp quase sempre está conversando com mais de um consultório e costuma agendar com quem responde primeiro com clareza. Padrões: primeira resposta em até 5 minutos no horário comercial; fora dele, resposta automática que informa quando haverá retorno e já oferece horários; toda conversa termina com um próximo passo marcado.
+
 Entregue, em blocos prontos para copiar, curtos e humanos:
-1. Respostas rápidas do WhatsApp Business (com o atalho sugerido): saudação, ausência, horários e endereço, convênios, primeira consulta, como chegar.
-2. Primeira resposta para quem chega do Instagram, do Google ou de anúncio, em até 5 minutos, e 3 perguntas de acolhimento que não pedem dado clínico por mensagem.
-3. Resposta para "quanto custa?" coerente com minha política e com o conselho (diferencie publicidade de informação privada ao paciente).
-4. Roteiro de agendamento: confirmação de dados, orientações para a consulta e mensagem de confirmação.
-5. Régua de confirmação: 48 h antes, 24 h antes e no dia; reagendamento e falta sem constranger.
-6. Objeções: preço, medo, "vou pensar", falta de tempo, comparação com outro profissional.
-7. Retomadas: para quem parou de responder (3 e 7 dias), para planos propostos sem resposta e para retorno periódico, só para quem consentiu receber lembretes e com opção de sair.
-8. Pós-consulta e pedido de avaliação no Google ou de indicação, sem oferecer vantagem em troca.
-9. Etiquetas do WhatsApp Business espelhando as etapas do rastreador: ${ETAPAS.join(', ')}.
-10. Regras de LGPD no atendimento: consentimento por finalidade (atendimento, lembretes, conteúdos), não pedir nem guardar informação clínica por mensagem além do necessário, quem tem acesso ao celular.`,
+1. 12 respostas rápidas do WhatsApp Business (com o atalho sugerido): boas-vindas, pedido de motivo da consulta, explicação da primeira consulta, convênios, valores (quando permitido), endereço, atendimento online, duas opções de horário, confirmação de agendamento, fora do horário, retomada em 1 dia e retomada em 7 dias.
+2. Roteiro de agendamento em cinco mensagens: acolher e identificar; entender a necessidade sem triagem clínica (incluindo "Foi indicado(a) por algum profissional?"); explicar como funciona; oferecer dois horários; confirmar e combinar a confirmação.
+3. Resposta para "quanto custa?" coerente com minha política e com o conselho, sempre com o contexto do que está incluído (diferencie publicidade de informação privada ao paciente; em psicologia, honorários só no privado).
+4. Sequência de confirmação: ao agendar (resumo com data, hora, endereço, mapa e o que levar); 48 horas antes ("Responda 1 para confirmar ou 2 para remarcar"); 24 horas antes, se não respondeu (ligação ou segunda mensagem); 2 horas antes (localização e estacionamento); após a falta, no mesmo dia, com dois horários e sem constranger. Pacientes com duas faltas seguidas recebem contato humano.
+5. Objeções com respostas honestas: "vou pensar", "está caro" (alternativas legítimas, nunca desconto como pressão), medo, "já melhorei", "não tenho tempo".
+6. Retomadas: para quem não agendou, até três (no dia seguinte, em 3 dias e em 7 dias), sempre com algo útil e nunca com pressão; para planos propostos sem decisão, em 2, 7 e 15 dias; para retorno periódico, só para quem consentiu receber lembretes, com "responda SAIR".
+7. Pós-consulta e pedido de avaliação no Google para todos os pacientes, sem filtrar os satisfeitos e sem oferecer vantagem.
+8. Etiquetas do WhatsApp Business espelhando as etapas do rastreador: ${ETAPAS.map(etapaLabel).join(', ')}.
+9. Regras de LGPD no atendimento: consentimento por finalidade (atendimento, lembretes, conteúdos), não pedir nem guardar informação clínica por mensagem além do necessário, acesso por função.${isMental() ? '\n10. Em saúde mental, a falta pode ser sinal clínico: o contato é do profissional ou de alguém treinado, com cuidado.' : ''}`,
 
     plano: (get) => `Aja como profissional de saúde experiente em comunicação com pacientes.
 
-Explique um plano de tratamento em linguagem simples, para o paciente decidir com segurança.
+Na saúde, fechar não é vender: é o paciente entender o plano, confiar nele e decidir começar. Transforme as informações abaixo em um plano de tratamento para o paciente ler, em linguagem simples.
+- Objetivo do paciente na vida real: ${nv(get('objetivo'), '[CONFIRMAR]')}
 - Tratamento: ${get('tratamento')}
-- Duração e sessões: ${nv(get('duracao'))}
+- Duração, sessões e frequência: ${nv(get('duracao'), '[CONFIRMAR]')}
 - Etapas, cuidados e alternativas: ${get('etapas')}
+- Critérios de reavaliação e de alta: ${nv(get('criterios'), '[CONFIRMAR]')}
 - Investimento e condições (conversa privada): ${nv(get('investimento'), '[CONFIRMAR]')}
 - Dúvidas comuns: ${nv(get('duvidas'))}
 
 Entregue:
-1. Texto de 1 página para entregar ao paciente: o que é, por que foi indicado ([MOTIVO], para eu completar), etapas e o que acontece em cada uma, tempo, cuidados, sinais para entrar em contato, alternativas com prós e contras, investimento e condições, próximos passos. Use [NOME] e [DATA] como marcadores.
+1. Plano de 1 página com: objetivo do paciente em uma frase, fases com metas mensuráveis, número estimado de sessões e frequência, o que depende do paciente, como e quando vamos reavaliar, critério de alta, alternativas com prós e contras, investimento e formas de pagamento (plano completo, por fase, convênio quando houver) e próximos passos. Use [INICIAIS] e [DATA] como marcadores.
 2. Versão curta para WhatsApp.
-3. Respostas às dúvidas comuns.
-4. Checklist do que conversar na consulta e do consentimento informado.
+3. Respostas honestas às dúvidas e objeções ("vou pensar", "está caro", "já melhorei", "não tenho tempo").
+4. Mensagens de acompanhamento do plano em aberto para 2, 7 e 15 dias, com informação útil e disponibilidade, nunca pressão.
+5. Checklist do que conversar na consulta e do consentimento informado.
 
-Sem promessa de resultado e sem minimizar riscos; leitura acessível; nenhum dado de paciente real.`,
+Não prometa resultado e não minimize riscos; mostre metas e como serão medidas. Marque com [CONFIRMAR] o que faltar. Nenhum dado de paciente real.${['medico', 'psiquiatra', 'psicologo'].includes(cfg.profissional) ? ' Para mim, o fechamento é a adesão: o paciente entender a conduta, agendar o retorno e seguir o tratamento, sem linguagem comercial.' : ''}`,
 
     registro: (get) => `Aja como assistente de CRM de uma clínica. Telefones e e-mails da conversa abaixo já foram trocados por marcadores; se sobrar algum dado clínico ou nome, ignore e não repita.
 
@@ -416,13 +494,14 @@ Sem promessa de resultado e sem minimizar riscos; leitura acessível; nenhum dad
 ${mascarar(get('conversa'))}
 """
 
-Entregue:
-1. Etapa do funil (uma de: ${ETAPAS.join(', ')}) e por quê.
-2. Serviço de interesse, origem provável e objeções percebidas.
-3. Próximo passo, com data sugerida e quem deve fazer.
-4. Mensagem de resposta pronta para enviar agora, curta e acolhedora.
-5. Consentimentos que ainda faltam pedir (atendimento, lembretes, conteúdos).
-6. O que NÃO registrar no CRM: informação clínica vai para o prontuário.`,
+Organize em:
+1. Nome (só o primeiro nome ou apelido), origem, serviço de interesse e profissional indicado.
+2. Etapa do funil (uma de: ${ETAPAS.map(etapaLabel).join(', ')}) e por quê.
+3. Próximo passo com data sugerida e quem deve fazer.
+4. Um aprendizado: uma frase sobre objeções ou motivo de perda.
+5. A próxima mensagem, em tom acolhedor, com até 400 caracteres.
+6. Consentimentos que ainda faltam pedir (atendimento, lembretes, conteúdos).
+Não registre nenhuma informação clínica: ela vai para o prontuário.`,
 
     assistente: (get) => `Aja como meu assistente executivo para a semana no consultório.
 
@@ -438,7 +517,8 @@ Entregue:
 2. Prioridades de cada dia, de segunda a sexta, na ordem.
 3. Mensagens prontas para os 3 acompanhamentos mais importantes (use "Contato 1", "Contato 2", sem dados pessoais).
 4. O que delegar para a recepção ou para a equipe.
-5. Ritual de sexta (15 minutos): o que atualizar no rastreador, no diário de conteúdo e no painel.`,
+5. O ritual semanal de 30 minutos, de preferência sexta à tarde, na sequência: atualizar as etapas de cada paciente e colega; caça aos parados (toda linha sem próximo passo ganha um, ou é marcada como Pausada ou Perdida); enviar os acompanhamentos vencidos; ler os números da semana contra a meta; encontrar o gargalo e escolher uma ação; planejar conteúdo, anúncios e contatos com colegas.
+6. Planos propostos sem decisão há 2, 7 ou 15 dias e contatos que não agendaram há 1, 3 ou 7 dias: quem contatar e com qual mensagem útil.`,
 
     painel: (get) => `Aja como analista de marketing e operação de clínicas e consultórios.
 
@@ -454,7 +534,7 @@ Regras de leitura:
 - Muito alcance e pouca permanência: revise promessa × entrega. Permanência e poucas ações: revise clareza e convite. Muitos contatos e poucos atendimentos: revise adequação ao público, localização e processo de agendamento antes de culpar o roteiro.
 
 Entregue:
-1. Leitura do funil: conversões entre etapas (contato → agendado → avaliado → plano proposto → em tratamento), comparadas com referências do setor marcadas como [ESTIMATIVA].
+1. Leitura do funil pelos sete sins (atenção, confiança, colega, contato, agendamento, comparecimento, tratamento) e pelas métricas que importam: taxa de agendamento (agendados ÷ novos contatos), taxa de comparecimento (compareceram ÷ agendados), taxa de aceitação de planos (iniciaram ÷ planos propostos), taxa de conclusão (altas ÷ iniciados), custo por paciente que compareceu e indicações por colega. O número de referência é o meu próprio histórico; referências do setor só como [ESTIMATIVA].
 2. O gargalo da semana e as 3 causas mais prováveis, aplicando as regras acima.
 3. Três ações para a próxima semana, cada uma com responsável, prazo e métrica de sucesso.
 4. Conteúdo: quais baldes, quadros e formatos geram mais retenção, envios, salvamentos e mensagens, e o que repetir. Atribua receita só se houver rastreamento.

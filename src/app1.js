@@ -1,6 +1,6 @@
   // ===================== CliniLoop =====================
   // Endereço do repositório no GitHub (preencha depois de criar). Vazio = link escondido.
-  const REPO_URL = '';
+  const REPO_URL = 'https://github.com/jordanrizetto-design/CliniLoop';
 
   const APP = 'CliniLoop';
   const APP_ID = 'CliniLoop';
@@ -22,9 +22,17 @@
   // Etapas do Rastreador de pacientes (funil de sete etapas)
   const ETAPAS = ['Novo', 'Em conversa', 'Agendado', 'Avaliado', 'Plano proposto', 'Em tratamento', 'Encerrado'];
   const RESULTADOS = ['Alta e vínculo', 'Perdido', 'Pausado'];
-  const ETAPAS_COLEGA = ['Mapeado', 'Primeiro contato', 'Apresentação feita', 'Trocando indicações', 'Parceria ativa'];
+  // Funil dos colegas do livro (Parte 11). Parceiro ativo = indicou nos últimos 90 dias.
+  const ETAPAS_COLEGA = ['Mapeado', 'Apresentado', 'Primeira indicação', 'Parceiro ativo', 'Inativo'];
+  const COLEGA_MIGRA = { 'Primeiro contato': 'Apresentado', 'Apresentação feita': 'Apresentado', 'Trocando indicações': 'Primeira indicação', 'Parceria ativa': 'Parceiro ativo' };
   const CONSENT = { atendimento: 'Atendimento', lembretes: 'Lembretes e retornos', conteudo: 'Conteúdos e novidades' };
-  const ATIVIDADES = ['Mensagem', 'Ligação', 'Confirmação', 'Retomada'];
+  const ATIVIDADES = ['Mensagem', 'Ligação', 'Confirmação', 'Retomada', 'Falta (no-show)', 'Remarcação'];
+  // Próximo passo típico de cada etapa (Parte 11 do livro)
+  const PASSO_TIPICO = {
+    'Novo': 'Responder em até 5 minutos', 'Em conversa': 'Oferecer dois horários', 'Agendado': 'Confirmação 48 h antes',
+    'Avaliado': 'Apresentar plano ou conduta', 'Plano proposto': 'Acompanhamento do plano (2, 7 e 15 dias)', 'Em tratamento': 'Reavaliação programada',
+    'Encerrado': 'Contato de acompanhamento e pedido de avaliação no Google'
+  };
 
   // --- Regras de publicidade por conselho (conferidas em outubro de 2026)
   const COUNCILS = {
@@ -130,10 +138,33 @@
         ['COFFITO: Resolução 532/2021', 'https://www.coffito.gov.br/nsite/?p=18752'],
         ['Resolução COFFITO nº 424/2013 (Código de Ética)', 'https://www.normasbrasil.com.br/norma/resolucao-424-2013_257114.html']
       ]
+    },
+    nutricao: {
+      label: 'Nutrição', sigla: 'CRN', conselho: 'CFN / CRN',
+      norma: 'Código de Ética e de Conduta do Nutricionista (Resolução CFN 599/2018), capítulos IV e V, sobre comunicação e marcas',
+      ident: 'Nome, a palavra "nutricionista" e o número do CRN com a região (ex.: CRN-3 00000). Nas redes, esses dados ficam na página principal do perfil.',
+      pode: [
+        'Conteúdo focado em promoção da saúde e educação alimentar, com base científica e o aviso de que os resultados podem não ocorrer da mesma forma para todos.',
+        'Divulgar resultados do seu trabalho com autorização escrita.',
+        'Mostrar como funciona a consulta e o plano alimentar, leitura de rótulos e a rotina do consultório.'
+      ],
+      nao: [
+        'Garantir resultado ou alegar exclusividade.',
+        'Sensacionalismo.',
+        'Divulgar imagem corporal, sua ou de terceiros, atribuindo resultado a produto, técnica ou protocolo, mesmo com autorização (exceto em eventos e publicações científicas).',
+        'Usar honorários, promoções e sorteios como publicidade.',
+        'Associar a própria imagem a marcas de alimentos ou fazer publicidade comercial de marcas.'
+      ],
+      extra: 'No preparo de refeições e na rotina do consultório, mantenha marcas fora de destaque. Mitos sobre dietas da moda e alimentos "proibidos" são bons temas para desmistificar.',
+      resumo: 'Pelo Código de Ética e de Conduta do Nutricionista (Res. CFN 599/2018): identificar nome, "nutricionista" e CRN com a região; conteúdo de promoção da saúde e educação alimentar com base científica e o aviso de que resultados variam; sem garantir resultado nem alegar exclusividade; sem sensacionalismo; nunca usar imagem corporal (minha ou de terceiros) atribuindo resultado a produto, técnica ou protocolo; sem honorários, promoções ou sorteios como publicidade; sem associar minha imagem a marcas de alimentos.',
+      fontes: [
+        ['CFN: Resolução 599/2018 (Código de Ética e de Conduta)', 'https://cfn.org.br/wp-content/uploads/resolucoes/Res_599_2018.html'],
+        ['CFN: Código de Ética e de Conduta do Nutricionista (PDF)', 'https://www.cfn.org.br/wp-content/uploads/2019/06/Novo_Codigo_de_Etica-e-de-Conduta-do-Nutricionista.pdf']
+      ]
     }
   };
   // Saúde mental: cuidados adicionais (psiquiatria e psicologia)
-  const SAUDE_MENTAL = 'Em saúde mental, use linguagem responsável e sem estigma, sem gerar medo nem estimular autodiagnóstico. Em temas de suicídio, siga as recomendações de comunicação responsável, informe o CVV (188) e nunca use o tema para captar pacientes.';
+  const SAUDE_MENTAL = 'Em saúde mental, use linguagem responsável e sem estigma, sem gerar medo nem estimular autodiagnóstico: evite "5 sinais de que você tem TDAH" e prefira "quando vale procurar avaliação". Nunca use casos reais, mesmo anonimizados, como chamariz. Em psicologia e psiquiatria, a falta pode ser sinal clínico: o contato de acompanhamento parte de critério clínico, nunca de meta comercial. Em temas de suicídio, siga as recomendações de comunicação responsável, informe o CVV (188) e nunca use o tema para captar pacientes.';
 
   const PROFISSIONAIS = {
     medico: { label: 'Médico(a)', council: 'medicina', titulo: 'médico(a)' },
@@ -141,19 +172,23 @@
     dentista: { label: 'Dentista', council: 'odontologia', titulo: 'cirurgião(ã)-dentista' },
     psicologo: { label: 'Psicólogo(a)', council: 'psicologia', titulo: 'psicólogo(a)', mental: true },
     fisioterapeuta: { label: 'Fisioterapeuta', council: 'fisioterapia', titulo: 'fisioterapeuta' },
+    nutricionista: { label: 'Nutricionista', council: 'nutricao', titulo: 'nutricionista' },
     multi: { label: 'Clínica multiprofissional', council: null, titulo: 'clínica multiprofissional' }
   };
   // Ferramentas que sobem na ordem conforme o tipo de profissional
   const PROF_ROTA = {
     medico: ['perfil', 'pautas'], psiquiatra: ['colegas', 'pautas'], dentista: ['atendimento', 'campanha'],
-    psicologo: ['colegas', 'perfil'], fisioterapeuta: ['colegas', 'campanha'], multi: ['rastreador', 'atendimento']
+    psicologo: ['colegas', 'perfil'], fisioterapeuta: ['colegas', 'campanha'], nutricionista: ['colegas', 'pautas'], multi: ['rastreador', 'atendimento']
   };
 
   const REGRAS_GERAIS = [
     'Paciente identificável só com autorização por escrito para aquele uso. Dado de saúde é dado pessoal sensível pela LGPD.',
     'Sem promessa de cura ou resultado garantido, sem superlativos e sem gerar medo: além do conselho, pode ser publicidade enganosa pelo Código de Defesa do Consumidor.',
     'Em anúncios, não afirme nem sugira condição de saúde de quem lê ("você tem dor nas costas?"): as políticas da Meta sobre atributos pessoais vetam, e o Google também restringe anúncios de saúde.',
-    'Parceria paga ou permuta precisa ser sinalizada como publicidade.'
+    'Parceria paga ou permuta precisa ser sinalizada como publicidade.',
+    'Escreva sobre o tema, não sobre a pessoa ("Ansiedade tem tratamento", e não "Você sofre de ansiedade?").',
+    'Não pague, não receba e não prometa vantagem financeira por indicação de paciente: a indicação entre colegas é técnica, não comercial.',
+    'LGPD na prática: consentimento específico para mensagens de relacionamento, com saída fácil ("responda SAIR"); nunca suba lista de pacientes para públicos personalizados de anúncios sem base legal e consentimento; acesso por função (a recepção vê agenda, não evolução clínica); transcrições de consultas e lives não viram conteúdo sem autorização formal e anonimização.'
   ];
 
   const OBJETIVOS = {
@@ -200,14 +235,14 @@
 
   const TOOL_NAMES = {
     config: 'Comece aqui', publico: 'Público, ICP e persona', profissional: 'Persona do profissional', nicho: 'Nicho e diferencial',
-    perfil: 'Perfis e presença', pautas: 'Pautas e palavras-chave', roteiro: 'Roteiros e copy', formacao: 'Formação e autoridade',
+    perfil: 'Perfis e presença', pautas: 'Pautas e palavras-chave', roteiro: 'Roteiros e copy', reaproveitamento: 'Reaproveitamento de conteúdo', formacao: 'Formação e autoridade',
     campanha: 'Gerador de campanhas', colegas: 'Rede de colegas', atendimento: 'Atendimento e agendamento', rastreador: 'Rastreador de pacientes',
     assistente: 'Assistente da semana', painel: 'Painel e diagnóstico', etica: 'Verificador ético', briefing: 'Briefing para terceiros',
     ferramentas: 'Ferramentas', ebook: 'Playbook da clínica'
   };
   const FUNNEL_STAGES = [
     { nome: 'Posicionamento', desc: 'Quem você quer atender, por que você e como você fala.', tools: ['config', 'publico', 'profissional', 'nicho'], num: null },
-    { nome: 'Conteúdo', desc: 'Perfis prontos, pautas de dúvidas reais e roteiros publicados com constância.', tools: ['perfil', 'pautas', 'roteiro', 'formacao'], num: 'conteudos', numLabel: 'publicados' },
+    { nome: 'Conteúdo', desc: 'Perfis prontos, pautas de dúvidas reais e roteiros publicados com constância.', tools: ['perfil', 'pautas', 'roteiro', 'reaproveitamento', 'formacao'], num: 'conteudos', numLabel: 'publicados' },
     { nome: 'Captação', desc: 'Campanhas medidas e rede de colegas que indica.', tools: ['campanha', 'colegas'], num: 'contatos', numLabel: 'novos contatos' },
     { nome: 'Conversa', desc: 'Resposta rápida, agendamento, confirmação e retomada.', tools: ['atendimento', 'rastreador'], num: 'agendados', numLabel: 'agendados' },
     { nome: 'Tratamento', desc: 'Avaliação, plano compreensível e início do tratamento.', tools: ['rastreador'], num: 'iniciados', numLabel: 'iniciaram' }
@@ -220,9 +255,10 @@
     perfil: { nome: 'Perfis e presença', fazer: 'Cole os textos atuais dos perfis, gere a auditoria e aplique bio, destaques, link e Perfil da Empresa no Google.', revisar: 'Atualize destaques, fixados e fotos do Google com o que funcionou.' },
     pautas: { nome: 'Pautas e palavras-chave', fazer: 'Anote no banco as dúvidas reais dos pacientes, gere palavras-chave, 30 pautas e o calendário, e guarde a frequência que vai manter.', revisar: 'Acrescente as dúvidas novas ao banco e gere as próximas 4 semanas de pautas.' },
     roteiro: { nome: 'Roteiros de conteúdo e copy', fazer: 'Escolha a primeira pauta do calendário e gere o roteiro com 5 ganchos. Grave vários de uma vez e registre no Diário de conteúdo.', revisar: 'Reaproveite os ganchos com mais envios e salvamentos nos próximos roteiros.' },
+    reaproveitamento: { nome: 'Reaproveitamento de conteúdo', fazer: 'Escolha uma aula, podcast ou entrevista em que você participou bem, cole a transcrição e gere o primeiro conjunto: carrossel, guia e Reel.', revisar: 'Compare o tempo por conjunto, o número de correções e os salvamentos, envios e acessos ao guia antes de fazer o próximo.' },
     formacao: { nome: 'Formação e autoridade', fazer: 'Pesquise congressos e cursos dos próximos 12 meses e defina como comunicar seus títulos no perfil e no LinkedIn.', revisar: 'Atualize o perfil com eventos e formações concluídos.' },
     campanha: { nome: 'Gerador de campanhas', fazer: 'Escolha um modelo, gere a ficha e as peças, passe tudo pelo Verificador ético e registre a campanha.', revisar: 'Compare as campanhas registradas por agendados e tratamentos iniciados, não por cliques.' },
-    colegas: { nome: 'Rede de colegas', fazer: 'Mapeie de 5 a 10 colegas que atendem o mesmo paciente antes ou depois de você e envie a carta de apresentação aos primeiros.', revisar: 'Devolva as contrarreferências pendentes e agradeça as indicações da quinzena.' },
+    colegas: { nome: 'Rede de colegas', fazer: 'Cadastre dez colegas que atendem o mesmo paciente antes ou depois de você e envie a carta de apresentação aos três mais próximos.', revisar: 'Devolva as contrarreferências pendentes, agradeça as indicações da quinzena e veja quem está ativo (indicou nos últimos 90 dias).' },
     atendimento: { nome: 'Atendimento e agendamento', fazer: 'Liste as perguntas que mais chegam, gere respostas rápidas, roteiro de agendamento, confirmação e retomadas, e guarde os aprovados.', revisar: 'Inclua respostas para as perguntas novas e revise o tempo de resposta.' },
     rastreador: { nome: 'Rastreador de pacientes', fazer: 'Registre cada novo contato com origem, serviço, etapa, próximo passo e consentimento.', revisar: 'Atualize etapas e datas, encerre quem esfriou (com motivo) e retome quem consentiu com lembretes.' },
     assistente: { nome: 'Assistente da semana', fazer: 'Toda segunda, importe as pendências e gere a agenda da semana em blocos.', revisar: 'Faça o ritual semanal de novo.' },
@@ -243,7 +279,11 @@
     ['Criar peças', 'Canva, Adobe Express', 'Modelos de carrossel e capas com a identidade da clínica'],
     ['Editar vídeo', 'CapCut, Edits (Meta), InShot', 'Legendas automáticas; revise termos técnicos'],
     ['Agendar e medir posts', 'Meta Business Suite, Metricool, mLabs', 'Calendário e relatórios de Instagram e YouTube'],
+    ['Reaproveitamento', 'Transcrição do app de gravação ou do YouTube, Claude', 'Da aula ou do podcast às peças; nunca transcreva consultas'],
+    ['Comentário que leva ao guia', 'Manychat', 'Exige configuração e teste; respeite as regras do conselho'],
     ['Ideias e palavras-chave', 'Google Trends, Answer The Public, Planejador de palavras-chave do Google Ads', 'Pautas a partir do que o paciente pesquisa'],
+    ['Vídeos curtos fora do Instagram', 'TikTok, TikTok Studio', 'Opcional; publique sem marca d\'água de outra rede'],
+    ['Impulsionamento', 'Botão Turbinar no Instagram, Meta Business Suite', 'O primeiro anúncio de quem nunca anunciou (Parte 7)'],
     ['YouTube', 'YouTube Studio, TubeBuddy ou vidIQ', 'Títulos, capítulos e análise de retenção'],
     ['Anúncios', 'Gerenciador de Anúncios da Meta, Google Ads', 'Pixel, API de Conversões, tag do Google'],
     ['Medição do site', 'Google Analytics 4, Google Tag Manager', 'Conversões de WhatsApp, ligação e formulário'],
@@ -251,32 +291,32 @@
     ['Atendimento', 'WhatsApp Business (app ou API oficial)', 'Respostas rápidas, etiquetas, catálogo de serviços'],
     ['CRM comercial', 'CliniLoop, RD Station CRM, Kommo, Pipedrive, HubSpot', 'Funil, próximos passos, automações'],
     ['Agenda e prontuário', 'iClinic, Feegow, Amplimed, Simples Dental, Clinicorp', 'Agenda, confirmação e prontuário eletrônico (fora do CRM)'],
-    ['Assistentes de IA', 'Claude, ChatGPT, Gemini, Copilot', 'Nunca com dados de pacientes']
+    ['Assistentes de IA', 'Claude, ChatGPT, Gemini, Copilot', 'Use com as quatro regras de IA; nunca com dados de pacientes']
   ];
 
-  // Benchmarking editorial de criadores de saúde (12/10/2026): estrutura, não conteúdo clínico.
-  // Amostra pequena e observacional, não é ranking de engajamento.
+  // Referências de criadores clínicos brasileiros (Parte 4 do livro): amostra editorial da skill Creator
+  // (outubro de 2026), não um ranking. Use as estruturas, não os conselhos clínicos.
   const BENCH = [
-    ['José Arbex Filho', 'odontologia', 'Odontologia estética', '@arbexfilho', 'Analogia concreta para explicar raciocínio e acompanhamento, sem imagens clínicas ou procedimentos publicitários.'],
-    ['Roberto Viotto', 'odontologia', 'Odontologia estética', '@drviotto', 'Mostrar o ambiente e explicar uma tecnologia de forma permitida.'],
-    ['Bruna Conde', 'odontologia', 'Odontologia (halitose)', '@drabrunaconde', 'Quadro Mito/Verdade com afirmações verificadas, em linguagem comum.'],
-    ['Paulo Muzy', 'medicina', 'Ortopedia, medicina esportiva', '@paulomuzy', 'Responder dúvidas gerais com proximidade e ressalvas, sem caso individual em público.'],
-    ['Ana Escobar', 'medicina', 'Pediatria', '@draanaescobar', 'Pergunta específica, acolhimento, passos compreensíveis e CRM/RQE visível.'],
-    ['Dayan Siebra', 'medicina', 'Cirurgia vascular', '@dayansiebra', 'Dupla entrevistador e especialista, com objetos do cotidiano; reescrever ganchos sem ameaça exagerada.'],
-    ['José Carlos Souto', 'medicina', 'Medicina (metabólico e nutricional)', '@jcsouto', 'Aprofundamento para quem prefere escuta; citar um estudo não o valida.'],
-    ['Victor Sorrentino', 'medicina', 'Medicina funcional/integrativa (atuação declarada)', '@drvictorsorrentino', 'Sinalização visual de conceitos e de fontes realmente verificadas, sem importar conclusões clínicas.'],
-    ['Leonardo Ávila', 'medicina fisioterapia', 'Dor (Tudo Sobre Dor)', '@tudosobredor', 'Série temática com conversa e bibliografia; simplificar o jargão para pacientes.'],
-    ['Bernardo Sampaio', 'fisioterapia', 'Fisioterapia musculoesquelética', '@bernardosam', 'Pergunta real anonimizada e resposta concisa com limites, sem intervenção igual para todos.'],
-    ['Robson Sitta', 'fisioterapia', 'Fisioterapia ortopédica', '@dr.robsonsitta', 'Tornar o raciocínio observável com modelo ou representação segura; técnica não é prescrição universal.']
+    ['Ana Escobar', 'medicina', 'Pediatria', '@draanaescobar', 'Pergunta específica, acolhimento, passos compreensíveis, CRM e RQE visíveis.'],
+    ['Bruna Conde', 'odontologia', 'Odontologia', '@drabrunaconde', 'Quadro Mito ou Verdade com afirmações verificadas.'],
+    ['José Arbex Filho', 'odontologia', 'Odontologia estética', '@arbexfilho', 'Analogia concreta para explicar raciocínio e acompanhamento.'],
+    ['Paulo Muzy', 'medicina', 'Ortopedia e medicina esportiva', '@paulomuzy', 'Dúvidas gerais com proximidade e ressalvas.'],
+    ['Dayan Siebra', 'medicina', 'Cirurgia vascular', '@dayansiebra', 'Dupla entrevistador e especialista com objetos do cotidiano.'],
+    ['Leonardo Ávila', 'medicina fisioterapia', 'Dor', '@tudosobredor', 'Série temática com conversa e bibliografia.'],
+    ['Bernardo Sampaio', 'fisioterapia', 'Fisioterapia', '@bernardosam', 'Pergunta real anonimizada, resposta concisa com limites.'],
+    ['Robson Sitta', 'fisioterapia', 'Fisioterapia ortopédica', '@dr.robsonsitta', 'Raciocínio clínico mostrado com modelo, sem prescrição universal.']
   ];
   const BENCH_PADROES = 'Padrões recorrentes: problema específico na abertura; explicação concreta (objetos, analogias, modelos), sem estilo único vencedor; autoridade visível, mas não autossuficiente; quadros e continuidade; um próximo passo por peça; limites clínicos que sobrevivem ao corte curto.';
 
   // As bases do método (créditos)
   const METODO = {
     bases: [
-      ['Método Foguete', 'Pat Machadu', 'Crescimento em "planetas": fundamentos, planejamento (transformação, Ikigai, pesquisa de mercado, identidade, baldes), perfil, produção, análise, recursos da plataforma, metas S.M.A.R.T. e hábitos. Originalmente para YouTube, adaptado ao Instagram.'],
-      ['Efeito Di', 'Diandra Santos (@segueadi)', 'Síntese autoral do curso: inteligência de nicho, atenção + padrão + satisfação, direção criativa com estruturas replicáveis e banco de conteúdo, quadros e personagens recorrentes, biblioteca de formatos, marca pessoal, gravação no celular, confiança na câmera, revisão de roteiro em duas etapas, impulsionamento e o R.O.A.S. (Roteiro, Observação, Adaptação, Substituição) para modelar referências.'],
-      ['Pesquisa e normas', 'out/2026', 'Sinais do algoritmo do Instagram (só tempo de visualização, curtidas por alcance e envios por alcance têm confirmação atribuída à Meta; o resto é heurística de terceiros) e regras de publicidade do CFM, CFO, CFP e COFFITO.']
+      ['Prompt do Sim · Saúde', 'JR Tosoni', 'O e-book que este app acompanha: conquistar pacientes é um projeto, com objetivo, etapas, registros e revisões. Seis etapas, sete sins (atenção, confiança, colega, contato, agendamento, comparecimento, tratamento) e três caixas em cada parte: Prompt do Sim, Na prática e Sinergia CliniLoop.'],
+      ['Oceano Azul', 'W. Chan Kim e Renée Mauborgne', 'Sair da disputa por atenção com conteúdo igual ao de todos. As quatro ações (eliminar, reduzir, elevar, criar) em relação ao padrão do setor viram uma proposta de valor própria e ética.'],
+      ['Método Foguete', 'Pat Machadu', 'Crescimento em sete etapas: fundamentos, planejamento (transformação, adjetivos de marca, temas de conteúdo), perfil, produção, análise, recursos da plataforma e metas S.M.A.R.T. Originalmente para YouTube, adaptado ao Instagram.'],
+      ['Efeito Di', 'Diandra Santos (@segueadi)', 'Síntese autoral do curso: atenção + padrão + satisfação, quadros recorrentes, personagens editoriais, biblioteca de formatos, análise de referências, frequência que cabe na revisão e o R.O.A.S. (Roteiro, Observação, Adaptação, Substituição) para modelar referências.'],
+      ['Reaproveitamento', 'Thiago Lemos e Alexandre Abramo (canal Hotmart)', 'O que falta à maioria dos especialistas não é conhecimento, é reaproveitamento: uma aula, podcast ou entrevista vira carrossel, guia, Reel e Stories, com registro de ideias, autoria e pendências.'],
+      ['Pesquisa e normas', 'out/2026', 'Sinais do algoritmo do Instagram (tempo de visualização, envios por alcance e curtidas por alcance confirmados por Adam Mosseri; o resto é heurística de mercado) e regras de publicidade do CFM, CFO, CFP, COFFITO e CFN.']
     ],
     fluxo: ['Ideia', 'Roteiro', 'Revisão editorial', 'Revisão clínica e ética', 'Gravação', 'Revisão final', 'Publicação', 'Análise'],
     aviso: 'O CliniLoop usa princípios dessas fontes, não reproduz o material dos cursos. Rótulos pedagógicos (como "viciante") não são métricas, e linguagem sobre emoção e neuroquímica é editorial, não evidência científica. O R.O.A.S. do curso não é o ROAS de mídia paga.'

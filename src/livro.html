@@ -1,0 +1,63 @@
+
+  <section class="livro-sec" id="livro">
+    <div class="wrap">
+      <p class="eyebrow">O livro e o app</p>
+      <div class="livro-head">
+        <div class="livro-cover" aria-hidden="true">
+          <span class="lc-autor">JR Tosoni</span>
+          <span class="lc-tit">Prompt<br>do Sim</span>
+          <span class="lc-sub">para profissionais de saúde</span>
+          <span class="lc-foot">E-book interativo · com o app CliniLoop</span>
+        </div>
+        <div>
+          <h2>O CliniLoop é o app do e-book <em>Prompt do Sim · Saúde</em>.</h2>
+          <p class="livro-lead">O livro ensina o roteiro; o app guarda o registro. Cada uma das 14 partes termina em três caixas: <b>Prompt do Sim</b>, o prompt pronto para a sua IA; <b>Na prática</b>, um passo de até 30 minutos para hoje; e <b>Sinergia CliniLoop</b>, a ferramenta do app que coloca a parte em prática. Em cada ferramenta abaixo, a faixa "No livro" mostra a parte correspondente, o passo de hoje e o prompt do livro já preenchido com o seu perfil.</p>
+          <p class="livro-ideia">"Conquistar pacientes é um projeto. Projetos têm objetivo, etapas, registros e revisões. É isso que transforma esforço em resultado."</p>
+        </div>
+      </div>
+
+      <div class="livro-tabs" role="tablist" aria-label="Seções do livro no app">
+        <button type="button" role="tab" class="on" aria-selected="true" data-tab="roteiro">Seu roteiro em 6 etapas</button>
+        <button type="button" role="tab" aria-selected="false" data-tab="sins">Os sete sins</button>
+        <button type="button" role="tab" aria-selected="false" data-tab="prompts">Biblioteca de prompts</button>
+        <button type="button" role="tab" aria-selected="false" data-tab="ia">Como usar a IA</button>
+        <button type="button" role="tab" aria-selected="false" data-tab="glossario">Glossário</button>
+      </div>
+
+      <div class="livro-panel" data-panel="roteiro">
+        <p class="livro-note">Siga as etapas na ordem e volte a elas sempre que o consultório ou o objetivo mudarem. O selo ✓ aparece quando você já usou a ferramenta daquela parte.</p>
+        <div id="livro-roteiro" class="livro-roteiro"></div>
+      </div>
+
+      <div class="livro-panel" data-panel="sins" hidden>
+        <p class="livro-note">Os sins 1 e 2 são de visibilidade e autoridade. O 3 é de relacionamento profissional. Do 4 ao 7, o trabalho é de atendimento e CRM. A maior parte das clínicas investe no 1 e perde dinheiro do 4 ao 7. Os números abaixo são dos últimos 30 dias, vindos do Rastreador e do Diário de conteúdo; onde aparece um traço, está o primeiro campo a registrar.</p>
+        <div id="livro-sins"></div>
+      </div>
+
+      <div class="livro-panel" data-panel="prompts" hidden>
+        <p class="livro-note">Os 12 prompts do livro (Parte 13), com o que estiver entre colchetes já preenchido pelo seu perfil. O que continuar entre colchetes, troque antes de enviar. As ferramentas do app geram versões mais completas, com as regras do seu conselho e as decisões que você guardou.</p>
+        <div id="livro-prompts" class="livro-prompts"></div>
+      </div>
+
+      <div class="livro-panel" data-panel="ia" hidden>
+        <div class="livro-cols">
+          <div>
+            <h3>A estrutura de um bom prompt</h3>
+            <ol id="livro-estrutura" class="livro-ol"></ol>
+            <div class="livro-exemplo"><b>Exemplo do livro</b><p id="livro-exemplo"></p><button type="button" class="btn btn-outline btn-sm" id="livro-exemplo-copy" data-ico="copy">Copiar exemplo</button></div>
+          </div>
+          <div>
+            <h3>As quatro regras de IA</h3>
+            <ul id="livro-regras" class="livro-regras"></ul>
+            <p class="livro-note">Os prompts do CliniLoop seguem essa ordem: papel, contexto do consultório, tarefa, formato e limites, e terminam com as regras do seu conselho.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="livro-panel" data-panel="glossario" hidden>
+        <label class="visually-hidden" for="glos-busca">Buscar no glossário</label>
+        <input type="search" id="glos-busca" class="glos-busca" placeholder="Buscar entre os 75 termos do Anexo A (ex.: ROAS, no-show, Turbinar)">
+        <dl id="glos-lista" class="glos-lista"></dl>
+      </div>
+    </div>
+  </section>

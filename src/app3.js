@@ -3,6 +3,8 @@
   function arr(key) { const v = storeGet(key, []); return Array.isArray(v) ? v : []; }
   let pacientes = arr(PAC_KEY);
   let colegas = arr(COL_KEY);
+  // Funil de colegas alinhado ao livro: migra etapas antigas
+  colegas.forEach((c) => { if (COLEGA_MIGRA[c.etapa]) c.etapa = COLEGA_MIGRA[c.etapa]; });
   let campanhas = arr(CAMP_KEY);
   let conteudos = arr(CONT_KEY);
   let lastBriefingMd = '';
@@ -194,22 +196,34 @@
       odontologia: 'Preço, desconto, gratuidade ou apelo a preço: proibido na publicidade odontológica.',
       psicologia: 'Preço como chamariz (promoção, desconto, gratuidade, pacote): vedado na psicologia.',
       fisioterapia: 'Valores fora do local de atendimento ou como concorrência desleal: vedado pelo Código de Ética da Fisioterapia.',
-      medicina: 'Valores e descontos podem ser informados (Res. CFM 2.336/2023), mas sem sensacionalismo nem promoção casada.' } },
+      medicina: 'Valores e descontos podem ser informados (Res. CFM 2.336/2023), mas sem sensacionalismo nem promoção casada.',
+      nutricao: 'Honorários e promoções não podem ser usados como publicidade (Res. CFN 599/2018).' } },
     { re: /\b(sorteio|sorteamos|brindes?|premio|premiacao|concurso)\b/, by: {
       medicina: 'Premiações são vedadas pela Res. CFM 2.336/2023.',
       odontologia: 'Brindes, prêmios e sorteios: regras alteradas pela Res. CFO 271/2025. Confirme com o seu CRO antes.',
       psicologia: 'Sorteios são vedados na publicidade de psicologia.',
-      fisioterapia: 'Sorteios e brindes podem configurar captação incompatível com a dignidade da profissão. Confirme com o CREFITO.' } },
+      fisioterapia: 'Sorteios e brindes podem configurar captação incompatível com a dignidade da profissão. Confirme com o CREFITO.',
+      nutricao: 'Sorteios e promoções não podem ser usados como publicidade (Res. CFN 599/2018).' } },
     { re: /\bantes e depois\b/, by: {
       medicina: 'Antes e depois: só educativo, em conjunto com resultados satisfatórios, insatisfatórios e complicações, com texto educativo, sem editar a imagem nem identificar o paciente.',
       odontologia: 'Antes e depois (Res. CFO 196/2019): só pelo dentista que executou, tratamento concluído, com nome e CRO na imagem e autorização por escrito; proibido no perfil da clínica (pessoa jurídica) e em "antes, durante e depois".',
       psicologia: 'Psicologia não usa antes e depois: nada que identifique ou exponha pacientes.',
-      fisioterapia: 'Antes e depois ou imagem que identifique o paciente: só com TCLE prévio (Res. COFFITO 532/2021); divulgação irregular é infração de manifesta gravidade.' } },
+      fisioterapia: 'Antes e depois ou imagem que identifique o paciente: só com TCLE prévio (Res. COFFITO 532/2021); divulgação irregular é infração de manifesta gravidade.',
+      nutricao: 'Imagem corporal (sua ou de terceiros) atribuindo resultado a produto, técnica ou protocolo é vedada mesmo com autorização, exceto em eventos e publicações científicas (Res. CFN 599/2018).' } },
+    { re: /\b(perdi|perdeu|perca|emagre\w*|secar|barriga chapada|corpo dos sonhos|shape|\d+ ?kg)\b/, by: {
+      nutricao: 'Resultado corporal ou de peso: não atribua resultado a produto, técnica ou protocolo nem use imagem corporal; inclua que os resultados podem não ocorrer da mesma forma para todos.' } },
+    { re: /\b(marca|patrocin\w*|publi|parceria com|cupom da marca|recebido)\b/, by: {
+      nutricao: 'Associar a própria imagem a marcas de alimentos ou fazer publicidade comercial de marcas é vedado ao nutricionista.',
+      odontologia: 'Marcas de materiais, equipamentos e instrumentais não podem ser identificadas na publicidade odontológica.',
+      medicina: 'Publicidade de medicamentos, insumos, órteses, próteses e suas marcas é vedada.' } },
+    { re: /\b(\d+ sinais de que (voce|vc) tem|sinais de que voce tem|descubra se voce tem|teste (se|para saber se) voce tem)\b/, msg: 'Estimula autodiagnóstico ("5 sinais de que você tem…"): prefira "quando vale procurar avaliação".' },
+    { re: /\b(comiss\w*|percentual|bonifica\w*) (por|pela|pelas|pelos) indica\w*|\bpago (por|pela) indica\w*/, msg: 'Comissão ou vantagem por indicação de paciente: vedada pelos códigos de ética (captação indevida).' },
     { re: /\b(depoimentos?|testemunhos?|paciente (disse|falou|contou)|meus pacientes dizem)\b/, by: {
       psicologia: 'Depoimentos de pacientes são desaconselhados mesmo com consentimento.',
       fisioterapia: 'Depoimentos e agradecimentos de pacientes não podem ser usados para autopromoção; texto ou áudio de paciente só com TCLE prévio.',
       medicina: 'Depoimentos: sem tom sensacionalista ou de promessa; repostar paciente conta como publicidade médica.',
-      odontologia: 'Depoimentos: só com autorização, sem promessa de resultado nem sensacionalismo. Confirme com o CRO.' } },
+      odontologia: 'Depoimentos: só com autorização, sem promessa de resultado nem sensacionalismo. Confirme com o CRO.',
+      nutricao: 'Resultados do seu trabalho só com autorização escrita, sem garantir resultado nem usar imagem corporal.' } },
     { re: /\b(me mande (uma )?foto|diagnostico (pelo|por) (direct|whatsapp|comentario)|consulta pelo direct|conte (seu|sua) (historico|caso) nos comentarios)\b/, msg: 'Diagnóstico por foto, comentário ou mensagem, ou pedido de histórico nos comentários: encaminhe para o atendimento.' },
     { re: /\b(segredo que|medicos (nao contam|escondem)|dentistas (nao contam|escondem)|cura em|em segundos|nunca mais (sinta|tenha))/, msg: 'Promessa sensacionalista ("segredo que escondem", "cura em segundos", "nunca mais").' },
     { re: /\b(vergonha d[eo]|feio|feia|horrivel|ultima chance|so hoje|vagas limitadas|corra)\b/, msg: 'Apelo a vergonha, medo ou escassez: não entra em conteúdo de saúde.' },
@@ -217,10 +231,12 @@
     { re: /\bcomente (agenda|eu quero|quero|sim)\b/, msg: '"Comente AGENDA": comum em guias, mas confira se o fluxo respeita as regras do seu conselho e não expõe quem comenta.' },
     { re: /\b(durante o procedimento|cirurgia ao vivo|procedimento em andamento|ao vivo da consulta|antes, durante e depois)\b/, by: { odontologia: 'Procedimento em andamento e "antes, durante e depois": só em publicação científica.', medicina: 'Transmitir consultas ou procedimentos em tempo real é vedado (Res. CFM 2.336/2023).' }, msg: 'Procedimento sendo realizado: confira a regra do seu conselho e a autorização do paciente.' }
   ];
+  const IMG_RISK_EXTRA = { 'equipamentos ou produtos com marca': ' marca ' };
   const IMG_RISK = {
     'antes e depois': ' antes e depois ',
     'depoimento de paciente': ' depoimento ',
-    'procedimento sendo realizado': ' procedimento em andamento '
+    'procedimento sendo realizado': ' procedimento em andamento ',
+    ...IMG_RISK_EXTRA
   };
   function riskScan(text) {
     const t = normTxt(text).replace(/\bsem (precos?|descontos?|promocao|promocoes)\b/g, ' ');
@@ -358,7 +374,7 @@
     loop.appendChild(chipsL);
     const pb = document.createElement('button');
     pb.type = 'button';
-    pb.innerHTML = '<span class="n">17</span>Gerar o playbook da clínica';
+    pb.innerHTML = '<span class="n">18</span>Gerar o playbook da clínica';
     pb.addEventListener('click', () => openTool('ebook'));
     loop.appendChild(pb);
     box.appendChild(loop);
@@ -396,7 +412,7 @@
     if (!cfg.profissional && (cfg.metaFrase || cfg.especialidade)) avisos.push(['info', 'Escolha o tipo de profissional no passo 2: as regras de publicidade mudam de um conselho para outro.']);
     const riscos = riskScan(cfg.metaFrase + ' ' + cfg.transformacao + ' ' + cfg.servicos);
     if (riscos.length) avisos.push(['warn', `Seu objetivo ou perfil menciona algo que o seu conselho restringe: ${riscos.join(' ')}`]);
-    if ((cfg.objetivo === 'autoridade' || cfg.objetivo === 'online') && cfg.tempo === 'ate1' && cfg.produtor === 'eu') avisos.push(['info', 'Com até 1 hora por semana e produção própria, autoridade e atendimento online demoram mais. Comece com 2 conteúdos por semana ou delegue parte da produção com o Briefing para terceiros (15).']);
+    if ((cfg.objetivo === 'autoridade' || cfg.objetivo === 'online') && cfg.tempo === 'ate1' && cfg.produtor === 'eu') avisos.push(['info', 'Com até 1 hora por semana e produção própria, autoridade e atendimento online demoram mais. Comece com 2 conteúdos por semana ou delegue parte da produção com o Briefing para terceiros.']);
     if (cfg.objetivo === 'online' && (cfg.atendimento || []).indexOf('online') < 0) avisos.push(['warn', 'Seu objetivo é atender online, mas o atendimento online não está marcado no passo 2. Deseja ajustar?']);
     if (cfg.objetivo === 'online' && ['dentista', 'fisioterapeuta'].includes(cfg.profissional)) avisos.push(['info', 'Atendimento a distância tem regras próprias no seu conselho. Confirme o que pode ser feito online antes de divulgar.']);
     if (cfg.profissional === 'multi' && !(cfg.multiProf || []).length) avisos.push(['warn', 'Marque as profissões da clínica para carregar as regras de cada conselho.']);
@@ -660,13 +676,15 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
   });
 
   // ===================== Rastreador de pacientes =====================
-  const ORIGENS = ['Instagram', 'Google (busca ou Perfil da Empresa)', 'Indicação de paciente', 'Indicação de colega', 'Doctoralia ou plataforma', 'YouTube', 'Site', 'Anúncio', 'Passou em frente', 'Outro'];
+  // Origens do livro (Parte 11). Campanhas e impulsionamentos registrados entram como origem própria.
+  const ORIGENS = ['Instagram orgânico', 'Google orgânico (busca ou Perfil da Empresa)', 'Meta Ads', 'Google Ads', 'YouTube', 'TikTok', 'Indicação de colega', 'Indicação de paciente', 'Retorno (paciente antigo)', 'Doctoralia ou plataforma', 'Site', 'Passou em frente', 'Outro'];
+  const campOrigem = (c) => (c.tipo === 'Impulsionamento' ? 'Impulsionamento: ' : 'Campanha: ') + c.nome;
   const CLIN_RE = /\b(diagnost\w*|cid\b|exame|exames|medicament\w*|remedio|doenca|transtorno|depress\w*|ansiedade|cancer|tumor|hiv|gravid\w*|cirurgia|fratura|hernia|laudo|receita)/;
   function renderOrigemOptions() {
     const sel = document.getElementById('t-origem');
     const cur = sel.value;
     sel.innerHTML = ORIGENS.map((o) => `<option>${escapeHtml(o)}</option>`).join('') +
-      campanhas.map((c) => `<option value="Campanha: ${escapeHtml(c.nome)}">Campanha: ${escapeHtml(c.nome)}</option>`).join('');
+      campanhas.map((c) => `<option value="${escapeHtml(campOrigem(c))}">${escapeHtml(campOrigem(c))}</option>`).join('');
     if ([...sel.options].some((o) => o.value === cur)) sel.value = cur;
     const opts = '<option value="">(nenhum)</option>' + colegas.map((c) => `<option value="${escapeHtml(c.id)}">${escapeHtml(c.nome)}</option>`).join('');
     ['t-colega', 'cm-colega'].forEach((id) => {
@@ -678,8 +696,37 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     document.getElementById('t-colega-wrap').hidden = sel.value !== 'Indicação de colega';
   }
   document.getElementById('t-origem').addEventListener('change', () => { document.getElementById('t-colega-wrap').hidden = document.getElementById('t-origem').value !== 'Indicação de colega'; });
-  document.getElementById('t-etapa').innerHTML = ETAPAS.filter((e) => e !== 'Encerrado').map((e) => `<option>${e}</option>`).join('');
-  document.getElementById('t-filtro').innerHTML = '<option value="">Todas as etapas ativas</option>' + ETAPAS.map((e) => `<option>${e}</option>`).join('') + '<option value="*">Todos os contatos</option>';
+  const etOpt = (e, sel) => `<option value="${e}"${sel ? ' selected' : ''}>${etapaLabel(e)}</option>`;
+  function renderEtapaOptions() {
+    ['t-etapa', 't-filtro'].forEach((id) => {
+      const el = document.getElementById(id);
+      const v = el.value;
+      el.innerHTML = id === 't-etapa' ? ETAPAS.filter((e) => e !== 'Encerrado').map((e) => etOpt(e)).join('')
+        : '<option value="">Todas as etapas ativas</option>' + ETAPAS.map((e) => etOpt(e)).join('') + '<option value="*">Todos os contatos</option>';
+      if ([...el.options].some((o) => o.value === v)) el.value = v;
+    });
+  }
+  renderEtapaOptions();
+  // Próximo passo típico da etapa (Parte 11), sugerido quando o campo está vazio
+  document.getElementById('t-etapa').addEventListener('change', (e) => {
+    const ps = document.getElementById('t-passo');
+    if (!ps.value.trim() || Object.values(PASSO_TIPICO).includes(ps.value)) ps.value = PASSO_TIPICO[e.target.value] || '';
+  });
+  function diasDesde(d) { return d ? Math.round((new Date(todayISO() + 'T12:00') - new Date(d + 'T12:00')) / 86400000) : 0; }
+  // Planos sem decisão (2, 7 e 15 dias) e contatos que não agendaram (1, 3 e 7 dias)
+  function marcoParado(p) {
+    if (p.etapa === 'Plano proposto' && !semPacote()) {
+      const n = diasDesde((p.hist || {})['Plano proposto']);
+      const m = [15, 7, 2].find((x) => n >= x);
+      return m ? { n, m, txt: `Plano sem decisão há ${n} dia${n === 1 ? '' : 's'}: contato de ${m} dias` } : null;
+    }
+    if (p.etapa === 'Novo' || p.etapa === 'Em conversa') {
+      const n = diasDesde(p.criado);
+      const m = [7, 3, 1].find((x) => n >= x);
+      return m ? { n, m, txt: `Sem agendar há ${n} dia${n === 1 ? '' : 's'}: retomada de ${m} dia${m === 1 ? '' : 's'}, com algo útil e sem pressão` } : null;
+    }
+    return null;
+  }
   document.getElementById('t-notas').addEventListener('input', (e) => { document.getElementById('t-notas-aviso').hidden = !CLIN_RE.test(normTxt(e.target.value)); });
 
   function fillHist(p, etapa) {
@@ -719,8 +766,9 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
 
   function isLate(p) { return p.data && p.etapa !== 'Encerrado' && p.data <= todayISO(); }
   function renderTracker() {
+    renderEtapaOptions();
     const counts = ETAPAS.map((e) => [e, pacientes.filter((p) => p.etapa === e).length]);
-    document.getElementById('t-funnel').innerHTML = counts.map(([e, n]) => `<div><b>${n}</b><span>${e}</span></div>`).join('');
+    document.getElementById('t-funnel').innerHTML = counts.map(([e, n]) => `<div><b>${n}</b><span>${etapaLabel(e)}</span></div>`).join('');
     const filtro = document.getElementById('t-filtro').value;
     const busca = normTxt(document.getElementById('t-busca').value).trim();
     let lista = pacientes.filter((p) => (filtro === '*' ? true : filtro ? p.etapa === filtro : p.etapa !== 'Encerrado'));
@@ -734,6 +782,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
       el.className = 'track-item pac' + (isLate(p) ? ' overdue' : '');
       const col = p.colega && colegaPorId(p.colega);
       const ult = (p.ativ || []).slice(-1)[0];
+      const parado = marcoParado(p);
       const tel = String(p.tel || '').replace(/\D/g, '');
       const wa = tel.length >= 10 ? `https://wa.me/${tel.length <= 11 ? '55' + tel : tel}` : '';
       el.innerHTML = `
@@ -743,7 +792,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
           <div class="consents">${Object.keys(CONSENT).map((k) => `<button type="button" class="cbadge${p.consent && p.consent[k] ? ' on' : ''}" data-k="${k}" title="${p.consent && p.consent[k] ? 'Consentiu em ' + fmtDate(p.consent[k]) + '. Clique para revogar.' : (p.revogado && p.revogado[k] ? 'Revogado em ' + fmtDate(p.revogado[k]) + '. ' : '') + 'Clique para registrar consentimento hoje.'}">${CONSENT[k]}${p.consent && p.consent[k] ? ' ✓' : ''}</button>`).join('')}</div>
         </div>
         <div class="track-controls">
-          <select class="js-etapa" aria-label="Etapa">${ETAPAS.map((e) => `<option${e === p.etapa ? ' selected' : ''}>${e}</option>`).join('')}</select>
+          <select class="js-etapa" aria-label="Etapa">${ETAPAS.map((e) => etOpt(e, e === p.etapa)).join('')}</select>
           ${wa ? `<a class="icon-btn wa" href="${wa}" target="_blank" rel="noopener" title="Abrir WhatsApp" aria-label="Abrir WhatsApp">✆</a>` : ''}
           <button type="button" class="icon-btn js-del" title="Excluir" aria-label="Excluir contato">×</button>
         </div>
@@ -757,14 +806,19 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
           <label>Atividade <select class="js-ativ">${ATIVIDADES.map((a) => `<option>${a}</option>`).join('')}</select></label>
           <label>Responsável <input type="text" class="js-resp" list="lista-equipe" value="${escapeHtml(p.prof || cfg.nome || '')}"></label>
           <button type="button" class="btn btn-outline btn-sm js-ativ-add">Registrar</button>
-          <span class="meta">${ult ? `Última: ${escapeHtml(ult.t)} em ${fmtShort(ult.d)}${ult.r ? ' (' + escapeHtml(ult.r) + ')' : ''}` : 'Sem atividade registrada'}${isLate(p) ? ' · <span class="late">próximo passo vencido</span>' : ''}</span>
+          <span class="meta">${ult ? `Última: ${escapeHtml(ult.t)} em ${fmtShort(ult.d)}${ult.r ? ' (' + escapeHtml(ult.r) + ')' : ''}` : 'Sem atividade registrada'}${isLate(p) ? ' · <span class="late">próximo passo vencido</span>' : ''}${parado ? ` · <span class="parado">${escapeHtml(parado.txt)}</span>` : ''}</span>
         </div>
         ${p.notas ? `<div class="notes">${escapeHtml(p.notas)}</div>` : ''}`;
       const upd = (fn) => { fn(); p.atualizado = todayISO(); savePac(); };
       el.querySelector('.js-etapa').addEventListener('change', (ev) => {
         upd(() => {
+          const antes = p.passo;
           p.etapa = ev.target.value;
           fillHist(p, p.etapa);
+          if (!String(antes || '').trim() || Object.values(PASSO_TIPICO).includes(antes)) {
+            p.passo = PASSO_TIPICO[p.etapa] || p.passo;
+            if (p.etapa === 'Plano proposto' && !semPacote() && (!p.data || p.data < todayISO())) p.data = addDays(todayISO(), 2);
+          }
           if (p.etapa === 'Encerrado' && !p.resultado) p.resultado = 'Alta e vínculo';
           p.ativ = (p.ativ || []).concat([{ d: todayISO(), t: 'Etapa: ' + p.etapa, r: '' }]).slice(-50);
         });
@@ -833,18 +887,27 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     renderColegas(); renderOrigemOptions();
   });
   function recebidas(c) { return pacientes.filter((p) => p.colega === c.id).length; }
+  function recebidas90(c) { const lim = addDays(todayISO(), -90); return pacientes.filter((p) => p.colega === c.id && p.criado >= lim).length; }
   function renderColegas() {
     document.getElementById('col-funnel').innerHTML = ETAPAS_COLEGA.map((e) => `<div><b>${colegas.filter((c) => c.etapa === e).length}</b><span>${e}</span></div>`).join('');
+    const ativos = colegas.filter((c) => recebidas90(c) > 0).length;
+    const indic90 = pacientes.filter((p) => p.colega && p.criado >= addDays(todayISO(), -90));
+    const agend = indic90.filter((p) => p.hist && p.hist.Agendado).length;
+    const inic = indic90.filter((p) => p.hist && p.hist['Em tratamento']).length;
+    document.getElementById('col-metricas').innerHTML = colegas.length ? `<b>Métricas da rede (Parte 6):</b> colegas ativos, que indicaram nos últimos 90 dias: ${ativos} · indicações nos últimos 90 dias: ${indic90.length} · agendaram: ${indic90.length ? Math.round(agend / indic90.length * 100) + '%' : '—'} · iniciaram: ${indic90.length ? Math.round(inic / indic90.length * 100) + '%' : '—'} · contrarreferências enviadas: ${colegas.filter((c) => c.contra).length}` : '';
     const box = document.getElementById('col-list');
     if (!colegas.length) { box.innerHTML = '<div class="track-empty">Nenhum colega mapeado. Comece por quem atende o mesmo paciente antes ou depois de você.</div>'; return; }
     box.innerHTML = '';
     colegas.forEach((c) => {
       const late = c.prox && c.prox <= todayISO();
+      const r90 = recebidas90(c);
+      const dica = r90 && ['Mapeado', 'Apresentado', 'Primeira indicação', 'Inativo'].includes(c.etapa) && (c.etapa !== 'Primeira indicação' || recebidas(c) > 1) ? 'indicou nos últimos 90 dias: considere "Parceiro ativo"'
+        : (!r90 && c.etapa === 'Parceiro ativo' ? 'sem indicação há 90 dias: considere "Inativo" e retome o relacionamento' : '');
       const el = document.createElement('div');
       el.className = 'track-item' + (late ? ' overdue' : '');
       el.innerHTML = `<div><h5>${escapeHtml(c.nome)}${c.prof ? ' · ' + escapeHtml(c.prof) : ''}</h5>
         <div class="meta">${[c.reg, c.canal, c.end].filter(Boolean).map(escapeHtml).join(' · ')}</div>
-        <div class="meta">Indicações recebidas: ${recebidas(c)} · enviadas: ${c.enviadas || 0} · última contrarreferência: ${c.contra ? fmtDate(c.contra) : '—'}${late ? ' · <span class="late">próximo passo vencido</span>' : ''}</div></div>
+        <div class="meta">Indicações recebidas: ${recebidas(c)} (${recebidas90(c)} nos últimos 90 dias) · enviadas: ${c.enviadas || 0} · última contrarreferência: ${c.contra ? fmtDate(c.contra) : '—'}${late ? ' · <span class="late">próximo passo vencido</span>' : ''}${dica ? ` · <span class="parado">${dica}</span>` : ''}</div></div>
         <div class="track-controls">
           <select class="js-etapa" aria-label="Etapa do colega">${ETAPAS_COLEGA.map((e) => `<option${e === c.etapa ? ' selected' : ''}>${e}</option>`).join('')}</select>
           <button type="button" class="icon-btn js-del" title="Excluir" aria-label="Excluir colega">×</button>
@@ -879,25 +942,25 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     if (!validate(form)) return;
     const v = (id) => document.getElementById(id).value.trim();
     if (campanhas.some((c) => c.nome.toLowerCase() === v('cp-nome').toLowerCase())) { const m = formMsg(form); m.className = 'form-msg error'; m.textContent = 'Já existe uma campanha com esse nome.'; return; }
-    campanhas.unshift({ id: uid(), nome: v('cp-nome'), plat: v('cp-plat'), ini: v('cp-ini'), fim: v('cp-fim'), obj: v('cp-obj'), inv: v('cp-inv'), criativos: v('cp-criativos') });
+    campanhas.unshift({ id: uid(), nome: v('cp-nome'), tipo: v('cp-tipo') || 'Campanha', plat: v('cp-plat'), ini: v('cp-ini'), fim: v('cp-fim'), obj: v('cp-obj'), inv: v('cp-inv'), criativos: v('cp-criativos') });
     saveCamp();
     ['cp-nome', 'cp-ini', 'cp-fim', 'cp-obj', 'cp-inv', 'cp-criativos'].forEach((id) => { document.getElementById(id).value = ''; });
-    const msg = formMsg(form); msg.className = 'form-msg ok'; msg.textContent = '✓ Campanha registrada. Ela já aparece como origem no Rastreador.';
+    const msg = formMsg(form); msg.className = 'form-msg ok'; msg.textContent = `✓ Registrada. "${campOrigem(campanhas[0])}" já aparece como origem no Rastreador.`;
     renderCampanhas(); renderOrigemOptions();
   });
   function campStats(c) {
-    const ps = pacientes.filter((p) => p.origem === 'Campanha: ' + c.nome);
+    const ps = pacientes.filter((p) => p.origem === campOrigem(c));
     const h = (k) => ps.filter((p) => p.hist && p.hist[k]).length;
     return { contatos: ps.length, agendados: h('Agendado'), avaliados: h('Avaliado'), iniciados: h('Em tratamento') };
   }
   function renderCampanhas() {
     const t = document.getElementById('camp-table');
     if (!campanhas.length) { t.innerHTML = '<tr><td class="track-empty" style="text-align:center">Nenhuma campanha registrada.</td></tr>'; return; }
-    t.innerHTML = '<tr><th>Campanha</th><th>Plataforma</th><th>Período</th><th>Investimento</th><th>Contatos</th><th>Agendados</th><th>Compareceram</th><th>Iniciaram</th><th>Custo por agendado</th><th></th></tr>' +
+    t.innerHTML = '<tr><th>Campanha</th><th>Plataforma</th><th>Período</th><th>Investimento</th><th>Contatos</th><th>Agendados</th><th>Compareceram</th><th>Iniciaram</th><th>Custo por agendado</th><th>Custo por paciente que compareceu</th><th></th></tr>' +
       campanhas.map((c) => {
         const s = campStats(c);
         const inv = Number(c.inv) || 0;
-        return `<tr><td>${escapeHtml(c.nome)}<br><small>${escapeHtml(c.obj || '')}</small></td><td>${escapeHtml(c.plat)}</td><td>${fmtShort(c.ini)}${c.fim ? ' a ' + fmtShort(c.fim) : ''}</td><td>${inv ? 'R$ ' + inv.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) : '—'}</td><td>${s.contatos}</td><td>${s.agendados}</td><td>${s.avaliados}</td><td>${s.iniciados}</td><td>${inv && s.agendados ? 'R$ ' + (inv / s.agendados).toLocaleString('pt-BR', { maximumFractionDigits: 2 }) : '—'}</td><td><button type="button" class="icon-btn" data-del="${escapeHtml(c.id)}" aria-label="Excluir campanha">×</button></td></tr>`;
+        return `<tr><td>${escapeHtml(c.nome)}<br><small>${c.tipo === 'Impulsionamento' ? 'Impulsionamento · ' : ''}${escapeHtml(c.obj || '')}</small></td><td>${escapeHtml(c.plat)}</td><td>${fmtShort(c.ini)}${c.fim ? ' a ' + fmtShort(c.fim) : ''}</td><td>${inv ? 'R$ ' + inv.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) : '—'}</td><td>${s.contatos}</td><td>${s.agendados}</td><td>${s.avaliados}</td><td>${s.iniciados}</td><td>${inv && s.agendados ? 'R$ ' + (inv / s.agendados).toLocaleString('pt-BR', { maximumFractionDigits: 2 }) : '—'}</td><td>${inv && s.avaliados ? 'R$ ' + (inv / s.avaliados).toLocaleString('pt-BR', { maximumFractionDigits: 2 }) : '—'}</td><td><button type="button" class="icon-btn" data-del="${escapeHtml(c.id)}" aria-label="Excluir campanha">×</button></td></tr>`;
       }).join('');
     t.querySelectorAll('[data-del]').forEach((b) => b.addEventListener('click', () => {
       if (!confirm('Excluir esta campanha? Os contatos continuam no rastreador.')) return;
@@ -943,11 +1006,12 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
       contatos: pacientes.filter((p) => inWeek(p.criado, seg)).length,
       agendados: h('Agendado'), avaliados: h('Avaliado'), planos: h('Plano proposto'), iniciados: h('Em tratamento'),
       perdidos: pacientes.filter((p) => p.etapa === 'Encerrado' && p.resultado === 'Perdido' && p.hist && inWeek(p.hist.Encerrado, seg)).length,
-      colegas: pacientes.filter((p) => p.origem === 'Indicação de colega' && inWeek(p.criado, seg)).length
+      colegas: pacientes.filter((p) => p.origem === 'Indicação de colega' && inWeek(p.criado, seg)).length,
+      faltas: pacientes.reduce((a, p) => a + (p.ativ || []).filter((x) => /^Falta/.test(x.t) && inWeek(x.d, seg)).length, 0)
     };
   }
   function lastWeeks(n) { const seg = mondayISO(); return Array.from({ length: n }, (_, i) => weekStats(addDays(seg, -7 * i))); }
-  const METRIC_COLS = [['conteudos', 'Conteúdos'], ['envios', 'Envios'], ['salv', 'Salvamentos'], ['msgs', 'Mensagens'], ['contatos', 'Contatos'], ['agendados', 'Agendados'], ['avaliados', 'Avaliados'], ['planos', 'Planos propostos'], ['iniciados', 'Iniciaram'], ['perdidos', 'Perdidos'], ['colegas', 'Indicações de colegas']];
+  const METRIC_COLS = [['conteudos', 'Conteúdos'], ['envios', 'Envios'], ['salv', 'Salvamentos'], ['msgs', 'Mensagens'], ['contatos', 'Contatos'], ['agendados', 'Agendados'], ['avaliados', 'Avaliados'], ['planos', 'Planos propostos'], ['iniciados', 'Iniciaram'], ['faltas', 'Faltas'], ['perdidos', 'Perdidos'], ['colegas', 'Indicações de colegas']];
   function gargalo() {
     const ws = lastWeeks(4);
     const s = (k) => ws.reduce((a, w) => a + w[k], 0);
@@ -955,9 +1019,9 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     if (T.contatos < 4) return { etapa: 'Topo do funil', txt: `Poucos contatos novos nas últimas 4 semanas (${T.contatos}). Antes de otimizar o atendimento, abasteça o topo: pautas de dúvidas reais, perfis prontos, uma campanha medida e a rede de colegas.`, tool: 'pautas' };
     const passos = [
       ['Agendamento', T.agendados, T.contatos, 'dos contatos agendaram', 'Resposta rápida, acolhimento e roteiro de agendamento (Atendimento e agendamento).', 'atendimento'],
-      ['Comparecimento', T.avaliados, T.agendados, 'dos agendados compareceram', 'Régua de confirmação 48 h, 24 h e no dia, e reagendamento sem constranger.', 'atendimento'],
+      ['Comparecimento', T.avaliados, T.agendados, 'dos agendados compareceram', 'Sequência de confirmação (ao agendar, 48 h, 24 h se não respondeu, 2 h antes) e reagendamento sem constranger, no mesmo dia da falta.', 'atendimento'],
       ['Proposta', T.planos, T.avaliados, 'dos avaliados receberam um plano', 'Registre o plano proposto de cada avaliação e explique o próximo passo antes de o paciente sair.', 'rastreador'],
-      ['Aceite do plano', T.iniciados, T.planos, 'dos planos viraram tratamento', 'Plano de tratamento compreensível, objeções e retomada em 3 e 7 dias.', 'atendimento']
+      ['Aceite do plano', T.iniciados, T.planos, 'dos planos viraram tratamento', 'Plano de tratamento compreensível, objeções com respostas honestas e acompanhamento em 2, 7 e 15 dias.', 'atendimento']
     ].filter((p) => p[2] >= 3).map((p) => p.concat([p[1] / p[2]]));
     if (!passos.length) return { etapa: 'Dados insuficientes', txt: 'Ainda há poucos registros para apontar um gargalo. Mantenha o rastreador atualizado por mais algumas semanas.', tool: 'rastreador' };
     passos.sort((a, b) => a[6] - b[6]);
@@ -1004,7 +1068,12 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     const retom = pacientes.filter((p) => p.etapa === 'Encerrado' && ['Pausado', 'Perdido'].includes(p.resultado) && p.consent && p.consent.lembretes).length;
     if (retom) L.push(`- ${retom} paciente(s) pausado(s) ou perdido(s) que consentiram receber lembretes: candidatos a retomada.`);
     const planos = pacientes.filter((p) => p.etapa === 'Plano proposto').length;
-    if (planos) L.push(`- ${planos} plano(s) proposto(s) aguardando decisão.`);
+    if (planos) L.push(`- ${planos} ${semPacote() ? 'retorno(s) agendado(s)' : 'plano(s) proposto(s) aguardando decisão'}.`);
+    const parados = pacientes.map((p) => [p, marcoParado(p)]).filter((x) => x[1]);
+    if (parados.length) {
+      L.push('', 'Parados (Partes 8 e 10):');
+      parados.slice(0, 15).forEach(([p, m], i) => L.push(`- Parado ${i + 1} · ${p.servico || 'serviço não informado'} · ${m.txt}`));
+    }
     L.push('', 'Colegas:');
     const cols = colegas.filter((c) => (c.prox && c.prox <= dom) || c.etapa === 'Mapeado');
     if (cols.length) cols.slice(0, 12).forEach((c) => L.push(`- ${c.nome}${c.prof ? ' (' + c.prof + ')' : ''} · etapa ${c.etapa}${c.prox ? ' · próximo contato ' + fmtShort(c.prox) : ''}${c.contra ? '' : ' · contrarreferência nunca enviada'}`));
@@ -1027,7 +1096,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     let rows = BENCH.filter((b) => !ks.length || ks.some((k) => b[1].includes(k)));
     const nota = rows.length ? '' : '<p class="plan-note">Ainda não há referências da sua área nesta amostra. Veja as de outras áreas: o que se adapta é a estrutura.</p>';
     if (!rows.length) rows = BENCH;
-    document.getElementById('bench-box').innerHTML = `<p class="plan-note">Amostra editorial de 11 perfis (12/10/2026), <b>não é ranking de engajamento</b>. Use as estruturas, não os conselhos clínicos, e não atribua resultado a elas. ${escapeHtml(BENCH_PADROES)}</p>${nota}<div class="num-wrap"><table class="num-table bench-table"><tr><th>Criador</th><th>Área</th><th>Instagram</th><th>O que dá para adaptar</th></tr>${rows.map((b) => `<tr><td>${escapeHtml(b[0])}</td><td>${escapeHtml(b[2])}</td><td>${escapeHtml(b[3])}</td><td>${escapeHtml(b[4])}</td></tr>`).join('')}</table></div>`;
+    document.getElementById('bench-box').innerHTML = `<p class="plan-note">Amostra editorial de ${BENCH.length} perfis da Parte 4 do livro (outubro de 2026), <b>não é um ranking</b>. Use as estruturas, não os conselhos clínicos, e não atribua resultado a elas. ${escapeHtml(BENCH_PADROES)}</p>${nota}<div class="num-wrap"><table class="num-table bench-table"><tr><th>Criador</th><th>Área</th><th>Instagram</th><th>O que dá para adaptar</th></tr>${rows.map((b) => `<tr><td>${escapeHtml(b[0])}</td><td>${escapeHtml(b[2])}</td><td>${escapeHtml(b[3])}</td><td>${escapeHtml(b[4])}</td></tr>`).join('')}</table></div>`;
   }
 
   // ===================== Ferramentas (tabela) =====================
