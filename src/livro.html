@@ -18,6 +18,7 @@
 
       <div class="livro-tabs" role="tablist" aria-label="Seções do livro no app">
         <button type="button" role="tab" class="on" aria-selected="true" data-tab="roteiro">Seu roteiro em 6 etapas</button>
+        <button type="button" role="tab" aria-selected="false" data-tab="plano">Plano de 30 dias</button>
         <button type="button" role="tab" aria-selected="false" data-tab="sins">Os sete sins</button>
         <button type="button" role="tab" aria-selected="false" data-tab="prompts">Biblioteca de prompts</button>
         <button type="button" role="tab" aria-selected="false" data-tab="ia">Como usar a IA</button>
@@ -27,6 +28,15 @@
       <div class="livro-panel" data-panel="roteiro">
         <p class="livro-note">Siga as etapas na ordem e volte a elas sempre que o consultório ou o objetivo mudarem. O selo ✓ aparece quando você já usou a ferramenta daquela parte.</p>
         <div id="livro-roteiro" class="livro-roteiro"></div>
+      </div>
+
+      <div class="livro-panel" data-panel="plano" hidden>
+        <p class="livro-note">Uma ação de 20 a 30 minutos por dia útil, em quatro semanas. Marque o que fez; o progresso fica neste navegador. Ao fim do mês, compare com os marcos abaixo. Se perder um dia, retome do próximo: o plano é uma ordem, não uma prova.</p>
+        <div class="plano-prog"><div class="meter" role="progressbar" aria-label="Dias concluídos do plano de 30 dias" aria-valuemin="0" aria-valuemax="20" id="plano-meter"><span id="plano-bar"></span></div><span id="plano-txt" class="plano-txt"></span></div>
+        <div id="plano-lista" class="plano-lista"></div>
+        <h3 class="plano-h">Marcos de referência</h3>
+        <p class="livro-note">Metas de partida para planejar, <b>não são médias de mercado</b>. Não encontramos referências públicas e confiáveis de volume de pacientes para consultórios brasileiros; por isso o primeiro mês serve para medir a sua própria linha de base. Compare-se com você mesmo, mês a mês.</p>
+        <div id="plano-marcos" class="plano-marcos"></div>
       </div>
 
       <div class="livro-panel" data-panel="sins" hidden>

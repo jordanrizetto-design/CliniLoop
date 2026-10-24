@@ -7,6 +7,7 @@ Arquivos: `src/app1.js` (`COUNCILS`, `REGRAS_GERAIS`), `src/app3.js` (verificado
 - [ ] CFM: Resolução 2.336/2023 e normas atuais (publicidade, antes e depois, selos, sorteios, telemedicina).
 - [ ] CFO: Resolução 196/2019 e alterações (honorários, promoções, imagens, pacotes).
 - [ ] CFP, COFFITO (532/2021), CFN (599/2018): conferir o texto e o link de cada fonte.
+- [ ] **Preço de consulta:** fontes públicas divergem (uma lista "não divulgar preços" entre as regras do CFM; outra diz que a Resolução 2.336/2023 permite informar o preço em canais próprios). Confirmar por conselho.
 - [ ] Redação dos "Pode" e "Não pode": há algo permissivo ou restritivo demais?
 - [ ] Identificação obrigatória (nome, registro, especialidade, RT): está correta por profissão?
 

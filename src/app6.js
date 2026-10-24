@@ -151,4 +151,42 @@
     if (btn) btn.addEventListener('click', async () => { if (!ev) return; ev.prompt(); await ev.userChoice.catch(() => {}); ev = null; btn.hidden = true; });
   })();
 
+  // ===================== Plano de 30 dias =====================
+  const PLANO_KEY = PREFIX + 'plano30.v1';
+  function renderPlano() {
+    const lista = document.getElementById('plano-lista');
+    if (!lista) return;
+    const feito = storeGet(PLANO_KEY, {}) || {};
+    lista.innerHTML = '';
+    PLANO30.forEach((sem) => {
+      const bloco = document.createElement('section');
+      bloco.className = 'plano-sem';
+      bloco.innerHTML = `<h4>Semana ${sem.sem}: ${escapeHtml(sem.tema)} <span>· partes ${escapeHtml(sem.parte)} do livro</span></h4>`;
+      sem.dias.forEach((d) => {
+        const row = document.createElement('div');
+        row.className = 'plano-dia' + (feito[d.d] ? ' feito' : '');
+        row.innerHTML = `<input type="checkbox" id="pl-${d.d}" ${feito[d.d] ? 'checked' : ''}><div class="pd-c"><label for="pl-${d.d}" class="pd-t">Dia ${d.d}: ${escapeHtml(d.titulo)}</label><span>${escapeHtml(d.acao)}</span><span class="pd-m">Entrega: ${escapeHtml(d.entrega)} · cerca de ${d.min} min</span><span class="pd-a"></span></div>`;
+        const b = document.createElement('button');
+        b.type = 'button'; b.className = 'btn btn-outline btn-sm';
+        b.textContent = 'Abrir ' + (TOOL_NAMES[d.tool] || d.tool);
+        b.addEventListener('click', () => openTool(d.tool));
+        row.querySelector('.pd-a').appendChild(b);
+        row.querySelector('input').addEventListener('change', (e) => {
+          const f = storeGet(PLANO_KEY, {}) || {};
+          if (e.target.checked) f[d.d] = true; else delete f[d.d];
+          storeSet(PLANO_KEY, f); renderPlano();
+        });
+        bloco.appendChild(row);
+      });
+      lista.appendChild(bloco);
+    });
+    const n = Object.keys(feito).length;
+    document.getElementById('plano-bar').style.width = (n / 20 * 100) + '%';
+    document.getElementById('plano-meter').setAttribute('aria-valuenow', String(n));
+    document.getElementById('plano-txt').textContent = `${n} de 20 dias`;
+    const mc = document.getElementById('plano-marcos');
+    mc.innerHTML = MARCOS.map((m) => `<div><h5>${escapeHtml(m.fase)}</h5><ul>${m.itens.map((x) => `<li>${escapeHtml(x)}</li>`).join('')}</ul></div>`).join('');
+  }
+  renderPlano();
+
   renderExtras();

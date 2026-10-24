@@ -38,6 +38,7 @@
         <label class="visually-hidden" for="lp-${compact ? 't' : 'b'}-${pr.id}">Prompt do livro: ${escapeHtml(pr.titulo)}</label>
         <textarea id="lp-${compact ? 't' : 'b'}-${pr.id}" readonly rows="7"></textarea>
         <p class="ls-pend"></p>
+        ${(typeof EXEMPLOS_LIVRO !== 'undefined' && EXEMPLOS_LIVRO[pr.id]) ? `<details class="ls-exemplo"><summary>Ver exemplo preenchido (fictício)</summary><div class="ls-ex-body"><p class="ls-ex-aviso">Exemplo inventado para ilustrar: Dra. Bia Nunes, nutricionista esportiva, Pinheiros. Não é caso real nem resultado de paciente. Troque tudo pelos seus dados e valide com a norma do seu conselho.</p><h5>O que foi colocado</h5><p>${escapeHtml(EXEMPLOS_LIVRO[pr.id].entrada)}</p><h5>O que a IA devolveu (trecho)</h5><pre>${escapeHtml(EXEMPLOS_LIVRO[pr.id].saida)}</pre><h5>Antes de usar</h5><ul>${EXEMPLOS_LIVRO[pr.id].revisar.map((x) => `<li>${escapeHtml(x)}</li>`).join('')}</ul></div></details>` : ''}
         <div class="output-actions">
           <button type="button" class="btn btn-outline btn-sm js-lp-copy" data-ico="copy">Copiar prompt</button>
           <a class="btn btn-outline btn-sm js-lp-open" data-ico="ext" href="https://claude.ai/new" target="_blank" rel="noopener">Abrir no Claude</a>
