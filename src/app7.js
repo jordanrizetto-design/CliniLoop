@@ -114,7 +114,6 @@
     L.push({ midia: 'Rede de colegas', quando: 'Indicação qualificada', ideia: 'Carta de apresentação para os 3 colegas mais próximos e relatório de contrarreferência para cada paciente indicado.', tool: 'colegas', rel: o === 'fidelizar' || o === 'ticket' ? 3 : 2 });
     L.push({ midia: 'LinkedIn', quando: 'Reputação e indicação de colegas', ideia: 'Um post técnico por semana a partir do melhor tema do mês, com referência científica, e comentários de qualidade nas publicações de colegas que encaminham pacientes.', tool: 'roteiro', rel: o === 'autoridade' || o === 'ticket' ? 3 : (usa.has('LinkedIn') ? 2 : 1) });
     if (usa.has('TikTok')) L.push({ midia: 'TikTok', quando: 'Alcance amplo por interesse', ideia: 'Os mesmos roteiros dos Reels, exportados sem marca d\'água. Para anunciar, Promote ou TikTok Ads Manager com público a partir de 18 anos.', tool: 'roteiro', rel: 2 });
-    L.push({ midia: 'Produção de vídeo e imagem', quando: 'Para todas as mídias', ideia: 'Kit de gravação que cabe no orçamento, editor nativo da rede para começar e o pedido de imagem para a IA com as regras do seu conselho.', tool: 'ferramentas', rel: 2 });
     if (o === 'online') L.push({ midia: 'Site ou página de agendamento', quando: 'Pacientes de outras cidades', ideia: 'Página com como funciona o atendimento online, duração, valores (quando permitido) e botão de agendar.', tool: 'perfil', rel: 3 });
     return L.sort((a, b) => b.rel - a.rel).slice(0, 6);
   }
@@ -145,9 +144,11 @@
     const auto = { wa6: pacientes.length > 0 };
     const feito = (id) => !!j.wa[id] || !!auto[id];
     const items = WA_ITENS.map(([id, txt, tool]) => `<li class="${feito(id) ? 'ok' : ''}"><label><input type="checkbox" data-jor-wa="${id}" ${feito(id) ? 'checked' : ''}> <span>${escapeHtml(txt)}</span></label>${tool ? `<button type="button" class="btn btn-outline btn-sm" data-jor-tool="${tool}">Abrir</button>` : ''}</li>`).join('');
-    const origens = ['Instagram', 'Google', 'YouTube', 'anúncio da Meta', 'anúncio do Google', 'indicação de colega', 'site'];
+    const usa = new Set(cfg.canais || []);
+    const origens = ['Instagram', 'Google', 'YouTube'].concat(usa.has('TikTok') ? ['TikTok'] : [], usa.has('LinkedIn') ? ['LinkedIn'] : [], ['anúncio da Meta', 'anúncio do Google'], usa.has('TikTok') ? ['anúncio do TikTok'] : [], ['indicação de colega', 'site']);
+    const rotulo = (o) => o.charAt(0).toUpperCase() + o.slice(1);
     const links = cfg.whatsapp && waLink('Instagram')
-      ? `<div class="jor-links">${origens.map((o) => `<div><b>${escapeHtml(o)}</b><code>${escapeHtml(waLink(o))}</code><button type="button" class="btn btn-outline btn-sm" data-jor-copy="${escapeHtml(waLink(o))}">Copiar</button></div>`).join('')}</div>`
+      ? `<div class="jor-links">${origens.map((o) => `<div><b>${escapeHtml(rotulo(o))}</b><code>${escapeHtml(waLink(o))}</code><button type="button" class="btn btn-outline btn-sm" data-jor-copy="${escapeHtml(waLink(o))}">Copiar</button></div>`).join('')}</div>`
       : '<p class="jor-sub">Informe o WhatsApp do consultório em "Editar objetivo e perfil" para gerar os links com origem.</p>';
     const funil = ETAPAS.map((e) => `<li><b>${escapeHtml(e)}</b><span>${escapeHtml(PASSO_TIPICO[e])}</span></li>`).join('');
     const feitos = WA_ITENS.filter(([id]) => feito(id)).length;
@@ -213,9 +214,9 @@
       rodape = `<button type="button" class="btn btn-gold" id="jor-go" data-ico="arrow">Vamos em frente</button>`;
     } else if (v === 1 || v === 2) {
       const falt = camposFaltando(v).length;
-      corpo = `<p class="jor-sub">${falt ? `Faltam ${falt} campo${falt > 1 ? 's' : ''} obrigatório${falt > 1 ? 's' : ''}. Eles estão marcados com * logo abaixo.` : 'Tudo preenchido. Use o botão ao final do formulário para seguir.'}</p>`;
+      corpo = `<p class="jor-sub">${falt ? (falt > 1 ? `Faltam ${falt} campos obrigatórios. Eles estão marcados com * logo abaixo.` : 'Falta 1 campo obrigatório. Ele está marcado com * logo abaixo.') : 'Tudo preenchido. Use o botão ao final do formulário para seguir.'}</p>`;
     } else if (v === 3) { corpo = diagHtml(); rodape = '<button type="button" class="btn btn-gold" id="jor-prox">Entendi, montar meu plano</button>'; }
-    else if (v === 4) { corpo = campanhasHtml() + '<p class="jor-sub">O seu passo a passo está logo abaixo, em <b>Hoje</b>: faça um passo por vez, até o fim.</p>'; rodape = '<button type="button" class="btn btn-gold" id="jor-prox">Plano em andamento: ir ao WhatsApp e CRM</button>'; }
+    else if (v === 4) { corpo = campanhasHtml() + '<div class="jor-prod"><div><b>Para produzir as peças:</b> roteiro em blocos para o teleprompter, kit de gravação que cabe no orçamento, editor de vídeo e pedido de imagem para a IA, com as regras do seu conselho. O passo a passo está nas Partes 6 e 7 e no Anexo A do guia.</div><div class="jor-prod-btns"><button type="button" class="btn btn-outline btn-sm" data-jor-tool="roteiro">Roteiro e teleprompter</button><button type="button" class="btn btn-outline btn-sm" data-jor-tool="ferramentas">Vídeo e imagem</button></div></div><p class="jor-sub">O seu passo a passo está logo abaixo, em <b>Hoje</b>: faça um passo por vez, até o fim.</p>'; rodape = '<button type="button" class="btn btn-gold" id="jor-prox">Plano em andamento: ir ao WhatsApp e CRM</button>'; }
     else if (v === 5) { corpo = waHtml(); rodape = '<button type="button" class="btn btn-gold" id="jor-prox">Pronto: avaliar resultados</button>'; }
     else if (v === 6) { corpo = avalHtml(); }
     box.innerHTML = `<ol class="jor-steps" aria-label="Fases da jornada">${steps}</ol>

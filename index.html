@@ -813,6 +813,30 @@
   #config.jor-wait .onb-body{display:none;}
   #config[data-jf="all"] .stim{display:none;}
 
+  /* Capa real do guia e link para o PDF */
+  .livro-capa{display:flex; flex-direction:column; gap:10px; text-decoration:none; max-width:200px;}
+  .livro-capa img{width:100%; height:auto; border-radius:4px 10px 10px 4px; box-shadow:8px 10px 0 rgba(0,0,0,.25); display:block;}
+  .livro-capa-btn{display:block; text-align:center; font-weight:600; font-size:.86rem; color:var(--ink); background:var(--gold-soft); border-radius:999px; padding:8px 12px;}
+  .livro-capa:hover .livro-capa-btn{filter:brightness(1.05);}
+  nav.links a.nav-pdf{color:var(--teal); font-weight:600;}
+
+  /* Menu no celular: faixa rolável abaixo da marca */
+  @media (max-width:720px){
+    .nav-inner{flex-wrap:wrap; padding:10px 16px 6px; row-gap:6px;}
+    nav.links{display:flex; gap:18px; width:100%; overflow-x:auto; white-space:nowrap; font-size:.86rem; padding:2px 0 6px; scrollbar-width:none; -webkit-overflow-scrolling:touch;}
+    nav.links::-webkit-scrollbar{display:none;}
+  }
+
+  /* Respiro entre linhas de campos nos formulários */
+  .row2 + .row2, .row2 + .row3, .row3 + .row2, .row3 + .row3, .row2 + .field, .row3 + .field, .field + .row2, .field + .row3{margin-top:14px;}
+  .row2 > .field small, .row3 > .field small{margin-bottom:2px;}
+  .jor-prod{display:flex; flex-wrap:wrap; gap:12px 18px; align-items:center; justify-content:space-between; background:var(--teal-wash, #EAF4F5); border-radius:10px; padding:12px 14px; margin:6px 0 10px; font-size:.92rem;}
+  .jor-prod-btns{display:flex; gap:8px; flex-wrap:wrap;}
+  a.lr-tool.lr-pdf{text-decoration:none; display:inline-block;}
+  @media (min-width:721px){ nav.links{gap:22px; white-space:nowrap;} nav.links a{white-space:nowrap;} .brand-text small{white-space:nowrap;} }
+  @media (min-width:721px) and (max-width:1100px){ .brand-text small{display:none;} nav.links{gap:16px; font-size:.86rem;} }
+  @media (max-width:720px){ nav.links{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent); mask-image:linear-gradient(90deg,#000 85%,transparent); padding-right:24px;} }
+
 </style>
 </head>
 <body>
@@ -827,7 +851,8 @@
       <a href="#livro">O guia</a>
       <a href="#etica">Ética</a>
       <a href="#como-funciona">Como funciona</a>
-      <a href="#faq">Perguntas frequentes</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="guia/Guia-CliniLoop.pdf" target="_blank" rel="noopener" class="nav-pdf">Guia em PDF</a>
       <a href="#" id="nav-github" target="_blank" rel="noopener" hidden>GitHub</a>
     </nav>
   </div>
@@ -840,15 +865,15 @@
       <div>
         <p class="eyebrow">Para médicos, psiquiatras, dentistas, psicólogos, fisioterapeutas, nutricionistas e clínicas</p>
         <h1>Do primeiro contato ao tratamento, com ética e método.</h1>
-        <p class="lead">O <a href="#livro" class="hero-livro"><i>Guia CliniLoop</i></a> une conhecimentos dirigidos e um app de CRM. O app leva para o consultório um método simples: um perfil que alimenta todas as ferramentas, um funil por etapa e um ritual semanal. Defina público e posicionamento, produza conteúdo, monte campanhas, cuide da rede de colegas e acompanhe cada paciente do primeiro contato ao tratamento, sempre dentro das regras do seu conselho.</p>
+        <p class="lead">O <a href="#livro" class="hero-livro"><i>Guia CliniLoop</i></a> é um livro digital e este app, feitos para funcionar juntos. O livro ensina o caminho. O app faz o trabalho: gera os prompts para a IA com o seu perfil e as regras do seu conselho, monta roteiros de conteúdo e de campanha e acompanha cada paciente, do primeiro contato ao tratamento.</p>
         <ul class="hero-plans" aria-label="Formas de usar">
           <li><b>Claude gratuito</b><span>sem custo, sem cartão</span></li>
           <li><b>Claude com assinatura</b><span>Pro ou Max, com Research</span></li>
           <li><b>API da Anthropic</b><span>opcional, respostas na página</span></li>
         </ul>
         <div class="hero-ctas">
-          <a href="#painel" class="btn btn-gold" data-ico="arrow">Começar: defina seu objetivo</a>
-          <a href="#como-funciona" class="btn btn-ghost">Como funciona</a>
+          <a href="#painel" class="btn btn-gold" data-ico="arrow">Começar: monte seu perfil</a>
+          <a href="guia/Guia-CliniLoop.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Baixar o guia (PDF)</a>
         </div>
         <p class="hero-note">Sem promessa de viralizar: o CliniLoop ajuda você a cuidar do que depende de você, como clareza, constância, atendimento rápido e conteúdo dentro das regras.</p>
       </div>
@@ -2482,12 +2507,10 @@
     <div class="wrap">
       <p class="eyebrow">O guia e o app</p>
       <div class="livro-head">
-        <div class="livro-cover" aria-hidden="true">
-          <span class="lc-autor">Edição 2026 · beta</span>
-          <span class="lc-tit">Guia<br>CliniLoop</span>
-          <span class="lc-sub">conhecimentos dirigidos + app de CRM</span>
-          <span class="lc-foot">Guia digital · conhecimento + app</span>
-        </div>
+        <a class="livro-capa" href="guia/Guia-CliniLoop.pdf" target="_blank" rel="noopener" title="Abrir o guia em PDF">
+          <img src="guia/capa/capa-thumb.jpg" alt="Capa do guia: Prompt do Sim, guia digital para o sucesso do profissional da saúde" width="200" height="283" loading="lazy">
+          <span class="livro-capa-btn">Baixar o guia (PDF)</span>
+        </a>
         <div>
           <h2>O <em>Guia CliniLoop</em>: conhecimentos dirigidos e um app de CRM.</h2>
           <p class="livro-lead">O Guia CliniLoop não é apenas o livro digital: é o livro e este app, e o diferencial está nos dois juntos. O livro ensina o roteiro; o app gera os prompts, monta roteiros de conteúdo e de campanha e guarda o registro. Cada uma das 16 partes termina em três caixas: <b>Prompt</b>, o pedido pronto para a sua IA; <b>Na prática</b>, um passo de até 30 minutos para hoje; e <b>Sinergia CliniLoop</b>, a ferramenta do app que coloca a parte em prática. Em cada ferramenta abaixo, a faixa "No livro" mostra a parte correspondente, o passo de hoje e o prompt do guia já preenchido com o seu perfil.</p>
@@ -3161,7 +3184,7 @@
     ],
     partes: {
       0: { titulo: 'Apresentação: Oceano Vermelho e Oceano Azul', etapa: 0, tools: ['nicho'], sinergia: 'Nicho e diferencial', sinTxt: 'As quatro ações do Oceano Azul (eliminar, reduzir, elevar, criar) entram na análise de nicho e na proposta de valor.', pratica: 'Faça as quatro ações do Oceano Azul em relação ao padrão do seu setor: o que eliminar, o que reduzir, o que elevar e o que criar.' },
-      1: { titulo: 'A jornada das sete decisões', etapa: 1, tools: ['config', 'painel'], sinergia: 'Configure seu consultório', sinTxt: 'Escolha o tipo de profissional. O app reordena as ferramentas e carrega as regras do conselho certo.', pratica: 'Escreva os sete sins numa folha e, ao lado de cada um, anote quantos pacientes passaram por ele no último mês. Onde você não sabe o número, está o primeiro campo do seu CRM.' },
+      1: { titulo: 'A jornada das sete decisões', etapa: 1, tools: ['config', 'painel'], sinergia: 'Configure seu consultório', sinTxt: 'Escolha o tipo de profissional. O app reordena as ferramentas e carrega as regras do conselho certo.', pratica: 'Escreva as sete decisões numa folha e, ao lado de cada uma, anote quantos pacientes passaram por ela no último mês. Onde você não sabe o número, está o primeiro campo do seu CRM.' },
       2: { titulo: 'Ética primeiro: conselhos e LGPD', etapa: 1, tools: ['etica'], sinergia: 'Verificador ético', sinTxt: 'Cole qualquer post, anúncio ou mensagem e receba os pontos que conflitam com o seu conselho, a LGPD e as políticas da Meta e do Google.', pratica: 'Abra os seus três últimos posts e o seu último anúncio. Confira identificação profissional, ausência de superlativos e de promessa, e exposição de paciente. Corrija ou arquive o que não passar.' },
       3: { titulo: 'Os canais, um a um: manual de configuração', etapa: 2, tools: ['perfil', 'publico', 'profissional', 'nicho', 'formacao'], sinergia: 'Perfis e presença', sinTxt: 'Traz o checklist de configuração de cada canal (Google, Instagram, YouTube, LinkedIn e TikTok) e audita e reescreve bio, título e descrições a partir do Perfil do consultório.', pratica: 'Pesquise seu nome e sua clínica no Google Maps. Se a ficha não existir ou estiver incompleta, crie ou reivindique o Perfil da Empresa no Google e reescreva a bio do Instagram em quatro linhas.' },
       4: { titulo: 'Conteúdo que gera autoridade e alcance', etapa: 3, tools: ['pautas', 'roteiro'], sinergia: 'Pautas e roteiros de conteúdo', sinTxt: 'Transforma dúvidas reais em pautas por tema e gera roteiros de Reels, carrosséis e vídeos com a palavra-chave da sua cidade.', pratica: 'Liste as dez perguntas que você mais ouve no consultório. Escolha uma, encaixe em um dos seus três temas de conteúdo e grave hoje um Reel de 30 segundos com o roteiro em seis tempos.' },
@@ -5931,7 +5954,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
 <div class="content">
   <section class="chapter toc"><div class="chap-n">Sumário</div><h2>Neste playbook</h2><ol>${capitulos.map((c) => `<li>${E(c)}</li>`).join('')}</ol></section>
   ${cap('Como usar este playbook', `<p>Atrair pacientes é um funil: muita gente vê o conteúdo, algumas conversam, menos agendam, comparecem e iniciam o tratamento. O CliniLoop transforma isso num ritual: <b>toda semana</b>, Assistente da semana e Painel; <b>a cada 2 semanas</b>, este playbook. ${E(objInfo().porque)}</p><div class="box"><b>Como ler os selos:</b> <span class="pill ok">Feito</span> mostra quando você usou a ferramenta e até quando revisar; <span class="pill pend">Pendente</span> traz uma recomendação para concluir; <span class="pill late">Revisão atrasada</span> indica que se passaram mais de 2 semanas.</div><p>Este documento não contém nomes nem dados de pacientes: os números do funil são contagens.</p>`)}
-  ${cap('O guia e as sete decisões', `<p>Este playbook acompanha o <b>${E(LIVRO.titulo)}</b>: ${E(LIVRO.tese)} ${E(LIVRO.ideia)}</p><div class="tbl"><table><tr><th>Etapa</th><th>Partes do guia</th><th>Ferramentas do CliniLoop</th></tr>${LIVRO.etapas.map((et) => `<tr><td>${et.n}. ${E(et.nome)}</td><td>${et.partes.map((n) => `${n}. ${E(LIVRO.partes[n].titulo)}`).join('<br>')}</td><td>${[...new Set(et.partes.flatMap((n) => LIVRO.partes[n].tools))].map((id) => E(TOOL_NAMES[id] || id)).join(', ')}</td></tr>`).join('')}</table></div><h3>Os sete sins nos últimos 30 dias</h3><div class="tbl"><table class="num"><tr><th>Sim</th><th>O que é</th><th>Últimos 30 dias</th></tr>${sinsDados().map((x) => `<tr><td>${E(x.nome)}</td><td style="text-align:left">${E(x.desc)}</td><td>${E(x.valor)}</td></tr>`).join('')}</table></div><p>Onde aparece um traço, está o primeiro campo a registrar.</p>`)}
+  ${cap('O guia e as sete decisões', `<p>Este playbook acompanha o <b>${E(LIVRO.titulo)}</b>: ${E(LIVRO.tese)} ${E(LIVRO.ideia)}</p><div class="tbl"><table><tr><th>Etapa</th><th>Partes do guia</th><th>Ferramentas do CliniLoop</th></tr>${LIVRO.etapas.map((et) => `<tr><td>${et.n}. ${E(et.nome)}</td><td>${et.partes.map((n) => `${n}. ${E(LIVRO.partes[n].titulo)}`).join('<br>')}</td><td>${[...new Set(et.partes.flatMap((n) => LIVRO.partes[n].tools))].map((id) => E(TOOL_NAMES[id] || id)).join(', ')}</td></tr>`).join('')}</table></div><h3>Os sete decisões nos últimos 30 dias</h3><div class="tbl"><table class="num"><tr><th>Sim</th><th>O que é</th><th>Últimos 30 dias</th></tr>${sinsDados().map((x) => `<tr><td>${E(x.nome)}</td><td style="text-align:left">${E(x.desc)}</td><td>${E(x.valor)}</td></tr>`).join('')}</table></div><p>Onde aparece um traço, está o primeiro campo a registrar.</p>`)}
   ${cap('O método', `<p>O CliniLoop organiza o trabalho com três bases:</p>${METODO.bases.map(([n, a, d]) => `<h3>${E(n)} <span style="font-weight:400;font-size:.85rem">(${E(a)})</span></h3><p>${E(d)}</p>`).join('')}<h3>Fluxo de cada peça</h3><p>${METODO.fluxo.map(E).join(' → ')}</p><h3>Princípios que valem sempre</h3><ul><li>Viralizar não se garante: em saúde, o objetivo é clareza, confiança e o próximo passo adequado.</li><li>Estratégia antes de produção: transformação, público e baldes antes de roteiros em série.</li><li>Uma promessa verdadeira e uma pergunta por peça; resposta cedo; limite da orientação; um único pedido.</li><li>Procedência: princípio de método, adaptação, observação, informação clínica validada e hipótese são coisas diferentes. Afirmação clínica sem fonte fica pendente de validação.</li><li>Revisão em duas etapas: editorial, depois clínica e ética. A IA aponta problemas, mas não assume responsabilidade profissional.</li><li>Teste uma variável por vez (pergunta, abertura, demonstração ou convite) e compare peças com exposição parecida.</li></ul><h3>Metas S.M.A.R.T. sugeridas para 8 semanas</h3><ul><li>Publicar ${metaN} conteúdos por semana, por 8 semanas, a partir do banco de dúvidas.</li><li>Registrar 100% dos novos contatos no rastreador, com próximo passo e data.</li><li>Responder todo contato novo no mesmo dia.</li><li>Mapear 10 colegas e enviar a carta de apresentação a 5 até o fim do segundo mês.</li></ul><p><i>${E(METODO.aviso)}</i></p>`)}
   ${cap('Perfil do consultório', `<table><tr><th>Item</th><th>Situação</th><th>O que fazer</th></tr>${cfgRows.map(([a, b, c]) => `<tr><td>${E(a)}</td><td>${E(b)}</td><td>${c ? E(c) : '<span class="pill ok">Ok</span>'}</td></tr>`).join('')}</table>`)}
   ${cap('Posicionamento', ['publico', 'profissional', 'nicho'].map(toolCard).join(''))}
@@ -6173,7 +6196,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
       const nPr = PROMPTS_LIVRO.filter((p) => p.parte === n).length;
       return `<div class="lr-parte"><div class="lr-pt"><span class="lr-num">${String(n).padStart(2, '0')}</span><div><b>${escapeHtml(pt.titulo)}</b><p><span class="lr-lab">Na prática:</span> ${escapeHtml(pt.pratica)}</p><p><span class="lr-lab">Sinergia CliniLoop · ${escapeHtml(pt.sinergia)}:</span> ${escapeHtml(pt.sinTxt)}</p></div></div><div class="lr-tools">${pt.tools.map((id) => `<button type="button" class="lr-tool${uso[id] ? ' ok' : ''}" data-tool="${id}">${uso[id] ? '✓ ' : ''}${escapeHtml(TOOL_NAMES[id] || id)}</button>`).join('')}${nPr ? `<button type="button" class="lr-tool lr-pr" data-parte="${n}">${nPr} prompt${nPr > 1 ? 's' : ''} do guia</button>` : ''}</div></div>`;
     }).join('')}</div></div>`).join('') +
-      `<div class="lr-etapa lr-anexo"><div class="lr-n">+</div><div class="lr-body"><h3>Anexos</h3><div class="lr-tools"><button type="button" class="lr-tool" data-tab-go="glossario">Glossário (75 termos)</button><button type="button" class="lr-tool" data-tab-go="ia">As quatro regras de IA</button></div></div></div>`;
+      `<div class="lr-etapa lr-anexo"><div class="lr-n">+</div><div class="lr-body"><h3>Anexos</h3><div class="lr-tools"><button type="button" class="lr-tool" data-tab-go="glossario">Glossário (75 termos)</button><button type="button" class="lr-tool" data-tab-go="ia">As quatro regras de IA</button><a class="lr-tool lr-pdf" href="guia/Guia-CliniLoop.pdf" target="_blank" rel="noopener">Manual prático: criar, editar, publicar e anunciar (Anexo A, PDF)</a></div></div></div>`;
     box.querySelectorAll('[data-tool]').forEach((b) => b.addEventListener('click', () => openTool(b.dataset.tool)));
     box.querySelectorAll('[data-parte]').forEach((b) => b.addEventListener('click', () => { livroTab('prompts'); const d = document.querySelector(`#livro-prompts .ls-prompt[data-parte-n="${b.dataset.parte}"]`); if (d) { d.open = true; d.scrollIntoView({ behavior: 'smooth', block: 'center' }); } }));
     box.querySelectorAll('[data-tab-go]').forEach((b) => b.addEventListener('click', () => livroTab(b.dataset.tabGo)));
@@ -6613,7 +6636,6 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     L.push({ midia: 'Rede de colegas', quando: 'Indicação qualificada', ideia: 'Carta de apresentação para os 3 colegas mais próximos e relatório de contrarreferência para cada paciente indicado.', tool: 'colegas', rel: o === 'fidelizar' || o === 'ticket' ? 3 : 2 });
     L.push({ midia: 'LinkedIn', quando: 'Reputação e indicação de colegas', ideia: 'Um post técnico por semana a partir do melhor tema do mês, com referência científica, e comentários de qualidade nas publicações de colegas que encaminham pacientes.', tool: 'roteiro', rel: o === 'autoridade' || o === 'ticket' ? 3 : (usa.has('LinkedIn') ? 2 : 1) });
     if (usa.has('TikTok')) L.push({ midia: 'TikTok', quando: 'Alcance amplo por interesse', ideia: 'Os mesmos roteiros dos Reels, exportados sem marca d\'água. Para anunciar, Promote ou TikTok Ads Manager com público a partir de 18 anos.', tool: 'roteiro', rel: 2 });
-    L.push({ midia: 'Produção de vídeo e imagem', quando: 'Para todas as mídias', ideia: 'Kit de gravação que cabe no orçamento, editor nativo da rede para começar e o pedido de imagem para a IA com as regras do seu conselho.', tool: 'ferramentas', rel: 2 });
     if (o === 'online') L.push({ midia: 'Site ou página de agendamento', quando: 'Pacientes de outras cidades', ideia: 'Página com como funciona o atendimento online, duração, valores (quando permitido) e botão de agendar.', tool: 'perfil', rel: 3 });
     return L.sort((a, b) => b.rel - a.rel).slice(0, 6);
   }
@@ -6644,9 +6666,11 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     const auto = { wa6: pacientes.length > 0 };
     const feito = (id) => !!j.wa[id] || !!auto[id];
     const items = WA_ITENS.map(([id, txt, tool]) => `<li class="${feito(id) ? 'ok' : ''}"><label><input type="checkbox" data-jor-wa="${id}" ${feito(id) ? 'checked' : ''}> <span>${escapeHtml(txt)}</span></label>${tool ? `<button type="button" class="btn btn-outline btn-sm" data-jor-tool="${tool}">Abrir</button>` : ''}</li>`).join('');
-    const origens = ['Instagram', 'Google', 'YouTube', 'anúncio da Meta', 'anúncio do Google', 'indicação de colega', 'site'];
+    const usa = new Set(cfg.canais || []);
+    const origens = ['Instagram', 'Google', 'YouTube'].concat(usa.has('TikTok') ? ['TikTok'] : [], usa.has('LinkedIn') ? ['LinkedIn'] : [], ['anúncio da Meta', 'anúncio do Google'], usa.has('TikTok') ? ['anúncio do TikTok'] : [], ['indicação de colega', 'site']);
+    const rotulo = (o) => o.charAt(0).toUpperCase() + o.slice(1);
     const links = cfg.whatsapp && waLink('Instagram')
-      ? `<div class="jor-links">${origens.map((o) => `<div><b>${escapeHtml(o)}</b><code>${escapeHtml(waLink(o))}</code><button type="button" class="btn btn-outline btn-sm" data-jor-copy="${escapeHtml(waLink(o))}">Copiar</button></div>`).join('')}</div>`
+      ? `<div class="jor-links">${origens.map((o) => `<div><b>${escapeHtml(rotulo(o))}</b><code>${escapeHtml(waLink(o))}</code><button type="button" class="btn btn-outline btn-sm" data-jor-copy="${escapeHtml(waLink(o))}">Copiar</button></div>`).join('')}</div>`
       : '<p class="jor-sub">Informe o WhatsApp do consultório em "Editar objetivo e perfil" para gerar os links com origem.</p>';
     const funil = ETAPAS.map((e) => `<li><b>${escapeHtml(e)}</b><span>${escapeHtml(PASSO_TIPICO[e])}</span></li>`).join('');
     const feitos = WA_ITENS.filter(([id]) => feito(id)).length;
@@ -6712,9 +6736,9 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
       rodape = `<button type="button" class="btn btn-gold" id="jor-go" data-ico="arrow">Vamos em frente</button>`;
     } else if (v === 1 || v === 2) {
       const falt = camposFaltando(v).length;
-      corpo = `<p class="jor-sub">${falt ? `Faltam ${falt} campo${falt > 1 ? 's' : ''} obrigatório${falt > 1 ? 's' : ''}. Eles estão marcados com * logo abaixo.` : 'Tudo preenchido. Use o botão ao final do formulário para seguir.'}</p>`;
+      corpo = `<p class="jor-sub">${falt ? (falt > 1 ? `Faltam ${falt} campos obrigatórios. Eles estão marcados com * logo abaixo.` : 'Falta 1 campo obrigatório. Ele está marcado com * logo abaixo.') : 'Tudo preenchido. Use o botão ao final do formulário para seguir.'}</p>`;
     } else if (v === 3) { corpo = diagHtml(); rodape = '<button type="button" class="btn btn-gold" id="jor-prox">Entendi, montar meu plano</button>'; }
-    else if (v === 4) { corpo = campanhasHtml() + '<p class="jor-sub">O seu passo a passo está logo abaixo, em <b>Hoje</b>: faça um passo por vez, até o fim.</p>'; rodape = '<button type="button" class="btn btn-gold" id="jor-prox">Plano em andamento: ir ao WhatsApp e CRM</button>'; }
+    else if (v === 4) { corpo = campanhasHtml() + '<div class="jor-prod"><div><b>Para produzir as peças:</b> roteiro em blocos para o teleprompter, kit de gravação que cabe no orçamento, editor de vídeo e pedido de imagem para a IA, com as regras do seu conselho. O passo a passo está nas Partes 6 e 7 e no Anexo A do guia.</div><div class="jor-prod-btns"><button type="button" class="btn btn-outline btn-sm" data-jor-tool="roteiro">Roteiro e teleprompter</button><button type="button" class="btn btn-outline btn-sm" data-jor-tool="ferramentas">Vídeo e imagem</button></div></div><p class="jor-sub">O seu passo a passo está logo abaixo, em <b>Hoje</b>: faça um passo por vez, até o fim.</p>'; rodape = '<button type="button" class="btn btn-gold" id="jor-prox">Plano em andamento: ir ao WhatsApp e CRM</button>'; }
     else if (v === 5) { corpo = waHtml(); rodape = '<button type="button" class="btn btn-gold" id="jor-prox">Pronto: avaliar resultados</button>'; }
     else if (v === 6) { corpo = avalHtml(); }
     box.innerHTML = `<ol class="jor-steps" aria-label="Fases da jornada">${steps}</ol>

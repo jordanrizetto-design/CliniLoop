@@ -326,3 +326,27 @@
   #config[data-jf="1"] .onb-obj, #config[data-jf="2"] .onb-perfil{display:none;}
   #config.jor-wait .onb-body{display:none;}
   #config[data-jf="all"] .stim{display:none;}
+
+  /* Capa real do guia e link para o PDF */
+  .livro-capa{display:flex; flex-direction:column; gap:10px; text-decoration:none; max-width:200px;}
+  .livro-capa img{width:100%; height:auto; border-radius:4px 10px 10px 4px; box-shadow:8px 10px 0 rgba(0,0,0,.25); display:block;}
+  .livro-capa-btn{display:block; text-align:center; font-weight:600; font-size:.86rem; color:var(--ink); background:var(--gold-soft); border-radius:999px; padding:8px 12px;}
+  .livro-capa:hover .livro-capa-btn{filter:brightness(1.05);}
+  nav.links a.nav-pdf{color:var(--teal); font-weight:600;}
+
+  /* Menu no celular: faixa rolável abaixo da marca */
+  @media (max-width:720px){
+    .nav-inner{flex-wrap:wrap; padding:10px 16px 6px; row-gap:6px;}
+    nav.links{display:flex; gap:18px; width:100%; overflow-x:auto; white-space:nowrap; font-size:.86rem; padding:2px 0 6px; scrollbar-width:none; -webkit-overflow-scrolling:touch;}
+    nav.links::-webkit-scrollbar{display:none;}
+  }
+
+  /* Respiro entre linhas de campos nos formulários */
+  .row2 + .row2, .row2 + .row3, .row3 + .row2, .row3 + .row3, .row2 + .field, .row3 + .field, .field + .row2, .field + .row3{margin-top:14px;}
+  .row2 > .field small, .row3 > .field small{margin-bottom:2px;}
+  .jor-prod{display:flex; flex-wrap:wrap; gap:12px 18px; align-items:center; justify-content:space-between; background:var(--teal-wash, #EAF4F5); border-radius:10px; padding:12px 14px; margin:6px 0 10px; font-size:.92rem;}
+  .jor-prod-btns{display:flex; gap:8px; flex-wrap:wrap;}
+  a.lr-tool.lr-pdf{text-decoration:none; display:inline-block;}
+  @media (min-width:721px){ nav.links{gap:22px; white-space:nowrap;} nav.links a{white-space:nowrap;} .brand-text small{white-space:nowrap;} }
+  @media (min-width:721px) and (max-width:1100px){ .brand-text small{display:none;} nav.links{gap:16px; font-size:.86rem;} }
+  @media (max-width:720px){ nav.links{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent); mask-image:linear-gradient(90deg,#000 85%,transparent); padding-right:24px;} }
