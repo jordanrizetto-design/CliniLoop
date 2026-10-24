@@ -319,6 +319,7 @@
       return;
     }
     if (id === 'ajustes') { const aj = document.getElementById('ajustes'); aj.open = true; aj.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
+    if (typeof revealTool === 'function') revealTool(id);
     const el = document.querySelector(`.tool[data-id="${id}"]`);
     if (!el) return;
     el.open = true;

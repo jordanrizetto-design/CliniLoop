@@ -2,7 +2,7 @@
 
 # CliniLoop
 
-**O app do e-book _Prompt do Sim · Saúde_, de JR Tosoni.** Pacientes, colegas e campanhas, do primeiro contato ao tratamento, com ética e método. Para **médicos, psiquiatras, dentistas, psicólogos, fisioterapeutas, nutricionistas e clínicas multiprofissionais**. Funciona com o **Claude gratuito ou com assinatura** (Pro ou Max) e, se você quiser, com a API da Anthropic.
+**Guia digital: o e-book _Prompt do Sim · Saúde_, de JR Tosoni, mais o app CliniLoop.** Pacientes, colegas e campanhas, do primeiro contato ao tratamento, com ética e método. Para **médicos, psiquiatras, dentistas, psicólogos, fisioterapeutas, nutricionistas e clínicas multiprofissionais**. Funciona com o **Claude gratuito ou com assinatura** (Pro ou Max) e, se você quiser, com a API da Anthropic.
 
 O CliniLoop mantém a lógica do [BuscaLoop](https://github.com/jordanrizetto-design/Otimizador-de-Oportunidades) original:
 - um perfil base que alimenta todas as ferramentas;
@@ -15,6 +15,16 @@ Muda o objeto: em vez de vagas, pacientes, colegas e campanhas.
 É uma **página estática**: um único `index.html`, sem backend, sem cadastro e sem instalação. Você abre no navegador, preenche formulários curtos e recebe prompts prontos para colar no Claude. O rastreador, o briefing e o playbook são montados no próprio navegador.
 
 > Não substitui a orientação do seu conselho profissional nem assessoria jurídica. As regras de publicidade resumidas aqui foram conferidas em outubro de 2026; confirme a norma vigente antes de campanhas e formatos novos.
+
+## Novidades desta versão (beta)
+
+- **Modo guiado**: por padrão o app mostra só as ferramentas que mais ajudam agora (de 3 a 4) e deixa as 18 a um clique.
+- **Primeiro ganho**: um passo a passo curto leva da configuração ao prompt do perfil.
+- **Instalável e offline**: funciona como aplicativo no celular e no computador (PWA).
+- **Feedback de teste** dentro do app, sem dados de pacientes.
+- Documentos para validar o produto: [roteiro de teste com profissionais](docs/ROTEIRO_DE_TESTE.md) e [checklist de revisão jurídica](docs/CHECKLIST_REVISAO_JURIDICA.md).
+
+> Estado real: o CliniLoop **ainda não foi testado com profissionais de saúde** nem revisado por advogado. Não há casos de uso nem depoimentos, e nenhum foi inventado.
 
 ## O livro e o app
 

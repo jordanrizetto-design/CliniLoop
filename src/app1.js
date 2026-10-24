@@ -18,6 +18,10 @@
   const CONT_KEY = PREFIX + 'conteudos.v1';
   const PERSIST_KEY = PREFIX + 'campos.v1';
   const CICLO = 14;
+  const MODO_KEY = PREFIX + 'modo.v1';
+  const BETA_KEY = PREFIX + 'beta.v1';
+  const GANHO_KEY = PREFIX + 'ganho.v1';
+  const reveladas = new Set();
 
   // Etapas do Rastreador de pacientes (funil de sete etapas)
   const ETAPAS = ['Novo', 'Em conversa', 'Agendado', 'Avaliado', 'Plano proposto', 'Em tratamento', 'Encerrado'];

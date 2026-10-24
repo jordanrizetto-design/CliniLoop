@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CliniLoop — pacientes, colegas e campanhas com IA</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Cpath%20d%3D%22M50.40%2C11.56%20A27.50%2C27.50%200%201%201%2021.70%2C6.50%22%20fill%3D%22none%22%20stroke%3D%22%231F6F78%22%20stroke-width%3D%224.60%22%20stroke-linecap%3D%22round%22/%3E%3Cpath%20d%3D%22M27.37%2C4.21%20L22.53%2C11.77%20L18.64%2C2.13%20Z%22%20fill%3D%22%231F6F78%22/%3E%3Crect%20x%3D%2227%22%20y%3D%2218%22%20width%3D%2210%22%20height%3D%2228%22%20rx%3D%223.2%22%20fill%3D%22%23C2502F%22/%3E%3Crect%20x%3D%2218%22%20y%3D%2227%22%20width%3D%2228%22%20height%3D%2210%22%20rx%3D%223.2%22%20fill%3D%22%23C2502F%22/%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%222.6%22%20fill%3D%22%23F4BFA4%22/%3E%3C/svg%3E">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#14303A">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
 <meta name="description" content="Para médicos, psiquiatras, dentistas, psicólogos, fisioterapeutas e clínicas: público, posicionamento, conteúdo, campanhas, rede de colegas e rastreador de pacientes, com prompts para o Claude gratuito e as regras do seu conselho.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -695,6 +698,21 @@
   .fontes-table td{text-align:left !important; font-size:.84rem;}
   .hero-livro{color:var(--gold-soft);}
 
+  /* Modo guiado, primeiro ganho, beta */
+  .tool[hidden]{display:none !important;}
+  .modo-bar{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin:0 0 14px; padding:10px 14px; background:var(--card); border:1px solid var(--border); border-radius:8px; font-size:.9rem;}
+  .ganho{margin:0 0 14px; padding:16px 18px; background:var(--card); border:1px solid var(--border-strong); border-left:4px solid var(--gold); border-radius:8px;}
+  .ganho-list{list-style:none; margin:8px 0 0; padding:0; display:grid; gap:10px;}
+  .ganho-list li{display:flex; gap:12px; align-items:flex-start; opacity:.62;}
+  .ganho-list li.atual,.ganho-list li.feito{opacity:1;}
+  .ganho-list li > div{display:grid; gap:4px; justify-items:start; font-size:.9rem;}
+  .ganho-list li > div span{color:var(--ink-soft);}
+  .ganho-n{flex:none; width:26px; height:26px; border-radius:50%; display:grid; place-items:center; background:var(--paper-warm); font-weight:600; font-size:.85rem;}
+  .ganho-list li.atual .ganho-n{background:var(--gold); color:#fff;}
+  .ganho-list li.feito .ganho-n{background:var(--teal); color:#fff;}
+  .ganho-fim{margin-top:10px; font-size:.82rem;}
+  .beta-note{margin:0 0 14px; padding:9px 14px; background:#FFF8F2; border:1px dashed var(--border-strong); border-radius:8px; font-size:.86rem; display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between;}
+
 </style>
 </head>
 <body>
@@ -722,7 +740,7 @@
       <div>
         <p class="eyebrow">Para médicos, psiquiatras, dentistas, psicólogos, fisioterapeutas, nutricionistas e clínicas</p>
         <h1>Do primeiro contato ao tratamento, com ética e método.</h1>
-        <p class="lead">O app do e-book <a href="#livro" class="hero-livro"><i>Prompt do Sim · Saúde</i></a>, de JR Tosoni. O CliniLoop leva para o consultório a lógica do BuscaLoop: um perfil que alimenta todas as ferramentas, um funil por etapa e um ritual semanal. Defina público e posicionamento, produza conteúdo, monte campanhas, cuide da rede de colegas e acompanhe cada paciente do primeiro contato ao tratamento, sempre dentro das regras do seu conselho.</p>
+        <p class="lead">O guia digital que une o e-book <a href="#livro" class="hero-livro"><i>Prompt do Sim · Saúde</i></a>, de JR Tosoni. O CliniLoop leva para o consultório a lógica do BuscaLoop: um perfil que alimenta todas as ferramentas, um funil por etapa e um ritual semanal. Defina público e posicionamento, produza conteúdo, monte campanhas, cuide da rede de colegas e acompanhe cada paciente do primeiro contato ao tratamento, sempre dentro das regras do seu conselho.</p>
         <ul class="hero-plans" aria-label="Formas de usar">
           <li><b>Claude gratuito</b><span>sem custo, sem cartão</span></li>
           <li><b>Claude com assinatura</b><span>Pro ou Max, com Research</span></li>
@@ -1094,6 +1112,32 @@
                   <a class="btn btn-outline btn-sm" href="https://claude.ai/projects" target="_blank" rel="noopener">Abrir Projetos no Claude.ai ↗</a>
                 </div>
               </div>
+            </section>
+
+            <section class="set-block" id="feedback">
+              <h4>Ajude a testar</h4>
+              <p class="plan-note">O CliniLoop ainda não foi testado com profissionais de saúde. Conte onde você travou, o que não entendeu e o que faltou. Não escreva nomes, telefones nem dados de pacientes.</p>
+              <div class="row2">
+                <div class="field">
+                  <label for="fb-nota">Foi fácil começar?</label>
+                  <select id="fb-nota"><option value="5">5 · Muito fácil</option><option value="4">4 · Fácil</option><option value="3" selected>3 · Mais ou menos</option><option value="2">2 · Difícil</option><option value="1">1 · Não consegui</option></select>
+                </div>
+              </div>
+              <div class="field">
+                <label for="fb-texto">O que travou ou confundiu?</label>
+                <textarea id="fb-texto" rows="3" placeholder="Ex: não entendi o que fazer depois do passo 2; faltou um modelo de mensagem para colegas"></textarea>
+              </div>
+              <div class="form-actions">
+                <button type="button" id="fb-github" class="btn btn-teal btn-sm" hidden>Enviar pelo GitHub ↗</button>
+                <button type="button" id="fb-copiar" class="btn btn-outline btn-sm">Copiar o texto</button>
+                <span class="save-status" id="fb-status" aria-live="polite"></span>
+              </div>
+            </section>
+
+            <section class="set-block" id="instalar">
+              <h4>Instalar no celular ou no computador</h4>
+              <p class="plan-note">Instalado, o CliniLoop abre como um aplicativo e funciona sem internet (a geração de resposta com a chave e as fontes precisam de conexão). No iPhone: Compartilhar, depois "Adicionar à Tela de Início". Os dados continuam só neste aparelho.</p>
+              <div class="form-actions"><button type="button" id="pwa-install" class="btn btn-outline btn-sm" hidden>Instalar o aplicativo</button></div>
             </section>
 
             <section class="set-block" id="dados">
@@ -2228,10 +2272,10 @@
           <span class="lc-autor">JR Tosoni</span>
           <span class="lc-tit">Prompt<br>do Sim</span>
           <span class="lc-sub">para profissionais de saúde</span>
-          <span class="lc-foot">E-book interativo · com o app CliniLoop</span>
+          <span class="lc-foot">Guia digital · e-book + app CliniLoop</span>
         </div>
         <div>
-          <h2>O CliniLoop é o app do e-book <em>Prompt do Sim · Saúde</em>.</h2>
+          <h2>O guia digital: e-book <em>Prompt do Sim · Saúde</em> + app CliniLoop.</h2>
           <p class="livro-lead">O livro ensina o roteiro; o app guarda o registro. Cada uma das 14 partes termina em três caixas: <b>Prompt do Sim</b>, o prompt pronto para a sua IA; <b>Na prática</b>, um passo de até 30 minutos para hoje; e <b>Sinergia CliniLoop</b>, a ferramenta do app que coloca a parte em prática. Em cada ferramenta abaixo, a faixa "No livro" mostra a parte correspondente, o passo de hoje e o prompt do livro já preenchido com o seu perfil.</p>
           <p class="livro-ideia">"Conquistar pacientes é um projeto. Projetos têm objetivo, etapas, registros e revisões. É isso que transforma esforço em resultado."</p>
         </div>
@@ -2453,6 +2497,10 @@
   const CONT_KEY = PREFIX + 'conteudos.v1';
   const PERSIST_KEY = PREFIX + 'campos.v1';
   const CICLO = 14;
+  const MODO_KEY = PREFIX + 'modo.v1';
+  const BETA_KEY = PREFIX + 'beta.v1';
+  const GANHO_KEY = PREFIX + 'ganho.v1';
+  const reveladas = new Set();
 
   // Etapas do Rastreador de pacientes (funil de sete etapas)
   const ETAPAS = ['Novo', 'Em conversa', 'Agendado', 'Avaliado', 'Plano proposto', 'Em tratamento', 'Encerrado'];
@@ -4079,6 +4127,7 @@ Entregue:
       return;
     }
     if (id === 'ajustes') { const aj = document.getElementById('ajustes'); aj.open = true; aj.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
+    if (typeof revealTool === 'function') revealTool(id);
     const el = document.querySelector(`.tool[data-id="${id}"]`);
     if (!el) return;
     el.open = true;
@@ -5022,6 +5071,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
       bk.appendChild(b);
       bk.hidden = false;
     } else bk.hidden = true;
+    if (typeof renderExtras === 'function') renderExtras();
     syncCollapseUI();
   }
   document.getElementById('hj-fazer').addEventListener('click', (e) => openAnchor(e.currentTarget.dataset.tool || 'config', e.currentTarget.dataset.anchor));
@@ -5622,6 +5672,160 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
   renderCanaisCheck();
   renderLivro();
   document.addEventListener('cliniloop:dados', renderLivro);
+
+  // ===================== Modo guiado, primeiro ganho, feedback e instalação =====================
+
+  function modoAtual() { return storeGet(MODO_KEY, '') === 'completo' ? 'completo' : 'guiado'; }
+
+  // As ferramentas que mais ajudam agora: as 3 primeiras ações da lista de "Hoje" que apontam para uma ferramenta.
+  function idsGuiados() {
+    const ids = [];
+    computeActions().forEach((a) => { if (a.tool && PB_TOOLS[a.tool] && ids.indexOf(a.tool) < 0) ids.push(a.tool); });
+    const base = ids.slice(0, 3);
+    if (pacientes.length && base.indexOf('rastreador') < 0) base.push('rastreador');
+    return base;
+  }
+  function revealTool(id) {
+    reveladas.add(id);
+    const t = document.querySelector(`#tools-list .tool[data-id="${id}"]`);
+    if (t) t.hidden = false;
+  }
+  function applyModo() {
+    const list = document.getElementById('tools-list');
+    if (!list) return;
+    const tools = [...list.querySelectorAll('.tool[data-id]')];
+    const guiaIds = idsGuiados();
+    const guiado = modoAtual() === 'guiado' && guiaIds.length > 0;
+    const vis = new Set([...guiaIds, ...reveladas]);
+    let n = 0;
+    tools.forEach((t) => {
+      const mostrar = !guiado || vis.has(t.dataset.id) || t.open;
+      t.hidden = !mostrar;
+      if (mostrar) n++;
+    });
+    list.querySelectorAll('.tool-sep').forEach((s) => { s.hidden = guiado; });
+    list.classList.toggle('modo-guiado', guiado);
+    let bar = document.getElementById('modo-bar');
+    if (!bar) {
+      bar = document.createElement('div');
+      bar.id = 'modo-bar';
+      bar.className = 'modo-bar';
+      bar.setAttribute('aria-live', 'polite');
+      list.parentNode.insertBefore(bar, list);
+      tools.forEach((t) => t.addEventListener('toggle', () => { if (t.open) reveladas.add(t.dataset.id); }));
+    }
+    bar.innerHTML = '';
+    const txt = document.createElement('span');
+    txt.innerHTML = guiado
+      ? `<b>Modo guiado:</b> ${n} de ${tools.length} ferramentas, as que mais ajudam agora, na ordem do seu roteiro.`
+      : `<b>Todas as ferramentas:</b> ${tools.length} ferramentas, agrupadas por etapa do funil.`;
+    const btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'btn btn-outline btn-sm';
+    btn.textContent = guiado ? `Mostrar as ${tools.length}` : 'Voltar ao modo guiado';
+    btn.addEventListener('click', () => { storeSet(MODO_KEY, guiado ? 'completo' : 'guiado'); reveladas.clear(); applyModo(); });
+    bar.append(txt, btn);
+  }
+
+  // Primeiro ganho: bio e perfil prontos em poucos minutos.
+  function renderPrimeiroGanho() {
+    const hoje = document.getElementById('hoje');
+    if (!hoje) return;
+    let box = document.getElementById('primeiro-ganho');
+    const uso = storeGet(USO_KEY, {}) || {};
+    const fechado = storeGet(GANHO_KEY, false) || uso.perfil;
+    if (fechado) { if (box) box.hidden = true; return; }
+    if (!box) {
+      box = document.createElement('div');
+      box.id = 'primeiro-ganho'; box.className = 'ganho';
+      hoje.querySelector('.hoje-head').after(box);
+    }
+    box.hidden = false;
+    const ok1 = onbComplete();
+    const passos = [
+      [ok1, 'Conte sobre o seu consultório', 'Três passos rápidos em "Comece aqui". Fica só neste navegador.', 'Abrir "Comece aqui"', 'config'],
+      [!!uso.perfil, 'Gere o prompt do seu perfil', 'A ferramenta Perfis e presença monta a auditoria da sua bio com as regras do seu conselho.', 'Abrir Perfis e presença', 'perfil'],
+      [false, 'Cole no Claude e ajuste', 'Cole no Claude.ai (gratuito) ou use "Gerar resposta aqui" com a sua chave. Peça ajustes na mesma conversa.', 'Abrir o Claude.ai', null],
+    ];
+    const atual = passos.findIndex((p) => !p[0]);
+    box.innerHTML = `<p class="hoje-label">Seu primeiro ganho em cerca de 10 minutos</p><ol class="ganho-list"></ol>`;
+    const ol = box.querySelector('ol');
+    passos.forEach((p, i) => {
+      const li = document.createElement('li');
+      li.className = p[0] ? 'feito' : (i === atual ? 'atual' : '');
+      li.innerHTML = `<span class="ganho-n" aria-hidden="true">${p[0] ? '✓' : i + 1}</span><div><b>${p[1]}</b><span>${p[2]}</span></div>`;
+      if (i === atual) {
+        const b = document.createElement(p[4] ? 'button' : 'a');
+        b.className = 'btn btn-gold btn-sm'; b.textContent = p[3];
+        if (p[4]) { b.type = 'button'; b.addEventListener('click', () => openTool(p[4])); }
+        else { b.href = 'https://claude.ai/new'; b.target = '_blank'; b.rel = 'noopener'; }
+        li.querySelector('div').appendChild(b);
+      }
+      ol.appendChild(li);
+    });
+    const fim = document.createElement('button');
+    fim.type = 'button'; fim.className = 'linkish ganho-fim'; fim.textContent = 'Já fiz isso, dispensar';
+    fim.addEventListener('click', () => { storeSet(GANHO_KEY, true); renderPrimeiroGanho(); });
+    box.appendChild(fim);
+  }
+
+  // Aviso honesto de versão beta.
+  function renderBeta() {
+    const hoje = document.getElementById('hoje');
+    if (!hoje) return;
+    let n = document.getElementById('beta-note');
+    if (storeGet(BETA_KEY, false)) { if (n) n.hidden = true; return; }
+    if (!n) {
+      n = document.createElement('p');
+      n.id = 'beta-note'; n.className = 'beta-note';
+      n.innerHTML = '<span><b>Versão beta.</b> O CliniLoop ainda está em teste com profissionais de saúde. Se algo travar ou confundir, conte em <a href="#ajustes" id="beta-link">Ajustes → Ajude a testar</a>.</span>';
+      const x = document.createElement('button');
+      x.type = 'button'; x.className = 'linkish'; x.textContent = 'Dispensar';
+      x.addEventListener('click', () => { storeSet(BETA_KEY, true); n.hidden = true; });
+      n.appendChild(x);
+      hoje.insertBefore(n, hoje.querySelector('.hoje-grid'));
+      n.querySelector('#beta-link').addEventListener('click', (e) => { e.preventDefault(); const f = document.getElementById('feedback'); openTool('ajustes'); if (f) setTimeout(() => f.scrollIntoView({ behavior: 'smooth', block: 'center' }), 250); });
+    }
+    n.hidden = false;
+  }
+
+  function renderExtras() { applyModo(); renderPrimeiroGanho(); renderBeta(); }
+
+  // Feedback de teste: sem dados de pacientes, vai por GitHub (issue) ou por cópia do texto.
+  (function feedback() {
+    const nota = document.getElementById('fb-nota');
+    if (!nota) return;
+    const texto = document.getElementById('fb-texto');
+    const gh = document.getElementById('fb-github');
+    const cp = document.getElementById('fb-copiar');
+    const st = document.getElementById('fb-status');
+    const monta = () => {
+      const t = (texto.value || '').trim();
+      return { titulo: `Feedback de teste (nota ${nota.value}/5)`, corpo: `Foi fácil começar? ${nota.value}/5\n\nO que travou ou confundiu:\n${t || '(sem texto)'}\n\nTela: ${window.innerWidth}px de largura` };
+    };
+    if (REPO_URL) gh.hidden = false;
+    gh.addEventListener('click', () => {
+      const f = monta();
+      window.open(`${REPO_URL}/issues/new?title=${encodeURIComponent(f.titulo)}&body=${encodeURIComponent(f.corpo)}`, '_blank', 'noopener');
+    });
+    cp.addEventListener('click', async () => {
+      const f = monta();
+      try { await navigator.clipboard.writeText(f.titulo + '\n\n' + f.corpo); st.textContent = 'Copiado. Envie para quem convidou você para testar.'; }
+      catch (e) { texto.focus(); texto.select(); st.textContent = 'Não consegui copiar sozinho. Selecione e copie o texto.'; }
+    });
+  })();
+
+  // Instalação como aplicativo (PWA) e uso offline.
+  (function pwa() {
+    if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+    }
+    const btn = document.getElementById('pwa-install');
+    let ev = null;
+    window.addEventListener('beforeinstallprompt', (e) => { e.preventDefault(); ev = e; if (btn) btn.hidden = false; });
+    if (btn) btn.addEventListener('click', async () => { if (!ev) return; ev.prompt(); await ev.userChoice.catch(() => {}); ev = null; btn.hidden = true; });
+  })();
+
+  renderExtras();
 </script>
 </body>
 </html>

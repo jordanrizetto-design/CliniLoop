@@ -40,6 +40,9 @@ head = f'''<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CliniLoop — pacientes, colegas e campanhas com IA</title>
 <link rel="icon" href="{favicon}">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#14303A">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
 <meta name="description" content="Para médicos, psiquiatras, dentistas, psicólogos, fisioterapeutas e clínicas: público, posicionamento, conteúdo, campanhas, rede de colegas e rastreador de pacientes, com prompts para o Claude gratuito e as regras do seu conselho.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -96,7 +99,17 @@ body2 = body2.replace('''      <details class="faq">
       <details class="faq">
         <summary>Posso usar com outra IA''')
 
-html = head + r('head_part.html') + r('config_part.html') + settings + r('tools.html') + r('livro.html') + body2 + '\n<script>\n' + r('app1.js') + r('livro_data.js') + r('app2.js') + r('app3.js') + r('app4.js') + r('app5.js') + '</script>\n</body>\n</html>\n'
+html = head + r('head_part.html') + r('config_part.html') + settings + r('tools.html') + r('livro.html') + body2 + '\n<script>\n' + r('app1.js') + r('livro_data.js') + r('app2.js') + r('app3.js') + r('app4.js') + r('app5.js') + r('app6.js') + '</script>\n</body>\n</html>\n'
 assert 'PacienteLoop' not in html.replace('pacienteloop', ''), [m.start() for m in re.finditer('PacienteLoop', html)][:5]
 (ROOT / 'index.html').write_text(html, encoding='utf-8')
 print('index.html', len(html), 'bytes')
+
+# PWA: manifest e service worker (a versão do cache muda a cada build)
+import hashlib, json, shutil
+(ROOT / 'manifest.webmanifest').write_text(json.dumps({
+    'name': 'CliniLoop', 'short_name': 'CliniLoop', 'description': 'Pacientes, colegas e campanhas com IA para profissionais de saúde',
+    'start_url': './', 'scope': './', 'display': 'standalone', 'lang': 'pt-BR', 'background_color': '#F4F1EA', 'theme_color': '#14303A',
+    'icons': [{'src': 'icons/icon-192.png', 'sizes': '192x192', 'type': 'image/png'},
+              {'src': 'icons/icon-512.png', 'sizes': '512x512', 'type': 'image/png'},
+              {'src': 'icons/icon-512.png', 'sizes': '512x512', 'type': 'image/png', 'purpose': 'maskable'}]}, ensure_ascii=False, indent=2), encoding='utf-8')
+(ROOT / 'sw.js').write_text((SRC / 'sw.js').read_text(encoding='utf-8').replace('__BUILD__', hashlib.sha1(html.encode()).hexdigest()[:8]), encoding='utf-8')

@@ -78,6 +78,32 @@
               </div>
             </section>
 
+            <section class="set-block" id="feedback">
+              <h4>Ajude a testar</h4>
+              <p class="plan-note">O CliniLoop ainda não foi testado com profissionais de saúde. Conte onde você travou, o que não entendeu e o que faltou. Não escreva nomes, telefones nem dados de pacientes.</p>
+              <div class="row2">
+                <div class="field">
+                  <label for="fb-nota">Foi fácil começar?</label>
+                  <select id="fb-nota"><option value="5">5 · Muito fácil</option><option value="4">4 · Fácil</option><option value="3" selected>3 · Mais ou menos</option><option value="2">2 · Difícil</option><option value="1">1 · Não consegui</option></select>
+                </div>
+              </div>
+              <div class="field">
+                <label for="fb-texto">O que travou ou confundiu?</label>
+                <textarea id="fb-texto" rows="3" placeholder="Ex: não entendi o que fazer depois do passo 2; faltou um modelo de mensagem para colegas"></textarea>
+              </div>
+              <div class="form-actions">
+                <button type="button" id="fb-github" class="btn btn-teal btn-sm" hidden>Enviar pelo GitHub ↗</button>
+                <button type="button" id="fb-copiar" class="btn btn-outline btn-sm">Copiar o texto</button>
+                <span class="save-status" id="fb-status" aria-live="polite"></span>
+              </div>
+            </section>
+
+            <section class="set-block" id="instalar">
+              <h4>Instalar no celular ou no computador</h4>
+              <p class="plan-note">Instalado, o CliniLoop abre como um aplicativo e funciona sem internet (a geração de resposta com a chave e as fontes precisam de conexão). No iPhone: Compartilhar, depois "Adicionar à Tela de Início". Os dados continuam só neste aparelho.</p>
+              <div class="form-actions"><button type="button" id="pwa-install" class="btn btn-outline btn-sm" hidden>Instalar o aplicativo</button></div>
+            </section>
+
             <section class="set-block" id="dados">
               <h4>Seus dados</h4>
               <p class="plan-note">Objetivo, perfil, decisões guardadas e números da semana ficam no armazenamento deste navegador. Eles não passam para o celular ou outro computador sozinhos e podem sumir se você limpar os dados do navegador. Faça um backup e restaure onde quiser continuar. A chave da API nunca entra no backup.</p>

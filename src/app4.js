@@ -159,6 +159,7 @@
       bk.appendChild(b);
       bk.hidden = false;
     } else bk.hidden = true;
+    if (typeof renderExtras === 'function') renderExtras();
     syncCollapseUI();
   }
   document.getElementById('hj-fazer').addEventListener('click', (e) => openAnchor(e.currentTarget.dataset.tool || 'config', e.currentTarget.dataset.anchor));

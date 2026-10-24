@@ -1,0 +1,29 @@
+{
+  "name": "CliniLoop",
+  "short_name": "CliniLoop",
+  "description": "Pacientes, colegas e campanhas com IA para profissionais de saúde",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "lang": "pt-BR",
+  "background_color": "#F4F1EA",
+  "theme_color": "#14303A",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

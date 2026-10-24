@@ -211,3 +211,18 @@
   .ritual-list{margin:10px 0 0; padding-left:22px; display:grid; gap:4px; font-size:.9rem;}
   .fontes-table td{text-align:left !important; font-size:.84rem;}
   .hero-livro{color:var(--gold-soft);}
+
+  /* Modo guiado, primeiro ganho, beta */
+  .tool[hidden]{display:none !important;}
+  .modo-bar{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin:0 0 14px; padding:10px 14px; background:var(--card); border:1px solid var(--border); border-radius:8px; font-size:.9rem;}
+  .ganho{margin:0 0 14px; padding:16px 18px; background:var(--card); border:1px solid var(--border-strong); border-left:4px solid var(--gold); border-radius:8px;}
+  .ganho-list{list-style:none; margin:8px 0 0; padding:0; display:grid; gap:10px;}
+  .ganho-list li{display:flex; gap:12px; align-items:flex-start; opacity:.62;}
+  .ganho-list li.atual,.ganho-list li.feito{opacity:1;}
+  .ganho-list li > div{display:grid; gap:4px; justify-items:start; font-size:.9rem;}
+  .ganho-list li > div span{color:var(--ink-soft);}
+  .ganho-n{flex:none; width:26px; height:26px; border-radius:50%; display:grid; place-items:center; background:var(--paper-warm); font-weight:600; font-size:.85rem;}
+  .ganho-list li.atual .ganho-n{background:var(--gold); color:#fff;}
+  .ganho-list li.feito .ganho-n{background:var(--teal); color:#fff;}
+  .ganho-fim{margin-top:10px; font-size:.82rem;}
+  .beta-note{margin:0 0 14px; padding:9px 14px; background:#FFF8F2; border:1px dashed var(--border-strong); border-radius:8px; font-size:.86rem; display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between;}
