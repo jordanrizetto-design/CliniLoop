@@ -85,8 +85,8 @@ for a_, b_ in [('O PacienteLoop monta os prompts, o briefing e o e-book no seu n
     body2 = body2.replace(a_, b_)
 body2 = body2.replace('''      <details class="faq">
         <summary>Posso usar com outra IA''', '''      <details class="faq">
-        <summary>Qual a relação com o e-book Prompt do Sim · Saúde? <span class="chevron">▸</span></summary>
-        <div class="faq-body">O CliniLoop é o app que acompanha o e-book <i>Prompt do Sim · Saúde</i>, de JR Tosoni. O livro tem seis etapas e 14 partes; cada parte termina em três caixas: Prompt do Sim (o prompt pronto), Na prática (o passo de até 30 minutos para hoje) e Sinergia CliniLoop (a ferramenta do app). Aqui, cada ferramenta mostra a parte do livro correspondente, o passo de hoje e o prompt do livro já preenchido com o seu perfil. A seção <a href="#livro">O livro</a> reúne o roteiro em seis etapas, os sete sins com os seus números, a biblioteca com os 12 prompts, as quatro regras de IA e o glossário.</div>
+        <summary>Qual a relação com o Guia CliniLoop? <span class="chevron">▸</span></summary>
+        <div class="faq-body">O CliniLoop é o app de CRM do <i>Guia CliniLoop</i>, que reúne conhecimentos dirigidos e o app. O guia tem seis etapas e 14 partes; cada parte termina em três caixas: Prompt (o pedido pronto), Na prática (o passo de até 30 minutos para hoje) e No CliniLoop (a ferramenta do app). Aqui, cada ferramenta mostra a parte do guia correspondente, o passo de hoje e o prompt do guia já preenchido com o seu perfil. A seção <a href="#livro">O guia</a> reúne o roteiro em seis etapas, as sete decisões com os seus números, a biblioteca com os 12 prompts, as quatro regras de IA e o glossário.</div>
       </details>
       <details class="faq">
         <summary>Funciona para uma clínica com recepção e vários profissionais? <span class="chevron">▸</span></summary>

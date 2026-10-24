@@ -2,7 +2,7 @@
 
 # CliniLoop
 
-**Guia digital: o e-book _Prompt do Sim · Saúde_, de JR Tosoni, mais o app CliniLoop.** Pacientes, colegas e campanhas, do primeiro contato ao tratamento, com ética e método. Para **médicos, psiquiatras, dentistas, psicólogos, fisioterapeutas, nutricionistas e clínicas multiprofissionais**. Funciona com o **Claude gratuito ou com assinatura** (Pro ou Max) e, se você quiser, com a API da Anthropic.
+**Guia CliniLoop: conhecimentos dirigidos e um app de CRM.** O guia (PDF em `guia/Guia-CliniLoop.pdf`) ensina o roteiro; o app guarda o registro. Pacientes, colegas e campanhas, do primeiro contato ao tratamento, com ética e método. Para **médicos, psiquiatras, dentistas, psicólogos, fisioterapeutas, nutricionistas e clínicas multiprofissionais**. Funciona com o **Claude gratuito ou com assinatura** (Pro ou Max) e, se você quiser, com a API da Anthropic.
 
 O CliniLoop mantém a lógica do [BuscaLoop](https://github.com/jordanrizetto-design/Otimizador-de-Oportunidades) original:
 - um perfil base que alimenta todas as ferramentas;
@@ -26,32 +26,32 @@ Muda o objeto: em vez de vagas, pacientes, colegas e campanhas.
 
 > Estado real: o CliniLoop **ainda não foi testado com profissionais de saúde** nem revisado por advogado. Não há casos de uso nem depoimentos, e nenhum foi inventado.
 
-## O livro e o app
+## O guia e o app
 
-O e-book _Prompt do Sim · Saúde_ ensina o roteiro; o CliniLoop guarda o registro. O livro tem **seis etapas e 14 partes**, e cada parte termina em três caixas: **Prompt do Sim** (o prompt pronto), **Na prática** (o passo de até 30 minutos para hoje) e **Sinergia CliniLoop** (a ferramenta do app).
+O Guia CliniLoop ensina o roteiro; o app guarda o registro. O guia tem **seis etapas e 14 partes**, e cada parte termina em três caixas: **Prompt** (o pedido pronto), **Na prática** (o passo de até 30 minutos para hoje) e **Sinergia CliniLoop** (a ferramenta do app).
 
-| Etapa do livro | Partes | Ferramentas do CliniLoop |
+| Etapa do guia | Partes | Ferramentas do CliniLoop |
 |---|---|---|
-| 1. Entenda o jogo e as regras | 1 A jornada do Sim na saúde · 2 Ética primeiro: conselhos e LGPD | Comece aqui, Painel (os sete sins), Verificador ético |
+| 1. Entenda o jogo e as regras | 1 A jornada das sete decisões · 2 Ética primeiro: conselhos e LGPD | Comece aqui, Painel (as sete decisões), Verificador ético |
 | 2. Posicione-se | 3 Os canais, um a um | Perfis e presença (com checklist de cada canal), Público, Persona do profissional, Nicho (Oceano Azul), Formação |
-| 3. Gere autoridade e demanda | 4 Conteúdo · 5 Reaproveitamento · 6 Colegas · 7 Tráfego pago | Pautas, Roteiros, Reaproveitamento de conteúdo, Rede de colegas, Gerador de campanhas (com impulsionamento) |
+| 3. Gere autoridade e demanda | 4 Conteúdo · 5 Reaproveitamento · 6 Colegas · 7 Anúncios | Pautas, Roteiros, Reaproveitamento de conteúdo, Rede de colegas, Gerador de campanhas (com impulsionamento) |
 | 4. Converta contatos em consultas | 8 Agendamento · 9 Comparecimento | Atendimento e agendamento, Rastreador de pacientes |
 | 5. Feche e acompanhe o tratamento | 10 Fechamento com ética | Plano de tratamento compreensível, Rastreador, Assistente da semana |
-| 6. Meça e escale com CRM | 11 CRM · 12 Especificação do app · 13 Campanhas e prompts · 14 Ferramentas | Rastreador, Painel, Playbook, Gerador de campanhas, Verificador ético, Ferramentas recomendadas |
+| 6. Meça e escale com CRM | 11 CRM · 12 O app CliniLoop · 13 Campanhas e prompts · 14 Ferramentas | Rastreador, Painel, Playbook, Gerador de campanhas, Verificador ético, Ferramentas recomendadas |
 
 No app, a integração aparece em três lugares:
-- **Faixa "No livro" em cada ferramenta:** a parte e a etapa correspondentes, o passo "Na prática" e o prompt do livro já preenchido com o Perfil do consultório (copiar ou abrir direto no Claude).
-- **Seção "O livro":** o roteiro em seis etapas com o que você já usou, os sete sins com os números dos últimos 30 dias, a biblioteca com os 12 prompts da Parte 13, a estrutura de um bom prompt, as quatro regras de IA e o glossário de 75 termos (Anexo A).
-- **Comportamento do app alinhado ao livro:** próximo passo típico de cada etapa, planos sem decisão em 2, 7 e 15 dias, retomadas de 1, 3 e 7 dias, faltas registradas e mostradas por dia da semana, métricas da Parte 11 (taxas de agendamento, comparecimento, aceitação e conclusão, custo por paciente que compareceu, indicações por colega, receita por origem), funil de colegas do livro (Mapeado, Apresentado, Primeira indicação, Parceiro ativo, Inativo) e o ritual semanal de 30 minutos no Assistente e no Playbook.
+- **Faixa "No guia" em cada ferramenta:** a parte e a etapa correspondentes, o passo "Na prática" e o prompt do guia já preenchido com o Perfil do consultório (copiar ou abrir direto no Claude).
+- **Seção "O guia":** o roteiro em seis etapas com o que você já usou, as sete decisões com os números dos últimos 30 dias, a biblioteca com os 12 prompts da Parte 13, a estrutura de um bom prompt, as quatro regras de IA e o glossário de 75 termos (Anexo A).
+- **Comportamento do app alinhado ao guia:** próximo passo típico de cada etapa, planos sem decisão em 2, 7 e 15 dias, retomadas de 1, 3 e 7 dias, faltas registradas e mostradas por dia da semana, métricas da Parte 11 (taxas de agendamento, comparecimento, aceitação e conclusão, custo por paciente que compareceu, indicações por colega, receita por origem), funil de colegas do guia (Mapeado, Apresentado, Primeira indicação, Parceiro ativo, Inativo) e o ritual semanal de 30 minutos no Assistente e no Playbook.
 
-## O método por trás
+## Fontes e agradecimentos
 
 | Base | Autoria | O que entra no CliniLoop |
 |---|---|---|
-| Prompt do Sim · Saúde | JR Tosoni | O e-book que o app acompanha: seis etapas, sete sins, três caixas por parte e as quatro regras de IA (não invente, revise sempre, proteja dados, mantenha a sua voz). |
+| Prompt do Sim e BuscaLoop | JR Tosoni | O e-book que o app acompanha: seis etapas, sete sins, três caixas por parte e as quatro regras de IA (não invente, revise sempre, proteja dados, mantenha a sua voz). |
 | Oceano Azul | W. Chan Kim e Renée Mauborgne | As quatro ações (eliminar, reduzir, elevar, criar) para uma proposta de valor própria e ética. |
-| Método Foguete | Pat Machadu | Sete etapas de crescimento: fundamentos, planejamento (transformação, adjetivos de marca, temas de conteúdo), perfil, produção, análise, recursos da plataforma e metas S.M.A.R.T. Criado para o YouTube e adaptado ao Instagram. |
-| Efeito Di | Diandra Santos (@segueadi) | Inteligência de nicho, uma promessa e uma pergunta por peça, quadros e personagens recorrentes, biblioteca de formatos (tela dividida, tela verde, Lo-Fi, quadro a quadro, ranking com critério), marca pessoal, gravação no celular, confiança na câmera, revisão de roteiro em duas etapas, impulsionamento e o R.O.A.S. (Roteiro, Observação, Adaptação, Substituição) para modelar referências sem copiar. |
+| Método de crescimento de perfis | Pat Machadu | Sete etapas de crescimento: fundamentos, planejamento (transformação, adjetivos de marca, temas de conteúdo), perfil, produção, análise, recursos da plataforma e metas S.M.A.R.T. Criado para o YouTube e adaptado ao Instagram. |
+| Formatos recorrentes de vídeo | Diandra Santos (@segueadi) | Inteligência de nicho, uma promessa e uma pergunta por peça, quadros e personagens recorrentes, biblioteca de formatos (tela dividida, tela verde, Lo-Fi, quadro a quadro, ranking com critério), marca pessoal, gravação no celular, confiança na câmera, revisão de roteiro em duas etapas, impulsionamento e o R.O.A.S. (Roteiro, Observação, Adaptação, Substituição) para modelar referências sem copiar. |
 | Reaproveitamento | Thiago Lemos e Alexandre Abramo | Uma aula, podcast ou entrevista vira carrossel, guia, Reel e Stories, com registro de ideias, autoria e pendências. |
 | Pesquisa e normas | out/2026 | Sinais do algoritmo do Instagram (tempo de visualização, envios por alcance e curtidas por alcance confirmados pela Meta; o resto é heurística) e regras do CFM, CFO, CFP, COFFITO e CFN. |
 
@@ -71,7 +71,7 @@ O CliniLoop usa princípios dessas fontes e não reproduz o material dos cursos.
 1. **Comece aqui**, em três passos:
    1. **Qual resultado você quer alcançar?** Objetivo dos próximos 90 dias e uma frase concreta.
    2. **Configure seu consultório.** Tipo de profissional, registro, tipo de conta (profissional ou clínica), especialidade, cidade e bairro.
-   3. **Perfil do consultório.** Serviços, público ideal, proposta de valor, temas de conteúdo (com a sugestão do livro para a sua profissão), canais, tempo disponível e diferenciais.
+   3. **Perfil do consultório.** Serviços, público ideal, proposta de valor, temas de conteúdo (com a sugestão do guia para a sua profissão), canais, tempo disponível e diferenciais.
 2. **Hoje**, no topo da página, mostra três coisas:
    - a próxima ação recomendada;
    - os próximos passos vencidos (pacientes e colegas);
@@ -83,18 +83,18 @@ O tipo de profissional define as regras do conselho embutidas em todos os gerado
 
 ## As 18 ferramentas
 
-| # | Ferramenta | Parte do livro | O que faz |
+| # | Ferramenta | Parte do guia | O que faz |
 |---|---|---|---|
 | 01 | Público, ICP e persona do paciente | 3 | Público-alvo, ICP, anti-ICP, personas, mapa de empatia, jornada e perguntas de busca |
 | 02 | Persona do profissional e marca | 3 | Arquétipo, adjetivos, tom de voz "faço / não faço", bios, história, bandeiras e limites |
 | 03 | Nicho e diferencial | Apresentação e 3 | Oceano Azul, três opções de nicho, proposta de valor, diferenciais verificáveis e pesquisa de concorrentes |
 | 04 | Perfis e presença | 3 | Auditoria e reescrita de Google, Instagram, YouTube, LinkedIn e TikTok, checklist de configuração de cada canal e assistente da página da bio |
-| 05 | Pautas e palavras-chave | 4 | Banco de dúvidas reais, palavras-chave por serviço e cidade, 30 pautas por momento da jornada, quadros recorrentes, metas S.M.A.R.T., frequência do livro e calendário |
+| 05 | Pautas e palavras-chave | 4 | Banco de dúvidas reais, palavras-chave por serviço e cidade, 30 pautas por momento da jornada, quadros recorrentes, metas S.M.A.R.T., frequência do guia e calendário |
 | 06 | Roteiros de conteúdo e copy | 4 | Reel em seis tempos, carrosséis, Stories, YouTube, LinkedIn, legendas e páginas; quadro recorrente, R.O.A.S., revisão em duas etapas, checklist antes de publicar e referências de criadores clínicos |
 | 07 | Reaproveitamento de conteúdo | 5 | Da aula, podcast ou entrevista ao carrossel, guia, Reel em duas versões e Stories, com registro de ideias e pendências |
 | 08 | Formação e autoridade | 3 | Congressos, cursos, publicações e títulos, e como comunicá-los |
 | 09 | Gerador de campanhas | 7 e 13 | Campanha completa, plano de impulsionamento (Turbinar) ou só anúncios Meta e Google; registro de campanhas e impulsionamentos com custo por paciente que compareceu |
-| 10 | Rede de colegas | 6 | Quem indica quem, funil de colegas do livro, carta de apresentação, contrarreferência e agradecimentos |
+| 10 | Rede de colegas | 6 | Quem indica quem, funil de colegas do guia, carta de apresentação, contrarreferência e agradecimentos |
 | 11 | Atendimento e agendamento | 8 e 10 | 12 respostas rápidas, agendamento em cinco mensagens, sequência de confirmação, retomadas e plano de tratamento compreensível |
 | 12 | Rastreador de pacientes | 9 e 11 | Funil de sete etapas, consentimento por finalidade, próximo passo típico, planos parados, faltas, lembretes (.ics), planilha (.csv) e "Da conversa ao registro" |
 | 13 | Assistente da semana | 10 e 11 | Ritual de 30 minutos: pendências anonimizadas, parados e agenda em blocos |
@@ -102,7 +102,7 @@ O tipo de profissional define as regras do conselho embutidas em todos os gerado
 | 15 | Verificador ético | 2 e 13 | Regras do conselho, LGPD e políticas da Meta e do Google; checagem rápida sem IA e revisão frase a frase |
 | 16 | Briefing para terceiros | 14 | Documento para agência, social media, videomaker, tráfego, designer, redator ou recepção |
 | 17 | Ferramentas recomendadas | 14 | Uma ferramenta por necessidade (listadas, não avaliadas) e prompt para montar a sua caixa |
-| 18 | Playbook da clínica | 11 | E-book com o livro e os sete sins, perfil, decisões, regras, funil, campanhas, colegas, métricas, plano de ação, 90 dias e ritual |
+| 18 | Playbook da clínica | 11 | E-book com o guia e as sete decisões, perfil, decisões, regras, funil, campanhas, colegas, métricas, plano de ação, 90 dias e ritual |
 
 ## Rastreador de pacientes
 
@@ -118,7 +118,7 @@ As sete etapas do rastreador:
 | Em tratamento | Iniciou o tratamento |
 | Encerrado | Com resultado (Alta e vínculo, Perdido ou Pausado) e motivo |
 
-Para médicos, psiquiatras e psicólogos sem planos por pacote, as etapas 5 e 6 aparecem como "Retorno agendado" e "Em acompanhamento", como na Parte 11 do livro.
+Para médicos, psiquiatras e psicólogos sem planos por pacote, as etapas 5 e 6 aparecem como "Retorno agendado" e "Em acompanhamento", como na Parte 11 do guia.
 
 **Campos de cada contato:**
 - nome ou apelido, telefone e canal preferido;
@@ -179,7 +179,7 @@ O painel Hoje lembra de fazer backup quando há dados e nenhum backup nos últim
 
 ## Limites desta versão
 
-Esta versão cobre o MVP e a v2 da Parte 12 do livro: tudo o que funciona numa página no navegador.
+Esta versão cobre o MVP e a v2 da Parte 12 do guia: tudo o que funciona numa página no navegador.
 
 O modelo foi pensado para o profissional que trabalha sozinho: os dados ficam no navegador de quem usa e não são compartilhados. Clínicas em que recepção, coordenação e vários profissionais precisam acessar os mesmos registros precisam de outra solução; escreva para suporte_CliniLoop@gmail.com.
 
@@ -202,11 +202,11 @@ O app fica em **https://jordanrizetto-design.github.io/CliniLoop/** (GitHub Page
 ## Para desenvolvedores
 
 O código-fonte fica em `src/`:
-- `config_part.html`, `settings_part.html`, `tools.html`, `livro.html`, `body2.html` e `head_part.html`;
-- `app1.js` a `app5.js` e `livro_data.js` (o mapa do livro: etapas, partes, caixas Na prática e Sinergia, os 12 prompts, as checklists e o glossário);
+- `config_part.html`, `settings_part.html`, `tools.html`, `guia.html`, `body2.html` e `head_part.html`;
+- `app1.js` a `app5.js` e `livro_data.js` (o mapa do guia: etapas, partes, caixas Na prática e Sinergia, os 12 prompts, as checklists e o glossário);
 - `extra.css` e `base.css`.
 
-O `python3 build.py` junta tudo em `index.html`. As regras dos conselhos ficam em `COUNCILS`, os tipos de profissional em `PROFISSIONAIS`, as prioridades em `OBJETIVOS` e `PROF_ROTA`, os prompts em `promptBuilders` e o livro em `LIVRO`, `TOOL_PARTES` e `PROMPTS_LIVRO`.
+O `python3 build.py` junta tudo em `index.html`. As regras dos conselhos ficam em `COUNCILS`, os tipos de profissional em `PROFISSIONAIS`, as prioridades em `OBJETIVOS` e `PROF_ROTA`, os prompts em `promptBuilders` e o guia em `LIVRO`, `TOOL_PARTES` e `PROMPTS_LIVRO`.
 
 ## Licença
 

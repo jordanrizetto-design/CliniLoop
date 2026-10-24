@@ -390,7 +390,7 @@
 </style></head><body><div class="book">${body}</div></body></html>`;
   }
 
-  // ===================== Playbook da clínica (e-book) =====================
+  // ===================== Playbook da clínica =====================
   function buildEbook() {
     const E = escapeHtml;
     const hoje = todayISO();
@@ -405,7 +405,7 @@
       const saved = res[id] ? `<div class="saved"><b>Versão guardada em ${E(fmtDate(res[id].d))}:</b>${mdToHtml(res[id].t)}</div>` : '';
       const rec = st.cls === 'pend' ? `<p class="rec"><b>Recomendação para concluir:</b> ${E(t.fazer)}</p>` : `<p class="rec"><b>Na próxima revisão:</b> ${E(t.revisar)}</p>`;
       const partes = (TOOL_PARTES[id] || []).map((n) => n === 0 ? 'Apresentação' : 'Parte ' + n).join(' e ');
-      return `<div class="tool${prio ? ' prio' : ''}"><h4>${E(t.nome)}${prio ? ` <span class="tag">prioridade ${rota.indexOf(id) + 1}</span>` : ''}${partes ? ` <span class="livro-ref">No livro: ${E(partes)}</span>` : ''}</h4>${pill(st)}${rec}${saved}</div>`;
+      return `<div class="tool${prio ? ' prio' : ''}"><h4>${E(t.nome)}${prio ? ` <span class="tag">prioridade ${rota.indexOf(id) + 1}</span>` : ''}${partes ? ` <span class="livro-ref">No guia: ${E(partes)}</span>` : ''}</h4>${pill(st)}${rec}${saved}</div>`;
     };
     const cfgRows = [
       ['Objetivo', objInfo().label + (cfg.metaFrase ? ' — ' + cfg.metaFrase : ''), cfg.metaFrase ? null : 'Escreva o resultado, o serviço e o prazo no passo 1.'],
@@ -426,7 +426,7 @@
     const acoes = computeActions();
     const metaN = metaSemana();
     const ciclos = [1, 2, 3].map((k) => addDays(hoje, CICLO * k));
-    const capitulos = ['Como usar este playbook', 'O livro e os sete sins', 'O método', 'Perfil do consultório', 'Posicionamento', 'Presença e conteúdo', 'Captação: campanhas e colegas', 'Conversão: atendimento e rastreador', 'Painel e gargalo', 'Regras do seu conselho', 'Plano de ação', 'Plano de 90 dias', 'Rotina semanal e quinzenal'];
+    const capitulos = ['Como usar este playbook', 'O guia e as sete decisões', 'O método', 'Perfil do consultório', 'Posicionamento', 'Presença e conteúdo', 'Captação: campanhas e colegas', 'Conversão: atendimento e rastreador', 'Painel e gargalo', 'Regras do seu conselho', 'Plano de ação', 'Plano de 90 dias', 'Rotina semanal e quinzenal'];
     const titulo = cfg.metaFrase ? cfg.metaFrase : 'Do primeiro contato ao tratamento';
     let n = 0;
     const cap = (t, body) => { n++; return `<section class="chapter"><div class="chap-n">Capítulo ${n}</div><h2>${E(t)}</h2>${body}</section>`; };
@@ -449,7 +449,7 @@
 <div class="content">
   <section class="chapter toc"><div class="chap-n">Sumário</div><h2>Neste playbook</h2><ol>${capitulos.map((c) => `<li>${E(c)}</li>`).join('')}</ol></section>
   ${cap('Como usar este playbook', `<p>Atrair pacientes é um funil: muita gente vê o conteúdo, algumas conversam, menos agendam, comparecem e iniciam o tratamento. O CliniLoop transforma isso num ritual: <b>toda semana</b>, Assistente da semana e Painel; <b>a cada 2 semanas</b>, este playbook. ${E(objInfo().porque)}</p><div class="box"><b>Como ler os selos:</b> <span class="pill ok">Feito</span> mostra quando você usou a ferramenta e até quando revisar; <span class="pill pend">Pendente</span> traz uma recomendação para concluir; <span class="pill late">Revisão atrasada</span> indica que se passaram mais de 2 semanas.</div><p>Este documento não contém nomes nem dados de pacientes: os números do funil são contagens.</p>`)}
-  ${cap('O livro e os sete sins', `<p>Este playbook acompanha o e-book <b>${E(LIVRO.titulo)}</b>, de ${E(LIVRO.autor)}: ${E(LIVRO.tese)} ${E(LIVRO.ideia)}</p><div class="tbl"><table><tr><th>Etapa</th><th>Partes do livro</th><th>Ferramentas do CliniLoop</th></tr>${LIVRO.etapas.map((et) => `<tr><td>${et.n}. ${E(et.nome)}</td><td>${et.partes.map((n) => `${n}. ${E(LIVRO.partes[n].titulo)}`).join('<br>')}</td><td>${[...new Set(et.partes.flatMap((n) => LIVRO.partes[n].tools))].map((id) => E(TOOL_NAMES[id] || id)).join(', ')}</td></tr>`).join('')}</table></div><h3>Os sete sins nos últimos 30 dias</h3><div class="tbl"><table class="num"><tr><th>Sim</th><th>O que é</th><th>Últimos 30 dias</th></tr>${sinsDados().map((x) => `<tr><td>${E(x.nome)}</td><td style="text-align:left">${E(x.desc)}</td><td>${E(x.valor)}</td></tr>`).join('')}</table></div><p>Onde aparece um traço, está o primeiro campo a registrar.</p>`)}
+  ${cap('O guia e as sete decisões', `<p>Este playbook acompanha o <b>${E(LIVRO.titulo)}</b>: ${E(LIVRO.tese)} ${E(LIVRO.ideia)}</p><div class="tbl"><table><tr><th>Etapa</th><th>Partes do guia</th><th>Ferramentas do CliniLoop</th></tr>${LIVRO.etapas.map((et) => `<tr><td>${et.n}. ${E(et.nome)}</td><td>${et.partes.map((n) => `${n}. ${E(LIVRO.partes[n].titulo)}`).join('<br>')}</td><td>${[...new Set(et.partes.flatMap((n) => LIVRO.partes[n].tools))].map((id) => E(TOOL_NAMES[id] || id)).join(', ')}</td></tr>`).join('')}</table></div><h3>Os sete sins nos últimos 30 dias</h3><div class="tbl"><table class="num"><tr><th>Sim</th><th>O que é</th><th>Últimos 30 dias</th></tr>${sinsDados().map((x) => `<tr><td>${E(x.nome)}</td><td style="text-align:left">${E(x.desc)}</td><td>${E(x.valor)}</td></tr>`).join('')}</table></div><p>Onde aparece um traço, está o primeiro campo a registrar.</p>`)}
   ${cap('O método', `<p>O CliniLoop organiza o trabalho com três bases:</p>${METODO.bases.map(([n, a, d]) => `<h3>${E(n)} <span style="font-weight:400;font-size:.85rem">(${E(a)})</span></h3><p>${E(d)}</p>`).join('')}<h3>Fluxo de cada peça</h3><p>${METODO.fluxo.map(E).join(' → ')}</p><h3>Princípios que valem sempre</h3><ul><li>Viralizar não se garante: em saúde, o objetivo é clareza, confiança e o próximo passo adequado.</li><li>Estratégia antes de produção: transformação, público e baldes antes de roteiros em série.</li><li>Uma promessa verdadeira e uma pergunta por peça; resposta cedo; limite da orientação; um único pedido.</li><li>Procedência: princípio de método, adaptação, observação, informação clínica validada e hipótese são coisas diferentes. Afirmação clínica sem fonte fica pendente de validação.</li><li>Revisão em duas etapas: editorial, depois clínica e ética. A IA aponta problemas, mas não assume responsabilidade profissional.</li><li>Teste uma variável por vez (pergunta, abertura, demonstração ou convite) e compare peças com exposição parecida.</li></ul><h3>Metas S.M.A.R.T. sugeridas para 8 semanas</h3><ul><li>Publicar ${metaN} conteúdos por semana, por 8 semanas, a partir do banco de dúvidas.</li><li>Registrar 100% dos novos contatos no rastreador, com próximo passo e data.</li><li>Responder todo contato novo no mesmo dia.</li><li>Mapear 10 colegas e enviar a carta de apresentação a 5 até o fim do segundo mês.</li></ul><p><i>${E(METODO.aviso)}</i></p>`)}
   ${cap('Perfil do consultório', `<table><tr><th>Item</th><th>Situação</th><th>O que fazer</th></tr>${cfgRows.map(([a, b, c]) => `<tr><td>${E(a)}</td><td>${E(b)}</td><td>${c ? E(c) : '<span class="pill ok">Ok</span>'}</td></tr>`).join('')}</table>`)}
   ${cap('Posicionamento', ['publico', 'profissional', 'nicho'].map(toolCard).join(''))}

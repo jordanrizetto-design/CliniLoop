@@ -3,7 +3,7 @@
   function arr(key) { const v = storeGet(key, []); return Array.isArray(v) ? v : []; }
   let pacientes = arr(PAC_KEY);
   let colegas = arr(COL_KEY);
-  // Funil de colegas alinhado ao livro: migra etapas antigas
+  // Funil de colegas alinhado ao guia: migra etapas antigas
   colegas.forEach((c) => { if (COLEGA_MIGRA[c.etapa]) c.etapa = COLEGA_MIGRA[c.etapa]; });
   let campanhas = arr(CAMP_KEY);
   let conteudos = arr(CONT_KEY);
@@ -677,7 +677,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
   });
 
   // ===================== Rastreador de pacientes =====================
-  // Origens do livro (Parte 11). Campanhas e impulsionamentos registrados entram como origem própria.
+  // Origens do guia (Parte 11). Campanhas e impulsionamentos registrados entram como origem própria.
   const ORIGENS = ['Instagram orgânico', 'Google orgânico (busca ou Perfil da Empresa)', 'Meta Ads', 'Google Ads', 'YouTube', 'TikTok', 'Indicação de colega', 'Indicação de paciente', 'Retorno (paciente antigo)', 'Doctoralia ou plataforma', 'Site', 'Passou em frente', 'Outro'];
   const campOrigem = (c) => (c.tipo === 'Impulsionamento' ? 'Impulsionamento: ' : 'Campanha: ') + c.nome;
   const CLIN_RE = /\b(diagnost\w*|cid\b|exame|exames|medicament\w*|remedio|doenca|transtorno|depress\w*|ansiedade|cancer|tumor|hiv|gravid\w*|cirurgia|fratura|hernia|laudo|receita)/;
@@ -1097,7 +1097,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     let rows = BENCH.filter((b) => !ks.length || ks.some((k) => b[1].includes(k)));
     const nota = rows.length ? '' : '<p class="plan-note">Ainda não há referências da sua área nesta amostra. Veja as de outras áreas: o que se adapta é a estrutura.</p>';
     if (!rows.length) rows = BENCH;
-    document.getElementById('bench-box').innerHTML = `<p class="plan-note">Amostra editorial de ${BENCH.length} perfis da Parte 4 do livro (outubro de 2026), <b>não é um ranking</b>. Use as estruturas, não os conselhos clínicos, e não atribua resultado a elas. ${escapeHtml(BENCH_PADROES)}</p>${nota}<div class="num-wrap"><table class="num-table bench-table"><tr><th>Criador</th><th>Área</th><th>Instagram</th><th>O que dá para adaptar</th></tr>${rows.map((b) => `<tr><td>${escapeHtml(b[0])}</td><td>${escapeHtml(b[2])}</td><td>${escapeHtml(b[3])}</td><td>${escapeHtml(b[4])}</td></tr>`).join('')}</table></div>`;
+    document.getElementById('bench-box').innerHTML = `<p class="plan-note">Amostra editorial de ${BENCH.length} perfis da Parte 4 do guia (outubro de 2026), <b>não é um ranking</b>. Use as estruturas, não os conselhos clínicos, e não atribua resultado a elas. ${escapeHtml(BENCH_PADROES)}</p>${nota}<div class="num-wrap"><table class="num-table bench-table"><tr><th>Criador</th><th>Área</th><th>Instagram</th><th>O que dá para adaptar</th></tr>${rows.map((b) => `<tr><td>${escapeHtml(b[0])}</td><td>${escapeHtml(b[2])}</td><td>${escapeHtml(b[3])}</td><td>${escapeHtml(b[4])}</td></tr>`).join('')}</table></div>`;
   }
 
   // ===================== Ferramentas (tabela) =====================

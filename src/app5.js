@@ -1,5 +1,5 @@
 
-  // ===================== O livro no app =====================
+  // ===================== O guia no app =====================
   const CANAIS_KEY = PREFIX + 'canais.v1';
   const TEMAS_CURTOS = {
     medico: ['Educar: quando procurar avaliação', 'Humanizar: rotina e formação', 'Desmistificar: mitos sobre a doença'],
@@ -12,7 +12,7 @@
   const parteNome = (n) => (n === 0 ? 'Apresentação' : `Parte ${n}`);
   const etapaTxt = (n) => { const e = LIVRO.etapas.find((x) => x.n === n); return e ? `Etapa ${e.n} de 6 · ${e.nome}` : 'Antes do roteiro'; };
 
-  // Preenche os colchetes dos prompts do livro com o Perfil do consultório
+  // Preenche os colchetes dos prompts do guia com o Perfil do consultório
   function fillLivro(txt) {
     const p = profInfo();
     const tit = p ? (cfg.profissional === 'multi' ? 'clínica multiprofissional' : p.titulo) : '';
@@ -33,9 +33,9 @@
     const d = document.createElement('details');
     d.className = 'ls-prompt';
     d.dataset.prompt = pr.id;
-    d.innerHTML = `<summary><span class="ls-tag">Prompt do Sim</span> ${escapeHtml(pr.titulo)} <span class="ls-parte">${escapeHtml(parteNome(pr.parte))}${compact ? '' : ' · ' + escapeHtml(pr.etapa)}</span><span class="chevron">▸</span></summary>
+    d.innerHTML = `<summary><span class="ls-tag">Prompt</span> ${escapeHtml(pr.titulo)} <span class="ls-parte">${escapeHtml(parteNome(pr.parte))}${compact ? '' : ' · ' + escapeHtml(pr.etapa)}</span><span class="chevron">▸</span></summary>
       <div class="ls-body">
-        <label class="visually-hidden" for="lp-${compact ? 't' : 'b'}-${pr.id}">Prompt do livro: ${escapeHtml(pr.titulo)}</label>
+        <label class="visually-hidden" for="lp-${compact ? 't' : 'b'}-${pr.id}">Prompt do guia: ${escapeHtml(pr.titulo)}</label>
         <textarea id="lp-${compact ? 't' : 'b'}-${pr.id}" readonly rows="7"></textarea>
         <p class="ls-pend"></p>
         ${(typeof EXEMPLOS_LIVRO !== 'undefined' && EXEMPLOS_LIVRO[pr.id]) ? `<details class="ls-exemplo"><summary>Ver exemplo preenchido (fictício)</summary><div class="ls-ex-body"><p class="ls-ex-aviso">Exemplo inventado para ilustrar: Dra. Bia Nunes, nutricionista esportiva, Pinheiros. Não é caso real nem resultado de paciente. Troque tudo pelos seus dados e valide com a norma do seu conselho.</p><h5>O que foi colocado</h5><p>${escapeHtml(EXEMPLOS_LIVRO[pr.id].entrada)}</p><h5>O que a IA devolveu (trecho)</h5><pre>${escapeHtml(EXEMPLOS_LIVRO[pr.id].saida)}</pre><h5>Antes de usar</h5><ul>${EXEMPLOS_LIVRO[pr.id].revisar.map((x) => `<li>${escapeHtml(x)}</li>`).join('')}</ul></div></details>` : ''}
@@ -75,7 +75,7 @@
       const strip = document.createElement('div');
       strip.className = 'livro-strip';
       const extra = ps.slice(1).map((k) => `${parteNome(k)} · ${LIVRO.partes[k].titulo}`).join('; ');
-      strip.innerHTML = `<div class="ls-head"><span class="ls-badge">No livro</span><b>${escapeHtml(parteNome(n))} · ${escapeHtml(parte.titulo)}</b><span class="ls-etapa">${escapeHtml(etapaTxt(parte.etapa))}${extra ? ' · também ' + escapeHtml(extra) : ''}</span></div>
+      strip.innerHTML = `<div class="ls-head"><span class="ls-badge">No guia</span><b>${escapeHtml(parteNome(n))} · ${escapeHtml(parte.titulo)}</b><span class="ls-etapa">${escapeHtml(etapaTxt(parte.etapa))}${extra ? ' · também ' + escapeHtml(extra) : ''}</span></div>
         <p class="ls-pratica"><b>Na prática, até 30 minutos, hoje:</b> ${escapeHtml(TOOL_PRATICA[id] || parte.pratica)}</p>`;
       const prompts = PROMPTS_LIVRO.filter((p) => p.tool === id);
       prompts.forEach((pr) => strip.appendChild(promptCard(pr, true)));
@@ -84,14 +84,14 @@
     });
   })();
 
-  // Seção "O livro e o app"
+  // Seção "O guia e o app"
   function renderLivroRoteiro() {
     const uso = storeGet(USO_KEY, {}) || {};
     const box = document.getElementById('livro-roteiro');
     box.innerHTML = LIVRO.etapas.map((et) => `<div class="lr-etapa"><div class="lr-n">${et.n}</div><div class="lr-body"><h3>${escapeHtml(et.nome)}</h3>${et.partes.map((n) => {
       const pt = LIVRO.partes[n];
       const nPr = PROMPTS_LIVRO.filter((p) => p.parte === n).length;
-      return `<div class="lr-parte"><div class="lr-pt"><span class="lr-num">${String(n).padStart(2, '0')}</span><div><b>${escapeHtml(pt.titulo)}</b><p><span class="lr-lab">Na prática:</span> ${escapeHtml(pt.pratica)}</p><p><span class="lr-lab">Sinergia CliniLoop · ${escapeHtml(pt.sinergia)}:</span> ${escapeHtml(pt.sinTxt)}</p></div></div><div class="lr-tools">${pt.tools.map((id) => `<button type="button" class="lr-tool${uso[id] ? ' ok' : ''}" data-tool="${id}">${uso[id] ? '✓ ' : ''}${escapeHtml(TOOL_NAMES[id] || id)}</button>`).join('')}${nPr ? `<button type="button" class="lr-tool lr-pr" data-parte="${n}">${nPr} prompt${nPr > 1 ? 's' : ''} do livro</button>` : ''}</div></div>`;
+      return `<div class="lr-parte"><div class="lr-pt"><span class="lr-num">${String(n).padStart(2, '0')}</span><div><b>${escapeHtml(pt.titulo)}</b><p><span class="lr-lab">Na prática:</span> ${escapeHtml(pt.pratica)}</p><p><span class="lr-lab">Sinergia CliniLoop · ${escapeHtml(pt.sinergia)}:</span> ${escapeHtml(pt.sinTxt)}</p></div></div><div class="lr-tools">${pt.tools.map((id) => `<button type="button" class="lr-tool${uso[id] ? ' ok' : ''}" data-tool="${id}">${uso[id] ? '✓ ' : ''}${escapeHtml(TOOL_NAMES[id] || id)}</button>`).join('')}${nPr ? `<button type="button" class="lr-tool lr-pr" data-parte="${n}">${nPr} prompt${nPr > 1 ? 's' : ''} do guia</button>` : ''}</div></div>`;
     }).join('')}</div></div>`).join('') +
       `<div class="lr-etapa lr-anexo"><div class="lr-n">+</div><div class="lr-body"><h3>Anexos</h3><div class="lr-tools"><button type="button" class="lr-tool" data-tab-go="glossario">Glossário (75 termos)</button><button type="button" class="lr-tool" data-tab-go="ia">As quatro regras de IA</button></div></div></div>`;
     box.querySelectorAll('[data-tool]').forEach((b) => b.addEventListener('click', () => openTool(b.dataset.tool)));
@@ -124,7 +124,7 @@
   }
   document.querySelectorAll('.livro-tabs [data-tab]').forEach((b) => b.addEventListener('click', () => livroTab(b.dataset.tab)));
 
-  // Os sete sins com os números do app (últimos 30 dias)
+  // As sete decisões com os números do app (últimos 30 dias)
   function sinsDados() {
     const lim = addDays(todayISO(), -30);
     const em = (d) => d && d >= lim;
@@ -143,8 +143,7 @@
       temPac ? `${h('Avaliado')} compareceram${faltas ? ' · ' + faltas + ' falta(s)' : ''}` : '—',
       temPac ? `${h('Em tratamento')} iniciaram${altas ? ' · ' + altas + ' alta(s)' : ''}` : '—'
     ];
-    const art = ['da', 'da', 'do', 'do', 'do', 'do', 'do'];
-    return SINS.map(([nome, desc], i) => ({ nome: `${i + 1}. Sim ${art[i]} ${nome.toLowerCase()}`, desc, valor: v[i] }));
+        return SINS.map(([nome, desc], i) => ({ nome: `${i + 1}. ${nome}`, desc, valor: v[i] }));
   }
   function renderSins() {
     const box = document.getElementById('livro-sins');
@@ -191,7 +190,7 @@
       (faltas90 ? `<h5 class="ml-h">Faltas por dia da semana</h5><div class="num-wrap"><table class="num-table"><tr>${dias.map((d) => `<th>${d}</th>`).join('')}</tr><tr>${fd.map((n) => `<td>${n}</td>`).join('')}</tr></table></div>` : '<p class="plan-note">Registre "Falta (no-show)" como atividade no Rastreador para ver as faltas por dia da semana.</p>');
   }
 
-  // Blocos de referência do livro nas ferramentas
+  // Blocos de referência do guia nas ferramentas
   (function refs() {
     const E = escapeHtml;
     document.getElementById('ref-trafego').innerHTML = `<p class="plan-note">Anúncio não conserta perfil fraco nem atendimento lento; ele acelera o que já funciona. A ordem é: perfil pronto, conteúdo orgânico testado, atendimento e CRM prontos, e só então dinheiro em mídia.</p>
@@ -201,7 +200,7 @@
       <tr><td style="text-align:left">Ainda não conhece você</td><td>Meta Ads e YouTube</td><td style="text-align:left">Alcance ou visualização de vídeo de autoridade</td></tr>
       <tr><td style="text-align:left">Já interagiu e não agendou</td><td>Meta Ads</td><td style="text-align:left">Público de envolvimento com o perfil (sem listas de pacientes)</td></tr></table></div>
       <h5 class="ml-h">Checklist do impulsionamento</h5><ul class="check-list">${IMPULSO_CHECK.map((x) => `<li>${E(x)}</li>`).join('')}</ul>
-      <p class="plan-note">ROAS é a receita atribuída dividida pelo gasto em anúncios. Só calcule com rastreamento real até o paciente que iniciou o tratamento, e não o confunda com o R.O.A.S. do curso Efeito Di, que é um método de criação de roteiros.</p>`;
+      <p class="plan-note">ROAS é a receita atribuída dividida pelo gasto em anúncios. Só calcule com rastreamento real até o paciente que iniciou o tratamento, e não o confunda com o ciclo de adaptação de referências da Parte 4, que é um método de criação de roteiros.</p>`;
     document.getElementById('ref-atend').innerHTML = `<ul class="check-list"><li>Primeira resposta em até 5 minutos no horário comercial. Fora dele, resposta automática que informa quando haverá retorno e já oferece horários.</li><li>Todo contato vira um registro no Rastreador com origem (Instagram orgânico, Meta Ads, Google, indicação de colega e qual, paciente antigo).</li><li>Toda conversa termina com um próximo passo marcado: consulta agendada, retorno combinado ou motivo de perda registrado.</li></ul>
       <h5 class="ml-h">Roteiro de agendamento em cinco mensagens</h5><ol class="livro-ol">${AGENDAMENTO_5.map(([t, d]) => `<li><b>${E(t)}.</b> ${E(d)}</li>`).join('')}</ol>
       <p class="plan-note"><b>Quem não agendou na hora:</b> até três retomadas (no dia seguinte, em 3 dias e em 7 dias), sempre com algo útil e nunca com pressão. Depois disso, a pessoa vai para uma lista de relacionamento, se consentiu.</p>
@@ -239,7 +238,7 @@
     const k = cfg.profissional === 'multi' ? (cfg.multiProf || [])[0] : cfg.profissional;
     const t = TEMAS_PROF[k];
     if (!t) { el.textContent = 'Educar, humanizar e desmistificar (Parte 4). Todo post precisa caber em um deles.'; return; }
-    el.innerHTML = `Sugestão do livro para ${escapeHtml(PROFISSIONAIS[k].label.toLowerCase())}: educar (${escapeHtml(t[0])}), humanizar (${escapeHtml(t[1])}) e desmistificar (${escapeHtml(t[2])}). `;
+    el.innerHTML = `Sugestão do guia para ${escapeHtml(PROFISSIONAIS[k].label.toLowerCase())}: educar (${escapeHtml(t[0])}), humanizar (${escapeHtml(t[1])}) e desmistificar (${escapeHtml(t[2])}). `;
     if (!cfg.baldes) {
       const b = document.createElement('button');
       b.type = 'button'; b.className = 'linkish'; b.textContent = 'Usar estas sugestões';

@@ -45,12 +45,12 @@
   // Etapas do Rastreador de pacientes (funil de sete etapas)
   const ETAPAS = ['Novo', 'Em conversa', 'Agendado', 'Avaliado', 'Plano proposto', 'Em tratamento', 'Encerrado'];
   const RESULTADOS = ['Alta e vínculo', 'Perdido', 'Pausado'];
-  // Funil dos colegas do livro (Parte 11). Parceiro ativo = indicou nos últimos 90 dias.
+  // Funil dos colegas do guia (Parte 11). Parceiro ativo = indicou nos últimos 90 dias.
   const ETAPAS_COLEGA = ['Mapeado', 'Apresentado', 'Primeira indicação', 'Parceiro ativo', 'Inativo'];
   const COLEGA_MIGRA = { 'Primeiro contato': 'Apresentado', 'Apresentação feita': 'Apresentado', 'Trocando indicações': 'Primeira indicação', 'Parceria ativa': 'Parceiro ativo' };
   const CONSENT = { atendimento: 'Atendimento', lembretes: 'Lembretes e retornos', conteudo: 'Conteúdos e novidades' };
   const ATIVIDADES = ['Mensagem', 'Ligação', 'Confirmação', 'Retomada', 'Falta (no-show)', 'Remarcação'];
-  // Próximo passo típico de cada etapa (Parte 11 do livro)
+  // Próximo passo típico de cada etapa (Parte 11 do guia)
   const PASSO_TIPICO = {
     'Novo': 'Responder em até 5 minutos', 'Em conversa': 'Oferecer dois horários', 'Agendado': 'Confirmação 48 h antes',
     'Avaliado': 'Apresentar plano ou conduta', 'Plano proposto': 'Acompanhamento do plano (2, 7 e 15 dias)', 'Em tratamento': 'Reavaliação programada',
@@ -317,7 +317,7 @@
     ['Assistentes de IA', 'Claude, ChatGPT, Gemini, Copilot', 'Use com as quatro regras de IA; nunca com dados de pacientes']
   ];
 
-  // Referências de criadores clínicos brasileiros (Parte 4 do livro): amostra editorial da skill Creator
+  // Referências de criadores clínicos brasileiros (Parte 4 do guia): amostra editorial da skill Creator
   // (outubro de 2026), não um ranking. Use as estruturas, não os conselhos clínicos.
   const BENCH = [
     ['Ana Escobar', 'medicina', 'Pediatria', '@draanaescobar', 'Pergunta específica, acolhimento, passos compreensíveis, CRM e RQE visíveis.'],
@@ -334,15 +334,15 @@
   // As bases do método (créditos)
   const METODO = {
     bases: [
-      ['Prompt do Sim · Saúde', 'JR Tosoni', 'O e-book que este app acompanha: conquistar pacientes é um projeto, com objetivo, etapas, registros e revisões. Seis etapas, sete sins (atenção, confiança, colega, contato, agendamento, comparecimento, tratamento) e três caixas em cada parte: Prompt do Sim, Na prática e Sinergia CliniLoop.'],
-      ['Oceano Azul', 'W. Chan Kim e Renée Mauborgne', 'Sair da disputa por atenção com conteúdo igual ao de todos. As quatro ações (eliminar, reduzir, elevar, criar) em relação ao padrão do setor viram uma proposta de valor própria e ética.'],
-      ['Método Foguete', 'Pat Machadu', 'Crescimento em sete etapas: fundamentos, planejamento (transformação, adjetivos de marca, temas de conteúdo), perfil, produção, análise, recursos da plataforma e metas S.M.A.R.T. Originalmente para YouTube, adaptado ao Instagram.'],
-      ['Efeito Di', 'Diandra Santos (@segueadi)', 'Síntese autoral do curso: atenção + padrão + satisfação, quadros recorrentes, personagens editoriais, biblioteca de formatos, análise de referências, frequência que cabe na revisão e o R.O.A.S. (Roteiro, Observação, Adaptação, Substituição) para modelar referências.'],
-      ['Reaproveitamento', 'Thiago Lemos e Alexandre Abramo (canal Hotmart)', 'O que falta à maioria dos especialistas não é conhecimento, é reaproveitamento: uma aula, podcast ou entrevista vira carrossel, guia, Reel e Stories, com registro de ideias, autoria e pendências.'],
-      ['Pesquisa e normas', 'out/2026', 'Sinais do algoritmo do Instagram (tempo de visualização, envios por alcance e curtidas por alcance confirmados por Adam Mosseri; o resto é heurística de mercado) e regras de publicidade do CFM, CFO, CFP, COFFITO e CFN.']
+      ['Guia CliniLoop', 'método', 'Conquistar pacientes é um projeto, com objetivo, etapas, registros e revisões. Seis etapas, sete decisões do paciente (atenção, confiança, indicação, contato, agendamento, comparecimento, adesão) e três caixas em cada parte: Prompt, Na prática e No CliniLoop.'],
+      ['Oceano Azul', 'estratégia', 'Sair da disputa por atenção com conteúdo igual ao de todos. As quatro ações (eliminar, reduzir, elevar, criar) em relação ao padrão do setor viram uma proposta de valor própria e ética.'],
+      ['Escada de crescimento', 'método de perfis', 'Sete degraus: entender a plataforma, definir a promessa (transformação, adjetivos de marca, temas de conteúdo), montar a vitrine, produzir com rotina, ler os números, combinar formatos e fixar metas.'],
+      ['Formatos recorrentes', 'síntese de formatos', 'Promessa, curiosidade e recompensa; quadros recorrentes, personagens editoriais, biblioteca de formatos, análise de referências, frequência que cabe na revisão e o ciclo de adaptação (Referência, Observação, Adaptação, Troca).'],
+      ['Reaproveitamento', 'método', 'O que falta à maioria dos especialistas não é conhecimento, é reaproveitamento: uma aula, podcast ou entrevista vira carrossel, guia, Reel e Stories, com registro de ideias, autoria e pendências.'],
+      ['Pesquisa e normas', 'out/2026', 'Sinais do algoritmo do Instagram (tempo de visualização, envios por alcance e curtidas por alcance confirmados pela plataforma; o resto é heurística de mercado) e regras de publicidade do CFM, CFO, CFP, COFFITO e CFN.']
     ],
     fluxo: ['Ideia', 'Roteiro', 'Revisão editorial', 'Revisão clínica e ética', 'Gravação', 'Revisão final', 'Publicação', 'Análise'],
-    aviso: 'O CliniLoop usa princípios dessas fontes, não reproduz o material dos cursos. Rótulos pedagógicos (como "viciante") não são métricas, e linguagem sobre emoção e neuroquímica é editorial, não evidência científica. O R.O.A.S. do curso não é o ROAS de mídia paga.'
+    aviso: 'O CliniLoop usa princípios dessas fontes, não reproduz o material dos cursos. Rótulos pedagógicos (como "viciante") não são métricas, e linguagem sobre emoção e neuroquímica é editorial, não evidência científica. O ciclo de adaptação não é o ROAS de mídia paga.'
   };
 
   // Quatro modelos de campanha

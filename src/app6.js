@@ -121,7 +121,7 @@
     PLANO30.forEach((sem) => {
       const bloco = document.createElement('section');
       bloco.className = 'plano-sem';
-      bloco.innerHTML = `<h4>Semana ${sem.sem}: ${escapeHtml(sem.tema)} <span>· partes ${escapeHtml(sem.parte)} do livro</span></h4>`;
+      bloco.innerHTML = `<h4>Semana ${sem.sem}: ${escapeHtml(sem.tema)} <span>· partes ${escapeHtml(sem.parte)} do guia</span></h4>`;
       sem.dias.forEach((d) => {
         const row = document.createElement('div');
         row.className = 'plano-dia' + (feito[d.d] ? ' feito' : '');

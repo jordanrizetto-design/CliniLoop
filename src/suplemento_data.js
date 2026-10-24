@@ -27,7 +27,7 @@
     { sem: 4, tema: 'Medir e ajustar', parte: '11, 13 e 14', dias: [
       { d: 16, tool: 'painel', min: 20, titulo: 'Segunda rodada de conteúdo', acao: 'Publique o 2º e o 3º conteúdos e registre no Diário. Responda cada comentário e mensagem no mesmo dia.', entrega: '3 conteúdos registrados.' },
       { d: 17, tool: 'assistente', min: 25, titulo: 'Faça o ritual da semana', acao: 'Importe as pendências no Assistente e gere a agenda em blocos para a semana.', entrega: 'Agenda da semana pronta.' },
-      { d: 18, tool: 'painel', min: 30, titulo: 'Lance os números e ache o gargalo', acao: 'Preencha os números da semana e leia "Os sete sins": onde o paciente está se perdendo?', entrega: 'Um gargalo identificado.' },
+      { d: 18, tool: 'painel', min: 30, titulo: 'Lance os números e ache o gargalo', acao: 'Preencha os números da semana e leia "As sete decisões": em qual delas o paciente está se perdendo?', entrega: 'Um gargalo identificado.' },
       { d: 19, tool: 'painel', min: 30, titulo: 'Corrija uma coisa só', acao: 'Escolha um ajuste: o gancho, a bio, a resposta rápida ou o lembrete. Mude e anote a data para comparar.', entrega: 'Um ajuste feito, com data.' },
       { d: 20, tool: 'ebook', min: 30, titulo: 'Revise o mês e planeje o próximo', acao: 'Gere o playbook. Compare com os marcos desta página e decida o foco dos próximos 30 dias. Só pense em anúncios se a base estiver pronta.', entrega: 'Playbook e plano dos próximos 30 dias.' }
     ] }

@@ -55,7 +55,7 @@
   }
   function objInfo() { return OBJETIVOS[cfg.objetivo] || OBJETIVOS.agenda; }
   function metaPadrao() { return (TEMPO[cfg.tempo] || TEMPO['2a3']).meta; }
-  // Temas de conteúdo sugeridos pelo livro para a profissão (educar, humanizar, desmistificar)
+  // Temas de conteúdo sugeridos pelo guia para a profissão (educar, humanizar, desmistificar)
   function temasSugeridos() {
     const ks = cfg.profissional === 'multi' ? (cfg.multiProf || []) : [cfg.profissional];
     const t = ks.map((k) => TEMAS_PROF[k]).filter(Boolean)[0];
@@ -248,7 +248,7 @@ Entregue:
 4. Dois ou três quadros recorrentes (séries com nome, bordão e estrutura fixa, como "Pergunta do consultório"), com 4 episódios cada.
 5. Metas S.M.A.R.T. para 8 semanas (específicas, mensuráveis, alcançáveis, relevantes e com prazo), incluindo uma meta de tarefa e uma de contatos qualificados.
 6. Frequência realista para ${(TEMPO[cfg.tempo] || TEMPO['2a3']).label}, com quem produz sendo ${PRODUTOR[cfg.produtor] || cfg.produtor}: versão mínima e ideal por canal. Constância vale mais que volume.
-Referência do livro (Parte 4): profissional sozinho, 2 Reels + 1 carrossel por semana, Stories em dias de atendimento, 1 vídeo de YouTube por mês e 1 post de LinkedIn por semana; clínica com equipe, 3 Reels + 2 carrosséis por semana, Stories diários, 2 a 4 vídeos por mês e 2 posts de LinkedIn por semana. A frequência é a que eu consigo revisar.
+Referência do guia (Parte 4): profissional sozinho, 2 Reels + 1 carrossel por semana, Stories em dias de atendimento, 1 vídeo de YouTube por mês e 1 post de LinkedIn por semana; clínica com equipe, 3 Reels + 2 carrosséis por semana, Stories diários, 2 a 4 vídeos por mês e 2 posts de LinkedIn por semana. A frequência é a que eu consigo revisar.
 7. Calendário de 4 semanas (dia, canal, formato, pauta) e rotina de produção em lote, com tempo estimado por etapa (cronometre e comprometa-se só com o que cabe).
 8. "Uma peça longa, quatro entregas": como transformar uma pauta em vídeo longo, Reel para uma dúvida, carrossel de preparação e Stories sobre quem atende, cada um fazendo sentido sozinho.
 9. Datas de conscientização dos próximos 3 meses relevantes para minha área, com abordagem educativa. Em Setembro Amarelo: comunicação responsável, CVV (188) e nada de captação.
@@ -292,7 +292,7 @@ Alcance não é garantido; foque em sinais que dependem de mim (retenção, envi
       }
       const quadro = get('quadro');
       const ref = get('referencia');
-      return `Aja como roteirista e copywriter de conteúdo ético para profissionais de saúde, seguindo o Método Foguete adaptado ao Instagram e os princípios do Efeito Di.
+      return `Aja como roteirista e copywriter de conteúdo ético para profissionais de saúde, seguindo uma escada de crescimento para o Instagram (entender a plataforma, definir a promessa, montar a vitrine, produzir com rotina, ler os números, combinar formatos e fixar metas) e formatos recorrentes com promessa, curiosidade e recompensa.
 
 Formato: ${f}
 Tema ou dúvida do paciente: ${get('tema')}
@@ -316,7 +316,7 @@ No final, inclua sempre:
 Linguagem simples, termos técnicos explicados, frases curtas. Pontuação de roteiro, se usar, é ferramenta pedagógica, não previsão de viralidade.`;
     },
 
-    reaproveitamento: (get, getAll) => `Aja como editor(a) de conteúdo para profissionais de saúde, seguindo o método de reaproveitamento do e-book Prompt do Sim · Saúde (Parte 5): uma aula, quatro entregas.
+    reaproveitamento: (get, getAll) => `Aja como editor(a) de conteúdo para profissionais de saúde, seguindo o método de reaproveitamento do Guia CliniLoop (Parte 5): uma aula, quatro entregas.
 
 Vou colar a transcrição de ${get('fonte')} em que participei como ${get('papel')}.
 Público: ${nv(get('publico'), cfg.publico || '[PÚBLICO]')}. Objetivo: ${get('objetivo')}. Profissão e conselho: ${profLabel()}, ${conselhosTxt()}.
@@ -534,7 +534,7 @@ Regras de leitura:
 - Muito alcance e pouca permanência: revise promessa × entrega. Permanência e poucas ações: revise clareza e convite. Muitos contatos e poucos atendimentos: revise adequação ao público, localização e processo de agendamento antes de culpar o roteiro.
 
 Entregue:
-1. Leitura do funil pelos sete sins (atenção, confiança, colega, contato, agendamento, comparecimento, tratamento) e pelas métricas que importam: taxa de agendamento (agendados ÷ novos contatos), taxa de comparecimento (compareceram ÷ agendados), taxa de aceitação de planos (iniciaram ÷ planos propostos), taxa de conclusão (altas ÷ iniciados), custo por paciente que compareceu e indicações por colega. O número de referência é o meu próprio histórico; referências do setor só como [ESTIMATIVA].
+1. Leitura do funil pelas sete decisões do paciente (atenção, confiança, indicação, contato, agendamento, comparecimento, adesão) e pelas métricas que importam: taxa de agendamento (agendados ÷ novos contatos), taxa de comparecimento (compareceram ÷ agendados), taxa de aceitação de planos (iniciaram ÷ planos propostos), taxa de conclusão (altas ÷ iniciados), custo por paciente que compareceu e indicações por colega. O número de referência é o meu próprio histórico; referências do setor só como [ESTIMATIVA].
 2. O gargalo da semana e as 3 causas mais prováveis, aplicando as regras acima.
 3. Três ações para a próxima semana, cada uma com responsável, prazo e métrica de sucesso.
 4. Conteúdo: quais baldes, quadros e formatos geram mais retenção, envios, salvamentos e mensagens, e o que repetir. Atribua receita só se houver rastreamento.

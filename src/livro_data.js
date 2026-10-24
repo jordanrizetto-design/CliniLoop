@@ -1,10 +1,10 @@
 
-  // ===================== O livro: Prompt do Sim · Saúde (JR Tosoni) =====================
-  // Cada parte do livro termina numa caixa "Sinergia CliniLoop". Este bloco é o mapa entre as duas obras.
+  // ===================== O Guia CliniLoop =====================
+  // Cada parte do guia termina numa caixa "Sinergia CliniLoop". Este bloco é o mapa entre as duas obras.
   const LIVRO = {
-    titulo: 'Prompt do Sim · Saúde',
-    autor: 'JR Tosoni',
-    tese: 'O roteiro para conquistar o sim do colega que indica, do paciente que agenda e do paciente que segue o tratamento.',
+    titulo: 'Guia CliniLoop',
+    autor: '',
+    tese: 'Conhecimentos dirigidos e um app de CRM para conquistar as sete decisões do paciente: olhar, confiar, ser indicado, chamar, agendar, comparecer e seguir o tratamento.',
     ideia: 'Conquistar pacientes é um projeto. Projetos têm objetivo, etapas, registros e revisões. É isso que transforma esforço em resultado.',
     etapas: [
       { n: 1, nome: 'Entenda o jogo e as regras', partes: [1, 2] },
@@ -16,29 +16,29 @@
     ],
     partes: {
       0: { titulo: 'Apresentação: Oceano Vermelho e Oceano Azul', etapa: 0, tools: ['nicho'], sinergia: 'Nicho e diferencial', sinTxt: 'As quatro ações do Oceano Azul (eliminar, reduzir, elevar, criar) entram na análise de nicho e na proposta de valor.', pratica: 'Faça as quatro ações do Oceano Azul em relação ao padrão do seu setor: o que eliminar, o que reduzir, o que elevar e o que criar.' },
-      1: { titulo: 'A jornada do Sim na saúde', etapa: 1, tools: ['config', 'painel'], sinergia: 'Configure seu consultório', sinTxt: 'Escolha o tipo de profissional. O app reordena as ferramentas e carrega as regras do conselho certo.', pratica: 'Escreva os sete sins numa folha e, ao lado de cada um, anote quantos pacientes passaram por ele no último mês. Onde você não sabe o número, está o primeiro campo do seu CRM.' },
+      1: { titulo: 'A jornada das sete decisões', etapa: 1, tools: ['config', 'painel'], sinergia: 'Configure seu consultório', sinTxt: 'Escolha o tipo de profissional. O app reordena as ferramentas e carrega as regras do conselho certo.', pratica: 'Escreva os sete sins numa folha e, ao lado de cada um, anote quantos pacientes passaram por ele no último mês. Onde você não sabe o número, está o primeiro campo do seu CRM.' },
       2: { titulo: 'Ética primeiro: conselhos e LGPD', etapa: 1, tools: ['etica'], sinergia: 'Verificador ético', sinTxt: 'Cole qualquer post, anúncio ou mensagem e receba os pontos que conflitam com o seu conselho, a LGPD e as políticas da Meta e do Google.', pratica: 'Abra os seus três últimos posts e o seu último anúncio. Confira identificação profissional, ausência de superlativos e de promessa, e exposição de paciente. Corrija ou arquive o que não passar.' },
       3: { titulo: 'Os canais, um a um: manual de configuração', etapa: 2, tools: ['perfil', 'publico', 'profissional', 'nicho', 'formacao'], sinergia: 'Perfis e presença', sinTxt: 'Traz o checklist de configuração de cada canal (Google, Instagram, YouTube, LinkedIn e TikTok) e audita e reescreve bio, título e descrições a partir do Perfil do consultório.', pratica: 'Pesquise seu nome e sua clínica no Google Maps. Se a ficha não existir ou estiver incompleta, crie ou reivindique o Perfil da Empresa no Google e reescreva a bio do Instagram em quatro linhas.' },
       4: { titulo: 'Conteúdo que gera autoridade e alcance', etapa: 3, tools: ['pautas', 'roteiro'], sinergia: 'Pautas e roteiros de conteúdo', sinTxt: 'Transforma dúvidas reais em pautas por tema e gera roteiros de Reels, carrosséis e vídeos com a palavra-chave da sua cidade.', pratica: 'Liste as dez perguntas que você mais ouve no consultório. Escolha uma, encaixe em um dos seus três temas de conteúdo e grave hoje um Reel de 30 segundos com o roteiro em seis tempos.' },
       5: { titulo: 'Reaproveitamento: uma aula, quatro entregas', etapa: 3, tools: ['reaproveitamento'], sinergia: 'Reaproveitamento de conteúdo', sinTxt: 'Cole a transcrição de uma aula ou podcast e receba o registro de ideias, o carrossel, o guia e o Reel em duas versões, com as pendências de fonte, autoria e compliance.', pratica: 'Escolha uma aula, podcast ou entrevista em que você participou bem. Liste as ideias aproveitáveis, com quem disse cada uma, e escolha um tema central para o primeiro conjunto.' },
-      6: { titulo: 'O Sim dos colegas: a rede de indicação', etapa: 3, tools: ['colegas'], sinergia: 'Rede de colegas', sinTxt: 'Funil de colegas, carta de apresentação, relatório de contrarreferência e registro de quem indicou cada paciente.', pratica: 'Cadastre no CRM dez colegas que atendem o mesmo paciente antes ou depois de você e envie a carta de apresentação para os três mais próximos.' },
-      7: { titulo: 'Tráfego pago: Meta Ads e Google Ads', etapa: 3, tools: ['campanha'], sinergia: 'Gerador de campanhas', sinTxt: 'Monta o plano de impulsionamento, os textos, títulos, palavras-chave e públicos para Meta Ads e Google Ads e liga cada campanha aos pacientes que ela trouxe.', pratica: 'Antes de investir, confira se o Pixel ou a tag do Google estão instalados e se cada conversa vinda de anúncio chega ao CRM com a origem marcada.' },
-      8: { titulo: 'Do clique à consulta: o Sim do agendamento', etapa: 4, tools: ['atendimento'], sinergia: 'Atendimento e agendamento', sinTxt: 'Respostas rápidas, roteiro de agendamento e retomadas de quem não marcou, registradas no Rastreador de pacientes.', pratica: 'Cadastre as 12 respostas rápidas no WhatsApp Business e meça, durante uma semana, o tempo da primeira resposta.' },
-      9: { titulo: 'O Sim do comparecimento', etapa: 4, tools: ['rastreador', 'atendimento'], sinergia: 'Rastreador de pacientes', sinTxt: 'Gera os lembretes de confirmação (.ics) e mostra a taxa de comparecimento por profissional, origem e dia da semana.', pratica: 'Configure a mensagem de confirmação de 48 horas e anote a taxa de faltas deste mês. Ela é a linha de base para o próximo.' },
-      10: { titulo: 'O Sim do tratamento: fechamento com ética', etapa: 5, tools: ['atendimento', 'rastreador', 'assistente'], sinergia: 'Rastreador e Assistente da semana', sinTxt: 'Destaca planos propostos sem decisão em 2, 7 e 15 dias e monta a agenda de acompanhamentos da semana.', pratica: 'Liste os planos propostos nos últimos 30 dias que não começaram. Para cada um, registre o motivo provável e marque um contato de acompanhamento com data.' },
+      6: { titulo: 'A decisão dos colegas: a rede de indicação', etapa: 3, tools: ['colegas'], sinergia: 'Rede de colegas', sinTxt: 'Funil de colegas, carta de apresentação, relatório de contrarreferência e registro de quem indicou cada paciente.', pratica: 'Cadastre no CRM dez colegas que atendem o mesmo paciente antes ou depois de você e envie a carta de apresentação para os três mais próximos.' },
+      7: { titulo: 'Anúncios: Meta Ads e Google Ads', etapa: 3, tools: ['campanha'], sinergia: 'Gerador de campanhas', sinTxt: 'Monta o plano de impulsionamento, os textos, títulos, palavras-chave e públicos para Meta Ads e Google Ads e liga cada campanha aos pacientes que ela trouxe.', pratica: 'Antes de investir, confira se o Pixel ou a tag do Google estão instalados e se cada conversa vinda de anúncio chega ao CRM com a origem marcada.' },
+      8: { titulo: 'Do clique à consulta: a decisão de agendar', etapa: 4, tools: ['atendimento'], sinergia: 'Atendimento e agendamento', sinTxt: 'Respostas rápidas, roteiro de agendamento e retomadas de quem não marcou, registradas no Rastreador de pacientes.', pratica: 'Cadastre as 12 respostas rápidas no WhatsApp Business e meça, durante uma semana, o tempo da primeira resposta.' },
+      9: { titulo: 'A decisão de comparecer', etapa: 4, tools: ['rastreador', 'atendimento'], sinergia: 'Rastreador de pacientes', sinTxt: 'Gera os lembretes de confirmação (.ics) e mostra a taxa de comparecimento por profissional, origem e dia da semana.', pratica: 'Configure a mensagem de confirmação de 48 horas e anote a taxa de faltas deste mês. Ela é a linha de base para o próximo.' },
+      10: { titulo: 'A decisão de tratar: fechamento com ética', etapa: 5, tools: ['atendimento', 'rastreador', 'assistente'], sinergia: 'Rastreador e Assistente da semana', sinTxt: 'Destaca planos propostos sem decisão em 2, 7 e 15 dias e monta a agenda de acompanhamentos da semana.', pratica: 'Liste os planos propostos nos últimos 30 dias que não começaram. Para cada um, registre o motivo provável e marque um contato de acompanhamento com data.' },
       11: { titulo: 'O CRM: a gestão do relacionamento com o paciente', etapa: 6, tools: ['rastreador', 'painel', 'assistente', 'ebook'], sinergia: 'Rastreador, Painel e Playbook', sinTxt: 'Funil de sete etapas com próximos passos vencidos, painel semanal com o gargalo e revisões quinzenais agendadas.', pratica: 'Liste de memória os dez últimos pacientes que pediram informação e não agendaram, e os cinco últimos planos propostos. Para quantos você sabe dizer o próximo passo? Esse número é o seu ponto de partida.' },
-      12: { titulo: 'CliniLoop: especificação para o app', etapa: 6, tools: ['config'], sinergia: 'O mapa completo', sinTxt: 'A tabela desta parte cruza cada ferramenta do BuscaLoop, o app do livro original, com o CliniLoop. Ela é a base do desenvolvimento do app.', pratica: 'Preencha o Perfil do consultório uma única vez: profissão, registro, especialidade, cidade, serviços, público ideal e temas de conteúdo. Ele alimenta todas as ferramentas.' },
+      12: { titulo: 'O app CliniLoop: guia das ferramentas', etapa: 6, tools: ['config'], sinergia: 'O mapa completo', sinTxt: 'A tabela desta parte cruza cada ferramenta do BuscaLoop, o app do guia original, com o CliniLoop. Ela é a base do desenvolvimento do app.', pratica: 'Preencha o Perfil do consultório uma única vez: profissão, registro, especialidade, cidade, serviços, público ideal e temas de conteúdo. Ele alimenta todas as ferramentas.' },
       13: { titulo: 'Gerador de campanhas e biblioteca de prompts', etapa: 6, tools: ['campanha', 'etica'], sinergia: 'Gerador de campanhas e Verificador ético', sinTxt: 'A ficha da campanha vira um formulário; o resultado passa pelo verificador antes de ir para o ar.', pratica: 'Preencha a ficha de uma campanha para o seu serviço principal e rode o gerador. Passe tudo pelo verificador ético antes de publicar.' },
       14: { titulo: 'Ferramentas para materializar as campanhas', etapa: 6, tools: ['ferramentas', 'rastreador'], sinergia: 'Exportação e lembretes', sinTxt: 'O Rastreador exporta em planilha (.csv) e gera lembretes para Google Agenda ou Outlook, para conversar com as ferramentas que você já usa.', pratica: 'Escolha uma ferramenta por linha, no máximo. Ferramenta demais é registro duplicado, e registro duplicado é paciente esquecido.' }
     }
   };
-  // Em que parte do livro cada ferramenta aparece (a primeira é a principal)
+  // Em que parte do guia cada ferramenta aparece (a primeira é a principal)
   const TOOL_PARTES = {
     config: [1, 12], publico: [3], profissional: [3], nicho: [0, 3], perfil: [3], pautas: [4], roteiro: [4], reaproveitamento: [5],
     formacao: [3], campanha: [7, 13], colegas: [6], atendimento: [8, 10], rastreador: [9, 11], assistente: [10, 11], painel: [11, 1],
     etica: [2, 13], briefing: [14], ferramentas: [14], ebook: [11]
   };
-  // "Na prática" específico quando a ferramenta cobre um trecho da parte (texto do livro)
+  // "Na prática" específico quando a ferramenta cobre um trecho da parte (texto do guia)
   const TOOL_PRATICA = {
     publico: 'Antes de abrir o aplicativo, responda por escrito: quem deve se interessar pelo seu conteúdo e que problema enfrenta? Gerar conversas para agendar, atrair seguidores qualificados ou levar a um conteúdo completo?',
     profissional: 'Escolha até cinco adjetivos que você quer que o paciente associe a você (por exemplo: claro, acolhedor, técnico, próximo, organizado), uma cor principal e uma ou duas fontes legíveis. Consistência importa mais que sofisticação.',
@@ -47,15 +47,15 @@
     briefing: 'Se for delegar, comece pelo mínimo da Parte 14 e mande o briefing a dois ou três fornecedores. Quem promete seguidores ou pacientes não entende as regras do seu conselho.'
   };
 
-  // Os sete sins (Parte 1)
+  // As sete decisões (Parte 1)
   const SINS = [
     ['Atenção', 'A pessoa para no seu conteúdo (Reels, Shorts, anúncio, busca no Google).'],
     ['Confiança', 'Ela segue, assiste mais, lê a bio, confere o Google e o LinkedIn.'],
-    ['Colega', 'Um médico, dentista ou fisioterapeuta indica você pelo nome.'],
+    ['Indicação', 'Um médico, dentista ou fisioterapeuta indica você pelo nome.'],
     ['Contato', 'A pessoa chama no WhatsApp, liga ou preenche um formulário.'],
     ['Agendamento', 'A consulta ou avaliação entra na agenda.'],
     ['Comparecimento', 'O paciente aparece no dia e na hora.'],
-    ['Tratamento', 'Ele aceita o plano proposto, segue até o fim, retorna e indica outras pessoas.']
+    ['Adesão', 'Ele aceita o plano proposto, segue até o fim, retorna e indica outras pessoas.']
   ];
 
   // A estrutura de um bom prompt e as quatro regras de IA (Introdução)
@@ -201,7 +201,7 @@
     'Planeje a semana: conteúdo, anúncios, contatos com colegas.'
   ];
 
-  // Biblioteca de prompts do livro (Parte 13), com o texto do box verde
+  // Biblioteca de prompts do guia (Parte 13), com o texto do box verde
   const PROMPTS_LIVRO = [
     { id: 'auditoria', titulo: 'Auditoria de perfis e canais', etapa: 'Posicionamento', parte: 3, tool: 'perfil', texto: `Você é consultor de marketing ético para profissionais de saúde no Brasil.
 Analise meus perfis abaixo e devolva, para cada canal: (1) o que impede um paciente ou colega de confiar, (2) o que impede de agendar ou encaminhar, (3) a correção sugerida. Depois escreva uma bio de Instagram de até 150 caracteres, um título de LinkedIn de até 220 caracteres e a descrição do Perfil da Empresa no Google. Respeite as normas do [CONSELHO], não use superlativos nem promessas de resultado e não invente títulos ou números.
@@ -251,7 +251,7 @@ Proponha uma versão corrigida. Lembre que esta revisão não substitui a consul
 Texto: [COLE AQUI]` }
   ];
 
-  // Anexo A do livro: glossário (75 termos)
+  // Anexo A do guia: glossário (75 termos)
   const GLOSSARIO = [
     ["Adesão", "Quanto o paciente segue o tratamento proposto até a alta"],
     ["Advantage+", "Opções automatizadas da Meta para público, posicionamento e criativo"],
@@ -262,7 +262,7 @@ Texto: [COLE AQUI]` }
     ["Carrossel", "Post com várias imagens que o usuário desliza"],
     ["Central de Contas", "Área da Meta que liga Instagram, Facebook e WhatsApp da mesma pessoa ou empresa"],
     ["CFM, CFO, CFP, COFFITO, CFN", "Conselhos federais de Medicina, Odontologia, Psicologia, Fisioterapia e Terapia Ocupacional, e Nutricionistas"],
-    ["CliniLoop", "Aplicativo de CRM que acompanha este livro: registra pacientes, colegas e campanhas e leva os prompts para o dia a dia da clínica"],
+    ["CliniLoop", "Aplicativo de CRM que acompanha este guia: registra pacientes, colegas e campanhas e leva os prompts para o dia a dia da clínica"],
     ["Conta profissional", "Tipo de conta do Instagram e do TikTok que libera estatísticas, botões de contato e anúncios"],
     ["Contrarreferência", "Retorno técnico ao colega que encaminhou o paciente"],
     ["Conversão offline", "Resultado que acontece fora do site (agendamento, comparecimento) e é informado à plataforma de anúncios"],
@@ -273,7 +273,7 @@ Texto: [COLE AQUI]` }
     ["CTR", "Taxa de cliques: cliques divididos por impressões"],
     ["Destaques", "Stories fixados no perfil do Instagram, organizados por assunto"],
     ["Direct", "Mensagens privadas do Instagram"],
-    ["Efeito Di", "Curso de Instagram de Diandra Santos, usado na Parte 4 por meio de síntese autoral adaptada a clínicas"],
+    ["Escada de crescimento", "Os sete degraus do crescimento de um perfil: entender a plataforma, definir a promessa, montar a vitrine, produzir com rotina, ler os números, combinar formatos e fixar metas"],
     ["Em destaque", "Seção do LinkedIn que exibe provas: artigos, palestras, entrevistas"],
     ["Envio", "Compartilhamento de um post por mensagem direta, um dos sinais mais fortes do Instagram"],
     ["Funil", "Sequência de etapas da primeira atenção até a alta"],
@@ -288,9 +288,9 @@ Texto: [COLE AQUI]` }
     ["Mediana de views", "Valor central das views de peças comparáveis; mais robusta que a média"],
     ["Meta", "Empresa dona do Instagram, do Facebook e do WhatsApp"],
     ["Meta Business Suite", "Painel gratuito da Meta para gerenciar posts, mensagens e anúncios de Instagram e Facebook"],
-    ["Método Foguete", "Método de crescimento de perfis em sete etapas de Pat Machadu, criado para o YouTube e adaptado ao Instagram"],
+    ["Decisões (as sete)", "Atenção, confiança, indicação, contato, agendamento, comparecimento e adesão: as decisões que o paciente toma em sequência até seguir o tratamento"],
     ["No-show", "Falta do paciente sem aviso"],
-    ["Oceano Azul", "Espaço de mercado ainda não disputado, criado por uma proposta de valor própria; conceito de W. Chan Kim e Renée Mauborgne"],
+    ["Oceano Azul", "Espaço de mercado ainda não disputado, criado por uma proposta de valor própria; conceito de estratégia de mercado"],
     ["Oceano Vermelho", "Mercado já existente, em que todos disputam os mesmos clientes com os mesmos argumentos"],
     ["Orçamento diário", "Valor máximo que a plataforma pode gastar por dia com um anúncio"],
     ["Palavra-chave negativa", "Termo que impede o anúncio do Google de aparecer em buscas irrelevantes"],
@@ -298,13 +298,13 @@ Texto: [COLE AQUI]` }
     ["Pixel", "Código da Meta no site que mede ações dos visitantes"],
     ["Plano proposto", "Tratamento apresentado ao paciente e ainda não iniciado"],
     ["Posicionamento (anúncio)", "Lugar em que o anúncio aparece: Feed, Stories, Reels, busca"],
-    ["Prompt", "Texto que você escreve para pedir algo a uma ferramenta de inteligência artificial; neste livro, vem pronto no box verde"],
+    ["Prompt", "Texto que você escreve para pedir algo a uma ferramenta de inteligência artificial; neste guia, vem pronto na caixa verde"],
     ["Prontuário", "Registro clínico do paciente, regido pelo conselho; não é o CRM"],
     ["Proposta de valor", "Frase que diz quem você ajuda e com o quê; na saúde, promete informação e atendimento, não resultado"],
     ["Próximo passo", "A próxima ação com data registrada no CRM; o campo mais importante"],
     ["Quadro recorrente", "Série com formato fixo e uma pergunta por episódio, como \"Pergunta do consultório\""],
     ["Quatro ações", "Ferramenta do Oceano Azul: eliminar, reduzir, elevar e criar em relação ao padrão do setor"],
-    ["R.O.A.S.", "No curso Efeito Di, método de criação de roteiros: Roteiro, Observação, Adaptação, Substituição"],
+    ["Ciclo de adaptação", "Método de criação de roteiros a partir de referências: Referência, Observação, Adaptação, Troca. Não é ROAS"],
     ["Reaproveitamento", "Transformar aula, podcast, entrevista ou bastidor em várias peças com profundidades diferentes"],
     ["Reels", "Vídeos curtos verticais do Instagram, principal formato de descoberta"],
     ["Remarketing", "Anúncio para quem já interagiu; restrito na saúde"],
