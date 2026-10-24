@@ -120,15 +120,16 @@ section.sec{break-before:page;}
 h1.sec-title{font-size:30pt;font-weight:600;margin:0 0 6mm;}
 
 /* capa */
-.cover{page:cover;break-after:page;height:297mm;width:210mm;background:linear-gradient(160deg,#14303A 0%,#185860 100%);color:var(--paper);padding:30mm 24mm 24mm;display:flex;flex-direction:column;position:relative;overflow:hidden;}
+.cover{page:cover;break-after:page;height:297mm;width:210mm;background:linear-gradient(160deg,#14303A 0%,#185860 100%);color:var(--paper);padding:20mm 24mm 22mm;display:flex;flex-direction:column;position:relative;overflow:hidden;}
 .cover::after{content:"";position:absolute;right:-45mm;bottom:-45mm;width:150mm;height:150mm;border-radius:50%;border:2.2mm solid rgba(244,191,164,.22);}
 .cover::before{content:"";position:absolute;right:-20mm;bottom:-20mm;width:100mm;height:100mm;border-radius:50%;border:2.2mm solid rgba(244,191,164,.14);}
-.cover .logo{width:24mm;height:24mm;margin-bottom:12mm;}
-.cover .logo svg{width:100%;height:100%;}
+.cover .art{position:absolute;left:0;top:6mm;width:210mm;height:190mm;}
+.cover .ctext{margin-top:162mm;position:relative;z-index:2;}
+.cover .sub2{font:400 10.4pt/1.6 Plex,sans-serif;color:#B9CDD1;max-width:130mm;margin:5mm 0 0;}
 .cover .eyebrow{font:600 8.4pt Plex;letter-spacing:.2em;text-transform:uppercase;color:var(--peach);margin:0 0 7mm;}
-.cover h1{font:600 52pt/1.02 Fraunces,serif;color:var(--paper);margin:0 0 8mm;}
+.cover h1{font:600 54pt/1.0 Fraunces,serif;color:var(--paper);margin:0 0 6mm;}
 .cover h1 em{font-style:italic;font-weight:400;color:var(--peach);}
-.cover .sub{font:400 16pt/1.5 Fraunces,serif;max-width:125mm;color:#DDE8EA;margin:0;}
+.cover .sub{font:400 15pt/1.4 Fraunces,serif;max-width:140mm;color:#DDE8EA;margin:0;}
 .cover .foot{margin-top:auto;font:500 8.4pt Plex;letter-spacing:.12em;text-transform:uppercase;color:#A9C3C8;position:relative;z-index:2;}
 .cover .foot b{color:var(--peach);font-weight:600;}
 
@@ -215,14 +216,37 @@ table.plano td.min{white-space:nowrap;color:var(--soft);}
 
 
 def cover_html():
-    logo = (REPO / 'cliniloop-logo.svg').read_text(encoding='utf-8')
-    logo = re.sub(r'width="512" height="512" ', '', logo)
-    logo = logo.replace('#1F6F78', '#F4BFA4').replace('#C2502F', '#FFFFFF').replace('#F4BFA4"/></svg>', '#14303A"/></svg>')
-    return f'''<section class="cover"><div class="logo">{logo}</div>
-<p class="eyebrow">Guia digital + app de CRM</p>
-<h1>Guia<br><em>CliniLoop</em></h1>
-<p class="sub">Conhecimentos dirigidos e um app de CRM para profissionais de saúde atraírem pacientes e colegas com ética, método e registro.</p>
-<p class="foot"><b>Edição 2026</b> · versão beta · cliniloop</p></section>'''
+    art = '''<svg class="art" viewBox="0 0 210 190" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><radialGradient id="gl" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#F4BFA4" stop-opacity=".30"/><stop offset="1" stop-color="#F4BFA4" stop-opacity="0"/></radialGradient></defs>
+<circle cx="105" cy="98" r="86" fill="url(#gl)"/>
+<g stroke="#F4BFA4" stroke-opacity=".22" fill="none" stroke-width=".5">
+<path d="M0 40H34L44 50H70M210 150H176L166 160H140M0 150H28L38 160H60M210 40H182L172 30H150M105 0V22M105 190V176"/>
+<path d="M18 80H42M168 80H192M18 120H40M170 120H194"/></g>
+<g fill="#F4BFA4" fill-opacity=".5"><circle cx="70" cy="50" r="1.4"/><circle cx="140" cy="160" r="1.4"/><circle cx="60" cy="160" r="1.4"/><circle cx="150" cy="30" r="1.4"/><circle cx="42" cy="80" r="1.4"/><circle cx="168" cy="80" r="1.4"/></g>
+<circle cx="105" cy="98" r="62" fill="none" stroke="#F4BFA4" stroke-opacity=".55" stroke-width=".8" stroke-dasharray="1.2 2.4"/>
+<circle cx="105" cy="98" r="50" fill="#0F2830" stroke="#F4BFA4" stroke-width="1.2"/>
+<g><rect x="94" y="66" width="22" height="64" rx="6" fill="#FFFFFF"/><rect x="73" y="87" width="64" height="22" rx="6" fill="#FFFFFF"/>
+<rect x="94" y="66" width="22" height="64" rx="6" fill="none" stroke="#1F6F78" stroke-width=".8"/></g>
+<path d="M58 98H84L90 86L97 114L104 70L112 124L119 98H132L142 86L150 90L160 70" fill="none" stroke="#C2502F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M153 68L162 67L161 76" fill="none" stroke="#C2502F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<g stroke="#F4BFA4" stroke-opacity=".6" stroke-width=".7"><path d="M105 30V48M105 148V166M48 98H55M155 98H162"/><path d="M60 58L72 66M150 58L138 66M60 138L72 130M150 138L138 130"/></g>
+<g fill="#14303A" stroke="#F4BFA4" stroke-width="1.2">
+<circle cx="105" cy="22" r="11"/><circle cx="46" cy="52" r="11"/><circle cx="164" cy="52" r="11"/><circle cx="40" cy="132" r="11"/><circle cx="170" cy="132" r="11"/><circle cx="105" cy="174" r="11"/></g>
+<g fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M105 14.5L107 20L112.5 22L107 24L105 29.5L103 24L97.5 22L103 20Z" fill="#F4BFA4" stroke="none"/>
+<path d="M40 47H52Q53.5 47 53.5 48.5V54.5Q53.5 56 52 56H46L42 59V56H40Q38.5 56 38.5 54.5V48.5Q38.5 47 40 47Z"/><path d="M42 51.5H50" stroke-width="1.1"/>
+<path d="M157 46H171L166.5 52V58L162.5 56V52Z"/>
+<path d="M33 128V133Q33 138 38 138Q43 138 43 133V128M35 127V129M41 127V129M38 138V142Q38 145 42 145" stroke-width="1.3"/><circle cx="44" cy="145" r="1.6" fill="#FFFFFF"/>
+<path d="M170 140.5C161 134 163 127 167 127C169 127 170 128.5 170 129.5C170 128.5 171 127 173 127C177 127 179 134 170 140.5Z" fill="#C2502F" stroke="none"/>
+<path d="M98 178V172M103 178V168M108 178V174M113 178V166"/></g>
+<g fill="#F4BFA4"><circle cx="30" cy="30" r="2"/><circle cx="182" cy="108" r="2"/><circle cx="26" cy="108" r="2"/><circle cx="188" cy="170" r="2"/></g>
+</svg>'''
+    return f'''<section class="cover">{art}
+<div class="ctext"><p class="eyebrow">Saúde · marketing digital · tecnologia</p>
+<h1>Prompt<br><em>do Sim</em></h1>
+<p class="sub">Guia digital para o sucesso do profissional da saúde.</p>
+<p class="sub2">Conhecimentos dirigidos e o app de CRM CliniLoop, para atrair pacientes e colegas com ética, método e inteligência artificial.</p></div>
+<p class="foot"><b>Edição 2026</b> · versão beta · app CliniLoop</p></section>'''
 
 
 def build_html(pages):
