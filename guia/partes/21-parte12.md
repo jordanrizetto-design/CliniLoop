@@ -12,7 +12,8 @@ Esta parte é o manual de uso do app. Cada ferramenta nasceu de uma parte do gui
 
 ## Como o app se organiza
 
-- **Hoje.** A primeira tela. Mostra a próxima ação, leva você até o fim dela e só então pergunta qual é a seguinte. Se faltar algum dado do consultório, lista os campos que faltam, em vez de pedir tudo de novo.
+- **Jornada em seis fases.** O app conduz você em ordem, e cada fase abre com uma mensagem que explica o porquê: **1 Seu perfil** (consultório, paciente ideal e redes que você já usa), **2 Seu objetivo**, **3 Diagnóstico** (o que você já tem e o que criar, em ordem), **4 Plano e campanhas** (passo a passo e uma sugestão de campanha por mídia), **5 WhatsApp e CRM** (checklist, links com origem e o modelo de funil) e **6 Avaliar e ajustar** (taxas, gargalo e a ação que mais vale a pena).
+- **Hoje.** A tela de ação, a partir da fase 4. Mostra a próxima ação, leva você até o fim dela e só então pergunta qual é a seguinte. Se faltar algum dado do consultório, lista os campos que faltam, em vez de pedir tudo de novo.
 - **Trilha por objetivo.** Ao escolher um objetivo (encher a agenda, aumentar o ticket, ganhar autoridade, atender online ou fidelizar), o app monta um caminho passo a passo, com o critério de "pronto quando" de cada passo.
 - **Modo guiado e modo completo.** No guiado, aparecem só as ferramentas do passo atual. No completo, todas ficam visíveis. Você alterna quando quiser.
 - **Perfil do consultório.** Preenchido uma única vez: profissão, registro, especialidade, cidade, serviços, público ideal e temas de conteúdo. Todos os prompts saem já com esses dados e com as regras do seu conselho.

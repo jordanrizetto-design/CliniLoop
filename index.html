@@ -756,6 +756,63 @@
   .trilha-steps li.tr-opcao{border:0; padding:0; background:none;}
   .falta-lista{margin:8px 0 0; padding-left:18px; display:grid; gap:4px;}
 
+  /* ===== Jornada em 6 fases ===== */
+  .jornada{margin-bottom:22px;}
+  .jor-steps{list-style:none; display:flex; gap:6px; padding:0; margin:0 0 12px; overflow-x:auto;}
+  .jor-steps li{flex:1 1 0; min-width:92px;}
+  .jor-steps button{width:100%; display:flex; align-items:center; gap:8px; padding:9px 10px; border-radius:10px; border:1px solid var(--line); background:#fff; color:var(--ink); font:600 .8rem var(--sans, inherit); cursor:pointer; text-align:left;}
+  .jor-steps .n{display:inline-grid; place-items:center; width:22px; height:22px; border-radius:50%; background:#E8EEF0; font:600 .72rem var(--mono); flex:none;}
+  .jor-steps .done .n{background:var(--teal); color:#fff;}
+  .jor-steps .cur .n{background:var(--gold, #E0A458); color:#14303A;}
+  .jor-steps .view button{border-color:var(--teal); box-shadow:0 0 0 2px rgba(31,111,120,.18);}
+  .jor-steps button:disabled{opacity:.5; cursor:not-allowed;}
+  .jor-card{background:#fff; border:1px solid var(--line); border-left:5px solid var(--teal); border-radius:14px; padding:22px 24px; color:var(--ink);}
+  .jor-eyebrow{font:600 .72rem var(--mono); letter-spacing:.14em; text-transform:uppercase; color:var(--rust, #C2502F); margin:0 0 8px;}
+  .jor-card h3{font-size:1.35rem; line-height:1.3; margin:0 0 10px; color:var(--ink);}
+  .jor-why{margin:0 0 14px; color:#3b5560; font-size:.95rem;}
+  .jor-sub{color:#5d737b; font-size:.88rem; margin:6px 0;}
+  .jor-foot{margin-top:16px;}
+  .jor-cols{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:8px 0;}
+  @media (max-width:760px){ .jor-cols{grid-template-columns:1fr;} }
+  .jor-col{border:1px solid var(--line); border-radius:12px; padding:14px 16px;}
+  .jor-col-hl{background:#F1F8F8; border-color:var(--teal);}
+  .jor-col h4{margin:0 0 2px; font-size:1rem;}
+  .jor-list{margin:8px 0 0; padding-left:20px;} ul.jor-list{list-style:none; padding:0;}
+  .jor-list li{margin:0 0 12px; display:flex; flex-direction:column; gap:3px; align-items:flex-start;}
+  .jor-list li span{font-size:.86rem; color:#4a6670;}
+  .jor-later{font-size:.9rem; color:#4a6670;}
+  .jor-notes{margin:10px 0 0; padding-left:20px; font-size:.9rem; color:#34505a;}
+  .jor-camps{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:12px; margin:8px 0;}
+  .jor-camp{border:1px solid var(--line); border-radius:12px; padding:14px; display:flex; flex-direction:column; gap:6px; align-items:flex-start;}
+  .jor-camp h5{margin:0; font-size:1rem;} .jor-camp small{color:var(--rust,#C2502F); font-weight:600;} .jor-camp p{margin:0; font-size:.88rem; color:#34505a; flex:1;}
+  .jor-check{list-style:none; padding:0; margin:10px 0;}
+  .jor-check li{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:9px 0; border-bottom:1px solid var(--line);}
+  .jor-check li.ok span{text-decoration:line-through; color:#7f939a;}
+  .jor-check label{display:flex; gap:8px; align-items:flex-start; font-size:.92rem; cursor:pointer;}
+  .jor-meter{height:8px; background:#E8EEF0; border-radius:6px; overflow:hidden;} .jor-meter span{display:block; height:100%; background:var(--teal);}
+  .jor-links{display:grid; gap:8px; margin:8px 0;}
+  .jor-links div{display:grid; grid-template-columns:130px 1fr auto; gap:8px; align-items:center; font-size:.82rem;}
+  .jor-links code{overflow:hidden; text-overflow:ellipsis; white-space:nowrap; background:#F1F5F6; padding:5px 8px; border-radius:6px;}
+  @media (max-width:640px){ .jor-links div{grid-template-columns:1fr;} }
+  .jor-funil{list-style:none; counter-reset:f; padding:0; margin:8px 0; display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:8px;}
+  .jor-funil li{counter-increment:f; border:1px solid var(--line); border-radius:10px; padding:10px 12px; font-size:.85rem; display:flex; flex-direction:column; gap:2px;}
+  .jor-funil li::before{content:counter(f); font:600 .7rem var(--mono); color:var(--teal);}
+  .jor-aval{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin:8px 0;}
+  .jor-aval div{border:1px solid var(--line); border-radius:10px; padding:12px; display:flex; flex-direction:column; gap:2px;}
+  .jor-aval b{font-size:1.6rem; color:var(--teal);} .jor-aval small,.jor-aval span{font-size:.78rem; color:#5d737b;}
+  .jor-ajuste{background:#FFF6EC; border-left:4px solid var(--gold,#E0A458); border-radius:8px; padding:12px 16px; margin:10px 0;}
+  .jor-ajuste p{margin:0 0 8px;} .jor-actions{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;}
+  /* Estímulo em cada bloco do preenchimento */
+  .stim{background:#EAF4F5; border:1px dashed var(--teal); border-radius:12px; padding:14px 16px; margin:0 0 16px; color:var(--ink);}
+  .stim-msg{margin:0 0 6px; font-weight:600;} .stim-why{margin:0 0 10px; font-size:.88rem; color:#34505a;}
+  .stim.on{background:#F4F8F8; border-style:solid; padding:8px 14px;} .stim.on .stim-why{display:none;}
+  .icp-block{background:#FAFCFC; border:1px solid var(--line); border-radius:12px; padding:14px 16px; margin:12px 0;}
+  .icp-block h5{margin:0 0 8px; font-size:1rem;}
+  /* O painel de perfil mostra só o que a fase pede */
+  #config[data-jf="1"] .onb-obj, #config[data-jf="2"] .onb-perfil{display:none;}
+  #config.jor-wait .onb-body{display:none;}
+  #config[data-jf="all"] .stim{display:none;}
+
 </style>
 </head>
 <body>
@@ -827,6 +884,7 @@
 
   <section id="painel" class="painel-sec">
     <div class="wrap">
+      <div class="jornada" id="jornada" aria-label="Sua jornada"></div>
       <div class="hoje" id="hoje" aria-labelledby="hoje-titulo">
         <div class="hoje-head">
           <h2 id="hoje-titulo">Hoje</h2>
@@ -877,39 +935,16 @@
         <p class="cfg-summary" id="cfg-summary" hidden></p>
 
         <div class="onb-body" id="onb-body">
-          <section class="onb-step" aria-labelledby="onb1">
+          <section class="onb-step onb-perfil" id="onb-p1" aria-labelledby="onb2">
             <div class="step-head">
               <span class="step-n">1</span>
-              <div>
-                <h4 id="onb1">Qual resultado você quer alcançar?</h4>
-                <p>Escolha o objetivo dos próximos 90 dias. Ele define as prioridades do funil e a ordem das próximas ações.</p>
-              </div>
-            </div>
-            <fieldset class="field">
-              <legend>Objetivo principal</legend>
-              <div class="type-grid obj-grid" role="radiogroup">
-                <label class="type-card"><input type="radio" name="objetivo" value="agenda" checked><span class="t-name">Encher a agenda</span><span class="t-hint">Mais primeiras consultas</span></label>
-                <label class="type-card"><input type="radio" name="objetivo" value="ticket"><span class="t-name">Tratamentos de maior valor</span><span class="t-hint">Atrair o caso certo</span></label>
-                <label class="type-card"><input type="radio" name="objetivo" value="autoridade"><span class="t-name">Virar referência no tema</span><span class="t-hint">Autoridade e influência</span></label>
-                <label class="type-card"><input type="radio" name="objetivo" value="online"><span class="t-name">Atender online</span><span class="t-hint">Pacientes de outras cidades</span></label>
-                <label class="type-card"><input type="radio" name="objetivo" value="fidelizar"><span class="t-name">Fidelizar e gerar indicações</span><span class="t-hint">Pacientes e colegas</span></label>
-              </div>
-            </fieldset>
-            <div class="field">
-              <label for="cfg-meta">Em uma frase: qual resultado, para qual serviço e em quanto tempo? *</label>
-              <input type="text" id="cfg-meta" name="metaFrase" placeholder="Ex: 8 novas avaliações de implante por mês, em Sorocaba, nos próximos 90 dias">
-              <small>Quanto mais concreto, melhores as recomendações. Não use dados de pacientes reais.</small>
-            </div>
-          </section>
-
-          <section class="onb-step" aria-labelledby="onb2">
-            <div class="step-head">
-              <span class="step-n">2</span>
               <div>
                 <h4 id="onb2">Configure seu consultório</h4>
                 <p>O tipo de profissional define as regras do conselho que todos os geradores respeitam e a ordem recomendada das ferramentas (Partes 1 e 2 do guia).</p>
               </div>
             </div>
+            <div class="stim" id="stim-prof" data-foco="cfg-nome"><p class="stim-msg">Vamos começar por você. Preencha o seu consultório com calma, são poucos minutos.</p><p class="stim-why"><b>Por que isso importa:</b> todo texto, anúncio e mensagem sairá com o seu registro e as regras do seu conselho, sem você precisar repetir nada.</p><button type="button" class="btn btn-teal btn-sm stim-go">Vamos em frente</button></div>
+
             <fieldset class="field">
               <legend>Tipo de profissional *</legend>
               <div class="type-grid prof-grid" role="radiogroup">
@@ -987,14 +1022,16 @@
             </div>
           </section>
 
-          <section class="onb-step" aria-labelledby="onb3">
+          <section class="onb-step onb-perfil" id="onb-p2" aria-labelledby="onb3">
             <div class="step-head">
-              <span class="step-n">3</span>
+              <span class="step-n">2</span>
               <div>
                 <h4 id="onb3">Perfil do consultório</h4>
                 <p>Preencha uma vez: profissão, registro, especialidade, cidade, serviços, público ideal e temas de conteúdo. Como diz a Parte 12 do guia, ele alimenta todas as ferramentas, o rastreador e o playbook.</p>
               </div>
             </div>
+            <div class="stim" id="stim-servicos" data-foco="cfg-servicos"><p class="stim-msg">Agora o que você oferece e para quem. Aqui começamos a identificar o seu cliente ideal.</p><p class="stim-why"><b>Por que isso importa:</b> isso trará pacientes que se importam com a sua proposta de valor, em vez de curiosos que não vão agendar.</p><button type="button" class="btn btn-teal btn-sm stim-go">Vamos em frente</button></div>
+
             <div class="field">
               <label for="cfg-servicos">Serviços que você quer divulgar *</label>
               <input type="text" id="cfg-servicos" name="servicos" placeholder="Separe por vírgula. Ex: implantes, lentes de contato dental, clareamento">
@@ -1022,8 +1059,33 @@
                 <input type="text" id="cfg-arroba" name="arroba" placeholder="Ex: @dra.analima">
               </div>
             </div>
+            <div class="icp-block" id="icp-block">
+              <h5>Seu paciente ideal (ICP)</h5>
+              <div class="row2">
+                <div class="field">
+                  <label for="cfg-icp-dor">Qual a principal dor ou dúvida dele? *</label>
+                  <input type="text" id="cfg-icp-dor" name="icpDor" placeholder="Ex: tenho medo de perder o dente e não sei se implante dói">
+                </div>
+                <div class="field">
+                  <label for="cfg-icp-valoriza">O que ele valoriza na hora de escolher?</label>
+                  <input type="text" id="cfg-icp-valoriza" name="icpValoriza" placeholder="Ex: explicação clara, atendimento sem pressa, perto de casa">
+                </div>
+              </div>
+              <div class="row2">
+                <div class="field">
+                  <label for="cfg-icp-objecao">Qual a objeção mais comum?</label>
+                  <input type="text" id="cfg-icp-objecao" name="icpObjecao" placeholder="Ex: acha caro, tem medo, não tem tempo">
+                </div>
+                <div class="field">
+                  <label for="cfg-icp-onde">Onde ele procura informação?</label>
+                  <input type="text" id="cfg-icp-onde" name="icpOnde" placeholder="Ex: Google, Instagram, indicação do clínico geral">
+                </div>
+              </div>
+              <small>Responda sobre o perfil típico, sem dados de pacientes reais.</small>
+            </div>
+            <div class="stim" id="stim-redes" data-foco="cfg-arroba"><p class="stim-msg">Agora vamos olhar para as suas redes atuais, sem julgamento: marque o que você já usa.</p><p class="stim-why"><b>Por que isso importa:</b> o diagnóstico seguinte parte do que existe. Assim indicamos só o que falta criar, sem refazer o que já funciona.</p><button type="button" class="btn btn-teal btn-sm stim-go">Vamos em frente</button></div>
             <fieldset class="field">
-              <legend>Canais que você já usa</legend>
+              <legend>Redes e canais que você já usa</legend>
               <div class="chip-grid">
                 <label class="chip"><input type="checkbox" name="canais" value="Instagram" checked><span>Instagram</span></label>
                 <label class="chip"><input type="checkbox" name="canais" value="WhatsApp Business"><span>WhatsApp Business</span></label>
@@ -1063,10 +1125,48 @@
                 </select>
               </div>
             </div>
+            <div class="row2">
+              <div class="field">
+                <label for="cfg-whatsapp">WhatsApp do consultório (com DDD)</label>
+                <input type="text" id="cfg-whatsapp" name="whatsapp" placeholder="Ex: 11 91234-5678">
+                <small>Usado só para montar os links com origem na fase WhatsApp e CRM.</small>
+              </div>
+              <div class="field">
+                <label for="cfg-site">Site, link na bio ou página de agendamento</label>
+                <input type="text" id="cfg-site" name="site" placeholder="Ex: clinicasorrisovivo.com.br">
+              </div>
+            </div>
             <div class="field">
               <label for="cfg-sobre">Formação, experiência e diferenciais *</label>
               <textarea id="cfg-sobre" name="sobre" rows="4" placeholder="Ex: 12 anos de formada, especialização em implantes, escaneamento digital, atendimento sem pressa; pacientes dizem que explico tudo com calma"></textarea>
               <small>Não inclua nomes ou dados de pacientes.</small>
+            </div>
+          </section>
+
+          <section class="onb-step onb-obj" id="onb-obj" aria-labelledby="onb1">
+            <div class="step-head">
+              <span class="step-n">3</span>
+              <div>
+                <h4 id="onb1">Qual resultado você quer alcançar?</h4>
+                <p>Agora que conhecemos você e o seu paciente ideal, escolha o resultado dos próximos 90 dias. Ele define as prioridades do funil e a ordem das próximas ações.</p>
+              </div>
+            </div>
+            <div class="stim" id="stim-obj" data-foco="cfg-meta"><p class="stim-msg">Perfil pronto. Agora a pergunta mais importante: qual resultado você quer alcançar?</p><p class="stim-why"><b>Por que isso importa:</b> um objetivo claro decide o que criar primeiro e o que deixar para depois. Sem ele, tudo parece urgente.</p><button type="button" class="btn btn-teal btn-sm stim-go">Vamos em frente</button></div>
+
+            <fieldset class="field">
+              <legend>Objetivo principal</legend>
+              <div class="type-grid obj-grid" role="radiogroup">
+                <label class="type-card"><input type="radio" name="objetivo" value="agenda" checked><span class="t-name">Encher a agenda</span><span class="t-hint">Mais primeiras consultas</span></label>
+                <label class="type-card"><input type="radio" name="objetivo" value="ticket"><span class="t-name">Tratamentos de maior valor</span><span class="t-hint">Atrair o caso certo</span></label>
+                <label class="type-card"><input type="radio" name="objetivo" value="autoridade"><span class="t-name">Virar referência no tema</span><span class="t-hint">Autoridade e influência</span></label>
+                <label class="type-card"><input type="radio" name="objetivo" value="online"><span class="t-name">Atender online</span><span class="t-hint">Pacientes de outras cidades</span></label>
+                <label class="type-card"><input type="radio" name="objetivo" value="fidelizar"><span class="t-name">Fidelizar e gerar indicações</span><span class="t-hint">Pacientes e colegas</span></label>
+              </div>
+            </fieldset>
+            <div class="field">
+              <label for="cfg-meta">Em uma frase: qual resultado, para qual serviço e em quanto tempo? *</label>
+              <input type="text" id="cfg-meta" name="metaFrase" placeholder="Ex: 8 novas avaliações de implante por mês, em Sorocaba, nos próximos 90 dias">
+              <small>Quanto mais concreto, melhores as recomendações. Não use dados de pacientes reais.</small>
             </div>
           </section>
 
@@ -2556,6 +2656,7 @@
   const BETA_KEY = PREFIX + 'beta.v1';
   const reveladas = new Set();
   const TRILHA_KEY = PREFIX + 'trilha.v1';
+  const JOR_KEY = PREFIX + 'jornada.v1';
   // "Pronto quando": o critério que mostra ao usuário onde cada passo termina.
   const TRILHA_FIM = {
     publico: 'você tem 10 dúvidas reais dos pacientes e a persona principal guardada.',
@@ -3537,7 +3638,8 @@ Esta revisão não substitui a consulta à norma vigente.`,
       atendimento: fd.getAll('atendimento'), pagamento: t('pagamento') || 'particular', equipe: t('equipe'),
       servicos: t('servicos'), publico: t('publico'), transformacao: t('transformacao'), baldes: t('baldes'), arroba: t('arroba'),
       canais: fd.getAll('canais'), tempo: t('tempo') || '2a3', produtor: t('produtor') || 'eu', camera: t('camera') || 'medio',
-      sobre: t('sobre'), plano: t('plano') || 'free'
+      sobre: t('sobre'), plano: t('plano') || 'free',
+      icpDor: t('icpDor'), icpValoriza: t('icpValoriza'), icpObjecao: t('icpObjecao'), icpOnde: t('icpOnde'), whatsapp: t('whatsapp'), site: t('site')
     };
   }
   function applyConfig(c) {
@@ -5291,9 +5393,12 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
   const cfgEdit = document.getElementById('cfg-edit');
   function onbComplete() { return camposFaltando().length === 0; }
   // Campos obrigatórios do "Comece aqui", na ordem em que o usuário os encontra.
-  function camposFaltando() {
-    const L = [['cfg-meta', 'metaFrase', 'o resultado que você quer (passo 1)'], ['prof', 'profissional', 'o tipo de profissional (passo 2)'], ['cfg-registro', 'registro', 'o registro no conselho (passo 2)'],
-      ['cfg-espec', 'especialidade', 'a especialidade (passo 2)'], ['cfg-cidade', 'cidade', 'cidade e bairro (passo 2)'], ['cfg-servicos', 'servicos', 'os serviços que quer divulgar (passo 3)'], ['cfg-sobre', 'sobre', 'formação e diferenciais (passo 3)']];
+  function camposFaltando(fase) {
+    const P = [['prof', 'profissional', 'o tipo de profissional'], ['cfg-registro', 'registro', 'o registro no conselho'],
+      ['cfg-espec', 'especialidade', 'a especialidade'], ['cfg-cidade', 'cidade', 'cidade e bairro'], ['cfg-servicos', 'servicos', 'os serviços que quer divulgar'],
+      ['cfg-publico', 'publico', 'o público ideal'], ['cfg-icp-dor', 'icpDor', 'a principal dor ou dúvida do paciente ideal'], ['cfg-sobre', 'sobre', 'formação e diferenciais']];
+    const O = [['cfg-meta', 'metaFrase', 'o resultado que você quer (objetivo)']];
+    const L = fase === 1 ? P : (fase === 2 ? O : P.concat(O));
     return L.filter((x) => !String(cfg[x[1]] || '').trim()).map((x) => ({ id: x[0], txt: x[2] }));
   }
   function syncCollapseUI() {
@@ -5312,7 +5417,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     setTimeout(() => el.focus({ preventScroll: true }), 250);
   }
   document.getElementById('cfg-done').addEventListener('click', () => {
-    const faltam = camposFaltando();
+    const faltam = camposFaltando(typeof jorCfgFase === 'function' ? jorCfgFase() : undefined);
     const box = document.getElementById('obj-hint');
     document.querySelectorAll('#onb-body .invalid').forEach((x) => x.classList.remove('invalid'));
     if (faltam.length) {
@@ -5331,6 +5436,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
       return;
     }
     box.hidden = true;
+    if (typeof jorAvancar === 'function' && jorAvancar()) return;
     configEl.classList.add('collapsed'); syncCollapseUI();
     hojeIdx = 0;
     renderHoje();
@@ -6166,7 +6272,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     n.hidden = false;
   }
 
-  function renderExtras() { applyModo(); renderBeta(); }
+  function renderExtras() { applyModo(); renderBeta(); if (typeof renderJornada === 'function') renderJornada(); }
 
   // Feedback de teste: sem dados de pacientes, vai por GitHub (issue) ou por cópia do texto.
   (function feedback() {
@@ -6242,6 +6348,251 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
   renderPlano();
 
   renderExtras();
+  // ===================== Jornada em 6 fases =====================
+  // Perfil completo (consultório, ICP, redes) → objetivo → diagnóstico → plano e campanhas por mídia → WhatsApp e CRM → avaliar e ajustar.
+  // Cada fase abre com uma mensagem de estímulo e o motivo de estar ali.
+  var JOR_FASES = [
+    { n: 1, nome: 'Seu perfil', curto: 'Perfil', msg: 'Vamos montar o seu perfil completo: consultório, paciente ideal e as redes que você já usa. Leva poucos minutos.', why: 'Com isso, cada texto, anúncio e mensagem sai com o seu registro, as regras do seu conselho e a linguagem do seu paciente, sem você repetir nada.' },
+    { n: 2, nome: 'Seu objetivo', curto: 'Objetivo', msg: 'Perfil pronto! Agora a pergunta que organiza tudo: qual resultado você quer alcançar nos próximos 90 dias?', why: 'Um objetivo claro decide o que criar primeiro e o que deixar para depois. Sem ele, tudo parece urgente e nada avança.' },
+    { n: 3, nome: 'Diagnóstico', curto: 'Diagnóstico', msg: 'Agora vamos olhar o que você já tem e o que ainda precisa ser criado para chegar ao seu objetivo.', why: 'Criar só o necessário poupa o seu tempo e evita refazer o que já funciona. É o atalho mais curto entre onde você está e onde quer chegar.' },
+    { n: 4, nome: 'Plano e campanhas', curto: 'Plano', msg: 'Hora de agir. Vou conduzir você passo a passo, e mostrar a campanha certa para cada mídia.', why: 'Passos pequenos, na ordem certa, evitam a paralisia. Cada campanha nasce do seu paciente ideal, não de um modelo genérico.' },
+    { n: 5, nome: 'WhatsApp e CRM', curto: 'WhatsApp e CRM', msg: 'Os contatos vão chegar. Vamos preparar o WhatsApp e o CRM para que nenhum se perca.', why: 'A maior perda de pacientes acontece entre o "oi" e a consulta. Resposta rápida e registro de cada contato recuperam agenda que hoje se perde em silêncio.' },
+    { n: 6, nome: 'Avaliar e ajustar', curto: 'Avaliação', msg: 'Chegou a hora de ler os resultados e ajustar o rumo, sem achismo.', why: 'O que você mede, você melhora. Olhar o funil mostra onde está o gargalo e qual é a única ação que mais vale a pena agora.' }
+  ];
+  function jorGet() {
+    let j = storeGet(JOR_KEY, null);
+    if (!j) {
+      const old = storeGet(STORE_KEY, null);
+      if (old && old.profissional && old.metaFrase) j = { fase: 4, view: 4, seen: { 1: 1, 2: 1, 3: 1, 4: 1 }, wa: {}, mig: true };
+      else j = { fase: 1, view: 1, seen: {}, wa: {} };
+    }
+    j.wa = j.wa || {}; j.seen = j.seen || {};
+    if (!j.view || j.view > j.fase) j.view = j.fase;
+    return j;
+  }
+  function jorSet(j) { storeSet(JOR_KEY, j); }
+  function jorCfgFase() { const f = configEl.dataset.jf; return f === '1' ? 1 : (f === '2' ? 2 : undefined); }
+  function jorAvancar() {
+    const j = jorGet(); const f = jorCfgFase();
+    if (!f) return false;
+    const prox = f + 1;
+    j.fase = Math.max(j.fase, prox); j.view = prox; j.seen[prox] = 0;
+    jorSet(j); renderJornada();
+    document.getElementById('jornada').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return true;
+  }
+
+  // --- Diagnóstico: o que existe e o que criar ---
+  var CANAL_CAT = [
+    { id: 'Perfil da Empresa no Google', nome: 'Perfil da Empresa no Google', parte: 3, tool: 'perfil' },
+    { id: 'WhatsApp Business', nome: 'WhatsApp Business', parte: 8, tool: 'atendimento' },
+    { id: 'Instagram', nome: 'Instagram', parte: 3, tool: 'perfil' },
+    { id: 'indicação de colegas', nome: 'Rede de indicação de colegas', parte: 6, tool: 'colegas' },
+    { id: 'YouTube', nome: 'YouTube', parte: 3, tool: 'perfil' },
+    { id: 'site ou blog', nome: 'Site ou página de agendamento', parte: 3, tool: 'perfil' },
+    { id: 'LinkedIn', nome: 'LinkedIn', parte: 3, tool: 'perfil' },
+    { id: 'Doctoralia ou plataforma de agendamento', nome: 'Doctoralia ou plataforma de agendamento', parte: 14, tool: 'ferramentas' },
+    { id: 'TikTok', nome: 'TikTok', parte: 3, tool: 'perfil' }
+  ];
+  function relevancia(id) {
+    const o = cfg.objetivo; const tempo = cfg.tempo; const cam = cfg.camera;
+    const baixoTempo = tempo === 'ate1';
+    switch (id) {
+      case 'Perfil da Empresa no Google': return [3, 'quem já precisa procura no Google e escolhe pelo que vê na ficha'];
+      case 'WhatsApp Business': return [3, 'é onde o contato vira consulta, e responder rápido decide a agenda'];
+      case 'Instagram': return [o === 'online' || o === 'autoridade' || o === 'agenda' || o === 'ticket' ? 3 : 2, 'é onde o paciente descobre você e decide se confia'];
+      case 'indicação de colegas': return [o === 'fidelizar' || o === 'ticket' ? 3 : 2, 'o paciente indicado chega com confiança prévia e adere mais'];
+      case 'YouTube': return [(o === 'autoridade' || o === 'ticket') && !baixoTempo ? 3 : (baixoTempo ? 1 : 2), 'responde dúvidas em profundidade e continua trazendo gente por anos'];
+      case 'site ou blog': return [o === 'online' || o === 'ticket' || o === 'autoridade' ? 2 : 1, 'um destino próprio para agendar e para a campanha de busca'];
+      case 'LinkedIn': return [o === 'autoridade' || o === 'fidelizar' ? 2 : 1, 'colegas e jornalistas conferem quem você é antes de indicar'];
+      case 'Doctoralia ou plataforma de agendamento': return [1, 'ajuda a ser encontrado, mas depende de plataforma de terceiros'];
+      case 'TikTok': return [!baixoTempo && cam !== 'baixo' && (tempo === '4a6' || tempo === '7mais') ? 2 : 0, 'alcance amplo, mas só vale quando o Instagram já tem rotina'];
+    }
+    return [1, ''];
+  }
+  function jorDiag() {
+    const tem = [], criar = [], depois = [];
+    const usa = new Set(cfg.canais || []);
+    CANAL_CAT.forEach((c) => {
+      const [rel, porque] = relevancia(c.id);
+      if (usa.has(c.id)) tem.push({ ...c, porque });
+      else if (rel >= 3) criar.push({ ...c, porque, rel });
+      else if (rel === 2) criar.push({ ...c, porque, rel });
+      else if (rel === 1) depois.push({ ...c, porque });
+    });
+    criar.sort((a, b) => b.rel - a.rel);
+    const cap = { ate1: 2, '2a3': 3, '4a6': 4, '7mais': 5 }[cfg.tempo] || 3;
+    const agora = criar.slice(0, Math.max(cap - 0, 1));
+    const resto = criar.slice(agora.length).concat(depois);
+    const notas = [];
+    notas.push(`Com ${TEMPO[cfg.tempo] ? TEMPO[cfg.tempo].label : 'o tempo informado'}, vale manter no máximo ${cap} frentes ao mesmo tempo. O resto fica para a próxima rodada.`);
+    if (cfg.camera === 'baixo') notas.push('Você prefere não aparecer na câmera: priorize carrossel, voz sobre modelo ou ilustração e vídeos com o corpo clínico.');
+    if (cfg.produtor === 'terceiro') notas.push('Como outra pessoa vai produzir, o briefing e a revisão clínica e ética são seus: use o Briefing para terceiros e o Verificador ético.');
+    if (!String(cfg.transformacao || '').trim()) notas.push('A proposta de valor ainda está em branco. Complete em "Nicho e diferencial": é o que diferencia você dos outros bons profissionais.');
+    if (usa.has('Instagram') && !String(cfg.arroba || '').trim()) notas.push('Você marcou o Instagram, mas não informou o @. Informe para o app auditar a bio.');
+    return { tem, agora, resto, notas };
+  }
+  function diagHtml() {
+    const d = jorDiag();
+    const li = (c, extra) => `<li><b>${escapeHtml(c.nome)}</b><span>${escapeHtml(c.porque || '')}</span>${extra || ''}</li>`;
+    const btn = (c, t) => `<button type="button" class="btn btn-outline btn-sm" data-jor-tool="${c.tool}">${t}</button>`;
+    return `<div class="jor-cols">
+      <div class="jor-col"><h4>O que você já tem</h4><p class="jor-sub">Vamos auditar, não refazer.</p>
+        <ul class="jor-list">${d.tem.length ? d.tem.map((c) => li(c, btn(c, 'Auditar'))).join('') : '<li><span>Você ainda não marcou nenhuma rede. Tudo bem: começamos do zero.</span></li>'}</ul></div>
+      <div class="jor-col jor-col-hl"><h4>O que criar agora, em ordem</h4><p class="jor-sub">Prioridade para o seu objetivo: ${escapeHtml(objInfo().label.toLowerCase())}.</p>
+        <ol class="jor-list">${d.agora.length ? d.agora.map((c) => li(c, btn(c, 'Como criar'))).join('') : '<li><span>Nada essencial a criar. Foque em melhorar o que existe.</span></li>'}</ol></div>
+    </div>
+    ${d.resto.length ? `<p class="jor-later"><b>Fica para depois:</b> ${d.resto.map((c) => escapeHtml(c.nome)).join(', ')}.</p>` : ''}
+    <ul class="jor-notes">${d.notas.map((n) => `<li>${escapeHtml(n)}</li>`).join('')}</ul>`;
+  }
+
+  // --- Campanhas por mídia ---
+  function jorCampanhas() {
+    const serv = servicosList()[0] || 'o seu serviço principal';
+    const cid = (cfg.cidade || 'a sua cidade').split(',').pop().trim() || 'a sua cidade';
+    const dor = cfg.icpDor ? `"${cfg.icpDor}"` : 'a principal dúvida do paciente ideal';
+    const semPreco = ['dentista', 'psicologo'].includes(cfg.profissional);
+    const usa = new Set(cfg.canais || []);
+    const o = cfg.objetivo;
+    const L = [];
+    L.push({ midia: 'Google Pesquisa', quando: 'Para quem já procura', ideia: `Anúncio informativo para "${serv} ${cid}", com extensão de ligação e rota. Palavras negativas desde o primeiro dia.`, tool: 'campanha', rel: o === 'online' ? 2 : 3 });
+    L.push({ midia: 'Meta Ads (Instagram e Facebook)', quando: 'Para quem ainda não procura', ideia: `Reel educativo respondendo ${dor}, com botão "Enviar mensagem" para o WhatsApp.${semPreco ? ' Sem preço, desconto ou promoção.' : ''}`, tool: 'campanha', rel: 3 });
+    L.push({ midia: 'Impulsionamento de post', quando: 'O primeiro anúncio de quem nunca anunciou', ideia: 'Escolha o post orgânico com mais envios e salvamentos e impulsione com um único objetivo (mensagens), por pelo menos 7 dias sem mexer.', tool: 'campanha', rel: 2 });
+    L.push({ midia: 'Instagram orgânico', quando: 'Constância e confiança', ideia: `Série com 3 temas (educar, humanizar, desmistificar), partindo de ${dor}. ${TEMPO[cfg.tempo] ? 'Meta: ' + TEMPO[cfg.tempo].meta + ' peças por semana.' : ''}`, tool: 'roteiro', rel: usa.has('Instagram') ? 3 : 2 });
+    L.push({ midia: 'YouTube', quando: 'Autoridade duradoura', ideia: `Um vídeo de 6 a 10 minutos respondendo ${dor}, com o link de agendamento nas duas primeiras linhas.`, tool: 'roteiro', rel: o === 'autoridade' || o === 'ticket' ? 3 : 1 });
+    L.push({ midia: 'Perfil da Empresa no Google', quando: 'Presença local', ideia: 'Fotos reais, serviços cadastrados, um post por mês e pedido de avaliação a todos os pacientes após o atendimento.', tool: 'perfil', rel: 3 });
+    L.push({ midia: 'Rede de colegas', quando: 'Indicação qualificada', ideia: 'Carta de apresentação para os 3 colegas mais próximos e relatório de contrarreferência para cada paciente indicado.', tool: 'colegas', rel: o === 'fidelizar' || o === 'ticket' ? 3 : 2 });
+    if (o === 'online') L.push({ midia: 'Site ou página de agendamento', quando: 'Pacientes de outras cidades', ideia: 'Página com como funciona o atendimento online, duração, valores (quando permitido) e botão de agendar.', tool: 'perfil', rel: 3 });
+    return L.sort((a, b) => b.rel - a.rel).slice(0, 6);
+  }
+  function campanhasHtml() {
+    return `<div class="jor-camps">${jorCampanhas().map((c) => `<div class="jor-camp"><h5>${escapeHtml(c.midia)}</h5><small>${escapeHtml(c.quando)}</small><p>${escapeHtml(c.ideia)}</p><button type="button" class="btn btn-outline btn-sm" data-jor-tool="${c.tool}">Montar</button></div>`).join('')}</div>
+    <p class="jor-sub">Toda peça passa pelo Verificador ético antes de ir ao ar. Defina um valor diário que você possa manter por pelo menos 14 dias sem mexer.</p>`;
+  }
+
+  // --- WhatsApp e CRM ---
+  var WA_ITENS = [
+    ['wa1', 'Instale o WhatsApp Business e preencha o perfil: nome, endereço, horário, descrição e catálogo de serviços.', 'atendimento'],
+    ['wa2', 'Cadastre a mensagem de boas-vindas e a de fora do horário (já oferecendo dois horários).', 'atendimento'],
+    ['wa3', 'Cadastre as 12 respostas rápidas do guia, geradas com o seu perfil.', 'atendimento'],
+    ['wa4', 'Crie etiquetas com as sete etapas do funil: Novo, Em conversa, Agendado, Avaliado, Plano proposto, Em tratamento, Encerrado.', null],
+    ['wa5', 'Troque o link da bio e dos anúncios pelos links com origem (abaixo), para saber de onde cada contato veio.', null],
+    ['wa6', 'Cadastre o primeiro contato no Rastreador de pacientes, com origem, etapa, próximo passo e consentimento.', 'rastreador'],
+    ['wa7', 'Defina o ritual semanal de 30 minutos (sexta à tarde) e abra o Assistente da semana.', 'assistente']
+  ];
+  function waLink(origem) {
+    let n = String(cfg.whatsapp || '').replace(/\D/g, '');
+    if (n.length < 10) return '';
+    if (n.length <= 11) n = '55' + n;
+    const serv = servicosList()[0] || 'o atendimento';
+    return 'https://wa.me/' + n + '?text=' + encodeURIComponent(`Olá! Vim pelo ${origem} e gostaria de saber mais sobre ${serv}.`);
+  }
+  function waHtml() {
+    const j = jorGet();
+    const auto = { wa6: pacientes.length > 0 };
+    const feito = (id) => !!j.wa[id] || !!auto[id];
+    const items = WA_ITENS.map(([id, txt, tool]) => `<li class="${feito(id) ? 'ok' : ''}"><label><input type="checkbox" data-jor-wa="${id}" ${feito(id) ? 'checked' : ''}> <span>${escapeHtml(txt)}</span></label>${tool ? `<button type="button" class="btn btn-outline btn-sm" data-jor-tool="${tool}">Abrir</button>` : ''}</li>`).join('');
+    const origens = ['Instagram', 'Google', 'YouTube', 'anúncio da Meta', 'anúncio do Google', 'indicação de colega', 'site'];
+    const links = cfg.whatsapp && waLink('Instagram')
+      ? `<div class="jor-links">${origens.map((o) => `<div><b>${escapeHtml(o)}</b><code>${escapeHtml(waLink(o))}</code><button type="button" class="btn btn-outline btn-sm" data-jor-copy="${escapeHtml(waLink(o))}">Copiar</button></div>`).join('')}</div>`
+      : '<p class="jor-sub">Informe o WhatsApp do consultório em "Editar objetivo e perfil" para gerar os links com origem.</p>';
+    const funil = ETAPAS.map((e) => `<li><b>${escapeHtml(e)}</b><span>${escapeHtml(PASSO_TIPICO[e])}</span></li>`).join('');
+    const feitos = WA_ITENS.filter(([id]) => feito(id)).length;
+    return `<div class="meter jor-meter"><span style="width:${Math.round(feitos / WA_ITENS.length * 100)}%"></span></div><p class="jor-sub">${feitos} de ${WA_ITENS.length} passos prontos.</p>
+      <ul class="jor-check">${items}</ul>
+      <h4>Links do WhatsApp com origem</h4>${links}
+      <h4>O modelo de CRM: sete etapas, um próximo passo em cada uma</h4>
+      <ol class="jor-funil">${funil}</ol>
+      <p class="jor-sub">Regra de ouro: toda linha tem um próximo passo com data. Dado clínico não entra no CRM.</p>`;
+  }
+
+  // --- Avaliação e ajuste ---
+  function avalHtml() {
+    const lim = addDays(todayISO(), -90);
+    const co = pacientes.filter((p) => p.criado >= lim);
+    const H = (k) => co.filter((p) => p.hist && p.hist[k]).length;
+    const n = co.length, ag = H('Agendado'), av = H('Avaliado'), pl = H('Plano proposto'), ini = H('Em tratamento');
+    const pct = (a, b) => (b ? Math.round(a / b * 100) + '%' : '—');
+    const linhas = [['Contatos novos', n, 'últimos 90 dias'], ['Agendaram', ag, pct(ag, n) + ' dos contatos'], ['Compareceram', av, pct(av, ag) + ' dos agendados'], ['Iniciaram o tratamento', ini, pct(ini, pl) + ' dos planos propostos']];
+    const taxas = [];
+    if (n >= 5) taxas.push(['agendamento', ag / n, 'atendimento', 'Responda em até 5 minutos, ofereça dois horários e faça as retomadas de 1, 3 e 7 dias.']);
+    if (ag >= 5) taxas.push(['comparecimento', av / ag, 'rastreador', 'Ative a confirmação ativa 48 horas antes, o lembrete de 2 horas e agende o retorno antes de o paciente sair.']);
+    if (pl >= 5) taxas.push(['aceitação do plano', ini / pl, 'atendimento', 'Entregue o plano por escrito, com objetivo do paciente, fases e data para decidir, e acompanhe em 2, 7 e 15 dias.']);
+    let ajuste;
+    if (n < 5) ajuste = `<p><b>Ainda há poucos dados.</b> Registre pelo menos 5 contatos no Rastreador para o app apontar o gargalo. Enquanto isso, mantenha a rotina de conteúdo e as campanhas da fase 4.</p><button type="button" class="btn btn-gold btn-sm" data-jor-tool="rastreador">Registrar contato</button>`;
+    else if (!taxas.length) ajuste = '<p>Continue registrando: com mais agendamentos e planos, o app compara as taxas e mostra o gargalo.</p>';
+    else {
+      taxas.sort((a, b) => a[1] - b[1]);
+      const g = taxas[0];
+      ajuste = `<p><b>Seu gargalo hoje: ${escapeHtml(g[0])}.</b> É a menor das taxas que já dá para medir. ${escapeHtml(g[3])}</p><button type="button" class="btn btn-gold btn-sm" data-jor-tool="${g[2]}">Ajustar agora</button>`;
+    }
+    return `<div class="jor-aval">${linhas.map(([a, b, c]) => `<div><small>${a}</small><b>${b}</b><span>${c}</span></div>`).join('')}</div>
+      <div class="jor-ajuste">${ajuste}</div>
+      <p class="jor-sub">Repita este olhar toda sexta, no ritual de 30 minutos. A cada 90 dias, revise o objetivo.</p>
+      <div class="jor-actions"><button type="button" class="btn btn-outline btn-sm" data-jor-tool="painel">Painel e diagnóstico</button><button type="button" class="btn btn-outline btn-sm" data-jor-tool="assistente">Assistente da semana</button><button type="button" class="btn btn-teal btn-sm" id="jor-novo">Definir novo objetivo</button></div>`;
+  }
+
+  // --- Renderização ---
+  function renderJornada() {
+    const box = document.getElementById('jornada');
+    if (!box || !JOR_FASES) return;
+    const j = jorGet();
+    const v = j.view; const F = JOR_FASES[v - 1];
+    const painel = document.getElementById('painel');
+    painel.dataset.jfase = v;
+    const editando = configEl.dataset.jf === 'all';
+    const emCfg = v === 1 || v === 2;
+    if (emCfg && !editando) configEl.dataset.jf = String(v);
+    if (!emCfg && !editando) configEl.dataset.jf = '';
+    configEl.classList.toggle('collapsed', !emCfg && !editando);
+    configEl.classList.toggle('jor-wait', emCfg && !j.seen[v]);
+    document.getElementById('hoje').hidden = v < 4 || v === 3;
+    const done = document.getElementById('cfg-done');
+    if (done && !editando) done.textContent = v === 1 ? 'Concluir perfil e escolher o objetivo' : (v === 2 ? 'Confirmar objetivo e ver o diagnóstico' : 'Ver minha próxima ação');
+    if (editando) done.textContent = 'Salvar e voltar';
+    syncCollapseUI();
+    const steps = JOR_FASES.map((f) => {
+      const st = f.n < j.fase ? 'done' : (f.n === j.fase ? 'cur' : 'lock');
+      return `<li class="${st}${f.n === v ? ' view' : ''}"><button type="button" ${f.n > j.fase ? 'disabled' : ''} data-jor-ir="${f.n}"><span class="n">${f.n < j.fase ? '✓' : f.n}</span><span class="t">${escapeHtml(f.curto)}</span></button></li>`;
+    }).join('');
+    let corpo = '', rodape = '';
+    if (!j.seen[v]) {
+      rodape = `<button type="button" class="btn btn-gold" id="jor-go" data-ico="arrow">Vamos em frente</button>`;
+    } else if (v === 1 || v === 2) {
+      const falt = camposFaltando(v).length;
+      corpo = `<p class="jor-sub">${falt ? `Faltam ${falt} campo${falt > 1 ? 's' : ''} obrigatório${falt > 1 ? 's' : ''}. Eles estão marcados com * logo abaixo.` : 'Tudo preenchido. Use o botão ao final do formulário para seguir.'}</p>`;
+    } else if (v === 3) { corpo = diagHtml(); rodape = '<button type="button" class="btn btn-gold" id="jor-prox">Entendi, montar meu plano</button>'; }
+    else if (v === 4) { corpo = campanhasHtml() + '<p class="jor-sub">O seu passo a passo está logo abaixo, em <b>Hoje</b>: faça um passo por vez, até o fim.</p>'; rodape = '<button type="button" class="btn btn-gold" id="jor-prox">Plano em andamento: ir ao WhatsApp e CRM</button>'; }
+    else if (v === 5) { corpo = waHtml(); rodape = '<button type="button" class="btn btn-gold" id="jor-prox">Pronto: avaliar resultados</button>'; }
+    else if (v === 6) { corpo = avalHtml(); }
+    box.innerHTML = `<ol class="jor-steps" aria-label="Fases da jornada">${steps}</ol>
+      <div class="jor-card"><p class="jor-eyebrow">Fase ${v} de 6 · ${escapeHtml(F.nome)}</p><h3>${escapeHtml(F.msg)}</h3><p class="jor-why"><b>Por que isso importa:</b> ${escapeHtml(F.why)}</p>${corpo}${rodape ? `<div class="jor-foot">${rodape}</div>` : ''}</div>`;
+  }
+  function jorIr(n) { const j = jorGet(); j.view = Math.min(n, j.fase); jorSet(j); configEl.dataset.jf = ''; renderJornada(); }
+  document.addEventListener('click', (e) => {
+    const t = e.target.closest('[data-jor-ir],[data-jor-tool],[data-jor-copy],#jor-go,#jor-prox,#jor-novo,.stim-go');
+    if (!t) return;
+    const j = jorGet();
+    if (t.dataset.jorIr) { jorIr(Number(t.dataset.jorIr)); return; }
+    if (t.dataset.jorTool) { openTool(t.dataset.jorTool); return; }
+    if (t.dataset.jorCopy) { copyText(t.dataset.jorCopy, t); return; }
+    if (t.id === 'jor-go') { j.seen[j.view] = 1; jorSet(j); renderJornada(); if (j.view < 3) { const first = configEl.querySelector(j.view === 1 ? '#stim-prof' : '#stim-obj'); if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' }); } return; }
+    if (t.id === 'jor-prox') { const p = j.view + 1; j.fase = Math.max(j.fase, p); j.view = p; j.seen[p] = 0; jorSet(j); renderJornada(); document.getElementById('jornada').scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
+    if (t.id === 'jor-novo') { j.view = 2; j.fase = 2; j.seen[2] = 0; jorSet(j); configEl.dataset.jf = '2'; renderJornada(); document.getElementById('jornada').scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
+    if (t.classList.contains('stim-go')) {
+      const s = t.closest('.stim'); s.classList.add('on'); t.hidden = true;
+      const el = document.getElementById(s.dataset.foco);
+      if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); setTimeout(() => el.focus({ preventScroll: true }), 250); }
+    }
+  });
+  document.addEventListener('change', (e) => {
+    const w = e.target.closest && e.target.closest('[data-jor-wa]');
+    if (!w) return;
+    const j = jorGet(); j.wa[w.dataset.jorWa] = w.checked ? 1 : 0; jorSet(j); renderJornada();
+  });
+  document.getElementById('cfg-edit').addEventListener('click', () => { configEl.dataset.jf = 'all'; renderJornada(); });
+  configEl.addEventListener('input', () => { if (jorCfgFase()) renderJornada(); });
+  renderJornada();
 </script>
 </body>
 </html>

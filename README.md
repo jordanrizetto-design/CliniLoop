@@ -26,6 +26,10 @@ Muda o objeto: em vez de vagas, pacientes, colegas e campanhas.
 
 > Estado real: o CliniLoop **ainda não foi testado com profissionais de saúde** nem revisado por advogado. Não há casos de uso nem depoimentos, e nenhum foi inventado.
 
+## A jornada em seis fases
+
+O app conduz em ordem, e cada fase abre com uma mensagem de estímulo e o motivo de estar ali: **1 Seu perfil** (consultório, ICP e redes atuais), **2 Seu objetivo**, **3 Diagnóstico** (o que existe e o que criar), **4 Plano e campanhas por mídia**, **5 WhatsApp e CRM** (checklist, links `wa.me` com origem e funil) e **6 Avaliar e ajustar** (taxas e gargalo). Teste automatizado: `scripts/teste_jornada.py`.
+
 ## O guia e o app
 
 O Guia CliniLoop ensina o roteiro; o app guarda o registro. O guia tem **seis etapas e 14 partes**, e cada parte termina em três caixas: **Prompt** (o pedido pronto), **Na prática** (o passo de até 30 minutos para hoje) e **Sinergia CliniLoop** (a ferramenta do app).

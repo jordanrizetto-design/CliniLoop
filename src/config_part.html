@@ -1,5 +1,6 @@
   <section id="painel" class="painel-sec">
     <div class="wrap">
+      <div class="jornada" id="jornada" aria-label="Sua jornada"></div>
       <div class="hoje" id="hoje" aria-labelledby="hoje-titulo">
         <div class="hoje-head">
           <h2 id="hoje-titulo">Hoje</h2>
@@ -50,39 +51,16 @@
         <p class="cfg-summary" id="cfg-summary" hidden></p>
 
         <div class="onb-body" id="onb-body">
-          <section class="onb-step" aria-labelledby="onb1">
+          <section class="onb-step onb-perfil" id="onb-p1" aria-labelledby="onb2">
             <div class="step-head">
               <span class="step-n">1</span>
-              <div>
-                <h4 id="onb1">Qual resultado você quer alcançar?</h4>
-                <p>Escolha o objetivo dos próximos 90 dias. Ele define as prioridades do funil e a ordem das próximas ações.</p>
-              </div>
-            </div>
-            <fieldset class="field">
-              <legend>Objetivo principal</legend>
-              <div class="type-grid obj-grid" role="radiogroup">
-                <label class="type-card"><input type="radio" name="objetivo" value="agenda" checked><span class="t-name">Encher a agenda</span><span class="t-hint">Mais primeiras consultas</span></label>
-                <label class="type-card"><input type="radio" name="objetivo" value="ticket"><span class="t-name">Tratamentos de maior valor</span><span class="t-hint">Atrair o caso certo</span></label>
-                <label class="type-card"><input type="radio" name="objetivo" value="autoridade"><span class="t-name">Virar referência no tema</span><span class="t-hint">Autoridade e influência</span></label>
-                <label class="type-card"><input type="radio" name="objetivo" value="online"><span class="t-name">Atender online</span><span class="t-hint">Pacientes de outras cidades</span></label>
-                <label class="type-card"><input type="radio" name="objetivo" value="fidelizar"><span class="t-name">Fidelizar e gerar indicações</span><span class="t-hint">Pacientes e colegas</span></label>
-              </div>
-            </fieldset>
-            <div class="field">
-              <label for="cfg-meta">Em uma frase: qual resultado, para qual serviço e em quanto tempo? *</label>
-              <input type="text" id="cfg-meta" name="metaFrase" placeholder="Ex: 8 novas avaliações de implante por mês, em Sorocaba, nos próximos 90 dias">
-              <small>Quanto mais concreto, melhores as recomendações. Não use dados de pacientes reais.</small>
-            </div>
-          </section>
-
-          <section class="onb-step" aria-labelledby="onb2">
-            <div class="step-head">
-              <span class="step-n">2</span>
               <div>
                 <h4 id="onb2">Configure seu consultório</h4>
                 <p>O tipo de profissional define as regras do conselho que todos os geradores respeitam e a ordem recomendada das ferramentas (Partes 1 e 2 do guia).</p>
               </div>
             </div>
+            <div class="stim" id="stim-prof" data-foco="cfg-nome"><p class="stim-msg">Vamos começar por você. Preencha o seu consultório com calma, são poucos minutos.</p><p class="stim-why"><b>Por que isso importa:</b> todo texto, anúncio e mensagem sairá com o seu registro e as regras do seu conselho, sem você precisar repetir nada.</p><button type="button" class="btn btn-teal btn-sm stim-go">Vamos em frente</button></div>
+
             <fieldset class="field">
               <legend>Tipo de profissional *</legend>
               <div class="type-grid prof-grid" role="radiogroup">
@@ -160,14 +138,16 @@
             </div>
           </section>
 
-          <section class="onb-step" aria-labelledby="onb3">
+          <section class="onb-step onb-perfil" id="onb-p2" aria-labelledby="onb3">
             <div class="step-head">
-              <span class="step-n">3</span>
+              <span class="step-n">2</span>
               <div>
                 <h4 id="onb3">Perfil do consultório</h4>
                 <p>Preencha uma vez: profissão, registro, especialidade, cidade, serviços, público ideal e temas de conteúdo. Como diz a Parte 12 do guia, ele alimenta todas as ferramentas, o rastreador e o playbook.</p>
               </div>
             </div>
+            <div class="stim" id="stim-servicos" data-foco="cfg-servicos"><p class="stim-msg">Agora o que você oferece e para quem. Aqui começamos a identificar o seu cliente ideal.</p><p class="stim-why"><b>Por que isso importa:</b> isso trará pacientes que se importam com a sua proposta de valor, em vez de curiosos que não vão agendar.</p><button type="button" class="btn btn-teal btn-sm stim-go">Vamos em frente</button></div>
+
             <div class="field">
               <label for="cfg-servicos">Serviços que você quer divulgar *</label>
               <input type="text" id="cfg-servicos" name="servicos" placeholder="Separe por vírgula. Ex: implantes, lentes de contato dental, clareamento">
@@ -195,8 +175,33 @@
                 <input type="text" id="cfg-arroba" name="arroba" placeholder="Ex: @dra.analima">
               </div>
             </div>
+            <div class="icp-block" id="icp-block">
+              <h5>Seu paciente ideal (ICP)</h5>
+              <div class="row2">
+                <div class="field">
+                  <label for="cfg-icp-dor">Qual a principal dor ou dúvida dele? *</label>
+                  <input type="text" id="cfg-icp-dor" name="icpDor" placeholder="Ex: tenho medo de perder o dente e não sei se implante dói">
+                </div>
+                <div class="field">
+                  <label for="cfg-icp-valoriza">O que ele valoriza na hora de escolher?</label>
+                  <input type="text" id="cfg-icp-valoriza" name="icpValoriza" placeholder="Ex: explicação clara, atendimento sem pressa, perto de casa">
+                </div>
+              </div>
+              <div class="row2">
+                <div class="field">
+                  <label for="cfg-icp-objecao">Qual a objeção mais comum?</label>
+                  <input type="text" id="cfg-icp-objecao" name="icpObjecao" placeholder="Ex: acha caro, tem medo, não tem tempo">
+                </div>
+                <div class="field">
+                  <label for="cfg-icp-onde">Onde ele procura informação?</label>
+                  <input type="text" id="cfg-icp-onde" name="icpOnde" placeholder="Ex: Google, Instagram, indicação do clínico geral">
+                </div>
+              </div>
+              <small>Responda sobre o perfil típico, sem dados de pacientes reais.</small>
+            </div>
+            <div class="stim" id="stim-redes" data-foco="cfg-arroba"><p class="stim-msg">Agora vamos olhar para as suas redes atuais, sem julgamento: marque o que você já usa.</p><p class="stim-why"><b>Por que isso importa:</b> o diagnóstico seguinte parte do que existe. Assim indicamos só o que falta criar, sem refazer o que já funciona.</p><button type="button" class="btn btn-teal btn-sm stim-go">Vamos em frente</button></div>
             <fieldset class="field">
-              <legend>Canais que você já usa</legend>
+              <legend>Redes e canais que você já usa</legend>
               <div class="chip-grid">
                 <label class="chip"><input type="checkbox" name="canais" value="Instagram" checked><span>Instagram</span></label>
                 <label class="chip"><input type="checkbox" name="canais" value="WhatsApp Business"><span>WhatsApp Business</span></label>
@@ -236,10 +241,48 @@
                 </select>
               </div>
             </div>
+            <div class="row2">
+              <div class="field">
+                <label for="cfg-whatsapp">WhatsApp do consultório (com DDD)</label>
+                <input type="text" id="cfg-whatsapp" name="whatsapp" placeholder="Ex: 11 91234-5678">
+                <small>Usado só para montar os links com origem na fase WhatsApp e CRM.</small>
+              </div>
+              <div class="field">
+                <label for="cfg-site">Site, link na bio ou página de agendamento</label>
+                <input type="text" id="cfg-site" name="site" placeholder="Ex: clinicasorrisovivo.com.br">
+              </div>
+            </div>
             <div class="field">
               <label for="cfg-sobre">Formação, experiência e diferenciais *</label>
               <textarea id="cfg-sobre" name="sobre" rows="4" placeholder="Ex: 12 anos de formada, especialização em implantes, escaneamento digital, atendimento sem pressa; pacientes dizem que explico tudo com calma"></textarea>
               <small>Não inclua nomes ou dados de pacientes.</small>
+            </div>
+          </section>
+
+          <section class="onb-step onb-obj" id="onb-obj" aria-labelledby="onb1">
+            <div class="step-head">
+              <span class="step-n">3</span>
+              <div>
+                <h4 id="onb1">Qual resultado você quer alcançar?</h4>
+                <p>Agora que conhecemos você e o seu paciente ideal, escolha o resultado dos próximos 90 dias. Ele define as prioridades do funil e a ordem das próximas ações.</p>
+              </div>
+            </div>
+            <div class="stim" id="stim-obj" data-foco="cfg-meta"><p class="stim-msg">Perfil pronto. Agora a pergunta mais importante: qual resultado você quer alcançar?</p><p class="stim-why"><b>Por que isso importa:</b> um objetivo claro decide o que criar primeiro e o que deixar para depois. Sem ele, tudo parece urgente.</p><button type="button" class="btn btn-teal btn-sm stim-go">Vamos em frente</button></div>
+
+            <fieldset class="field">
+              <legend>Objetivo principal</legend>
+              <div class="type-grid obj-grid" role="radiogroup">
+                <label class="type-card"><input type="radio" name="objetivo" value="agenda" checked><span class="t-name">Encher a agenda</span><span class="t-hint">Mais primeiras consultas</span></label>
+                <label class="type-card"><input type="radio" name="objetivo" value="ticket"><span class="t-name">Tratamentos de maior valor</span><span class="t-hint">Atrair o caso certo</span></label>
+                <label class="type-card"><input type="radio" name="objetivo" value="autoridade"><span class="t-name">Virar referência no tema</span><span class="t-hint">Autoridade e influência</span></label>
+                <label class="type-card"><input type="radio" name="objetivo" value="online"><span class="t-name">Atender online</span><span class="t-hint">Pacientes de outras cidades</span></label>
+                <label class="type-card"><input type="radio" name="objetivo" value="fidelizar"><span class="t-name">Fidelizar e gerar indicações</span><span class="t-hint">Pacientes e colegas</span></label>
+              </div>
+            </fieldset>
+            <div class="field">
+              <label for="cfg-meta">Em uma frase: qual resultado, para qual serviço e em quanto tempo? *</label>
+              <input type="text" id="cfg-meta" name="metaFrase" placeholder="Ex: 8 novas avaliações de implante por mês, em Sorocaba, nos próximos 90 dias">
+              <small>Quanto mais concreto, melhores as recomendações. Não use dados de pacientes reais.</small>
             </div>
           </section>
 

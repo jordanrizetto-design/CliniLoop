@@ -74,7 +74,7 @@
     n.hidden = false;
   }
 
-  function renderExtras() { applyModo(); renderBeta(); }
+  function renderExtras() { applyModo(); renderBeta(); if (typeof renderJornada === 'function') renderJornada(); }
 
   // Feedback de teste: sem dados de pacientes, vai por GitHub (issue) ou por cópia do texto.
   (function feedback() {

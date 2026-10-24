@@ -64,9 +64,12 @@
   const cfgEdit = document.getElementById('cfg-edit');
   function onbComplete() { return camposFaltando().length === 0; }
   // Campos obrigatórios do "Comece aqui", na ordem em que o usuário os encontra.
-  function camposFaltando() {
-    const L = [['cfg-meta', 'metaFrase', 'o resultado que você quer (passo 1)'], ['prof', 'profissional', 'o tipo de profissional (passo 2)'], ['cfg-registro', 'registro', 'o registro no conselho (passo 2)'],
-      ['cfg-espec', 'especialidade', 'a especialidade (passo 2)'], ['cfg-cidade', 'cidade', 'cidade e bairro (passo 2)'], ['cfg-servicos', 'servicos', 'os serviços que quer divulgar (passo 3)'], ['cfg-sobre', 'sobre', 'formação e diferenciais (passo 3)']];
+  function camposFaltando(fase) {
+    const P = [['prof', 'profissional', 'o tipo de profissional'], ['cfg-registro', 'registro', 'o registro no conselho'],
+      ['cfg-espec', 'especialidade', 'a especialidade'], ['cfg-cidade', 'cidade', 'cidade e bairro'], ['cfg-servicos', 'servicos', 'os serviços que quer divulgar'],
+      ['cfg-publico', 'publico', 'o público ideal'], ['cfg-icp-dor', 'icpDor', 'a principal dor ou dúvida do paciente ideal'], ['cfg-sobre', 'sobre', 'formação e diferenciais']];
+    const O = [['cfg-meta', 'metaFrase', 'o resultado que você quer (objetivo)']];
+    const L = fase === 1 ? P : (fase === 2 ? O : P.concat(O));
     return L.filter((x) => !String(cfg[x[1]] || '').trim()).map((x) => ({ id: x[0], txt: x[2] }));
   }
   function syncCollapseUI() {
@@ -85,7 +88,7 @@
     setTimeout(() => el.focus({ preventScroll: true }), 250);
   }
   document.getElementById('cfg-done').addEventListener('click', () => {
-    const faltam = camposFaltando();
+    const faltam = camposFaltando(typeof jorCfgFase === 'function' ? jorCfgFase() : undefined);
     const box = document.getElementById('obj-hint');
     document.querySelectorAll('#onb-body .invalid').forEach((x) => x.classList.remove('invalid'));
     if (faltam.length) {
@@ -104,6 +107,7 @@
       return;
     }
     box.hidden = true;
+    if (typeof jorAvancar === 'function' && jorAvancar()) return;
     configEl.classList.add('collapsed'); syncCollapseUI();
     hojeIdx = 0;
     renderHoje();

@@ -22,6 +22,7 @@
   const BETA_KEY = PREFIX + 'beta.v1';
   const reveladas = new Set();
   const TRILHA_KEY = PREFIX + 'trilha.v1';
+  const JOR_KEY = PREFIX + 'jornada.v1';
   // "Pronto quando": o critério que mostra ao usuário onde cada passo termina.
   const TRILHA_FIM = {
     publico: 'você tem 10 dúvidas reais dos pacientes e a persona principal guardada.',

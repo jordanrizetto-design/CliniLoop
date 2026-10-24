@@ -15,7 +15,8 @@
       atendimento: fd.getAll('atendimento'), pagamento: t('pagamento') || 'particular', equipe: t('equipe'),
       servicos: t('servicos'), publico: t('publico'), transformacao: t('transformacao'), baldes: t('baldes'), arroba: t('arroba'),
       canais: fd.getAll('canais'), tempo: t('tempo') || '2a3', produtor: t('produtor') || 'eu', camera: t('camera') || 'medio',
-      sobre: t('sobre'), plano: t('plano') || 'free'
+      sobre: t('sobre'), plano: t('plano') || 'free',
+      icpDor: t('icpDor'), icpValoriza: t('icpValoriza'), icpObjecao: t('icpObjecao'), icpOnde: t('icpOnde'), whatsapp: t('whatsapp'), site: t('site')
     };
   }
   function applyConfig(c) {
