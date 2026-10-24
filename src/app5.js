@@ -150,7 +150,7 @@
     box.innerHTML = `<div class="sins-grid">${sinsDados().map((x, i) => `<div class="sin${i < 2 ? ' vis' : (i === 2 ? ' rel' : ' crm')}"><span class="sin-n">${escapeHtml(x.nome)}</span><p>${escapeHtml(x.desc)}</p><b>${escapeHtml(x.valor)}</b></div>`).join('')}</div><p class="livro-note">Visibilidade e autoridade · relacionamento profissional · atendimento e CRM.</p>`;
   }
 
-  // Métricas que importam (Parte 11), por origem, profissional e dia da semana
+  // Métricas que importam (Parte 13), por origem, profissional e dia da semana
   function renderMetricasLivro() {
     const box = document.getElementById('metricas-livro');
     const lim = addDays(todayISO(), -90);

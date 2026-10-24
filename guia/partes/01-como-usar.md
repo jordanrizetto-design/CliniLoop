@@ -18,7 +18,7 @@ Cada etapa tem um objetivo claro, uma mensagem certa e um prompt pronto para a i
 | Funil de vendas | Jornada do paciente: descoberta, agendamento, comparecimento, tratamento, retorno |
 | Texto livre, com promessa e urgência | Comunicação regulada pelos conselhos (CFM, CFO, CFP, COFFITO, CFN) e pela LGPD |
 | Conteúdo novo para cada canal | Reaproveitamento: uma aula, podcast ou entrevista vira carrossel, guia, Reel e Stories |
-| LinkedIn como rede principal | LinkedIn como rede acessória, para autoridade entre colegas |
+| LinkedIn como vitrine de vendas | LinkedIn como rede de reputação: colegas que indicam, imprensa, empresas e pacientes que pesquisam o seu nome |
 
 ## Para quem é
 

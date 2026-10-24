@@ -32,7 +32,7 @@ O app conduz em ordem, e cada fase abre com uma mensagem de estímulo e o motivo
 
 ## O guia e o app
 
-O Guia CliniLoop ensina o roteiro; o app guarda o registro. O guia tem **seis etapas e 14 partes**, e cada parte termina em três caixas: **Prompt** (o pedido pronto), **Na prática** (o passo de até 30 minutos para hoje) e **Sinergia CliniLoop** (a ferramenta do app).
+O Guia CliniLoop ensina o roteiro; o app guarda o registro. O guia tem **seis etapas e 16 partes**, e cada parte termina em três caixas: **Prompt** (o pedido pronto), **Na prática** (o passo de até 30 minutos para hoje) e **Sinergia CliniLoop** (a ferramenta do app).
 
 | Etapa do guia | Partes | Ferramentas do CliniLoop |
 |---|---|---|
@@ -45,8 +45,8 @@ O Guia CliniLoop ensina o roteiro; o app guarda o registro. O guia tem **seis et
 
 No app, a integração aparece em três lugares:
 - **Faixa "No guia" em cada ferramenta:** a parte e a etapa correspondentes, o passo "Na prática" e o prompt do guia já preenchido com o Perfil do consultório (copiar ou abrir direto no Claude).
-- **Seção "O guia":** o roteiro em seis etapas com o que você já usou, as sete decisões com os números dos últimos 30 dias, a biblioteca com os 12 prompts da Parte 13, a estrutura de um bom prompt, as quatro regras de IA e o glossário de 75 termos (Anexo A).
-- **Comportamento do app alinhado ao guia:** próximo passo típico de cada etapa, planos sem decisão em 2, 7 e 15 dias, retomadas de 1, 3 e 7 dias, faltas registradas e mostradas por dia da semana, métricas da Parte 11 (taxas de agendamento, comparecimento, aceitação e conclusão, custo por paciente que compareceu, indicações por colega, receita por origem), funil de colegas do guia (Mapeado, Apresentado, Primeira indicação, Parceiro ativo, Inativo) e o ritual semanal de 30 minutos no Assistente e no Playbook.
+- **Seção "O guia":** o roteiro em seis etapas com o que você já usou, as sete decisões com os números dos últimos 30 dias, a biblioteca com os 14 prompts da Parte 15, a estrutura de um bom prompt, as quatro regras de IA e o glossário de 75 termos (Anexo A).
+- **Comportamento do app alinhado ao guia:** próximo passo típico de cada etapa, planos sem decisão em 2, 7 e 15 dias, retomadas de 1, 3 e 7 dias, faltas registradas e mostradas por dia da semana, métricas da Parte 13 (taxas de agendamento, comparecimento, aceitação e conclusão, custo por paciente que compareceu, indicações por colega, receita por origem), funil de colegas do guia (Mapeado, Apresentado, Primeira indicação, Parceiro ativo, Inativo) e o ritual semanal de 30 minutos no Assistente e no Playbook.
 
 ## Fontes e agradecimentos
 
@@ -102,7 +102,7 @@ O tipo de profissional define as regras do conselho embutidas em todos os gerado
 | 11 | Atendimento e agendamento | 8 e 10 | 12 respostas rápidas, agendamento em cinco mensagens, sequência de confirmação, retomadas e plano de tratamento compreensível |
 | 12 | Rastreador de pacientes | 9 e 11 | Funil de sete etapas, consentimento por finalidade, próximo passo típico, planos parados, faltas, lembretes (.ics), planilha (.csv) e "Da conversa ao registro" |
 | 13 | Assistente da semana | 10 e 11 | Ritual de 30 minutos: pendências anonimizadas, parados e agenda em blocos |
-| 14 | Painel e diagnóstico | 11 e 1 | Métricas de 8 semanas, métricas da Parte 11 por origem e profissional, faltas por dia da semana, diário de conteúdo, gargalo e diagnóstico com IA |
+| 14 | Painel e diagnóstico | 11 e 1 | Métricas de 8 semanas, métricas da Parte 13 por origem e profissional, faltas por dia da semana, diário de conteúdo, gargalo e diagnóstico com IA |
 | 15 | Verificador ético | 2 e 13 | Regras do conselho, LGPD e políticas da Meta e do Google; checagem rápida sem IA e revisão frase a frase |
 | 16 | Briefing para terceiros | 14 | Documento para agência, social media, videomaker, tráfego, designer, redator ou recepção |
 | 17 | Ferramentas recomendadas | 14 | Uma ferramenta por necessidade (listadas, não avaliadas) e prompt para montar a sua caixa |
@@ -122,7 +122,7 @@ As sete etapas do rastreador:
 | Em tratamento | Iniciou o tratamento |
 | Encerrado | Com resultado (Alta e vínculo, Perdido ou Pausado) e motivo |
 
-Para médicos, psiquiatras e psicólogos sem planos por pacote, as etapas 5 e 6 aparecem como "Retorno agendado" e "Em acompanhamento", como na Parte 11 do guia.
+Para médicos, psiquiatras e psicólogos sem planos por pacote, as etapas 5 e 6 aparecem como "Retorno agendado" e "Em acompanhamento", como na Parte 13 do guia.
 
 **Campos de cada contato:**
 - nome ou apelido, telefone e canal preferido;
@@ -183,7 +183,7 @@ O painel Hoje lembra de fazer backup quando há dados e nenhum backup nos últim
 
 ## Limites desta versão
 
-Esta versão cobre o MVP e a v2 da Parte 12 do guia: tudo o que funciona numa página no navegador.
+Esta versão cobre o MVP e a v2 da Parte 14 do guia: tudo o que funciona numa página no navegador.
 
 O modelo foi pensado para o profissional que trabalha sozinho: os dados ficam no navegador de quem usa e não são compartilhados. Clínicas em que recepção, coordenação e vários profissionais precisam acessar os mesmos registros precisam de outra solução; escreva para suporte_CliniLoop@gmail.com.
 
@@ -207,7 +207,7 @@ O app fica em **https://jordanrizetto-design.github.io/CliniLoop/** (GitHub Page
 
 O código-fonte fica em `src/`:
 - `config_part.html`, `settings_part.html`, `tools.html`, `guia.html`, `body2.html` e `head_part.html`;
-- `app1.js` a `app5.js` e `livro_data.js` (o mapa do guia: etapas, partes, caixas Na prática e Sinergia, os 12 prompts, as checklists e o glossário);
+- `app1.js` a `app5.js` e `livro_data.js` (o mapa do guia: etapas, partes, caixas Na prática e Sinergia, os 14 prompts, as checklists e o glossário);
 - `extra.css` e `base.css`.
 
 O `python3 build.py` junta tudo em `index.html`. As regras dos conselhos ficam em `COUNCILS`, os tipos de profissional em `PROFISSIONAIS`, as prioridades em `OBJETIVOS` e `PROF_ROTA`, os prompts em `promptBuilders` e o guia em `LIVRO`, `TOOL_PARTES` e `PROMPTS_LIVRO`.

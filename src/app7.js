@@ -35,13 +35,13 @@
   // --- Diagnóstico: o que existe e o que criar ---
   var CANAL_CAT = [
     { id: 'Perfil da Empresa no Google', nome: 'Perfil da Empresa no Google', parte: 3, tool: 'perfil' },
-    { id: 'WhatsApp Business', nome: 'WhatsApp Business', parte: 8, tool: 'atendimento' },
+    { id: 'WhatsApp Business', nome: 'WhatsApp Business', parte: 10, tool: 'atendimento' },
     { id: 'Instagram', nome: 'Instagram', parte: 3, tool: 'perfil' },
-    { id: 'indicação de colegas', nome: 'Rede de indicação de colegas', parte: 6, tool: 'colegas' },
+    { id: 'indicação de colegas', nome: 'Rede de indicação de colegas', parte: 8, tool: 'colegas' },
     { id: 'YouTube', nome: 'YouTube', parte: 3, tool: 'perfil' },
     { id: 'site ou blog', nome: 'Site ou página de agendamento', parte: 3, tool: 'perfil' },
     { id: 'LinkedIn', nome: 'LinkedIn', parte: 3, tool: 'perfil' },
-    { id: 'Doctoralia ou plataforma de agendamento', nome: 'Doctoralia ou plataforma de agendamento', parte: 14, tool: 'ferramentas' },
+    { id: 'Doctoralia ou plataforma de agendamento', nome: 'Doctoralia ou plataforma de agendamento', parte: 16, tool: 'ferramentas' },
     { id: 'TikTok', nome: 'TikTok', parte: 3, tool: 'perfil' }
   ];
   function relevancia(id) {
@@ -112,6 +112,9 @@
     L.push({ midia: 'YouTube', quando: 'Autoridade duradoura', ideia: `Um vídeo de 6 a 10 minutos respondendo ${dor}, com o link de agendamento nas duas primeiras linhas.`, tool: 'roteiro', rel: o === 'autoridade' || o === 'ticket' ? 3 : 1 });
     L.push({ midia: 'Perfil da Empresa no Google', quando: 'Presença local', ideia: 'Fotos reais, serviços cadastrados, um post por mês e pedido de avaliação a todos os pacientes após o atendimento.', tool: 'perfil', rel: 3 });
     L.push({ midia: 'Rede de colegas', quando: 'Indicação qualificada', ideia: 'Carta de apresentação para os 3 colegas mais próximos e relatório de contrarreferência para cada paciente indicado.', tool: 'colegas', rel: o === 'fidelizar' || o === 'ticket' ? 3 : 2 });
+    L.push({ midia: 'LinkedIn', quando: 'Reputação e indicação de colegas', ideia: 'Um post técnico por semana a partir do melhor tema do mês, com referência científica, e comentários de qualidade nas publicações de colegas que encaminham pacientes.', tool: 'roteiro', rel: o === 'autoridade' || o === 'ticket' ? 3 : (usa.has('LinkedIn') ? 2 : 1) });
+    if (usa.has('TikTok')) L.push({ midia: 'TikTok', quando: 'Alcance amplo por interesse', ideia: 'Os mesmos roteiros dos Reels, exportados sem marca d\'água. Para anunciar, Promote ou TikTok Ads Manager com público a partir de 18 anos.', tool: 'roteiro', rel: 2 });
+    L.push({ midia: 'Produção de vídeo e imagem', quando: 'Para todas as mídias', ideia: 'Kit de gravação que cabe no orçamento, editor nativo da rede para começar e o pedido de imagem para a IA com as regras do seu conselho.', tool: 'ferramentas', rel: 2 });
     if (o === 'online') L.push({ midia: 'Site ou página de agendamento', quando: 'Pacientes de outras cidades', ideia: 'Página com como funciona o atendimento online, duração, valores (quando permitido) e botão de agendar.', tool: 'perfil', rel: 3 });
     return L.sort((a, b) => b.rel - a.rel).slice(0, 6);
   }

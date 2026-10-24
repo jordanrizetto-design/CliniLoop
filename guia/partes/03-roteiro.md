@@ -14,10 +14,12 @@ Este guia é um roteiro, não um tratado. Siga as etapas na ordem, registre cada
 |---|---|---|
 | **1** | **Entenda o jogo e as regras** | 01 A jornada das sete decisões · 02 Ética primeiro: conselhos e LGPD |
 | **2** | **Posicione-se** | 03 Os canais, um a um: manual de configuração |
-| **3** | **Gere autoridade e demanda** | 04 Conteúdo que gera autoridade e alcance · 05 Reaproveitamento: uma aula, quatro entregas · 06 A decisão dos colegas: a rede de indicação · 07 Anúncios: Meta Ads e Google Ads |
-| **4** | **Converta contatos em consultas** | 08 Do clique à consulta: a decisão de agendar · 09 A decisão de comparecer |
-| **5** | **Feche e acompanhe o tratamento** | 10 A decisão de tratar: fechamento com ética |
-| **6** | **Meça e escale com CRM** | 11 O CRM: a gestão do relacionamento com o paciente · 12 O app CliniLoop: guia das ferramentas · 13 Gerador de campanhas e biblioteca de prompts · 14 Ferramentas para materializar as campanhas |
+| **3** | **Gere autoridade e demanda** | 04 Conteúdo que gera autoridade e alcance · 05 Reaproveitamento: uma aula, quatro entregas · 06 Vídeo: como produzir com o que você tem · 07 Edição de vídeo: das ferramentas nativas às externas · 08 A decisão dos colegas: a rede de indicação · 09 Anúncios: Meta Ads e Google Ads |
+| **4** | **Converta contatos em consultas** | 10 Do clique à consulta: a decisão de agendar · 11 A decisão de comparecer |
+| **5** | **Feche e acompanhe o tratamento** | 12 A decisão de tratar: fechamento com ética |
+| **6** | **Meça e escale com CRM** | 13 O CRM: a gestão do relacionamento com o paciente · 14 O app CliniLoop: guia das ferramentas · 15 Gerador de campanhas e biblioteca de prompts · 16 Ferramentas para materializar as campanhas |
+
+No fim do guia, o **Anexo A** é o manual prático para ter à mão: posicionamento antes de criar, edição nos aplicativos das redes, no CapCut, no Canva e no HeyGen, geração de imagens com IA e anúncios no Instagram e no TikTok, passo a passo.
 
 ## Não sabe por onde começar?
 

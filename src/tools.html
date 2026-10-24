@@ -552,7 +552,7 @@
             <div class="output-block" hidden></div>
           </form>
           <details class="profile-base ref-box">
-            <summary><span>Do guia: qual plataforma para qual intenção e o checklist do impulsionamento (Parte 7)</span> <span class="chevron">▸</span></summary>
+            <summary><span>Do guia: qual plataforma para qual intenção e o checklist do impulsionamento (Parte 9)</span> <span class="chevron">▸</span></summary>
             <div class="profile-body" id="ref-trafego"></div>
           </details>
           <p class="kit-note"><b>Datas de conscientização</b> (Setembro Amarelo, Outubro Rosa, Novembro Azul e outras) são boas para autoridade, desde que educativas. Em Setembro Amarelo, siga as recomendações de comunicação responsável sobre suicídio, informe o CVV (188) e não use o tema para captar pacientes.</p>
@@ -702,7 +702,7 @@
           </form>
           <div class="saved-slot" data-save="atendimento" data-label="respostas rápidas e roteiros aprovados"></div>
           <details class="profile-base ref-box">
-            <summary><span>Do guia: padrões de atendimento, cinco mensagens e sequência de confirmação (Partes 8 e 9)</span> <span class="chevron">▸</span></summary>
+            <summary><span>Do guia: padrões de atendimento, cinco mensagens e sequência de confirmação (Partes 10 e 11)</span> <span class="chevron">▸</span></summary>
             <div class="profile-body" id="ref-atend"></div>
           </details>
 
@@ -746,7 +746,7 @@
             <div class="output-block" hidden></div>
           </form>
           <details class="profile-base ref-box">
-            <summary><span>Do guia: o fechamento em cinco momentos e objeções comuns (Parte 10)</span> <span class="chevron">▸</span></summary>
+            <summary><span>Do guia: o fechamento em cinco momentos e objeções comuns (Parte 12)</span> <span class="chevron">▸</span></summary>
             <div class="profile-body" id="ref-fecha"></div>
           </details>
         </div>
@@ -829,7 +829,7 @@
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
-          <p class="desc">O ritual semanal de 30 minutos (Parte 11), em horário fixo, de preferência sexta à tarde: o Assistente junta os próximos passos do Rastreador, os colegas a contatar, as campanhas ativas e a meta de conteúdo, e monta a semana em blocos. Os pacientes entram anonimizados (Contato 1, Contato 2…).</p>
+          <p class="desc">O ritual semanal de 30 minutos (Parte 13), em horário fixo, de preferência sexta à tarde: o Assistente junta os próximos passos do Rastreador, os colegas a contatar, as campanhas ativas e a meta de conteúdo, e monta a semana em blocos. Os pacientes entram anonimizados (Contato 1, Contato 2…).</p>
           <ol class="ritual-list" id="ritual-list"></ol>
           <form class="tool-form" data-tool="assistente">
             <div class="form-actions" style="margin-top:0">
@@ -865,7 +865,7 @@
           <p class="desc">Os números do funil vêm do Rastreador; os de conteúdo, do diário abaixo. O gargalo é a passagem do funil com a menor conversão nas últimas 4 semanas. Não compare Reels, Shorts e YouTube longo como a mesma unidade de atenção, e marque o que foi impulsionado.</p>
           <div class="risk-box" id="gargalo"></div>
           <div class="num-wrap"><table class="num-table" id="num-table"></table></div>
-          <h4 style="margin:18px 0 4px;font-family:var(--body)">Métricas que importam (Parte 11)</h4>
+          <h4 style="margin:18px 0 4px;font-family:var(--body)">Métricas que importam (Parte 13)</h4>
           <p class="desc" style="margin-top:0">Últimos 90 dias, pela data do primeiro contato. Tempo da primeira resposta: meça no WhatsApp Business durante uma semana (o app não lê suas conversas).</p>
           <div id="metricas-livro"></div>
           <div class="form-actions" style="margin-top:12px">
@@ -1036,7 +1036,7 @@
 
       <details class="tool" data-id="ferramentas">
         <summary>
-          <div class="tool-title"><span class="pin">17</span><div><h3>Ferramentas recomendadas</h3><span class="sub">O mínimo para criar, publicar, anunciar, atender e medir</span></div></div>
+          <div class="tool-title"><span class="pin">17</span><div><h3>Ferramentas recomendadas</h3><span class="sub">O mínimo para gravar, editar, gerar imagens, publicar, anunciar, atender e medir</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -1070,6 +1070,75 @@
               </div>
             </div>
             <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar prompt</button></div>
+            <div class="output-block" hidden></div>
+          </form>
+          <hr class="divider">
+          <h4 style="margin:0 0 4px;font-family:var(--body)">Imagens com IA: qual recurso usar</h4>
+          <p class="desc">Cada assistente de IA tem o seu gerador de imagens. Use para ilustrações, ícones, cenários e capas das suas peças. Três regras valem para todos: imagem gerada nunca aparece como paciente, resultado ou "antes e depois"; revise a anatomia, porque os geradores erram dentes, mãos e órgãos; e prefira ilustração a foto realista em temas clínicos. O passo a passo está no Anexo A do guia.</p>
+          <div class="num-wrap"><table class="num-table kit-table" id="img-table"></table></div>
+          <h4 style="margin:14px 0 4px;font-family:var(--body)">Monte o pedido de imagem</h4>
+          <form class="tool-form" data-tool="imagem">
+            <div class="field">
+              <label for="im-tema">O que a imagem precisa mostrar *</label>
+              <input type="text" id="im-tema" name="tema" required placeholder="Ex: modelo anatômico do joelho, destacando o menisco">
+            </div>
+            <div class="row3">
+              <div class="field">
+                <label for="im-tipo">Tipo de imagem</label>
+                <select id="im-tipo" name="tipo">
+                  <option value="ilustração educativa" selected>Ilustração educativa</option>
+                  <option value="ícone ou elemento gráfico">Ícone ou elemento gráfico</option>
+                  <option value="fluxograma ou infográfico">Fluxograma ou infográfico</option>
+                  <option value="cenário ou ambiente (sem pessoas)">Cenário ou ambiente (sem pessoas)</option>
+                  <option value="capa com texto">Capa com texto</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="im-formato">Onde vai ser usada</label>
+                <select id="im-formato" name="formato">
+                  <option value="carrossel do Instagram, proporção 4:5" selected>Carrossel (4:5)</option>
+                  <option value="capa de Reel ou Story, proporção 9:16">Capa de Reel ou Story (9:16)</option>
+                  <option value="post quadrado, proporção 1:1">Post quadrado (1:1)</option>
+                  <option value="miniatura do YouTube, proporção 16:9">Miniatura do YouTube (16:9)</option>
+                  <option value="banner do LinkedIn, proporção 4:1">Banner do LinkedIn (4:1)</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="im-ferramenta">Ferramenta que vou usar</label>
+                <select id="im-ferramenta" name="ferramenta">
+                  <option value="ChatGPT" selected>ChatGPT</option>
+                  <option value="Gemini">Gemini</option>
+                  <option value="Meta AI">Meta AI</option>
+                  <option value="Copilot">Copilot</option>
+                  <option value="Canva (Dream Lab)">Canva</option>
+                  <option value="Adobe Firefly">Adobe Firefly</option>
+                  <option value="Midjourney">Midjourney</option>
+                  <option value="Ideogram">Ideogram</option>
+                  <option value="Claude (diagrama em código)">Claude (diagrama)</option>
+                </select>
+              </div>
+            </div>
+            <div class="row3">
+              <div class="field">
+                <label for="im-estilo">Estilo</label>
+                <select id="im-estilo" name="estilo">
+                  <option value="ilustração plana e limpa" selected>Ilustração plana</option>
+                  <option value="ilustração 3D suave">Ilustração 3D</option>
+                  <option value="aquarela delicada">Aquarela</option>
+                  <option value="ícones em traço simples">Ícones em traço</option>
+                  <option value="fotografia de ambiente, sem pessoas">Foto de ambiente</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="im-cores">Cores da sua marca</label>
+                <input type="text" id="im-cores" name="cores" placeholder="Ex: azul-petróleo e branco">
+              </div>
+              <div class="field">
+                <label for="im-evitar">O que evitar, além do padrão</label>
+                <input type="text" id="im-evitar" name="evitar" placeholder="Ex: sangue, agulhas">
+              </div>
+            </div>
+            <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar pedido de imagem</button></div>
             <div class="output-block" hidden></div>
           </form>
         </div>

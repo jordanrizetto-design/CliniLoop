@@ -36,13 +36,13 @@ A maior parte das clínicas investe na decisão 1 e perde dinheiro da 4 à 7.
 | YouTube | Autoridade e busca de longo prazo | Vídeos que respondem dúvidas que o paciente pesquisa; Shorts como porta de entrada | Tempo de exibição e cliques para agendar |
 | Google (Perfil da Empresa e busca) | Intenção imediata: quem já precisa | Fotos, horários, avaliações, posts; anúncios de pesquisa | Ligações, rotas e cliques no WhatsApp |
 | TikTok (opcional) | Alcance amplo por interesse | Os mesmos roteiros dos Reels, sem marca d'água de outra rede | Compartilhamentos e visitas ao perfil |
-| LinkedIn (acessório) | Credibilidade com colegas, imprensa e empresas | Currículo completo, artigos técnicos, eventos, casos discutidos sem identificação | Conexões com médicos, convites e indicações |
+| LinkedIn | Reputação profissional: colegas que indicam, imprensa, empresas e pacientes que pesquisam o seu nome | Perfil completo, sínteses de artigos, congressos, opiniões técnicas, casos discutidos sem identificação | Conexões com colegas, convites e indicações |
 | WhatsApp | Conversão e retenção | Atendimento, confirmações, orientações pós-consulta | Taxa de agendamento e de comparecimento |
 | Meta Ads e Google Ads | Acelerar o que o orgânico já prova | Os conteúdos orgânicos que mais geraram mensagens | Custo por agendamento e por paciente que compareceu |
 
-### A regra do LinkedIn acessório
+### O papel do LinkedIn
 
-Todo profissional deve ter o perfil completo e ativo, porque é ali que colegas, jornalistas e departamentos de recursos humanos conferem quem você é. Publique ali o conteúdo mais sério: sínteses de artigos científicos, participação em congressos, opiniões técnicas. O público é o colega, não o paciente.
+O LinkedIn é a rede da reputação profissional. É ali que colegas conferem a sua formação antes de indicar, que jornalistas e organizadores de eventos procuram especialistas e que muitos pacientes chegam quando pesquisam o seu nome. Ele trabalha sobretudo pelas decisões 2 e 3, confiança e indicação. Publique o conteúdo mais técnico e reflexivo: sínteses de artigos científicos, aprendizados de congressos, opiniões fundamentadas. A Parte 3 explica a natureza da rede e como configurar e publicar.
 
 ::: {.box .pratica}
 Escreva as sete decisões numa folha e, ao lado de cada uma, anote quantos pacientes passaram por ela no último mês. Onde você não sabe o número, está o primeiro campo do seu CRM.

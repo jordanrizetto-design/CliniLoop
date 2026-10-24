@@ -9,8 +9,8 @@
 | Peça | Onde entra | Por quê |
 |---|---|---|
 | Plano de 30 dias | Logo depois da Apresentação, antes da Parte 1 | Dá ao leitor uma ordem única para a primeira semana |
-| Exemplo preenchido | Abaixo de cada "Prompt do Sim" da Parte 13 (e, resumido, nas partes 3 a 11) | Mostra o que a IA devolve e o que revisar |
-| Marcos de referência | Final da Parte 11 (CRM) e na Parte 14 | Dá ao leitor um ponto de comparação consigo mesmo |
+| Exemplo preenchido | Abaixo de cada "Prompt do Sim" da Parte 15 (e, resumido, nas partes 3 a 13) | Mostra o que a IA devolve e o que revisar |
+| Marcos de referência | Final da Parte 13 (CRM) e na Parte 16 | Dá ao leitor um ponto de comparação consigo mesmo |
 | Dados de mercado | Anexo, com as fontes | Separa o que é fato verificado do que é estimativa |
 
 ## 1. Plano de 30 dias
@@ -37,7 +37,7 @@ Uma ação de 20 a 30 minutos por dia útil, em quatro semanas. Cada dia termina
 | 9 | **Verifique e publique.** Passe legenda e vídeo pelo Verificador ético, inclua nome, registro e especialidade, publique e registre no Diário de conteúdo. | Verificador ético | Primeiro conteúdo no ar e registrado. | 20 min |
 | 10 | **Reaproveite.** Escolha uma aula, podcast ou entrevista em que você falou bem, cole a transcrição e gere carrossel, guia e Reel. | Reaproveitamento de conteúdo | Um conjunto de peças para as próximas semanas. | 30 min |
 
-### Semana 3: Atendimento e colegas (partes 6, 8, 9 e 11 do livro)
+### Semana 3: Atendimento e colegas (partes 8, 10, 11 e 13 do livro)
 
 | Dia | Ação | Ferramenta | Entrega | Tempo |
 |---|---|---|---|---|
@@ -47,7 +47,7 @@ Uma ação de 20 a 30 minutos por dia útil, em quatro semanas. Cada dia termina
 | 14 | **Comece a rede de colegas.** Cadastre 10 colegas que atendem o mesmo paciente antes ou depois de você. Gere a carta e envie para os 3 mais próximos. | Rede de colegas | 10 colegas mapeados e 3 cartas enviadas. | 30 min |
 | 15 | **Confirmação e retomadas.** Gere o texto de confirmação com data e local, e as retomadas de 1, 3 e 7 dias. Use em todos os agendamentos a partir de hoje. | Atendimento e agendamento | Sequência de confirmação em uso. | 30 min |
 
-### Semana 4: Medir e ajustar (partes 11, 13 e 14 do livro)
+### Semana 4: Medir e ajustar (partes 13, 15 e 16 do livro)
 
 | Dia | Ação | Ferramenta | Entrega | Tempo |
 |---|---|---|---|---|
@@ -92,7 +92,7 @@ Não encontramos referência pública e confiável de volume de pacientes por ca
 - Colega ativo = indicou pelo menos um paciente nos últimos 90 dias.
 - Regra de uso: meça por 4 semanas, escolha **uma** taxa para melhorar e mude **uma** coisa por vez.
 
-## 3. Os 12 prompts com exemplo preenchido
+## 3. Os 14 prompts com exemplo preenchido
 
 Personagem fictícia: Dra. Bia Nunes, nutricionista esportiva, Pinheiros (São Paulo), CRN-3 00000 (inventado). A saída é um **trecho** do que uma IA pode devolver; o resultado real varia. Revise tudo antes de usar.
 
@@ -176,7 +176,7 @@ Reel 30 a 45 s, duas versões: roteiro falado e tópicos de gravação.
 - Confirme que cada citação está fiel ao trecho original.
 - Remova telefones e e-mails da transcrição antes de colar (o app já troca por marcadores).
 
-### 3.4 Carta de apresentação a colegas (Parte 6)
+### 3.4 Carta de apresentação a colegas (Parte 8)
 
 **O que foi colocado:** Profissão: nutricionista. Área: nutrição esportiva. Colega: ortopedista da região de Pinheiros. Canal: WhatsApp profissional.
 
@@ -191,7 +191,7 @@ Olá, Dr. Rafael, tudo bem? Sou Bia Nunes, nutricionista esportiva (CRN-3 00000)
 - Ajuste ao seu estilo e à sua relação com o colega.
 - Nada de vantagem, desconto ou comissão pela indicação.
 
-### 3.5 Relatório de contrarreferência (Parte 6)
+### 3.5 Relatório de contrarreferência (Parte 8)
 
 **O que foi colocado:** Anotações (sem identificação): paciente M.S., 38 anos, encaminhada pelo Dr. Rafael por tendinopatia; avaliação: ingestão proteica abaixo da orientação, jejum prolongado antes dos treinos; conduta: plano alimentar com ajuste de refeições; reavaliação em 6 semanas.
 
@@ -216,7 +216,7 @@ Bia Nunes, nutricionista, CRN-3 00000
 - Use só iniciais e confirme a autorização do paciente.
 - Revise os achados: o texto deve refletir o que você realmente avaliou.
 
-### 3.6 Anúncio Meta e Google (Parte 7)
+### 3.6 Anúncio Meta e Google (Parte 9)
 
 **O que foi colocado:** Serviço: consulta de nutrição esportiva. Bairro: Pinheiros, São Paulo. Conselho: CFN.
 
@@ -245,7 +245,7 @@ CHECAGEM: nenhum superlativo, nenhuma promessa, nenhuma afirmação sobre a cond
 - Confira os limites de caracteres no gerenciador de anúncios.
 - Leia as políticas de saúde da Meta e do Google vigentes antes de enviar.
 
-### 3.7 Plano de impulsionamento (Parte 7)
+### 3.7 Plano de impulsionamento (Parte 9)
 
 **O que foi colocado:** Post: Reel "3 erros na hidratação de quem corre". Objetivo: mensagens no WhatsApp. Orçamento: R$ 140.
 
@@ -264,7 +264,7 @@ CHECAGEM: nenhum superlativo, nenhuma promessa, nenhuma afirmação sobre a cond
 - O número de dias e o valor são ponto de partida, não garantia.
 - Se o orçamento não permite um período de teste, prefira 3 posts orgânicos antes de impulsionar.
 
-### 3.8 Respostas rápidas (Parte 8)
+### 3.8 Respostas rápidas (Parte 10)
 
 **O que foi colocado:** Clínica: Consultório Bia Nunes. Profissão: nutricionista.
 
@@ -290,7 +290,7 @@ CHECAGEM: nenhum superlativo, nenhuma promessa, nenhuma afirmação sobre a cond
 - Cada mensagem deve soar como você.
 - Evite pressão e urgência artificial.
 
-### 3.9 Plano de tratamento compreensível (Parte 10)
+### 3.9 Plano de tratamento compreensível (Parte 12)
 
 **O que foi colocado:** Anotações técnicas: M.S., meta de completar os 10 km em prova; hoje corre 5 km; 3 treinos por semana; refeições irregulares; 8 semanas de plano; reavaliação com 4 e 8 semanas.
 
@@ -321,7 +321,7 @@ O resultado de cada pessoa é diferente; este plano organiza o caminho, sem gara
 - Revise as metas com o seu critério clínico.
 - Entregue ao paciente por escrito e guarde a versão assinada, se for o seu procedimento.
 
-### 3.10 Da conversa ao registro (Parte 11)
+### 3.10 Da conversa ao registro (Parte 13)
 
 **O que foi colocado:** Conversa de WhatsApp (fictícia): "Oi, vi seu vídeo sobre hidratação, vocês atendem corredor? Moro na Vila Madalena." / "Atendemos sim! Qual seu objetivo?" / "Quero me preparar para uma meia maratona em dezembro." / "Perfeito. Tenho terça 18h ou quinta 8h30." / "Vou ver minha agenda e te aviso."
 
@@ -346,7 +346,7 @@ PRÓXIMA MENSAGEM (até 400 caracteres):
 - Não registre dados clínicos.
 - Cadastre o consentimento por finalidade no Rastreador.
 
-### 3.11 Gerador de campanha completa (Parte 13)
+### 3.11 Gerador de campanha completa (Parte 15)
 
 **O que foi colocado:** Duração: 14 dias. Serviço: consulta de nutrição esportiva. Objetivo: 8 pacientes agendados. Orçamento: R$ 30 por dia.
 
@@ -371,7 +371,7 @@ Objetivo: 8 consultas agendadas em 14 dias. Público: corredores de 30 a 50 anos
 - Só rode campanha com atendimento e registro funcionando.
 - A meta de 8 consultas é um exemplo: use a sua linha de base.
 
-### 3.12 Verificador ético (Parte 13)
+### 3.12 Verificador ético (Parte 15)
 
 **O que foi colocado:** Texto: "Perca 10 kg em 30 dias com o meu protocolo! Resultado garantido, veja o antes e depois das minhas pacientes. Só esta semana, 30% de desconto na consulta."
 
@@ -417,10 +417,10 @@ Comparei o guia digital com o que o profissional de saúde encontra hoje. Não a
 
 | Categoria | Exemplos pesquisados | O que entrega | Onde o guia digital é diferente |
 |---|---|---|---|
-| Conteúdo gratuito de blog | [Medway, "Marketing para médicos"](https://www.medway.com.br/conteudos/marketing-para-medicos-aprenda-a-atrair-pacientes/) | Conceitos, escolha de plataforma, resumo de regras do CFM. Sem números, modelos, roteiros ou checklists | O guia dá passos de 30 minutos, 12 prompts, checklists e um registro de contatos |
+| Conteúdo gratuito de blog | [Medway, "Marketing para médicos"](https://www.medway.com.br/conteudos/marketing-para-medicos-aprenda-a-atrair-pacientes/) | Conceitos, escolha de plataforma, resumo de regras do CFM. Sem números, modelos, roteiros ou checklists | O guia dá passos de 30 minutos, 14 prompts, checklists e um registro de contatos |
 | CRM de WhatsApp para clínicas | [Clint, Kommo, SocialHub](https://www.clint.digital/blog/crm-para-clinica-whatsapp-2026/) | Automação, agente de IA, API oficial do WhatsApp. Clint a partir de R$ 149 por usuário ao mês (anual) ou R$ 199 (mensal), preços do fornecedor em set/2026 | O guia não automatiza nem integra WhatsApp. Em troca, é gratuito, ensina o método e traz as regras do conselho. Quando o volume crescer, o profissional deve migrar para um CRM e levar o método |
 | Gestão e marketplace | [Doctoralia e Feegow](https://medicinasa.com.br/panorama-doctoralia-2024) | Agenda, prontuário, teleconsulta, marketplace de pacientes (autodeclara mais de 15 milhões de agendamentos por mês) | O guia trata da captação própria, da rede de colegas e da rotina semanal, fora do marketplace |
-| Guia digital (e-book + app) | CliniLoop | Método em 6 etapas, 14 partes, 12 prompts, 18 ferramentas, verificador ético, rastreador local | Ver forças e limites abaixo |
+| Guia digital (e-book + app) | CliniLoop | Método em 6 etapas, 16 partes, 14 prompts, 18 ferramentas, verificador ético, rastreador local | Ver forças e limites abaixo |
 
 **Forças reais**
 

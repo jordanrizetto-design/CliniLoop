@@ -17,14 +17,14 @@
       { d: 9, tool: 'etica', min: 20, titulo: 'Verifique e publique', acao: 'Passe legenda e vídeo pelo Verificador ético, inclua nome, registro e especialidade, publique e registre no Diário de conteúdo.', entrega: 'Primeiro conteúdo no ar e registrado.' },
       { d: 10, tool: 'reaproveitamento', min: 30, titulo: 'Reaproveite', acao: 'Escolha uma aula, podcast ou entrevista em que você falou bem, cole a transcrição e gere carrossel, guia e Reel.', entrega: 'Um conjunto de peças para as próximas semanas.' }
     ] },
-    { sem: 3, tema: 'Atendimento e colegas', parte: '6, 8, 9 e 11', dias: [
+    { sem: 3, tema: 'Atendimento e colegas', parte: '8, 10, 11 e 13', dias: [
       { d: 11, tool: 'atendimento', min: 30, titulo: 'Prepare as respostas rápidas', acao: 'Gere as 12 respostas rápidas, ajuste ao seu tom e salve no WhatsApp Business.', entrega: '12 mensagens salvas.' },
       { d: 12, tool: 'atendimento', min: 25, titulo: 'Defina como e quando responde', acao: 'Escreva a saudação e a mensagem de ausência, e decida o horário em que você responde novos contatos.', entrega: 'Regra de resposta escrita e configurada.' },
       { d: 13, tool: 'rastreador', min: 30, titulo: 'Registre quem já entrou em contato', acao: 'Cadastre no Rastreador todos os contatos abertos dos últimos 30 dias, com origem, etapa e consentimento. Defina o próximo passo de cada um.', entrega: 'Todos os contatos abertos com próximo passo e data.' },
       { d: 14, tool: 'colegas', min: 30, titulo: 'Comece a rede de colegas', acao: 'Cadastre 10 colegas que atendem o mesmo paciente antes ou depois de você. Gere a carta e envie para os 3 mais próximos.', entrega: '10 colegas mapeados e 3 cartas enviadas.' },
       { d: 15, tool: 'atendimento', min: 30, titulo: 'Confirmação e retomadas', acao: 'Gere o texto de confirmação com data e local, e as retomadas de 1, 3 e 7 dias. Use em todos os agendamentos a partir de hoje.', entrega: 'Sequência de confirmação em uso.' }
     ] },
-    { sem: 4, tema: 'Medir e ajustar', parte: '11, 13 e 14', dias: [
+    { sem: 4, tema: 'Medir e ajustar', parte: '13, 15 e 16', dias: [
       { d: 16, tool: 'painel', min: 20, titulo: 'Segunda rodada de conteúdo', acao: 'Publique o 2º e o 3º conteúdos e registre no Diário. Responda cada comentário e mensagem no mesmo dia.', entrega: '3 conteúdos registrados.' },
       { d: 17, tool: 'assistente', min: 25, titulo: 'Faça o ritual da semana', acao: 'Importe as pendências no Assistente e gere a agenda em blocos para a semana.', entrega: 'Agenda da semana pronta.' },
       { d: 18, tool: 'painel', min: 30, titulo: 'Lance os números e ache o gargalo', acao: 'Preencha os números da semana e leia "As sete decisões": em qual delas o paciente está se perdendo?', entrega: 'Um gargalo identificado.' },

@@ -1,7 +1,7 @@
 ---
 tipo: secao
 grupo: Anexos
-marca: ANEXO A
+marca: ANEXO B
 titulo: Glossário
 ---
 ::: lead

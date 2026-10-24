@@ -1,85 +1,75 @@
 ---
 tipo: parte
 num: 12
-etapa: No roteiro · Etapa 6 de 6 · Meça e escale com CRM
-titulo: O app CliniLoop: guia das ferramentas
-lead: O CliniLoop é o app de CRM que acompanha este guia. Um Perfil do consultório alimenta todas as ferramentas, o funil registra cada paciente e o painel Hoje mostra a próxima ação.
-nesta: Como o app se organiza · Do guia à ferramenta · Status do Rastreador · O que fica registrado · Privacidade · Clínicas com vários usuários
-grupo: Etapa 6 · Meça e escale com CRM
+etapa: No roteiro · Etapa 5 de 6 · Feche e acompanhe o tratamento
+titulo: A decisão de tratar: fechamento com ética
+lead: Na saúde, fechar não é vender. É o paciente entender o plano, confiar nele e decidir começar.
+nesta: Por que precisa de processo · O fechamento em cinco momentos · Fisioterapia · Clínicas · Objeções honestas
+grupo: Etapa 5 · Feche e acompanhe o tratamento
 marca: PARTE 12
 ---
-Esta parte é o manual de uso do app. Cada ferramenta nasceu de uma parte do guia: o guia explica o porquê, o app põe em prática.
+Clínicas e fisioterapeutas sentem isso mais que ninguém, porque o resultado depende de um plano com várias sessões, e um plano proposto e não iniciado é o maior vazamento de receita do consultório.
 
-## Como o app se organiza
+## Por que é preciso um processo de fechamento
 
-- **Jornada em seis fases.** O app conduz você em ordem, e cada fase abre com uma mensagem que explica o porquê: **1 Seu perfil** (consultório, paciente ideal e redes que você já usa), **2 Seu objetivo**, **3 Diagnóstico** (o que você já tem e o que criar, em ordem), **4 Plano e campanhas** (passo a passo e uma sugestão de campanha por mídia), **5 WhatsApp e CRM** (checklist, links com origem e o modelo de funil) e **6 Avaliar e ajustar** (taxas, gargalo e a ação que mais vale a pena).
-- **Hoje.** A tela de ação, a partir da fase 4. Mostra a próxima ação, leva você até o fim dela e só então pergunta qual é a seguinte. Se faltar algum dado do consultório, lista os campos que faltam, em vez de pedir tudo de novo.
-- **Trilha por objetivo.** Ao escolher um objetivo (encher a agenda, aumentar o ticket, ganhar autoridade, atender online ou fidelizar), o app monta um caminho passo a passo, com o critério de "pronto quando" de cada passo.
-- **Modo guiado e modo completo.** No guiado, aparecem só as ferramentas do passo atual. No completo, todas ficam visíveis. Você alterna quando quiser.
-- **Perfil do consultório.** Preenchido uma única vez: profissão, registro, especialidade, cidade, serviços, público ideal e temas de conteúdo. Todos os prompts saem já com esses dados e com as regras do seu conselho.
+- O tratamento é uma série (10, 20 sessões; várias etapas de um tratamento odontológico), não um ato único.
+- O paciente recebe o plano e diz "vou pensar". Sem acompanhamento, ele não volta.
+- A adesão cai depois das primeiras sessões, quando a dor melhora e o paciente abandona antes da alta.
+- A equipe (recepção, coordenação, profissional) precisa falar a mesma língua.
 
-## Do guia à ferramenta
+## O fechamento em cinco momentos
 
-| Ferramenta do app | O que faz | Parte do guia |
+1. **Avaliação que escuta.** Pergunte o objetivo do paciente na vida real ("voltar a correr", "brincar com o neto sem dor", "mastigar sem medo"). O plano será apresentado em função dele.
+2. **Plano por escrito.** Diagnóstico funcional em linguagem simples, objetivos por fase, número estimado de sessões ou etapas, frequência, o que depende do paciente, critérios de reavaliação e de alta. Nunca prometa resultado; mostre metas e como serão medidas.
+3. **Conversa sobre investimento, em particular.** Valor, formas de pagamento e alternativas (plano completo, por fase, convênio quando houver). Nas profissões em que o conselho permite, pacotes são uma forma de organizar o tratamento, não um chamariz publicitário.
+4. **Tempo para decidir, com data.** "Fique à vontade para pensar. Posso falar com você na quinta para tirar dúvidas?" A data vai para o CRM como próximo passo.
+5. **Acompanhamento do plano em aberto.** Contato em 2, 7 e 15 dias, com informação útil e disponibilidade, nunca pressão. Depois disso, o plano é marcado como não iniciado com o motivo.
+
+## Fisioterapia: da avaliação à alta
+
+| Momento | O que fazer | Registro no CRM |
 |---|---|---|
-| Comece aqui | Escolhe o tipo de profissional (médico, psiquiatra, dentista, psicólogo, fisioterapeuta, nutricionista ou clínica multiprofissional), reordena as ferramentas e carrega as regras do conselho certo | 1 e 2 |
-| Público, ICP e persona | Descreve quem você atende e gera o perfil do paciente ideal | 3 |
-| Persona do profissional | Registra sua história, seus valores e o seu tom de voz | 3 e 4 |
-| Nicho e diferencial | Aplica as quatro ações do Oceano Azul e gera a proposta de valor | Apresentação |
-| Perfis e presença | Checklists de configuração e auditoria do Google, Instagram, YouTube, LinkedIn e TikTok | 3 |
-| Pautas e palavras-chave | Banco de dúvidas reais, palavras-chave por serviço e cidade, pautas e calendário | 4 |
-| Roteiros e copy | Reels, carrosséis, Stories, vídeos de YouTube e posts de LinkedIn, com cinco ganchos | 4 |
-| Reaproveitamento de conteúdo | Transforma aula, podcast ou entrevista em carrossel, guia, Reel e Stories, com registro de ideias, autoria e pendências | 5 |
-| Formação e autoridade | Congressos, cursos, publicações e títulos para o perfil e o LinkedIn | 3 |
-| Gerador de campanhas | Meta Ads, Google Ads e plano de impulsionamento, com criativos, textos, palavras-chave e público | 7 e 13 |
-| Rede de colegas | Funil de colegas, carta de apresentação, relatório de contrarreferência, agradecimentos | 6 |
-| Atendimento e agendamento | Respostas rápidas do WhatsApp, roteiro de agendamento, retomadas | 8 |
-| Rastreador de pacientes | Funil de sete etapas, próximos passos vencidos em destaque, lembretes (.ics), exportação (.csv) | 9, 10 e 11 |
-| Assistente da semana | Monta a agenda da semana com acompanhamentos, conteúdo e contatos com colegas | 11 |
-| Painel e diagnóstico | Métricas da Parte 11 e o gargalo da semana | 11 |
-| Verificador ético | Revisa qualquer texto ou anúncio contra as regras do conselho escolhido e as políticas da Meta e do Google | 2 e 13 |
-| Briefing para terceiros | Monta o briefing para agência, social media ou editor de vídeo | 14 |
-| Playbook da clínica | Reúne tudo em um documento e agenda revisões quinzenais | 11 |
+| Avaliação | Testes funcionais, escala de dor, objetivo do paciente | Etapa Avaliado; objetivo em uma frase |
+| Proposta | Plano por fases com número de sessões e frequência | Etapa Plano proposto; valor e forma de pagamento |
+| Início | Agendar o bloco de sessões de uma vez | Etapa Em tratamento; sessões agendadas |
+| Sessão 4 a 6 | Reavaliação com os mesmos testes, mostrar evolução | Marco de reavaliação; risco de abandono |
+| Alta | Relatório de alta, orientações, plano de manutenção (Pilates, treino) | Etapa Alta; pedido de avaliação no Google; contrarreferência ao médico |
+| 30 a 90 dias depois | Contato de acompanhamento | Retorno ou manutenção |
 
-## Status do Rastreador de pacientes
+## Clínicas multiprofissionais e odontológicas
 
-| Etapa no guia | Status no app |
-|---|---|
-| 1 Novo contato | Novo |
-| 2 Em conversa | Em conversa |
-| 3 Agendado | Agendado |
-| 4 Avaliado | Avaliado |
-| 5 Plano proposto | Plano proposto |
-| 6 Em tratamento | Em tratamento |
-| 7 Alta e vínculo, Perdido, Pausado | Encerrado (com resultado e motivo) |
-
-## O que fica registrado
-
-- **Contato ou paciente:** nome, telefone, canal preferido, consentimento (data e finalidade), origem, serviço, profissional, etapa, próximo passo, data, valor do plano, motivo de perda, colega que indicou.
-- **Colega:** nome, profissão, especialidade, registro, endereço, canal, etapa no funil de colegas, indicações recebidas e enviadas, última contrarreferência.
-- **Campanha:** plataforma, tipo (impulsionamento ou campanha), objetivo, período, investimento, criativos, contatos gerados, agendados, comparecimentos, planos iniciados.
-- **Conteúdo:** data, canal, formato, tema, gancho, palavra-chave, alcance, envios, salvamentos, mensagens geradas.
-
-## Privacidade e dados
-
-1. **Nenhum dado clínico no CRM.** Os campos livres trazem um aviso, e os prompts geram texto sem dados identificáveis.
-2. **Consentimento por finalidade** (atendimento, lembretes, conteúdo), com opção de saída.
-3. **Regras do conselho embutidas** em todos os geradores, conforme o tipo de profissional escolhido.
-4. **Os dados ficam no seu navegador.** O app não tem servidor nem cadastro. Por isso, faça o backup periodicamente: o app tem um botão para exportar e outro para importar.
-5. **Instalação.** Pelo menu do navegador, é possível instalar o CliniLoop como aplicativo no computador ou no celular, e ele funciona mesmo sem conexão. Os prompts continuam exigindo a ferramenta de IA.
-
-## Clínicas com vários usuários
-
-O CliniLoop foi pensado para o profissional que trabalha sozinho: os dados ficam no navegador de quem usa e não são compartilhados. Por isso, ele não funciona para clínicas em que recepção, coordenação e vários profissionais precisam acessar os mesmos registros. Caso queira uma solução para multiusuários, envie um e-mail para suporte_CliniLoop@gmail.com.
+- **Um coordenador de tratamento** (ou a secretária treinada) é dono do pipeline de planos propostos. O profissional diagnostica e propõe; o coordenador acompanha.
+- **Reunião semanal de 30 minutos** sobre planos em aberto.
+- **Indicadores por profissional:** taxa de aceitação de planos, tempo médio até iniciar, taxa de conclusão até a alta.
+- **Encaminhamentos internos registrados** (dentista para fisioterapia de DTM, fisioterapeuta para nutricionista), sempre por critério clínico.
 
 ::: {.box .atencao}
-**Integrações futuras.** WhatsApp Business, agenda (Google ou Outlook) e importação de conversões offline para Meta e Google estão previstas, mas ainda não existem. Hoje, o Rastreador exporta planilha e gera lembretes que você abre no seu calendário.
+**Médicos, psiquiatras e psicólogos: o fechamento é a adesão.** Não há "fechar" no sentido comercial. O equivalente é o paciente entender a conduta, agendar o retorno e seguir o tratamento. Em saúde mental, o vínculo terapêutico é o centro, e qualquer contato de acompanhamento deve partir de critério clínico, nunca de meta comercial.
 :::
 
+## Objeções comuns e respostas honestas
+
+| Objeção | Resposta |
+|---|---|
+| "Vou pensar" | "Claro. O que ficou menos claro no plano? Posso te ligar na [data] para conversarmos?" |
+| "Está caro" | Explique o que está incluído e ofereça alternativas legítimas (por fase, frequência ajustada, convênio). Nunca desconto como pressão. |
+| "Já melhorei" (fisioterapia) | Mostre o objetivo combinado e os testes da reavaliação: o que falta para a alta e o risco de recidiva, sem alarmismo. |
+| "Não tenho tempo" | Ajuste frequência e horários, exercícios domiciliares, teleatendimento quando permitido. |
+
+::: {.box .prompt}
+**Plano de tratamento compreensível**
+
+Transforme as anotações técnicas abaixo em um plano de tratamento para o paciente ler, em linguagem simples, com: objetivo do paciente em uma frase, fases com metas mensuráveis, número estimado de sessões e frequência, o que depende do paciente, como e quando vamos reavaliar e critério de alta.
+
+Não prometa resultado. Marque com [CONFIRMAR] o que faltar. Use apenas iniciais. Anotações: [COLE AQUI]
+:::
+
+{{exemplo:plano}}
+
 ::: {.box .pratica}
-Preencha o Perfil do consultório uma única vez: profissão, registro, especialidade, cidade, serviços, público ideal e temas de conteúdo. Ele alimenta todas as ferramentas.
+Liste os planos propostos nos últimos 30 dias que não começaram. Para cada um, registre o motivo provável e marque um contato de acompanhamento com data.
 :::
 
 ::: {.box .noapp}
-**Hoje.** Abra o painel e siga a próxima ação. Se faltar algum campo, o app diz qual.
+**Rastreador e Assistente da semana.** Destaca planos propostos sem decisão em 2, 7 e 15 dias e monta a agenda de acompanhamentos da semana.
 :::

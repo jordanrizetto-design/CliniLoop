@@ -62,7 +62,7 @@
     const t = ks.map((k) => TEMAS_PROF[k]).filter(Boolean)[0];
     return t ? t.join('; ') : '';
   }
-  // Para médicos, psiquiatras e psicólogos sem planos por pacote, as etapas 5 e 6 viram "Retorno agendado" e "Em acompanhamento" (Parte 11)
+  // Para médicos, psiquiatras e psicólogos sem planos por pacote, as etapas 5 e 6 viram "Retorno agendado" e "Em acompanhamento" (Parte 13)
   function semPacote() { return ['medico', 'psiquiatra', 'psicologo'].includes(cfg.profissional); }
   function etapaLabel(e) {
     if (semPacote()) { if (e === 'Plano proposto') return 'Retorno agendado'; if (e === 'Em tratamento') return 'Em acompanhamento'; }
@@ -265,7 +265,8 @@ Alcance não é garantido; foque em sinais que dependem de mim (retenção, envi
 2. Três títulos com a mesma promessa verdadeira e uma ideia de miniatura que acrescente contexto (sem radiografia nem transformação fictícia).
 3. Roteiro com fala e apoio visual: abertura de 0 a 20 s nomeando a dúvida; de 20 a 60 s respondendo o ponto central e o que depende de avaliação individual; 3 a 5 blocos (ideia, exemplo seguro, limitação); fechamento com recapitulação e próximo passo proporcional, sem urgência fictícia.
 4. Capítulos com tempo e descrição com palavras-chave, fontes, identificação profissional e canal oficial.
-5. Versão curta autossuficiente (Reels de 30 a 60 s): reescreva abertura e fechamento e mantenha as ressalvas. Um vídeo longo não vira bom Reel só por ser cortado.`;
+5. Versão curta autossuficiente (Reels de 30 a 60 s): reescreva abertura e fechamento e mantenha as ressalvas. Um vídeo longo não vira bom Reel só por ser cortado.
+6. Versão para teleprompter: o roteiro em blocos de até 20 segundos, com frases curtas, e a lista de imagens de apoio que posso gravar sem pacientes nem dados identificáveis.`;
       } else if (video) {
         instr = `1. Objetivo e público da peça, a promessa central (verdadeira) e a pergunta principal.
 2. Cinco aberturas de até 3 segundos, de tipos diferentes (dúvida específica, mito, diferença entre A e B, o que a avaliação precisa esclarecer, o que preparar antes da consulta), com texto na tela de até 6 palavras, e qual testar primeiro. Nada de cura em segundos, ameaça, "segredo que escondem" ou "todo mundo pergunta" sem observação.
@@ -273,7 +274,8 @@ Alcance não é garantido; foque em sinais que dependem de mim (retenção, envi
 4. Roteiro com fala e apoio visual: pergunta específica → resposta cedo → demonstração ou exemplo seguro (eu mesmo, modelo anatômico ou ilustração identificada) → limite da orientação → um único pedido → final que conecta ao início. A ideia principal precisa estar no primeiro enquadramento.
 5. Texto na tela por bloco, sem cobrir o que é demonstrado, e direção de gravação no celular: ponto silencioso, luz, fundo sem dados de pacientes, teste de voz, conferir o recorte e não usar filtro que altere a aparência de resultado.
 6. Legenda com palavra-chave, identificação profissional e fontes; de 0 a 5 hashtags relevantes.
-7. Versão de 15 segundos autossuficiente, com as ressalvas.`;
+7. Versão de 15 segundos autossuficiente, com as ressalvas.
+8. Versão para teleprompter e plano de gravação: o roteiro em blocos de até 20 segundos, com frases curtas; três versões do gancho para gravar em sequência; de três a cinco imagens de apoio sem pacientes nem dados identificáveis.`;
       } else if (/carrossel/.test(f)) {
         instr = `1. Objetivo, promessa central e pergunta principal.
 2. Slide a slide (7 slides): capa com promessa precisa; uma ideia por slide; penúltimo com o insight para guardar ou enviar; último com um único pedido e a identificação profissional. Texto de até 25 palavras por slide e sugestão visual. Nunca uma árvore de autodiagnóstico.
@@ -584,6 +586,40 @@ Entregue:
 4. E-mail curto de pedido de proposta, com o briefing anexo.
 5. Dez perguntas para a primeira reunião com o fornecedor.`,
 
+    imagem: (get) => {
+      const ferr = get('ferramenta');
+      const tipo = get('tipo');
+      const evitar = ['texto dentro da imagem', 'pessoas reais ou rostos identificáveis', 'aparência de foto de paciente', 'antes e depois', 'sangue ou lesões explícitas', 'logotipos e marcas'];
+      if (get('evitar')) evitar.push(get('evitar'));
+      const conselhos = councilObjs().map((c) => c.conselho).join(' e ');
+      const cores = get('cores') || 'tons neutros e claros, com uma cor de destaque';
+      if (/Claude/.test(ferr)) {
+        return `Crie um diagrama educativo como página HTML com SVG, para eu usar em um ${get('formato')}.
+
+Assunto: ${get('tema')}
+Tipo: ${tipo}. Estilo: ${get('estilo')}, traço limpo, fonte legível em celular.
+Cores: ${cores}.
+Texto: frases curtas, no máximo seis palavras por caixa, em português do Brasil.
+
+Regras: conteúdo educativo de saúde${conselhos ? `, seguindo as normas de publicidade do ${conselhos}` : ''}; sem promessa de resultado, sem diagnóstico, sem dados de pacientes. Marque com [CONFIRMAR] qualquer informação clínica que eu precise validar.
+
+Recomendação do CliniLoop para este tipo de imagem: ${IMG_RECOMENDA[tipo] || ''}.`;
+      }
+      return `Cole este pedido no ${ferr}.
+
+Crie uma imagem: ${get('tema')}.
+Tipo: ${tipo}. Estilo: ${get('estilo')}, educativo e acolhedor, com aparência profissional de saúde.
+Composição: assunto principal à esquerda ou no centro, com espaço livre para eu colocar o texto depois.
+Cores: ${cores}, fundo claro.
+Formato: ${get('formato')}.
+Evite: ${evitar.join(', ')}.
+Anatomia: represente estruturas do corpo de forma anatomicamente correta e simplificada.
+
+Antes de publicar, eu vou conferir: (1) se a anatomia está correta; (2) se a imagem não pode ser confundida com paciente ou resultado clínico; (3) se preciso identificar como "imagem ilustrativa" ou usar o rótulo de IA da plataforma${conselhos ? `; (4) se a peça respeita as normas de publicidade do ${conselhos}` : ''}.
+
+Recomendação do CliniLoop para este tipo de imagem: ${IMG_RECOMENDA[tipo] || ''}.`;
+    },
+
     ferramentas: (get) => `Aja como consultor(a) de tecnologia para pequenos consultórios e clínicas.
 
 - Orçamento mensal para ferramentas: ${get('orcamento')}
@@ -595,8 +631,9 @@ ${KIT.map((k) => `- ${k[0]}: ${k[1]} (${k[2]})`).join('\n')}
 
 Entregue:
 1. No máximo uma ferramenta por necessidade, com opção gratuita e paga. Pesquise preços atuais na web e cite a fonte e a data.
-2. Kit de gravação dentro do orçamento.
-3. Configuração da primeira semana, passo a passo: WhatsApp Business, Perfil da Empresa no Google, Meta Business Suite e Canva.
-4. Cuidados de LGPD ao escolher sistemas que guardam dados de pacientes: contrato de operador, onde ficam os dados, quem acessa.
-5. O que NÃO contratar agora. Ferramenta demais é registro duplicado.`
+2. Kit de gravação dentro do orçamento, na ordem som, luz e câmera, com um aplicativo de teleprompter e um editor de vídeo (comece pelo editor nativo da rede).
+3. Um gerador de imagem por IA adequado ao orçamento, com os cuidados para conteúdo de saúde (nunca paciente ou resultado, anatomia revisada, rótulo de IA).
+4. Configuração da primeira semana, passo a passo: WhatsApp Business, Perfil da Empresa no Google, Meta Business Suite e Canva.
+5. Cuidados de LGPD ao escolher sistemas que guardam dados de pacientes: contrato de operador, onde ficam os dados, quem acessa.
+6. O que NÃO contratar agora. Ferramenta demais é registro duplicado.`
   };

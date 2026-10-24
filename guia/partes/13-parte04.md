@@ -86,7 +86,7 @@ Produzir em séries reconhecíveis poupa decisões e cria o hábito de voltar. A
 Quando uma peça de referência funciona, adapte-a em quatro movimentos: **Referência** (escolha uma peça e anote a estrutura), **Observação** (o que prende, onde a promessa é entregue), **Adaptação** (reescreva para o seu tema e a sua voz) e **Troca** (substitua exemplos, imagens e termos por material seu e autorizado).
 
 ::: {.box .atencao}
-**Não confunda com ROAS.** O ciclo acima serve para criar roteiros. ROAS, em mídia paga, é a receita atribuída dividida pelo gasto em anúncios (Parte 7).
+**Não confunda com ROAS.** O ciclo acima serve para criar roteiros. ROAS, em mídia paga, é a receita atribuída dividida pelo gasto em anúncios (Parte 9).
 :::
 
 ## Roteiro de Reel para saúde
@@ -119,7 +119,7 @@ Para clínicas, teste de 30 a 60 segundos quando o assunto couber, sem cortar ex
 
 ## Gravação e confiança na câmera
 
-Celular, luz natural e um ponto silencioso bastam. Fundo sem prontuários, telas ou dados de pacientes. Teste a voz e confira o enquadramento na tela do celular. Nada de filtros que alterem a aparência de um resultado clínico. Para perder o medo da câmera, ensaie sem obrigação de publicar e revise um aspecto por vez: clareza, velocidade, apoio visual.
+Celular, luz natural e um ponto silencioso bastam. Fundo sem prontuários, telas ou dados de pacientes. Teste a voz e confira o enquadramento na tela do celular. Nada de filtros que alterem a aparência de um resultado clínico. Para perder o medo da câmera, ensaie sem obrigação de publicar e revise um aspecto por vez: clareza, velocidade, apoio visual. Equipamento, luz, som, enquadramento e teleprompter estão na Parte 6; a edição, na Parte 7.
 
 ## Frequência sustentável
 
@@ -128,14 +128,14 @@ Celular, luz natural e um ponto silencioso bastam. Fundo sem prontuários, telas
 | Profissional sozinho | 2 Reels + 1 carrossel por semana, Stories em dias de atendimento | 1 vídeo por mês | 1 post por semana |
 | Clínica com equipe | 3 Reels + 2 carrosséis por semana, Stories diários | 2 a 4 vídeos por mês | 2 posts por semana |
 
-**A primeira hora depois de publicar** (heurística de mercado): divulgue nos Stories, responda os comentários com uma pergunta e, depois de uma a duas horas, veja alcance, envios e salvamentos. O que performar bem vira anúncio (Parte 7).
+**A primeira hora depois de publicar** (heurística de mercado): divulgue nos Stories, responda os comentários com uma pergunta e, depois de uma a duas horas, veja alcance, envios e salvamentos. O que performar bem vira anúncio (Parte 9).
 
 ## Medir sem confundir grandeza com resultado
 
 - **Views** seguem a definição de cada plataforma. Não compare Reels, Shorts e YouTube longo como a mesma unidade de atenção.
 - **Interação pública por view** = (curtidas + comentários) ÷ views × 100. Não é engajamento total: não inclui envios nem salvamentos.
 - **Use a mediana** de views de peças comparáveis, não a média. Retenção vem dos dados da conta.
-- **Conversão** são contatos qualificados, agendamentos e comparecimentos vindos do conteúdo, medidos no CRM (Parte 11).
+- **Conversão** são contatos qualificados, agendamentos e comparecimentos vindos do conteúdo, medidos no CRM (Parte 13).
 - **Ciclo de testes:** uma variável por vez (pergunta, abertura, demonstração ou convite), lote pequeno e comparável, registro de data, formato e duração. Muito alcance e pouca permanência: revise promessa e entrega. Muitos contatos e poucas consultas: revise público, localização e atendimento antes de culpar o roteiro.
 
 ## Estruturas que vale adaptar

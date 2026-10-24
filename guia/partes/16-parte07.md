@@ -2,142 +2,112 @@
 tipo: parte
 num: 7
 etapa: No roteiro · Etapa 3 de 6 · Gere autoridade e demanda
-titulo: Anúncios: Meta Ads e Google Ads
-lead: Anúncio não conserta perfil fraco nem atendimento lento. Ele acelera o que já funciona. A métrica final não é clique nem mensagem: é o custo por paciente que compareceu.
-nesta: Qual plataforma para qual intenção · Meta Ads · Google Ads · Mensagens éticas · Impulsionamento passo a passo
+titulo: Edição de vídeo: das ferramentas nativas às externas
+lead: Editar não é enfeitar. É cortar o que sobra, deixar o gancho legível nos primeiros segundos, garantir que se entenda cada palavra e entregar o vídeo no formato certo para cada rede.
+nesta: O que a edição resolve · Três níveis de ferramenta · Comparativo · Como escolher · Legendas · Avatares e voz por IA · Imagens com IA · Exportar sem perder qualidade
 grupo: Etapa 3 · Gere autoridade e demanda
 marca: PARTE 07
 ---
-Por isso a ordem é: perfil pronto (Parte 3), conteúdo orgânico testado (Parte 4), atendimento e CRM prontos (Partes 8 a 11), e só então dinheiro em mídia.
+Comece pelo editor que já existe dentro da rede onde você vai publicar. Só passe para um aplicativo externo quando sentir falta de algum recurso. Esta parte apresenta as opções e ajuda a escolher; os passos de cada uma, toque por toque, estão no **Anexo A**.
 
-## Qual plataforma para qual intenção
+## O que a edição precisa resolver
 
-| Situação do paciente | Plataforma | Tipo de campanha |
-|---|---|---|
-| Já sabe que precisa e está procurando ("fisioterapia joelho Moema") | Google Ads | Pesquisa, com palavras-chave de intenção e local |
-| Precisa, mas ainda não está procurando | Meta Ads (Instagram e Facebook) | Mensagens para WhatsApp com Reel educativo |
-| Ainda não conhece você | Meta Ads e YouTube | Alcance ou visualização de vídeo de autoridade |
-| Já interagiu e não agendou | Meta Ads | Público de envolvimento com o perfil (sem listas de pacientes) |
+1. **Cortar pausas, repetições e tomadas erradas.** O ritmo do vídeo curto é de uma ideia por vez, sem silêncio longo.
+2. **Gancho legível em três segundos:** a pergunta da abertura escrita na tela, em letra grande e alto contraste.
+3. **Legenda em todo o vídeo.** Muita gente assiste sem som, e a legenda também é acessibilidade.
+4. **Som limpo:** volume da voz uniforme, ruído reduzido e música, quando houver, bem abaixo da fala.
+5. **Imagens de apoio** que mostram o que a fala explica: modelo anatômico, ilustração, ambiente.
+6. **Capa** com a pergunta do vídeo, legível no perfil.
+7. **Formato e exportação certos** para cada rede, sem marca d'água de outra plataforma.
 
-## Meta Ads passo a passo
+## Três níveis de ferramenta
 
-1. **Estrutura.** Crie um Portfólio empresarial no Meta Business Suite, vincule a página do Facebook, a conta do Instagram e o número de WhatsApp Business. Cadastre forma de pagamento e verifique a empresa.
-2. **Rastreamento.** Instale o Pixel e, se houver site, a API de Conversões. Para campanhas de WhatsApp, a conversão real (agendou, compareceu) é registrada no CRM e, quando possível, devolvida à Meta como evento offline, sem dados clínicos.
-3. **Objetivo.** No Gerenciador de Anúncios, escolha Engajamento com destino "Apps de mensagem / WhatsApp" para gerar conversas, ou Cadastros com formulário instantâneo quando a clínica tem equipe para ligar rapidamente.
-4. **Orçamento.** Comece com um valor diário que você possa manter por pelo menos 14 dias sem mexer. Mudanças frequentes reiniciam o aprendizado.
-5. **Público.** Localização por raio em torno da clínica (geralmente de 3 a 10 km nas capitais), idade compatível com o paciente e segmentação ampla. A Meta removeu opções de interesse ligadas a condições de saúde; deixe o criativo selecionar o público.
-6. **Posicionamentos.** Advantage+ ou manual com Reels, Stories e Feed do Instagram.
-7. **Criativo.** Use os Reels orgânicos com melhor retenção e mais envios. Teste de 3 a 5 criativos por conjunto. Texto principal curto, título com o benefício informativo, CTA "Enviar mensagem".
-8. **Mensagem de boas-vindas no WhatsApp.** Pergunta simples que qualifica: "Olá! Você gostaria de agendar uma avaliação ou tirar uma dúvida sobre [tema]?"
-9. **Leitura.** Depois de 7 dias, compare custo por conversa, taxa de agendamento e custo por comparecimento por criativo. Desligue o pior, duplique o melhor.
+**Nível 1: o editor da própria rede.** O Instagram, o TikTok, o YouTube e o LinkedIn têm editores embutidos. Eles cortam, juntam trechos, geram legenda automática, colocam texto, música e figurinhas, e publicam na hora. É o melhor ponto de partida: nada a instalar, nada a exportar.
 
-## Google Ads passo a passo
+**Nível 2: editores de celular e de computador.** Aplicativos como o **Edits** (da própria Meta), o **CapCut**, o **InShot**, o **VN** e o editor de vídeo do **Canva** oferecem linha do tempo com várias camadas, legendas estilizadas, recorte de fundo, redução de ruído, modelos e exportação em alta qualidade. Para aulas e vídeos longos no computador, o **CapCut para desktop**, o **Descript** (que edita o vídeo editando o texto da transcrição) e o **DaVinci Resolve** (gratuito e profissional, com curva de aprendizado maior) são as opções mais usadas.
 
-1. **Conta e Perfil da Empresa.** Crie a conta no Google Ads e vincule o Perfil da Empresa no Google para exibir endereço e ligação.
-2. **Conversões.** Configure a tag do Google no site, conversões de ligação, cliques no WhatsApp e envio de formulário. Importe do CRM as conversões de agendamento e comparecimento quando possível.
-3. **Campanha de Pesquisa.** Uma campanha por serviço principal, grupos de anúncios por tema ("implante dentário", "prótese protocolo").
-4. **Palavras-chave.** Correspondência de frase e exata com intenção e local ("fisioterapeuta para coluna em Campinas", "psicólogo ansiedade online"). Palavras negativas desde o primeiro dia: "grátis", "curso", "emprego", "salário", "o que é" quando não interessa.
-5. **Anúncios responsivos.** Até 15 títulos e 4 descrições, informativos e verificáveis ("Fisioterapia com avaliação individual", "Atendimento em Moema", "Agende pelo WhatsApp").
-6. **Recursos (extensões).** Local, ligação, sitelinks (Convênios, Como funciona, Equipe), frases de destaque ("Estacionamento no local").
-7. **Lances.** Comece com Maximizar cliques com teto ou Maximizar conversões; migre para CPA desejado quando houver ao menos 30 conversões por mês.
-8. **Políticas.** O Google restringe anúncios de saúde e medicamentos e proíbe remarketing baseado em condições de saúde. Psicólogos e psiquiatras devem evitar termos que impliquem diagnóstico do usuário.
-9. **YouTube.** Campanhas de vídeo para o público local com os vídeos de autoridade, medindo visualizações e buscas pelo seu nome.
+**Nível 3: criação com inteligência artificial.** Ferramentas como o **HeyGen** e o **Synthesia** criam vídeos com avatares digitais e vozes sintéticas, e traduzem vídeos para outros idiomas com a sua própria voz. Os editores do nível 2 também ganharam recursos de IA: roteiro para vídeo, legendas automáticas, recorte de fundo e geração de imagens. Na saúde, esses recursos pedem cuidados próprios, descritos adiante.
 
-## Que tipo de mensagem funciona (e é ética)
+## Comparativo
 
-| Tipo | Exemplo | Bom para |
-|---|---|---|
-| Educativa com convite | "Dor no joelho ao subir escada tem causas tratáveis. Entenda e agende uma avaliação." | Fisioterapia, ortopedia |
-| Processo transparente | "Como funciona a primeira consulta: 50 minutos, avaliação completa e plano por escrito." | Todas, especialmente psicologia |
-| Acesso e conveniência | "Atendimento presencial em Moema e online. Agende pelo WhatsApp." | Todas |
-| Autoridade sem superlativo | "Fisioterapeuta com formação em reabilitação esportiva, CREFITO-3 000000-F." | Todas |
-| Desmistificação | "Implante dói? Veja o que acontece em cada etapa." | Odontologia |
+Ferramentas listadas, não avaliadas. Recursos, planos e preços mudam com frequência: confira antes de assinar.
 
-::: {.box .atencao}
-**Nunca anuncie:** resultado garantido, "o melhor", antes e depois fora das regras do conselho, urgência artificial, preço ou desconto onde o conselho proíbe (odontologia e psicologia), linguagem que afirme a condição do usuário ("Você tem depressão?").
-:::
+| Ferramenta | Onde | Bom para | Custo | Atenção |
+|---|---|---|---|---|
+| Editor do Instagram | Celular | Reels e Stories rápidos, legendas automáticas, publicação direta | Gratuito | Recursos variam por conta e país |
+| Edits (Meta) | Celular | Reels com linha do tempo, legendas, tela verde, recorte de pessoa, estatísticas | Gratuito | Pensado para o Instagram; exporta sem marca d'água |
+| Editor do TikTok e TikTok Studio | Celular e computador | Vídeos curtos, legendas, efeitos, publicação e análise | Gratuito | Marque o conteúdo gerado por IA quando for o caso |
+| YouTube (app e YouTube Studio) | Celular e computador | Shorts com cortes e textos; vídeos longos com legendas e capítulos | Gratuito | Edição de vídeo longo é limitada no Studio |
+| LinkedIn | Celular e computador | Cortes simples, legenda e capa de vídeo | Gratuito | Edite antes, em outro aplicativo, se precisar de mais |
+| CapCut | Celular, computador e navegador | Legendas estilizadas, cortes rápidos, modelos, redução de ruído | Gratuito com limites; plano Pro | Confira se o vídeo saiu sem marca d'água ou vinheta final |
+| Canva | Celular, computador e navegador | Vídeos com a identidade visual da clínica, carrosséis, capas | Gratuito com limites; plano Pro | Recursos de IA têm cota mensal |
+| InShot e VN | Celular | Edição simples e rápida no celular | Gratuito com limites | Versão gratuita do InShot pode inserir marca d'água |
+| Descript | Computador | Aulas, podcasts e entrevistas: corta o vídeo cortando o texto | Gratuito com limites; planos pagos | Nunca use com gravação de consulta |
+| DaVinci Resolve | Computador | Edição profissional, correção de cor e áudio | Gratuito; versão paga | Exige computador potente e aprendizado |
+| HeyGen | Navegador | Avatar digital, tradução com a sua voz, vídeos a partir de texto | Plano gratuito com marca d'água; planos pagos | Leia os cuidados com avatar e voz abaixo |
 
-::: {.box .prompt}
-**Anúncio Meta e Google**
+## Como escolher
 
-Crie para [PROFISSÃO/CLÍNICA] em [BAIRRO, CIDADE], serviço [SERVIÇO]: (a) 3 textos principais de até 125 caracteres e 3 títulos de até 40 caracteres para Meta Ads com CTA "Enviar mensagem"; (b) 15 títulos de até 30 caracteres e 4 descrições de até 90 caracteres para anúncio responsivo de pesquisa no Google; (c) 20 palavras-chave com intenção e local e 15 negativas.
+- **Está começando e publica no Instagram:** editor do Instagram ou Edits.
+- **Quer legendas com estilo, cortes rápidos e modelos:** CapCut ou Edits.
+- **Já usa o Canva para posts e carrosséis:** o editor de vídeo do Canva mantém a identidade visual num lugar só.
+- **Grava aulas, lives ou entrevistas longas:** Descript ou CapCut para desktop, e depois corte trechos para Reels (Parte 5).
+- **Vai delegar a edição:** mande o briefing para o editor (ferramenta Briefing para terceiros) com roteiro, identidade visual e as regras do seu conselho.
 
-Regras: normas do [CONSELHO], políticas de saúde da Meta e do Google, sem superlativos, sem promessa, sem afirmar condição de saúde do usuário.
-:::
+Uma ferramenta por necessidade é o bastante. Trocar de editor a cada mês custa mais tempo do que qualquer recurso economiza.
 
-{{exemplo:anuncio}}
+## Legendas automáticas: revise sempre
 
-## Impulsionamento na Meta: manual passo a passo
+Todos os editores geram legenda automática, e todos erram termos técnicos, nomes de medicamentos, siglas e números. Revise palavra por palavra antes de publicar. Um erro na legenda de um vídeo de saúde pode mudar o sentido de uma orientação.
 
-**O que é.** Impulsionar (o aplicativo chama de "Turbinar") é pagar para que um post que já está no seu perfil seja mostrado a mais pessoas. É a forma mais simples de anúncio da Meta, feita em poucos toques no próprio Instagram ou Facebook. O Gerenciador de Anúncios, descrito acima, oferece mais controle; o impulsionamento é o melhor primeiro passo para quem nunca anunciou.
+- Mantenha a legenda fora da zona coberta pelos botões da rede (parte de baixo e lateral direita).
+- Duas linhas, no máximo, por vez. Fonte legível e contraste alto.
+- Destaque, com cor, só a palavra mais importante da frase.
 
-### Quando impulsionar
+## Avatares e voz por IA: o que pode e o que não pode
 
-- Só peças educativas que já foram bem no orgânico (mais envios, salvamentos e mensagens que a média) e já passaram pela revisão clínica e ética.
-- Defina antes uma única ação desejada: visita ao perfil, conversa no WhatsApp ou visita à página de agendamento.
-- Separe o orçamento de mídia do custo de produção.
-- Para uma clínica local, alcançar pessoas perto do consultório vale mais que audiência nacional.
+Ferramentas como o HeyGen criam um "gêmeo digital" a partir de alguns minutos de vídeo seu, ou usam avatares prontos, e fazem esse avatar falar qualquer texto. Também clonam a voz e traduzem vídeos para outros idiomas. Na saúde, isso pede cautela redobrada.
 
-### Antes de começar (uma vez só)
+- **Só a sua imagem e a sua voz.** Nunca crie avatar de colega, de paciente ou de pessoa conhecida. Para a equipe, só com autorização por escrito e para uma finalidade definida.
+- **Rosto e voz são dados biométricos,** que a LGPD trata como dados sensíveis. Antes de enviar seu vídeo para treinar um avatar, leia os termos: onde ficam os dados, por quanto tempo e se podem ser usados para treinar outros modelos.
+- **Avise que é IA.** Instagram, Facebook e TikTok pedem que conteúdo realista gerado ou alterado por IA seja identificado, e oferecem o rótulo na hora de publicar. Coloque também na legenda: "vídeo produzido com avatar digital".
+- **Nunca simule paciente nem depoimento.** Avatar de "paciente satisfeito" é depoimento inventado e fere as regras de todos os conselhos.
+- **O avatar não substitui você nos vídeos de confiança.** Use-o para conteúdos informativos de apoio (como funciona a primeira consulta, orientações gerais, versões em outro idioma), não para o vídeo de apresentação.
+- **Confira o seu conselho.** As normas sobre publicidade e inteligência artificial evoluem; em caso de dúvida, consulte o conselho regional antes de publicar.
 
-1. Conta profissional no Instagram (Parte 3).
-2. Página do Facebook da clínica vinculada à conta do Instagram, pela Central de Contas ou pelo Meta Business Suite.
-3. WhatsApp Business conectado, se o objetivo for conversa, com mensagem de boas-vindas pronta e alguém para responder no horário do anúncio.
-4. Forma de pagamento cadastrada (cartão e, quando disponível, Pix ou boleto).
-5. Post sem música protegida por direitos autorais. Posts com músicas do catálogo comum podem não ser impulsionáveis; troque o áudio por um da biblioteca comercial.
+## Imagens com IA para capas, carrosséis e apoio
 
-### Passo a passo no celular (Instagram)
+Os assistentes de IA também geram imagens: ilustrações, ícones, cenários e capas. O ChatGPT, o Gemini, o Meta AI, o Copilot, o Canva, o Adobe Firefly e outros têm geradores próprios. O Anexo A traz a lista por ferramenta, como escrever o pedido e um exemplo pronto.
 
-1. **Escolha o post.** Abra o Reel ou carrossel escolhido e toque em "Turbinar" (ou "Turbinar publicação"), logo abaixo dele.
-2. **Objetivo.** O aplicativo pergunta o que você quer que as pessoas façam. As opções costumam ser: mais visitas ao perfil, mais visitas ao site e mais mensagens. Para clínicas, "mais mensagens" (Direct ou WhatsApp) é o mais próximo de um agendamento; "mais visitas ao perfil" serve para ganhar seguidores qualificados.
-3. **Público.** Escolha "Criar o seu" em vez do automático. Em localização, coloque o endereço da clínica e um raio de alguns quilômetros (por exemplo, de 3 a 10 km em capitais). Defina a faixa de idade do seu paciente. Deixe interesses em branco ou amplos: a Meta não permite segmentar por condição de saúde, e o próprio conteúdo atrai as pessoas certas.
-4. **Orçamento e duração.** Informe um valor por dia e o número de dias. O aplicativo mostra o alcance estimado. Comece com um valor que você possa manter por pelo menos 7 dias sem mexer; alterar a cada dia reinicia o aprendizado da plataforma.
-5. **Revisão e pagamento.** Confira o resumo (post, objetivo, público, orçamento, duração) e toque em "Turbinar publicação". A Meta analisa o anúncio antes de veiculá-lo, normalmente em algumas horas.
-6. **Acompanhamento.** No painel profissional, em "Anúncios", veja alcance, cliques, mensagens e custo por resultado. Não altere nada nos dois ou três primeiros dias.
-7. **Registro no CRM.** Marque a origem de cada conversa como "Impulsionamento, [post], [data]". Ao final, calcule o custo por conversa, por agendamento e por paciente que compareceu.
+Três regras valem para todos:
 
-**No computador (Meta Business Suite).** Em business.facebook.com, abra Conteúdo, escolha o post e clique em "Turbinar". As escolhas são as mesmas, com a vantagem de ver Instagram e Facebook juntos e de escolher onde o anúncio aparece (Feed, Stories, Reels). Quando quiser testar vários criativos ou públicos ao mesmo tempo, passe para o Gerenciador de Anúncios.
+1. **Imagem gerada nunca aparece como paciente real, resultado clínico ou "antes e depois".**
+2. **Revise a anatomia.** Geradores de imagem erram dentes, mãos, articulações e órgãos com frequência. Uma ilustração anatomicamente errada desinforma.
+3. **Prefira ilustração a foto realista** em temas clínicos, e identifique como "imagem ilustrativa" quando houver risco de confusão.
 
-### Por que um impulsionamento é recusado e como corrigir
+## Exportar sem perder qualidade
 
-| Motivo comum | Como corrigir |
-|---|---|
-| Texto que afirma uma condição do leitor ("Você tem ansiedade?") | Fale do tema, não da pessoa ("Ansiedade tem tratamento") |
-| Antes e depois ou foco em aparência corporal | Use explicação de processo, modelo ou ilustração; siga também a regra do conselho |
-| Promessa de resultado, preço ou desconto vedados pelo conselho | Reescreva com o Verificador ético (Parte 13) |
-| Música protegida | Troque pelo áudio da biblioteca comercial |
-| Conta ou página com restrição | Resolva no Meta Business Suite, em Qualidade da conta |
-
-Se achar que a recusa foi um engano, peça nova análise no próprio aviso de reprovação.
-
-### Checklist do impulsionamento
-
-- Post aprovado na revisão em duas etapas (Parte 2)
-- Um objetivo só, ligado a uma ação mensurável
-- Público local, por raio e idade, sem segmentar por saúde
-- Orçamento diário e duração definidos
-- WhatsApp pronto, com boas-vindas e alguém para responder
-- Origem marcada no CRM
-- Data de leitura dos resultados na agenda
-
-**ROAS** é a receita atribuída dividida pelo gasto em anúncios. Só calcule com rastreamento real até o paciente que iniciou o tratamento, e não o confunda com o ciclo de adaptação de referências da Parte 4. Marque no CRM e nos relatórios o que foi impulsionado, para não comparar peças pagas com orgânicas.
+- **Vertical:** 1080 × 1920 pixels, 30 quadros por segundo. **Horizontal (YouTube):** 1920 × 1080 ou 4K.
+- **Sem marca d'água de outra rede.** O Instagram e o TikTok reduzem o alcance de vídeos com marca de outra plataforma. Exporte o arquivo limpo do editor, não baixe o vídeo publicado em outra rede.
+- **Música:** em anúncios e impulsionamentos, use só a biblioteca de áudio comercial da plataforma ou trilhas com licença. Música do catálogo comum pode impedir o impulsionamento (Parte 9).
+- **Guarde o projeto e o arquivo final** em uma pasta por mês, com o nome do tema. O melhor vídeo de hoje pode virar anúncio ou ser reaproveitado amanhã.
 
 ::: {.box .prompt}
-**Plano de impulsionamento**
+**Plano de edição a partir da transcrição**
 
-Sou [PROFISSÃO] em [BAIRRO, CIDADE] e quero impulsionar o post abaixo na Meta. Objetivo: [VISITAS AO PERFIL / MENSAGENS NO WHATSAPP]. Orçamento total: [VALOR].
+Atue como editor(a) de vídeos curtos para profissionais de saúde, seguindo as normas de publicidade do [CONSELHO]. Vou colar a transcrição de um vídeo de [DURAÇÃO] sobre [TEMA].
 
-Devolva: (1) se o post é adequado para impulsionar e o que ajustar segundo as normas do [CONSELHO] e as políticas de saúde da Meta; (2) público sugerido (raio e idade), sem segmentar por condição de saúde; (3) orçamento diário e duração; (4) mensagem de boas-vindas no WhatsApp; (5) o que medir, quando e como registrar no CRM. Não invente números.
+Entregue: (1) os trechos a cortar (pausas, repetições, frases que dependem de contexto); (2) o texto na tela do gancho, em até seis palavras; (3) as palavras da legenda que merecem destaque; (4) onde entram imagens de apoio e quais, sem pacientes; (5) três opções de texto para a capa; (6) a legenda do post com a palavra-chave [PALAVRA-CHAVE] e a identificação profissional; (7) os termos técnicos que preciso conferir na legenda automática.
 
-Post: [COLE O TEXTO E DESCREVA O VÍDEO]
+Não acrescente promessas de resultado nem informações que não estejam na transcrição.
+
+Transcrição: [COLE AQUI]
 :::
-
-{{exemplo:impulso}}
 
 ::: {.box .pratica}
-Antes de investir, confira se o Pixel ou a tag do Google estão instalados e se cada conversa vinda de anúncio chega ao CRM com a origem marcada.
+Edite o teste da Parte 6 no editor do próprio Instagram ou no Edits: corte as pausas, gere a legenda automática, revise os termos técnicos, escreva o gancho na tela e salve como rascunho.
 :::
 
 ::: {.box .noapp}
-**Gerador de campanhas.** Monta o plano de impulsionamento, os textos, títulos, palavras-chave e públicos para Meta Ads e Google Ads e liga cada campanha aos pacientes que ela trouxe.
+**Ferramentas recomendadas.** Indica o editor, o kit de gravação e o gerador de imagem que cabem no seu orçamento, e monta o prompt de imagem com as regras do seu conselho. Para delegar, use o **Briefing para terceiros**.
 :::

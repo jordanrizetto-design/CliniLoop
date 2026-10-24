@@ -89,13 +89,13 @@
         if (tool === 'briefing') { buildBriefing(get); }
         const builder = promptBuilders[tool];
         if (!builder) return;
-        const prompt = builder(get, getAll) + contextBlock(tool);
+        const prompt = builder(get, getAll) + (tool === 'imagem' ? '' : contextBlock(tool));
         const block = form.querySelector('.output-block');
         block.querySelector('.js-output').value = prompt;
         block.hidden = false;
-        markUsed(tool === 'plano' ? 'atendimento' : (tool === 'registro' ? 'rastreador' : tool));
+        markUsed(tool === 'plano' ? 'atendimento' : (tool === 'registro' ? 'rastreador' : (tool === 'imagem' ? 'ferramentas' : tool)));
         msg.className = 'form-msg ok';
-        msg.textContent = tool === 'briefing'
+        msg.textContent = tool === 'imagem' ? '✓ Pedido de imagem gerado logo abaixo. Clique em "Copiar prompt" e cole na ferramenta que você escolheu.' : tool === 'briefing'
           ? '✓ Briefing montado acima. Abaixo, um prompt opcional para revisá-lo com o Claude.'
           : (cfg.plano === 'api' ? '✓ Prompt gerado logo abaixo. Clique em "Gerar resposta aqui (API)" ou copie e cole no Claude.ai.'
             : '✓ Prompt gerado logo abaixo. Clique em "Copiar prompt" e cole no Claude.ai.');
@@ -677,7 +677,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
   });
 
   // ===================== Rastreador de pacientes =====================
-  // Origens do guia (Parte 11). Campanhas e impulsionamentos registrados entram como origem própria.
+  // Origens do guia (Parte 13). Campanhas e impulsionamentos registrados entram como origem própria.
   const ORIGENS = ['Instagram orgânico', 'Google orgânico (busca ou Perfil da Empresa)', 'Meta Ads', 'Google Ads', 'YouTube', 'TikTok', 'Indicação de colega', 'Indicação de paciente', 'Retorno (paciente antigo)', 'Doctoralia ou plataforma', 'Site', 'Passou em frente', 'Outro'];
   const campOrigem = (c) => (c.tipo === 'Impulsionamento' ? 'Impulsionamento: ' : 'Campanha: ') + c.nome;
   const CLIN_RE = /\b(diagnost\w*|cid\b|exame|exames|medicament\w*|remedio|doenca|transtorno|depress\w*|ansiedade|cancer|tumor|hiv|gravid\w*|cirurgia|fratura|hernia|laudo|receita)/;
@@ -708,7 +708,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     });
   }
   renderEtapaOptions();
-  // Próximo passo típico da etapa (Parte 11), sugerido quando o campo está vazio
+  // Próximo passo típico da etapa (Parte 13), sugerido quando o campo está vazio
   document.getElementById('t-etapa').addEventListener('change', (e) => {
     const ps = document.getElementById('t-passo');
     if (!ps.value.trim() || Object.values(PASSO_TIPICO).includes(ps.value)) ps.value = PASSO_TIPICO[e.target.value] || '';
@@ -895,7 +895,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     const indic90 = pacientes.filter((p) => p.colega && p.criado >= addDays(todayISO(), -90));
     const agend = indic90.filter((p) => p.hist && p.hist.Agendado).length;
     const inic = indic90.filter((p) => p.hist && p.hist['Em tratamento']).length;
-    document.getElementById('col-metricas').innerHTML = colegas.length ? `<b>Métricas da rede (Parte 6):</b> colegas ativos, que indicaram nos últimos 90 dias: ${ativos} · indicações nos últimos 90 dias: ${indic90.length} · agendaram: ${indic90.length ? Math.round(agend / indic90.length * 100) + '%' : '—'} · iniciaram: ${indic90.length ? Math.round(inic / indic90.length * 100) + '%' : '—'} · contrarreferências enviadas: ${colegas.filter((c) => c.contra).length}` : '';
+    document.getElementById('col-metricas').innerHTML = colegas.length ? `<b>Métricas da rede (Parte 8):</b> colegas ativos, que indicaram nos últimos 90 dias: ${ativos} · indicações nos últimos 90 dias: ${indic90.length} · agendaram: ${indic90.length ? Math.round(agend / indic90.length * 100) + '%' : '—'} · iniciaram: ${indic90.length ? Math.round(inic / indic90.length * 100) + '%' : '—'} · contrarreferências enviadas: ${colegas.filter((c) => c.contra).length}` : '';
     const box = document.getElementById('col-list');
     if (!colegas.length) { box.innerHTML = '<div class="track-empty">Nenhum colega mapeado. Comece por quem atende o mesmo paciente antes ou depois de você.</div>'; return; }
     box.innerHTML = '';
@@ -1072,7 +1072,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     if (planos) L.push(`- ${planos} ${semPacote() ? 'retorno(s) agendado(s)' : 'plano(s) proposto(s) aguardando decisão'}.`);
     const parados = pacientes.map((p) => [p, marcoParado(p)]).filter((x) => x[1]);
     if (parados.length) {
-      L.push('', 'Parados (Partes 8 e 10):');
+      L.push('', 'Parados (Partes 10 e 12):');
       parados.slice(0, 15).forEach(([p, m], i) => L.push(`- Parado ${i + 1} · ${p.servico || 'serviço não informado'} · ${m.txt}`));
     }
     L.push('', 'Colegas:');
@@ -1101,4 +1101,6 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
   }
 
   // ===================== Ferramentas (tabela) =====================
+  const imgTable = document.getElementById('img-table');
+  if (imgTable) imgTable.innerHTML = '<tr><th>Onde gerar</th><th>Gerador</th><th>Mais útil para</th><th>Acesso</th></tr>' + IMG_IA.map((k) => `<tr><td>${escapeHtml(k[0])}</td><td>${escapeHtml(k[1])}</td><td>${escapeHtml(k[2])}</td><td>${escapeHtml(k[3])}</td></tr>`).join('');
   document.getElementById('kit-table').innerHTML = '<tr><th>Necessidade</th><th>Ferramentas</th><th>Observação</th></tr>' + KIT.map((k) => `<tr><td>${escapeHtml(k[0])}</td><td>${escapeHtml(k[1])}</td><td>${escapeHtml(k[2])}</td></tr>`).join('');

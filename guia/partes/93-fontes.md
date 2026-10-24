@@ -1,7 +1,7 @@
 ---
 tipo: secao
 grupo: Anexos
-marca: ANEXO C
+marca: ANEXO D
 titulo: Fontes e agradecimentos
 ---
 ::: lead
@@ -38,9 +38,10 @@ Os exemplos preenchidos usam uma personagem fictícia, a Dra. Bia Nunes, criada 
 ### Plataformas
 
 - Metricool. Algoritmo do Instagram 2026. AdaptlyPost, como viralizar empilhando sinais. SocialPilot, algoritmo de Reels 2026. PostEverywhere, ranking signals do Instagram.
+- TikTok, Política de anúncios de saúde e produtos farmacêuticos (ads.tiktok.com/help) e guia do Promote (ads.tiktok.com/business). Meta, Edits (napoleoncat.com, guia de outubro de 2026). Guias de recursos e planos de CapCut, Canva, HeyGen e geradores de imagem por IA (arcade.software, aiworthit.com, datanorth.ai), consultados em outubro de 2026. Teleprompters para celular (bigvu.tv).
 - Google, Ajuda do Perfil da Empresa (support.google.com/business). Meta, Central de Ajuda para Empresas (facebook.com/business/help). Nomes de botões e menus mudam com frequência.
 
-### Mercado (Anexo B)
+### Mercado (Anexo C)
 
 - Medicina S/A. Panorama Doctoralia 2024 (medicinasa.com.br/panorama-doctoralia-2024).
 - Medicina S/A. Tecnologia apoia Unimeds em no-show, 22/03/2022 (medicinasa.com.br/?p=65266).

@@ -46,12 +46,12 @@
   // Etapas do Rastreador de pacientes (funil de sete etapas)
   const ETAPAS = ['Novo', 'Em conversa', 'Agendado', 'Avaliado', 'Plano proposto', 'Em tratamento', 'Encerrado'];
   const RESULTADOS = ['Alta e vínculo', 'Perdido', 'Pausado'];
-  // Funil dos colegas do guia (Parte 11). Parceiro ativo = indicou nos últimos 90 dias.
+  // Funil dos colegas do guia (Parte 13). Parceiro ativo = indicou nos últimos 90 dias.
   const ETAPAS_COLEGA = ['Mapeado', 'Apresentado', 'Primeira indicação', 'Parceiro ativo', 'Inativo'];
   const COLEGA_MIGRA = { 'Primeiro contato': 'Apresentado', 'Apresentação feita': 'Apresentado', 'Trocando indicações': 'Primeira indicação', 'Parceria ativa': 'Parceiro ativo' };
   const CONSENT = { atendimento: 'Atendimento', lembretes: 'Lembretes e retornos', conteudo: 'Conteúdos e novidades' };
   const ATIVIDADES = ['Mensagem', 'Ligação', 'Confirmação', 'Retomada', 'Falta (no-show)', 'Remarcação'];
-  // Próximo passo típico de cada etapa (Parte 11 do guia)
+  // Próximo passo típico de cada etapa (Parte 13 do guia)
   const PASSO_TIPICO = {
     'Novo': 'Responder em até 5 minutos', 'Em conversa': 'Oferecer dois horários', 'Agendado': 'Confirmação 48 h antes',
     'Avaliado': 'Apresentar plano ou conduta', 'Plano proposto': 'Acompanhamento do plano (2, 7 e 15 dias)', 'Em tratamento': 'Reavaliação programada',
@@ -301,13 +301,17 @@
   // Ferramentas para materializar as campanhas (listadas, não avaliadas)
   const KIT = [
     ['Criar peças', 'Canva, Adobe Express', 'Modelos de carrossel e capas com a identidade da clínica'],
-    ['Editar vídeo', 'CapCut, Edits (Meta), InShot', 'Legendas automáticas; revise termos técnicos'],
+    ['Gravar vídeo', 'Celular, tripé, ring light ou painel de LED, microfone de lapela', 'Primeiro som, depois luz, por último câmera (Parte 6)'],
+    ['Falar sem decorar', 'BIGVU, PromptSmart, Teleprompter.com', 'Teleprompter no celular, com rolagem pela voz em alguns (Parte 6)'],
+    ['Editar vídeo', 'Editores nativos das redes, Edits (Meta), CapCut, Canva, InShot, Descript', 'Comece pelo nativo; revise as legendas automáticas (Parte 7 e Anexo A)'],
+    ['Gerar imagens com IA', 'ChatGPT, Gemini, Meta AI, Canva, Adobe Firefly', 'Ilustração, nunca paciente ou resultado; revise a anatomia (Anexo A)'],
+    ['Avatar e voz com IA', 'HeyGen, Synthesia', 'Só a sua imagem e voz, com aviso de IA (Parte 7)'],
     ['Agendar e medir posts', 'Meta Business Suite, Metricool, mLabs', 'Calendário e relatórios de Instagram e YouTube'],
     ['Reaproveitamento', 'Transcrição do app de gravação ou do YouTube, Claude', 'Da aula ou do podcast às peças; nunca transcreva consultas'],
     ['Comentário que leva ao guia', 'Manychat', 'Exige configuração e teste; respeite as regras do conselho'],
     ['Ideias e palavras-chave', 'Google Trends, Answer The Public, Planejador de palavras-chave do Google Ads', 'Pautas a partir do que o paciente pesquisa'],
-    ['Vídeos curtos fora do Instagram', 'TikTok, TikTok Studio', 'Opcional; publique sem marca d\'água de outra rede'],
-    ['Impulsionamento', 'Botão Turbinar no Instagram, Meta Business Suite', 'O primeiro anúncio de quem nunca anunciou (Parte 7)'],
+    ['Vídeos curtos fora do Instagram', 'TikTok, TikTok Studio', 'Opcional; publique sem marca d\'água de outra rede; anúncios pelo Promote ou TikTok Ads Manager (Anexo A)'],
+    ['Impulsionamento', 'Botão Turbinar no Instagram, Meta Business Suite', 'O primeiro anúncio de quem nunca anunciou (Parte 9)'],
     ['YouTube', 'YouTube Studio, TubeBuddy ou vidIQ', 'Títulos, capítulos e análise de retenção'],
     ['Anúncios', 'Gerenciador de Anúncios da Meta, Google Ads', 'Pixel, API de Conversões, tag do Google'],
     ['Medição do site', 'Google Analytics 4, Google Tag Manager', 'Conversões de WhatsApp, ligação e formulário'],
@@ -317,6 +321,27 @@
     ['Agenda e prontuário', 'iClinic, Feegow, Amplimed, Simples Dental, Clinicorp', 'Agenda, confirmação e prontuário eletrônico (fora do CRM)'],
     ['Assistentes de IA', 'Claude, ChatGPT, Gemini, Copilot', 'Use com as quatro regras de IA; nunca com dados de pacientes']
   ];
+
+  // Geradores de imagem por ferramenta de IA (Parte 7 e Anexo A do guia). Listados, não avaliados.
+  const IMG_IA = [
+    ['ChatGPT', 'Gerador de imagens do próprio ChatGPT', 'Ilustrações a partir de descrições longas, edição por conversa, texto curto na imagem', 'Plano gratuito com limite diário'],
+    ['Gemini (Google)', 'Modelos de imagem do Gemini (Nano Banana)', 'Edição de fotos por conversa, variações rápidas, alta resolução', 'Limites variam por plano'],
+    ['Meta AI', 'Gerador dentro do WhatsApp, do Instagram e do Facebook', 'Ilustrações rápidas sem sair dos apps que você já usa', 'Gratuito; varia por país'],
+    ['Copilot (Microsoft)', 'Gerador de imagens do Copilot', 'Ilustrações e ícones simples', 'Gratuito com limites'],
+    ['Claude', 'Não gera fotos nem ilustrações realistas', 'Infográficos, fluxogramas e diagramas criados como página ou código', 'Útil para explicar etapas'],
+    ['Canva', 'Dream Lab e Mídia Mágica', 'Imagem que já entra no design com a identidade da clínica', 'Cota mensal pequena no gratuito'],
+    ['Adobe Firefly e Express', 'Modelos Firefly', 'Uso comercial com treinamento licenciado; edição de partes da imagem', 'Créditos mensais'],
+    ['Midjourney', 'Midjourney', 'Ilustrações com acabamento artístico', 'Só planos pagos'],
+    ['Ideogram', 'Ideogram', 'Imagens com texto longo e legível (cartazes, capas)', 'Créditos gratuitos limitados'],
+    ['CapCut (Dreamina)', 'Gerador de imagens do CapCut', 'Capas e imagens dentro do fluxo de edição de vídeo', 'Créditos por plano']
+  ];
+  const IMG_RECOMENDA = {
+    'ilustração educativa': 'ChatGPT ou Gemini para criar; Canva para montar a peça com a sua identidade',
+    'ícone ou elemento gráfico': 'Canva (Dream Lab) ou Copilot; para um conjunto coerente, peça todos no mesmo pedido',
+    'fluxograma ou infográfico': 'Claude, que monta o diagrama como página; finalize no Canva',
+    'cenário ou ambiente (sem pessoas)': 'Gemini ou ChatGPT; Adobe Firefly se a peça for para anúncio',
+    'capa com texto': 'Ideogram ou Canva; melhor ainda: gere a imagem sem texto e escreva o texto no Canva'
+  };
 
   // Referências de criadores clínicos brasileiros (Parte 4 do guia): amostra editorial da skill Creator
   // (outubro de 2026), não um ranking. Use as estruturas, não os conselhos clínicos.

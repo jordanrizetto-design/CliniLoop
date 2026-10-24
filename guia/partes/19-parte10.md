@@ -1,75 +1,49 @@
 ---
 tipo: parte
 num: 10
-etapa: No roteiro · Etapa 5 de 6 · Feche e acompanhe o tratamento
-titulo: A decisão de tratar: fechamento com ética
-lead: Na saúde, fechar não é vender. É o paciente entender o plano, confiar nele e decidir começar.
-nesta: Por que precisa de processo · O fechamento em cinco momentos · Fisioterapia · Clínicas · Objeções honestas
-grupo: Etapa 5 · Feche e acompanhe o tratamento
+etapa: No roteiro · Etapa 4 de 6 · Converta contatos em consultas
+titulo: Do clique à consulta: a decisão de agendar
+lead: O paciente que chama no WhatsApp quase sempre está conversando com mais de um consultório ao mesmo tempo, e costuma agendar com quem responde primeiro com clareza.
+nesta: Padrões de atendimento · Roteiro de agendamento em cinco mensagens · Preço · Retomadas
+grupo: Etapa 4 · Converta contatos em consultas
 marca: PARTE 10
 ---
-Clínicas e fisioterapeutas sentem isso mais que ninguém, porque o resultado depende de um plano com várias sessões, e um plano proposto e não iniciado é o maior vazamento de receita do consultório.
+Velocidade e roteiro valem mais que qualquer anúncio.
 
-## Por que é preciso um processo de fechamento
+## Padrões de atendimento
 
-- O tratamento é uma série (10, 20 sessões; várias etapas de um tratamento odontológico), não um ato único.
-- O paciente recebe o plano e diz "vou pensar". Sem acompanhamento, ele não volta.
-- A adesão cai depois das primeiras sessões, quando a dor melhora e o paciente abandona antes da alta.
-- A equipe (recepção, coordenação, profissional) precisa falar a mesma língua.
+- **Primeira resposta em até 5 minutos** no horário comercial. Fora dele, resposta automática que informa quando haverá retorno e já oferece horários.
+- **Todo contato vira um registro no CRM** com origem (Instagram orgânico, Meta Ads, Google, indicação de colega e qual, paciente antigo).
+- **Toda conversa termina com um próximo passo marcado:** consulta agendada, retorno combinado ou motivo de perda registrado.
 
-## O fechamento em cinco momentos
+## Roteiro de agendamento em cinco mensagens
 
-1. **Avaliação que escuta.** Pergunte o objetivo do paciente na vida real ("voltar a correr", "brincar com o neto sem dor", "mastigar sem medo"). O plano será apresentado em função dele.
-2. **Plano por escrito.** Diagnóstico funcional em linguagem simples, objetivos por fase, número estimado de sessões ou etapas, frequência, o que depende do paciente, critérios de reavaliação e de alta. Nunca prometa resultado; mostre metas e como serão medidas.
-3. **Conversa sobre investimento, em particular.** Valor, formas de pagamento e alternativas (plano completo, por fase, convênio quando houver). Nas profissões em que o conselho permite, pacotes são uma forma de organizar o tratamento, não um chamariz publicitário.
-4. **Tempo para decidir, com data.** "Fique à vontade para pensar. Posso falar com você na quinta para tirar dúvidas?" A data vai para o CRM como próximo passo.
-5. **Acompanhamento do plano em aberto.** Contato em 2, 7 e 15 dias, com informação útil e disponibilidade, nunca pressão. Depois disso, o plano é marcado como não iniciado com o motivo.
+1. **Acolher e identificar.** "Olá, [nome]! Aqui é a [atendente], da clínica [nome]. Que bom que você nos procurou. Como posso ajudar?"
+2. **Entender a necessidade, sem triagem clínica.** "Para eu direcionar ao profissional certo, você pode me contar em poucas palavras o motivo da consulta? Foi indicado(a) por algum profissional?"
+3. **Explicar como funciona:** duração, o que acontece na primeira consulta, convênios ou particular, forma de pagamento, endereço ou link online.
+4. **Oferecer dois horários.** "Tenho terça às 9h ou quinta às 18h. Qual fica melhor?" Duas opções fecham mais que "qual seu horário?".
+5. **Confirmar e combinar a confirmação:** resumo com data, hora, endereço, o que levar, e o aviso de que haverá confirmação na véspera.
 
-## Fisioterapia: da avaliação à alta
+## Quando o paciente pergunta o preço primeiro
 
-| Momento | O que fazer | Registro no CRM |
-|---|---|---|
-| Avaliação | Testes funcionais, escala de dor, objetivo do paciente | Etapa Avaliado; objetivo em uma frase |
-| Proposta | Plano por fases com número de sessões e frequência | Etapa Plano proposto; valor e forma de pagamento |
-| Início | Agendar o bloco de sessões de uma vez | Etapa Em tratamento; sessões agendadas |
-| Sessão 4 a 6 | Reavaliação com os mesmos testes, mostrar evolução | Marco de reavaliação; risco de abandono |
-| Alta | Relatório de alta, orientações, plano de manutenção (Pilates, treino) | Etapa Alta; pedido de avaliação no Google; contrarreferência ao médico |
-| 30 a 90 dias depois | Contato de acompanhamento | Retorno ou manutenção |
+Responda com transparência quando a norma permitir informar valor em conversa privada, mas sempre com o contexto do que está incluído: "A avaliação tem 60 minutos, inclui exame físico completo e plano por escrito. O valor é R$ [X]". Em psicologia, honorários são tratados de forma privada, nunca como propaganda.
 
-## Clínicas multiprofissionais e odontológicas
+## Quem não agendou na hora
 
-- **Um coordenador de tratamento** (ou a secretária treinada) é dono do pipeline de planos propostos. O profissional diagnostica e propõe; o coordenador acompanha.
-- **Reunião semanal de 30 minutos** sobre planos em aberto.
-- **Indicadores por profissional:** taxa de aceitação de planos, tempo médio até iniciar, taxa de conclusão até a alta.
-- **Encaminhamentos internos registrados** (dentista para fisioterapia de DTM, fisioterapeuta para nutricionista), sempre por critério clínico.
-
-::: {.box .atencao}
-**Médicos, psiquiatras e psicólogos: o fechamento é a adesão.** Não há "fechar" no sentido comercial. O equivalente é o paciente entender a conduta, agendar o retorno e seguir o tratamento. Em saúde mental, o vínculo terapêutico é o centro, e qualquer contato de acompanhamento deve partir de critério clínico, nunca de meta comercial.
-:::
-
-## Objeções comuns e respostas honestas
-
-| Objeção | Resposta |
-|---|---|
-| "Vou pensar" | "Claro. O que ficou menos claro no plano? Posso te ligar na [data] para conversarmos?" |
-| "Está caro" | Explique o que está incluído e ofereça alternativas legítimas (por fase, frequência ajustada, convênio). Nunca desconto como pressão. |
-| "Já melhorei" (fisioterapia) | Mostre o objetivo combinado e os testes da reavaliação: o que falta para a alta e o risco de recidiva, sem alarmismo. |
-| "Não tenho tempo" | Ajuste frequência e horários, exercícios domiciliares, teleatendimento quando permitido. |
+Faça uma sequência de até três retomadas no CRM (no dia seguinte, em 3 dias e em 7 dias), sempre com algo útil, como um conteúdo sobre a dúvida da pessoa, e nunca com pressão. Depois disso, a pessoa vai para uma lista de relacionamento, se consentiu.
 
 ::: {.box .prompt}
-**Plano de tratamento compreensível**
+**Respostas rápidas**
 
-Transforme as anotações técnicas abaixo em um plano de tratamento para o paciente ler, em linguagem simples, com: objetivo do paciente em uma frase, fases com metas mensuráveis, número estimado de sessões e frequência, o que depende do paciente, como e quando vamos reavaliar e critério de alta.
-
-Não prometa resultado. Marque com [CONFIRMAR] o que faltar. Use apenas iniciais. Anotações: [COLE AQUI]
+Crie 12 mensagens de resposta rápida para o WhatsApp da [CLÍNICA], para [PROFISSÃO]: boas-vindas, pedido de motivo da consulta, explicação da primeira consulta, convênios, valores (quando permitido), endereço, atendimento online, duas opções de horário, confirmação de agendamento, fora do horário, retomada em 1 dia e retomada em 7 dias. Tom acolhedor, frases curtas, sem orientação clínica, sem pressão.
 :::
 
-{{exemplo:plano}}
+{{exemplo:respostas}}
 
 ::: {.box .pratica}
-Liste os planos propostos nos últimos 30 dias que não começaram. Para cada um, registre o motivo provável e marque um contato de acompanhamento com data.
+Cadastre as 12 respostas rápidas no WhatsApp Business e meça, durante uma semana, o tempo da primeira resposta.
 :::
 
 ::: {.box .noapp}
-**Rastreador e Assistente da semana.** Destaca planos propostos sem decisão em 2, 7 e 15 dias e monta a agenda de acompanhamentos da semana.
+**Atendimento e agendamento.** Respostas rápidas, roteiro de agendamento e retomadas de quem não marcou, registradas no Rastreador de pacientes.
 :::
