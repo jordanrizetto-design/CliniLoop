@@ -258,3 +258,14 @@
   .plano-sem .pd-m,.plano-sem > h4 span{color:var(--ink-soft);}
   .plano-sem .btn-outline,.plano-marcos .btn-outline{color:var(--teal); border-color:var(--teal);}
   .plano-txt{color:inherit;}
+
+  /* Trilha do objetivo */
+  .trilha-steps{list-style:none; margin:10px 0 12px; padding:0; display:flex; flex-wrap:wrap; gap:6px;}
+  .trilha-steps li{display:flex; align-items:center; gap:6px; padding:4px 10px 4px 5px; border:1px solid var(--border); border-radius:999px; font-size:.78rem; background:var(--card); color:var(--ink-soft);}
+  .trilha-steps .tr-n{width:20px; height:20px; border-radius:50%; display:grid; place-items:center; background:var(--paper-warm); font-weight:600; font-size:.72rem;}
+  .trilha-steps li.atual{border-color:var(--gold); color:var(--ink); font-weight:600;}
+  .trilha-steps li.atual .tr-n{background:var(--gold); color:#fff;}
+  .trilha-steps li.feito{color:var(--ink-soft);}
+  .trilha-steps li.feito .tr-n{background:var(--teal); color:#fff;}
+  .trilha-steps li.tr-opcao{border:0; padding:0; background:none;}
+  .falta-lista{margin:8px 0 0; padding-left:18px; display:grid; gap:4px;}

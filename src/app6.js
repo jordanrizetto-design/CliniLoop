@@ -6,7 +6,9 @@
   // As ferramentas que mais ajudam agora: as 3 primeiras ações da lista de "Hoje" que apontam para uma ferramenta.
   function idsGuiados() {
     const ids = [];
-    computeActions().forEach((a) => { if (a.tool && PB_TOOLS[a.tool] && ids.indexOf(a.tool) < 0) ids.push(a.tool); });
+    const ti = onbComplete() ? trilhaInfo() : null;
+    if (ti && !ti.t.rotina && ti.pend.length) [ti.atual, ...ti.pend].forEach((id) => { if (id && ids.indexOf(id) < 0) ids.push(id); });
+    else computeActions().forEach((a) => { if (a.tool && PB_TOOLS[a.tool] && ids.indexOf(a.tool) < 0) ids.push(a.tool); });
     const base = ids.slice(0, 3);
     if (pacientes.length && base.indexOf('rastreador') < 0) base.push('rastreador');
     return base;
@@ -52,48 +54,6 @@
     bar.append(txt, btn);
   }
 
-  // Primeiro ganho: bio e perfil prontos em poucos minutos.
-  function renderPrimeiroGanho() {
-    const hoje = document.getElementById('hoje');
-    if (!hoje) return;
-    let box = document.getElementById('primeiro-ganho');
-    const uso = storeGet(USO_KEY, {}) || {};
-    const fechado = storeGet(GANHO_KEY, false) || uso.perfil;
-    if (fechado) { if (box) box.hidden = true; return; }
-    if (!box) {
-      box = document.createElement('div');
-      box.id = 'primeiro-ganho'; box.className = 'ganho';
-      hoje.querySelector('.hoje-head').after(box);
-    }
-    box.hidden = false;
-    const ok1 = onbComplete();
-    const passos = [
-      [ok1, 'Conte sobre o seu consultório', 'Três passos rápidos em "Comece aqui". Fica só neste navegador.', 'Abrir "Comece aqui"', 'config'],
-      [!!uso.perfil, 'Gere o prompt do seu perfil', 'A ferramenta Perfis e presença monta a auditoria da sua bio com as regras do seu conselho.', 'Abrir Perfis e presença', 'perfil'],
-      [false, 'Cole no Claude e ajuste', 'Cole no Claude.ai (gratuito) ou use "Gerar resposta aqui" com a sua chave. Peça ajustes na mesma conversa.', 'Abrir o Claude.ai', null],
-    ];
-    const atual = passos.findIndex((p) => !p[0]);
-    box.innerHTML = `<p class="hoje-label">Seu primeiro ganho em cerca de 10 minutos</p><ol class="ganho-list"></ol>`;
-    const ol = box.querySelector('ol');
-    passos.forEach((p, i) => {
-      const li = document.createElement('li');
-      li.className = p[0] ? 'feito' : (i === atual ? 'atual' : '');
-      li.innerHTML = `<span class="ganho-n" aria-hidden="true">${p[0] ? '✓' : i + 1}</span><div><b>${p[1]}</b><span>${p[2]}</span></div>`;
-      if (i === atual) {
-        const b = document.createElement(p[4] ? 'button' : 'a');
-        b.className = 'btn btn-gold btn-sm'; b.textContent = p[3];
-        if (p[4]) { b.type = 'button'; b.addEventListener('click', () => openTool(p[4])); }
-        else { b.href = 'https://claude.ai/new'; b.target = '_blank'; b.rel = 'noopener'; }
-        li.querySelector('div').appendChild(b);
-      }
-      ol.appendChild(li);
-    });
-    const fim = document.createElement('button');
-    fim.type = 'button'; fim.className = 'linkish ganho-fim'; fim.textContent = 'Já fiz isso, dispensar';
-    fim.addEventListener('click', () => { storeSet(GANHO_KEY, true); renderPrimeiroGanho(); });
-    box.appendChild(fim);
-  }
-
   // Aviso honesto de versão beta.
   function renderBeta() {
     const hoje = document.getElementById('hoje');
@@ -114,7 +74,7 @@
     n.hidden = false;
   }
 
-  function renderExtras() { applyModo(); renderPrimeiroGanho(); renderBeta(); }
+  function renderExtras() { applyModo(); renderBeta(); }
 
   // Feedback de teste: sem dados de pacientes, vai por GitHub (issue) ou por cópia do texto.
   (function feedback() {

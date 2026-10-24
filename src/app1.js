@@ -20,8 +20,27 @@
   const CICLO = 14;
   const MODO_KEY = PREFIX + 'modo.v1';
   const BETA_KEY = PREFIX + 'beta.v1';
-  const GANHO_KEY = PREFIX + 'ganho.v1';
   const reveladas = new Set();
+  const TRILHA_KEY = PREFIX + 'trilha.v1';
+  // "Pronto quando": o critério que mostra ao usuário onde cada passo termina.
+  const TRILHA_FIM = {
+    publico: 'você tem 10 dúvidas reais dos pacientes e a persona principal guardada.',
+    nicho: 'uma frase de proposta de valor está guardada.',
+    profissional: 'seu tom de voz e a persona de marca estão guardados.',
+    perfil: 'bio, Perfil da Empresa no Google e LinkedIn estão atualizados, com link para agendar.',
+    pautas: 'quatro pautas do calendário estão escolhidas e a frequência de publicação definida.',
+    roteiro: 'o primeiro roteiro foi gravado, verificado e registrado no Diário de conteúdo.',
+    reaproveitamento: 'um conjunto de peças (carrossel, guia e Reel) foi gerado e guardado.',
+    formacao: 'formação e títulos estão comunicados no perfil e no LinkedIn.',
+    campanha: 'a campanha foi gerada, passou pelo Verificador ético e está registrada.',
+    colegas: 'dez colegas estão cadastrados e a carta foi enviada aos três mais próximos.',
+    atendimento: 'as respostas rápidas estão salvas no WhatsApp e a confirmação de agendamento está em uso.',
+    rastreador: 'todos os contatos abertos estão cadastrados, cada um com próximo passo e data.',
+    assistente: 'a agenda em blocos da semana foi gerada.',
+    painel: 'os números da semana foram lançados e o gargalo foi identificado.',
+    etica: 'o texto foi revisado e corrigido.',
+    briefing: 'o briefing foi enviado a quem vai produzir.'
+  };
 
   // Etapas do Rastreador de pacientes (funil de sete etapas)
   const ETAPAS = ['Novo', 'Em conversa', 'Agendado', 'Avaliado', 'Plano proposto', 'Em tratamento', 'Encerrado'];

@@ -745,6 +745,17 @@
   .plano-sem .btn-outline,.plano-marcos .btn-outline{color:var(--teal); border-color:var(--teal);}
   .plano-txt{color:inherit;}
 
+  /* Trilha do objetivo */
+  .trilha-steps{list-style:none; margin:10px 0 12px; padding:0; display:flex; flex-wrap:wrap; gap:6px;}
+  .trilha-steps li{display:flex; align-items:center; gap:6px; padding:4px 10px 4px 5px; border:1px solid var(--border); border-radius:999px; font-size:.78rem; background:var(--card); color:var(--ink-soft);}
+  .trilha-steps .tr-n{width:20px; height:20px; border-radius:50%; display:grid; place-items:center; background:var(--paper-warm); font-weight:600; font-size:.72rem;}
+  .trilha-steps li.atual{border-color:var(--gold); color:var(--ink); font-weight:600;}
+  .trilha-steps li.atual .tr-n{background:var(--gold); color:#fff;}
+  .trilha-steps li.feito{color:var(--ink-soft);}
+  .trilha-steps li.feito .tr-n{background:var(--teal); color:#fff;}
+  .trilha-steps li.tr-opcao{border:0; padding:0; background:none;}
+  .falta-lista{margin:8px 0 0; padding-left:18px; display:grid; gap:4px;}
+
 </style>
 </head>
 <body>
@@ -826,8 +837,10 @@
             <p class="hoje-label">Próxima ação recomendada</p>
             <p class="hoje-where" id="hj-onde"></p>
             <h3 id="hj-acao"></h3>
+            <ol class="trilha-steps" id="hj-trilha" aria-label="Passos do seu objetivo" hidden></ol>
             <div class="form-actions">
               <button type="button" id="hj-fazer" class="btn btn-gold btn-sm" data-ico="arrow">Fazer agora</button>
+              <button type="button" id="hj-feito" class="btn btn-teal btn-sm" hidden>Concluí este passo</button>
               <button type="button" id="hj-outra" class="btn btn-outline btn-sm">Outra sugestão</button>
             </div>
             <p class="hoje-foot" id="hj-count"></p>
@@ -925,7 +938,7 @@
                 <input type="text" id="cfg-nome" name="nome" placeholder="Ex: Dra. Ana Lima · Clínica Sorriso Vivo">
               </div>
               <div class="field">
-                <label for="cfg-registro">Registro no conselho</label>
+                <label for="cfg-registro">Registro no conselho *</label>
                 <input type="text" id="cfg-registro" name="registro" placeholder="Ex: CRM-SP 00000 · RQE 0000 · CRO-SP 00000 · CRP 06/00000 · CREFITO-3 0000 · CRN-3 00000">
                 <small>Obrigatório na publicidade de todas as profissões. Clínica: inclua o responsável técnico.</small>
               </div>
@@ -2541,8 +2554,27 @@
   const CICLO = 14;
   const MODO_KEY = PREFIX + 'modo.v1';
   const BETA_KEY = PREFIX + 'beta.v1';
-  const GANHO_KEY = PREFIX + 'ganho.v1';
   const reveladas = new Set();
+  const TRILHA_KEY = PREFIX + 'trilha.v1';
+  // "Pronto quando": o critério que mostra ao usuário onde cada passo termina.
+  const TRILHA_FIM = {
+    publico: 'você tem 10 dúvidas reais dos pacientes e a persona principal guardada.',
+    nicho: 'uma frase de proposta de valor está guardada.',
+    profissional: 'seu tom de voz e a persona de marca estão guardados.',
+    perfil: 'bio, Perfil da Empresa no Google e LinkedIn estão atualizados, com link para agendar.',
+    pautas: 'quatro pautas do calendário estão escolhidas e a frequência de publicação definida.',
+    roteiro: 'o primeiro roteiro foi gravado, verificado e registrado no Diário de conteúdo.',
+    reaproveitamento: 'um conjunto de peças (carrossel, guia e Reel) foi gerado e guardado.',
+    formacao: 'formação e títulos estão comunicados no perfil e no LinkedIn.',
+    campanha: 'a campanha foi gerada, passou pelo Verificador ético e está registrada.',
+    colegas: 'dez colegas estão cadastrados e a carta foi enviada aos três mais próximos.',
+    atendimento: 'as respostas rápidas estão salvas no WhatsApp e a confirmação de agendamento está em uso.',
+    rastreador: 'todos os contatos abertos estão cadastrados, cada um com próximo passo e data.',
+    assistente: 'a agenda em blocos da semana foi gerada.',
+    painel: 'os números da semana foram lançados e o gargalo foi identificado.',
+    etica: 'o texto foi revisado e corrigido.',
+    briefing: 'o briefing foi enviado a quem vai produzir.'
+  };
 
   // Etapas do Rastreador de pacientes (funil de sete etapas)
   const ETAPAS = ['Novo', 'Em conversa', 'Agendado', 'Avaliado', 'Plano proposto', 'Em tratamento', 'Encerrado'];
@@ -4418,7 +4450,7 @@ Entregue:
   }
   function openAnchor(tool, anchor) {
     openTool(tool);
-    if (anchor) setTimeout(() => { const el = document.getElementById(anchor); if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); const f = el.querySelector && el.querySelector('input,select,textarea'); if (f) f.focus({ preventScroll: true }); } }, 60);
+    if (anchor) setTimeout(() => { const el = document.getElementById(anchor); if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); const f = /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName) ? el : (el.querySelector && el.querySelector('input,select,textarea')); if (f) f.focus({ preventScroll: true }); } }, 60);
   }
   function renderFunnel() {
     const rota = computeRota();
@@ -5214,11 +5246,11 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     const A = [];
     const add = (p, txt, onde, tool, anchor) => A.push({ p, txt, onde, tool, anchor });
     if (!cfg.profissional) add(-1, 'Escolha o tipo de profissional (passo 2 de "Comece aqui"). As regras do seu conselho entram em todos os prompts.', 'Comece aqui', 'config');
-    if (!cfg.metaFrase) add(-0.9, 'Escreva em uma frase o resultado que você quer, para qual serviço e em quanto tempo (passo 1).', 'Comece aqui', 'config');
-    if (!cfg.especialidade) add(-0.8, 'Informe sua especialidade ou área de atuação (passo 2).', 'Comece aqui', 'config');
-    if (!cfg.cidade) add(-0.7, 'Informe cidade e bairro (passo 2): eles entram nas palavras-chave e nas campanhas.', 'Comece aqui', 'config');
-    if (!cfg.servicos) add(-0.65, 'Liste os serviços que quer divulgar (passo 3). Eles viram opções no Rastreador e nas campanhas.', 'Comece aqui', 'config');
-    if (!cfg.sobre) add(-0.6, 'Descreva formação, experiência e diferenciais (passo 3). Esse texto alimenta quase todas as ferramentas.', 'Comece aqui', 'config');
+    if (!cfg.metaFrase) add(-0.9, 'Escreva em uma frase o resultado que você quer, para qual serviço e em quanto tempo (passo 1).', 'Comece aqui', 'config', 'cfg-meta');
+    if (!cfg.especialidade) add(-0.8, 'Informe sua especialidade ou área de atuação (passo 2).', 'Comece aqui', 'config', 'cfg-espec');
+    if (!cfg.cidade) add(-0.7, 'Informe cidade e bairro (passo 2): eles entram nas palavras-chave e nas campanhas.', 'Comece aqui', 'config', 'cfg-cidade');
+    if (!cfg.servicos) add(-0.65, 'Liste os serviços que quer divulgar (passo 3). Eles viram opções no Rastreador e nas campanhas.', 'Comece aqui', 'config', 'cfg-servicos');
+    if (!cfg.sobre) add(-0.6, 'Descreva formação, experiência e diferenciais (passo 3). Esse texto alimenta quase todas as ferramentas.', 'Comece aqui', 'config', 'cfg-sobre');
     const riscos = riskScan(cfg.metaFrase + ' ' + cfg.transformacao + ' ' + cfg.servicos);
     if (riscos.length) add(-0.5, 'Seu objetivo ou perfil menciona algo que o seu conselho restringe. Revise no "Comece aqui".', 'Comece aqui', 'config');
     if (cfg.objetivo === 'online' && (cfg.atendimento || []).indexOf('online') < 0) add(-0.45, 'Seu objetivo é atender online, mas o atendimento online não está marcado. Ajuste no passo 2.', 'Comece aqui', 'config');
@@ -5226,7 +5258,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     if (atr.length) add(0.2, atr.length === 1 ? 'Faça o próximo passo vencido no Rastreador e defina uma nova data.' : `Faça os ${atr.length} próximos passos vencidos no Rastreador e defina novas datas.`, 'Rastreador de pacientes', 'rastreador');
     const colAtr = colegas.filter((c) => c.prox && c.prox <= hoje);
     if (colAtr.length) add(0.3, `Retome o contato com ${colAtr.length === 1 ? colAtr[0].nome : colAtr.length + ' colegas'} (data vencida).`, 'Rede de colegas', 'colegas');
-    if (!cfg.registro && cfg.profissional) add(0.5, 'Informe seu registro no conselho (passo 2): ele é obrigatório na publicidade.', 'Comece aqui', 'config');
+    if (!cfg.registro && cfg.profissional) add(0.5, 'Informe seu registro no conselho (passo 2): ele é obrigatório na publicidade.', 'Comece aqui', 'config', 'cfg-registro');
     const dow = new Date().getDay();
     const sw = weekStats(mondayISO());
     if ((dow >= 4 || dow === 0) && sw.conteudos < metaSemana() && uso.roteiro) add(0.6, `Faltam ${metaSemana() - sw.conteudos} conteúdo(s) para a meta da semana. Use uma pauta do calendário e registre no Diário.`, 'Roteiros de conteúdo', 'roteiro');
@@ -5257,7 +5289,13 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
   // ===================== "Comece aqui" recolhido =====================
   const cfgSummary = document.getElementById('cfg-summary');
   const cfgEdit = document.getElementById('cfg-edit');
-  function onbComplete() { return !!(cfg.profissional && cfg.metaFrase && cfg.especialidade && cfg.cidade && cfg.servicos && cfg.sobre); }
+  function onbComplete() { return camposFaltando().length === 0; }
+  // Campos obrigatórios do "Comece aqui", na ordem em que o usuário os encontra.
+  function camposFaltando() {
+    const L = [['cfg-meta', 'metaFrase', 'o resultado que você quer (passo 1)'], ['prof', 'profissional', 'o tipo de profissional (passo 2)'], ['cfg-registro', 'registro', 'o registro no conselho (passo 2)'],
+      ['cfg-espec', 'especialidade', 'a especialidade (passo 2)'], ['cfg-cidade', 'cidade', 'cidade e bairro (passo 2)'], ['cfg-servicos', 'servicos', 'os serviços que quer divulgar (passo 3)'], ['cfg-sobre', 'sobre', 'formação e diferenciais (passo 3)']];
+    return L.filter((x) => !String(cfg[x[1]] || '').trim()).map((x) => ({ id: x[0], txt: x[2] }));
+  }
   function syncCollapseUI() {
     const c = configEl.classList.contains('collapsed');
     cfgSummary.hidden = !c;
@@ -5266,21 +5304,34 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     cfgSummary.innerHTML = `<b>Objetivo:</b> ${escapeHtml(objInfo().label)}${cfg.metaFrase ? ' — ' + escapeHtml(cfg.metaFrase) : ''} · ${escapeHtml(profInfo() ? profInfo().label : 'profissão não definida')} · ${escapeHtml(cfg.especialidade || '')} · ${escapeHtml(cfg.cidade || '')}`;
   }
   cfgEdit.addEventListener('click', () => { configEl.classList.remove('collapsed'); syncCollapseUI(); document.getElementById('cfg-meta').focus(); });
+  function irAoCampo(id) {
+    configEl.classList.remove('collapsed'); syncCollapseUI();
+    const el = id === 'prof' ? document.querySelector('input[name="profissional"]') : document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => el.focus({ preventScroll: true }), 250);
+  }
   document.getElementById('cfg-done').addEventListener('click', () => {
-    const faltam = [];
-    if (!cfg.metaFrase) faltam.push('cfg-meta');
-    if (!cfg.profissional) faltam.push('prof');
+    const faltam = camposFaltando();
+    const box = document.getElementById('obj-hint');
+    document.querySelectorAll('#onb-body .invalid').forEach((x) => x.classList.remove('invalid'));
     if (faltam.length) {
-      const box = document.getElementById('obj-hint');
       box.className = 'obj-hint warn';
-      box.textContent = faltam.includes('prof') && faltam.includes('cfg-meta') ? 'Escreva o resultado que você quer (passo 1) e escolha o tipo de profissional (passo 2).'
-        : (faltam.includes('prof') ? 'Escolha o tipo de profissional (passo 2): sem ele, os prompts não sabem as regras do seu conselho.' : 'Escreva primeiro o resultado que você quer alcançar (passo 1).');
+      box.innerHTML = `<b>Falta${faltam.length > 1 ? 'm' : ''} ${faltam.length} ${faltam.length > 1 ? 'campos' : 'campo'} para montar o seu caminho.</b> Clique para ir direto ao campo:<ul class="falta-lista"></ul>`;
+      faltam.forEach((f) => {
+        const li = document.createElement('li');
+        const b = document.createElement('button');
+        b.type = 'button'; b.className = 'linkish'; b.textContent = f.txt;
+        b.addEventListener('click', () => irAoCampo(f.id));
+        li.appendChild(b); box.querySelector('ul').appendChild(li);
+        const el = f.id !== 'prof' && document.getElementById(f.id); if (el) el.classList.add('invalid');
+      });
       box.hidden = false;
-      if (faltam.includes('cfg-meta')) { const m = document.getElementById('cfg-meta'); m.classList.add('invalid'); m.focus(); }
-      else document.querySelector('input[name="profissional"]').focus();
+      irAoCampo(faltam[0].id);
       return;
     }
-    if (onbComplete()) { configEl.classList.add('collapsed'); syncCollapseUI(); }
+    box.hidden = true;
+    configEl.classList.add('collapsed'); syncCollapseUI();
     hojeIdx = 0;
     renderHoje();
     const h = document.getElementById('hoje');
@@ -5288,6 +5339,58 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     const card = h.querySelector('.hoje-next');
     card.classList.remove('flash-card'); void card.offsetWidth; card.classList.add('flash-card');
   });
+
+  // ===================== Trilha do objetivo =====================
+  // O objetivo vira uma sequência de passos. O app conduz um passo por vez, até o fim, e só então pergunta o próximo objetivo.
+  function trilhaPassos() {
+    const ids = computeRota().filter((id) => PB_TOOLS[id]);
+    if (ids.indexOf('painel') < 0) ids.push('painel');
+    return ids;
+  }
+  function trilhaSt() {
+    const t = storeGet(TRILHA_KEY, {}) || {};
+    if (t.obj !== cfg.objetivo) return { obj: cfg.objetivo, feitos: {}, pulados: [], rotina: false };
+    return { obj: t.obj, feitos: t.feitos || {}, pulados: t.pulados || [], rotina: !!t.rotina };
+  }
+  function passoFeito(id, t) { return !!t.feitos[id] || (id === 'rastreador' && pacientes.length > 0) || (id === 'colegas' && colegas.length > 0); }
+  function trilhaInfo() {
+    const t = trilhaSt();
+    const passos = trilhaPassos();
+    const pend = passos.filter((id) => !passoFeito(id, t));
+    let atual = pend.find((id) => t.pulados.indexOf(id) < 0) || null;
+    if (!atual && pend.length) { atual = pend[0]; t.pulados = []; }
+    return { t, passos, pend, atual };
+  }
+  function renderTrilha(tr) {
+    const ol = document.getElementById('hj-trilha');
+    ol.innerHTML = '';
+    tr.passos.forEach((id, i) => {
+      const li = document.createElement('li');
+      const feito = passoFeito(id, tr.t);
+      li.className = feito ? 'feito' : (id === tr.atual ? 'atual' : '');
+      li.innerHTML = `<span class="tr-n" aria-hidden="true">${feito ? '✓' : i + 1}</span><span class="tr-t">${escapeHtml(TOOL_NAMES[id] || id)}</span>`;
+      if (id === tr.atual) li.setAttribute('aria-current', 'step');
+      ol.appendChild(li);
+    });
+    ol.hidden = false;
+  }
+  function renderTrilhaFim(tr) {
+    const ol = document.getElementById('hj-trilha');
+    ol.innerHTML = '';
+    Object.keys(OBJETIVOS).filter((k) => k !== cfg.objetivo).forEach((k) => {
+      const li = document.createElement('li'); li.className = 'tr-opcao';
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'btn btn-outline btn-sm'; b.textContent = OBJETIVOS[k].label;
+      b.addEventListener('click', () => { const r = document.querySelector(`input[name="objetivo"][value="${k}"]`); if (r) r.click(); hojeIdx = 0; renderHoje(); });
+      li.appendChild(b); ol.appendChild(li);
+    });
+    const li = document.createElement('li'); li.className = 'tr-opcao';
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'linkish'; b.textContent = 'Por enquanto, só a rotina semanal';
+    b.addEventListener('click', () => { tr.t.rotina = true; storeSet(TRILHA_KEY, tr.t); renderHoje(); });
+    li.appendChild(b); ol.appendChild(li);
+    ol.hidden = false;
+  }
 
   // ===================== Painel "Hoje" =====================
   let hojeIdx = 0;
@@ -5299,7 +5402,28 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     const fazer = document.getElementById('hj-fazer');
     const outra = document.getElementById('hj-outra');
     const count = document.getElementById('hj-count');
-    if (!acoes.length) {
+    const feitoBtn = document.getElementById('hj-feito');
+    const trilhaEl = document.getElementById('hj-trilha');
+    const tr = onbComplete() ? trilhaInfo() : null;
+    const emTrilha = !!tr && !tr.t.rotina;
+    fazer.hidden = false; feitoBtn.hidden = true; trilhaEl.hidden = true; outra.dataset.modo = '';
+    if (emTrilha && tr.atual) {
+      const a = tr.atual;
+      const n = tr.passos.indexOf(a) + 1;
+      ondeEl.textContent = `${objInfo().label} · passo ${n} de ${tr.passos.length}`;
+      acaoEl.textContent = PB_TOOLS[a].fazer;
+      fazer.dataset.tool = a; fazer.dataset.anchor = '';
+      feitoBtn.dataset.tool = a; feitoBtn.hidden = false;
+      outra.hidden = tr.pend.length < 2; outra.textContent = 'Pular por enquanto'; outra.dataset.modo = 'trilha';
+      count.innerHTML = `<b>Pronto quando:</b> ${escapeHtml(TRILHA_FIM[a] || 'você terminar a ferramenta.')} Depois, clique em "Concluí este passo".`;
+      renderTrilha(tr);
+    } else if (emTrilha) {
+      ondeEl.textContent = 'Caminho concluído';
+      acaoEl.textContent = `Você completou os ${tr.passos.length} passos de "${objInfo().label}". Qual será o próximo objetivo?`;
+      fazer.dataset.tool = 'ebook'; fazer.dataset.anchor = ''; fazer.textContent = 'Ver o playbook';
+      outra.hidden = true; count.textContent = 'Você também pode manter só a rotina semanal e voltar a este caminho quando quiser.';
+      renderTrilhaFim(tr);
+    } else if (!acoes.length) {
       ondeEl.textContent = 'Tudo em dia';
       acaoEl.textContent = 'Registre os números da semana e gere o playbook para planejar as próximas duas semanas.';
       fazer.dataset.tool = 'ebook'; fazer.dataset.anchor = '';
@@ -5310,10 +5434,11 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
       ondeEl.textContent = a.onde;
       acaoEl.textContent = a.txt;
       fazer.dataset.tool = a.tool; fazer.dataset.anchor = a.anchor || '';
-      outra.hidden = acoes.length < 2;
+      outra.hidden = acoes.length < 2; outra.textContent = 'Outra sugestão';
       count.innerHTML = `${hojeIdx + 1} de ${acoes.length} ${acoes.length === 1 ? 'ação' : 'ações'} no seu plano · <button type="button" class="linkish" id="hj-plano">ver todas no Playbook</button>`;
       document.getElementById('hj-plano').addEventListener('click', () => openTool('ebook'));
     }
+    if (!(emTrilha && !tr.atual)) fazer.textContent = 'Fazer agora';
 
     const hoje = todayISO();
     const atr = pacientes.filter(isLate).map((p) => ({ t: `${p.nome}${p.passo ? ' · ' + p.passo : ''} — ${fmtShort(p.data)}`, d: p.data }))
@@ -5358,7 +5483,17 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     syncCollapseUI();
   }
   document.getElementById('hj-fazer').addEventListener('click', (e) => openAnchor(e.currentTarget.dataset.tool || 'config', e.currentTarget.dataset.anchor));
-  document.getElementById('hj-outra').addEventListener('click', () => { hojeIdx++; renderHoje(); });
+  document.getElementById('hj-outra').addEventListener('click', (e) => {
+    if (e.currentTarget.dataset.modo === 'trilha') { const tr = trilhaInfo(); if (tr.atual) { tr.t.pulados = (tr.t.pulados || []).concat(tr.atual); storeSet(TRILHA_KEY, tr.t); } }
+    else hojeIdx++;
+    renderHoje();
+  });
+  document.getElementById('hj-feito').addEventListener('click', (e) => {
+    const id = e.currentTarget.dataset.tool; if (!id) return;
+    const t = trilhaSt(); t.feitos[id] = todayISO(); storeSet(TRILHA_KEY, t); markUsed(id, true);
+    renderHoje();
+    const h = document.getElementById('hoje'); h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
   document.getElementById('hj-rastreador').addEventListener('click', () => openTool('rastreador'));
   document.getElementById('hj-conteudo').addEventListener('click', () => openAnchor('painel', 'ct-form'));
   document.getElementById('hj-contato').addEventListener('click', () => openAnchor('rastreador', 'tracker-form'));
@@ -5964,7 +6099,9 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
   // As ferramentas que mais ajudam agora: as 3 primeiras ações da lista de "Hoje" que apontam para uma ferramenta.
   function idsGuiados() {
     const ids = [];
-    computeActions().forEach((a) => { if (a.tool && PB_TOOLS[a.tool] && ids.indexOf(a.tool) < 0) ids.push(a.tool); });
+    const ti = onbComplete() ? trilhaInfo() : null;
+    if (ti && !ti.t.rotina && ti.pend.length) [ti.atual, ...ti.pend].forEach((id) => { if (id && ids.indexOf(id) < 0) ids.push(id); });
+    else computeActions().forEach((a) => { if (a.tool && PB_TOOLS[a.tool] && ids.indexOf(a.tool) < 0) ids.push(a.tool); });
     const base = ids.slice(0, 3);
     if (pacientes.length && base.indexOf('rastreador') < 0) base.push('rastreador');
     return base;
@@ -6010,48 +6147,6 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     bar.append(txt, btn);
   }
 
-  // Primeiro ganho: bio e perfil prontos em poucos minutos.
-  function renderPrimeiroGanho() {
-    const hoje = document.getElementById('hoje');
-    if (!hoje) return;
-    let box = document.getElementById('primeiro-ganho');
-    const uso = storeGet(USO_KEY, {}) || {};
-    const fechado = storeGet(GANHO_KEY, false) || uso.perfil;
-    if (fechado) { if (box) box.hidden = true; return; }
-    if (!box) {
-      box = document.createElement('div');
-      box.id = 'primeiro-ganho'; box.className = 'ganho';
-      hoje.querySelector('.hoje-head').after(box);
-    }
-    box.hidden = false;
-    const ok1 = onbComplete();
-    const passos = [
-      [ok1, 'Conte sobre o seu consultório', 'Três passos rápidos em "Comece aqui". Fica só neste navegador.', 'Abrir "Comece aqui"', 'config'],
-      [!!uso.perfil, 'Gere o prompt do seu perfil', 'A ferramenta Perfis e presença monta a auditoria da sua bio com as regras do seu conselho.', 'Abrir Perfis e presença', 'perfil'],
-      [false, 'Cole no Claude e ajuste', 'Cole no Claude.ai (gratuito) ou use "Gerar resposta aqui" com a sua chave. Peça ajustes na mesma conversa.', 'Abrir o Claude.ai', null],
-    ];
-    const atual = passos.findIndex((p) => !p[0]);
-    box.innerHTML = `<p class="hoje-label">Seu primeiro ganho em cerca de 10 minutos</p><ol class="ganho-list"></ol>`;
-    const ol = box.querySelector('ol');
-    passos.forEach((p, i) => {
-      const li = document.createElement('li');
-      li.className = p[0] ? 'feito' : (i === atual ? 'atual' : '');
-      li.innerHTML = `<span class="ganho-n" aria-hidden="true">${p[0] ? '✓' : i + 1}</span><div><b>${p[1]}</b><span>${p[2]}</span></div>`;
-      if (i === atual) {
-        const b = document.createElement(p[4] ? 'button' : 'a');
-        b.className = 'btn btn-gold btn-sm'; b.textContent = p[3];
-        if (p[4]) { b.type = 'button'; b.addEventListener('click', () => openTool(p[4])); }
-        else { b.href = 'https://claude.ai/new'; b.target = '_blank'; b.rel = 'noopener'; }
-        li.querySelector('div').appendChild(b);
-      }
-      ol.appendChild(li);
-    });
-    const fim = document.createElement('button');
-    fim.type = 'button'; fim.className = 'linkish ganho-fim'; fim.textContent = 'Já fiz isso, dispensar';
-    fim.addEventListener('click', () => { storeSet(GANHO_KEY, true); renderPrimeiroGanho(); });
-    box.appendChild(fim);
-  }
-
   // Aviso honesto de versão beta.
   function renderBeta() {
     const hoje = document.getElementById('hoje');
@@ -6072,7 +6167,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     n.hidden = false;
   }
 
-  function renderExtras() { applyModo(); renderPrimeiroGanho(); renderBeta(); }
+  function renderExtras() { applyModo(); renderBeta(); }
 
   // Feedback de teste: sem dados de pacientes, vai por GitHub (issue) ou por cópia do texto.
   (function feedback() {

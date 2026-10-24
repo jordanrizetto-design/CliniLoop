@@ -327,7 +327,7 @@
   }
   function openAnchor(tool, anchor) {
     openTool(tool);
-    if (anchor) setTimeout(() => { const el = document.getElementById(anchor); if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); const f = el.querySelector && el.querySelector('input,select,textarea'); if (f) f.focus({ preventScroll: true }); } }, 60);
+    if (anchor) setTimeout(() => { const el = document.getElementById(anchor); if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); const f = /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName) ? el : (el.querySelector && el.querySelector('input,select,textarea')); if (f) f.focus({ preventScroll: true }); } }, 60);
   }
   function renderFunnel() {
     const rota = computeRota();

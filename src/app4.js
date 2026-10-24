@@ -19,11 +19,11 @@
     const A = [];
     const add = (p, txt, onde, tool, anchor) => A.push({ p, txt, onde, tool, anchor });
     if (!cfg.profissional) add(-1, 'Escolha o tipo de profissional (passo 2 de "Comece aqui"). As regras do seu conselho entram em todos os prompts.', 'Comece aqui', 'config');
-    if (!cfg.metaFrase) add(-0.9, 'Escreva em uma frase o resultado que você quer, para qual serviço e em quanto tempo (passo 1).', 'Comece aqui', 'config');
-    if (!cfg.especialidade) add(-0.8, 'Informe sua especialidade ou área de atuação (passo 2).', 'Comece aqui', 'config');
-    if (!cfg.cidade) add(-0.7, 'Informe cidade e bairro (passo 2): eles entram nas palavras-chave e nas campanhas.', 'Comece aqui', 'config');
-    if (!cfg.servicos) add(-0.65, 'Liste os serviços que quer divulgar (passo 3). Eles viram opções no Rastreador e nas campanhas.', 'Comece aqui', 'config');
-    if (!cfg.sobre) add(-0.6, 'Descreva formação, experiência e diferenciais (passo 3). Esse texto alimenta quase todas as ferramentas.', 'Comece aqui', 'config');
+    if (!cfg.metaFrase) add(-0.9, 'Escreva em uma frase o resultado que você quer, para qual serviço e em quanto tempo (passo 1).', 'Comece aqui', 'config', 'cfg-meta');
+    if (!cfg.especialidade) add(-0.8, 'Informe sua especialidade ou área de atuação (passo 2).', 'Comece aqui', 'config', 'cfg-espec');
+    if (!cfg.cidade) add(-0.7, 'Informe cidade e bairro (passo 2): eles entram nas palavras-chave e nas campanhas.', 'Comece aqui', 'config', 'cfg-cidade');
+    if (!cfg.servicos) add(-0.65, 'Liste os serviços que quer divulgar (passo 3). Eles viram opções no Rastreador e nas campanhas.', 'Comece aqui', 'config', 'cfg-servicos');
+    if (!cfg.sobre) add(-0.6, 'Descreva formação, experiência e diferenciais (passo 3). Esse texto alimenta quase todas as ferramentas.', 'Comece aqui', 'config', 'cfg-sobre');
     const riscos = riskScan(cfg.metaFrase + ' ' + cfg.transformacao + ' ' + cfg.servicos);
     if (riscos.length) add(-0.5, 'Seu objetivo ou perfil menciona algo que o seu conselho restringe. Revise no "Comece aqui".', 'Comece aqui', 'config');
     if (cfg.objetivo === 'online' && (cfg.atendimento || []).indexOf('online') < 0) add(-0.45, 'Seu objetivo é atender online, mas o atendimento online não está marcado. Ajuste no passo 2.', 'Comece aqui', 'config');
@@ -31,7 +31,7 @@
     if (atr.length) add(0.2, atr.length === 1 ? 'Faça o próximo passo vencido no Rastreador e defina uma nova data.' : `Faça os ${atr.length} próximos passos vencidos no Rastreador e defina novas datas.`, 'Rastreador de pacientes', 'rastreador');
     const colAtr = colegas.filter((c) => c.prox && c.prox <= hoje);
     if (colAtr.length) add(0.3, `Retome o contato com ${colAtr.length === 1 ? colAtr[0].nome : colAtr.length + ' colegas'} (data vencida).`, 'Rede de colegas', 'colegas');
-    if (!cfg.registro && cfg.profissional) add(0.5, 'Informe seu registro no conselho (passo 2): ele é obrigatório na publicidade.', 'Comece aqui', 'config');
+    if (!cfg.registro && cfg.profissional) add(0.5, 'Informe seu registro no conselho (passo 2): ele é obrigatório na publicidade.', 'Comece aqui', 'config', 'cfg-registro');
     const dow = new Date().getDay();
     const sw = weekStats(mondayISO());
     if ((dow >= 4 || dow === 0) && sw.conteudos < metaSemana() && uso.roteiro) add(0.6, `Faltam ${metaSemana() - sw.conteudos} conteúdo(s) para a meta da semana. Use uma pauta do calendário e registre no Diário.`, 'Roteiros de conteúdo', 'roteiro');
@@ -62,7 +62,13 @@
   // ===================== "Comece aqui" recolhido =====================
   const cfgSummary = document.getElementById('cfg-summary');
   const cfgEdit = document.getElementById('cfg-edit');
-  function onbComplete() { return !!(cfg.profissional && cfg.metaFrase && cfg.especialidade && cfg.cidade && cfg.servicos && cfg.sobre); }
+  function onbComplete() { return camposFaltando().length === 0; }
+  // Campos obrigatórios do "Comece aqui", na ordem em que o usuário os encontra.
+  function camposFaltando() {
+    const L = [['cfg-meta', 'metaFrase', 'o resultado que você quer (passo 1)'], ['prof', 'profissional', 'o tipo de profissional (passo 2)'], ['cfg-registro', 'registro', 'o registro no conselho (passo 2)'],
+      ['cfg-espec', 'especialidade', 'a especialidade (passo 2)'], ['cfg-cidade', 'cidade', 'cidade e bairro (passo 2)'], ['cfg-servicos', 'servicos', 'os serviços que quer divulgar (passo 3)'], ['cfg-sobre', 'sobre', 'formação e diferenciais (passo 3)']];
+    return L.filter((x) => !String(cfg[x[1]] || '').trim()).map((x) => ({ id: x[0], txt: x[2] }));
+  }
   function syncCollapseUI() {
     const c = configEl.classList.contains('collapsed');
     cfgSummary.hidden = !c;
@@ -71,21 +77,34 @@
     cfgSummary.innerHTML = `<b>Objetivo:</b> ${escapeHtml(objInfo().label)}${cfg.metaFrase ? ' — ' + escapeHtml(cfg.metaFrase) : ''} · ${escapeHtml(profInfo() ? profInfo().label : 'profissão não definida')} · ${escapeHtml(cfg.especialidade || '')} · ${escapeHtml(cfg.cidade || '')}`;
   }
   cfgEdit.addEventListener('click', () => { configEl.classList.remove('collapsed'); syncCollapseUI(); document.getElementById('cfg-meta').focus(); });
+  function irAoCampo(id) {
+    configEl.classList.remove('collapsed'); syncCollapseUI();
+    const el = id === 'prof' ? document.querySelector('input[name="profissional"]') : document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => el.focus({ preventScroll: true }), 250);
+  }
   document.getElementById('cfg-done').addEventListener('click', () => {
-    const faltam = [];
-    if (!cfg.metaFrase) faltam.push('cfg-meta');
-    if (!cfg.profissional) faltam.push('prof');
+    const faltam = camposFaltando();
+    const box = document.getElementById('obj-hint');
+    document.querySelectorAll('#onb-body .invalid').forEach((x) => x.classList.remove('invalid'));
     if (faltam.length) {
-      const box = document.getElementById('obj-hint');
       box.className = 'obj-hint warn';
-      box.textContent = faltam.includes('prof') && faltam.includes('cfg-meta') ? 'Escreva o resultado que você quer (passo 1) e escolha o tipo de profissional (passo 2).'
-        : (faltam.includes('prof') ? 'Escolha o tipo de profissional (passo 2): sem ele, os prompts não sabem as regras do seu conselho.' : 'Escreva primeiro o resultado que você quer alcançar (passo 1).');
+      box.innerHTML = `<b>Falta${faltam.length > 1 ? 'm' : ''} ${faltam.length} ${faltam.length > 1 ? 'campos' : 'campo'} para montar o seu caminho.</b> Clique para ir direto ao campo:<ul class="falta-lista"></ul>`;
+      faltam.forEach((f) => {
+        const li = document.createElement('li');
+        const b = document.createElement('button');
+        b.type = 'button'; b.className = 'linkish'; b.textContent = f.txt;
+        b.addEventListener('click', () => irAoCampo(f.id));
+        li.appendChild(b); box.querySelector('ul').appendChild(li);
+        const el = f.id !== 'prof' && document.getElementById(f.id); if (el) el.classList.add('invalid');
+      });
       box.hidden = false;
-      if (faltam.includes('cfg-meta')) { const m = document.getElementById('cfg-meta'); m.classList.add('invalid'); m.focus(); }
-      else document.querySelector('input[name="profissional"]').focus();
+      irAoCampo(faltam[0].id);
       return;
     }
-    if (onbComplete()) { configEl.classList.add('collapsed'); syncCollapseUI(); }
+    box.hidden = true;
+    configEl.classList.add('collapsed'); syncCollapseUI();
     hojeIdx = 0;
     renderHoje();
     const h = document.getElementById('hoje');
@@ -93,6 +112,58 @@
     const card = h.querySelector('.hoje-next');
     card.classList.remove('flash-card'); void card.offsetWidth; card.classList.add('flash-card');
   });
+
+  // ===================== Trilha do objetivo =====================
+  // O objetivo vira uma sequência de passos. O app conduz um passo por vez, até o fim, e só então pergunta o próximo objetivo.
+  function trilhaPassos() {
+    const ids = computeRota().filter((id) => PB_TOOLS[id]);
+    if (ids.indexOf('painel') < 0) ids.push('painel');
+    return ids;
+  }
+  function trilhaSt() {
+    const t = storeGet(TRILHA_KEY, {}) || {};
+    if (t.obj !== cfg.objetivo) return { obj: cfg.objetivo, feitos: {}, pulados: [], rotina: false };
+    return { obj: t.obj, feitos: t.feitos || {}, pulados: t.pulados || [], rotina: !!t.rotina };
+  }
+  function passoFeito(id, t) { return !!t.feitos[id] || (id === 'rastreador' && pacientes.length > 0) || (id === 'colegas' && colegas.length > 0); }
+  function trilhaInfo() {
+    const t = trilhaSt();
+    const passos = trilhaPassos();
+    const pend = passos.filter((id) => !passoFeito(id, t));
+    let atual = pend.find((id) => t.pulados.indexOf(id) < 0) || null;
+    if (!atual && pend.length) { atual = pend[0]; t.pulados = []; }
+    return { t, passos, pend, atual };
+  }
+  function renderTrilha(tr) {
+    const ol = document.getElementById('hj-trilha');
+    ol.innerHTML = '';
+    tr.passos.forEach((id, i) => {
+      const li = document.createElement('li');
+      const feito = passoFeito(id, tr.t);
+      li.className = feito ? 'feito' : (id === tr.atual ? 'atual' : '');
+      li.innerHTML = `<span class="tr-n" aria-hidden="true">${feito ? '✓' : i + 1}</span><span class="tr-t">${escapeHtml(TOOL_NAMES[id] || id)}</span>`;
+      if (id === tr.atual) li.setAttribute('aria-current', 'step');
+      ol.appendChild(li);
+    });
+    ol.hidden = false;
+  }
+  function renderTrilhaFim(tr) {
+    const ol = document.getElementById('hj-trilha');
+    ol.innerHTML = '';
+    Object.keys(OBJETIVOS).filter((k) => k !== cfg.objetivo).forEach((k) => {
+      const li = document.createElement('li'); li.className = 'tr-opcao';
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'btn btn-outline btn-sm'; b.textContent = OBJETIVOS[k].label;
+      b.addEventListener('click', () => { const r = document.querySelector(`input[name="objetivo"][value="${k}"]`); if (r) r.click(); hojeIdx = 0; renderHoje(); });
+      li.appendChild(b); ol.appendChild(li);
+    });
+    const li = document.createElement('li'); li.className = 'tr-opcao';
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'linkish'; b.textContent = 'Por enquanto, só a rotina semanal';
+    b.addEventListener('click', () => { tr.t.rotina = true; storeSet(TRILHA_KEY, tr.t); renderHoje(); });
+    li.appendChild(b); ol.appendChild(li);
+    ol.hidden = false;
+  }
 
   // ===================== Painel "Hoje" =====================
   let hojeIdx = 0;
@@ -104,7 +175,28 @@
     const fazer = document.getElementById('hj-fazer');
     const outra = document.getElementById('hj-outra');
     const count = document.getElementById('hj-count');
-    if (!acoes.length) {
+    const feitoBtn = document.getElementById('hj-feito');
+    const trilhaEl = document.getElementById('hj-trilha');
+    const tr = onbComplete() ? trilhaInfo() : null;
+    const emTrilha = !!tr && !tr.t.rotina;
+    fazer.hidden = false; feitoBtn.hidden = true; trilhaEl.hidden = true; outra.dataset.modo = '';
+    if (emTrilha && tr.atual) {
+      const a = tr.atual;
+      const n = tr.passos.indexOf(a) + 1;
+      ondeEl.textContent = `${objInfo().label} · passo ${n} de ${tr.passos.length}`;
+      acaoEl.textContent = PB_TOOLS[a].fazer;
+      fazer.dataset.tool = a; fazer.dataset.anchor = '';
+      feitoBtn.dataset.tool = a; feitoBtn.hidden = false;
+      outra.hidden = tr.pend.length < 2; outra.textContent = 'Pular por enquanto'; outra.dataset.modo = 'trilha';
+      count.innerHTML = `<b>Pronto quando:</b> ${escapeHtml(TRILHA_FIM[a] || 'você terminar a ferramenta.')} Depois, clique em "Concluí este passo".`;
+      renderTrilha(tr);
+    } else if (emTrilha) {
+      ondeEl.textContent = 'Caminho concluído';
+      acaoEl.textContent = `Você completou os ${tr.passos.length} passos de "${objInfo().label}". Qual será o próximo objetivo?`;
+      fazer.dataset.tool = 'ebook'; fazer.dataset.anchor = ''; fazer.textContent = 'Ver o playbook';
+      outra.hidden = true; count.textContent = 'Você também pode manter só a rotina semanal e voltar a este caminho quando quiser.';
+      renderTrilhaFim(tr);
+    } else if (!acoes.length) {
       ondeEl.textContent = 'Tudo em dia';
       acaoEl.textContent = 'Registre os números da semana e gere o playbook para planejar as próximas duas semanas.';
       fazer.dataset.tool = 'ebook'; fazer.dataset.anchor = '';
@@ -115,10 +207,11 @@
       ondeEl.textContent = a.onde;
       acaoEl.textContent = a.txt;
       fazer.dataset.tool = a.tool; fazer.dataset.anchor = a.anchor || '';
-      outra.hidden = acoes.length < 2;
+      outra.hidden = acoes.length < 2; outra.textContent = 'Outra sugestão';
       count.innerHTML = `${hojeIdx + 1} de ${acoes.length} ${acoes.length === 1 ? 'ação' : 'ações'} no seu plano · <button type="button" class="linkish" id="hj-plano">ver todas no Playbook</button>`;
       document.getElementById('hj-plano').addEventListener('click', () => openTool('ebook'));
     }
+    if (!(emTrilha && !tr.atual)) fazer.textContent = 'Fazer agora';
 
     const hoje = todayISO();
     const atr = pacientes.filter(isLate).map((p) => ({ t: `${p.nome}${p.passo ? ' · ' + p.passo : ''} — ${fmtShort(p.data)}`, d: p.data }))
@@ -163,7 +256,17 @@
     syncCollapseUI();
   }
   document.getElementById('hj-fazer').addEventListener('click', (e) => openAnchor(e.currentTarget.dataset.tool || 'config', e.currentTarget.dataset.anchor));
-  document.getElementById('hj-outra').addEventListener('click', () => { hojeIdx++; renderHoje(); });
+  document.getElementById('hj-outra').addEventListener('click', (e) => {
+    if (e.currentTarget.dataset.modo === 'trilha') { const tr = trilhaInfo(); if (tr.atual) { tr.t.pulados = (tr.t.pulados || []).concat(tr.atual); storeSet(TRILHA_KEY, tr.t); } }
+    else hojeIdx++;
+    renderHoje();
+  });
+  document.getElementById('hj-feito').addEventListener('click', (e) => {
+    const id = e.currentTarget.dataset.tool; if (!id) return;
+    const t = trilhaSt(); t.feitos[id] = todayISO(); storeSet(TRILHA_KEY, t); markUsed(id, true);
+    renderHoje();
+    const h = document.getElementById('hoje'); h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
   document.getElementById('hj-rastreador').addEventListener('click', () => openTool('rastreador'));
   document.getElementById('hj-conteudo').addEventListener('click', () => openAnchor('painel', 'ct-form'));
   document.getElementById('hj-contato').addEventListener('click', () => openAnchor('rastreador', 'tracker-form'));

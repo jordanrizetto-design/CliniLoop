@@ -10,8 +10,10 @@
             <p class="hoje-label">Próxima ação recomendada</p>
             <p class="hoje-where" id="hj-onde"></p>
             <h3 id="hj-acao"></h3>
+            <ol class="trilha-steps" id="hj-trilha" aria-label="Passos do seu objetivo" hidden></ol>
             <div class="form-actions">
               <button type="button" id="hj-fazer" class="btn btn-gold btn-sm" data-ico="arrow">Fazer agora</button>
+              <button type="button" id="hj-feito" class="btn btn-teal btn-sm" hidden>Concluí este passo</button>
               <button type="button" id="hj-outra" class="btn btn-outline btn-sm">Outra sugestão</button>
             </div>
             <p class="hoje-foot" id="hj-count"></p>
@@ -109,7 +111,7 @@
                 <input type="text" id="cfg-nome" name="nome" placeholder="Ex: Dra. Ana Lima · Clínica Sorriso Vivo">
               </div>
               <div class="field">
-                <label for="cfg-registro">Registro no conselho</label>
+                <label for="cfg-registro">Registro no conselho *</label>
                 <input type="text" id="cfg-registro" name="registro" placeholder="Ex: CRM-SP 00000 · RQE 0000 · CRO-SP 00000 · CRP 06/00000 · CREFITO-3 0000 · CRN-3 00000">
                 <small>Obrigatório na publicidade de todas as profissões. Clínica: inclua o responsável técnico.</small>
               </div>
