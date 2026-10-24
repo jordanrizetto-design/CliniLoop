@@ -119,13 +119,15 @@ def svg(nome):
     parts.append(brain(p,cx,cy,1.0))
     parts.append(badges)
     # título
-    parts.append(f'''<text x="{W/2}" y="1360" text-anchor="middle" font-family="IBM Plex Sans" font-weight="600" font-size="26" letter-spacing="7" fill="{p['acc']}">SAÚDE · MARKETING DIGITAL · INTELIGÊNCIA ARTIFICIAL</text>
+    parts.append(f'''<text x="{W/2}" y="1360" text-anchor="middle" font-family="IBM Plex Sans" font-weight="600" font-size="25" letter-spacing="5" fill="{p['acc']}">SAÚDE · MARKETING DIGITAL · CRM · INTELIGÊNCIA ARTIFICIAL</text>
 <text x="{W/2}" y="1520" text-anchor="middle" font-family="Fraunces" font-weight="700" font-size="170" fill="#fff">Prompt</text>
 <text x="{W/2}" y="1680" text-anchor="middle" font-family="Fraunces" font-style="italic" font-weight="400" font-size="170" fill="{p['warm']}">do Sim</text>
 <rect x="{W/2-70}" y="1732" width="140" height="6" rx="3" fill="{p['warm']}"/>
-<text x="{W/2}" y="1800" text-anchor="middle" font-family="Fraunces" font-size="44" fill="#fff" fill-opacity=".92">Guia digital para o sucesso</text>
-<text x="{W/2}" y="1856" text-anchor="middle" font-family="Fraunces" font-size="44" fill="#fff" fill-opacity=".92">do profissional da saúde</text>
-<text x="{W/2}" y="1930" text-anchor="middle" font-family="IBM Plex Sans" font-weight="500" font-size="22" letter-spacing="5" fill="{p['acc']}" fill-opacity=".85">EDIÇÃO 2026 · COM O APP CLINILOOP</text>''')
+<text x="{W/2}" y="1786" text-anchor="middle" font-family="Fraunces" font-size="44" fill="#fff" fill-opacity=".92">Guia digital para o sucesso</text>
+<text x="{W/2}" y="1838" text-anchor="middle" font-family="Fraunces" font-size="44" fill="#fff" fill-opacity=".92">do profissional da saúde</text>
+<rect x="{W/2-470}" y="1884" width="940" height="62" rx="31" fill="{p['warm']}"/>
+<text x="{W/2}" y="1925" text-anchor="middle" font-family="IBM Plex Sans" font-weight="600" font-size="24" letter-spacing="3" fill="{p['bg1']}">INCLUI O APP CLINILOOP · CRM PARA O SEU CONSULTÓRIO</text>
+<text x="{W/2}" y="1974" text-anchor="middle" font-family="IBM Plex Sans" font-weight="500" font-size="17" letter-spacing="5" fill="{p['acc']}" fill-opacity=".85">EDIÇÃO 2026</text>''')
     return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}">{"".join(parts)}</svg>'
 
 def html(nome):

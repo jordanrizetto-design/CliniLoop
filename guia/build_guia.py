@@ -313,6 +313,22 @@ def find_pages(pdf, toc_items):
     return found, len(texts)
 
 
+def aplicar_capa(pdf_path):
+    """Substitui a página 1 pela capa ilustrada (capa/capa-azul.png)."""
+    from pypdf import PdfReader, PdfWriter
+    from PIL import Image
+    import io
+    img = Image.open(ROOT / 'capa' / 'capa-azul.png').convert('RGB')
+    buf = io.BytesIO()
+    img.save(buf, 'PDF', resolution=img.width / (210 / 25.4))
+    cover = PdfReader(buf).pages[0]
+    cover.scale_to(595.0, 842.0)
+    w = PdfWriter(clone_from=PdfReader(str(pdf_path)))
+    w.insert_page(cover, 0)
+    w.remove_page(1)
+    w.write(str(pdf_path))
+
+
 if __name__ == '__main__':
     out = ROOT / 'Guia-CliniLoop.pdf'
     doc, items = build_html({})
@@ -327,3 +343,4 @@ if __name__ == '__main__':
         pages2, total = find_pages(out, items)
     (ROOT / 'Guia-CliniLoop.html').write_text(doc.replace(str(FONT), 'fonts'), encoding='utf-8')
     print('páginas:', total, '| marcas encontradas:', len(pages2), 'de', len(items))
+    aplicar_capa(out)
