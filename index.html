@@ -8,7 +8,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#14303A">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
-<meta name="description" content="Para médicos, psiquiatras, dentistas, psicólogos, fisioterapeutas e clínicas: público, posicionamento, conteúdo, campanhas, rede de colegas e rastreador de pacientes, com prompts para o Claude gratuito e as regras do seu conselho.">
+<meta name="description" content="Para médicos, psiquiatras, dentistas, psicólogos, fisioterapeutas e clínicas: público, posicionamento, conteúdo, campanhas, rede de colegas e rastreador de pacientes, com prompts para o Claude e as regras do seu conselho.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Sora:wght@600&display=swap" rel="stylesheet">
@@ -867,7 +867,7 @@
         <h1>Do primeiro contato ao tratamento, com ética e método.</h1>
         <p class="lead">O <a href="#livro" class="hero-livro"><i>Guia CliniLoop</i></a> é um livro digital e este app, feitos para funcionar juntos. O livro ensina o caminho. O app faz o trabalho: gera os prompts para a IA com o seu perfil e as regras do seu conselho, monta roteiros de conteúdo e de campanha e acompanha cada paciente, do primeiro contato ao tratamento.</p>
         <ul class="hero-plans" aria-label="Formas de usar">
-          <li><b>Claude gratuito</b><span>sem custo, sem cartão</span></li>
+          <li><b>Claude sem assinatura</b><span>conta só com e-mail</span></li>
           <li><b>Claude com assinatura</b><span>Pro ou Max, com Research</span></li>
           <li><b>API da Anthropic</b><span>opcional, respostas na página</span></li>
         </ul>
@@ -1213,13 +1213,13 @@
           <div class="settings-body">
             <section class="set-block" id="modo" aria-labelledby="modo-titulo2">
               <h4 id="modo-titulo2">Como você usa a IA</h4>
-              <p class="plan-note">O padrão é o Claude gratuito: o CliniLoop monta o prompt e você cola no Claude.ai. Troque se tiver assinatura ou chave de API.</p>
+              <p class="plan-note">O padrão é o Claude sem assinatura: o CliniLoop monta o prompt e você cola no Claude.ai. Troque se tiver assinatura ou chave de API.</p>
               <div class="type-grid plan-grid" role="radiogroup" aria-labelledby="modo-titulo2">
                 <label class="type-card mode-card">
                   <input type="radio" name="plano" value="free" checked>
-                  <span class="t-name">Claude gratuito</span>
+                  <span class="t-name">Claude sem assinatura</span>
                   <span class="t-hint">Você gera o prompt aqui e cola no Claude.ai.</span>
-                  <span class="t-meta"><b>Custo:</b> grátis, com limite de mensagens</span>
+                  <span class="t-meta"><b>Custo:</b> sem mensalidade de IA, com limite de mensagens</span>
                   <span class="t-meta"><b>Ideal para:</b> começar agora</span>
                 </label>
                 <label class="type-card mode-card">
@@ -1274,7 +1274,7 @@
 
             <section class="set-block" id="kit-block">
               <div class="plan-panel kit" id="plan-kit">
-                <h4>Projeto CliniLoop no Claude.ai <span class="kit-tag">também no plano gratuito</span></h4>
+                <h4>Projeto CliniLoop no Claude.ai <span class="kit-tag">também sem assinatura</span></h4>
                 <p class="plan-note">No Claude.ai, crie um Projeto chamado "CliniLoop", cole as instruções no campo de instruções do projeto e adicione o arquivo de conhecimento. Toda conversa do projeto já começa sabendo seu consultório, as regras do seu conselho e as decisões que você guardou. Baixe o arquivo de novo quando guardar decisões novas.</p>
                 <div class="form-actions">
                   <button type="button" id="kit-copy" class="btn btn-outline btn-sm">Copiar instruções do projeto</button>
@@ -2604,7 +2604,7 @@
         <table class="data-table">
           <tr><th>Você preenche o perfil, registra pacientes, colegas, campanhas e conteúdos, ou gera o briefing e o playbook</th><td>Tudo é processado e guardado neste navegador. O CliniLoop não tem servidor nem banco de dados para receber essas informações.</td></tr>
           <tr><th>Você gera um prompt</th><td>O prompt é montado na própria página e nunca inclui nomes ou telefones do Rastreador: no Assistente da semana, os pacientes viram "Contato 1, 2…"; em "Da conversa ao registro", telefones e e-mails são trocados por marcadores.</td></tr>
-          <tr><th>Você cola um prompt no Claude.ai (modos gratuito e Pro/Max)</th><td>O texto vai para a Anthropic quando você envia a mensagem, como em qualquer conversa no Claude, e segue as configurações de privacidade da sua conta.</td></tr>
+          <tr><th>Você cola um prompt no Claude.ai (com ou sem assinatura)</th><td>O texto vai para a Anthropic quando você envia a mensagem, como em qualquer conversa no Claude, e segue as configurações de privacidade da sua conta.</td></tr>
           <tr><th>Você usa o modo API ("Gerar resposta aqui")</th><td>O prompt, com os dados que você preencheu, e a sua chave vão do navegador direto para a API da Anthropic, que processa o pedido e cobra na sua conta.</td></tr>
           <tr><th>Você abre a página</th><td>A página é hospedada no GitHub Pages e as fontes vêm do Google Fonts. Como em qualquer site, esses serviços recebem dados técnicos de acesso, como o endereço IP.</td></tr>
           <tr><th>Você troca de aparelho ou limpa o navegador</th><td>Os dados não acompanham você. Use Configurações → Seus dados → Fazer backup e restaure o arquivo no outro aparelho.</td></tr>
@@ -2641,7 +2641,7 @@
         <div class="step">
           <span class="num">01</span>
           <h3>Entre no Claude</h3>
-          <p>Acesse <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> e entre na sua conta, gratuita (só e-mail, sem cartão) ou com assinatura Pro ou Max, se já tiver. O CliniLoop começa no modo gratuito; se tiver assinatura ou chave de API, troque em Configurações.</p>
+          <p>Acesse <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> e entre na sua conta, sem assinatura (só e-mail) ou com assinatura Pro ou Max, se já tiver. O CliniLoop começa no modo sem assinatura; se tiver assinatura ou chave de API, troque em Configurações.</p>
         </div>
         <div class="step">
           <span class="num">02</span>
@@ -2656,7 +2656,7 @@
       </div>
       <div class="callout teal">
         <strong>Dica</strong>
-        O plano gratuito do Claude tem um limite de mensagens que se renova depois de algumas horas. Se atingir o limite, espere um pouco antes do próximo prompt. Com Pro ou Max o limite é maior e você ainda pode usar o Research nas ferramentas que pesquisam na web.
+        Sem assinatura, o Claude tem um limite de mensagens que se renova depois de algumas horas. Se atingir o limite, espere um pouco antes do próximo prompt. Com Pro ou Max o limite é maior e você ainda pode usar o Research nas ferramentas que pesquisam na web.
       </div>
     </div>
   </section>
@@ -2668,8 +2668,8 @@
         <h2>Antes de começar</h2>
       </div>
       <details class="faq">
-        <summary>Isso é realmente gratuito? <span class="chevron">▸</span></summary>
-        <div class="faq-body">Sim. A página não cobra nada, e o Claude.ai tem um plano gratuito com limite de mensagens que se renova periodicamente, sem chave de API nem cartão. Quem tem Claude Pro ou Max pode trocar o modo em Configurações para aproveitar o Research e os Projetos. Quem preferir ver as respostas na própria página pode usar a própria chave da API da Anthropic, paga por uso e cobrada à parte da assinatura.</div>
+        <summary>Preciso assinar alguma IA? <span class="chevron">▸</span></summary>
+        <div class="faq-body">Não é obrigatório. O app funciona com uma conta do Claude.ai sem assinatura, que tem limite de mensagens renovado periodicamente e não pede chave de API nem cartão. Quem tem Claude Pro ou Max pode trocar o modo em Configurações para aproveitar o Research e os Projetos. Quem preferir ver as respostas na própria página pode usar a própria chave da API da Anthropic, paga por uso e cobrada à parte da assinatura.</div>
       </details>
       <details class="faq">
         <summary>O CliniLoop garante mais pacientes ou seguidores? <span class="chevron">▸</span></summary>
@@ -2709,7 +2709,7 @@
       </details>
       <details class="faq">
         <summary>Posso usar com outra IA em vez do Claude? <span class="chevron">▸</span></summary>
-        <div class="faq-body">Sim. Os prompts são texto simples e funcionam em qualquer assistente de IA. A página foi pensada para o Claude, gratuito ou com assinatura, porque ele pesquisa na web, o que ajuda nas ferramentas de público, nicho, pautas, formação, campanhas e verificador ético.</div>
+        <div class="faq-body">Sim. Os prompts são texto simples e funcionam em qualquer assistente de IA. A página foi pensada para o Claude, com ou sem assinatura, porque ele pesquisa na web, o que ajuda nas ferramentas de público, nicho, pautas, formação, campanhas e verificador ético.</div>
       </details>
     </div>
   </section>
@@ -4463,7 +4463,7 @@ Entregue:
       <div class="output-actions">
         <button type="button" class="btn btn-teal js-run-api" data-ico="play" hidden>Gerar resposta aqui (API)</button>
         <button type="button" class="btn btn-outline js-copy" data-ico="copy">Copiar prompt</button>
-        <a class="btn btn-outline" data-ico="ext" href="https://claude.ai/new" target="_blank" rel="noopener">Abrir Claude.ai gratuito</a>
+        <a class="btn btn-outline" data-ico="ext" href="https://claude.ai/new" target="_blank" rel="noopener">Abrir no Claude.ai</a>
       </div>
       ${WEB_TOOLS.includes(tool) ? '<p class="pro-tip" hidden>Claude Pro/Max: no Claude.ai, clique em "+" e ative Research antes de enviar este prompt. A pesquisa fica bem mais profunda.</p>' : ''}
       <div class="api-area"></div>`;
@@ -4832,7 +4832,7 @@ Entregue:
     'claude-opus-5-5': { nome: 'Opus 5.5', inp: 4, out: 20 },
     'claude-haiku-4-5': { nome: 'Haiku 4.5', inp: 1, out: 5 }
   };
-  const MODE_NAMES = { free: 'Claude gratuito', pro: 'Claude Pro ou Max', api: 'API da Anthropic' };
+  const MODE_NAMES = { free: 'Claude sem assinatura', pro: 'Claude Pro ou Max', api: 'API da Anthropic' };
   const apiKeyEl = document.getElementById('api-key');
   const apiRememberEl = document.getElementById('api-remember');
   const apiModelEl = document.getElementById('api-model');
@@ -4862,7 +4862,7 @@ Entregue:
     document.querySelectorAll('.js-run-api').forEach((b) => { b.hidden = plano !== 'api'; });
     document.querySelectorAll('.pro-tip').forEach((t) => { t.hidden = plano !== 'pro'; });
     document.querySelectorAll('a[href="https://claude.ai/new"]').forEach((a) => {
-      const txt = plano === 'free' ? 'Abrir Claude.ai gratuito' : 'Abrir no Claude.ai';
+      const txt = 'Abrir no Claude.ai';
       [...a.childNodes].forEach((n) => { if (n.nodeType === 3) n.remove(); });
       a.appendChild(document.createTextNode(txt));
     });

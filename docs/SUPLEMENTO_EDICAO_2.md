@@ -9,8 +9,8 @@
 | Peça | Onde entra | Por quê |
 |---|---|---|
 | Plano de 30 dias | Logo depois da Apresentação, antes da Parte 1 | Dá ao leitor uma ordem única para a primeira semana |
-| Exemplo preenchido | Abaixo de cada "Prompt do Sim" da Parte 15 (e, resumido, nas partes 3 a 13) | Mostra o que a IA devolve e o que revisar |
-| Marcos de referência | Final da Parte 13 (CRM) e na Parte 16 | Dá ao leitor um ponto de comparação consigo mesmo |
+| Exemplo preenchido | Abaixo de cada "Prompt do Sim" da Parte 13 (e, resumido, nas partes 3 a 11) | Mostra o que a IA devolve e o que revisar |
+| Marcos de referência | Final da Parte 11 (CRM) e na Parte 14 | Dá ao leitor um ponto de comparação consigo mesmo |
 | Dados de mercado | Anexo, com as fontes | Separa o que é fato verificado do que é estimativa |
 
 ## 1. Plano de 30 dias
@@ -53,7 +53,7 @@ Uma ação de 20 a 30 minutos por dia útil, em quatro semanas. Cada dia termina
 |---|---|---|---|---|
 | 16 | **Segunda rodada de conteúdo.** Publique o 2º e o 3º conteúdos e registre no Diário. Responda cada comentário e mensagem no mesmo dia. | Painel e diagnóstico | 3 conteúdos registrados. | 20 min |
 | 17 | **Faça o ritual da semana.** Importe as pendências no Assistente e gere a agenda em blocos para a semana. | Assistente da semana | Agenda da semana pronta. | 25 min |
-| 18 | **Lance os números e ache o gargalo.** Preencha os números da semana e leia "Os sete sins": onde o paciente está se perdendo? | Painel e diagnóstico | Um gargalo identificado. | 30 min |
+| 18 | **Lance os números e ache o gargalo.** Preencha os números da semana e leia "As sete decisões": em qual delas o paciente está se perdendo? | Painel e diagnóstico | Um gargalo identificado. | 30 min |
 | 19 | **Corrija uma coisa só.** Escolha um ajuste: o gancho, a bio, a resposta rápida ou o lembrete. Mude e anote a data para comparar. | Painel e diagnóstico | Um ajuste feito, com data. | 30 min |
 | 20 | **Revise o mês e planeje o próximo.** Gere o playbook. Compare com os marcos desta página e decida o foco dos próximos 30 dias. Só pense em anúncios se a base estiver pronta. | Playbook da clínica | Playbook e plano dos próximos 30 dias. | 30 min |
 
@@ -92,7 +92,7 @@ Não encontramos referência pública e confiável de volume de pacientes por ca
 - Colega ativo = indicou pelo menos um paciente nos últimos 90 dias.
 - Regra de uso: meça por 4 semanas, escolha **uma** taxa para melhorar e mude **uma** coisa por vez.
 
-## 3. Os 14 prompts com exemplo preenchido
+## 3. Os 12 prompts com exemplo preenchido
 
 Personagem fictícia: Dra. Bia Nunes, nutricionista esportiva, Pinheiros (São Paulo), CRN-3 00000 (inventado). A saída é um **trecho** do que uma IA pode devolver; o resultado real varia. Revise tudo antes de usar.
 
@@ -417,14 +417,14 @@ Comparei o guia digital com o que o profissional de saúde encontra hoje. Não a
 
 | Categoria | Exemplos pesquisados | O que entrega | Onde o guia digital é diferente |
 |---|---|---|---|
-| Conteúdo gratuito de blog | [Medway, "Marketing para médicos"](https://www.medway.com.br/conteudos/marketing-para-medicos-aprenda-a-atrair-pacientes/) | Conceitos, escolha de plataforma, resumo de regras do CFM. Sem números, modelos, roteiros ou checklists | O guia dá passos de 30 minutos, 14 prompts, checklists e um registro de contatos |
-| CRM de WhatsApp para clínicas | [Clint, Kommo, SocialHub](https://www.clint.digital/blog/crm-para-clinica-whatsapp-2026/) | Automação, agente de IA, API oficial do WhatsApp. Clint a partir de R$ 149 por usuário ao mês (anual) ou R$ 199 (mensal), preços do fornecedor em set/2026 | O guia não automatiza nem integra WhatsApp. Em troca, é gratuito, ensina o método e traz as regras do conselho. Quando o volume crescer, o profissional deve migrar para um CRM e levar o método |
+| Conteúdo gratuito de blog | [Medway, "Marketing para médicos"](https://www.medway.com.br/conteudos/marketing-para-medicos-aprenda-a-atrair-pacientes/) | Conceitos, escolha de plataforma, resumo de regras do CFM. Sem números, modelos, roteiros ou checklists | O guia dá passos de 30 minutos, 12 prompts, checklists e um registro de contatos |
+| CRM de WhatsApp para clínicas | [Clint, Kommo, SocialHub](https://www.clint.digital/blog/crm-para-clinica-whatsapp-2026/) | Automação, agente de IA, API oficial do WhatsApp. Clint a partir de R$ 149 por usuário ao mês (anual) ou R$ 199 (mensal), preços do fornecedor em set/2026 | O guia não automatiza nem integra WhatsApp. Em troca, não cobra mensalidade, ensina o método e traz as regras do conselho. Quando o volume crescer, o profissional deve migrar para um CRM e levar o método |
 | Gestão e marketplace | [Doctoralia e Feegow](https://medicinasa.com.br/panorama-doctoralia-2024) | Agenda, prontuário, teleconsulta, marketplace de pacientes (autodeclara mais de 15 milhões de agendamentos por mês) | O guia trata da captação própria, da rede de colegas e da rotina semanal, fora do marketplace |
-| Guia digital (e-book + app) | CliniLoop | Método em 6 etapas, 16 partes, 14 prompts, 18 ferramentas, verificador ético, rastreador local | Ver forças e limites abaixo |
+| Guia digital (e-book + app) | CliniLoop | Método em 6 etapas, 14 partes, 12 prompts, 18 ferramentas, verificador ético, rastreador local | Ver forças e limites abaixo |
 
 **Forças reais**
 
-- Une método, prompts e ferramenta de registro num único conjunto, gratuito e sem cadastro.
+- Une método, prompts e ferramenta de registro num único conjunto, sem mensalidade.
 - Traz o compliance de cada conselho dentro do fluxo de trabalho.
 - Dados ficam no navegador, sem servidor.
 

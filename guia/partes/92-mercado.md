@@ -29,12 +29,12 @@ Não avaliamos cursos pagos nem mentorias, por não termos acesso a conteúdo co
 | Categoria | O que entrega | Onde o Guia CliniLoop é diferente |
 |---|---|---|
 | Conteúdo gratuito de blog | Conceitos, escolha de plataforma, resumo de regras do CFM. Sem números, modelos, roteiros ou checklists | Passos de 30 minutos, 14 prompts, checklists e um registro de contatos |
-| CRM de WhatsApp para clínicas | Automação, agente de IA, API oficial do WhatsApp. Preços de fornecedor em setembro de 2026 a partir de R$ 149 por usuário ao mês | O guia não automatiza nem integra o WhatsApp. Em troca, é gratuito, ensina o método e traz as regras do conselho. Quando o volume crescer, migre para um CRM e leve o método |
+| CRM de WhatsApp para clínicas | Automação, agente de IA, API oficial do WhatsApp. Preços de fornecedor em setembro de 2026 a partir de R$ 149 por usuário ao mês | O guia não automatiza nem integra o WhatsApp. Em troca, não cobra mensalidade, ensina o método e traz as regras do conselho. Quando o volume crescer, migre para um CRM e leve o método |
 | Gestão e marketplace | Agenda, prontuário, teleconsulta, marketplace de pacientes | Trata da captação própria, da rede de colegas e da rotina semanal, fora do marketplace |
 
 ### Forças
 
-- Une método, prompts e ferramenta de registro num único conjunto, gratuito e sem cadastro.
+- Une método, prompts e ferramenta de registro num único conjunto, sem mensalidade.
 - Traz o compliance de cada conselho dentro do fluxo de trabalho.
 - Os dados ficam no navegador, sem servidor.
 

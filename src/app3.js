@@ -68,7 +68,7 @@
       <div class="output-actions">
         <button type="button" class="btn btn-teal js-run-api" data-ico="play" hidden>Gerar resposta aqui (API)</button>
         <button type="button" class="btn btn-outline js-copy" data-ico="copy">Copiar prompt</button>
-        <a class="btn btn-outline" data-ico="ext" href="https://claude.ai/new" target="_blank" rel="noopener">Abrir Claude.ai gratuito</a>
+        <a class="btn btn-outline" data-ico="ext" href="https://claude.ai/new" target="_blank" rel="noopener">Abrir no Claude.ai</a>
       </div>
       ${WEB_TOOLS.includes(tool) ? '<p class="pro-tip" hidden>Claude Pro/Max: no Claude.ai, clique em "+" e ative Research antes de enviar este prompt. A pesquisa fica bem mais profunda.</p>' : ''}
       <div class="api-area"></div>`;
@@ -437,7 +437,7 @@
     'claude-opus-5-5': { nome: 'Opus 5.5', inp: 4, out: 20 },
     'claude-haiku-4-5': { nome: 'Haiku 4.5', inp: 1, out: 5 }
   };
-  const MODE_NAMES = { free: 'Claude gratuito', pro: 'Claude Pro ou Max', api: 'API da Anthropic' };
+  const MODE_NAMES = { free: 'Claude sem assinatura', pro: 'Claude Pro ou Max', api: 'API da Anthropic' };
   const apiKeyEl = document.getElementById('api-key');
   const apiRememberEl = document.getElementById('api-remember');
   const apiModelEl = document.getElementById('api-model');
@@ -467,7 +467,7 @@
     document.querySelectorAll('.js-run-api').forEach((b) => { b.hidden = plano !== 'api'; });
     document.querySelectorAll('.pro-tip').forEach((t) => { t.hidden = plano !== 'pro'; });
     document.querySelectorAll('a[href="https://claude.ai/new"]').forEach((a) => {
-      const txt = plano === 'free' ? 'Abrir Claude.ai gratuito' : 'Abrir no Claude.ai';
+      const txt = 'Abrir no Claude.ai';
       [...a.childNodes].forEach((n) => { if (n.nodeType === 3) n.remove(); });
       a.appendChild(document.createTextNode(txt));
     });

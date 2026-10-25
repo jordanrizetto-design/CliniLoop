@@ -19,13 +19,13 @@ Comparei o guia digital com o que o profissional de saúde encontra hoje. Não a
 | Categoria | Exemplos pesquisados | O que entrega | Onde o guia digital é diferente |
 |---|---|---|---|
 | Conteúdo gratuito de blog | [Medway, "Marketing para médicos"](https://www.medway.com.br/conteudos/marketing-para-medicos-aprenda-a-atrair-pacientes/) | Conceitos, escolha de plataforma, resumo de regras do CFM. Sem números, modelos, roteiros ou checklists | O guia dá passos de 30 minutos, 12 prompts, checklists e um registro de contatos |
-| CRM de WhatsApp para clínicas | [Clint, Kommo, SocialHub](https://www.clint.digital/blog/crm-para-clinica-whatsapp-2026/) | Automação, agente de IA, API oficial do WhatsApp. Clint a partir de R$ 149 por usuário ao mês (anual) ou R$ 199 (mensal), preços do fornecedor em set/2026 | O guia não automatiza nem integra WhatsApp. Em troca, é gratuito, ensina o método e traz as regras do conselho. Quando o volume crescer, o profissional deve migrar para um CRM e levar o método |
+| CRM de WhatsApp para clínicas | [Clint, Kommo, SocialHub](https://www.clint.digital/blog/crm-para-clinica-whatsapp-2026/) | Automação, agente de IA, API oficial do WhatsApp. Clint a partir de R$ 149 por usuário ao mês (anual) ou R$ 199 (mensal), preços do fornecedor em set/2026 | O guia não automatiza nem integra WhatsApp. Em troca, não cobra mensalidade, ensina o método e traz as regras do conselho. Quando o volume crescer, o profissional deve migrar para um CRM e levar o método |
 | Gestão e marketplace | [Doctoralia e Feegow](https://medicinasa.com.br/panorama-doctoralia-2024) | Agenda, prontuário, teleconsulta, marketplace de pacientes (autodeclara mais de 15 milhões de agendamentos por mês) | O guia trata da captação própria, da rede de colegas e da rotina semanal, fora do marketplace |
 | Guia digital (e-book + app) | CliniLoop | Método em 6 etapas, 14 partes, 12 prompts, 18 ferramentas, verificador ético, rastreador local | Ver forças e limites abaixo |
 
 **Forças reais**
 
-- Une método, prompts e ferramenta de registro num único conjunto, gratuito e sem cadastro.
+- Une método, prompts e ferramenta de registro num único conjunto, sem mensalidade.
 - Traz o compliance de cada conselho dentro do fluxo de trabalho.
 - Dados ficam no navegador, sem servidor.
 

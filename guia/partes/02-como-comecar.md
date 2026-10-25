@@ -10,7 +10,7 @@ Antes da Parte 1, separe uma hora para abrir as contas que o guia usa. Você nã
 
 ## 1. Uma conta em uma ferramenta de IA
 
-Se você ainda não usa inteligência artificial, abra uma conta em uma das ferramentas abaixo. Todas têm versão gratuita, suficiente para começar e para usar os prompts deste guia. Para entrar, basta um e-mail ou uma conta Google, Apple ou Microsoft. Os aplicativos para celular têm o mesmo nome nas lojas da Apple e do Google.
+Se você ainda não usa inteligência artificial, abra uma conta em uma das ferramentas abaixo. Todas podem ser usadas sem assinatura, o que basta para começar e para usar os prompts deste guia. Para entrar, basta um e-mail ou uma conta Google, Apple ou Microsoft. Os aplicativos para celular têm o mesmo nome nas lojas da Apple e do Google.
 
 | Ferramenta | Empresa | Onde abrir a conta |
 |---|---|---|
@@ -21,7 +21,7 @@ Se você ainda não usa inteligência artificial, abra uma conta em uma das ferr
 
 ### Quando vale pagar
 
-A versão gratuita limita o número de mensagens por dia e o acesso aos modelos mais recentes. Se você passar a usar a IA toda semana, uma assinatura paga costuma compensar. Há dois caminhos.
+Sem assinatura, há limite no número de mensagens por dia e o acesso aos modelos mais recentes. Se você passar a usar a IA toda semana, uma assinatura paga costuma compensar. Há dois caminhos.
 
 **Assinar uma ferramenta.** Claude, ChatGPT e Gemini têm planos individuais pagos, com mais uso, modelos mais avançados e recursos como a leitura de arquivos longos. Escolha uma e aprenda a usá-la bem antes de pensar em outra.
 

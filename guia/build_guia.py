@@ -277,7 +277,7 @@ def build_html(pages):
         pg = pages.get(key, '')
         toc.append(f'<a href="#m-{re.sub(r"[^a-z0-9]", "", key.lower())}"><span class="n">{n}</span><span class="t">{E(titulo)}</span><span class="p">{pg}</span></a>')
     toc.append('</section>')
-    fim = ('<section class="fim"><h2>Guia CliniLoop</h2><p>Conhecimentos dirigidos e um app de CRM. O app gratuito acompanha este guia: registra pacientes, colegas e campanhas no seu navegador, '
+    fim = ('<section class="fim"><h2>Guia CliniLoop</h2><p>Conhecimentos dirigidos e um app de CRM. O app CliniLoop, que completa este guia, registra pacientes, colegas e campanhas no seu navegador, '
            'sem servidor, e leva os prompts para o seu dia a dia.</p><p class="nota" style="color:#9FB6BB">Este guia não substitui a orientação do seu conselho profissional nem assessoria jurídica.</p></section>')
     doc = f'<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>Guia CliniLoop</title><style>{CSS}</style></head><body>{cover_html()}{"".join(toc)}{"".join(sections)}{fim}</body></html>'
     # âncoras de sumário

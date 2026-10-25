@@ -2,7 +2,7 @@
 
 # CliniLoop
 
-**Guia CliniLoop: conhecimentos dirigidos e um app de CRM.** O guia (PDF em `guia/Guia-CliniLoop.pdf`) ensina o roteiro; o app guarda o registro. Pacientes, colegas e campanhas, do primeiro contato ao tratamento, com ética e método. Para **médicos, psiquiatras, dentistas, psicólogos, fisioterapeutas, nutricionistas e clínicas multiprofissionais**. Funciona com o **Claude gratuito ou com assinatura** (Pro ou Max) e, se você quiser, com a API da Anthropic.
+**Guia CliniLoop: conhecimentos dirigidos e um app de CRM.** O guia (PDF em `guia/Guia-CliniLoop.pdf`) ensina o roteiro; o app guarda o registro. Pacientes, colegas e campanhas, do primeiro contato ao tratamento, com ética e método. Para **médicos, psiquiatras, dentistas, psicólogos, fisioterapeutas, nutricionistas e clínicas multiprofissionais**. Funciona com o **Claude, com ou sem assinatura** (Pro ou Max) e, se você quiser, com a API da Anthropic.
 
 O CliniLoop mantém a lógica do [BuscaLoop](https://github.com/jordanrizetto-design/Otimizador-de-Oportunidades) original:
 - um perfil base que alimenta todas as ferramentas;
@@ -149,17 +149,17 @@ Para médicos, psiquiatras e psicólogos sem planos por pacote, as etapas 5 e 6 
 
 ## Três modos de uso
 
-O modo fica em **Configurações → Como você usa a IA**. O padrão é o Claude gratuito.
+O modo fica em **Configurações → Como você usa a IA**. O padrão é o Claude sem assinatura.
 
 | Modo | Como funciona | Custo |
 |---|---|---|
-| Claude gratuito | A página gera o prompt; você copia e cola no Claude.ai | Grátis, com limite de mensagens |
+| Claude sem assinatura | A página gera o prompt; você copia e cola no Claude.ai | Sem mensalidade de IA, com limite de mensagens |
 | Claude Pro ou Max | Prompts mais completos; nas ferramentas que pesquisam na web, a página lembra de ativar o Research | Sua assinatura |
 | API da Anthropic | "Gerar resposta aqui (API)" mostra a resposta na página, com fontes, custo, pedido de ajustes e o botão "Guardar como versão final" | Pago por uso, à parte da assinatura |
 
 No modo API, o prompt e a sua chave vão do navegador direto para a API da Anthropic. Por padrão a chave não fica salva, e ela nunca entra no backup.
 
-**Projeto no Claude.ai** (funciona também no plano gratuito): copie as instruções e baixe o arquivo `cliniloop-consultorio.md`. Ele traz o perfil do consultório, as regras do conselho, as decisões guardadas e as contagens da semana, sem nomes de pacientes.
+**Projeto no Claude.ai** (funciona também sem assinatura): copie as instruções e baixe o arquivo `cliniloop-consultorio.md`. Ele traz o perfil do consultório, as regras do conselho, as decisões guardadas e as contagens da semana, sem nomes de pacientes.
 
 ## Para onde vão seus dados
 
@@ -195,7 +195,7 @@ O app fica em **https://jordanrizetto-design.github.io/CliniLoop/** (GitHub Page
 
 ## Como usar (para quem nunca usou IA)
 
-1. Entre em [claude.ai](https://claude.ai) com uma conta gratuita (só e-mail).
+1. Entre em [claude.ai](https://claude.ai) com uma conta sem assinatura (só e-mail).
 2. No CliniLoop, clique em **"Começar: defina seu objetivo"**, preencha os três passos e clique em **"Ver minha próxima ação"**.
 3. Siga o painel **Hoje**: abra a ferramenta indicada, preencha e clique em **"Gerar prompt"**.
 4. Clique em **"Copiar prompt"**, cole no Claude e envie. Peça ajustes na mesma conversa.
