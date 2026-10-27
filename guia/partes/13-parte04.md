@@ -4,7 +4,7 @@ num: 4
 etapa: No roteiro · Etapa 3 de 6 · Gere autoridade e demanda
 titulo: Conteúdo que gera autoridade e alcance
 lead: Conteúdo de saúde cresce quando responde, em poucos segundos e com segurança, uma dúvida que o paciente já tem, e quando é tão útil que ele envia para alguém.
-nesta: O que o Instagram premia · A escada de crescimento · Três temas por profissão · O que você sabe e o que você atende · Pautas · Formatos recorrentes · Roteiro de Reel · Ser citado
+nesta: O que o Instagram premia · A escada de crescimento · Três temas por profissão · O que você sabe e o que você atende · Pautas · Formatos recorrentes · Roteiro de Reel · Indicadores da ressonância · Ser citado
 grupo: Etapa 3 · Gere autoridade e demanda
 marca: PARTE 04
 ---
@@ -162,8 +162,26 @@ Celular, luz natural e um ponto silencioso bastam. Fundo sem prontuários, telas
 - **Interação pública por view** = (curtidas + comentários) ÷ views × 100. Não é engajamento total: não inclui envios nem salvamentos.
 - **Use a mediana** de views de peças comparáveis, não a média. Retenção vem dos dados da conta.
 - **Conversão** são contatos qualificados, agendamentos e comparecimentos vindos do conteúdo, medidos no CRM (Parte 13).
-- **Alcance não é influência.** Em dados apresentados num evento de mercado em 2026, um Reel de 60 segundos retinha, em média, de 12 a 15 segundos, e um vídeo de 16 minutos no YouTube, cerca de 8 minutos. Os números variam por conta; o princípio vale: o vídeo curto chama atenção, o longo constrói confiança. Avalie cada formato pela decisão que ele deve mover (Parte 1).
 - **Ciclo de testes:** uma variável por vez (pergunta, abertura, demonstração ou convite), lote pequeno e comparável, registro de data, formato e duração. Muito alcance e pouca permanência: revise promessa e entrega. Muitos contatos e poucas consultas: revise público, localização e atendimento antes de culpar o roteiro.
+
+### Os indicadores da ressonância
+
+Conteúdo que ressoa passa por três etapas, nesta ordem: prende a **atenção**, **retém** e gera **interação**. Meça na mesma ordem. Se a atenção falha no primeiro segundo, não adianta analisar curtidas. E alcance não é influência: muita gente vê, poucos ficam, e são os que ficam que chegam à consulta.
+
+| Indicador | O que mede | Referência de mercado | Leitura para a saúde |
+|---|---|---|---|
+| Atenção inicial | Se a pessoa parou de rolar | No feed do celular, a pessoa decide em cerca de 1,7 segundo se para ou passa (pesquisa do Facebook) | A pergunta escrita na tela já no primeiro quadro, sem vinheta nem apresentação |
+| Retenção em vídeo curto | Quanto do vídeo foi assistido | Reter cerca de 15 segundos tende a fazer o Instagram mostrar o vídeo a mais gente; um Reel de 60 segundos retém, em média, de 12 a 15 segundos | Resposta central antes dos 15 segundos; o restante aprofunda e traz o limite da orientação |
+| Retenção em vídeo longo | Tempo médio assistido | Um vídeo de 16 minutos no YouTube retém, em média, cerca de 8 minutos | O YouTube é onde se explica a avaliação e o tratamento, e onde a confiança se constrói |
+| Interação real | Envios, salvamentos e comentários com conteúdo | Engajamento real (enviar, salvar, perguntar) pesa mais que o superficial (curtir de passagem); a Meta confirma envios e curtidas por alcance como sinais | Um envio vale mais que uma curtida; um comentário com dúvida vira pauta |
+| Rejeição | Quem pula o vídeo ou deixa de seguir | Em palestra de mercado, 80% das pessoas rejeitariam conteúdo genérico e 43% deixariam de seguir por isso (números sem fonte divulgada) | Veja, nas estatísticas da conta, quantos deixaram de seguir na semana; pico depois de post genérico ou promocional é sinal de ajuste |
+| Validação por terceiros | O que outras pessoas dizem de você | 77% dos brasileiros já decidiram uma compra com base em conteúdo de outros consumidores (pesquisa da mLabs) | Avaliações no Google e indicações registradas no CRM, nunca depoimento pedido em troca de benefício |
+
+Os números vêm de palestras e pesquisas de mercado de 2025 e 2026, listadas em Fontes. Variam por conta, nicho, país e período. Use-os como referência e compare cada vídeo com a mediana dos seus próprios vídeos do mesmo formato.
+
+::: {.box .atencao}
+**Um dado que este guia não usa.** É comum ouvir que a atenção humana caiu para 8 segundos, menos que a de um peixe-dourado. O estudo de origem é contestado e não mede atenção dessa forma. O que vale, e os números acima mostram, é que os primeiros segundos de cada peça decidem se ela será vista.
+:::
 
 ## Ser citado, não só publicar
 
