@@ -33,9 +33,9 @@ Na saúde, o que sustenta um consultório são sete decisões em sequência: o p
 
 ## De onde vem este método
 
-Este guia nasceu do cruzamento de três experiências: décadas de trabalho executivo em bens de consumo, indústria farmacêutica e negócios entre empresas, com passagens pela Europa e pela América Latina; a incorporação de tecnologia, inteligência artificial e transformação digital à forma como um serviço chega a quem precisa dele; e a vivência de empreender na saúde, com uma clínica odontológica de várias especialidades.
+O guia para o método Loop nasceu da combinação de três experiências: décadas de trabalho executivo em marketing de bens de consumo, indústria farmacêutica e negócios entre empresas, com passagens pela Europa e pela América Latina; a incorporação de tecnologia, inteligência artificial e transformação digital à forma como um serviço chega a quem precisa dele; e a vivência de empreender na saúde, com uma grande clínica odontológica de várias especialidades.
 
-Foi nessa clínica que ficou claro como é complexo manter a agenda cheia e os pacientes aderindo ao tratamento, por melhor que sejam a qualidade do corpo clínico, a beleza do espaço e a sofisticação dos equipamentos. A solução não estava em mais equipamento, e sim em processo.
+Do conjunto dessas experiências, ficou claro como é complexo manter a agenda cheia e os pacientes aderindo ao tratamento, por melhor que sejam a qualidade do corpo clínico, a beleza do espaço e a sofisticação dos equipamentos. Ter o melhor à disposição dos pacientes nem sempre é suficiente. O processo acompanhado e eficaz de marketing digital ético CliniLoop é fundamental para o sucesso da prática clínica e o reconhecimento do profissional de saúde no mercado atual.
 
 ## Oceano Vermelho e Oceano Azul
 
