@@ -37,6 +37,8 @@ O guia para o método Loop nasceu da combinação de três experiências: décad
 
 Do conjunto dessas experiências, ficou claro como é complexo manter a agenda cheia e os pacientes aderindo ao tratamento, por melhor que sejam a qualidade do corpo clínico, a beleza do espaço e a sofisticação dos equipamentos. Ter o melhor à disposição dos pacientes nem sempre é suficiente. O processo acompanhado e eficaz de marketing digital ético CliniLoop é fundamental para o sucesso da prática clínica e o reconhecimento do profissional de saúde no mercado atual.
 
+Não bastam apenas posts engraçadinhos. É importante estratégia e disciplina. Muitos modelos são possíveis, mas em um mercado onde o profissional faz toda a diferença, recomendo uma estratégia muito forte na fidelização de clientes a partir da diferenciação de quatro pontos.
+
 *A Estratégia do Oceano Azul* é um livro que ensina como investir em mercados inexplorados. Publicado em 2005 e escrito por W. Chan Kim e Renée Mauborgne, representantes do The Blue Ocean Strategy Institute, localizado no INSEAD, o livro sugere matrizes que podem ser aplicadas em modelos de negócio e analisa casos de grande sucesso em todo o mundo, como o do Cirque du Soleil, que recriou o conceito de circo, e o da Starbucks, com sua incomparável capacidade de fidelizar clientes.
 
 ## Oceano Vermelho e Oceano Azul
