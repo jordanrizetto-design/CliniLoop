@@ -97,7 +97,7 @@ body2 = body2.replace('''      <details class="faq">
       <details class="faq">
         <summary>Posso usar com outra IA''')
 
-html = head + r('head_part.html') + r('config_part.html') + settings + r('tools.html') + r('livro.html') + body2 + '\n<script>\n' + r('app1.js') + r('livro_data.js') + r('suplemento_data.js') + r('app2.js') + r('app3.js') + r('app4.js') + r('app5.js') + r('app6.js') + r('app7.js') + '</script>\n</body>\n</html>\n'
+html = head + r('head_part.html') + r('config_part.html') + settings + r('tools.html') + r('livro.html') + body2 + '\n<script>\n' + r('app1.js') + r('livro_data.js') + r('suplemento_data.js') + r('app2.js') + r('app3.js') + r('app4.js') + r('app5.js') + r('app6.js') + r('app7.js') + r('app8.js') + '</script>\n</body>\n</html>\n'
 assert 'PacienteLoop' not in html.replace('pacienteloop', ''), [m.start() for m in re.finditer('PacienteLoop', html)][:5]
 (ROOT / 'index.html').write_text(html, encoding='utf-8')
 print('index.html', len(html), 'bytes')

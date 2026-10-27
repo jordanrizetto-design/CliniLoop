@@ -35,7 +35,8 @@ Esta parte é o manual de uso do app. Cada ferramenta nasceu de uma parte do gui
 | Comece aqui | Escolhe o tipo de profissional (médico, psiquiatra, dentista, psicólogo, fisioterapeuta, nutricionista ou clínica multiprofissional), reordena as ferramentas e carrega as regras do conselho certo | 1 e 2 |
 | Público, ICP e persona | Descreve quem você atende e gera o perfil do paciente ideal | 3 |
 | Persona do profissional | Registra sua história, seus valores e o seu tom de voz | 3 e 4 |
-| Nicho e diferencial | Aplica as quatro ações do Oceano Azul e gera a proposta de valor | Apresentação |
+| Nicho e diferencial | Analisa nicho e concorrência e gera a proposta de valor | Apresentação |
+| Estratégia Oceano Azul | Guia em quatro passos: onde a sua área compete, as quatro ações (eliminar, reduzir, elevar, criar), a curva de valor ao lado da do mercado e a proposta | Apresentação |
 | Perfis e presença | Checklists de configuração e auditoria do Google, Instagram, YouTube, LinkedIn e TikTok | 3 |
 | Pautas e palavras-chave | Banco de dúvidas reais, palavras-chave por serviço e cidade, pautas e calendário | 4 |
 | Roteiros e copy | Reels, carrosséis, Stories, vídeos de YouTube e posts de LinkedIn, com cinco ganchos e versão em blocos para o teleprompter | 4 e 6 |

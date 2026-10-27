@@ -1,7 +1,7 @@
 
   <section class="alt" id="ferramentas">
     <div class="wrap">
-      <p class="eyebrow">As 18 ferramentas</p>
+      <p class="eyebrow">As 19 ferramentas</p>
       <div class="lead-block">
         <h2>Do posicionamento ao paciente em tratamento.</h2>
         <p>Cada ferramenta cobre uma etapa do funil e uma parte do <a href="#livro"><i>Guia CliniLoop</i></a>. As prioridades seguem seu objetivo e o tipo de profissional escolhido em "Comece aqui". O que você guardar numa ferramenta passa a alimentar as seguintes, o briefing e o playbook.</p>
@@ -147,11 +147,61 @@
         </div>
       </details>
 
+      <details class="tool" data-id="oceano">
+        <summary>
+          <div class="tool-title"><span class="pin">04</span><div><h3>Estratégia Oceano Azul</h3><span class="sub">Em quatro passos: onde todos competem, as quatro ações, sua curva de valor e sua proposta</span></div></div>
+          <span class="chevron">▸</span>
+        </summary>
+        <div class="tool-body">
+          <p class="desc">Sair da disputa em que todos oferecem o mesmo e competem pelo menor valor. Em uns 15 minutos você marca onde a sua área compete, decide o que eliminar, reduzir, elevar e criar, vê a sua curva de valor ao lado da do mercado e sai com uma proposta própria e ética. O guia explica o método na Apresentação.</p>
+          <form class="tool-form" data-tool="oceano" id="oa-form">
+            <fieldset class="field oa-step">
+              <legend>Passo 1 · Em que todos competem na sua área e na sua cidade?</legend>
+              <p class="oa-hint">Marque de 4 a 8 fatores. Eles formam a curva de valor do passo 3.</p>
+              <div class="checks" id="oa-fatores"></div>
+              <label for="oa-extra" class="visually-hidden">Outros fatores</label>
+              <input type="text" id="oa-extra" name="fatoresExtra" placeholder="Outros fatores, separados por vírgula">
+            </fieldset>
+            <fieldset class="field oa-step">
+              <legend>Passo 2 · As quatro ações</legend>
+              <p class="oa-hint">Toque numa sugestão para acrescentar, ou escreva com as suas palavras. Uma ideia por linha.</p>
+              <div class="oa-acoes">
+                <div class="oa-acao" data-acao="eliminar"><label for="oa-eliminar"><b>Eliminar</b> · o que a sua área faz e o paciente não valoriza</label><div class="oa-sug"></div><textarea id="oa-eliminar" name="eliminar" rows="3"></textarea></div>
+                <div class="oa-acao" data-acao="reduzir"><label for="oa-reduzir"><b>Reduzir</b> · o que está acima do necessário</label><div class="oa-sug"></div><textarea id="oa-reduzir" name="reduzir" rows="3"></textarea></div>
+                <div class="oa-acao" data-acao="elevar"><label for="oa-elevar"><b>Elevar</b> · o que deveria estar bem acima do padrão</label><div class="oa-sug"></div><textarea id="oa-elevar" name="elevar" rows="3"></textarea></div>
+                <div class="oa-acao" data-acao="criar"><label for="oa-criar"><b>Criar</b> · o que ninguém na sua região oferece</label><div class="oa-sug"></div><textarea id="oa-criar" name="criar" rows="3"></textarea></div>
+              </div>
+            </fieldset>
+            <fieldset class="field oa-step">
+              <legend>Passo 3 · Sua curva de valor</legend>
+              <p class="oa-hint">De 0 a 5, quanto o mercado entrega em cada fator e quanto você vai entregar depois das quatro ações. O que você criou entra com o mercado em zero.</p>
+              <div id="oa-rows" class="oa-rows"></div>
+              <div id="oa-canvas" class="oa-canvas"></div>
+              <input type="hidden" name="curva" id="oa-curva">
+            </fieldset>
+            <fieldset class="field oa-step">
+              <legend>Passo 4 · Sua proposta</legend>
+              <div class="field">
+                <label for="oa-publico">Para quem é</label>
+                <input type="text" id="oa-publico" name="publico" data-prefill="publico" placeholder="Ex: corredores amadores com dor no joelho, da zona sul">
+              </div>
+              <div class="field">
+                <label for="oa-proposta">Rascunho da proposta (vai se montando com as suas respostas; edite à vontade)</label>
+                <textarea id="oa-proposta" name="proposta" rows="3"></textarea>
+              </div>
+            </fieldset>
+            <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar prompt</button></div>
+            <div class="output-block" hidden></div>
+          </form>
+          <div class="saved-slot" data-save="oceano" data-label="estratégia Oceano Azul"></div>
+        </div>
+      </details>
+
       <p class="tool-sep">Presença e conteúdo</p>
 
       <details class="tool" data-id="perfil">
         <summary>
-          <div class="tool-title"><span class="pin">04</span><div><h3>Perfis e presença</h3><span class="sub">Auditoria e reescrita de Instagram, YouTube, LinkedIn e Perfil da Empresa no Google</span></div></div>
+          <div class="tool-title"><span class="pin">05</span><div><h3>Perfis e presença</h3><span class="sub">Auditoria e reescrita de Instagram, YouTube, LinkedIn e Perfil da Empresa no Google</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -201,7 +251,7 @@
 
       <details class="tool" data-id="pautas">
         <summary>
-          <div class="tool-title"><span class="pin">05</span><div><h3>Pautas e palavras-chave</h3><span class="sub">Banco de dúvidas reais, palavras-chave por serviço e cidade, calendário e frequência</span></div></div>
+          <div class="tool-title"><span class="pin">06</span><div><h3>Pautas e palavras-chave</h3><span class="sub">Banco de dúvidas reais, palavras-chave por serviço e cidade, calendário e frequência</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -236,7 +286,7 @@
 
       <details class="tool" data-id="roteiro">
         <summary>
-          <div class="tool-title"><span class="pin">06</span><div><h3>Roteiros de conteúdo e copy</h3><span class="sub">Reels, carrosséis, Stories, YouTube, LinkedIn, legendas e páginas</span></div></div>
+          <div class="tool-title"><span class="pin">07</span><div><h3>Roteiros de conteúdo e copy</h3><span class="sub">Reels, carrosséis, Stories, YouTube, LinkedIn, legendas e páginas</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -361,7 +411,7 @@
 
       <details class="tool" data-id="reaproveitamento">
         <summary>
-          <div class="tool-title"><span class="pin">07</span><div><h3>Reaproveitamento de conteúdo</h3><span class="sub">Uma aula, podcast ou entrevista vira carrossel, guia, Reel e Stories</span></div></div>
+          <div class="tool-title"><span class="pin">08</span><div><h3>Reaproveitamento de conteúdo</h3><span class="sub">Uma aula, podcast ou entrevista vira carrossel, guia, Reel e Stories</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -439,7 +489,7 @@
 
       <details class="tool" data-id="formacao">
         <summary>
-          <div class="tool-title"><span class="pin">08</span><div><h3>Formação e autoridade</h3><span class="sub">Congressos, cursos, publicações e títulos para o perfil e o LinkedIn</span></div></div>
+          <div class="tool-title"><span class="pin">09</span><div><h3>Formação e autoridade</h3><span class="sub">Congressos, cursos, publicações e títulos para o perfil e o LinkedIn</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -480,7 +530,7 @@
 
       <details class="tool" data-id="campanha" id="campanhas">
         <summary>
-          <div class="tool-title"><span class="pin">09</span><div><h3>Gerador de campanhas</h3><span class="sub">Ficha da campanha, peças, Meta Ads, Google Ads, atendimento e medição</span></div></div>
+          <div class="tool-title"><span class="pin">10</span><div><h3>Gerador de campanhas</h3><span class="sub">Ficha da campanha, peças, Meta Ads, Google Ads, atendimento e medição</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -582,7 +632,7 @@
 
       <details class="tool" data-id="colegas" id="colegas">
         <summary>
-          <div class="tool-title"><span class="pin">10</span><div><h3>Rede de colegas</h3><span class="sub">Funil de colegas, carta de apresentação, contrarreferência e agradecimentos</span></div></div>
+          <div class="tool-title"><span class="pin">11</span><div><h3>Rede de colegas</h3><span class="sub">Funil de colegas, carta de apresentação, contrarreferência e agradecimentos</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -644,7 +694,7 @@
 
       <details class="tool" data-id="atendimento">
         <summary>
-          <div class="tool-title"><span class="pin">11</span><div><h3>Atendimento e agendamento</h3><span class="sub">Respostas rápidas, roteiro de agendamento, confirmação, retomadas e plano de tratamento</span></div></div>
+          <div class="tool-title"><span class="pin">12</span><div><h3>Atendimento e agendamento</h3><span class="sub">Respostas rápidas, roteiro de agendamento, confirmação, retomadas e plano de tratamento</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -754,7 +804,7 @@
 
       <details class="tool" data-id="rastreador" id="rastreador">
         <summary>
-          <div class="tool-title"><span class="pin">12</span><div><h3>Rastreador de pacientes</h3><span class="sub">Funil de sete etapas, consentimento, próximos passos vencidos, lembretes e planilha</span></div></div>
+          <div class="tool-title"><span class="pin">13</span><div><h3>Rastreador de pacientes</h3><span class="sub">Funil de sete etapas, consentimento, próximos passos vencidos, lembretes e planilha</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -825,7 +875,7 @@
 
       <details class="tool" data-id="assistente">
         <summary>
-          <div class="tool-title"><span class="pin">13</span><div><h3>Assistente da semana</h3><span class="sub">Agenda com acompanhamentos, conteúdo e contatos com colegas</span></div></div>
+          <div class="tool-title"><span class="pin">14</span><div><h3>Assistente da semana</h3><span class="sub">Agenda com acompanhamentos, conteúdo e contatos com colegas</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -858,7 +908,7 @@
 
       <details class="tool" data-id="painel" id="painel-semanal">
         <summary>
-          <div class="tool-title"><span class="pin">14</span><div><h3>Painel e diagnóstico</h3><span class="sub">Métricas da semana, diário de conteúdo e o gargalo do funil</span></div></div>
+          <div class="tool-title"><span class="pin">15</span><div><h3>Painel e diagnóstico</h3><span class="sub">Métricas da semana, diário de conteúdo e o gargalo do funil</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -921,7 +971,7 @@
 
       <details class="tool" data-id="etica" id="etica">
         <summary>
-          <div class="tool-title"><span class="pin">15</span><div><h3>Verificador ético</h3><span class="sub">Regras do seu conselho, LGPD e políticas da Meta e do Google</span></div></div>
+          <div class="tool-title"><span class="pin">16</span><div><h3>Verificador ético</h3><span class="sub">Regras do seu conselho, LGPD e políticas da Meta e do Google</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -969,7 +1019,7 @@
 
       <details class="tool" data-id="briefing" id="briefing">
         <summary>
-          <div class="tool-title"><span class="pin">16</span><div><h3>Briefing para terceiros</h3><span class="sub">Para agência, social media, videomaker, tráfego ou recepção</span></div></div>
+          <div class="tool-title"><span class="pin">17</span><div><h3>Briefing para terceiros</h3><span class="sub">Para agência, social media, videomaker, tráfego ou recepção</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -1036,7 +1086,7 @@
 
       <details class="tool" data-id="ferramentas">
         <summary>
-          <div class="tool-title"><span class="pin">17</span><div><h3>Ferramentas recomendadas</h3><span class="sub">O mínimo para gravar, editar, gerar imagens, publicar, anunciar, atender e medir</span></div></div>
+          <div class="tool-title"><span class="pin">18</span><div><h3>Ferramentas recomendadas</h3><span class="sub">O mínimo para gravar, editar, gerar imagens, publicar, anunciar, atender e medir</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -1146,7 +1196,7 @@
 
       <details class="tool tool-featured" data-id="ebook" id="playbook" open>
         <summary>
-          <div class="tool-title"><span class="pin">18</span><div><h3>Playbook da clínica <span class="badge-feat">Destaque</span></h3><span class="sub">Tudo em um documento, o que falta concluir e revisões a cada 2 semanas</span></div></div>
+          <div class="tool-title"><span class="pin">19</span><div><h3>Playbook da clínica <span class="badge-feat">Destaque</span></h3><span class="sub">Tudo em um documento, o que falta concluir e revisões a cada 2 semanas</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">

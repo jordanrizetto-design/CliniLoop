@@ -210,6 +210,28 @@ Entregue:
 6. Posicionamento em uma frase e 10 palavras-chave para bio, Google e legendas (serviço + cidade ou bairro).
 7. Como testar o nicho em 30 dias antes de mudar tudo, e o que medir.`,
 
+    oceano: (get, getAll) => `Aja como estrategista de posicionamento para profissionais de saúde, usando a Estratégia do Oceano Azul (W. Chan Kim e Renée Mauborgne) e as regras de publicidade do meu conselho.
+
+Meu Oceano Vermelho (fatores em que todos competem na minha área e cidade): ${[getAll('fatores'), get('fatoresExtra')].filter((x) => x && x !== '(nenhum selecionado)').join(', ') || '(não marquei: proponha os fatores típicos da minha área)'}
+
+As quatro ações que pensei:
+- Eliminar: ${nv(get('eliminar').split('\n').map((x) => x.replace(/^[-•*]\s*/, '').trim()).filter(Boolean).join('; '))}
+- Reduzir: ${nv(get('reduzir').split('\n').map((x) => x.replace(/^[-•*]\s*/, '').trim()).filter(Boolean).join('; '))}
+- Elevar: ${nv(get('elevar').split('\n').map((x) => x.replace(/^[-•*]\s*/, '').trim()).filter(Boolean).join('; '))}
+- Criar: ${nv(get('criar').split('\n').map((x) => x.replace(/^[-•*]\s*/, '').trim()).filter(Boolean).join('; '))}
+
+Minha curva de valor (0 a 5, mercado e eu depois das quatro ações): ${nv(get('curva'))}
+Público: ${nv(get('publico'), cfg.publico)}
+Rascunho de proposta: ${nv(get('proposta'))}
+
+Entregue:
+1. Diagnóstico da minha curva: onde ela se parece com a do mercado (risco de continuar no Oceano Vermelho) e onde se diferencia de verdade.
+2. As quatro ações revisadas em tabela (ação, o que fazer, por que o paciente valoriza, custo ou esforço, como comprovar), com no máximo 3 itens por ação. Corte o que for promessa, superlativo, preço como chamariz ou qualquer coisa que o meu conselho proíba, e diga o motivo.
+3. Três versões da proposta de valor no formato "Para [público], [o que ofereço de diferente], [como comprovo]", sem promessa de resultado.
+4. Onde a estratégia aparece na prática: bio e Perfil da Empresa no Google, roteiro de atendimento, primeira consulta e três pautas de conteúdo.
+5. Um teste de 30 dias para validar a estratégia antes de mudar tudo, com o que medir no CRM (contatos, agendamentos, comparecimentos e origem).
+6. Riscos: o que um concorrente copiaria primeiro e como manter a diferença.`,
+
     perfil: (get, getAll) => `Você é consultor de marketing ético para profissionais de saúde no Brasil.
 
 Perfis para revisar: ${getAll('redes')}

@@ -18,7 +18,7 @@ Muda o objeto: em vez de vagas, pacientes, colegas e campanhas.
 
 ## Novidades desta versão (beta)
 
-- **Modo guiado**: por padrão o app mostra só as ferramentas que mais ajudam agora (de 3 a 4) e deixa as 18 a um clique.
+- **Modo guiado**: por padrão o app mostra só as ferramentas que mais ajudam agora (de 3 a 4) e deixa as 19 a um clique.
 - **Primeiro ganho**: um passo a passo curto leva da configuração ao prompt do perfil.
 - **Instalável e offline**: funciona como aplicativo no celular e no computador (PWA).
 - **Feedback de teste** dentro do app, sem dados de pacientes.
@@ -86,28 +86,29 @@ O CliniLoop usa princípios dessas fontes e não reproduz o material dos cursos.
 
 O tipo de profissional define as regras do conselho embutidas em todos os geradores e a ordem recomendada das ferramentas.
 
-## As 18 ferramentas
+## As 19 ferramentas
 
 | # | Ferramenta | Parte do guia | O que faz |
 |---|---|---|---|
 | 01 | Público, ICP e persona do paciente | 3 | Público-alvo, ICP, anti-ICP, personas, mapa de empatia, jornada e perguntas de busca |
 | 02 | Persona do profissional e marca | 3 | Arquétipo, adjetivos, tom de voz "faço / não faço", bios, história, bandeiras e limites |
 | 03 | Nicho e diferencial | Apresentação e 3 | Oceano Azul, três opções de nicho, proposta de valor, diferenciais verificáveis e pesquisa de concorrentes |
-| 04 | Perfis e presença | 3 | Auditoria e reescrita de Google, Instagram, YouTube, LinkedIn e TikTok, checklist de configuração de cada canal e assistente da página da bio |
-| 05 | Pautas e palavras-chave | 4 | Banco de dúvidas reais, palavras-chave por serviço e cidade, 30 pautas por momento da jornada, quadros recorrentes, metas S.M.A.R.T., frequência do guia e calendário |
-| 06 | Roteiros de conteúdo e copy | 4 | Reel em seis tempos, carrosséis, Stories, YouTube, LinkedIn, legendas e páginas; quadro recorrente, R.O.A.S., revisão em duas etapas, checklist antes de publicar e referências de criadores clínicos |
-| 07 | Reaproveitamento de conteúdo | 5 | Da aula, podcast ou entrevista ao carrossel, guia, Reel em duas versões e Stories, com registro de ideias e pendências |
-| 08 | Formação e autoridade | 3 | Congressos, cursos, publicações e títulos, e como comunicá-los |
-| 09 | Gerador de campanhas | 7 e 13 | Campanha completa, plano de impulsionamento (Turbinar) ou só anúncios Meta e Google; registro de campanhas e impulsionamentos com custo por paciente que compareceu |
-| 10 | Rede de colegas | 6 | Quem indica quem, funil de colegas do guia, carta de apresentação, contrarreferência e agradecimentos |
-| 11 | Atendimento e agendamento | 8 e 10 | 12 respostas rápidas, agendamento em cinco mensagens, sequência de confirmação, retomadas e plano de tratamento compreensível |
-| 12 | Rastreador de pacientes | 9 e 11 | Funil de sete etapas, consentimento por finalidade, próximo passo típico, planos parados, faltas, lembretes (.ics), planilha (.csv) e "Da conversa ao registro" |
-| 13 | Assistente da semana | 10 e 11 | Ritual de 30 minutos: pendências anonimizadas, parados e agenda em blocos |
-| 14 | Painel e diagnóstico | 11 e 1 | Métricas de 8 semanas, métricas da Parte 13 por origem e profissional, faltas por dia da semana, diário de conteúdo, gargalo e diagnóstico com IA |
-| 15 | Verificador ético | 2 e 13 | Regras do conselho, LGPD e políticas da Meta e do Google; checagem rápida sem IA e revisão frase a frase |
-| 16 | Briefing para terceiros | 14 | Documento para agência, social media, videomaker, tráfego, designer, redator ou recepção |
-| 17 | Ferramentas recomendadas | 14 | Uma ferramenta por necessidade (listadas, não avaliadas) e prompt para montar a sua caixa |
-| 18 | Playbook da clínica | 11 | E-book com o guia e as sete decisões, perfil, decisões, regras, funil, campanhas, colegas, métricas, plano de ação, 90 dias e ritual |
+| 04 | Estratégia Oceano Azul | Apresentação | Em quatro passos: fatores em que a área compete, as quatro ações (eliminar, reduzir, elevar, criar) com sugestões por profissão, curva de valor ao lado da do mercado e rascunho da proposta; gera o prompt e guarda a estratégia |
+| 05 | Perfis e presença | 3 | Auditoria e reescrita de Google, Instagram, YouTube, LinkedIn e TikTok, checklist de configuração de cada canal e assistente da página da bio |
+| 06 | Pautas e palavras-chave | 4 | Banco de dúvidas reais, palavras-chave por serviço e cidade, 30 pautas por momento da jornada, quadros recorrentes, metas S.M.A.R.T., frequência do guia e calendário |
+| 07 | Roteiros de conteúdo e copy | 4 | Reel em seis tempos, carrosséis, Stories, YouTube, LinkedIn, legendas e páginas; quadro recorrente, R.O.A.S., revisão em duas etapas, checklist antes de publicar e referências de criadores clínicos |
+| 08 | Reaproveitamento de conteúdo | 5 | Da aula, podcast ou entrevista ao carrossel, guia, Reel em duas versões e Stories, com registro de ideias e pendências |
+| 09 | Formação e autoridade | 3 | Congressos, cursos, publicações e títulos, e como comunicá-los |
+| 10 | Gerador de campanhas | 7 e 13 | Campanha completa, plano de impulsionamento (Turbinar) ou só anúncios Meta e Google; registro de campanhas e impulsionamentos com custo por paciente que compareceu |
+| 11 | Rede de colegas | 6 | Quem indica quem, funil de colegas do guia, carta de apresentação, contrarreferência e agradecimentos |
+| 12 | Atendimento e agendamento | 8 e 10 | 12 respostas rápidas, agendamento em cinco mensagens, sequência de confirmação, retomadas e plano de tratamento compreensível |
+| 13 | Rastreador de pacientes | 9 e 11 | Funil de sete etapas, consentimento por finalidade, próximo passo típico, planos parados, faltas, lembretes (.ics), planilha (.csv) e "Da conversa ao registro" |
+| 14 | Assistente da semana | 10 e 11 | Ritual de 30 minutos: pendências anonimizadas, parados e agenda em blocos |
+| 15 | Painel e diagnóstico | 11 e 1 | Métricas de 8 semanas, métricas da Parte 13 por origem e profissional, faltas por dia da semana, diário de conteúdo, gargalo e diagnóstico com IA |
+| 16 | Verificador ético | 2 e 13 | Regras do conselho, LGPD e políticas da Meta e do Google; checagem rápida sem IA e revisão frase a frase |
+| 17 | Briefing para terceiros | 14 | Documento para agência, social media, videomaker, tráfego, designer, redator ou recepção |
+| 18 | Ferramentas recomendadas | 14 | Uma ferramenta por necessidade (listadas, não avaliadas) e prompt para montar a sua caixa |
+| 19 | Playbook da clínica | 11 | E-book com o guia e as sete decisões, perfil, decisões, regras, funil, campanhas, colegas, métricas, plano de ação, 90 dias e ritual |
 
 ## Rastreador de pacientes
 

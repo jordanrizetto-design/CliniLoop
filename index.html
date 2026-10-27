@@ -842,6 +842,36 @@
   .brand-text small{margin-top:6px;}
   @media (max-width:720px){ .brand-word{height:24px;} }
 
+  /* Estratégia Oceano Azul */
+  .oa-step{border:1px solid var(--border); border-radius:var(--radius); padding:16px 18px 18px; margin:0 0 16px; background:var(--paper);}
+  .oa-step legend{font-family:var(--body); font-weight:600; font-size:1rem; text-transform:none; letter-spacing:0; color:var(--ink); padding:0 6px;}
+  .oa-hint{font-size:.88rem; color:var(--ink-soft); margin:2px 0 10px;}
+  #oa-extra{margin-top:10px;}
+  .oa-acoes{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  @media (max-width:720px){ .oa-acoes{grid-template-columns:1fr;} }
+  .oa-acao label{display:block; font-family:var(--body); text-transform:none; letter-spacing:0; font-size:.9rem; color:var(--ink); margin-bottom:6px;}
+  .oa-acao textarea{width:100%; min-height:84px;}
+  .oa-sug{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px;}
+  .oa-chip{font:inherit; font-size:.78rem; line-height:1.3; padding:5px 10px; border-radius:999px; border:1px solid var(--border-strong); background:#fff; color:var(--ink); cursor:pointer; text-align:left;}
+  .oa-chip:hover,.oa-chip:focus-visible{border-color:var(--teal); color:var(--teal);}
+  .oa-rows{display:grid; gap:4px; margin-bottom:12px;}
+  .oa-row{display:grid; grid-template-columns:minmax(0,1.4fr) 1fr 1fr; gap:10px; align-items:center; font-size:.88rem;}
+  .oa-row.oa-head{font-weight:600; color:var(--ink-soft); font-size:.78rem; text-transform:uppercase; letter-spacing:.06em;}
+  .oa-row label{display:flex; align-items:center; gap:8px; margin:0;}
+  .oa-row input[type=range]{flex:1; accent-color:var(--teal);}
+  .oa-row output{width:1.2em; text-align:right; font-weight:600;}
+  .oa-canvas svg{width:100%; height:auto; display:block; background:#fff; border:1px solid var(--border); border-radius:var(--radius);}
+  .oa-grid{stroke:#E1EAEC; stroke-width:1;}
+  .oa-tick{font-size:11px; fill:#6B7F86;}
+  .oa-lab{font-size:11px; fill:#14303A;}
+  .oa-lab.novo{fill:#1F6F78; font-weight:600;}
+  .oa-line-m{fill:none; stroke:#A3B4BA; stroke-width:2; stroke-dasharray:5 4;}
+  .oa-line-v{fill:none; stroke:#1F6F78; stroke-width:3;}
+  .oa-dot-m{fill:#A3B4BA;} .oa-dot-v{fill:#1F6F78;}
+  .oa-legend{font-size:.82rem; color:var(--ink-soft); margin:8px 0 0; display:flex; align-items:center; gap:8px; flex-wrap:wrap;}
+  .oa-legend span{display:inline-block; width:22px; height:0; border-top:3px solid #1F6F78;}
+  .oa-legend span.m{border-top:2px dashed #A3B4BA;}
+
 </style>
 </head>
 <body>
@@ -1336,7 +1366,7 @@
 
   <section class="alt" id="ferramentas">
     <div class="wrap">
-      <p class="eyebrow">As 18 ferramentas</p>
+      <p class="eyebrow">As 19 ferramentas</p>
       <div class="lead-block">
         <h2>Do posicionamento ao paciente em tratamento.</h2>
         <p>Cada ferramenta cobre uma etapa do funil e uma parte do <a href="#livro"><i>Guia CliniLoop</i></a>. As prioridades seguem seu objetivo e o tipo de profissional escolhido em "Comece aqui". O que você guardar numa ferramenta passa a alimentar as seguintes, o briefing e o playbook.</p>
@@ -1482,11 +1512,61 @@
         </div>
       </details>
 
+      <details class="tool" data-id="oceano">
+        <summary>
+          <div class="tool-title"><span class="pin">04</span><div><h3>Estratégia Oceano Azul</h3><span class="sub">Em quatro passos: onde todos competem, as quatro ações, sua curva de valor e sua proposta</span></div></div>
+          <span class="chevron">▸</span>
+        </summary>
+        <div class="tool-body">
+          <p class="desc">Sair da disputa em que todos oferecem o mesmo e competem pelo menor valor. Em uns 15 minutos você marca onde a sua área compete, decide o que eliminar, reduzir, elevar e criar, vê a sua curva de valor ao lado da do mercado e sai com uma proposta própria e ética. O guia explica o método na Apresentação.</p>
+          <form class="tool-form" data-tool="oceano" id="oa-form">
+            <fieldset class="field oa-step">
+              <legend>Passo 1 · Em que todos competem na sua área e na sua cidade?</legend>
+              <p class="oa-hint">Marque de 4 a 8 fatores. Eles formam a curva de valor do passo 3.</p>
+              <div class="checks" id="oa-fatores"></div>
+              <label for="oa-extra" class="visually-hidden">Outros fatores</label>
+              <input type="text" id="oa-extra" name="fatoresExtra" placeholder="Outros fatores, separados por vírgula">
+            </fieldset>
+            <fieldset class="field oa-step">
+              <legend>Passo 2 · As quatro ações</legend>
+              <p class="oa-hint">Toque numa sugestão para acrescentar, ou escreva com as suas palavras. Uma ideia por linha.</p>
+              <div class="oa-acoes">
+                <div class="oa-acao" data-acao="eliminar"><label for="oa-eliminar"><b>Eliminar</b> · o que a sua área faz e o paciente não valoriza</label><div class="oa-sug"></div><textarea id="oa-eliminar" name="eliminar" rows="3"></textarea></div>
+                <div class="oa-acao" data-acao="reduzir"><label for="oa-reduzir"><b>Reduzir</b> · o que está acima do necessário</label><div class="oa-sug"></div><textarea id="oa-reduzir" name="reduzir" rows="3"></textarea></div>
+                <div class="oa-acao" data-acao="elevar"><label for="oa-elevar"><b>Elevar</b> · o que deveria estar bem acima do padrão</label><div class="oa-sug"></div><textarea id="oa-elevar" name="elevar" rows="3"></textarea></div>
+                <div class="oa-acao" data-acao="criar"><label for="oa-criar"><b>Criar</b> · o que ninguém na sua região oferece</label><div class="oa-sug"></div><textarea id="oa-criar" name="criar" rows="3"></textarea></div>
+              </div>
+            </fieldset>
+            <fieldset class="field oa-step">
+              <legend>Passo 3 · Sua curva de valor</legend>
+              <p class="oa-hint">De 0 a 5, quanto o mercado entrega em cada fator e quanto você vai entregar depois das quatro ações. O que você criou entra com o mercado em zero.</p>
+              <div id="oa-rows" class="oa-rows"></div>
+              <div id="oa-canvas" class="oa-canvas"></div>
+              <input type="hidden" name="curva" id="oa-curva">
+            </fieldset>
+            <fieldset class="field oa-step">
+              <legend>Passo 4 · Sua proposta</legend>
+              <div class="field">
+                <label for="oa-publico">Para quem é</label>
+                <input type="text" id="oa-publico" name="publico" data-prefill="publico" placeholder="Ex: corredores amadores com dor no joelho, da zona sul">
+              </div>
+              <div class="field">
+                <label for="oa-proposta">Rascunho da proposta (vai se montando com as suas respostas; edite à vontade)</label>
+                <textarea id="oa-proposta" name="proposta" rows="3"></textarea>
+              </div>
+            </fieldset>
+            <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar prompt</button></div>
+            <div class="output-block" hidden></div>
+          </form>
+          <div class="saved-slot" data-save="oceano" data-label="estratégia Oceano Azul"></div>
+        </div>
+      </details>
+
       <p class="tool-sep">Presença e conteúdo</p>
 
       <details class="tool" data-id="perfil">
         <summary>
-          <div class="tool-title"><span class="pin">04</span><div><h3>Perfis e presença</h3><span class="sub">Auditoria e reescrita de Instagram, YouTube, LinkedIn e Perfil da Empresa no Google</span></div></div>
+          <div class="tool-title"><span class="pin">05</span><div><h3>Perfis e presença</h3><span class="sub">Auditoria e reescrita de Instagram, YouTube, LinkedIn e Perfil da Empresa no Google</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -1536,7 +1616,7 @@
 
       <details class="tool" data-id="pautas">
         <summary>
-          <div class="tool-title"><span class="pin">05</span><div><h3>Pautas e palavras-chave</h3><span class="sub">Banco de dúvidas reais, palavras-chave por serviço e cidade, calendário e frequência</span></div></div>
+          <div class="tool-title"><span class="pin">06</span><div><h3>Pautas e palavras-chave</h3><span class="sub">Banco de dúvidas reais, palavras-chave por serviço e cidade, calendário e frequência</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -1571,7 +1651,7 @@
 
       <details class="tool" data-id="roteiro">
         <summary>
-          <div class="tool-title"><span class="pin">06</span><div><h3>Roteiros de conteúdo e copy</h3><span class="sub">Reels, carrosséis, Stories, YouTube, LinkedIn, legendas e páginas</span></div></div>
+          <div class="tool-title"><span class="pin">07</span><div><h3>Roteiros de conteúdo e copy</h3><span class="sub">Reels, carrosséis, Stories, YouTube, LinkedIn, legendas e páginas</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -1696,7 +1776,7 @@
 
       <details class="tool" data-id="reaproveitamento">
         <summary>
-          <div class="tool-title"><span class="pin">07</span><div><h3>Reaproveitamento de conteúdo</h3><span class="sub">Uma aula, podcast ou entrevista vira carrossel, guia, Reel e Stories</span></div></div>
+          <div class="tool-title"><span class="pin">08</span><div><h3>Reaproveitamento de conteúdo</h3><span class="sub">Uma aula, podcast ou entrevista vira carrossel, guia, Reel e Stories</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -1774,7 +1854,7 @@
 
       <details class="tool" data-id="formacao">
         <summary>
-          <div class="tool-title"><span class="pin">08</span><div><h3>Formação e autoridade</h3><span class="sub">Congressos, cursos, publicações e títulos para o perfil e o LinkedIn</span></div></div>
+          <div class="tool-title"><span class="pin">09</span><div><h3>Formação e autoridade</h3><span class="sub">Congressos, cursos, publicações e títulos para o perfil e o LinkedIn</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -1815,7 +1895,7 @@
 
       <details class="tool" data-id="campanha" id="campanhas">
         <summary>
-          <div class="tool-title"><span class="pin">09</span><div><h3>Gerador de campanhas</h3><span class="sub">Ficha da campanha, peças, Meta Ads, Google Ads, atendimento e medição</span></div></div>
+          <div class="tool-title"><span class="pin">10</span><div><h3>Gerador de campanhas</h3><span class="sub">Ficha da campanha, peças, Meta Ads, Google Ads, atendimento e medição</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -1917,7 +1997,7 @@
 
       <details class="tool" data-id="colegas" id="colegas">
         <summary>
-          <div class="tool-title"><span class="pin">10</span><div><h3>Rede de colegas</h3><span class="sub">Funil de colegas, carta de apresentação, contrarreferência e agradecimentos</span></div></div>
+          <div class="tool-title"><span class="pin">11</span><div><h3>Rede de colegas</h3><span class="sub">Funil de colegas, carta de apresentação, contrarreferência e agradecimentos</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -1979,7 +2059,7 @@
 
       <details class="tool" data-id="atendimento">
         <summary>
-          <div class="tool-title"><span class="pin">11</span><div><h3>Atendimento e agendamento</h3><span class="sub">Respostas rápidas, roteiro de agendamento, confirmação, retomadas e plano de tratamento</span></div></div>
+          <div class="tool-title"><span class="pin">12</span><div><h3>Atendimento e agendamento</h3><span class="sub">Respostas rápidas, roteiro de agendamento, confirmação, retomadas e plano de tratamento</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -2089,7 +2169,7 @@
 
       <details class="tool" data-id="rastreador" id="rastreador">
         <summary>
-          <div class="tool-title"><span class="pin">12</span><div><h3>Rastreador de pacientes</h3><span class="sub">Funil de sete etapas, consentimento, próximos passos vencidos, lembretes e planilha</span></div></div>
+          <div class="tool-title"><span class="pin">13</span><div><h3>Rastreador de pacientes</h3><span class="sub">Funil de sete etapas, consentimento, próximos passos vencidos, lembretes e planilha</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -2160,7 +2240,7 @@
 
       <details class="tool" data-id="assistente">
         <summary>
-          <div class="tool-title"><span class="pin">13</span><div><h3>Assistente da semana</h3><span class="sub">Agenda com acompanhamentos, conteúdo e contatos com colegas</span></div></div>
+          <div class="tool-title"><span class="pin">14</span><div><h3>Assistente da semana</h3><span class="sub">Agenda com acompanhamentos, conteúdo e contatos com colegas</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -2193,7 +2273,7 @@
 
       <details class="tool" data-id="painel" id="painel-semanal">
         <summary>
-          <div class="tool-title"><span class="pin">14</span><div><h3>Painel e diagnóstico</h3><span class="sub">Métricas da semana, diário de conteúdo e o gargalo do funil</span></div></div>
+          <div class="tool-title"><span class="pin">15</span><div><h3>Painel e diagnóstico</h3><span class="sub">Métricas da semana, diário de conteúdo e o gargalo do funil</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -2256,7 +2336,7 @@
 
       <details class="tool" data-id="etica" id="etica">
         <summary>
-          <div class="tool-title"><span class="pin">15</span><div><h3>Verificador ético</h3><span class="sub">Regras do seu conselho, LGPD e políticas da Meta e do Google</span></div></div>
+          <div class="tool-title"><span class="pin">16</span><div><h3>Verificador ético</h3><span class="sub">Regras do seu conselho, LGPD e políticas da Meta e do Google</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -2304,7 +2384,7 @@
 
       <details class="tool" data-id="briefing" id="briefing">
         <summary>
-          <div class="tool-title"><span class="pin">16</span><div><h3>Briefing para terceiros</h3><span class="sub">Para agência, social media, videomaker, tráfego ou recepção</span></div></div>
+          <div class="tool-title"><span class="pin">17</span><div><h3>Briefing para terceiros</h3><span class="sub">Para agência, social media, videomaker, tráfego ou recepção</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -2371,7 +2451,7 @@
 
       <details class="tool" data-id="ferramentas">
         <summary>
-          <div class="tool-title"><span class="pin">17</span><div><h3>Ferramentas recomendadas</h3><span class="sub">O mínimo para gravar, editar, gerar imagens, publicar, anunciar, atender e medir</span></div></div>
+          <div class="tool-title"><span class="pin">18</span><div><h3>Ferramentas recomendadas</h3><span class="sub">O mínimo para gravar, editar, gerar imagens, publicar, anunciar, atender e medir</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -2481,7 +2561,7 @@
 
       <details class="tool tool-featured" data-id="ebook" id="playbook" open>
         <summary>
-          <div class="tool-title"><span class="pin">18</span><div><h3>Playbook da clínica <span class="badge-feat">Destaque</span></h3><span class="sub">Tudo em um documento, o que falta concluir e revisões a cada 2 semanas</span></div></div>
+          <div class="tool-title"><span class="pin">19</span><div><h3>Playbook da clínica <span class="badge-feat">Destaque</span></h3><span class="sub">Tudo em um documento, o que falta concluir e revisões a cada 2 semanas</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
@@ -2513,7 +2593,7 @@
       <p class="eyebrow">O guia e o app</p>
       <div class="livro-head">
         <a class="livro-capa" href="guia/Guia-CliniLoop.pdf" target="_blank" rel="noopener" title="Abrir o guia em PDF">
-          <img src="guia/capa/capa-thumb.jpg" alt="Capa do guia: Prompt do Sim, guia digital para o sucesso do profissional da saúde" width="200" height="283" loading="lazy">
+          <img src="guia/capa/capa-thumb.jpg" alt="Capa do guia Prompt do Sim: marketing, inteligência artificial e CRM para profissionais da saúde" width="200" height="283" loading="lazy">
           <span class="livro-capa-btn">Baixar o guia (PDF)</span>
         </a>
         <div>
@@ -2990,14 +3070,14 @@
   const CAMERA = { alto: 'gosto de aparecer na câmera', medio: 'apareço, mas sem muita exposição', baixo: 'prefiro não aparecer na câmera' };
 
   const TOOL_NAMES = {
-    config: 'Comece aqui', publico: 'Público, ICP e persona', profissional: 'Persona do profissional', nicho: 'Nicho e diferencial',
+    config: 'Comece aqui', publico: 'Público, ICP e persona', profissional: 'Persona do profissional', nicho: 'Nicho e diferencial', oceano: 'Estratégia Oceano Azul',
     perfil: 'Perfis e presença', pautas: 'Pautas e palavras-chave', roteiro: 'Roteiros e copy', reaproveitamento: 'Reaproveitamento de conteúdo', formacao: 'Formação e autoridade',
     campanha: 'Gerador de campanhas', colegas: 'Rede de colegas', atendimento: 'Atendimento e agendamento', rastreador: 'Rastreador de pacientes',
     assistente: 'Assistente da semana', painel: 'Painel e diagnóstico', etica: 'Verificador ético', briefing: 'Briefing para terceiros',
     ferramentas: 'Ferramentas', ebook: 'Playbook da clínica'
   };
   const FUNNEL_STAGES = [
-    { nome: 'Posicionamento', desc: 'Quem você quer atender, por que você e como você fala.', tools: ['config', 'publico', 'profissional', 'nicho'], num: null },
+    { nome: 'Posicionamento', desc: 'Quem você quer atender, por que você e como você fala.', tools: ['config', 'publico', 'profissional', 'nicho', 'oceano'], num: null },
     { nome: 'Conteúdo', desc: 'Perfis prontos, pautas de dúvidas reais e roteiros publicados com constância.', tools: ['perfil', 'pautas', 'roteiro', 'reaproveitamento', 'formacao'], num: 'conteudos', numLabel: 'publicados' },
     { nome: 'Captação', desc: 'Campanhas medidas e rede de colegas que indica.', tools: ['campanha', 'colegas'], num: 'contatos', numLabel: 'novos contatos' },
     { nome: 'Conversa', desc: 'Resposta rápida, agendamento, confirmação e retomada.', tools: ['atendimento', 'rastreador'], num: 'agendados', numLabel: 'agendados' },
@@ -3008,6 +3088,7 @@
     publico: { nome: 'Público, ICP e persona do paciente', fazer: 'Descreva quem você atende hoje e as dúvidas que mais ouve, gere o prompt e guarde o ICP e a persona principal.', revisar: 'Confira se os contatos das últimas semanas são do ICP e acrescente as dúvidas novas.' },
     profissional: { nome: 'Persona do profissional e marca', fazer: 'Responda às perguntas sobre sua história e seus valores, gere sua persona de marca e guarde o tom de voz.', revisar: 'Veja se os últimos conteúdos soaram como você e ajuste o "faço / não faço".' },
     nicho: { nome: 'Nicho e diferencial', fazer: 'Liste formações e métodos, gere a análise de nicho e concorrência e guarde a proposta de valor escolhida.', revisar: 'Revise a concorrência local e veja se o nicho está trazendo o paciente certo.' },
+    oceano: { nome: 'Estratégia Oceano Azul', fazer: 'Marque em que a sua área compete, faça as quatro ações (eliminar, reduzir, elevar, criar), ajuste a curva de valor e guarde a proposta.', revisar: 'Compare a curva de valor com o que os pacientes elogiam e reclamam, e veja se o que você criou já aparece nos perfis e no atendimento.' },
     perfil: { nome: 'Perfis e presença', fazer: 'Cole os textos atuais dos perfis, gere a auditoria e aplique bio, destaques, link e Perfil da Empresa no Google.', revisar: 'Atualize destaques, fixados e fotos do Google com o que funcionou.' },
     pautas: { nome: 'Pautas e palavras-chave', fazer: 'Anote no banco as dúvidas reais dos pacientes, gere palavras-chave, 30 pautas e o calendário, e guarde a frequência que vai manter.', revisar: 'Acrescente as dúvidas novas ao banco e gere as próximas 4 semanas de pautas.' },
     roteiro: { nome: 'Roteiros de conteúdo e copy', fazer: 'Escolha a primeira pauta do calendário e gere o roteiro com 5 ganchos. Grave vários de uma vez e registre no Diário de conteúdo.', revisar: 'Reaproveite os ganchos com mais envios e salvamentos nos próximos roteiros.' },
@@ -3022,9 +3103,9 @@
     etica: { nome: 'Verificador ético', fazer: 'Leia o resumo das regras do seu conselho e passe o próximo post ou anúncio pelo verificador antes de publicar.', revisar: 'Revise bio, modelos e anúncios ativos e confira se a norma mudou.' },
     briefing: { nome: 'Briefing para terceiros', fazer: 'Monte o briefing e envie para dois ou três fornecedores, para comparar propostas.', revisar: 'Revise escopo, aprovação e métricas com o fornecedor.' }
   };
-  const SAVE_TOOLS = ['publico', 'profissional', 'nicho', 'perfil', 'pautas', 'formacao', 'atendimento'];
+  const SAVE_TOOLS = ['publico', 'profissional', 'nicho', 'oceano', 'perfil', 'pautas', 'formacao', 'atendimento'];
   const SAVE_TITLES = {
-    publico: 'Público, ICP e persona do paciente', profissional: 'Marca e tom de voz do profissional', nicho: 'Nicho, proposta de valor e diferencial',
+    publico: 'Público, ICP e persona do paciente', profissional: 'Marca e tom de voz do profissional', nicho: 'Nicho, proposta de valor e diferencial', oceano: 'Estratégia Oceano Azul (quatro ações e curva de valor)',
     perfil: 'Textos aprovados dos perfis', pautas: 'Palavras-chave, pautas e calendário', formacao: 'Plano de formação e autoridade',
     atendimento: 'Respostas rápidas e roteiros de atendimento'
   };
@@ -3189,7 +3270,7 @@
       { n: 6, nome: 'Meça e escale com CRM', partes: [13, 14, 15, 16] }
     ],
     partes: {
-      0: { titulo: 'Apresentação: Oceano Vermelho e Oceano Azul', etapa: 0, tools: ['nicho'], sinergia: 'Nicho e diferencial', sinTxt: 'As quatro ações do Oceano Azul (eliminar, reduzir, elevar, criar) entram na análise de nicho e na proposta de valor.', pratica: 'Faça as quatro ações do Oceano Azul em relação ao padrão do seu setor: o que eliminar, o que reduzir, o que elevar e o que criar.' },
+      0: { titulo: 'Oceano Vermelho e Oceano Azul', etapa: 0, tools: ['oceano', 'nicho'], sinergia: 'Estratégia Oceano Azul', sinTxt: 'Em quatro passos: onde a sua área compete, as quatro ações (eliminar, reduzir, elevar, criar), a sua curva de valor ao lado da do mercado e a proposta que nasce delas.', pratica: 'Faça as quatro ações do Oceano Azul em relação ao padrão do seu setor: o que eliminar, o que reduzir, o que elevar e o que criar.' },
       1: { titulo: 'A jornada das sete decisões', etapa: 1, tools: ['config', 'painel'], sinergia: 'Configure seu consultório', sinTxt: 'Escolha o tipo de profissional. O app reordena as ferramentas e carrega as regras do conselho certo.', pratica: 'Escreva as sete decisões numa folha e, ao lado de cada uma, anote quantos pacientes passaram por ela no último mês. Onde você não sabe o número, está o primeiro campo do seu CRM.' },
       2: { titulo: 'Ética primeiro: conselhos e LGPD', etapa: 1, tools: ['etica'], sinergia: 'Verificador ético', sinTxt: 'Cole qualquer post, anúncio ou mensagem e receba os pontos que conflitam com o seu conselho, a LGPD e as políticas da Meta e do Google.', pratica: 'Abra os seus três últimos posts e o seu último anúncio. Confira identificação profissional, ausência de superlativos e de promessa, e exposição de paciente. Corrija ou arquive o que não passar.' },
       3: { titulo: 'Os canais, um a um: manual de configuração', etapa: 2, tools: ['perfil', 'publico', 'profissional', 'nicho', 'formacao'], sinergia: 'Perfis e presença', sinTxt: 'Traz o checklist de configuração de cada canal (Google, Instagram, YouTube, LinkedIn e TikTok) e audita e reescreve bio, título e descrições a partir do Perfil do consultório.', pratica: 'Pesquise seu nome e sua clínica no Google Maps. Se a ficha não existir ou estiver incompleta, crie ou reivindique o Perfil da Empresa no Google e reescreva a bio do Instagram em quatro linhas.' },
@@ -3210,7 +3291,7 @@
   };
   // Em que parte do guia cada ferramenta aparece (a primeira é a principal)
   const TOOL_PARTES = {
-    config: [1, 14], publico: [3], profissional: [3], nicho: [0, 3], perfil: [3], pautas: [4], roteiro: [4, 6], reaproveitamento: [5],
+    config: [1, 14], publico: [3], profissional: [3], nicho: [0, 3], oceano: [0], perfil: [3], pautas: [4], roteiro: [4, 6], reaproveitamento: [5],
     formacao: [3], campanha: [9, 15], colegas: [8], atendimento: [10, 12], rastreador: [11, 13], assistente: [12, 13], painel: [13, 1],
     etica: [2, 15], briefing: [16], ferramentas: [16, 7], ebook: [13]
   };
@@ -3971,6 +4052,28 @@ Entregue:
 5. Inteligência de nicho: pesquise na web os concorrentes citados e outros 10 a 20 perfis da minha área e região (Instagram, Google, YouTube), incluindo referências de outros mercados e em inglês. Em tabela: URL, formato, pergunta central, tipo de abertura, apoio visual, limite clínico, frequência, o que os pacientes elogiam nas avaliações públicas e lacunas não exploradas. Separe observação ("há uma pergunta no começo") de hipótese ("a pergunta causou as visualizações", que exige teste). Leia estruturas, não copie texto nem identidade, e não sugira pauta só porque um vídeo teve pico de audiência se ele atrai um público que nunca buscará meu consultório.
 6. Posicionamento em uma frase e 10 palavras-chave para bio, Google e legendas (serviço + cidade ou bairro).
 7. Como testar o nicho em 30 dias antes de mudar tudo, e o que medir.`,
+
+    oceano: (get, getAll) => `Aja como estrategista de posicionamento para profissionais de saúde, usando a Estratégia do Oceano Azul (W. Chan Kim e Renée Mauborgne) e as regras de publicidade do meu conselho.
+
+Meu Oceano Vermelho (fatores em que todos competem na minha área e cidade): ${[getAll('fatores'), get('fatoresExtra')].filter((x) => x && x !== '(nenhum selecionado)').join(', ') || '(não marquei: proponha os fatores típicos da minha área)'}
+
+As quatro ações que pensei:
+- Eliminar: ${nv(get('eliminar').split('\n').map((x) => x.replace(/^[-•*]\s*/, '').trim()).filter(Boolean).join('; '))}
+- Reduzir: ${nv(get('reduzir').split('\n').map((x) => x.replace(/^[-•*]\s*/, '').trim()).filter(Boolean).join('; '))}
+- Elevar: ${nv(get('elevar').split('\n').map((x) => x.replace(/^[-•*]\s*/, '').trim()).filter(Boolean).join('; '))}
+- Criar: ${nv(get('criar').split('\n').map((x) => x.replace(/^[-•*]\s*/, '').trim()).filter(Boolean).join('; '))}
+
+Minha curva de valor (0 a 5, mercado e eu depois das quatro ações): ${nv(get('curva'))}
+Público: ${nv(get('publico'), cfg.publico)}
+Rascunho de proposta: ${nv(get('proposta'))}
+
+Entregue:
+1. Diagnóstico da minha curva: onde ela se parece com a do mercado (risco de continuar no Oceano Vermelho) e onde se diferencia de verdade.
+2. As quatro ações revisadas em tabela (ação, o que fazer, por que o paciente valoriza, custo ou esforço, como comprovar), com no máximo 3 itens por ação. Corte o que for promessa, superlativo, preço como chamariz ou qualquer coisa que o meu conselho proíba, e diga o motivo.
+3. Três versões da proposta de valor no formato "Para [público], [o que ofereço de diferente], [como comprovo]", sem promessa de resultado.
+4. Onde a estratégia aparece na prática: bio e Perfil da Empresa no Google, roteiro de atendimento, primeira consulta e três pautas de conteúdo.
+5. Um teste de 30 dias para validar a estratégia antes de mudar tudo, com o que medir no CRM (contatos, agendamentos, comparecimentos e origem).
+6. Riscos: o que um concorrente copiaria primeiro e como manter a diferença.`,
 
     perfil: (get, getAll) => `Você é consultor de marketing ético para profissionais de saúde no Brasil.
 
@@ -6778,6 +6881,142 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
   document.getElementById('cfg-edit').addEventListener('click', () => { configEl.dataset.jf = 'all'; renderJornada(); });
   configEl.addEventListener('input', () => { if (jorCfgFase()) renderJornada(); });
   renderJornada();
+
+  // ===================== Estratégia Oceano Azul (ferramenta guiada) =====================
+  (function oceanoAzul() {
+    const form = document.getElementById('oa-form');
+    if (!form) return;
+    const KEY = 'cliniloop.oceano.v1';
+    const FATORES = [
+      'Menor valor da consulta', 'Aceitar convênios', 'Localização', 'Equipamentos e tecnologia', 'Títulos e formação',
+      'Rapidez para agendar', 'Horário estendido', 'Posts genéricos e datas comemorativas', 'Promessa de ser "o melhor"',
+      'Ambiente e decoração', 'Tempo de consulta', 'Explicação do tratamento', 'Acompanhamento entre as consultas', 'Resposta no WhatsApp'
+    ];
+    const SUG = {
+      eliminar: ['Posts de data comemorativa sem conteúdo', 'Competir pelo menor valor', 'Jargão técnico nas respostas', 'Primeiro contato sem retorno no WhatsApp'],
+      reduzir: ['Tempo de espera na recepção', 'Etapas para conseguir agendar', 'Dependência de um único convênio', 'Quantidade de serviços anunciados'],
+      elevar: ['Clareza sobre a avaliação e o tratamento', 'Tempo de escuta na primeira consulta', 'Plano de tratamento por escrito', 'Rapidez na resposta ao primeiro contato'],
+      criar: ['Acompanhamento entre as consultas', 'Quadro recorrente que responde dúvidas reais', 'Guia de preparação para a primeira consulta', 'Rede de colegas para encaminhar e devolver o paciente']
+    };
+    const SUG_PROF = {
+      dentista: { elevar: ['Acolhimento de quem tem medo de dentista'], criar: ['Planejamento digital mostrado antes de começar'] },
+      medico: { elevar: ['Explicação dos exames e dos próximos passos'], criar: ['Resumo escrito da consulta para o paciente'] },
+      psiquiatra: { elevar: ['Explicação do plano e do tempo de cada etapa'], criar: ['Canal combinado para dúvidas entre as consultas'] },
+      psicologo: { elevar: ['Acolhimento no primeiro contato'], criar: ['Série psicoeducativa sobre um tema da sua prática'] },
+      fisioterapeuta: { elevar: ['Reavaliação com metas medidas'], criar: ['Programa de exercícios em casa, acompanhado'] },
+      nutricionista: { elevar: ['Plano alimentar adaptado à rotina real'], criar: ['Acompanhamento por mensagem entre as consultas'] }
+    };
+    const ACOES = ['eliminar', 'reduzir', 'elevar', 'criar'];
+    const st = Object.assign({ fatores: [], extra: '', eliminar: '', reduzir: '', elevar: '', criar: '', notas: {}, publico: '', proposta: '', propostaManual: false }, storeGet(KEY, {}) || {});
+    const save = () => storeSet(KEY, st);
+    const linhas = (t) => (t || '').split(/\n|;/).map((x) => x.replace(/^[-•*]\s*/, '').trim()).filter(Boolean);
+    const el = (id) => document.getElementById(id);
+
+    // Passo 1: fatores
+    const boxF = el('oa-fatores');
+    boxF.innerHTML = FATORES.map((f, i) => `<label><input type="checkbox" name="fatores" value="${escapeHtml(f)}" id="oa-f${i}"> ${escapeHtml(f)}</label>`).join('');
+    boxF.querySelectorAll('input').forEach((c) => { c.checked = st.fatores.includes(c.value); });
+    el('oa-extra').value = st.extra;
+    ACOES.forEach((a) => { el('oa-' + a).value = st[a]; });
+    if (st.publico) el('oa-publico').value = st.publico;
+    el('oa-proposta').value = st.proposta;
+
+    // Passo 2: sugestões por profissão
+    function renderSug() {
+      const extra = SUG_PROF[cfg.profissional] || {};
+      form.querySelectorAll('.oa-acao').forEach((box) => {
+        const a = box.dataset.acao;
+        const lista = [...(extra[a] || []), ...SUG[a]];
+        const sug = box.querySelector('.oa-sug');
+        sug.innerHTML = lista.map((t) => `<button type="button" class="oa-chip">+ ${escapeHtml(t)}</button>`).join('');
+        sug.querySelectorAll('.oa-chip').forEach((b, i) => b.addEventListener('click', () => {
+          const ta = el('oa-' + a);
+          const atual = linhas(ta.value);
+          if (!atual.includes(lista[i])) ta.value = [...atual, lista[i]].map((x) => '- ' + x).join('\n');
+          ta.dispatchEvent(new Event('input', { bubbles: true }));
+        }));
+      });
+    }
+
+    // Passo 3: curva de valor
+    function fatoresAtuais() {
+      const base = [...boxF.querySelectorAll('input:checked')].map((c) => c.value);
+      const extra = (el('oa-extra').value || '').split(',').map((x) => x.trim()).filter(Boolean);
+      const criados = linhas(el('oa-criar').value).map((x) => x + ' (novo)');
+      return [...new Set([...base, ...extra, ...criados])].slice(0, 12);
+    }
+    function nota(f) {
+      if (!st.notas[f]) {
+        const novo = / \(novo\)$/.test(f);
+        const elim = linhas(el('oa-eliminar').value).some((x) => f.toLowerCase().includes(x.toLowerCase().slice(0, 12)));
+        st.notas[f] = { m: novo ? 0 : 3, v: novo ? 4 : (elim ? 1 : 3) };
+      }
+      return st.notas[f];
+    }
+    function renderRows() {
+      const fs = fatoresAtuais();
+      const rows = el('oa-rows');
+      if (!fs.length) { rows.innerHTML = '<p class="oa-hint">Marque os fatores no passo 1 para montar a curva.</p>'; el('oa-canvas').innerHTML = ''; return; }
+      rows.innerHTML = `<div class="oa-row oa-head"><span>Fator</span><span>Mercado</span><span>Você</span></div>` + fs.map((f, i) => {
+        const n = nota(f);
+        return `<div class="oa-row"><span class="oa-f">${escapeHtml(f)}</span>
+          <label><span class="visually-hidden">Mercado em ${escapeHtml(f)}</span><input type="range" min="0" max="5" step="1" value="${n.m}" data-f="${i}" data-k="m"><output>${n.m}</output></label>
+          <label><span class="visually-hidden">Você em ${escapeHtml(f)}</span><input type="range" min="0" max="5" step="1" value="${n.v}" data-f="${i}" data-k="v"><output>${n.v}</output></label></div>`;
+      }).join('');
+      rows.querySelectorAll('input[type="range"]').forEach((r) => r.addEventListener('input', () => {
+        const f = fs[+r.dataset.f];
+        st.notas[f][r.dataset.k] = +r.value;
+        r.nextElementSibling.textContent = r.value;
+        drawCanvas(fs); save();
+      }));
+      drawCanvas(fs);
+    }
+    function drawCanvas(fs) {
+      const W = 640, H = 310, L = 34, R = 124, T = 16, B = 112;
+      const step = fs.length > 1 ? (W - L - R) / (fs.length - 1) : 0;
+      const X = (i) => fs.length > 1 ? L + i * step : (W + L - R) / 2;
+      const Y = (v) => T + (5 - v) * (H - T - B) / 5;
+      const pts = (k) => fs.map((f, i) => `${X(i).toFixed(1)},${Y(nota(f)[k]).toFixed(1)}`).join(' ');
+      const grid = [0, 1, 2, 3, 4, 5].map((v) => `<line x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}" class="oa-grid"/><text x="${L - 8}" y="${Y(v) + 4}" text-anchor="end" class="oa-tick">${v}</text>`).join('');
+      const labels = fs.map((f, i) => {
+        const t = f.replace(/ \(novo\)$/, '');
+        const curto = t.length > 22 ? t.slice(0, 21) + '…' : t;
+        return `<text x="${X(i)}" y="${H - B + 14}" transform="rotate(38 ${X(i)} ${H - B + 14})" class="oa-lab${/ \(novo\)$/.test(f) ? ' novo' : ''}"><title>${escapeHtml(t)}</title>${escapeHtml(curto)}</text>`;
+      }).join('');
+      const dots = (k, cls) => fs.map((f, i) => `<circle cx="${X(i)}" cy="${Y(nota(f)[k])}" r="4" class="${cls}"/>`).join('');
+      el('oa-canvas').innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Curva de valor: mercado e você">${grid}
+        <polyline points="${pts('m')}" class="oa-line-m"/>${dots('m', 'oa-dot-m')}
+        <polyline points="${pts('v')}" class="oa-line-v"/>${dots('v', 'oa-dot-v')}${labels}</svg>
+        <p class="oa-legend"><span class="m"></span> Mercado <span class="v"></span> Você, depois das quatro ações</p>`;
+      el('oa-curva').value = fs.map((f) => `${f}: mercado ${nota(f).m}, você ${nota(f).v}`).join('; ');
+    }
+
+    // Passo 4: rascunho da proposta
+    function rascunho() {
+      const pub = el('oa-publico').value.trim() || '[público]';
+      const cr = linhas(el('oa-criar').value), ev = linhas(el('oa-elevar').value), el1 = linhas(el('oa-eliminar').value);
+      const oferta = [cr[0], ev[0]].filter(Boolean).map((x) => x.charAt(0).toLowerCase() + x.slice(1)).join(' e ') || '[o que você cria e eleva]';
+      const sem = el1[0] ? `, sem ${el1[0].charAt(0).toLowerCase() + el1[0].slice(1)}` : '';
+      return `Para ${pub}, ofereço ${oferta}${sem}.`;
+    }
+    function updProposta() {
+      if (!st.propostaManual) { el('oa-proposta').value = rascunho(); st.proposta = el('oa-proposta').value; }
+    }
+    el('oa-proposta').addEventListener('input', () => { st.propostaManual = !!el('oa-proposta').value.trim(); st.proposta = el('oa-proposta').value; save(); });
+
+    form.addEventListener('input', (e) => {
+      if (e.target.type === 'range' || e.target.id === 'oa-proposta') return;
+      st.fatores = [...boxF.querySelectorAll('input:checked')].map((c) => c.value);
+      st.extra = el('oa-extra').value;
+      ACOES.forEach((a) => { st[a] = el('oa-' + a).value; });
+      st.publico = el('oa-publico').value;
+      renderRows(); updProposta(); save();
+    });
+    form.addEventListener('change', (e) => { if (e.target.type === 'checkbox') form.dispatchEvent(new Event('input')); });
+    const det = form.closest('details');
+    if (det) det.addEventListener('toggle', () => { if (det.open) { renderSug(); renderRows(); updProposta(); } });
+    renderSug(); renderRows(); updProposta();
+  })();
 </script>
 </body>
 </html>

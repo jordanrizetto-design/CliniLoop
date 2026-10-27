@@ -258,14 +258,14 @@
   const CAMERA = { alto: 'gosto de aparecer na câmera', medio: 'apareço, mas sem muita exposição', baixo: 'prefiro não aparecer na câmera' };
 
   const TOOL_NAMES = {
-    config: 'Comece aqui', publico: 'Público, ICP e persona', profissional: 'Persona do profissional', nicho: 'Nicho e diferencial',
+    config: 'Comece aqui', publico: 'Público, ICP e persona', profissional: 'Persona do profissional', nicho: 'Nicho e diferencial', oceano: 'Estratégia Oceano Azul',
     perfil: 'Perfis e presença', pautas: 'Pautas e palavras-chave', roteiro: 'Roteiros e copy', reaproveitamento: 'Reaproveitamento de conteúdo', formacao: 'Formação e autoridade',
     campanha: 'Gerador de campanhas', colegas: 'Rede de colegas', atendimento: 'Atendimento e agendamento', rastreador: 'Rastreador de pacientes',
     assistente: 'Assistente da semana', painel: 'Painel e diagnóstico', etica: 'Verificador ético', briefing: 'Briefing para terceiros',
     ferramentas: 'Ferramentas', ebook: 'Playbook da clínica'
   };
   const FUNNEL_STAGES = [
-    { nome: 'Posicionamento', desc: 'Quem você quer atender, por que você e como você fala.', tools: ['config', 'publico', 'profissional', 'nicho'], num: null },
+    { nome: 'Posicionamento', desc: 'Quem você quer atender, por que você e como você fala.', tools: ['config', 'publico', 'profissional', 'nicho', 'oceano'], num: null },
     { nome: 'Conteúdo', desc: 'Perfis prontos, pautas de dúvidas reais e roteiros publicados com constância.', tools: ['perfil', 'pautas', 'roteiro', 'reaproveitamento', 'formacao'], num: 'conteudos', numLabel: 'publicados' },
     { nome: 'Captação', desc: 'Campanhas medidas e rede de colegas que indica.', tools: ['campanha', 'colegas'], num: 'contatos', numLabel: 'novos contatos' },
     { nome: 'Conversa', desc: 'Resposta rápida, agendamento, confirmação e retomada.', tools: ['atendimento', 'rastreador'], num: 'agendados', numLabel: 'agendados' },
@@ -276,6 +276,7 @@
     publico: { nome: 'Público, ICP e persona do paciente', fazer: 'Descreva quem você atende hoje e as dúvidas que mais ouve, gere o prompt e guarde o ICP e a persona principal.', revisar: 'Confira se os contatos das últimas semanas são do ICP e acrescente as dúvidas novas.' },
     profissional: { nome: 'Persona do profissional e marca', fazer: 'Responda às perguntas sobre sua história e seus valores, gere sua persona de marca e guarde o tom de voz.', revisar: 'Veja se os últimos conteúdos soaram como você e ajuste o "faço / não faço".' },
     nicho: { nome: 'Nicho e diferencial', fazer: 'Liste formações e métodos, gere a análise de nicho e concorrência e guarde a proposta de valor escolhida.', revisar: 'Revise a concorrência local e veja se o nicho está trazendo o paciente certo.' },
+    oceano: { nome: 'Estratégia Oceano Azul', fazer: 'Marque em que a sua área compete, faça as quatro ações (eliminar, reduzir, elevar, criar), ajuste a curva de valor e guarde a proposta.', revisar: 'Compare a curva de valor com o que os pacientes elogiam e reclamam, e veja se o que você criou já aparece nos perfis e no atendimento.' },
     perfil: { nome: 'Perfis e presença', fazer: 'Cole os textos atuais dos perfis, gere a auditoria e aplique bio, destaques, link e Perfil da Empresa no Google.', revisar: 'Atualize destaques, fixados e fotos do Google com o que funcionou.' },
     pautas: { nome: 'Pautas e palavras-chave', fazer: 'Anote no banco as dúvidas reais dos pacientes, gere palavras-chave, 30 pautas e o calendário, e guarde a frequência que vai manter.', revisar: 'Acrescente as dúvidas novas ao banco e gere as próximas 4 semanas de pautas.' },
     roteiro: { nome: 'Roteiros de conteúdo e copy', fazer: 'Escolha a primeira pauta do calendário e gere o roteiro com 5 ganchos. Grave vários de uma vez e registre no Diário de conteúdo.', revisar: 'Reaproveite os ganchos com mais envios e salvamentos nos próximos roteiros.' },
@@ -290,9 +291,9 @@
     etica: { nome: 'Verificador ético', fazer: 'Leia o resumo das regras do seu conselho e passe o próximo post ou anúncio pelo verificador antes de publicar.', revisar: 'Revise bio, modelos e anúncios ativos e confira se a norma mudou.' },
     briefing: { nome: 'Briefing para terceiros', fazer: 'Monte o briefing e envie para dois ou três fornecedores, para comparar propostas.', revisar: 'Revise escopo, aprovação e métricas com o fornecedor.' }
   };
-  const SAVE_TOOLS = ['publico', 'profissional', 'nicho', 'perfil', 'pautas', 'formacao', 'atendimento'];
+  const SAVE_TOOLS = ['publico', 'profissional', 'nicho', 'oceano', 'perfil', 'pautas', 'formacao', 'atendimento'];
   const SAVE_TITLES = {
-    publico: 'Público, ICP e persona do paciente', profissional: 'Marca e tom de voz do profissional', nicho: 'Nicho, proposta de valor e diferencial',
+    publico: 'Público, ICP e persona do paciente', profissional: 'Marca e tom de voz do profissional', nicho: 'Nicho, proposta de valor e diferencial', oceano: 'Estratégia Oceano Azul (quatro ações e curva de valor)',
     perfil: 'Textos aprovados dos perfis', pautas: 'Palavras-chave, pautas e calendário', formacao: 'Plano de formação e autoridade',
     atendimento: 'Respostas rápidas e roteiros de atendimento'
   };

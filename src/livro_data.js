@@ -15,7 +15,7 @@
       { n: 6, nome: 'Meça e escale com CRM', partes: [13, 14, 15, 16] }
     ],
     partes: {
-      0: { titulo: 'Apresentação: Oceano Vermelho e Oceano Azul', etapa: 0, tools: ['nicho'], sinergia: 'Nicho e diferencial', sinTxt: 'As quatro ações do Oceano Azul (eliminar, reduzir, elevar, criar) entram na análise de nicho e na proposta de valor.', pratica: 'Faça as quatro ações do Oceano Azul em relação ao padrão do seu setor: o que eliminar, o que reduzir, o que elevar e o que criar.' },
+      0: { titulo: 'Oceano Vermelho e Oceano Azul', etapa: 0, tools: ['oceano', 'nicho'], sinergia: 'Estratégia Oceano Azul', sinTxt: 'Em quatro passos: onde a sua área compete, as quatro ações (eliminar, reduzir, elevar, criar), a sua curva de valor ao lado da do mercado e a proposta que nasce delas.', pratica: 'Faça as quatro ações do Oceano Azul em relação ao padrão do seu setor: o que eliminar, o que reduzir, o que elevar e o que criar.' },
       1: { titulo: 'A jornada das sete decisões', etapa: 1, tools: ['config', 'painel'], sinergia: 'Configure seu consultório', sinTxt: 'Escolha o tipo de profissional. O app reordena as ferramentas e carrega as regras do conselho certo.', pratica: 'Escreva as sete decisões numa folha e, ao lado de cada uma, anote quantos pacientes passaram por ela no último mês. Onde você não sabe o número, está o primeiro campo do seu CRM.' },
       2: { titulo: 'Ética primeiro: conselhos e LGPD', etapa: 1, tools: ['etica'], sinergia: 'Verificador ético', sinTxt: 'Cole qualquer post, anúncio ou mensagem e receba os pontos que conflitam com o seu conselho, a LGPD e as políticas da Meta e do Google.', pratica: 'Abra os seus três últimos posts e o seu último anúncio. Confira identificação profissional, ausência de superlativos e de promessa, e exposição de paciente. Corrija ou arquive o que não passar.' },
       3: { titulo: 'Os canais, um a um: manual de configuração', etapa: 2, tools: ['perfil', 'publico', 'profissional', 'nicho', 'formacao'], sinergia: 'Perfis e presença', sinTxt: 'Traz o checklist de configuração de cada canal (Google, Instagram, YouTube, LinkedIn e TikTok) e audita e reescreve bio, título e descrições a partir do Perfil do consultório.', pratica: 'Pesquise seu nome e sua clínica no Google Maps. Se a ficha não existir ou estiver incompleta, crie ou reivindique o Perfil da Empresa no Google e reescreva a bio do Instagram em quatro linhas.' },
@@ -36,7 +36,7 @@
   };
   // Em que parte do guia cada ferramenta aparece (a primeira é a principal)
   const TOOL_PARTES = {
-    config: [1, 14], publico: [3], profissional: [3], nicho: [0, 3], perfil: [3], pautas: [4], roteiro: [4, 6], reaproveitamento: [5],
+    config: [1, 14], publico: [3], profissional: [3], nicho: [0, 3], oceano: [0], perfil: [3], pautas: [4], roteiro: [4, 6], reaproveitamento: [5],
     formacao: [3], campanha: [9, 15], colegas: [8], atendimento: [10, 12], rastreador: [11, 13], assistente: [12, 13], painel: [13, 1],
     etica: [2, 15], briefing: [16], ferramentas: [16, 7], ebook: [13]
   };
