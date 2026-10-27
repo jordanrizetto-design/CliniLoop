@@ -1,4 +1,4 @@
-<img src="cliniloop-logo.svg" alt="CliniLoop" height="72">
+<img src="cliniloop-wordmark-claro.svg" alt="CliniLoop" height="56">
 
 # CliniLoop
 

@@ -207,6 +207,9 @@ table.plano td.min{white-space:nowrap;color:var(--soft);}
 .glos dd{margin:.6mm 0 0;font-size:9pt;line-height:1.5;color:var(--soft);}
 .fontes li{font-size:9.4pt;line-height:1.55;}
 .nota{font-size:9pt;color:var(--soft);}
+a.xref,a.url{color:var(--teal-d);text-decoration:underline;text-decoration-thickness:.2mm;text-underline-offset:.6mm;}
+a.url{overflow-wrap:anywhere;}
+.opener .nesta a{color:inherit;text-decoration:underline;text-decoration-thickness:.2mm;}
 .fim{page:cover;break-before:page;height:297mm;width:210mm;background:var(--ink);color:var(--paper);display:flex;flex-direction:column;justify-content:center;padding:0 30mm;}
 .fim h2{color:var(--paper);font-size:24pt;margin:0 0 6mm;padding:0;}
 .fim h2::before{content:none;}
@@ -248,33 +251,88 @@ def cover_html():
 <p class="foot"><b>Edição 2026</b> · versão beta · app CliniLoop</p></section>'''
 
 
+def slug(key):
+    return 'm-' + re.sub(r'[^a-z0-9]', '', key.lower())
+
+
+URL_RE = re.compile(r'(?<![\w@/.-])((?:https?://)?(?:[a-z0-9-]+\.)+(?:com\.br|org\.br|gov\.br|com|org|net|io|ai|tv|digital|app)(?:/[^\s<>)\]"]*[^\s<>)\]".,;:])?)(?![\w-])', re.I)
+PARTE_RE = re.compile(r'\b(Partes?) (\d{1,2})((?:(?:, | e | a )\d{1,2})*)')
+ANEXO_RE = re.compile(r'\bAnexo ([A-D])\b')
+
+
+def _link_text(t):
+    def parte(m):
+        nums = re.findall(r'\d{1,2}|, | e | a ', m.group(2) + m.group(3))
+        out, first = '', True
+        for x in nums:
+            if x.isdigit() and 1 <= int(x) <= 16:
+                txt = f'{m.group(1)} {x}' if first else x
+                out += f'<a class="xref" href="#m-parte{int(x):02d}">{txt}</a>'
+            else:
+                out += (f'{m.group(1)} {x}' if first else x)
+            first = False
+        return out
+    t = PARTE_RE.sub(parte, t)
+    t = ANEXO_RE.sub(lambda m: f'<a class="xref" href="#m-anexo{m.group(1).lower()}">Anexo {m.group(1)}</a>', t)
+    t = URL_RE.sub(lambda m: f'<a class="url" href="{m.group(1) if m.group(1).lower().startswith("http") else "https://" + m.group(1)}">{m.group(1)}</a>', t)
+    return t
+
+
+def linkify(html):
+    """Torna clicáveis as referências a Partes e Anexos e os endereços da web, só no texto fora de links, títulos e código."""
+    out, skip = [], 0
+    for tok in re.split(r'(<[^>]+>)', html):
+        if tok.startswith('<'):
+            tag = re.match(r'</?\s*([a-zA-Z0-9]+)', tok)
+            name = tag.group(1).lower() if tag else ''
+            if name in ('a', 'h1', 'h2', 'h3', 'pre', 'code', 'th'):
+                skip += -1 if tok.startswith('</') else 1
+                skip = max(skip, 0)
+            out.append(tok)
+        else:
+            out.append(tok if skip else _link_text(tok))
+    return ''.join(out)
+
+
+def link_nesta(nesta_items, body_html):
+    heads = re.findall(r'<h2 id="([^"]+)">(.*?)</h2>', body_html)
+    norm = lambda x: re.sub(r'<[^>]+>', '', x).lower()
+    res = []
+    for it in nesta_items:
+        k = it.strip().lower()
+        hit = next((i for i, h in heads if norm(h).startswith(k) or k in norm(h)), None)
+        res.append(f'<a href="#{hit}">{E(it.strip())}</a>' if hit else E(it.strip()))
+    return ' · '.join(res)
+
+
 def build_html(pages):
     parts = [parse(p) for p in PARTES]
     toc_items, sections = [], []
     for meta, body in parts:
         kind = meta.get('tipo', 'parte')
         key = meta['marca']
-        body_html = md(expand(body))
+        body_html = linkify(md(expand(body)))
+        body_html = body_html.replace(' id="', f' id="{slug(key)}-')
         if kind == 'parte':
             n = int(meta['num'])
             nesta = ''.join(f'<span>{E(x.strip())}</span>' for x in meta['nesta'].split('·'))
             alt = ' alt' if n % 2 == 0 else ''
-            opener = (f'<section class="opener{alt}"><div class="band"></div><p class="etapa">{E(meta["etapa"])}</p><div class="num">{n:02d}</div>'
+            opener = (f'<section class="opener{alt}" id="{slug(key)}"><div class="band"></div><p class="etapa">{E(meta["etapa"])}</p><div class="num">{n:02d}</div>'
                       f'<h1>{E(meta["titulo"])}</h1><p class="lead">{E(meta["lead"])}</p>'
-                      f'<div class="nesta"><b>Nesta parte · {E(key)}</b>{E(meta["nesta"])}</div></section>')
+                      f'<div class="nesta"><b>Nesta parte · {E(key)}</b>{link_nesta(meta["nesta"].split("·"), body_html)}</div></section>')
             sections.append(opener + f'<section class="sec-body">{body_html}</section>')
             toc_items.append((meta['grupo'], f'{n:02d}', meta['titulo'], key))
         else:
             kicker = f'<p class="kicker">{E(key)}</p>'
-            sections.append(f'<section class="sec">{kicker}<h1 class="sec-title">{E(meta["titulo"])}</h1>{body_html}</section>')
+            sections.append(f'<section class="sec" id="{slug(key)}">{kicker}<h1 class="sec-title">{E(meta["titulo"])}</h1>{body_html}</section>')
             toc_items.append((meta['grupo'], '', meta['titulo'], key))
-    toc = ['<section class="toc"><h1>Sumário</h1>']
+    toc = ['<section class="toc" id="sumario"><h1>Sumário</h1>']
     last = None
     for grupo, n, titulo, key in toc_items:
         if grupo != last:
             toc.append(f'<p class="grp">{E(grupo)}</p>'); last = grupo
         pg = pages.get(key, '')
-        toc.append(f'<a href="#m-{re.sub(r"[^a-z0-9]", "", key.lower())}"><span class="n">{n}</span><span class="t">{E(titulo)}</span><span class="p">{pg}</span></a>')
+        toc.append(f'<a href="#{slug(key)}"><span class="n">{n}</span><span class="t">{E(titulo)}</span><span class="p">{pg}</span></a>')
     toc.append('</section>')
     fim = ('<section class="fim"><h2>Guia CliniLoop</h2><p>Conhecimentos dirigidos e um app de CRM. O app CliniLoop, que completa este guia, registra pacientes, colegas e campanhas no seu navegador, '
            'sem servidor, e leva os prompts para o seu dia a dia.</p><p class="nota" style="color:#9FB6BB">Este guia não substitui a orientação do seu conselho profissional nem assessoria jurídica.</p></section>')
@@ -313,11 +371,15 @@ def find_pages(pdf, toc_items):
 
 
 def aplicar_capa(pdf_path):
-    """Substitui a página 1 pela capa ilustrada (capa/capa-azul.png)."""
+    """Substitui a página 1 pela capa ilustrada (capa/capa-prompt-do-sim.png)."""
     from pypdf import PdfReader, PdfWriter
     from PIL import Image
     import io
-    img = Image.open(ROOT / 'capa' / 'capa-azul.png').convert('RGB')
+    img = Image.open(ROOT / 'capa' / 'capa-prompt-do-sim.png').convert('RGB')
+    alvo = round(img.height * 210 / 297)  # recorta as laterais para a proporção A4
+    if img.width > alvo:
+        x0 = (img.width - alvo) // 2
+        img = img.crop((x0, 0, x0 + alvo, img.height))
     buf = io.BytesIO()
     img.save(buf, 'PDF', resolution=img.width / (210 / 25.4))
     cover = PdfReader(buf).pages[0]
@@ -325,6 +387,63 @@ def aplicar_capa(pdf_path):
     w = PdfWriter(clone_from=PdfReader(str(pdf_path)))
     w.insert_page(cover, 0)
     w.remove_page(1)
+    w.write(str(pdf_path))
+
+
+def botoes_voltar(pdf_path, pages):
+    """Desenha em cada página os botões "Sumário" e "Início da parte" (ou do anexo), com link interno."""
+    import io
+    from pypdf import PdfReader, PdfWriter
+    from pypdf.annotations import Link
+    from reportlab.pdfgen import canvas
+    from reportlab.pdfbase import pdfmetrics
+    from reportlab.pdfbase.ttfonts import TTFont
+    pdfmetrics.registerFont(TTFont('Poppins600', str(FONT / 'poppins-600.ttf')))
+    r = PdfReader(str(pdf_path))
+    w = PdfWriter(clone_from=r)
+    n = len(w.pages)
+    toc_pg = 2
+    inicio = min(pages.values()) if pages else 3
+    starts = sorted((pg, key) for key, pg in pages.items())
+    W, H = 595.28, 841.89
+    right, y0, h, fs, gap = W - 73.7, H - 50, 17, 7.6, 6
+
+    def botao(c, x_right, label):
+        tw = pdfmetrics.stringWidth(label, 'Poppins600', fs)
+        bw = tw + 26
+        x = x_right - bw
+        c.setFillColorRGB(0x1F / 255, 0x6F / 255, 0x78 / 255)
+        c.roundRect(x, y0, bw, h, h / 2, stroke=0, fill=1)
+        c.setStrokeColorRGB(1, 1, 1); c.setLineWidth(1.1); c.setLineCap(1); c.setLineJoin(1)
+        ax, ay = x + 9, y0 + h / 2
+        c.line(ax, ay, ax + 6, ay); c.line(ax, ay, ax + 2.6, ay + 2.6); c.line(ax, ay, ax + 2.6, ay - 2.6)
+        c.setFillColorRGB(1, 1, 1); c.setFont('Poppins600', fs)
+        c.drawString(x + 18, y0 + (h - fs) / 2 + 1.4, label)
+        return (x, y0, x + bw, y0 + h)
+
+    for i in range(1, n):  # a página 1 é a capa
+        pg = i + 1
+        atual = None
+        for spg, key in starts:
+            if spg <= pg:
+                atual = (spg, key)
+        botoes = []
+        xr = right
+        buf = io.BytesIO()
+        c = canvas.Canvas(buf, pagesize=(W, H))
+        if pg >= inicio:  # fora do sumário
+            rect = botao(c, xr, 'Sumário'); botoes.append((rect, toc_pg - 1)); xr = rect[0] - gap
+        if atual and atual[0] != pg and atual[0] >= inicio:
+            k = atual[1]
+            label = 'Início da parte' if k.startswith('PARTE') else ('Início do anexo' if k.startswith('ANEXO') else 'Início da seção')
+            rect = botao(c, xr, label); botoes.append((rect, atual[0] - 1))
+        c.save()
+        if not botoes:
+            continue
+        over = PdfReader(io.BytesIO(buf.getvalue())).pages[0]
+        w.pages[i].merge_page(over)
+        for rect, alvo in botoes:
+            w.add_annotation(page_number=i, annotation=Link(rect=rect, target_page_index=alvo))
     w.write(str(pdf_path))
 
 
@@ -343,3 +462,4 @@ if __name__ == '__main__':
     (ROOT / 'Guia-CliniLoop.html').write_text(doc.replace(str(FONT), 'fonts'), encoding='utf-8')
     print('páginas:', total, '| marcas encontradas:', len(pages2), 'de', len(items))
     aplicar_capa(out)
+    botoes_voltar(out, pages2)
