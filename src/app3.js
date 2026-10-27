@@ -62,7 +62,7 @@
   document.querySelectorAll('form.tool-form[data-tool] .output-block').forEach((block) => {
     const tool = block.closest('form').dataset.tool;
     const id = `out-${tool}`;
-    block.innerHTML = `<p class="output-title">Seu prompt está pronto: copie e cole no Claude.ai</p>
+    block.innerHTML = `<p class="output-title">Seu prompt está pronto: copie e cole na sua IA</p>
       <label for="${id}" class="visually-hidden">Prompt gerado</label>
       <textarea id="${id}" class="js-output" readonly rows="8"></textarea>
       <div class="output-actions">
@@ -97,8 +97,8 @@
         msg.className = 'form-msg ok';
         msg.textContent = tool === 'imagem' ? '✓ Pedido de imagem gerado logo abaixo. Clique em "Copiar prompt" e cole na ferramenta que você escolheu.' : tool === 'briefing'
           ? '✓ Briefing montado acima. Abaixo, um prompt opcional para revisá-lo com o Claude.'
-          : (cfg.plano === 'api' ? '✓ Prompt gerado logo abaixo. Clique em "Gerar resposta aqui (API)" ou copie e cole no Claude.ai.'
-            : '✓ Prompt gerado logo abaixo. Clique em "Copiar prompt" e cole no Claude.ai.');
+          : (cfg.plano === 'api' ? '✓ Prompt gerado logo abaixo. Clique em "Gerar resposta aqui (API)" ou copie e cole na sua IA.'
+            : '✓ Prompt gerado logo abaixo. Clique em "Copiar prompt" e cole na sua IA.');
         riskWarn(form, msg);
         if (!profInfo()) {
           const w = document.createElement('p');
@@ -375,7 +375,7 @@
     loop.appendChild(chipsL);
     const pb = document.createElement('button');
     pb.type = 'button';
-    pb.innerHTML = '<span class="n">18</span>Gerar o playbook da clínica';
+    pb.innerHTML = '<span class="n">19</span>Gerar o playbook da clínica';
     pb.addEventListener('click', () => openTool('ebook'));
     loop.appendChild(pb);
     box.appendChild(loop);
@@ -458,6 +458,27 @@
   }
   [apiKeyEl, apiRememberEl, apiModelEl, apiSearchEl].forEach((el) => el.addEventListener('change', persistApi));
   apiKeyEl.addEventListener('input', persistApi);
+  const IAS = {
+    claude: { n: 'Claude', u: 'https://claude.ai/new' }, chatgpt: { n: 'ChatGPT', u: 'https://chatgpt.com/' },
+    gemini: { n: 'Gemini', u: 'https://gemini.google.com/app' }, grok: { n: 'Grok', u: 'https://grok.com/' },
+    deepseek: { n: 'DeepSeek', u: 'https://chat.deepseek.com/' }, meta: { n: 'Meta AI', u: 'https://www.meta.ai/' }
+  };
+  const IA_KEY = 'cliniloop.ia.v1';
+  function iaPref() { const v = storeGet(IA_KEY, 'claude'); return IAS[v] ? v : 'claude'; }
+  function aplicarIA() {
+    const ia = IAS[iaPref()];
+    document.querySelectorAll('a[href="https://claude.ai/new"], a.js-open-ia').forEach((a) => {
+      a.classList.add('js-open-ia');
+      a.href = ia.u;
+      [...a.childNodes].forEach((n) => { if (n.nodeType === 3) n.remove(); });
+      a.appendChild(document.createTextNode('Abrir no ' + ia.n));
+    });
+  }
+  const iaSel = document.getElementById('ia-pref');
+  if (iaSel) {
+    iaSel.value = iaPref();
+    iaSel.addEventListener('change', () => { storeSet(IA_KEY, iaSel.value); aplicarIA(); });
+  }
   function updatePlanUI() {
     const plano = cfg.plano || 'free';
     document.getElementById('mode-status').textContent = `Modo atual: ${MODE_NAMES[plano]}.`;
@@ -466,11 +487,7 @@
     document.getElementById('plan-api').hidden = plano !== 'api';
     document.querySelectorAll('.js-run-api').forEach((b) => { b.hidden = plano !== 'api'; });
     document.querySelectorAll('.pro-tip').forEach((t) => { t.hidden = plano !== 'pro'; });
-    document.querySelectorAll('a[href="https://claude.ai/new"]').forEach((a) => {
-      const txt = 'Abrir no Claude.ai';
-      [...a.childNodes].forEach((n) => { if (n.nodeType === 3) n.remove(); });
-      a.appendChild(document.createTextNode(txt));
-    });
+    aplicarIA();
     if (plano === 'api') persistApi();
   }
 

@@ -134,3 +134,6 @@
     if (det) det.addEventListener('toggle', () => { if (det.open) { renderSug(); renderRows(); updProposta(); } });
     renderSug(); renderRows(); updProposta();
   })();
+
+  // Painel do topo: cada ferramenta do funil abre a ferramenta no app
+  document.querySelectorAll('.hero-funil [data-open]').forEach((b) => b.addEventListener('click', () => openTool(b.dataset.open)));
