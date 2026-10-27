@@ -18,6 +18,11 @@ Se você ainda não usa inteligência artificial, abra uma conta em uma das ferr
 | ChatGPT | OpenAI | chatgpt.com |
 | Gemini | Google | gemini.google.com |
 | Copilot | Microsoft | copilot.microsoft.com |
+| Grok | xAI | grok.com |
+| DeepSeek | DeepSeek | chat.deepseek.com |
+| Meta AI | Meta | meta.ai, e também dentro do WhatsApp e do Instagram |
+
+O app funciona com todas elas: em Configurações, escolha a sua preferida. Nunca cole dados de pacientes em nenhuma IA, e confira onde cada uma guarda o que você escreve. O DeepSeek, por exemplo, armazena os dados na China.
 
 ### Quando vale pagar
 
@@ -47,7 +52,7 @@ Anote em um lugar seguro qual e-mail e qual telefone estão ligados a cada conta
 
 ## 3. O app CliniLoop
 
-Abra o CliniLoop no navegador do computador ou do celular. Não há cadastro: os dados ficam no seu aparelho. Na primeira vez, o app pede o tipo de profissional e os dados do consultório, e passa a mostrar sempre o próximo passo do dia.
+Abra o CliniLoop pelo link que você recebeu na compra, no navegador do computador ou do celular. Os seus registros ficam no seu aparelho, não num servidor. Na primeira vez, o app pede o tipo de profissional e os dados do consultório, e passa a mostrar sempre o próximo passo do dia. O tutorial com as telas, passo a passo, está na Parte 14.
 
 ::: {.box .noapp}
 **Configure seu consultório.** Escolha o tipo de profissional. O app reordena as ferramentas e carrega as regras do conselho certo. Preencha o Perfil do consultório uma única vez: ele alimenta todas as ferramentas.

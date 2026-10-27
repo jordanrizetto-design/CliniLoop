@@ -282,6 +282,10 @@ table.plano td.min{white-space:nowrap;color:var(--soft);}
 a.xref,a.url{color:var(--teal-d);text-decoration:underline;text-decoration-thickness:.2mm;text-underline-offset:.6mm;}
 a.url{overflow-wrap:anywhere;}
 .opener .nesta a{color:inherit;text-decoration:underline;text-decoration-thickness:.2mm;}
+figure{margin:4mm 0 7mm;break-inside:avoid;text-align:center;}
+figure img{display:block;max-width:100%;max-height:118mm;width:auto;height:auto;margin:0 auto;border:.3mm solid var(--line);border-radius:1.6mm;}
+figcaption{font-size:8.2pt;line-height:1.45;color:var(--soft);margin-top:2mm;text-align:center;}
+.sec-body h3{break-after:avoid;}
 .fim{page:cover;break-before:page;height:297mm;width:210mm;background:var(--ink);color:var(--paper);display:flex;flex-direction:column;justify-content:center;padding:0 30mm;}
 .fim h2{color:var(--paper);font-size:24pt;margin:0 0 6mm;padding:0;}
 .fim h2::before{content:none;}
@@ -609,3 +613,9 @@ if __name__ == '__main__':
     print('páginas:', total, '| marcas encontradas:', sum(1 for i in items if i[3] in pages2), 'de', len(items), '| subtítulos no sumário:', sum(len(i[4]) for i in items))
     aplicar_capa(out)
     print('links convertidos para destino explícito:', finalizar(out, pages2))
+    import shutil
+    if shutil.which('qpdf'):  # comprime os fluxos que o pypdf grava sem compressão
+        tmp = out.with_suffix('.tmp.pdf')
+        subprocess.run(['qpdf', '--recompress-flate', '--compression-level=9', '--object-streams=generate', str(out), str(tmp)], check=True)
+        tmp.replace(out)
+    print('tamanho do PDF:', round(out.stat().st_size / 1e6, 1), 'MB')
