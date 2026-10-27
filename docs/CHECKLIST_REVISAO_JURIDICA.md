@@ -25,7 +25,7 @@ Arquivos: `src/app1.js` (`COUNCILS`, `REGRAS_GERAIS`), `src/app3.js` (verificado
 ## 4. Marca e texto
 - [ ] Promessas de resultado em `README.md`, na página e no e-book.
 - [ ] Uso de "Prompt do Sim" e "JR Tosoni": autorização do autor, direitos autorais.
-- [ ] Licença MIT do código e licença do conteúdo do e-book: estão separadas?
+- [ ] Licença: "todos os direitos reservados" (LICENSE, out/2026) substituiu a MIT. Revisar o texto, os termos de uso da compra e a licença de uso pessoal do comprador.
 
 ## Entrega esperada
 Parecer curto com: itens aprovados, itens a corrigir (com o texto sugerido) e a data da revisão. Só depois dele o app pode exibir "revisado em [data] por [nome/OAB]".

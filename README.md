@@ -193,7 +193,7 @@ Ficam para a v3: integração com WhatsApp e agenda e importação de conversõe
 
 ## Publicação
 
-O app fica em **https://jordanrizetto-design.github.io/CliniLoop/** (GitHub Pages, branch `main`, pasta raiz). Para publicar uma cópia sua: crie um repositório público, envie `index.html`, `README.md`, `LICENSE` e `cliniloop-logo.svg`, e ative **Settings → Pages → Deploy from a branch → main / (root)**. Para mostrar o link do GitHub no menu, preencha `REPO_URL` em `src/app1.js` e rode `python3 build.py`.
+O app fica em **https://jordanrizetto-design.github.io/CliniLoop/** (GitHub Pages, branch `main`, pasta raiz), até a migração para o domínio próprio com acesso por login.
 
 ## Como usar (para quem nunca usou IA)
 
@@ -216,4 +216,4 @@ O `python3 build.py` junta tudo em `index.html`. As regras dos conselhos ficam e
 
 ## Licença
 
-MIT. Veja [LICENSE](./LICENSE).
+Todos os direitos reservados. O código, o guia e o conteúdo não podem ser copiados, modificados, distribuídos ou usados comercialmente sem autorização por escrito. Veja [LICENSE](./LICENSE).
