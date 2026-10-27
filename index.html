@@ -917,7 +917,6 @@
       <a href="#como-funciona">Como funciona</a>
       <a href="#faq">Dúvidas</a>
       <a href="guia/O-Prompt-do-Sim.pdf" target="_blank" rel="noopener" class="nav-pdf">Guia em PDF</a>
-      <a href="#" id="nav-github" target="_blank" rel="noopener" hidden>GitHub</a>
     </nav>
   </div>
 </header>
@@ -1363,7 +1362,6 @@
                 <textarea id="fb-texto" rows="3" placeholder="Ex: não entendi o que fazer depois do passo 2; faltou um modelo de mensagem para colegas"></textarea>
               </div>
               <div class="form-actions">
-                <button type="button" id="fb-github" class="btn btn-teal btn-sm" hidden>Enviar pelo GitHub ↗</button>
                 <button type="button" id="fb-copiar" class="btn btn-outline btn-sm">Copiar o texto</button>
                 <span class="save-status" id="fb-status" aria-live="polite"></span>
               </div>
@@ -2721,7 +2719,7 @@
           <tr><th>Você gera um prompt</th><td>O prompt é montado na própria página e nunca inclui nomes ou telefones do Rastreador: no Assistente da semana, os pacientes viram "Contato 1, 2…"; em "Da conversa ao registro", telefones e e-mails são trocados por marcadores.</td></tr>
           <tr><th>Você cola um prompt no Claude.ai (com ou sem assinatura)</th><td>O texto vai para a Anthropic quando você envia a mensagem, como em qualquer conversa no Claude, e segue as configurações de privacidade da sua conta.</td></tr>
           <tr><th>Você usa o modo API ("Gerar resposta aqui")</th><td>O prompt, com os dados que você preencheu, e a sua chave vão do navegador direto para a API da Anthropic, que processa o pedido e cobra na sua conta.</td></tr>
-          <tr><th>Você abre a página</th><td>A página é hospedada no GitHub Pages e as fontes vêm do Google Fonts. Como em qualquer site, esses serviços recebem dados técnicos de acesso, como o endereço IP.</td></tr>
+          <tr><th>Você abre a página</th><td>O app é carregado do serviço que o hospeda, e as fontes vêm do Google Fonts. Como em qualquer site, esses serviços recebem dados técnicos de acesso, como o endereço IP.</td></tr>
           <tr><th>Você troca de aparelho ou limpa o navegador</th><td>Os dados não acompanham você. Use Configurações → Seus dados → Fazer backup e restaure o arquivo no outro aparelho.</td></tr>
         </table>
       </div>
@@ -2835,14 +2833,14 @@
 <footer>
   <div class="wrap">
     <span>CliniLoop: roda 100% no navegador, sem backend. Não substitui orientação do seu conselho profissional nem assessoria jurídica.</span>
-    <span>Publicado com GitHub Pages · <a href="#" id="foot-github" target="_blank" rel="noopener" hidden>código aberto no GitHub</a><span id="foot-license">licença MIT</span></span>
+    <span><i>O Prompt do Sim</i> e CliniLoop: o método Loop.</span>
   </div>
 </footer>
 
 <script>
   // ===================== CliniLoop =====================
-  // Endereço do repositório no GitHub (preencha depois de criar). Vazio = link escondido.
-  const REPO_URL = 'https://github.com/jordanrizetto-design/CliniLoop';
+  // Endereço público do código. Vazio = nenhum link para o repositório aparece no app.
+  const REPO_URL = '';
 
   const APP = 'CliniLoop';
   const APP_ID = 'CliniLoop';
@@ -6234,10 +6232,6 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
 
   // ===================== Inicialização =====================
   (function init() {
-    if (REPO_URL) {
-      ['nav-github', 'foot-github'].forEach((id) => { const a = document.getElementById(id); a.href = REPO_URL; a.hidden = false; });
-      document.getElementById('foot-license').hidden = true;
-    }
     const saved = storeGet(STORE_KEY, null);
     if (saved && typeof saved === 'object') applyConfig(saved);
     cfg = readConfig();
@@ -6606,7 +6600,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
 
   function renderExtras() { applyModo(); renderBeta(); if (typeof renderJornada === 'function') renderJornada(); }
 
-  // Feedback de teste: sem dados de pacientes, vai por GitHub (issue) ou por cópia do texto.
+  // Feedback de teste: sem dados de pacientes, vai por cópia do texto.
   (function feedback() {
     const nota = document.getElementById('fb-nota');
     if (!nota) return;
@@ -6618,8 +6612,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
       const t = (texto.value || '').trim();
       return { titulo: `Feedback de teste (nota ${nota.value}/5)`, corpo: `Foi fácil começar? ${nota.value}/5\n\nO que travou ou confundiu:\n${t || '(sem texto)'}\n\nTela: ${window.innerWidth}px de largura` };
     };
-    if (REPO_URL) gh.hidden = false;
-    gh.addEventListener('click', () => {
+    if (gh) gh.addEventListener('click', () => {
       const f = monta();
       window.open(`${REPO_URL}/issues/new?title=${encodeURIComponent(f.titulo)}&body=${encodeURIComponent(f.corpo)}`, '_blank', 'noopener');
     });

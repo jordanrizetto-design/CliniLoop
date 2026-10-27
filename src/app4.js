@@ -576,10 +576,6 @@
 
   // ===================== Inicialização =====================
   (function init() {
-    if (REPO_URL) {
-      ['nav-github', 'foot-github'].forEach((id) => { const a = document.getElementById(id); a.href = REPO_URL; a.hidden = false; });
-      document.getElementById('foot-license').hidden = true;
-    }
     const saved = storeGet(STORE_KEY, null);
     if (saved && typeof saved === 'object') applyConfig(saved);
     cfg = readConfig();

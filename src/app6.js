@@ -76,7 +76,7 @@
 
   function renderExtras() { applyModo(); renderBeta(); if (typeof renderJornada === 'function') renderJornada(); }
 
-  // Feedback de teste: sem dados de pacientes, vai por GitHub (issue) ou por cópia do texto.
+  // Feedback de teste: sem dados de pacientes, vai por cópia do texto.
   (function feedback() {
     const nota = document.getElementById('fb-nota');
     if (!nota) return;
@@ -88,8 +88,7 @@
       const t = (texto.value || '').trim();
       return { titulo: `Feedback de teste (nota ${nota.value}/5)`, corpo: `Foi fácil começar? ${nota.value}/5\n\nO que travou ou confundiu:\n${t || '(sem texto)'}\n\nTela: ${window.innerWidth}px de largura` };
     };
-    if (REPO_URL) gh.hidden = false;
-    gh.addEventListener('click', () => {
+    if (gh) gh.addEventListener('click', () => {
       const f = monta();
       window.open(`${REPO_URL}/issues/new?title=${encodeURIComponent(f.titulo)}&body=${encodeURIComponent(f.corpo)}`, '_blank', 'noopener');
     });

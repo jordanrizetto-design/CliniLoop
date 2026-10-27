@@ -1,6 +1,6 @@
   // ===================== CliniLoop =====================
-  // Endereço do repositório no GitHub (preencha depois de criar). Vazio = link escondido.
-  const REPO_URL = 'https://github.com/jordanrizetto-design/CliniLoop';
+  // Endereço público do código. Vazio = nenhum link para o repositório aparece no app.
+  const REPO_URL = '';
 
   const APP = 'CliniLoop';
   const APP_ID = 'CliniLoop';
