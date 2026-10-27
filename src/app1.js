@@ -361,7 +361,7 @@
   // As bases do método (créditos)
   const METODO = {
     bases: [
-      ['Guia CliniLoop', 'método', 'Conquistar pacientes é um projeto, com objetivo, etapas, registros e revisões. Seis etapas, sete decisões do paciente (atenção, confiança, indicação, contato, agendamento, comparecimento, adesão) e três caixas em cada parte: Prompt, Na prática e No CliniLoop.'],
+      ['Método Loop', 'método', 'Conquistar pacientes é um projeto, com objetivo, etapas, registros e revisões. Seis etapas, sete decisões do paciente (atenção, confiança, indicação, contato, agendamento, comparecimento, adesão) e três caixas em cada parte: Prompt, Na prática e No CliniLoop.'],
       ['Oceano Azul', 'estratégia', 'Sair da disputa por atenção com conteúdo igual ao de todos. As quatro ações (eliminar, reduzir, elevar, criar) em relação ao padrão do setor viram uma proposta de valor própria e ética.'],
       ['Escada de crescimento', 'método de perfis', 'Sete degraus: entender a plataforma, definir a promessa (transformação, adjetivos de marca, temas de conteúdo), montar a vitrine, produzir com rotina, ler os números, combinar formatos e fixar metas.'],
       ['Formatos recorrentes', 'síntese de formatos', 'Promessa, curiosidade e recompensa; quadros recorrentes, personagens editoriais, biblioteca de formatos, análise de referências, frequência que cabe na revisão e o ciclo de adaptação (Referência, Observação, Adaptação, Troca).'],

@@ -2,7 +2,7 @@
 
 # CliniLoop
 
-**Guia CliniLoop: conhecimentos dirigidos e um app de CRM.** O guia (PDF em `guia/Guia-CliniLoop.pdf`) ensina o roteiro; o app guarda o registro. Pacientes, colegas e campanhas, do primeiro contato ao tratamento, com ética e método. Para **médicos, psiquiatras, dentistas, psicólogos, fisioterapeutas, nutricionistas e clínicas multiprofissionais**. Funciona com o **Claude, com ou sem assinatura** (Pro ou Max) e, se você quiser, com a API da Anthropic.
+**O Prompt do Sim e CliniLoop: o método Loop.** O guia *O Prompt do Sim* (PDF em `guia/O-Prompt-do-Sim.pdf`) ensina o roteiro; o app guarda o registro. Pacientes, colegas e campanhas, do primeiro contato ao tratamento, com ética e método. Para **médicos, psiquiatras, dentistas, psicólogos, fisioterapeutas, nutricionistas e clínicas multiprofissionais**. Funciona com o **Claude, com ou sem assinatura** (Pro ou Max) e, se você quiser, com a API da Anthropic.
 
 O CliniLoop mantém a lógica do [BuscaLoop](https://github.com/jordanrizetto-design/Otimizador-de-Oportunidades) original:
 - um perfil base que alimenta todas as ferramentas;
@@ -32,7 +32,7 @@ O app conduz em ordem, e cada fase abre com uma mensagem de estímulo e o motivo
 
 ## O guia e o app
 
-O Guia CliniLoop ensina o roteiro; o app guarda o registro. O guia tem **seis etapas e 16 partes**, e cada parte termina em três caixas: **Prompt** (o pedido pronto), **Na prática** (o passo de até 30 minutos para hoje) e **Sinergia CliniLoop** (a ferramenta do app).
+O guia *O Prompt do Sim* ensina o roteiro; o app CliniLoop guarda o registro. Juntos, formam o método Loop. O guia tem **seis etapas e 16 partes**, e cada parte termina em três caixas: **Prompt** (o pedido pronto), **Na prática** (o passo de até 30 minutos para hoje) e **Sinergia CliniLoop** (a ferramenta do app).
 
 | Etapa do guia | Partes | Ferramentas do CliniLoop |
 |---|---|---|
@@ -45,7 +45,7 @@ O Guia CliniLoop ensina o roteiro; o app guarda o registro. O guia tem **seis et
 
 No app, a integração aparece em três lugares:
 - **Faixa "No guia" em cada ferramenta:** a parte e a etapa correspondentes, o passo "Na prática" e o prompt do guia já preenchido com o Perfil do consultório (copiar ou abrir direto no Claude).
-- **Seção "O guia":** o roteiro em seis etapas com o que você já usou, as sete decisões com os números dos últimos 30 dias, a biblioteca com os 14 prompts da Parte 15, a estrutura de um bom prompt, as quatro regras de IA e o glossário de 75 termos (Anexo A).
+- **Seção "O guia":** o roteiro em seis etapas com o que você já usou, as sete decisões com os números dos últimos 30 dias, a biblioteca com os 14 prompts da Parte 15, a estrutura de um bom prompt, as quatro regras de IA e o glossário de 76 termos (Anexo A).
 - **Comportamento do app alinhado ao guia:** próximo passo típico de cada etapa, planos sem decisão em 2, 7 e 15 dias, retomadas de 1, 3 e 7 dias, faltas registradas e mostradas por dia da semana, métricas da Parte 13 (taxas de agendamento, comparecimento, aceitação e conclusão, custo por paciente que compareceu, indicações por colega, receita por origem), funil de colegas do guia (Mapeado, Apresentado, Primeira indicação, Parceiro ativo, Inativo) e o ritual semanal de 30 minutos no Assistente e no Playbook.
 
 ## Fontes e agradecimentos

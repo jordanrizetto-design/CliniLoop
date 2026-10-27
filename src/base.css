@@ -42,7 +42,7 @@
     position:sticky; top:0; z-index:40; background:rgba(243,238,228,.92); backdrop-filter:blur(6px);
     border-bottom:1px solid var(--border);
   }
-  .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:16px 24px;}
+  .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:22px 24px;}
   .brand{font-family:var(--body); font-style:normal; font-weight:600; font-size:1.4rem; color:var(--ink); text-decoration:none; letter-spacing:-.01em; display:inline-flex; align-items:center; gap:10px; line-height:1;}
   .brand-mark{width:40px; height:40px; flex-shrink:0;}
   .brand .loop{color:var(--gold);}

@@ -23,7 +23,7 @@ with sync_playwright() as p:
     ok('roteiro 6 etapas', pg.evaluate("document.querySelectorAll('#livro-roteiro .lr-etapa').length")==7)
     ok('16 partes no roteiro', pg.evaluate("document.querySelectorAll('#livro-roteiro .lr-parte').length")==16)
     pg.click('.livro-tabs [data-tab=glossario]')
-    ok('glossário 75', pg.evaluate("document.querySelectorAll('#glos-lista dt').length")==75)
+    ok('glossário 76', pg.evaluate("document.querySelectorAll('#glos-lista dt').length")==76)
     pg.fill('#glos-busca','no-show'); ok('busca glossário', pg.evaluate("document.querySelectorAll('#glos-lista dt').length")>=1 and 'Falta' in pg.inner_text('#glos-lista'))
     pg.click('.livro-tabs [data-tab=sins]'); ok('sete sins', pg.evaluate("document.querySelectorAll('#livro-sins .sin').length")==7)
     pg.click('.livro-tabs [data-tab=ia]'); ok('regras IA', pg.evaluate("document.querySelectorAll('#livro-regras li').length")==4)
@@ -84,7 +84,7 @@ with sync_playwright() as p:
     # playbook
     pg.click('#pb-build'); pg.wait_for_timeout(300)
     et=pg.frame_locator('#pb-frame').locator('body').inner_text()
-    ok('playbook livro', 'O guia e as sete decisões' in et and 'Guia CliniLoop' in et and 'ritual de 30 minutos' in et.lower())
+    ok('playbook livro', 'O guia e as sete decisões' in et and 'O Prompt do Sim' in et and 'ritual de 30 minutos' in et.lower())
     # backup inclui canais, não inclui apikey
     keys=pg.evaluate("Object.keys(localStorage).filter(k=>k.startsWith('cliniloop.'))")
     ok('canais no armazenamento', 'cliniloop.canais.v1' in keys)

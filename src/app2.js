@@ -341,7 +341,7 @@ No final, inclua sempre:
 Linguagem simples, termos técnicos explicados, frases curtas. Pontuação de roteiro, se usar, é ferramenta pedagógica, não previsão de viralidade.`;
     },
 
-    reaproveitamento: (get, getAll) => `Aja como editor(a) de conteúdo para profissionais de saúde, seguindo o método de reaproveitamento do Guia CliniLoop (Parte 5): uma aula, quatro entregas.
+    reaproveitamento: (get, getAll) => `Aja como editor(a) de conteúdo para profissionais de saúde, seguindo o método de reaproveitamento do guia O Prompt do Sim (Parte 5): uma aula, quatro entregas.
 
 Vou colar a transcrição de ${get('fonte')} em que participei como ${get('papel')}.
 Público: ${nv(get('publico'), cfg.publico || '[PÚBLICO]')}. Objetivo: ${get('objetivo')}. Profissão e conselho: ${profLabel()}, ${conselhosTxt()}.

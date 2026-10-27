@@ -57,7 +57,7 @@
     position:sticky; top:0; z-index:40; background:rgba(244,241,234,.92); backdrop-filter:blur(6px);
     border-bottom:1px solid var(--border);
   }
-  .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:16px 24px;}
+  .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:22px 24px;}
   .brand{font-family:var(--body); font-style:normal; font-weight:600; font-size:1.4rem; color:var(--ink); text-decoration:none; letter-spacing:-.01em; display:inline-flex; align-items:center; gap:10px; line-height:1;}
   .brand-mark{width:40px; height:40px; flex-shrink:0;}
   .brand .loop{color:var(--gold);}
@@ -823,7 +823,7 @@
 
   /* Menu no celular: faixa rolável abaixo da marca */
   @media (max-width:720px){
-    .nav-inner{flex-wrap:wrap; padding:10px 16px 6px; row-gap:6px;}
+    .nav-inner{flex-wrap:wrap; padding:17px 16px 12px; row-gap:10px;}
     nav.links{display:flex; gap:18px; width:100%; overflow-x:auto; white-space:nowrap; font-size:.86rem; padding:2px 0 6px; scrollbar-width:none; -webkit-overflow-scrolling:touch;}
     nav.links::-webkit-scrollbar{display:none;}
   }
@@ -838,9 +838,9 @@
   @media (min-width:721px) and (max-width:1100px){ .brand-text small{display:none;} nav.links{gap:16px; font-size:.86rem;} }
   @media (max-width:720px){ nav.links{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent); mask-image:linear-gradient(90deg,#000 85%,transparent); padding-right:24px;} }
 
-  .brand-word{height:30px; width:auto; display:block;}
+  .brand-word{height:37.5px; width:auto; display:block;}
   .brand-text small{margin-top:6px;}
-  @media (max-width:720px){ .brand-word{height:24px;} }
+  @media (max-width:720px){ .brand-word{height:30px;} }
 
   /* Estratégia Oceano Azul */
   .oa-step{border:1px solid var(--border); border-radius:var(--radius); padding:16px 18px 18px; margin:0 0 16px; background:var(--paper);}
@@ -887,7 +887,7 @@
       <a href="#etica">Ética</a>
       <a href="#como-funciona">Como funciona</a>
       <a href="#faq">Dúvidas</a>
-      <a href="guia/Guia-CliniLoop.pdf" target="_blank" rel="noopener" class="nav-pdf">Guia em PDF</a>
+      <a href="guia/O-Prompt-do-Sim.pdf" target="_blank" rel="noopener" class="nav-pdf">Guia em PDF</a>
       <a href="#" id="nav-github" target="_blank" rel="noopener" hidden>GitHub</a>
     </nav>
   </div>
@@ -900,7 +900,7 @@
       <div>
         <p class="eyebrow">Para médicos, psiquiatras, dentistas, psicólogos, fisioterapeutas, nutricionistas e clínicas</p>
         <h1>Do primeiro contato ao tratamento, com ética e método.</h1>
-        <p class="lead">O <a href="#livro" class="hero-livro"><i>Guia CliniLoop</i></a> é um livro digital e este app, feitos para funcionar juntos. O livro ensina o caminho. O app faz o trabalho: gera os prompts para a IA com o seu perfil e as regras do seu conselho, monta roteiros de conteúdo e de campanha e acompanha cada paciente, do primeiro contato ao tratamento.</p>
+        <p class="lead">O guia <a href="#livro" class="hero-livro"><i>O Prompt do Sim</i></a> e este app, o CliniLoop, foram feitos para funcionar juntos: é o método Loop. O livro ensina o caminho. O app faz o trabalho: gera os prompts para a IA com o seu perfil e as regras do seu conselho, monta roteiros de conteúdo e de campanha e acompanha cada paciente, do primeiro contato ao tratamento.</p>
         <ul class="hero-plans" aria-label="Formas de usar">
           <li><b>Claude sem assinatura</b><span>conta só com e-mail</span></li>
           <li><b>Claude com assinatura</b><span>Pro ou Max, com Research</span></li>
@@ -908,7 +908,7 @@
         </ul>
         <div class="hero-ctas">
           <a href="#painel" class="btn btn-gold" data-ico="arrow">Começar: monte seu perfil</a>
-          <a href="guia/Guia-CliniLoop.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Baixar o guia (PDF)</a>
+          <a href="guia/O-Prompt-do-Sim.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Baixar o guia (PDF)</a>
         </div>
         <p class="hero-note">Sem promessa de viralizar: o CliniLoop ajuda você a cuidar do que depende de você, como clareza, constância, atendimento rápido e conteúdo dentro das regras.</p>
       </div>
@@ -1369,7 +1369,7 @@
       <p class="eyebrow">As 19 ferramentas</p>
       <div class="lead-block">
         <h2>Do posicionamento ao paciente em tratamento.</h2>
-        <p>Cada ferramenta cobre uma etapa do funil e uma parte do <a href="#livro"><i>Guia CliniLoop</i></a>. As prioridades seguem seu objetivo e o tipo de profissional escolhido em "Comece aqui". O que você guardar numa ferramenta passa a alimentar as seguintes, o briefing e o playbook.</p>
+        <p>Cada ferramenta cobre uma etapa do funil e uma parte do guia <a href="#livro"><i>O Prompt do Sim</i></a>. As prioridades seguem seu objetivo e o tipo de profissional escolhido em "Comece aqui". O que você guardar numa ferramenta passa a alimentar as seguintes, o briefing e o playbook.</p>
       </div>
 
       <div class="route-panel funnel-panel" id="rota" aria-live="polite">
@@ -2592,13 +2592,13 @@
     <div class="wrap">
       <p class="eyebrow">O guia e o app</p>
       <div class="livro-head">
-        <a class="livro-capa" href="guia/Guia-CliniLoop.pdf" target="_blank" rel="noopener" title="Abrir o guia em PDF">
+        <a class="livro-capa" href="guia/O-Prompt-do-Sim.pdf" target="_blank" rel="noopener" title="Abrir o guia em PDF">
           <img src="guia/capa/capa-thumb.jpg" alt="Capa do guia Prompt do Sim: marketing, inteligência artificial e CRM para profissionais da saúde" width="200" height="283" loading="lazy">
           <span class="livro-capa-btn">Baixar o guia (PDF)</span>
         </a>
         <div>
-          <h2>O <em>Guia CliniLoop</em>: conhecimentos dirigidos e um app de CRM.</h2>
-          <p class="livro-lead">O Guia CliniLoop não é apenas o livro digital: é o livro e este app, e o diferencial está nos dois juntos. O livro ensina o roteiro; o app gera os prompts, monta roteiros de conteúdo e de campanha e guarda o registro. Cada uma das 16 partes termina em três caixas: <b>Prompt</b>, o pedido pronto para a sua IA; <b>Na prática</b>, um passo de até 30 minutos para hoje; e <b>Sinergia CliniLoop</b>, a ferramenta do app que coloca a parte em prática. Em cada ferramenta abaixo, a faixa "No livro" mostra a parte correspondente, o passo de hoje e o prompt do guia já preenchido com o seu perfil.</p>
+          <h2><em>O Prompt do Sim</em> e o CliniLoop: o método Loop.</h2>
+          <p class="livro-lead"><i>O Prompt do Sim</i> é o guia; o CliniLoop é este app. Juntos, formam o método Loop, e o diferencial está nos dois juntos. O livro ensina o roteiro; o app gera os prompts, monta roteiros de conteúdo e de campanha e guarda o registro. Cada uma das 16 partes termina em três caixas: <b>Prompt</b>, o pedido pronto para a sua IA; <b>Na prática</b>, um passo de até 30 minutos para hoje; e <b>Sinergia CliniLoop</b>, a ferramenta do app que coloca a parte em prática. Em cada ferramenta abaixo, a faixa "No livro" mostra a parte correspondente, o passo de hoje e o prompt do guia já preenchido com o seu perfil.</p>
           <p class="livro-ideia">"Conquistar pacientes é um projeto. Projetos têm objetivo, etapas, registros e revisões. É isso que transforma esforço em resultado."</p>
         </div>
       </div>
@@ -2653,7 +2653,7 @@
 
       <div class="livro-panel" data-panel="glossario" hidden>
         <label class="visually-hidden" for="glos-busca">Buscar no glossário</label>
-        <input type="search" id="glos-busca" class="glos-busca" placeholder="Buscar entre os 75 termos do Anexo B (ex.: ROAS, no-show, Turbinar)">
+        <input type="search" id="glos-busca" class="glos-busca" placeholder="Buscar entre os 76 termos do Anexo B (ex.: ROAS, no-show, Turbinar)">
         <dl id="glos-lista" class="glos-lista"></dl>
       </div>
     </div>
@@ -2699,7 +2699,7 @@
       <div class="data-flow" id="metodo">
         <h3>Fontes e agradecimentos</h3>
         <table class="data-table">
-          <tr><th>Prompt do Sim e BuscaLoop (JR Tosoni)</th><td>Base do método, do funil, do registro e do ritual semanal, de onde o Guia CliniLoop nasceu.</td></tr>
+          <tr><th>Prompt do Sim e BuscaLoop (JR Tosoni)</th><td>Base do método, do funil, do registro e do ritual semanal, de onde nasceram o guia <i>O Prompt do Sim</i> e o método Loop.</td></tr>
           <tr><th>Oceano Azul (W. Chan Kim e Renée Mauborgne)</th><td>Sair da disputa por atenção com conteúdo igual ao de todos: as quatro ações (eliminar, reduzir, elevar, criar) viram uma proposta de valor própria e ética, usada em Nicho e diferencial.</td></tr>
           <tr><th>Pat Machadu</th><td>Método de crescimento de perfis em sete etapas, que inspirou a escada de crescimento.</td></tr>
           <tr><th>Diandra Santos (@segueadi)</th><td>Síntese de formatos recorrentes de vídeo, que inspirou a seção de séries reconhecíveis.</td></tr>
@@ -2782,8 +2782,8 @@
         <div class="faq-body">Pode. Os prompts pedem para a IA não inventar dados, sinalizar com [CONFIRMAR] o que precisa ser verificado e evitar promessas. Ainda assim, todo conteúdo técnico deve ser revisado por você, que é o profissional responsável pelo que publica.</div>
       </details>
       <details class="faq">
-        <summary>Qual a relação com o Guia CliniLoop? <span class="chevron">▸</span></summary>
-        <div class="faq-body">O <i>Guia CliniLoop</i> não é apenas o livro digital: é o livro e este app, e o resultado vem dos dois juntos. O livro explica o porquê e o caminho; o app gera os prompts, monta os roteiros de conteúdo e de campanha, revisa a ética e guarda o registro de cada paciente. O guia tem seis etapas, 16 partes e um manual prático; cada parte termina em três caixas: Prompt (o pedido pronto), Na prática (o passo de até 30 minutos para hoje) e No CliniLoop (a ferramenta do app). Aqui, cada ferramenta mostra a parte do guia correspondente, o passo de hoje e o prompt do guia já preenchido com o seu perfil. A seção <a href="#livro">O guia</a> reúne o roteiro em seis etapas, as sete decisões com os seus números, a biblioteca com os 14 prompts, as quatro regras de IA e o glossário.</div>
+        <summary>Qual a relação com o guia O Prompt do Sim? <span class="chevron">▸</span></summary>
+        <div class="faq-body"><i>O Prompt do Sim</i> é o guia; o CliniLoop é este app. Juntos, formam o método Loop, e o resultado vem dos dois juntos. O livro explica o porquê e o caminho; o app gera os prompts, monta os roteiros de conteúdo e de campanha, revisa a ética e guarda o registro de cada paciente. O guia tem seis etapas, 16 partes e um manual prático; cada parte termina em três caixas: Prompt (o pedido pronto), Na prática (o passo de até 30 minutos para hoje) e No CliniLoop (a ferramenta do app). Aqui, cada ferramenta mostra a parte do guia correspondente, o passo de hoje e o prompt do guia já preenchido com o seu perfil. A seção <a href="#livro">O guia</a> reúne o roteiro em seis etapas, as sete decisões com os seus números, a biblioteca com os 14 prompts, as quatro regras de IA e o glossário.</div>
       </details>
       <details class="faq">
         <summary>Funciona para uma clínica com recepção e vários profissionais? <span class="chevron">▸</span></summary>
@@ -3173,7 +3173,7 @@
   // As bases do método (créditos)
   const METODO = {
     bases: [
-      ['Guia CliniLoop', 'método', 'Conquistar pacientes é um projeto, com objetivo, etapas, registros e revisões. Seis etapas, sete decisões do paciente (atenção, confiança, indicação, contato, agendamento, comparecimento, adesão) e três caixas em cada parte: Prompt, Na prática e No CliniLoop.'],
+      ['Método Loop', 'método', 'Conquistar pacientes é um projeto, com objetivo, etapas, registros e revisões. Seis etapas, sete decisões do paciente (atenção, confiança, indicação, contato, agendamento, comparecimento, adesão) e três caixas em cada parte: Prompt, Na prática e No CliniLoop.'],
       ['Oceano Azul', 'estratégia', 'Sair da disputa por atenção com conteúdo igual ao de todos. As quatro ações (eliminar, reduzir, elevar, criar) em relação ao padrão do setor viram uma proposta de valor própria e ética.'],
       ['Escada de crescimento', 'método de perfis', 'Sete degraus: entender a plataforma, definir a promessa (transformação, adjetivos de marca, temas de conteúdo), montar a vitrine, produzir com rotina, ler os números, combinar formatos e fixar metas.'],
       ['Formatos recorrentes', 'síntese de formatos', 'Promessa, curiosidade e recompensa; quadros recorrentes, personagens editoriais, biblioteca de formatos, análise de referências, frequência que cabe na revisão e o ciclo de adaptação (Referência, Observação, Adaptação, Troca).'],
@@ -3254,10 +3254,10 @@
   }
   function notifyData() { document.dispatchEvent(new Event('cliniloop:dados')); }
 
-  // ===================== O Guia CliniLoop =====================
+  // ===================== O Prompt do Sim (guia) =====================
   // Cada parte do guia termina numa caixa "Sinergia CliniLoop". Este bloco é o mapa entre as duas obras.
   const LIVRO = {
-    titulo: 'Guia CliniLoop',
+    titulo: 'O Prompt do Sim',
     autor: '',
     tese: 'Conhecimentos dirigidos e um app de CRM para conquistar as sete decisões do paciente: olhar, confiar, ser indicado, chamar, agendar, comparecer e seguir o tratamento.',
     ideia: 'Conquistar pacientes é um projeto. Projetos têm objetivo, etapas, registros e revisões. É isso que transforma esforço em resultado.',
@@ -3522,7 +3522,7 @@ Proponha uma versão corrigida. Lembre que esta revisão não substitui a consul
 Texto: [COLE AQUI]` }
   ];
 
-  // Anexo B do guia: glossário (75 termos)
+  // Anexo B do guia: glossário (76 termos)
   const GLOSSARIO = [
     ["Adesão", "Quanto o paciente segue o tratamento proposto até a alta"],
     ["Advantage+", "Opções automatizadas da Meta para público, posicionamento e criativo"],
@@ -3557,6 +3557,7 @@ Texto: [COLE AQUI]` }
     ["Lead", "Contato que demonstrou interesse e ainda não agendou"],
     ["LGPD", "Sigla de Lei Geral de Proteção de Dados (Lei 13.709/2018), que regula a coleta, o uso e a guarda de dados pessoais; dado de saúde é dado sensível"],
     ["Mediana de views", "Valor central das views de peças comparáveis; mais robusta que a média"],
+    ["Método Loop", "A combinação do guia O Prompt do Sim com o app CliniLoop: o guia ensina o porquê e o caminho, o app faz o trabalho e guarda o registro, num ciclo que se repete toda semana"],
     ["Meta", "Empresa dona do Instagram, do Facebook e do WhatsApp"],
     ["Meta Business Suite", "Painel gratuito da Meta para gerenciar posts, mensagens e anúncios de Instagram e Facebook"],
     ["Decisões (as sete)", "Atenção, confiança, indicação, contato, agendamento, comparecimento e adesão: as decisões que o paciente toma em sequência até seguir o tratamento"],
@@ -4184,7 +4185,7 @@ No final, inclua sempre:
 Linguagem simples, termos técnicos explicados, frases curtas. Pontuação de roteiro, se usar, é ferramenta pedagógica, não previsão de viralidade.`;
     },
 
-    reaproveitamento: (get, getAll) => `Aja como editor(a) de conteúdo para profissionais de saúde, seguindo o método de reaproveitamento do Guia CliniLoop (Parte 5): uma aula, quatro entregas.
+    reaproveitamento: (get, getAll) => `Aja como editor(a) de conteúdo para profissionais de saúde, seguindo o método de reaproveitamento do guia O Prompt do Sim (Parte 5): uma aula, quatro entregas.
 
 Vou colar a transcrição de ${get('fonte')} em que participei como ${get('papel')}.
 Público: ${nv(get('publico'), cfg.publico || '[PÚBLICO]')}. Objetivo: ${get('objetivo')}. Profissão e conselho: ${profLabel()}, ${conselhosTxt()}.
@@ -6308,7 +6309,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
       const nPr = PROMPTS_LIVRO.filter((p) => p.parte === n).length;
       return `<div class="lr-parte"><div class="lr-pt"><span class="lr-num">${String(n).padStart(2, '0')}</span><div><b>${escapeHtml(pt.titulo)}</b><p><span class="lr-lab">Na prática:</span> ${escapeHtml(pt.pratica)}</p><p><span class="lr-lab">Sinergia CliniLoop · ${escapeHtml(pt.sinergia)}:</span> ${escapeHtml(pt.sinTxt)}</p></div></div><div class="lr-tools">${pt.tools.map((id) => `<button type="button" class="lr-tool${uso[id] ? ' ok' : ''}" data-tool="${id}">${uso[id] ? '✓ ' : ''}${escapeHtml(TOOL_NAMES[id] || id)}</button>`).join('')}${nPr ? `<button type="button" class="lr-tool lr-pr" data-parte="${n}">${nPr} prompt${nPr > 1 ? 's' : ''} do guia</button>` : ''}</div></div>`;
     }).join('')}</div></div>`).join('') +
-      `<div class="lr-etapa lr-anexo"><div class="lr-n">+</div><div class="lr-body"><h3>Anexos</h3><div class="lr-tools"><button type="button" class="lr-tool" data-tab-go="glossario">Glossário (75 termos)</button><button type="button" class="lr-tool" data-tab-go="ia">As quatro regras de IA</button><a class="lr-tool lr-pdf" href="guia/Guia-CliniLoop.pdf" target="_blank" rel="noopener">Manual prático: criar, editar, publicar e anunciar (Anexo A, PDF)</a></div></div></div>`;
+      `<div class="lr-etapa lr-anexo"><div class="lr-n">+</div><div class="lr-body"><h3>Anexos</h3><div class="lr-tools"><button type="button" class="lr-tool" data-tab-go="glossario">Glossário (76 termos)</button><button type="button" class="lr-tool" data-tab-go="ia">As quatro regras de IA</button><a class="lr-tool lr-pdf" href="guia/O-Prompt-do-Sim.pdf" target="_blank" rel="noopener">Manual prático: criar, editar, publicar e anunciar (Anexo A, PDF)</a></div></div></div>`;
     box.querySelectorAll('[data-tool]').forEach((b) => b.addEventListener('click', () => openTool(b.dataset.tool)));
     box.querySelectorAll('[data-parte]').forEach((b) => b.addEventListener('click', () => { livroTab('prompts'); const d = document.querySelector(`#livro-prompts .ls-prompt[data-parte-n="${b.dataset.parte}"]`); if (d) { d.open = true; d.scrollIntoView({ behavior: 'smooth', block: 'center' }); } }));
     box.querySelectorAll('[data-tab-go]').forEach((b) => b.addEventListener('click', () => livroTab(b.dataset.tabGo)));

@@ -336,7 +336,7 @@
 
   /* Menu no celular: faixa rolável abaixo da marca */
   @media (max-width:720px){
-    .nav-inner{flex-wrap:wrap; padding:10px 16px 6px; row-gap:6px;}
+    .nav-inner{flex-wrap:wrap; padding:17px 16px 12px; row-gap:10px;}
     nav.links{display:flex; gap:18px; width:100%; overflow-x:auto; white-space:nowrap; font-size:.86rem; padding:2px 0 6px; scrollbar-width:none; -webkit-overflow-scrolling:touch;}
     nav.links::-webkit-scrollbar{display:none;}
   }
@@ -351,9 +351,9 @@
   @media (min-width:721px) and (max-width:1100px){ .brand-text small{display:none;} nav.links{gap:16px; font-size:.86rem;} }
   @media (max-width:720px){ nav.links{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent); mask-image:linear-gradient(90deg,#000 85%,transparent); padding-right:24px;} }
 
-  .brand-word{height:30px; width:auto; display:block;}
+  .brand-word{height:37.5px; width:auto; display:block;}
   .brand-text small{margin-top:6px;}
-  @media (max-width:720px){ .brand-word{height:24px;} }
+  @media (max-width:720px){ .brand-word{height:30px;} }
 
   /* Estratégia Oceano Azul */
   .oa-step{border:1px solid var(--border); border-radius:var(--radius); padding:16px 18px 18px; margin:0 0 16px; background:var(--paper);}

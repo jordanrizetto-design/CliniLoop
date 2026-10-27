@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Gera o PDF do Guia CliniLoop a partir de guia/partes/*.md.
+"""Gera o PDF do guia O Prompt do Sim a partir de guia/partes/*.md.
 
-Uso: python3 guia/build_guia.py   (gera guia/Guia-CliniLoop.pdf e guia/Guia-CliniLoop.html)
+Uso: python3 guia/build_guia.py   (gera guia/O-Prompt-do-Sim.pdf e guia/O-Prompt-do-Sim.html)
 Duas passagens: a primeira mede em que página começa cada parte; a segunda preenche o sumário.
 """
 import json, pathlib, re, subprocess, html, sys
@@ -159,7 +159,7 @@ CSS = '\n'.join([
 ]) + '''
 :root{--ink:#14303A;--soft:#3A5059;--teal:#1F6F78;--teal-d:#185860;--rust:#C2502F;--paper:#F4F1EA;--tealbg:#EAF4F5;--peach:#F4BFA4;--peachbg:#FFF6EF;--line:#D9E0E2;}
 @page{size:A4;margin:30mm 26mm 32mm 26mm;
-  @bottom-left{content:"Guia CliniLoop";font:500 7.6pt Poppins;color:#7C8E94;letter-spacing:.06em;text-transform:uppercase;padding-top:7mm;}
+  @bottom-left{content:"O Prompt do Sim";font:500 7.6pt Poppins;color:#7C8E94;letter-spacing:.06em;text-transform:uppercase;padding-top:7mm;}
   @bottom-right{content:counter(page);font:500 8.5pt Poppins;color:#7C8E94;padding-top:7mm;}}
 @page cover{margin:0;@bottom-left{content:none}@bottom-right{content:none}}
 @page opener{margin:0;@bottom-left{content:none}@bottom-right{content:none}}
@@ -428,9 +428,9 @@ def build_html(pages):
             for hid, ht in subs:
                 toc.append(f'<a class="sub" href="#{hid}"><span class="n"></span><span class="t">{E(ht)}</span><span class="p">{pages.get(hid, "")}</span></a>')
     toc.append('</section>')
-    fim = ('<section class="fim"><h2>Guia CliniLoop</h2><p>Conhecimentos dirigidos e um app de CRM. O app CliniLoop, que completa este guia, registra pacientes, colegas e campanhas no seu navegador, '
+    fim = ('<section class="fim"><h2>O Prompt do Sim</h2><p>Conhecimentos dirigidos e um app de CRM: o método Loop. O app CliniLoop, que completa este guia, registra pacientes, colegas e campanhas no seu navegador, '
            'sem servidor, e leva os prompts para o seu dia a dia.</p><p class="nota" style="color:#9FB6BB">Este guia não substitui a orientação do seu conselho profissional nem assessoria jurídica.</p></section>')
-    doc = f'<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>Guia CliniLoop</title><style>{CSS}</style></head><body>{cover_html()}{"".join(toc)}{"".join(sections)}{fim}</body></html>'
+    doc = f'<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>O Prompt do Sim</title><style>{CSS}</style></head><body>{cover_html()}{"".join(toc)}{"".join(sections)}{fim}</body></html>'
     # âncoras de sumário
     return doc, toc_items
 
@@ -594,7 +594,7 @@ def finalizar(pdf_path, pages):
 
 
 if __name__ == '__main__':
-    out = ROOT / 'Guia-CliniLoop.pdf'
+    out = ROOT / 'O-Prompt-do-Sim.pdf'
     doc, items = build_html({})
     render(doc, out)
     pages, total = find_pages(out, items)
@@ -605,7 +605,7 @@ if __name__ == '__main__':
         doc, items = build_html(pages2)
         render(doc, out)
         pages2, total = find_pages(out, items)
-    (ROOT / 'Guia-CliniLoop.html').write_text(doc.replace(str(FONT), 'fonts'), encoding='utf-8')
+    (ROOT / 'O-Prompt-do-Sim.html').write_text(doc.replace(str(FONT), 'fonts'), encoding='utf-8')
     print('páginas:', total, '| marcas encontradas:', sum(1 for i in items if i[3] in pages2), 'de', len(items), '| subtítulos no sumário:', sum(len(i[4]) for i in items))
     aplicar_capa(out)
     print('links convertidos para destino explícito:', finalizar(out, pages2))

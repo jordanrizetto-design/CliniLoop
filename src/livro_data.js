@@ -1,8 +1,8 @@
 
-  // ===================== O Guia CliniLoop =====================
+  // ===================== O Prompt do Sim (guia) =====================
   // Cada parte do guia termina numa caixa "Sinergia CliniLoop". Este bloco é o mapa entre as duas obras.
   const LIVRO = {
-    titulo: 'Guia CliniLoop',
+    titulo: 'O Prompt do Sim',
     autor: '',
     tese: 'Conhecimentos dirigidos e um app de CRM para conquistar as sete decisões do paciente: olhar, confiar, ser indicado, chamar, agendar, comparecer e seguir o tratamento.',
     ideia: 'Conquistar pacientes é um projeto. Projetos têm objetivo, etapas, registros e revisões. É isso que transforma esforço em resultado.',
@@ -267,7 +267,7 @@ Proponha uma versão corrigida. Lembre que esta revisão não substitui a consul
 Texto: [COLE AQUI]` }
   ];
 
-  // Anexo B do guia: glossário (75 termos)
+  // Anexo B do guia: glossário (76 termos)
   const GLOSSARIO = [
     ["Adesão", "Quanto o paciente segue o tratamento proposto até a alta"],
     ["Advantage+", "Opções automatizadas da Meta para público, posicionamento e criativo"],
@@ -302,6 +302,7 @@ Texto: [COLE AQUI]` }
     ["Lead", "Contato que demonstrou interesse e ainda não agendou"],
     ["LGPD", "Sigla de Lei Geral de Proteção de Dados (Lei 13.709/2018), que regula a coleta, o uso e a guarda de dados pessoais; dado de saúde é dado sensível"],
     ["Mediana de views", "Valor central das views de peças comparáveis; mais robusta que a média"],
+    ["Método Loop", "A combinação do guia O Prompt do Sim com o app CliniLoop: o guia ensina o porquê e o caminho, o app faz o trabalho e guarda o registro, num ciclo que se repete toda semana"],
     ["Meta", "Empresa dona do Instagram, do Facebook e do WhatsApp"],
     ["Meta Business Suite", "Painel gratuito da Meta para gerenciar posts, mensagens e anúncios de Instagram e Facebook"],
     ["Decisões (as sete)", "Atenção, confiança, indicação, contato, agendamento, comparecimento e adesão: as decisões que o paciente toma em sequência até seguir o tratamento"],
