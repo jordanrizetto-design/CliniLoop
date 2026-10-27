@@ -350,3 +350,7 @@
   @media (min-width:721px){ nav.links{gap:22px; white-space:nowrap;} nav.links a{white-space:nowrap;} .brand-text small{white-space:nowrap;} }
   @media (min-width:721px) and (max-width:1100px){ .brand-text small{display:none;} nav.links{gap:16px; font-size:.86rem;} }
   @media (max-width:720px){ nav.links{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent); mask-image:linear-gradient(90deg,#000 85%,transparent); padding-right:24px;} }
+
+  .brand-word{height:30px; width:auto; display:block;}
+  .brand-text small{margin-top:6px;}
+  @media (max-width:720px){ .brand-word{height:24px;} }

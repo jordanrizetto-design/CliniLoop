@@ -310,7 +310,7 @@
 
     lastBriefingMd = `# Briefing — ${role.label}\n\n${cfg.nome || profLabel()} · ${fmtDate(todayISO())}\n\n` + secoes.map(([t, c]) => `## ${t}\n\n${c}`).join('\n\n') + '\n\n_Montado com o CliniLoop. Não substitui orientação do conselho profissional nem assessoria jurídica._\n';
     lastBriefingHtml = docShell(`Briefing — ${role.label}`, `
-      <section class="cover small"><div class="brand">${brandMark()}<span>Clini<span class="loop">Loop</span></span></div>
+      <section class="cover small"><div class="brand">${brandWord()}</div>
       <div><div class="kicker">Briefing · ${E(fmtDate(todayISO()))}</div><h1>Briefing para ${E(role.label.toLowerCase())}</h1><p>${E(cfg.nome || profLabel())}${cfg.cidade ? ' · ' + E(cfg.cidade) : ''}</p></div></section>
       <div class="content">${secoes.map(([t, c]) => `<section class="chapter flow"><h2>${E(t)}</h2>${mdToHtml(c)}</section>`).join('')}</div>
       <div class="foot">Montado com o CliniLoop em ${E(fmtDate(todayISO()))}, no seu navegador. Não substitui orientação do conselho profissional nem assessoria jurídica.</div>`);
@@ -329,6 +329,9 @@
   document.getElementById('bf-html').addEventListener('click', () => download(`briefing-cliniloop-${todayISO()}.html`, lastBriefingHtml, 'text/html;charset=utf-8'));
   document.getElementById('bf-md').addEventListener('click', (e) => copyText(lastBriefingMd, e.currentTarget));
 
+  function brandWord() {
+    return '<svg height="40" xmlns="http://www.w3.org/2000/svg" viewBox="-10 -794 4640 1068" role="img" aria-label="CliniLoop"><path fill="#FFFFFF" d="M389 -707Q506 -707 594.0 -647.0Q682 -587 717 -481H556Q532 -531 488.5 -556.0Q445 -581 388 -581Q327 -581 279.5 -552.5Q232 -524 205.5 -472.0Q179 -420 179 -350Q179 -281 205.5 -228.5Q232 -176 279.5 -147.5Q327 -119 388 -119Q445 -119 488.5 -144.5Q532 -170 556 -220H717Q682 -113 594.5 -53.5Q507 6 389 6Q289 6 208.5 -39.5Q128 -85 81.5 -166.0Q35 -247 35 -350Q35 -453 81.5 -534.5Q128 -616 208.5 -661.5Q289 -707 389 -707Z M977 -740V0H837V-740Z M1100 -702Q1100 -737 1124.5 -760.5Q1149 -784 1186 -784Q1223 -784 1247.5 -760.5Q1272 -737 1272 -702Q1272 -667 1247.5 -643.5Q1223 -620 1186 -620Q1149 -620 1124.5 -643.5Q1100 -667 1100 -702ZM1255 -554V0H1115V-554Z M1921 -325V0H1781V-306Q1781 -372 1748.0 -407.5Q1715 -443 1658 -443Q1600 -443 1566.5 -407.5Q1533 -372 1533 -306V0H1393V-554H1533V-485Q1561 -521 1604.5 -541.5Q1648 -562 1700 -562Q1799 -562 1860.0 -499.5Q1921 -437 1921 -325Z M2039 -702Q2039 -737 2063.5 -760.5Q2088 -784 2125 -784Q2162 -784 2186.5 -760.5Q2211 -737 2211 -702Q2211 -667 2186.5 -643.5Q2162 -620 2125 -620Q2088 -620 2063.5 -643.5Q2039 -667 2039 -702ZM2194 -554V0H2054V-554Z"/><path fill="#4CC9C6" d="M2472 -111H2702V0H2332V-698H2472Z M4334.24 -563Q4405.24 -563 4462.74 -528.0Q4520.24 -493 4553.74 -428.5Q4587.24 -364 4587.24 -279Q4587.24 -194 4553.74 -128.5Q4520.24 -63 4462.74 -27.0Q4405.24 9 4334.24 9Q4273.24 9 4226.74 -16.0Q4180.24 -41 4151.24 -79V264H4011.24V-554H4151.24V-474Q4178.24 -512 4225.74 -537.5Q4273.24 -563 4334.24 -563ZM4297.24 -440Q4259.24 -440 4225.74 -420.5Q4192.24 -401 4171.74 -364.0Q4151.24 -327 4151.24 -277Q4151.24 -227 4171.74 -190.0Q4192.24 -153 4225.74 -133.5Q4259.24 -114 4297.24 -114Q4336.24 -114 4369.74 -134.0Q4403.24 -154 4423.74 -191.0Q4444.24 -228 4444.24 -279Q4444.24 -329 4423.74 -365.5Q4403.24 -402 4369.74 -421.0Q4336.24 -440 4297.24 -440Z"/><path fill="none" stroke="#4CC9C6" stroke-width="140" stroke-linejoin="round" d="M3327.1 -277.0 L3448.6 -418.0 A216.0 216.0 0 1 1 3448.6 -136.0 L3205.6 -418.0 A216.0 216.0 0 1 0 3205.6 -136.0 Z"/></svg>';
+  }
   function brandMark() {
     return '<svg viewBox="0 0 64 64" width="44" height="44" aria-hidden="true"><path d="M50.40,11.56 A27.50,27.50 0 1 1 21.70,6.50" fill="none" stroke="#7FC4CA" stroke-width="4.60" stroke-linecap="round"/><path d="M27.37,4.21 L22.53,11.77 L18.64,2.13 Z" fill="#7FC4CA"/><rect x="27" y="18" width="10" height="28" rx="3.2" fill="#E07A5F"/><rect x="18" y="27" width="28" height="10" rx="3.2" fill="#E07A5F"/><circle cx="32" cy="32" r="2.6" fill="#F4BFA4"/></svg>';
   }
@@ -438,7 +441,7 @@
 
     return docShell(`Playbook da clínica — ${fmtDate(hoje)}`, `
 <section class="cover">
-  <div class="brand">${brandMark()}<span>Clini<span class="loop">Loop</span></span></div>
+  <div class="brand">${brandWord()}</div>
   <div>
     <div class="kicker">Playbook da clínica · ${E(fmtDate(hoje))}</div>
     <h1>${E(titulo)}</h1>

@@ -1,5 +1,5 @@
 // Service worker do CliniLoop: abre sem internet. A chamada da API do Claude nunca passa por aqui.
-const V = 'cliniloop-71e4bd53';
+const V = 'cliniloop-0ecc9a63';
 const CORE = ['./', 'index.html', 'manifest.webmanifest', 'cliniloop-logo.svg', 'icons/icon-192.png', 'icons/icon-512.png'];
 self.addEventListener('install', (e) => { e.waitUntil(caches.open(V).then((c) => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', (e) => {
