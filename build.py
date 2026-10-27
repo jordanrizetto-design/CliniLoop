@@ -46,7 +46,7 @@ head = f'''<!DOCTYPE html>
 <meta name="description" content="Para médicos, psiquiatras, dentistas, psicólogos, fisioterapeutas e clínicas: público, posicionamento, conteúdo, campanhas, rede de colegas e rastreador de pacientes, com prompts para o Claude e as regras do seu conselho.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Sora:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 {css}
 </style>

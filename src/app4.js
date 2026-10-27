@@ -339,27 +339,27 @@
     return `<!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${escapeHtml(title)}</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;600&family=Sora:wght@600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   @page{size:A4; margin:16mm 15mm;}
   *{box-sizing:border-box}
-  body{margin:0; background:#E6E0D3; color:#14303A; font-family:'IBM Plex Sans',system-ui,sans-serif; font-size:15px; line-height:1.6;}
+  body{margin:0; background:#E6E0D3; color:#14303A; font-family:'Poppins',system-ui,sans-serif; font-size:15px; line-height:1.6;}
   .book{max-width:820px; margin:24px auto; background:#fff; box-shadow:0 10px 40px rgba(20,48,58,.15);}
   .cover{background:#14303A; color:#F4F2EC; padding:72px 64px; min-height:560px; display:flex; flex-direction:column; justify-content:space-between;}
   .cover.small{min-height:300px; padding:48px 64px;}
-  .cover .brand{display:flex; align-items:center; gap:12px; font-family:'Sora',sans-serif; font-size:1.3rem;}
+  .cover .brand{display:flex; align-items:center; gap:12px; font-family:'Poppins',sans-serif; font-size:1.3rem;}
   .cover .brand .loop{color:#F4BFA4;}
-  .cover .kicker{font-family:'IBM Plex Mono',monospace; font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; color:#F4BFA4; margin:40px 0 12px;}
-  .cover h1{font-family:'Fraunces',Georgia,serif; font-size:2.4rem; line-height:1.1; margin:0 0 16px;}
+  .cover .kicker{font-family:'Poppins',sans-serif; font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; color:#F4BFA4; margin:40px 0 12px;}
+  .cover h1{font-family:'Poppins',sans-serif; font-size:2.4rem; line-height:1.1; margin:0 0 16px;}
   .cover p{color:#C9D6DA; max-width:56ch;}
   .cover .meta{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:36px;}
   .cover .meta div{border:1.5px solid rgba(244,191,164,.45); border-radius:10px; padding:10px 12px;}
-  .cover .meta b{display:block; font-family:'IBM Plex Mono',monospace; font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; color:#F4BFA4; font-weight:500;}
+  .cover .meta b{display:block; font-family:'Poppins',sans-serif; font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; color:#F4BFA4; font-weight:500;}
   .content{padding:48px 64px;}
   .chapter{padding-top:8px; margin-bottom:36px;}
   .chapter + .chapter{border-top:1px solid #E6E0D3; padding-top:32px;}
-  .chap-n{font-family:'IBM Plex Mono',monospace; font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; color:#C2502F;}
-  h2{font-family:'Fraunces',Georgia,serif; font-size:1.6rem; line-height:1.2; margin:4px 0 14px;}
+  .chap-n{font-family:'Poppins',sans-serif; font-size:.75rem; letter-spacing:.12em; text-transform:uppercase; color:#C2502F;}
+  h2{font-family:'Poppins',sans-serif; font-size:1.6rem; line-height:1.2; margin:4px 0 14px;}
   h3{font-size:1.08rem; margin:20px 0 6px;}
   h4{font-size:.98rem; margin:14px 0 6px;}
   .toc ol{padding-left:22px;} .toc li{margin:4px 0;}
@@ -372,13 +372,13 @@
   .pill.ok{background:#E2EFF0; color:#1F6F78;} .pill.pend{background:#FBE3D8; color:#C2502F;} .pill.late{background:#FBEDEB; color:#B3261E;}
   .tool{border:1px solid #E6E0D3; border-left:4px solid #D8D2C4; border-radius:8px; padding:12px 14px; margin:0 0 12px; break-inside:avoid-page;}
   .tool.prio{border-left-color:#C2502F;}
-  .livro-ref{font-family:'IBM Plex Mono',monospace; font-size:.62rem; text-transform:uppercase; letter-spacing:.06em; color:#1F6F78; border:1px solid #1F6F78; padding:1px 7px; border-radius:999px; vertical-align:middle; font-weight:500; margin-left:4px;}
-  .tag{font-family:'IBM Plex Mono',monospace; font-size:.62rem; text-transform:uppercase; letter-spacing:.06em; background:#C2502F; color:#fff; padding:2px 7px; border-radius:999px; vertical-align:middle;}
+  .livro-ref{font-family:'Poppins',sans-serif; font-size:.62rem; text-transform:uppercase; letter-spacing:.06em; color:#1F6F78; border:1px solid #1F6F78; padding:1px 7px; border-radius:999px; vertical-align:middle; font-weight:500; margin-left:4px;}
+  .tag{font-family:'Poppins',sans-serif; font-size:.62rem; text-transform:uppercase; letter-spacing:.06em; background:#C2502F; color:#fff; padding:2px 7px; border-radius:999px; vertical-align:middle;}
   .saved{background:#F4F9F9; border-radius:8px; padding:10px 14px; margin-top:6px; font-size:.92rem;}
   .saved p, .flow p{margin:0 0 .7em;}
   .rec{margin:4px 0 0; font-size:.92rem;}
   .acoes{padding-left:22px;} .acoes li{margin:0 0 10px;}
-  .onde{display:block; font-family:'IBM Plex Mono',monospace; font-size:.68rem; letter-spacing:.06em; text-transform:uppercase; color:#C2502F;}
+  .onde{display:block; font-family:'Poppins',sans-serif; font-size:.68rem; letter-spacing:.06em; text-transform:uppercase; color:#C2502F;}
   .box{background:#F4F1EA; border-radius:10px; padding:14px 18px; margin:12px 0;}
   .cols{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
   .pode{background:#EAF4F5; border-radius:10px; padding:10px 14px;} .nao{background:#FBEDEB; border-radius:10px; padding:10px 14px;}
