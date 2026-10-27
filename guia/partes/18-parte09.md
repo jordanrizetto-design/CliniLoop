@@ -22,6 +22,18 @@ Por isso a ordem é: perfil pronto (Parte 3), conteúdo orgânico testado (Parte
 
 O passo a passo, clique por clique, do Gerenciador de Anúncios da Meta e dos anúncios no TikTok está no **Anexo A**.
 
+### Ser visto vem antes de ser escolhido
+
+Anúncios funcionam melhor em sequência do que como peças soltas. Uma forma de organizar, comum no marketing digital, tem cinco passos, cada um com o seu objetivo:
+
+1. **Estímulo.** Quem ainda não conhece você vê um vídeo de autoridade. Objetivo: alcance ou visualização. Muita gente assiste sem curtir nem comentar, e ser visto vem antes de interagir.
+2. **Descoberta.** Quem se interessou pesquisa e encontra o seu conteúdo orgânico, o Perfil da Empresa e o YouTube. Aqui não se paga: colhe-se o que a Parte 4 plantou.
+3. **Ação.** Quem já interagiu recebe o convite para conversar. Objetivo: mensagens para o WhatsApp, com público de envolvimento.
+4. **Experiência própria.** Atendimento, consulta e acompanhamento (Partes 10 a 12). Nenhum anúncio compensa uma experiência ruim.
+5. **Experiência compartilhada.** O paciente satisfeito avalia e indica, o que alimenta a descoberta de outras pessoas. Na saúde, sem recompensa e sem sorteio.
+
+Comece pelos passos 2 e 3, que pedem orçamento menor, e só invista em estímulo quando o atendimento já transformar conversas em consultas.
+
 ## Meta Ads passo a passo
 
 1. **Estrutura.** Crie um Portfólio empresarial no Meta Business Suite, vincule a página do Facebook, a conta do Instagram e o número de WhatsApp Business. Cadastre forma de pagamento e verifique a empresa.

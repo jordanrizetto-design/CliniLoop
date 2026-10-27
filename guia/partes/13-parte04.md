@@ -4,7 +4,7 @@ num: 4
 etapa: No roteiro · Etapa 3 de 6 · Gere autoridade e demanda
 titulo: Conteúdo que gera autoridade e alcance
 lead: Conteúdo de saúde cresce quando responde, em poucos segundos e com segurança, uma dúvida que o paciente já tem, e quando é tão útil que ele envia para alguém.
-nesta: O que o Instagram premia · A escada de crescimento · Três temas por profissão · Pautas · Formatos recorrentes · Roteiro de Reel
+nesta: O que o Instagram premia · A escada de crescimento · Três temas por profissão · O que você sabe e o que você atende · Pautas · Formatos recorrentes · Roteiro de Reel · Ser citado
 grupo: Etapa 3 · Gere autoridade e demanda
 marca: PARTE 04
 ---
@@ -58,6 +58,20 @@ O crescimento de um perfil acontece em sete degraus, e cada um prepara o seguint
 | Fisioterapeuta | Como funciona a avaliação, prevenção de lesão | Equipe, estrutura, raciocínio clínico com modelo | Mitos sobre dor, repouso, coluna |
 | Nutricionista | Como funciona a consulta e o plano alimentar, leitura de rótulos | Rotina do consultório, preparo de refeições sem marcas em destaque | Mitos sobre dietas da moda e alimentos "proibidos" |
 
+## O que você sabe e o que você atende
+
+Uma proporção de partida, comum no marketing digital: perto de 80% do conteúdo mostra o que você sabe; perto de 20% mostra o que você atende e como agendar. Não é regra. É um lembrete de que o perfil que só anuncia serviço perde quem ainda não precisa, e o que nunca fala de serviço deixa o paciente sem saber que pode marcar.
+
+Dentro do que você sabe, organize o conteúdo em três camadas, conforme quem vai ver:
+
+| Camada | Para quem | O que publicar | Quanto |
+|---|---|---|---|
+| Ajuda | Quem busca uma resposta agora | Respostas diretas às dúvidas que o paciente pesquisa: Reels, carrosséis, vídeos no YouTube, atualizações no Perfil da Empresa | A maior parte do volume |
+| Vínculo | Quem já segue você ou já é paciente | Séries recorrentes, bastidores, como funciona o tratamento, lives para responder objeções, orientações pós-consulta | Toda semana, em menor número |
+| Destaque | A comunidade inteira | Poucas ações com potencial de ser comentadas: palestra aberta, campanha de saúde do mês (Outubro Rosa, Novembro Azul), entrevista, evento com colegas | Poucas vezes por ano |
+
+As três camadas vêm do planejamento de conteúdo do YouTube, onde se chamam *Help*, *Hub* e *Hero*. Na saúde, o "Destaque" nunca é sorteio, brinde ou promoção: vários conselhos proíbem (Parte 2).
+
 ## Pautas pela jornada do paciente
 
 Organize o banco de pautas pelo momento em que o paciente está: entender um sintoma, compreender a avaliação, comparar caminhos de cuidado, preparar-se para a consulta, acompanhar o tratamento, conhecer a equipe. As perguntas frequentes do consultório, agregadas e sem expor conversa privada, são o melhor banco de pautas.
@@ -68,6 +82,18 @@ Registre cada pauta com: dúvida, público, momento da jornada, formato, fonte c
 - **Medicina:** "O que levar à primeira consulta?" (exames anteriores, lista de medicamentos, dúvidas), sem diagnóstico nem orientação de suspender remédio.
 - **Fisioterapia:** "Como funciona uma avaliação fisioterapêutica?", com o próprio profissional ou modelo, sem sequência universal de exercícios.
 - **Psicologia:** "Como é uma primeira sessão de terapia?", sem casos reais.
+
+### Ouça o mercado, não só o seu perfil
+
+Curtidas e comentários dizem como foi o seu post. Não dizem o que o mercado está perguntando. Uma vez por mês, reserve 30 minutos para ouvir fora do seu perfil:
+
+- **As conversas de atendimento:** as dúvidas que chegam no WhatsApp e no Direct, agregadas, sem nomes nem casos.
+- **Os comentários em perfis de referência:** as perguntas que o público faz a colegas da sua área e que ficam sem resposta.
+- **As avaliações de outras clínicas da região no Google:** o que os pacientes elogiam e do que reclamam (espera, explicação, preço, atendimento).
+- **As buscas em alta:** o Google Trends e a busca do YouTube mostram como as pessoas escrevem a dúvida.
+- **As notícias de saúde da semana:** o assunto que os pacientes vão levar para a consulta.
+
+Cada sinal vira uma pauta, um ajuste no atendimento ou uma objeção respondida no fechamento (Parte 12).
 
 ## Formatos recorrentes: séries que o público reconhece
 
@@ -136,7 +162,22 @@ Celular, luz natural e um ponto silencioso bastam. Fundo sem prontuários, telas
 - **Interação pública por view** = (curtidas + comentários) ÷ views × 100. Não é engajamento total: não inclui envios nem salvamentos.
 - **Use a mediana** de views de peças comparáveis, não a média. Retenção vem dos dados da conta.
 - **Conversão** são contatos qualificados, agendamentos e comparecimentos vindos do conteúdo, medidos no CRM (Parte 13).
+- **Alcance não é influência.** Em dados apresentados num evento de mercado em 2026, um Reel de 60 segundos retinha, em média, de 12 a 15 segundos, e um vídeo de 16 minutos no YouTube, cerca de 8 minutos. Os números variam por conta; o princípio vale: o vídeo curto chama atenção, o longo constrói confiança. Avalie cada formato pela decisão que ele deve mover (Parte 1).
 - **Ciclo de testes:** uma variável por vez (pergunta, abertura, demonstração ou convite), lote pequeno e comparável, registro de data, formato e duração. Muito alcance e pouca permanência: revise promessa e entrega. Muitos contatos e poucas consultas: revise público, localização e atendimento antes de culpar o roteiro.
+
+## Ser citado, não só publicar
+
+A disputa já não é só por atenção; é por credibilidade. Antes de marcar, o paciente confere o que outras pessoas dizem de você. Os assistentes de IA fazem o mesmo quando alguém pergunta "qual dentista procurar em São Roque": respondem com base em avaliações, entrevistas, artigos e perfis profissionais, não só no seu Instagram. Publicar mais no próprio perfil ajuda pouco se ninguém mais fala de você.
+
+Na saúde, fazer os outros falarem de você tem limites claros. O que pode, e funciona:
+
+- **Avaliações no Google,** pedidas a todos os pacientes depois do atendimento, nunca em troca de benefício (Parte 3).
+- **Indicação técnica de colegas,** registrada e cuidada (Parte 8), e collabs com colegas de outras áreas.
+- **Presença como fonte:** entrevistas para a imprensa local, palestras em escolas e empresas, posts técnicos no LinkedIn, participação em podcasts.
+- **O mesmo nome, especialidade e cidade em todo lugar:** Google, Instagram, YouTube, LinkedIn, plataformas de agendamento e site. É assim que buscadores e IAs entendem que se trata da mesma pessoa.
+- **Experiência que merece ser contada:** pontualidade, explicação clara e acompanhamento depois da consulta. Quem conta para alguém faz isso por conta própria.
+
+O que não pode, pelas regras dos conselhos e das plataformas: depoimento inventado ou pago, recompensa por avaliação, "indique e ganhe", sorteio e repostar conteúdo de paciente que o seu conselho não permite. Para os médicos, o que se reposta passa a ser conteúdo próprio (Parte 2).
 
 ## Estruturas que vale adaptar
 
