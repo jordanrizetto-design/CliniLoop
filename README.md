@@ -2,7 +2,7 @@
 
 # CliniLoop
 
-**O Prompt do Sim e CliniLoop: o método Loop.** O guia *O Prompt do Sim* (PDF em `guia/O-Prompt-do-Sim.pdf`) ensina o roteiro; o app guarda o registro. Pacientes, colegas e campanhas, do primeiro contato ao tratamento, com ética e método. Para **médicos, psiquiatras, dentistas, psicólogos, fisioterapeutas, nutricionistas e clínicas multiprofissionais**. Funciona com o **Claude, com ou sem assinatura** (Pro ou Max) e, se você quiser, com a API da Anthropic.
+**O Prompt do Sim e CliniLoop: o sistema Loop.** O guia *O Prompt do Sim* (PDF em `guia/O-Prompt-do-Sim.pdf`) ensina o roteiro; o app guarda o registro. Pacientes, colegas e campanhas, do primeiro contato ao tratamento, com ética e método. Para **médicos, psiquiatras, dentistas, psicólogos, fisioterapeutas, nutricionistas e clínicas multiprofissionais**. Funciona com o **Claude, com ou sem assinatura** (Pro ou Max) e, se você quiser, com a API da Anthropic.
 
 O CliniLoop mantém a lógica do [BuscaLoop](https://github.com/jordanrizetto-design/Otimizador-de-Oportunidades) original:
 - um perfil base que alimenta todas as ferramentas;
@@ -32,7 +32,7 @@ O app conduz em ordem, e cada fase abre com uma mensagem de estímulo e o motivo
 
 ## O guia e o app
 
-O guia *O Prompt do Sim* ensina o roteiro; o app CliniLoop guarda o registro. Juntos, formam o método Loop. O guia tem **seis etapas e 16 partes**, e cada parte termina em três caixas: **Prompt** (o pedido pronto), **Na prática** (o passo de até 30 minutos para hoje) e **Sinergia CliniLoop** (a ferramenta do app).
+O guia *O Prompt do Sim* ensina o roteiro; o app CliniLoop guarda o registro. Juntos, formam o sistema Loop. O guia tem **seis etapas e 16 partes**, e cada parte termina em três caixas: **Prompt** (o pedido pronto), **Na prática** (o passo de até 30 minutos para hoje) e **Sinergia CliniLoop** (a ferramenta do app).
 
 | Etapa do guia | Partes | Ferramentas do CliniLoop |
 |---|---|---|

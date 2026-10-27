@@ -26,7 +26,7 @@ Não existe benchmark brasileiro público e confiável de volume de pacientes po
 
 Não avaliamos cursos pagos nem mentorias, por não termos acesso a conteúdo comparável.
 
-| Categoria | O que entrega | Onde o método Loop é diferente |
+| Categoria | O que entrega | Onde o sistema Loop é diferente |
 |---|---|---|
 | Conteúdo gratuito de blog | Conceitos, escolha de plataforma, resumo de regras do CFM. Sem números, modelos, roteiros ou checklists | Passos de 30 minutos, 14 prompts, checklists e um registro de contatos |
 | CRM de WhatsApp para clínicas | Automação, agente de IA, API oficial do WhatsApp. Preços de fornecedor em setembro de 2026 a partir de R$ 149 por usuário ao mês | O guia não automatiza nem integra o WhatsApp. Em troca, não cobra mensalidade, ensina o método e traz as regras do conselho. Quando o volume crescer, migre para um CRM e leve o método |

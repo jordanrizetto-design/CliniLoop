@@ -8,7 +8,7 @@ nesta: O que o app faz por você · Como o app se organiza · Tutorial: o primei
 grupo: Etapa 6 · Meça e escale com CRM
 marca: PARTE 14
 ---
-Esta parte é o manual de uso do app. Cada ferramenta nasceu de uma parte do guia: o guia explica o porquê, o app põe em prática. Por isso o método Loop é o guia *O Prompt do Sim* e o app CliniLoop juntos, e o resultado vem do uso dos dois.
+Esta parte é o manual de uso do app. Cada ferramenta nasceu de uma parte do guia: o guia explica o porquê, o app põe em prática. Por isso o sistema Loop é o guia *O Prompt do Sim* e o app CliniLoop juntos, e o resultado vem do uso dos dois.
 
 ## O que o app faz por você
 

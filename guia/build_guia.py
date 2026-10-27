@@ -432,7 +432,7 @@ def build_html(pages):
             for hid, ht in subs:
                 toc.append(f'<a class="sub" href="#{hid}"><span class="n"></span><span class="t">{E(ht)}</span><span class="p">{pages.get(hid, "")}</span></a>')
     toc.append('</section>')
-    fim = ('<section class="fim"><h2>O Prompt do Sim</h2><p>Conhecimentos dirigidos e um app de CRM: o método Loop. O app CliniLoop, que completa este guia, registra pacientes, colegas e campanhas no seu navegador, '
+    fim = ('<section class="fim"><h2>O Prompt do Sim</h2><p>Conhecimentos dirigidos e um app de CRM: o sistema Loop. O app CliniLoop, que completa este guia, registra pacientes, colegas e campanhas no seu navegador, '
            'sem servidor, e leva os prompts para o seu dia a dia.</p><p class="nota" style="color:#9FB6BB">Este guia não substitui a orientação do seu conselho profissional nem assessoria jurídica.</p></section>')
     doc = f'<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>O Prompt do Sim</title><style>{CSS}</style></head><body>{cover_html()}{"".join(toc)}{"".join(sections)}{fim}</body></html>'
     # âncoras de sumário

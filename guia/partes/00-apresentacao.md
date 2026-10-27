@@ -16,15 +16,15 @@ Fomos formados para estudar, atender e publicar em revistas científicas, não p
 
 Quando a agenda não enche, é fácil concluir que o problema é você. Na maior parte das vezes, não é. O que falta é **método, registro e linguagem** para atravessar esse processo.
 
-## O Prompt do Sim, o CliniLoop e o método Loop
+## O Prompt do Sim, o CliniLoop e o sistema Loop
 
-*O Prompt do Sim* é este guia. O CliniLoop é o app que o acompanha. Juntos, eles formam o **método Loop**: duas peças feitas uma para a outra.
+*O Prompt do Sim* é este guia. O CliniLoop é o app que o acompanha. Juntos, eles formam o **sistema Loop**: duas peças feitas uma para a outra.
 
 - **O guia, *O Prompt do Sim*.** Conhecimentos dirigidos: dezesseis partes, em seis etapas, e um manual prático no Anexo A, que dizem o próximo passo na ordem certa e terminam sempre em uma ação.
 - **O app CliniLoop.** Ele transforma cada parte em trabalho feito. O app **gera os prompts** de inteligência artificial já preenchidos com o perfil do seu consultório e as regras do seu conselho, **monta roteiros** de Reels, carrosséis, Stories e vídeos, **monta roteiros de campanha** para Meta Ads, Google Ads e impulsionamento, escreve as respostas do WhatsApp, as cartas aos colegas e o pedido de imagem para a IA, traz o checklist de configuração de cada canal e revisa qualquer texto contra as regras da sua profissão. E, como CRM, registra cada contato, cada paciente, cada colega e cada próximo passo, e mostra todos os dias qual é a próxima ação.
 
 ::: {.box .destaque}
-**O diferencial está nos dois juntos, no método Loop.** O livro explica o porquê e o caminho; o app faz o trabalho e guarda o registro. Sozinho, o livro vira leitura, e o app vira formulário. Juntos, eles dão ao profissional de saúde o que nenhum curso, agência ou sistema genérico entrega isoladamente: saber o que fazer, ter o texto pronto para fazer e enxergar no CRM o paciente que chegou por causa disso.
+**O diferencial está nos dois juntos, no sistema Loop.** O livro explica o porquê e o caminho; o app faz o trabalho e guarda o registro. Sozinho, o livro vira leitura, e o app vira formulário. Juntos, eles dão ao profissional de saúde o que nenhum curso, agência ou sistema genérico entrega isoladamente: saber o que fazer, ter o texto pronto para fazer e enxergar no CRM o paciente que chegou por causa disso.
 :::
 
 CRM é a sigla de gestão do relacionamento com o paciente. Na prática, é o lugar onde nada se perde: quem entrou em contato, de onde veio, em que etapa está e qual é o próximo passo.
@@ -33,7 +33,7 @@ Na saúde, o que sustenta um consultório são sete decisões em sequência: o p
 
 ## De onde vem este método
 
-O guia para o método Loop nasceu da combinação de três experiências: décadas de trabalho executivo em marketing de bens de consumo, indústria farmacêutica e negócios entre empresas, com passagens pela Europa e pela América Latina; a incorporação de tecnologia, inteligência artificial e transformação digital à forma como um serviço chega a quem precisa dele; e a vivência de empreender na saúde, com uma grande clínica odontológica de várias especialidades.
+O guia para o sistema Loop nasceu da combinação de três experiências: décadas de trabalho executivo em marketing de bens de consumo, indústria farmacêutica e negócios entre empresas, com passagens pela Europa e pela América Latina; a incorporação de tecnologia, inteligência artificial e transformação digital à forma como um serviço chega a quem precisa dele; e a vivência de empreender na saúde, com uma grande clínica odontológica de várias especialidades.
 
 Do conjunto dessas experiências, ficou claro como é complexo manter a agenda cheia e os pacientes aderindo ao tratamento, por melhor que sejam a qualidade do corpo clínico, a beleza do espaço e a sofisticação dos equipamentos. Ter o melhor à disposição dos pacientes nem sempre é suficiente. O processo acompanhado e eficaz de marketing digital ético CliniLoop é fundamental para o sucesso da prática clínica e o reconhecimento do profissional de saúde no mercado atual.
 
