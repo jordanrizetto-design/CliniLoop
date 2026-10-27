@@ -26,7 +26,7 @@ TOOLS = {'config': 'Comece aqui', 'etica': 'Verificador ético', 'publico': 'Pú
 
 
 def md(text):
-    r = subprocess.run(['pandoc', '-f', 'markdown+hard_line_breaks+pipe_tables+fenced_divs+smart', '-t', 'html5', '--wrap=none'],
+    r = subprocess.run(['pandoc', '-f', 'markdown+hard_line_breaks+pipe_tables+fenced_divs+smart+ascii_identifiers', '-t', 'html5', '--wrap=none'],
                        input=text, capture_output=True, text=True, check=True)
     return r.stdout
 
@@ -77,7 +77,73 @@ def marcos_html():
 
 def glossario_html():
     itens = sorted(DATA['GLOSSARIO'], key=lambda g: g[0].lower().replace('"', ''))
-    return '<dl class="glos">' + ''.join(f'<div><dt>{E(g[0])}</dt><dd>{E(g[1])}</dd></div>' for g in itens) + '</dl>'
+    return '<dl class="glos">' + ''.join(f'<div id="{gid(g[0])}"><dt>{E(g[0])}</dt><dd>{E(g[1])}<!--usos:{gid(g[0])}--></dd></div>' for g in itens) + '</dl>'
+
+
+def gid(termo):
+    import unicodedata
+    t = unicodedata.normalize('NFKD', termo).encode('ascii', 'ignore').decode().lower()
+    return 'g-' + re.sub(r'[^a-z0-9]+', '-', t).strip('-')
+
+
+GLOS_SKIP = {'Sobre', 'Título (LinkedIn)', 'Posicionamento (anúncio)', 'Em destaque'}
+GLOS_CASE = {'Meta', 'Destaques', 'Direct', 'Envio', 'Prompt', 'Pixel', 'Banner'}  # só com a grafia exata
+
+
+def _glos_patterns():
+    pats = []
+    for termo, _ in DATA['GLOSSARIO']:
+        if termo in GLOS_SKIP:
+            continue
+        if termo.startswith('CFM, CFO'):
+            for sig in ['CFM', 'CFO', 'CFP', 'COFFITO', 'CFN']:
+                pats.append((sig, gid(termo), True))
+            continue
+        if termo == 'Decisões (as sete)':
+            pats.append(('sete decisões', gid(termo), False)); continue
+        base = re.sub(r'\s*\(.*?\)', '', termo).strip()
+        pats.append((base, gid(termo), termo in GLOS_CASE or base.isupper()))
+    pats.sort(key=lambda x: -len(x[0]))
+    return pats
+
+
+GLOS_PATS = None
+GLOS_USOS = {}
+
+
+def glos_link(html, sec_key):
+    """Liga ao glossário a primeira ocorrência de cada termo em cada seção (fora de links, títulos e código)."""
+    global GLOS_PATS
+    if GLOS_PATS is None:
+        GLOS_PATS = [(re.compile(r'(?<![\w-])' + re.escape(t) + r'(?:s|es)?(?![\w-])', 0 if cs else re.I), g) for t, g, cs in _glos_patterns()]
+    if sec_key == 'ANEXO B':
+        return html
+    usados, out, skip = set(), [], 0
+    for tok in re.split(r'(<[^>]+>)', html):
+        if tok.startswith('<'):
+            tag = re.match(r'</?\s*([a-zA-Z0-9]+)', tok)
+            name = tag.group(1).lower() if tag else ''
+            if name in ('a', 'h1', 'h2', 'h3', 'h4', 'pre', 'code', 'th'):
+                skip = max(skip + (-1 if tok.startswith('</') else 1), 0)
+            out.append(tok); continue
+        if skip or not tok.strip():
+            out.append(tok); continue
+        # marca trechos já usados para não sobrepor termos
+        spans = []
+        for rx, g in GLOS_PATS:
+            if g in usados:
+                continue
+            m = rx.search(tok)
+            while m and any(not (m.end() <= a or m.start() >= b) for a, b, _ in spans):
+                m = rx.search(tok, m.end())
+            if m:
+                spans.append((m.start(), m.end(), g)); usados.add(g)
+        for a, b, g in sorted(spans, reverse=True):
+            anc = f'r-{g[2:]}-{slug(sec_key)[2:]}'
+            GLOS_USOS.setdefault(g, []).append((sec_key, anc))
+            tok = tok[:a] + f'<a class="glos-link" id="{anc}" href="#{g}">{tok[a:b]}</a>' + tok[b:]
+        out.append(tok)
+    return ''.join(out)
 
 
 # ---------- CSS ----------
@@ -156,6 +222,10 @@ h1.sec-title{font-size:30pt;font-weight:600;margin:0 0 6mm;}
 .toc a .n{width:9mm;font:600 9.5pt Poppins;color:var(--teal);}
 .toc a .t{flex:1;}
 .toc a .p{font:500 9.5pt Poppins;color:var(--soft);}
+.toc a.part{break-after:avoid;}
+.toc a.sub{padding:.9mm 0;border-bottom:none;font-size:8.6pt;color:var(--soft);}
+.toc a.sub .p{font-size:8.4pt;}
+a.glos-link{color:inherit;text-decoration:underline dotted;text-decoration-color:var(--teal);text-decoration-thickness:.25mm;text-underline-offset:.7mm;}
 
 /* caixas */
 .box{break-inside:avoid;margin:7mm 0;padding:6mm 7mm;border-radius:2mm;font-size:10pt;line-height:1.62;}
@@ -205,6 +275,8 @@ table.plano td.min{white-space:nowrap;color:var(--soft);}
 .glos>div{break-inside:avoid;margin-bottom:4.2mm;}
 .glos dt{font:600 9.6pt Poppins;color:var(--teal-d);}
 .glos dd{margin:.6mm 0 0;font-size:9pt;line-height:1.5;color:var(--soft);}
+.glos .usos{display:block;margin-top:1mm;font-size:7.8pt;color:var(--teal-d);}
+.glos .usos a{color:var(--teal-d);text-decoration:underline;text-decoration-thickness:.2mm;}
 .fontes li{font-size:9.4pt;line-height:1.55;}
 .nota{font-size:9pt;color:var(--soft);}
 a.xref,a.url{color:var(--teal-d);text-decoration:underline;text-decoration-thickness:.2mm;text-underline-offset:.6mm;}
@@ -305,14 +377,26 @@ def link_nesta(nesta_items, body_html):
     return ' · '.join(res)
 
 
+def nome_secao(key):
+    m = re.match(r'PARTE (\d+)', key)
+    if m:
+        return f'Parte {int(m.group(1))}'
+    if key.startswith('ANEXO'):
+        return key.title()
+    return key[:1] + key[1:].lower()
+
+
 def build_html(pages):
+    GLOS_USOS.clear()
     parts = [parse(p) for p in PARTES]
     toc_items, sections = [], []
     for meta, body in parts:
         kind = meta.get('tipo', 'parte')
         key = meta['marca']
         body_html = linkify(md(expand(body)))
-        body_html = body_html.replace(' id="', f' id="{slug(key)}-')
+        body_html = re.sub(r' id="(?!g-)', f' id="{slug(key)}-', body_html)
+        body_html = glos_link(body_html, key)
+        subs = [(i, re.sub(r'<[^>]+>', '', h)) for i, h in re.findall(r'<h2 id="([^"]+)"[^>]*>(.*?)</h2>', body_html)]
         if kind == 'parte':
             n = int(meta['num'])
             nesta = ''.join(f'<span>{E(x.strip())}</span>' for x in meta['nesta'].split('·'))
@@ -321,25 +405,33 @@ def build_html(pages):
                       f'<h1>{E(meta["titulo"])}</h1><p class="lead">{E(meta["lead"])}</p>'
                       f'<div class="nesta"><b>Nesta parte · {E(key)}</b>{link_nesta(meta["nesta"].split("·"), body_html)}</div></section>')
             sections.append(opener + f'<section class="sec-body">{body_html}</section>')
-            toc_items.append((meta['grupo'], f'{n:02d}', meta['titulo'], key))
+            toc_items.append((meta['grupo'], f'{n:02d}', meta['titulo'], key, subs))
         else:
             kicker = f'<p class="kicker">{E(key)}</p>'
             sections.append(f'<section class="sec" id="{slug(key)}">{kicker}<h1 class="sec-title">{E(meta["titulo"])}</h1>{body_html}</section>')
-            toc_items.append((meta['grupo'], '', meta['titulo'], key))
+            toc_items.append((meta['grupo'], '', meta['titulo'], key, subs))
+    def usos(m):
+        lst = GLOS_USOS.get(m.group(1), [])
+        if not lst:
+            return ''
+        links = ' · '.join(f'<a href="#{anc}">{E(nome_secao(k))}</a>' for k, anc in lst)
+        return f'<span class="usos">Volte ao texto: {links}</span>'
+    sections = [re.sub(r'<!--usos:([a-z0-9-]+)-->', usos, sec) for sec in sections]
     toc = ['<section class="toc" id="sumario"><h1>Sumário</h1>']
     last = None
-    for grupo, n, titulo, key in toc_items:
+    for grupo, n, titulo, key, subs in toc_items:
         if grupo != last:
             toc.append(f'<p class="grp">{E(grupo)}</p>'); last = grupo
         pg = pages.get(key, '')
-        toc.append(f'<a href="#{slug(key)}"><span class="n">{n}</span><span class="t">{E(titulo)}</span><span class="p">{pg}</span></a>')
+        toc.append(f'<a class="part" href="#{slug(key)}"><span class="n">{n}</span><span class="t">{E(titulo)}</span><span class="p">{pg}</span></a>')
+        if key != 'ANEXO B':
+            for hid, ht in subs:
+                toc.append(f'<a class="sub" href="#{hid}"><span class="n"></span><span class="t">{E(ht)}</span><span class="p">{pages.get(hid, "")}</span></a>')
     toc.append('</section>')
     fim = ('<section class="fim"><h2>Guia CliniLoop</h2><p>Conhecimentos dirigidos e um app de CRM. O app CliniLoop, que completa este guia, registra pacientes, colegas e campanhas no seu navegador, '
            'sem servidor, e leva os prompts para o seu dia a dia.</p><p class="nota" style="color:#9FB6BB">Este guia não substitui a orientação do seu conselho profissional nem assessoria jurídica.</p></section>')
     doc = f'<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>Guia CliniLoop</title><style>{CSS}</style></head><body>{cover_html()}{"".join(toc)}{"".join(sections)}{fim}</body></html>'
     # âncoras de sumário
-    for _, _, _, key in toc_items:
-        doc = doc.replace(f'{E(key)}</b>', f'{E(key)}</b>', 1)
     return doc, toc_items
 
 
@@ -358,16 +450,23 @@ def render(doc, out_pdf):
 
 
 def find_pages(pdf, toc_items):
-    import pdfplumber
+    """Página de cada parte e de cada subtítulo, lida dos destinos nomeados do PDF."""
+    from pypdf import PdfReader
+    r = PdfReader(str(pdf))
+    dests = {}
+    for name, d in r.named_destinations.items():
+        try:
+            dests[str(name).lstrip('/')] = r.get_destination_page_number(d) + 1
+        except Exception:
+            pass
     found = {}
-    with pdfplumber.open(pdf) as doc:
-        texts = [(i + 1, ' '.join((pg.extract_text() or '').split())) for i, pg in enumerate(doc.pages)]
-    for _, _, titulo, key in toc_items:
-        for i, t in texts[2:]:
-            if key.upper() in t.upper() and ('NESTA PARTE' in t.upper() or titulo.upper() in t.upper()):
-                found[key] = i
-                break
-    return found, len(texts)
+    for _, _, _, key, subs in toc_items:
+        if slug(key) in dests:
+            found[key] = dests[slug(key)]
+        for hid, _ in subs:
+            if hid in dests:
+                found[hid] = dests[hid]
+    return found, len(r.pages)
 
 
 def aplicar_capa(pdf_path):
@@ -390,21 +489,54 @@ def aplicar_capa(pdf_path):
     w.write(str(pdf_path))
 
 
-def botoes_voltar(pdf_path, pages):
-    """Desenha em cada página os botões "Sumário" e "Início da parte" (ou do anexo), com link interno."""
+def finalizar(pdf_path, pages):
+    """Troca destinos nomeados por destinos explícitos (funcionam em mais leitores) e desenha os botões
+    Voltar (volta ao ponto de onde o leitor veio), Início da parte e Sumário em cada página."""
     import io
     from pypdf import PdfReader, PdfWriter
-    from pypdf.annotations import Link
+    from pypdf.generic import (ArrayObject, DictionaryObject, FloatObject, NameObject, NullObject, NumberObject)
     from reportlab.pdfgen import canvas
     from reportlab.pdfbase import pdfmetrics
     from reportlab.pdfbase.ttfonts import TTFont
     pdfmetrics.registerFont(TTFont('Poppins600', str(FONT / 'poppins-600.ttf')))
     r = PdfReader(str(pdf_path))
+    alvo = {}
+    for name, d in r.named_destinations.items():
+        try:
+            alvo['/' + str(name).lstrip('/')] = (r.get_destination_page_number(d), float(d.top or 842))
+        except Exception:
+            pass
     w = PdfWriter(clone_from=r)
+    ref = lambda i: w.pages[i].indirect_reference
+
+    def dest(i, top=None):
+        if top is None:
+            return ArrayObject([ref(i), NameObject('/Fit')])
+        return ArrayObject([ref(i), NameObject('/XYZ'), NumberObject(0), FloatObject(min(top + 8, 842)), NullObject()])
+
+    convertidos = 0
+    for pg in w.pages:
+        for a in pg.get('/Annots') or []:
+            a = a.get_object()
+            if a.get('/Subtype') != '/Link':
+                continue
+            d = a.get('/Dest')
+            if d is None and a.get('/A') is not None and a['/A'].get('/S') == '/GoTo':
+                d = a['/A'].get('/D')
+            if d is not None and not isinstance(d, ArrayObject):
+                nm = '/' + str(d).lstrip('/')
+                if nm in alvo:
+                    i, top = alvo[nm]
+                    a[NameObject('/Dest')] = dest(i, top)
+                    if '/A' in a:
+                        del a['/A']
+                    convertidos += 1
+
     n = len(w.pages)
     toc_pg = 2
-    inicio = min(pages.values()) if pages else 3
-    starts = sorted((pg, key) for key, pg in pages.items())
+    secoes = {k: v for k, v in pages.items() if not k.startswith('m-')}
+    inicio = min(secoes.values()) if secoes else 3
+    starts = sorted((v, k) for k, v in secoes.items())
     W, H = 595.28, 841.89
     right, y0, h, fs, gap = W - 73.7, H - 50, 17, 7.6, 6
 
@@ -419,7 +551,22 @@ def botoes_voltar(pdf_path, pages):
         c.line(ax, ay, ax + 6, ay); c.line(ax, ay, ax + 2.6, ay + 2.6); c.line(ax, ay, ax + 2.6, ay - 2.6)
         c.setFillColorRGB(1, 1, 1); c.setFont('Poppins600', fs)
         c.drawString(x + 18, y0 + (h - fs) / 2 + 1.4, label)
-        return (x, y0, x + bw, y0 + h)
+        return [FloatObject(x), FloatObject(y0), FloatObject(x + bw), FloatObject(y0 + h)]
+
+    def link(i, rect, destino=None, voltar=False):
+        a = DictionaryObject({NameObject('/Type'): NameObject('/Annot'), NameObject('/Subtype'): NameObject('/Link'),
+                              NameObject('/Rect'): ArrayObject(rect), NameObject('/Border'): ArrayObject([NumberObject(0)] * 3),
+                              NameObject('/F'): NumberObject(4)})
+        if voltar:
+            a[NameObject('/A')] = DictionaryObject({NameObject('/S'): NameObject('/Named'), NameObject('/N'): NameObject('/GoBack')})
+        else:
+            a[NameObject('/Dest')] = destino
+        a[NameObject('/P')] = w.pages[i].indirect_reference
+        page = w.pages[i]
+        if '/Annots' not in page:
+            page[NameObject('/Annots')] = ArrayObject()
+        annots = page['/Annots'].get_object() if hasattr(page['/Annots'], 'get_object') else page['/Annots']
+        annots.append(w._add_object(a))
 
     for i in range(1, n):  # a página 1 é a capa
         pg = i + 1
@@ -427,24 +574,23 @@ def botoes_voltar(pdf_path, pages):
         for spg, key in starts:
             if spg <= pg:
                 atual = (spg, key)
-        botoes = []
-        xr = right
+        botoes, xr = [], right
         buf = io.BytesIO()
         c = canvas.Canvas(buf, pagesize=(W, H))
-        if pg >= inicio:  # fora do sumário
-            rect = botao(c, xr, 'Sumário'); botoes.append((rect, toc_pg - 1)); xr = rect[0] - gap
-        if atual and atual[0] != pg and atual[0] >= inicio:
-            k = atual[1]
-            label = 'Início da parte' if k.startswith('PARTE') else ('Início do anexo' if k.startswith('ANEXO') else 'Início da seção')
-            rect = botao(c, xr, label); botoes.append((rect, atual[0] - 1))
+        if pg >= inicio:
+            rect = botao(c, xr, 'Sumário'); botoes.append((rect, dest(toc_pg - 1), False)); xr = float(rect[0]) - gap
+            if atual and atual[0] != pg:
+                k = atual[1]
+                label = 'Início da parte' if k.startswith('PARTE') else ('Início do anexo' if k.startswith('ANEXO') else 'Início da seção')
+                rect = botao(c, xr, label); botoes.append((rect, dest(atual[0] - 1), False)); xr = float(rect[0]) - gap
+        rect = botao(c, xr, 'Voltar'); botoes.append((rect, None, True))
         c.save()
-        if not botoes:
-            continue
         over = PdfReader(io.BytesIO(buf.getvalue())).pages[0]
         w.pages[i].merge_page(over)
-        for rect, alvo in botoes:
-            w.add_annotation(page_number=i, annotation=Link(rect=rect, target_page_index=alvo))
+        for rect, d, voltar in botoes:
+            link(i, rect, d, voltar)
     w.write(str(pdf_path))
+    return convertidos
 
 
 if __name__ == '__main__':
@@ -460,6 +606,6 @@ if __name__ == '__main__':
         render(doc, out)
         pages2, total = find_pages(out, items)
     (ROOT / 'Guia-CliniLoop.html').write_text(doc.replace(str(FONT), 'fonts'), encoding='utf-8')
-    print('páginas:', total, '| marcas encontradas:', len(pages2), 'de', len(items))
+    print('páginas:', total, '| marcas encontradas:', sum(1 for i in items if i[3] in pages2), 'de', len(items), '| subtítulos no sumário:', sum(len(i[4]) for i in items))
     aplicar_capa(out)
-    botoes_voltar(out, pages2)
+    print('links convertidos para destino explícito:', finalizar(out, pages2))
