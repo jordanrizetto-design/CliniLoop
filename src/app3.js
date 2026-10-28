@@ -676,7 +676,7 @@ ${councilObjs().map((c) => `### ${c.conselho}\n${c.norma}\n- Identificação: ${
 ${isMental() ? '\n- ' + SAUDE_MENTAL : ''}
 ${REGRAS_GERAIS.map((g) => '- ' + g).join('\n')}
 
-## Método
+## Sistema
 ${METODO.bases.map(([n, a, d]) => `- ${n} (${a}): ${d}`).join('\n')}
 - Fluxo de cada peça: ${METODO.fluxo.join(' → ')}
 - ${METODO.aviso}

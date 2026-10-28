@@ -31,7 +31,7 @@ CRM é a sigla de gestão do relacionamento com o paciente. Na prática, é o lu
 
 Na saúde, o que sustenta um consultório são sete decisões em sequência: o paciente **olha** o seu conteúdo, **confia** em você, o colega **indica**, a pessoa **chama**, **agenda**, **comparece** e **segue o tratamento**. O guia ensina cada uma delas. O app registra e cobra cada uma delas.
 
-## De onde vem este método
+## De onde vem este sistema
 
 O guia para o sistema Loop nasceu da combinação de três experiências: décadas de trabalho executivo em marketing de bens de consumo, indústria farmacêutica e negócios entre empresas, com passagens pela Europa e pela América Latina; a incorporação de tecnologia, inteligência artificial e transformação digital à forma como um serviço chega a quem precisa dele; e a vivência de empreender na saúde, com uma grande clínica odontológica de várias especialidades.
 

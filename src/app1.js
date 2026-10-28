@@ -358,7 +358,7 @@
   ];
   const BENCH_PADROES = 'Padrões recorrentes: problema específico na abertura; explicação concreta (objetos, analogias, modelos), sem estilo único vencedor; autoridade visível, mas não autossuficiente; quadros e continuidade; um próximo passo por peça; limites clínicos que sobrevivem ao corte curto.';
 
-  // As bases do método (créditos)
+  // As bases do sistema (créditos)
   const METODO = {
     bases: [
       ['Sistema Loop', 'sistema', 'Conquistar pacientes é um projeto, com objetivo, etapas, registros e revisões. Seis etapas, sete decisões do paciente (atenção, confiança, indicação, contato, agendamento, comparecimento, adesão) e três caixas em cada parte: Prompt, Na prática e No CliniLoop.'],
