@@ -11,5 +11,9 @@
   },
   // Mantém as variáveis de texto criadas no painel (ex.: ADMIN_EMAILS) a cada nova publicação.
   // Os segredos (SESSION_SECRET, RESEND_API_KEY, HOTMART_HOTTOK) ficam só no painel.
-  "keep_vars": true
+  "keep_vars": true,
+  // Banco de acessos (lista de compradores)
+  "kv_namespaces": [
+    { "binding": "ACESSOS", "id": "c20a5f44a9a848cb9725a2d4fcd7bdb5" }
+  ]
 }
