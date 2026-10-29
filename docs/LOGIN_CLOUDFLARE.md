@@ -1,8 +1,12 @@
-# Login do app (Cloudflare Pages)
+# Login do app (Cloudflare Workers)
+
+O app é publicado como Worker com arquivos estáticos: `wrangler.jsonc` aponta para `worker.js`, que passa cada requisição pelo login de `functions/_middleware.js` antes de servir o arquivo. `.assetsignore` deixa de fora o código-fonte, os scripts e a documentação. Cada envio ao GitHub publica de novo pelo Workers Builds.
 
 O arquivo `functions/_middleware.js` protege todo o site, incluindo o PDF do guia. Só entra quem comprou o produto principal (sistema Loop) na Hotmart: a pessoa digita o e-mail da compra, recebe um código de 6 dígitos e fica conectada por 60 dias. A situação da compra é reconferida uma vez por dia, então reembolso e chargeback tiram o acesso sozinhos. Não há limite de usuários.
 
-## Configuração (Pages > projeto > Settings)
+## Configuração (Workers & Pages > cliniloop > Settings)
+
+O banco de acessos (KV) entra em `wrangler.jsonc`, com o ID do namespace, porque cada publicação refaz as ligações a partir desse arquivo. Segredos e variáveis de texto ficam no painel (`keep_vars` mantém as variáveis).
 
 | Tipo | Nome | Valor |
 |---|---|---|

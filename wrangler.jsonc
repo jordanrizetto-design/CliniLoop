@@ -1,0 +1,15 @@
+{
+  // App CliniLoop publicado como Worker na Cloudflare.
+  // O login roda antes de qualquer arquivo (run_worker_first).
+  "name": "cliniloop",
+  "main": "worker.js",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  // Mantém as variáveis de texto criadas no painel (ex.: ADMIN_EMAILS) a cada nova publicação.
+  // Os segredos (SESSION_SECRET, RESEND_API_KEY, HOTMART_HOTTOK) ficam só no painel.
+  "keep_vars": true
+}
