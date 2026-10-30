@@ -34,6 +34,7 @@
   color-scheme: light;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 body{margin:0;background:var(--papel);color:var(--tinta);font-family:var(--fonte);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -134,6 +135,16 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .caixas-parte span{font-size:.9rem;color:var(--tinta-suave)}
 @media (max-width:600px){.caixas-parte{grid-template-columns:1fr}}
 
+/* depoimentos */
+.falas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:40px}
+.fala{margin:0;background:rgba(244,242,236,.06);border:1px solid rgba(244,242,236,.14);border-radius:18px;padding:30px;display:flex;flex-direction:column;gap:22px}
+.fala blockquote{margin:0;font-size:1.05rem;line-height:1.65;color:var(--sobre-escuro)}
+.fala figcaption{display:flex;align-items:center;gap:14px;margin-top:auto}
+.fala .foto{width:52px;height:52px;font-size:1rem;flex:none}
+.fala figcaption b{display:block;color:var(--sobre-escuro)}
+.fala figcaption small{color:var(--pessego);font-size:.85rem}
+.nota-depo{margin-top:22px;font-size:.85rem;color:var(--sobre-escuro-suave);max-width:70ch}
+
 /* o que recebe */
 .entrega{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px}
 .peca{background:var(--cartao);border:1px solid var(--linha);border-radius:var(--raio);overflow:hidden;display:flex;flex-direction:column}
@@ -226,7 +237,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
 .rodape a:hover{text-decoration:underline}
 
 @media (max-width: 900px){
-  .abertura .grade,.etica,.oferta .grade,.entrega,.telas,.quem,.bastidores,.grade-passeio,.vitrine{grid-template-columns:1fr}
+  .abertura .grade,.etica,.oferta .grade,.entrega,.telas,.quem,.bastidores,.grade-passeio,.vitrine,.falas{grid-template-columns:1fr}
   .estagios{grid-template-columns:1fr}
   .estagio.todas{grid-column:auto}
   .vitrine-imagem{padding:28px}
@@ -377,8 +388,27 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 6. Identificação -->
-  <section class="faixa" style="padding-top:0">
+  <!-- 6. Depoimentos -->
+  <section class="faixa escura depoimentos" id="depoimentos" data-aprovado="nao">
+    <div class="miolo">
+      <p class="rotulo">Quem já usa</p>
+      <h2 class="titulo">O que muda quando cada contato tem dono, etapa e próximo passo.</h2>
+      <div class="falas">
+        <figure class="fala">
+          <blockquote>"Eu achava que o problema era postar pouco. Quando passamos a registrar cada contato, de onde veio, em que etapa estava e qual era o próximo passo, ficou claro onde a gente perdia pacientes: na resposta demorada do WhatsApp e na falta de retorno depois da avaliação. O CRM mudou a nossa rotina mais do que qualquer post."</blockquote>
+          <figcaption><span class="foto" aria-hidden="true">CH</span><span><b>Dra. C. Heinz</b><small>[especialidade]</small></span></figcaption>
+        </figure>
+        <figure class="fala">
+          <blockquote>"Para mim, a virada foi o posicionamento. Eu publicava o que todo mundo publica. Com o método, defini para quem eu falo e o que me diferencia, dentro das regras do conselho. E, com tudo registrado, hoje eu consigo ver de onde veio cada paciente."</blockquote>
+          <figcaption><span class="foto" aria-hidden="true">MG</span><span><b>Dr. M. Guedes</b><small>[especialidade]</small></span></figcaption>
+        </figure>
+      </div>
+      <p class="nota-depo">Profissionais da clínica onde o Sistema Loop foi criado e testado. Depoimentos autorizados por escrito. Resultados variam conforme a especialidade, a região e a dedicação de cada profissional.</p>
+    </div>
+  </section>
+
+  <!-- 7. Identificação -->
+  <section class="faixa">
     <div class="miolo">
       <p class="rotulo">Você se reconhece?</p>
       <h2 class="titulo">Muito profissional de saúde posta toda semana e não sabe o que trouxe paciente.</h2>
@@ -390,7 +420,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 7. A virada: sete decisões -->
+  <!-- 8. A virada: sete decisões -->
   <section class="faixa escura virada">
     <div class="miolo">
       <p class="rotulo">A virada</p>
@@ -415,7 +445,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 8. O método em seis etapas -->
+  <!-- 9. O método em seis etapas -->
   <section class="faixa">
     <div class="miolo">
       <p class="rotulo">O caminho</p>
@@ -432,7 +462,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 9. Vídeo da Débora: as seis etapas por dentro -->
+  <!-- 10. Vídeo da Débora: as seis etapas por dentro -->
   <section class="faixa escura passeio" id="por-dentro-com-a-debora">
     <div class="miolo grade-passeio">
       <div class="passeio-texto">
@@ -458,7 +488,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 10. Para quem é -->
+  <!-- 11. Para quem é -->
   <section class="faixa">
     <div class="miolo">
       <p class="rotulo">Para quem é</p>
@@ -487,7 +517,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 11. Ética primeiro -->
+  <!-- 12. Ética primeiro -->
   <section class="faixa escura">
     <div class="miolo etica">
       <div>
@@ -505,7 +535,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 12. Quem está por trás -->
+  <!-- 13. Quem está por trás -->
   <section class="faixa">
     <div class="miolo">
       <p class="rotulo">Quem está por trás</p>
@@ -531,7 +561,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 13. Oferta -->
+  <!-- 14. Oferta -->
   <section class="faixa funda oferta" id="oferta">
     <div class="miolo grade">
       <div>
@@ -561,7 +591,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 14. Garantia -->
+  <!-- 15. Garantia -->
   <section class="faixa">
     <div class="miolo">
       <div class="garantia">
@@ -574,7 +604,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 15. Perguntas -->
+  <!-- 16. Perguntas -->
   <section class="faixa" style="padding-top:0">
     <div class="miolo">
       <p class="rotulo">Perguntas frequentes</p>
@@ -594,7 +624,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 16. Fechamento -->
+  <!-- 17. Fechamento -->
   <section class="faixa escura fecho">
     <div class="miolo">
       <p class="rotulo">Comece hoje</p>
@@ -630,7 +660,10 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
   var YOUTUBE_ID = '';
   // ID do vídeo da Débora com as seis etapas por dentro.
   var YOUTUBE_ID_ETAPAS = '';
+  // Mude para true só depois que os dois profissionais aprovarem o texto e assinarem a autorização.
+  var DEPOIMENTOS_APROVADOS = false;
 
+  if (!DEPOIMENTOS_APROVADOS) { document.getElementById('depoimentos').hidden = true; }
   if (CHECKOUT_URL) {
     document.querySelectorAll('.js-comprar').forEach(function (a) { a.href = CHECKOUT_URL; });
   }
