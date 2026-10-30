@@ -154,7 +154,7 @@ Os dados ficam só neste navegador. Em **Configurações**, na parte "Seus dados
 
 ## Clínicas com vários usuários
 
-O CliniLoop foi pensado para o profissional que trabalha sozinho: os dados ficam no navegador de quem usa e não são compartilhados. Por isso, ele não funciona para clínicas em que recepção, coordenação e vários profissionais precisam acessar os mesmos registros. Caso queira uma solução para multiusuários, envie um e-mail para suporte_CliniLoop@gmail.com.
+O CliniLoop foi pensado para o profissional que trabalha sozinho: os dados ficam no navegador de quem usa e não são compartilhados. Por isso, ele não funciona para clínicas em que recepção, coordenação e vários profissionais precisam acessar os mesmos registros. Caso queira uma solução para multiusuários, envie um e-mail para atendimento@loopuniversity.com.br.
 
 ::: {.box .atencao}
 **Integrações futuras.** WhatsApp Business, agenda (Google ou Outlook) e importação de conversões offline para Meta e Google estão previstas, mas ainda não existem. Hoje, o Rastreador exporta planilha e gera lembretes que você abre no seu calendário.

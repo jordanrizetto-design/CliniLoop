@@ -187,7 +187,7 @@ O painel Hoje lembra de fazer backup quando há dados e nenhum backup nos últim
 
 Esta versão cobre o MVP e a v2 da Parte 14 do guia: tudo o que funciona numa página no navegador.
 
-O modelo foi pensado para o profissional que trabalha sozinho: os dados ficam no navegador de quem usa e não são compartilhados. Clínicas em que recepção, coordenação e vários profissionais precisam acessar os mesmos registros precisam de outra solução; escreva para suporte_CliniLoop@gmail.com.
+O modelo foi pensado para o profissional que trabalha sozinho: os dados ficam no navegador de quem usa e não são compartilhados. Clínicas em que recepção, coordenação e vários profissionais precisam acessar os mesmos registros precisam de outra solução; escreva para atendimento@loopuniversity.com.br.
 
 Ficam para a v3: integração com WhatsApp e agenda e importação de conversões offline para Meta e Google.
 

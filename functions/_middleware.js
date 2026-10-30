@@ -156,7 +156,7 @@ button[disabled]{opacity:.6;cursor:wait}.msg{min-height:1.4em;font-size:.86rem;m
 <form id="f2"><label for="codigo">Código de 6 dígitos</label><input id="codigo" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" required placeholder="000000"><button id="b2">Entrar</button></form>
 <button class="link" id="volta" type="button">Usar outro e-mail ou pedir novo código</button></section>
 <div class="msg" id="msg" role="status" aria-live="polite"></div>
-<small>Não recebeu? Confira a caixa de spam e se é o e-mail usado na Hotmart. Ajuda: suporte_CliniLoop@gmail.com</small>
+<small>Não recebeu? Confira a caixa de spam e se é o e-mail usado na Hotmart. Ajuda: atendimento@loopuniversity.com.br</small>
 </main><script>
 const $=(i)=>document.getElementById(i),msg=$('msg');
 async function post(u,d){const r=await fetch(u,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(d)});return r.json().catch(()=>({ok:false,msg:'Erro inesperado.'}));}
