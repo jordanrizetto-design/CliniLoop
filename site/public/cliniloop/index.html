@@ -106,6 +106,27 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .capitulos b{font-weight:600;font-size:.98rem}
 .capitulos span{font-size:.86rem;color:var(--sobre-escuro-suave)}
 
+/* guia e app */
+.vitrine{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.vitrine-imagem{background:var(--pessego-claro);border-radius:20px;padding:40px;display:flex;justify-content:center}
+.vitrine-imagem img{max-height:440px;width:auto;border-radius:10px;box-shadow:0 24px 50px -18px rgba(20,48,58,.5)}
+.vitrine-texto{min-width:0}
+.itens{margin:24px 0 0;padding-left:20px;display:grid;gap:8px;color:var(--tinta-suave)}
+.itens b{color:var(--tinta)}
+.tela-grande{margin:40px 0 0;border-radius:var(--raio);overflow:hidden;box-shadow:0 30px 70px -25px rgba(0,0,0,.6);border:1px solid rgba(244,242,236,.12)}
+.tela-grande img{width:100%}
+.estagios{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:40px}
+.estagio{background:var(--cartao);border:1px solid var(--linha);border-radius:var(--raio);padding:24px;display:flex;flex-direction:column;gap:10px}
+.estagio h3{font-size:1.1rem;display:flex;align-items:center;gap:10px}
+.estagio h3 span{font-size:.75rem;font-weight:700;background:var(--pessego-claro);color:var(--terracota);border-radius:999px;padding:2px 10px}
+.estagio p{font-size:.92rem;color:var(--tinta-suave)}
+.estagio ul{margin:4px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.estagio li{font-size:.82rem;border:1px solid var(--linha);border-radius:999px;padding:4px 12px;background:var(--papel)}
+.estagio.todas{grid-column:span 2;border-style:dashed}
+.destaques{list-style:none;padding:0;margin:0;display:grid;gap:14px;background:var(--cartao);border:1px solid var(--linha);border-radius:var(--raio);padding:22px}
+.destaques li{color:var(--tinta-suave);font-size:.95rem}
+.destaques b{color:var(--tinta)}
+
 /* o que recebe */
 .entrega{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px}
 .peca{background:var(--cartao);border:1px solid var(--linha);border-radius:var(--raio);overflow:hidden;display:flex;flex-direction:column}
@@ -198,7 +219,11 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
 .rodape a:hover{text-decoration:underline}
 
 @media (max-width: 900px){
-  .abertura .grade,.etica,.oferta .grade,.entrega,.telas,.quem,.bastidores,.grade-passeio{grid-template-columns:1fr}
+  .abertura .grade,.etica,.oferta .grade,.entrega,.telas,.quem,.bastidores,.grade-passeio,.vitrine{grid-template-columns:1fr}
+  .estagios{grid-template-columns:1fr}
+  .estagio.todas{grid-column:auto}
+  .vitrine-imagem{padding:28px}
+  .vitrine-imagem img{max-height:340px}
   .dores,.etapas{grid-template-columns:1fr}
   .faixa{padding-block:64px}
   .abertura{padding-block:48px 64px}
@@ -247,8 +272,72 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 2. Identificação -->
-  <section class="faixa">
+  <!-- 2. O guia -->
+  <section class="faixa" id="guia">
+    <div class="miolo vitrine">
+      <div class="vitrine-imagem"><img src="/assets/capa-guia.jpg" alt="Capa do guia O Prompt do Sim" width="720" height="960"></div>
+      <div class="vitrine-texto">
+        <p class="rotulo">O guia</p>
+        <h2 class="titulo"><i>O Prompt do Sim</i>: o caminho, em seis etapas.</h2>
+        <p class="lead">Explica o porquê e o como de cada decisão do paciente, do primeiro post ao tratamento, com as regras do seu conselho. Cada parte termina com um pedido pronto para a IA, um passo prático para hoje e a ferramenta do app que faz o trabalho.</p>
+        <ul class="itens">
+          <li><b>16 partes em 196 páginas</b>, em PDF</li>
+          <li><b>14 prompts prontos</b> para usar na sua IA</li>
+          <li>Um passo <b>"Na prática"</b> de até 30 minutos por parte</li>
+          <li>Manual de criação, edição e anúncios</li>
+          <li>Glossário de 76 termos e tutorial ilustrado do app</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. O app -->
+  <section class="faixa escura" id="app">
+    <div class="miolo">
+      <p class="rotulo">O app</p>
+      <h2 class="titulo">CliniLoop: você preenche o seu perfil uma vez, e o app faz o resto.</h2>
+      <p class="lead">O guia vira trabalho feito. No computador ou no celular, cada ferramenta monta o pedido pronto para a sua IA, com a sua especialidade, a sua cidade e as normas da sua profissão.</p>
+      <figure class="tela-grande">
+        <img src="/assets/app-painel.jpg" alt="Painel do app CliniLoop: as 19 ferramentas organizadas pelo funil do paciente" width="1200" height="915" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <!-- 4. O que o app faz -->
+  <section class="faixa" id="ferramentas">
+    <div class="miolo">
+      <p class="rotulo">O que o app faz</p>
+      <h2 class="titulo">19 ferramentas, organizadas pelo caminho do paciente.</h2>
+      <div class="estagios">
+        <article class="estagio"><h3>Posicionamento <span>4</span></h3><p>Quem você quer atender, por que você e como você fala.</p><ul><li>Público e persona</li><li>Persona do profissional</li><li>Nicho e diferencial</li><li>Estratégia Oceano Azul</li></ul></article>
+        <article class="estagio"><h3>Conteúdo <span>5</span></h3><p>Perfis prontos, pautas de dúvidas reais e roteiros com constância.</p><ul><li>Perfis e presença</li><li>Pautas e palavras-chave</li><li>Roteiros e copy</li><li>Reaproveitamento de conteúdo</li><li>Formação e autoridade</li></ul></article>
+        <article class="estagio"><h3>Captação <span>2</span></h3><p>Campanhas medidas por paciente, não por clique, e colegas que indicam.</p><ul><li>Gerador de campanhas</li><li>Rede de colegas</li></ul></article>
+        <article class="estagio"><h3>Conversa e agenda <span>2</span></h3><p>Resposta rápida no WhatsApp, agendamento e cada contato acompanhado até o tratamento.</p><ul><li>Atendimento e agendamento</li><li>Rastreador de pacientes</li></ul></article>
+        <article class="estagio todas"><h3>Em todas as etapas <span>6</span></h3><p>A rotina da semana, os números e a revisão ética antes de publicar.</p><ul><li>Assistente da semana</li><li>Painel e diagnóstico</li><li>Verificador ético</li><li>Briefing para terceiros</li><li>Ferramentas recomendadas</li><li>Playbook da clínica</li></ul></article>
+      </div>
+      <div class="telas">
+        <figure class="tela">
+          <img src="/assets/app-rastreador.jpg" alt="Rastreador de pacientes do CliniLoop, com etapas do funil e próximo passo" width="1170" height="1200" loading="lazy">
+          <figcaption><b>Rastreador de pacientes.</b> Cada contato com origem, etapa e próximo passo, sem dado clínico.</figcaption>
+        </figure>
+        <div class="coluna">
+          <figure class="tela">
+            <img src="/assets/app-prompt.jpg" alt="Prompt gerado pelo CliniLoop, pronto para copiar" width="1200" height="312" loading="lazy">
+            <figcaption><b>Prompt pronto.</b> Copie e cole no ChatGPT, no Claude, no Gemini ou na IA que preferir.</figcaption>
+          </figure>
+          <ul class="destaques">
+            <li><b>Funciona com a IA que você já tem,</b> gratuita ou paga.</li>
+            <li><b>Regras do seu conselho</b> em cada prompt, com revisão ética antes de publicar.</li>
+            <li><b>Dados dos pacientes no seu aparelho,</b> nunca num servidor nem dentro dos prompts.</li>
+            <li><b>Próxima ação do dia</b> e os números da semana na tela Hoje.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Identificação -->
+  <section class="faixa" style="padding-top:0">
     <div class="miolo">
       <p class="rotulo">Você se reconhece?</p>
       <h2 class="titulo">Muito profissional de saúde posta toda semana e não sabe o que trouxe paciente.</h2>
@@ -260,7 +349,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 3. A virada: sete decisões -->
+  <!-- 6. A virada: sete decisões -->
   <section class="faixa escura virada">
     <div class="miolo">
       <p class="rotulo">A virada</p>
@@ -285,7 +374,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 4. O método em seis etapas -->
+  <!-- 7. O método em seis etapas -->
   <section class="faixa">
     <div class="miolo">
       <p class="rotulo">O caminho</p>
@@ -302,7 +391,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 4b. Vídeo da Débora: as seis etapas por dentro -->
+  <!-- 8. Vídeo da Débora: as seis etapas por dentro -->
   <section class="faixa escura passeio" id="por-dentro-com-a-debora">
     <div class="miolo grade-passeio">
       <div class="passeio-texto">
@@ -328,85 +417,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 5. O que você recebe -->
-  <section class="faixa">
-    <div class="miolo">
-      <p class="rotulo">O que você recebe</p>
-      <h2 class="titulo">Um guia que explica o porquê. Um app que faz o trabalho.</h2>
-      <div class="entrega">
-        <article class="peca">
-          <div class="imagem"><img src="/assets/capa-guia.jpg" alt="Capa do guia O Prompt do Sim" width="720" height="960" loading="lazy"></div>
-          <div class="texto">
-            <h3>Guia <i>O Prompt do Sim</i></h3>
-            <ul>
-              <li><b>16 partes em 196 páginas</b>, em PDF</li>
-              <li><b>14 prompts prontos</b> para usar na sua IA</li>
-              <li>Um passo <b>"Na prática"</b> de até 30 minutos por parte</li>
-              <li>Manual de criação, edição e anúncios</li>
-              <li>Glossário de 76 termos e tutorial ilustrado do app</li>
-            </ul>
-          </div>
-        </article>
-        <article class="peca">
-          <div class="imagem app"><img src="/assets/app-hoje.jpg" alt="Tela Hoje do app CliniLoop, com a próxima ação recomendada e os números da semana" width="1200" height="770" loading="lazy"></div>
-          <div class="texto">
-            <h3>App CliniLoop</h3>
-            <ul>
-              <li><b>19 ferramentas</b> ligadas ao funil do paciente</li>
-              <li>Prompts com o <b>seu perfil e as regras do seu conselho</b>, para a IA que você já usa</li>
-              <li>Estratégia Oceano Azul, roteiros, campanhas e rede de colegas</li>
-              <li><b>Rastreador de pacientes</b> do primeiro contato ao tratamento</li>
-              <li>No computador e no celular, com os dados guardados no seu aparelho</li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. Por dentro -->
-  <section class="faixa" style="padding-top:0">
-    <div class="miolo">
-      <p class="rotulo">Por dentro</p>
-      <h2 class="titulo">Você preenche o seu perfil uma vez. O app faz o resto.</h2>
-      <div class="telas">
-        <figure class="tela">
-          <img src="/assets/app-rastreador.jpg" alt="Rastreador de pacientes do CliniLoop, com etapas do funil e próximo passo" width="1170" height="1200" loading="lazy">
-          <figcaption><b>Rastreador de pacientes.</b> Cada contato com origem, etapa e próximo passo, sem dado clínico.</figcaption>
-        </figure>
-        <div class="coluna">
-          <figure class="tela">
-            <img src="/assets/app-prompt.jpg" alt="Prompt gerado pelo CliniLoop, pronto para copiar" width="1200" height="312" loading="lazy">
-            <figcaption><b>Prompt pronto.</b> Copie, cole no ChatGPT, no Claude, no Gemini ou na IA que preferir.</figcaption>
-          </figure>
-          <figure class="tela">
-            <img src="/assets/app-painel.jpg" alt="Painel do app com as ferramentas agrupadas por etapa do funil" width="1200" height="915" loading="lazy">
-            <figcaption><b>Painel do funil.</b> Posicionamento, conteúdo, captação, conversa e tratamento.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 7. Ética primeiro -->
-  <section class="faixa escura">
-    <div class="miolo etica">
-      <div>
-        <p class="rotulo">Ética primeiro</p>
-        <h2 class="titulo">Cada prompt já sai com as regras do seu conselho.</h2>
-        <div class="conselhos" aria-label="Conselhos cobertos"><span>CFM</span><span>CFO</span><span>CFP</span><span>COFFITO</span><span>CFN</span><span>LGPD</span></div>
-        <p class="ressalva">Regras conferidas em outubro de 2026. O Sistema Loop não substitui a orientação do seu conselho nem uma assessoria jurídica.</p>
-      </div>
-      <ul class="lista-etica">
-        <li>Nada de antes e depois fora das regras, promessa de resultado ou preço promocional.</li>
-        <li>O Verificador ético revisa cada peça antes de você publicar.</li>
-        <li>A IA marca com [CONFIRMAR] o que precisa da sua revisão técnica.</li>
-        <li>Dados de pacientes ficam no seu aparelho e nunca entram nos prompts.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- 8. Para quem é -->
+  <!-- 9. Para quem é -->
   <section class="faixa">
     <div class="miolo">
       <p class="rotulo">Para quem é</p>
@@ -435,8 +446,26 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 9. Quem está por trás -->
-  <section class="faixa" style="padding-top:0">
+  <!-- 10. Ética primeiro -->
+  <section class="faixa escura">
+    <div class="miolo etica">
+      <div>
+        <p class="rotulo">Ética primeiro</p>
+        <h2 class="titulo">Cada prompt já sai com as regras do seu conselho.</h2>
+        <div class="conselhos" aria-label="Conselhos cobertos"><span>CFM</span><span>CFO</span><span>CFP</span><span>COFFITO</span><span>CFN</span><span>LGPD</span></div>
+        <p class="ressalva">Regras conferidas em outubro de 2026. O Sistema Loop não substitui a orientação do seu conselho nem uma assessoria jurídica.</p>
+      </div>
+      <ul class="lista-etica">
+        <li>Nada de antes e depois fora das regras, promessa de resultado ou preço promocional.</li>
+        <li>O Verificador ético revisa cada peça antes de você publicar.</li>
+        <li>A IA marca com [CONFIRMAR] o que precisa da sua revisão técnica.</li>
+        <li>Dados de pacientes ficam no seu aparelho e nunca entram nos prompts.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 11. Quem está por trás -->
+  <section class="faixa">
     <div class="miolo">
       <p class="rotulo">Quem está por trás</p>
       <h2 class="titulo">Nasceu dentro de uma clínica e foi organizado por quem faz marketing há 20 anos.</h2>
@@ -461,7 +490,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 10. Oferta -->
+  <!-- 12. Oferta -->
   <section class="faixa funda oferta" id="oferta">
     <div class="miolo grade">
       <div>
@@ -491,7 +520,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 11. Garantia -->
+  <!-- 13. Garantia -->
   <section class="faixa">
     <div class="miolo">
       <div class="garantia">
@@ -504,7 +533,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 12. Perguntas -->
+  <!-- 14. Perguntas -->
   <section class="faixa" style="padding-top:0">
     <div class="miolo">
       <p class="rotulo">Perguntas frequentes</p>
@@ -524,7 +553,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 13. Fechamento -->
+  <!-- 15. Fechamento -->
   <section class="faixa escura fecho">
     <div class="miolo">
       <p class="rotulo">Comece hoje</p>
