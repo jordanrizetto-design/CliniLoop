@@ -109,6 +109,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 /* guia e app */
 .vitrine{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
 .vitrine-imagem{background:var(--pessego-claro);border-radius:20px;padding:40px;display:flex;justify-content:center}
+.vitrine-imagem.pagina img{max-height:none;width:100%}
 .vitrine-imagem img{max-height:440px;width:auto;border-radius:10px;box-shadow:0 24px 50px -18px rgba(20,48,58,.5)}
 .vitrine-texto{min-width:0}
 .itens{margin:24px 0 0;padding-left:20px;display:grid;gap:8px;color:var(--tinta-suave)}
@@ -126,6 +127,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .destaques{list-style:none;padding:0;margin:0;display:grid;gap:14px;background:var(--cartao);border:1px solid var(--linha);border-radius:var(--raio);padding:22px}
 .destaques li{color:var(--tinta-suave);font-size:.95rem}
 .destaques b{color:var(--tinta)}
+
+.caixas-parte{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}
+.caixas-parte div{background:var(--cartao);border:1px solid var(--linha);border-radius:12px;padding:16px;display:grid;gap:4px}
+.caixas-parte b{color:var(--terracota);font-size:.9rem;letter-spacing:.04em}
+.caixas-parte span{font-size:.9rem;color:var(--tinta-suave)}
+@media (max-width:600px){.caixas-parte{grid-template-columns:1fr}}
 
 /* o que recebe */
 .entrega{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px}
@@ -272,26 +279,60 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 2. O guia -->
-  <section class="faixa" id="guia">
-    <div class="miolo vitrine">
-      <div class="vitrine-imagem"><img src="/assets/capa-guia.jpg" alt="Capa do guia O Prompt do Sim" width="720" height="960"></div>
-      <div class="vitrine-texto">
-        <p class="rotulo">O guia</p>
-        <h2 class="titulo"><i>O Prompt do Sim</i>: o caminho, em seis etapas.</h2>
-        <p class="lead">Explica o porquê e o como de cada decisão do paciente, do primeiro post ao tratamento, com as regras do seu conselho. Cada parte termina com um pedido pronto para a IA, um passo prático para hoje e a ferramenta do app que faz o trabalho.</p>
-        <ul class="itens">
-          <li><b>16 partes em 196 páginas</b>, em PDF</li>
-          <li><b>14 prompts prontos</b> para usar na sua IA</li>
-          <li>Um passo <b>"Na prática"</b> de até 30 minutos por parte</li>
-          <li>Manual de criação, edição e anúncios</li>
-          <li>Glossário de 76 termos e tutorial ilustrado do app</li>
-        </ul>
+  <!-- 2. O que você recebe -->
+  <section class="faixa" id="recebe">
+    <div class="miolo">
+      <p class="rotulo">O que você recebe</p>
+      <h2 class="titulo">Um guia que explica o porquê. Um app que faz o trabalho.</h2>
+      <div class="entrega">
+        <article class="peca">
+          <div class="imagem"><img src="/assets/capa-guia.jpg" alt="Capa do guia O Prompt do Sim" width="720" height="960" loading="lazy"></div>
+          <div class="texto">
+            <h3>Guia <i>O Prompt do Sim</i></h3>
+            <ul>
+              <li><b>16 partes em 196 páginas</b>, em PDF</li>
+              <li><b>14 prompts prontos</b> para usar na sua IA</li>
+              <li>Um passo <b>"Na prática"</b> de até 30 minutos por parte</li>
+              <li>Manual de criação, edição e anúncios</li>
+              <li>Glossário de 76 termos e tutorial ilustrado do app</li>
+            </ul>
+          </div>
+        </article>
+        <article class="peca">
+          <div class="imagem app"><img src="/assets/app-hoje.jpg" alt="Tela Hoje do app CliniLoop, com a próxima ação recomendada e os números da semana" width="1200" height="770" loading="lazy"></div>
+          <div class="texto">
+            <h3>App CliniLoop</h3>
+            <ul>
+              <li><b>19 ferramentas</b> ligadas ao funil do paciente</li>
+              <li>Prompts com o <b>seu perfil e as regras do seu conselho</b>, para a IA que você já usa</li>
+              <li>Estratégia Oceano Azul, roteiros, campanhas e rede de colegas</li>
+              <li><b>Rastreador de pacientes</b> do primeiro contato ao tratamento</li>
+              <li>No computador e no celular, com os dados guardados no seu aparelho</li>
+            </ul>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- 3. O app -->
+  <!-- 3. O guia -->
+  <section class="faixa" id="guia" style="padding-top:0">
+    <div class="miolo vitrine">
+      <div class="vitrine-imagem pagina"><img src="/assets/guia-pagina.jpg" alt="Página do guia com as caixas Na prática e No CliniLoop no fim da Parte 1" width="1000" height="799" loading="lazy"></div>
+      <div class="vitrine-texto">
+        <p class="rotulo">O guia</p>
+        <h2 class="titulo"><i>O Prompt do Sim</i>: o caminho, em seis etapas.</h2>
+        <p class="lead">Explica o porquê e o como de cada decisão do paciente, do primeiro post ao tratamento, com as regras do seu conselho. Cada uma das 16 partes termina em três caixas:</p>
+        <div class="caixas-parte">
+          <div><b>Prompt</b><span>O pedido pronto para colar na sua IA.</span></div>
+          <div><b>Na prática</b><span>O passo de até 30 minutos para fazer hoje.</span></div>
+          <div><b>No CliniLoop</b><span>A ferramenta do app que faz o trabalho.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. O app -->
   <section class="faixa escura" id="app">
     <div class="miolo">
       <p class="rotulo">O app</p>
@@ -303,7 +344,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 4. O que o app faz -->
+  <!-- 5. O que o app faz -->
   <section class="faixa" id="ferramentas">
     <div class="miolo">
       <p class="rotulo">O que o app faz</p>
@@ -336,7 +377,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 5. Identificação -->
+  <!-- 6. Identificação -->
   <section class="faixa" style="padding-top:0">
     <div class="miolo">
       <p class="rotulo">Você se reconhece?</p>
@@ -349,7 +390,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 6. A virada: sete decisões -->
+  <!-- 7. A virada: sete decisões -->
   <section class="faixa escura virada">
     <div class="miolo">
       <p class="rotulo">A virada</p>
@@ -374,7 +415,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 7. O método em seis etapas -->
+  <!-- 8. O método em seis etapas -->
   <section class="faixa">
     <div class="miolo">
       <p class="rotulo">O caminho</p>
@@ -391,7 +432,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 8. Vídeo da Débora: as seis etapas por dentro -->
+  <!-- 9. Vídeo da Débora: as seis etapas por dentro -->
   <section class="faixa escura passeio" id="por-dentro-com-a-debora">
     <div class="miolo grade-passeio">
       <div class="passeio-texto">
@@ -417,7 +458,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 9. Para quem é -->
+  <!-- 10. Para quem é -->
   <section class="faixa">
     <div class="miolo">
       <p class="rotulo">Para quem é</p>
@@ -446,7 +487,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 10. Ética primeiro -->
+  <!-- 11. Ética primeiro -->
   <section class="faixa escura">
     <div class="miolo etica">
       <div>
@@ -464,7 +505,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 11. Quem está por trás -->
+  <!-- 12. Quem está por trás -->
   <section class="faixa">
     <div class="miolo">
       <p class="rotulo">Quem está por trás</p>
@@ -490,7 +531,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 12. Oferta -->
+  <!-- 13. Oferta -->
   <section class="faixa funda oferta" id="oferta">
     <div class="miolo grade">
       <div>
@@ -520,7 +561,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 13. Garantia -->
+  <!-- 14. Garantia -->
   <section class="faixa">
     <div class="miolo">
       <div class="garantia">
@@ -533,7 +574,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 14. Perguntas -->
+  <!-- 15. Perguntas -->
   <section class="faixa" style="padding-top:0">
     <div class="miolo">
       <p class="rotulo">Perguntas frequentes</p>
@@ -553,7 +594,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 15. Fechamento -->
+  <!-- 16. Fechamento -->
   <section class="faixa escura fecho">
     <div class="miolo">
       <p class="rotulo">Comece hoje</p>
