@@ -1,0 +1,11 @@
+{
+  // Site público da Loop University (marca e páginas de vendas), sem login.
+  // loopuniversity.com.br/ e loopuniversity.com.br/cliniloop/
+  "name": "loopuniversity-site",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./public",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  }
+}

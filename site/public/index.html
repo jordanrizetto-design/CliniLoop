@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Loop University</title>
+<meta name="description" content="Loop University: sistemas de guia e app para profissionais organizarem a captação com método, IA e ética.">
+<link rel="icon" href="/assets/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Layout: uma tela de marca, com a tese e um cartão por produto do Sistema Loop. */
+:root{
+  --petroleo:#14303A; --fundo:#0F2830; --agua:#4CC9C6; --terracota:#C2502F;
+  --pessego:#F4BFA4; --papel:#F4F2EC; --suave:#B9CDD1;
+  --fonte:'Poppins','Segoe UI',system-ui,sans-serif; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:var(--petroleo);color:var(--papel);font-family:var(--fonte);line-height:1.6;display:flex;flex-direction:column}
+.miolo{width:100%;max-width:1040px;margin-inline:auto;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
+header{padding-block:28px}
+.marca{font-weight:800;font-size:1.35rem;letter-spacing:-.01em}
+.marca span{color:var(--agua)}
+main{flex:1;padding-block:48px 80px}
+h1{font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.1;font-weight:800;letter-spacing:-.02em;margin:0;max-width:18ch;text-wrap:balance}
+h1 em{font-style:normal;color:var(--agua)}
+.lead{color:var(--suave);font-size:1.15rem;max-width:58ch;margin:20px 0 0}
+.produtos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:56px}
+.produto{background:var(--papel);color:var(--petroleo);border-radius:18px;padding:30px;display:flex;flex-direction:column;gap:14px;text-decoration:none;transition:transform .15s ease}
+a.produto:hover{transform:translateY(-3px)}
+a.produto:focus-visible{outline:3px solid var(--agua);outline-offset:4px}
+.produto img{height:34px;width:auto;align-self:flex-start}
+.produto .area{font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terracota)}
+.produto p{margin:0;color:#4A5E66}
+.produto .ir{margin-top:auto;font-weight:700;color:var(--terracota)}
+.produto.breve{background:transparent;color:var(--papel);border:1px dashed rgba(244,242,236,.3)}
+.produto.breve p{color:var(--suave)}
+.produto.breve .area{color:var(--pessego)}
+.produto.breve strong{font-size:1.4rem}
+footer{background:var(--fundo);color:var(--suave);font-size:.88rem;padding-block:28px}
+footer .miolo{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+footer a{color:var(--papel);text-decoration:none}
+@media (max-width:720px){.produtos{grid-template-columns:1fr}}
+@media (prefers-reduced-motion: reduce){a.produto{transition:none}}
+</style>
+</head>
+<body>
+<header><div class="miolo"><div class="marca">Loop <span>University</span></div></div></header>
+<main>
+  <div class="miolo">
+    <h1>Captação com <em>sistema</em>, não com sorte.</h1>
+    <p class="lead">Cada Sistema Loop junta um guia, que explica o caminho, e um app, que faz o trabalho com a IA que você já usa. O resultado de uma semana orienta a próxima.</p>
+    <div class="produtos">
+      <a class="produto" href="/cliniloop/">
+        <span class="area">Saúde</span>
+        <img src="/assets/cliniloop-wordmark-claro.svg" alt="CliniLoop" width="148" height="34">
+        <p>Para médicos, dentistas, psicólogos, fisioterapeutas e nutricionistas: do primeiro post ao paciente em tratamento, com as regras do seu conselho. Guia <i>O Prompt do Sim</i> + app CliniLoop.</p>
+        <span class="ir">Conhecer o CliniLoop →</span>
+      </a>
+      <div class="produto breve">
+        <span class="area">Em breve</span>
+        <strong>Novos sistemas</strong>
+        <p>O mesmo método, aplicado a outras áreas.</p>
+      </div>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="miolo">
+    <span>© 2026 Loop University · atendimento@loopuniversity.com.br</span>
+    <span><a href="/termos/">Termos de Uso</a> · <a href="/privacidade/">Privacidade</a> · <a href="https://clini.loopuniversity.com.br">Entrar no CliniLoop</a></span>
+  </div>
+</footer>
+</body>
+</html>
