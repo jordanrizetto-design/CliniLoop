@@ -96,6 +96,16 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .etapas h3{font-size:1.12rem}
 .etapas p{font-size:.95rem;color:var(--tinta-suave)}
 
+/* vídeo das etapas */
+.grade-passeio{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.passeio-video{display:flex;flex-direction:column;gap:22px;align-items:flex-start;min-width:0}
+.passeio-video .video{width:100%}
+.capitulos{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:2px;counter-reset:cap}
+.capitulos li{counter-increment:cap;display:grid;grid-template-columns:34px 1fr;column-gap:12px;padding:10px 0;border-top:1px solid rgba(244,242,236,.12)}
+.capitulos li::before{content:counter(cap);grid-row:span 2;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--agua);color:var(--agua);font-size:.8rem;font-weight:700;display:grid;place-items:center;margin-top:2px}
+.capitulos b{font-weight:600;font-size:.98rem}
+.capitulos span{font-size:.86rem;color:var(--sobre-escuro-suave)}
+
 /* o que recebe */
 .entrega{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px}
 .peca{background:var(--cartao);border:1px solid var(--linha);border-radius:var(--raio);overflow:hidden;display:flex;flex-direction:column}
@@ -188,7 +198,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
 .rodape a:hover{text-decoration:underline}
 
 @media (max-width: 900px){
-  .abertura .grade,.etica,.oferta .grade,.entrega,.telas,.quem,.bastidores{grid-template-columns:1fr}
+  .abertura .grade,.etica,.oferta .grade,.entrega,.telas,.quem,.bastidores,.grade-passeio{grid-template-columns:1fr}
   .dores,.etapas{grid-template-columns:1fr}
   .faixa{padding-block:64px}
   .abertura{padding-block:48px 64px}
@@ -292,8 +302,34 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
+  <!-- 4b. Vídeo da Débora: as seis etapas por dentro -->
+  <section class="faixa escura passeio" id="por-dentro-com-a-debora">
+    <div class="miolo grade-passeio">
+      <div class="passeio-texto">
+        <p class="rotulo">Por dentro, com a Débora</p>
+        <h2 class="titulo">Antes de decidir, veja cada etapa funcionando.</h2>
+        <p class="lead">Neste vídeo, a Débora abre o guia e o app e mostra, etapa por etapa, o que você faz e o que o app entrega. Assista com calma antes de comprar: a ideia é você saber exatamente o que vai receber.</p>
+        <ol class="capitulos" aria-label="Capítulos do vídeo">
+          <li><b>Entenda o jogo e as regras</b><span>As sete decisões e o Verificador ético</span></li>
+          <li><b>Posicione-se</b><span>Público, nicho e Estratégia Oceano Azul</span></li>
+          <li><b>Gere autoridade e demanda</b><span>Pautas, roteiros e campanhas</span></li>
+          <li><b>Converta contatos em consultas</b><span>Atendimento e agendamento no WhatsApp</span></li>
+          <li><b>Feche e acompanhe o tratamento</b><span>Rastreador de pacientes</span></li>
+          <li><b>Meça e escale com CRM</b><span>Painel da semana e playbook</span></li>
+        </ol>
+      </div>
+      <div class="passeio-video">
+        <div class="video" id="video-etapas">
+          <img class="poster" src="/assets/app-hoje.jpg" alt="Tela Hoje do app CliniLoop, que a Débora apresenta no vídeo" width="1200" height="770" loading="lazy">
+          <span class="selo">Vídeo da Débora: as seis etapas por dentro</span>
+        </div>
+        <a class="btn js-comprar" href="#oferta">Quero o Sistema Loop</a>
+      </div>
+    </div>
+  </section>
+
   <!-- 5. O que você recebe -->
-  <section class="faixa" style="padding-top:0">
+  <section class="faixa">
     <div class="miolo">
       <p class="rotulo">O que você recebe</p>
       <h2 class="titulo">Um guia que explica o porquê. Um app que faz o trabalho.</h2>
@@ -522,14 +558,18 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
   var CHECKOUT_URL = '';
   // ID do vídeo no YouTube (só o código depois de "v="). Enquanto estiver vazio, aparece a tela do app.
   var YOUTUBE_ID = '';
+  // ID do vídeo da Débora com as seis etapas por dentro.
+  var YOUTUBE_ID_ETAPAS = '';
 
   if (CHECKOUT_URL) {
     document.querySelectorAll('.js-comprar').forEach(function (a) { a.href = CHECKOUT_URL; });
   }
-  if (YOUTUBE_ID) {
-    var v = document.getElementById('video');
-    v.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(YOUTUBE_ID) + '?rel=0" title="Vídeo do Sistema Loop" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+  function colocaVideo(idCaixa, idYoutube, titulo) {
+    if (!idYoutube) return;
+    document.getElementById(idCaixa).innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(idYoutube) + '?rel=0" title="' + titulo + '" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
   }
+  colocaVideo('video', YOUTUBE_ID, 'Vídeo do Sistema Loop');
+  colocaVideo('video-etapas', YOUTUBE_ID_ETAPAS, 'Vídeo da Débora: as seis etapas por dentro');
 </script>
 </body>
 </html>
