@@ -174,6 +174,11 @@ export async function onRequest(context) {
   const { request, env, next } = context;
   const url = new URL(request.url);
   const p = url.pathname;
+  // Sempre em https: o cookie de sessão é "Secure" e o navegador o descarta em http
+  if (url.protocol === 'http:' && url.hostname !== 'localhost' && url.hostname !== '127.0.0.1') {
+    url.protocol = 'https:';
+    return Response.redirect(url.toString(), request.method === 'GET' || request.method === 'HEAD' ? 301 : 308);
+  }
   // Publicado antes de configurar o banco de acessos e a chave de sessão: avisa em vez de quebrar
   if (!env.ACESSOS || !env.SESSION_SECRET) {
     return new Response('<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CliniLoop</title></head><body style="font-family:Arial,sans-serif;background:#14303A;color:#F4F2EC;display:grid;place-items:center;min-height:100vh;margin:0;padding:24px"><div style="max-width:420px"><h1 style="font-size:1.3rem">CliniLoop em configuração</h1><p>O app está publicado, mas o acesso ainda não foi ligado. Falta configurar: ' + [!env.ACESSOS && 'o banco de acessos (ACESSOS)', !env.SESSION_SECRET && 'a chave de sessão (SESSION_SECRET)'].filter(Boolean).join(' e ') + '.</p></div></body></html>', { status: 503, headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' } });
