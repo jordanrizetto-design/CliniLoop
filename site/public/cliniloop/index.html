@@ -19,7 +19,9 @@
   --petroleo:#14303A;      /* fundo das faixas escuras e texto principal */
   --petroleo-fundo:#0F2830;/* faixa da oferta e rodapé */
   --agua:#4CC9C6;          /* destaque: o "Loop" */
-  --terracota:#C2502F;     /* botões de compra */
+  --terracota:#C2502F;     /* rótulos e detalhes */
+  --verde:#22C55E;         /* botões de compra */
+  --verde-forte:#16A34A;   /* botão ao passar o mouse */
   --pessego:#F4BFA4;       /* rótulos sobre o escuro */
   --pessego-claro:#FADBCB; /* faixas suaves */
   --papel:#F4F2EC;         /* fundo claro */
@@ -51,11 +53,13 @@ p{margin:0}
 .titulo{font-size:clamp(1.9rem,3.6vw,2.8rem);font-weight:700;letter-spacing:-.01em;margin-top:12px;max-width:22ch}
 .lead{font-size:1.12rem;color:var(--tinta-suave);max-width:62ch;margin-top:18px}
 .escura .lead,.funda .lead{color:var(--sobre-escuro-suave)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--terracota);color:#fff;text-decoration:none;font-weight:700;font-size:1.05rem;padding:16px 28px;border-radius:12px;border:0;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease;box-shadow:0 6px 0 rgba(0,0,0,.18)}
-.btn:hover{transform:translateY(-1px);box-shadow:0 8px 0 rgba(0,0,0,.18)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--verde);color:var(--petroleo-fundo);text-decoration:none;font-weight:700;font-size:1.05rem;padding:16px 28px;border-radius:12px;border:0;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease;box-shadow:0 6px 0 rgba(0,0,0,.18)}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 0 rgba(0,0,0,.18);background:var(--verde-forte);color:#fff}
 .btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--agua);outline-offset:3px}
 .preco-curto{font-size:.92rem;color:var(--sobre-escuro-suave)}
 .preco-curto b{color:var(--sobre-escuro)}
+.preco-curto .valor{font-size:1.9rem;font-weight:800;color:var(--sobre-escuro);letter-spacing:-.01em;line-height:1.1}
+.preco-curto .vezes{font-size:.95rem;font-weight:600;color:var(--sobre-escuro-suave)}
 
 /* topo */
 .topo{background:var(--papel);border-bottom:1px solid var(--linha);position:sticky;top:env(safe-area-inset-top,0px);z-index:20}
@@ -280,7 +284,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
         <p class="lead">O guia <i>O Prompt do Sim</i> ensina o caminho em seis etapas. O app CliniLoop transforma cada etapa em prompts prontos, com o seu perfil e as normas da sua profissão, e acompanha cada paciente até o tratamento.</p>
         <div class="acoes">
           <a class="btn js-comprar" href="#oferta">Quero o Sistema Loop</a>
-          <p class="preco-curto"><b>12x de R$ 24,75</b> sem juros<br>ou R$ 297 à vista · garantia de 7 dias</p>
+          <p class="preco-curto"><span class="valor">R$ 24,75</span> <span class="vezes">x12 sem juros</span><br>ou R$ 297 à vista · garantia de 7 dias</p>
         </div>
       </div>
       <div class="video" id="video" data-youtube="">
@@ -582,7 +586,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
           <li>Regras do CFM, CFO, CFP, COFFITO e CFN em cada prompt</li>
         </ul>
         <div class="preco">
-          <p class="parcela">12x R$ 24,75 <small>sem juros</small></p>
+          <p class="parcela">R$ 24,75 <small>x12 sem juros</small></p>
           <p class="avista">ou R$ 297 à vista no Pix ou no cartão</p>
         </div>
         <a class="btn js-comprar" href="#oferta">Quero o Sistema Loop</a>
@@ -632,7 +636,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
       <p class="lead">Guia <i>O Prompt do Sim</i> + app CliniLoop, com acesso vitalício e garantia de 7 dias.</p>
       <div class="acoes">
         <a class="btn js-comprar" href="#oferta">Quero o Sistema Loop</a>
-        <p class="preco-curto"><b>12x de R$ 24,75</b> sem juros<br>ou R$ 297 à vista</p>
+        <p class="preco-curto"><span class="valor">R$ 24,75</span> <span class="vezes">x12 sem juros</span><br>ou R$ 297 à vista</p>
       </div>
     </div>
   </section>
