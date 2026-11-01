@@ -3,12 +3,26 @@ tipo: parte
 num: 4
 etapa: No roteiro · Etapa 3 de 6 · Gere autoridade e demanda
 titulo: Conteúdo que gera autoridade e alcance
-lead: Conteúdo de saúde cresce quando responde, em poucos segundos e com segurança, uma dúvida que o paciente já tem, e quando é tão útil que ele envia para alguém.
-nesta: O que o Instagram premia · A escada de crescimento · Três temas por profissão · O que você sabe e o que você atende · Pautas · Formatos recorrentes · Roteiro de Reel · Indicadores da ressonância · Ser citado
+lead: O conteúdo é onde a sua diferença deixa de ser uma frase e vira prova. Ele cresce quando responde, em poucos segundos e com segurança, uma dúvida real, e quando só poderia ter sido feito por você.
+nesta: Conteúdo que só você poderia publicar · O que o Instagram premia · A escada de crescimento · Três temas por profissão · O que você sabe e o que você atende · Pautas · Formatos recorrentes · Roteiro de Reel · Indicadores da ressonância · Ser citado
 grupo: Etapa 3 · Gere autoridade e demanda
 marca: PARTE 04
 ---
-Esta parte combina um método de crescimento de perfis, uma síntese de formatos de vídeo adaptada a clínicas e a pesquisa sobre o algoritmo feita em outubro de 2026. Viralizar nunca é garantido e, para uma clínica, não é objetivo comercial único: o que importa é clareza, confiança e um próximo passo adequado.
+Esta parte combina um método de crescimento de perfis, uma síntese de formatos de vídeo adaptada a clínicas e a pesquisa sobre o algoritmo feita em outubro de 2026. Viralizar nunca é garantido e, para uma clínica, nem é o objetivo. O objetivo é que a pessoa certa reconheça você: entenda como você pensa, como explica e para que tipo de caso você é a escolha certa, antes de chamar.
+
+## Conteúdo que só você poderia publicar
+
+Hoje, qualquer pessoa gera em segundos um texto correto sobre "5 cuidados com a saúde bucal". Por isso, um texto correto já não diferencia ninguém. Ele ocupa o feed, mas não faz o paciente lembrar de você. O conteúdo que diferencia tem pelo menos uma de três origens que nenhum colega e nenhuma IA podem copiar:
+
+- **As dúvidas do seu consultório,** nas palavras dos seus pacientes, agregadas e sem identificar ninguém. Elas mostram que você ouve.
+- **O seu raciocínio clínico,** a forma como você explica uma avaliação, compara caminhos e diz o que depende de cada caso. Ele mostra como você pensa.
+- **A sua forma de atender,** os bastidores do que você elevou e criou na Parte 3, como o plano por escrito, a avaliação mais longa ou o retorno por mensagem. Ela mostra o que o paciente vai encontrar.
+
+A inteligência artificial é ótima para organizar, rascunhar e revisar esse material. Sem ele, ela produz o conteúdo médio da internet, que é exatamente o Oceano Vermelho. Por isso, todo prompt deste guia pede o seu contexto e o seu diferencial.
+
+::: {.box .destaque}
+**O teste da diferença também vale para o conteúdo.** Um colega da mesma especialidade poderia publicar este vídeo sem mudar nada? Se sim, falta uma das três origens acima. Acrescente um exemplo do seu consultório, a sua forma de explicar ou um bastidor do seu atendimento.
+:::
 
 ## O que o Instagram premia
 
@@ -30,7 +44,7 @@ O crescimento de um perfil acontece em sete degraus, e cada um prepara o seguint
 ::: {.box .destaque}
 **1. Entender a plataforma.** A plataforma entrega o que segura atenção. Seu trabalho é falar a língua dela: tema claro, retenção e compartilhamento.
 
-**2. Definir a promessa.** Escreva a transformação: "Ajudo [paciente com perfil X] a [entender ou cuidar de algo] com [diferencial]". Na saúde, a promessa é de informação e atendimento, nunca de desfecho individual. Defina até cinco adjetivos de marca e três temas de conteúdo.
+**2. Definir a promessa.** Use a proposta de valor da Parte 3: "Ajudo [paciente com perfil X] a [entender ou cuidar de algo] com [diferencial]". Na saúde, a promessa é de informação e atendimento, nunca de desfecho individual. Defina até cinco adjetivos de marca e três temas de conteúdo.
 
 **3. Montar a vitrine.** Palavra-chave no nome e na bio, credenciais corretas, link único para o canal oficial (Parte 3).
 
@@ -58,9 +72,13 @@ O crescimento de um perfil acontece em sete degraus, e cada um prepara o seguint
 | Fisioterapeuta | Como funciona a avaliação, prevenção de lesão | Equipe, estrutura, raciocínio clínico com modelo | Mitos sobre dor, repouso, coluna |
 | Nutricionista | Como funciona a consulta e o plano alimentar, leitura de rótulos | Rotina do consultório, preparo de refeições sem marcas em destaque | Mitos sobre dietas da moda e alimentos "proibidos" |
 
+A tabela é um ponto de partida comum a toda a profissão, e por isso ainda é Oceano Vermelho. Faça dela a sua: pelo menos um dos três temas deve nascer diretamente do seu diferencial. Uma fisioterapeuta que criou o plano de exercícios acompanhado pode ter o tema "a semana depois da avaliação"; um dentista que atende adultos com medo pode ter "como é, de verdade, cada etapa".
+
 ## O que você sabe e o que você atende
 
 Uma proporção de partida, comum no marketing digital: perto de 80% do conteúdo mostra o que você sabe; perto de 20% mostra o que você atende e como agendar. Não é regra. É um lembrete de que o perfil que só anuncia serviço perde quem ainda não precisa, e o que nunca fala de serviço deixa o paciente sem saber que pode marcar.
+
+Nos 20% sobre o atendimento, mostre a diferença em vez de anunciar o serviço. "Agende a sua avaliação" diz o mesmo que todos os colegas. "Na avaliação, a gente conversa uma hora e você sai com o plano por escrito" diz o que só você faz.
 
 Dentro do que você sabe, organize o conteúdo em três camadas, conforme quem vai ver:
 
@@ -162,6 +180,7 @@ Celular, luz natural e um ponto silencioso bastam. Fundo sem prontuários, telas
 - **Interação pública por view** = (curtidas + comentários) ÷ views × 100. Não é engajamento total: não inclui envios nem salvamentos.
 - **Use a mediana** de views de peças comparáveis, não a média. Retenção vem dos dados da conta.
 - **Conversão** são contatos qualificados, agendamentos e comparecimentos vindos do conteúdo, medidos no CRM (Parte 13).
+- **Reconhecimento** é o sinal que mais interessa a este guia: a pessoa que chama dizendo "vi o seu vídeo sobre…" ou "a doutora que explica…". Anote no CRM a origem e a peça citada. É assim que você descobre quais conteúdos trazem pacientes pela porta da confiança.
 - **Ciclo de testes:** uma variável por vez (pergunta, abertura, demonstração ou convite), lote pequeno e comparável, registro de data, formato e duração. Muito alcance e pouca permanência: revise promessa e entrega. Muitos contatos e poucas consultas: revise público, localização e atendimento antes de culpar o roteiro.
 
 ### Os indicadores da ressonância
@@ -215,9 +234,9 @@ Uma amostra editorial de perfis clínicos brasileiros analisados em outubro de 2
 ::: {.box .prompt}
 **Roteiro de Reel ético**
 
-Atue como roteirista de Reels para [PROFISSÃO] no Brasil, seguindo as normas de publicidade do [CONSELHO]. Crie 3 roteiros de 30 a 60 segundos sobre a dúvida [DÚVIDA DO PACIENTE], no tema [TEMA], momento da jornada [MOMENTO].
+Atue como roteirista de Reels para [PROFISSÃO] no Brasil, seguindo as normas de publicidade do [CONSELHO]. Crie 3 roteiros de 30 a 60 segundos sobre a dúvida [DÚVIDA DO PACIENTE], no tema [TEMA], momento da jornada [MOMENTO]. O meu diferencial é [SUA PROPOSTA DE VALOR]; use-o para escolher o exemplo e a forma de explicar, sem transformá-lo em propaganda.
 
-Para cada um: pergunta de abertura com texto na tela, resposta curta, demonstração segura (profissional, modelo ou ilustração), limite da orientação, CTA único, final que retoma a abertura, legenda com a palavra-chave [PALAVRA-CHAVE], a cidade [CIDADE] e a identificação profissional, e uma lista de pendências (fontes clínicas, autorizações, norma aplicável).
+Para cada um: pergunta de abertura com texto na tela, resposta curta, demonstração segura (profissional, modelo ou ilustração), limite da orientação, CTA único, final que retoma a abertura, legenda com a palavra-chave [PALAVRA-CHAVE], a cidade [CIDADE] e a identificação profissional, e uma lista de pendências (fontes clínicas, autorizações, norma aplicável). Diga também, em uma linha, o que neste roteiro um colega da mesma especialidade não poderia publicar igual.
 
 Proibido: promessa de resultado, superlativos, medo, autodiagnóstico, preço como chamariz. Marque afirmações clínicas sem fonte como [PENDENTE DE VALIDAÇÃO].
 :::
@@ -236,11 +255,19 @@ Proibido: promessa de resultado, superlativos, medo, autodiagnóstico, preço co
 - Identificação profissional correta
 - Ressalvas preservadas na versão curta
 - Revisão clínica feita
+- Teste da diferença: algo nesta peça é só seu
+
+::: {.box .diferencial}
+- **Eliminar:** posts de data comemorativa sem conteúdo, frases motivacionais e textos que qualquer IA escreveria igual.
+- **Reduzir:** a busca por viralizar e o volume de posts que você não consegue revisar.
+- **Elevar:** as dúvidas reais do consultório e o seu raciocínio clínico, explicados com a sua voz.
+- **Criar:** um quadro recorrente que nasce do seu diferencial e que o paciente associa a você.
+:::
 
 ::: {.box .pratica}
-Liste as dez perguntas que você mais ouve no consultório. Escolha uma, encaixe em um dos seus três temas de conteúdo e grave hoje um Reel de 30 segundos com o roteiro em seis tempos.
+Liste as dez perguntas que você mais ouve no consultório. Escolha uma, encaixe no tema que nasce do seu diferencial e grave hoje um Reel de 30 segundos com o roteiro em seis tempos, usando um exemplo do seu atendimento.
 :::
 
 ::: {.box .noapp}
-**Pautas e roteiros de conteúdo.** Transforma dúvidas reais em pautas por tema e gera roteiros de Reels, carrosséis e vídeos com a palavra-chave da sua cidade.
+**Pautas e roteiros de conteúdo.** Transforma dúvidas reais em pautas por tema e gera roteiros de Reels, carrosséis e vídeos com a palavra-chave da sua cidade e o diferencial que você definiu na Estratégia Oceano Azul.
 :::

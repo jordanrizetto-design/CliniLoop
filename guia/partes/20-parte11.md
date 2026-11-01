@@ -3,12 +3,12 @@ tipo: parte
 num: 11
 etapa: No roteiro · Etapa 4 de 6 · Converta contatos em consultas
 titulo: A decisão de comparecer
-lead: Cada falta é uma hora de agenda perdida que não volta. A maior parte das faltas se evita com confirmação ativa, lembrete e facilidade para remarcar.
-nesta: Sequência de confirmação · Boas práticas · Meta prática
+lead: Cada falta é uma hora de agenda perdida que não volta. Boa parte das faltas se evita com confirmação ativa, lembrete e facilidade para remarcar. E o paciente que já sabe quem vai encontrar tem menos motivo para desistir.
+nesta: Sequência de confirmação · Boas práticas · Comparecimento por origem · Meta prática
 grupo: Etapa 4 · Converta contatos em consultas
 marca: PARTE 11
 ---
-Meça a taxa de faltas (no-show) por profissional, por origem e por dia da semana no CRM.
+Meça a taxa de faltas (no-show) por profissional, por origem e por dia da semana no CRM. A coluna da origem é a mais importante para este guia.
 
 ## Sequência de confirmação
 
@@ -20,6 +20,8 @@ Meça a taxa de faltas (no-show) por profissional, por origem e por dia da seman
 | 2 horas antes | Lembrete curto com localização e estacionamento | Chegada no horário |
 | Após a falta, no mesmo dia | "Sentimos sua falta. Quer remarcar?" com dois horários | Reagendar sem constranger |
 
+A confirmação também pode carregar a sua diferença. Junto do resumo do agendamento, envie um conteúdo seu que explica como será a primeira consulta. O paciente chega sabendo o que vai acontecer, e a consulta deixa de ser um desconhecido que dá vontade de adiar.
+
 ## Boas práticas
 
 - **Agende o retorno antes de o paciente sair da consulta.** Retorno "a combinar" vira falta.
@@ -28,12 +30,25 @@ Meça a taxa de faltas (no-show) por profissional, por origem e por dia da seman
 - **Política de cancelamento clara,** informada no agendamento e aplicada com bom senso.
 - **Em psicologia e psiquiatria,** a falta pode ser sinal clínico. O contato é do profissional ou de alguém treinado, com cuidado.
 
+## Comparecimento por origem
+
+Aqui a hipótese deste guia fica mensurável. Se o paciente que chega por confiança comparece mais, isso aparece na taxa de comparecimento separada por origem: conteúdo, indicação de colega, indicação de paciente, Google, anúncio.
+
+Depois de dois ou três meses de registro, compare as taxas. Se uma origem tem muito mais faltas que as outras, há duas leituras possíveis. A primeira: aquela porta traz pacientes menos decididos, e vale mudar a mensagem que leva até ela. A segunda: o atendimento trata aquela origem de um jeito pior. O CRM não decide por você, mas mostra onde olhar.
+
 ::: {.box .destaque}
 Acompanhe a taxa de comparecimento mensal e trabalhe para que ela suba mês a mês. Clínicas com sequência de confirmação bem feita costumam reduzir faltas de forma perceptível, mas o número de referência é o seu próprio histórico.
 :::
 
+::: {.box .diferencial}
+- **Eliminar:** o retorno "a combinar" e a mensagem de confirmação sem nenhuma informação útil.
+- **Reduzir:** a incerteza do paciente sobre o que vai acontecer na consulta.
+- **Elevar:** a confirmação ativa e o contato humano depois de duas faltas.
+- **Criar:** um conteúdo seu enviado junto com o agendamento, que mostra como será a primeira consulta.
+:::
+
 ::: {.box .pratica}
-Configure a mensagem de confirmação de 48 horas e anote a taxa de faltas deste mês. Ela é a linha de base para o próximo.
+Configure a mensagem de confirmação de 48 horas e anote a taxa de faltas deste mês, separada por origem. Ela é a linha de base para o próximo.
 :::
 
 ::: {.box .noapp}

@@ -10,6 +10,8 @@ marca: PARTE 07
 ---
 Comece pelo editor que já existe dentro da rede onde você vai publicar. Só passe para um aplicativo externo quando sentir falta de algum recurso. Esta parte apresenta as opções e ajuda a escolher; os passos de cada uma, toque por toque, estão no **Anexo A**.
 
+Uma regra atravessa todas as ferramentas: a edição serve à clareza, não à padronização. Modelos prontos, trilhas da moda e efeitos que todos usam deixam o vídeo com cara de qualquer perfil. Corte o que sobra, mas preserve o seu jeito de explicar, os exemplos do seu consultório e as pausas que fazem parte da sua fala. É isso que o paciente vai reconhecer.
+
 ## O que a edição precisa resolver
 
 1. **Cortar pausas, repetições e tomadas erradas.** O ritmo do vídeo curto é de uma ideia por vez, sem silêncio longo.
@@ -73,6 +75,7 @@ Ferramentas como o HeyGen criam um "gêmeo digital" a partir de alguns minutos d
 - **Avise que é IA.** Instagram, Facebook e TikTok pedem que conteúdo realista gerado ou alterado por IA seja identificado, e oferecem o rótulo na hora de publicar. Coloque também na legenda: "vídeo produzido com avatar digital".
 - **Nunca simule paciente nem depoimento.** Avatar de "paciente satisfeito" é depoimento inventado e fere as regras de todos os conselhos.
 - **O avatar não substitui você nos vídeos de confiança.** Use-o para conteúdos informativos de apoio (como funciona a primeira consulta, orientações gerais, versões em outro idioma), não para o vídeo de apresentação.
+- **O avatar apaga parte da diferença.** O que distingue o seu vídeo é a sua presença: o olhar, o tom, a forma de reagir a uma dúvida. Um avatar reproduz o rosto, mas não o raciocínio ao vivo. Quanto mais o perfil depender dele, mais parecido fica com o de qualquer outro profissional que use a mesma ferramenta.
 - **Confira o seu conselho.** As normas sobre publicidade e inteligência artificial evoluem; em caso de dúvida, consulte o conselho regional antes de publicar.
 
 ## Imagens com IA para capas, carrosséis e apoio
@@ -99,9 +102,16 @@ Atue como editor(a) de vídeos curtos para profissionais de saúde, seguindo as 
 
 Entregue: (1) os trechos a cortar (pausas, repetições, frases que dependem de contexto); (2) o texto na tela do gancho, em até seis palavras; (3) as palavras da legenda que merecem destaque; (4) onde entram imagens de apoio e quais, sem pacientes; (5) três opções de texto para a capa; (6) a legenda do post com a palavra-chave [PALAVRA-CHAVE] e a identificação profissional; (7) os termos técnicos que preciso conferir na legenda automática.
 
-Não acrescente promessas de resultado nem informações que não estejam na transcrição.
+Não acrescente promessas de resultado nem informações que não estejam na transcrição. Não corte os trechos em que eu dou exemplos do meu atendimento, a não ser que estejam repetidos.
 
 Transcrição: [COLE AQUI]
+:::
+
+::: {.box .diferencial}
+- **Eliminar:** efeitos, trilhas e transições da moda que fazem o vídeo parecer com o de todo mundo.
+- **Reduzir:** o uso de avatar e de voz sintética nos vídeos em que o paciente quer conhecer você.
+- **Elevar:** a legibilidade do gancho, a legenda revisada e o som limpo.
+- **Criar:** uma identidade visual simples e sempre igual, de capa e de texto na tela, que o seguidor reconhece antes de ler o seu nome.
 :::
 
 ::: {.box .pratica}

@@ -3,12 +3,46 @@ tipo: parte
 num: 9
 etapa: No roteiro · Etapa 3 de 6 · Gere autoridade e demanda
 titulo: Anúncios: Meta Ads e Google Ads
-lead: Anúncio não conserta perfil fraco nem atendimento lento. Ele acelera o que já funciona. A métrica final não é clique nem mensagem: é o custo por paciente que compareceu.
-nesta: Qual plataforma para qual intenção · Meta Ads · Google Ads · Mensagens éticas · Impulsionamento passo a passo
+lead: Este guia não é contra anúncio. Anúncio amplifica o que já é seu: leva a sua diferença a mais gente. O que ele não faz é criar essa diferença. A métrica final não é clique nem mensagem: é o custo por paciente que compareceu.
+nesta: Anúncio amplifica o que já é seu · Se você trabalha com agência · Qual plataforma para qual intenção · Meta Ads · Google Ads · Mensagens éticas · Impulsionamento passo a passo
 grupo: Etapa 3 · Gere autoridade e demanda
 marca: PARTE 09
 ---
-Por isso a ordem é: perfil pronto (Parte 3), conteúdo orgânico testado (Parte 4), atendimento e CRM prontos (Partes 10 a 13), e só então dinheiro em mídia.
+Anúncio não conserta perfil fraco nem atendimento lento. Por isso a ordem é: proposta de valor e perfis prontos (Parte 3), conteúdo orgânico testado (Parte 4), atendimento e CRM prontos (Partes 10 a 13), e só então dinheiro em mídia.
+
+## Anúncio amplifica o que já é seu
+
+A diferença entre os dois jogos da Apresentação não está em anunciar ou não. Está no que se anuncia.
+
+| | Anúncio de fábrica de leads | Anúncio que amplifica o que é seu |
+|---|---|---|
+| O criativo | Modelo genérico, foto de banco de imagens, frase que serviria a qualquer colega | O seu Reel que já foi bem no orgânico, com a sua voz e um exemplo do seu atendimento |
+| A promessa | Benefício vago ou condição comercial | Uma explicação útil e o convite para conhecer como você atende |
+| Quem responde | Quem procura o mais barato ou o mais perto | Quem se identificou com a forma como você explica |
+| A primeira pergunta no WhatsApp | "Quanto custa?" | "Vi o seu vídeo sobre…" |
+| O que você mede | Custo por mensagem | Custo por paciente que compareceu e seguiu o tratamento, por origem |
+
+O segundo tipo de anúncio funciona como atalho para a porta da confiança: a pessoa vê você explicando antes de chamar. Ele pode custar mais por mensagem, porque é menos "chamativo". A hipótese deste guia é que ele compensa nas decisões 5 a 7. Meça no CRM: compare o custo por paciente que compareceu e o custo por paciente que iniciou tratamento, e não só o custo por conversa.
+
+## Se você trabalha com agência ou gestor de tráfego
+
+Muitos profissionais já pagam uma agência ou um gestor de tráfego. Este guia não pede que você troque. Pede que você entregue a eles o que só você tem e que meça o que importa.
+
+**O que entregar:**
+
+- a proposta de valor e as quatro ações da Parte 3;
+- as dúvidas reais do consultório e os temas de conteúdo da Parte 4;
+- os seus vídeos e carrosséis com melhor retenção e mais envios, para virar criativo;
+- as regras do seu conselho e o resultado do Verificador ético.
+
+**O que pedir:**
+
+- criativos feitos a partir do seu conteúdo, e não de modelos usados para outros clientes;
+- origem marcada em cada conversa, para registro no CRM;
+- relatório por custo por agendamento e por comparecimento, e não só por mensagem ou clique;
+- aprovação sua, clínica e ética, antes de cada peça ir ao ar (Parte 2).
+
+Se a agência não consegue trabalhar assim, você sabe em qual dos dois jogos ela está.
 
 ## Qual plataforma para qual intenção
 
@@ -42,9 +76,9 @@ Comece pelos passos 2 e 3, que pedem orçamento menor, e só invista em estímul
 4. **Orçamento.** Comece com um valor diário que você possa manter por pelo menos 14 dias sem mexer. Mudanças frequentes reiniciam o aprendizado.
 5. **Público.** Localização por raio em torno da clínica (geralmente de 3 a 10 km nas capitais), idade compatível com o paciente e segmentação ampla. A Meta removeu opções de interesse ligadas a condições de saúde; deixe o criativo selecionar o público.
 6. **Posicionamentos.** Advantage+ ou manual com Reels, Stories e Feed do Instagram.
-7. **Criativo.** Use os Reels orgânicos com melhor retenção e mais envios. Teste de 3 a 5 criativos por conjunto. Texto principal curto, título com o benefício informativo, CTA "Enviar mensagem".
+7. **Criativo.** Use os Reels orgânicos com melhor retenção e mais envios, de preferência os que mostram o seu diferencial. Teste de 3 a 5 criativos por conjunto. Texto principal curto, título com o benefício informativo, CTA "Enviar mensagem".
 8. **Mensagem de boas-vindas no WhatsApp.** Pergunta simples que qualifica: "Olá! Você gostaria de agendar uma avaliação ou tirar uma dúvida sobre [tema]?"
-9. **Leitura.** Depois de 7 dias, compare custo por conversa, taxa de agendamento e custo por comparecimento por criativo. Desligue o pior, duplique o melhor.
+9. **Leitura.** Depois de 7 dias, compare custo por conversa, taxa de agendamento e custo por comparecimento por criativo. Desligue o pior, duplique o melhor. O criativo mais barato por conversa nem sempre é o que traz quem comparece.
 
 ## Google Ads passo a passo
 
@@ -75,7 +109,7 @@ Comece pelos passos 2 e 3, que pedem orçamento menor, e só invista em estímul
 ::: {.box .prompt}
 **Anúncio Meta e Google**
 
-Crie para [PROFISSÃO/CLÍNICA] em [BAIRRO, CIDADE], serviço [SERVIÇO]: (a) 3 textos principais de até 125 caracteres e 3 títulos de até 40 caracteres para Meta Ads com CTA "Enviar mensagem"; (b) 15 títulos de até 30 caracteres e 4 descrições de até 90 caracteres para anúncio responsivo de pesquisa no Google; (c) 20 palavras-chave com intenção e local e 15 negativas.
+Crie para [PROFISSÃO/CLÍNICA] em [BAIRRO, CIDADE], serviço [SERVIÇO]. Meu diferencial: [SUA PROPOSTA DE VALOR]; os textos devem mostrá-lo com fatos, sem adjetivos. Entregue: (a) 3 textos principais de até 125 caracteres e 3 títulos de até 40 caracteres para Meta Ads com CTA "Enviar mensagem"; (b) 15 títulos de até 30 caracteres e 4 descrições de até 90 caracteres para anúncio responsivo de pesquisa no Google; (c) 20 palavras-chave com intenção e local e 15 negativas.
 
 Regras: normas do [CONSELHO], políticas de saúde da Meta e do Google, sem superlativos, sem promessa, sem afirmar condição de saúde do usuário.
 :::
@@ -149,8 +183,15 @@ Post: [COLE O TEXTO E DESCREVA O VÍDEO]
 
 {{exemplo:impulso}}
 
+::: {.box .diferencial}
+- **Eliminar:** criativos de banco de imagens, modelos usados para vários clientes e qualquer promessa ou condição comercial vedada pelo conselho.
+- **Reduzir:** o orçamento em alcance amplo antes de o atendimento transformar conversas em consultas.
+- **Elevar:** o uso dos seus melhores conteúdos orgânicos como criativo e a leitura por custo por paciente que compareceu.
+- **Criar:** um briefing do seu diferencial para quem cuida dos seus anúncios, seja você, a sua equipe ou uma agência.
+:::
+
 ::: {.box .pratica}
-Antes de investir, confira se o Pixel ou a tag do Google estão instalados e se cada conversa vinda de anúncio chega ao CRM com a origem marcada.
+Antes de investir, confira se o Pixel ou a tag do Google estão instalados e se cada conversa vinda de anúncio chega ao CRM com a origem marcada. Escolha os dois Reels orgânicos com mais envios e mensagens: eles são os primeiros candidatos a anúncio.
 :::
 
 ::: {.box .noapp}

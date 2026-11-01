@@ -26,8 +26,9 @@ Não existe benchmark brasileiro público e confiável de volume de pacientes po
 
 Não avaliamos cursos pagos nem mentorias, por não termos acesso a conteúdo comparável.
 
-| Categoria | O que entrega | Onde o sistema Loop é diferente |
+| Categoria | O que entrega | Onde o Sistema Loop é diferente |
 |---|---|---|
+| Agência de marketing ou gestor de tráfego | Anúncios, gestão das redes e relatórios, mediante mensalidade mais verba de mídia. O criativo costuma ser adaptado de modelos usados para vários clientes | Outro jogo: em vez de comprar volume, o profissional constrói a diferença com o próprio conteúdo e a rede de colegas. O custo principal é o tempo dele, de 25 a 30 minutos por dia no primeiro mês. Os dois podem conviver: o guia ensina a entregar à agência o que é só seu, para que o anúncio amplifique a diferença (Parte 9) |
 | Conteúdo gratuito de blog | Conceitos, escolha de plataforma, resumo de regras do CFM. Sem números, modelos, roteiros ou checklists | Passos de 30 minutos, 14 prompts, checklists e um registro de contatos |
 | CRM de WhatsApp para clínicas | Automação, agente de IA, API oficial do WhatsApp. Preços de fornecedor em setembro de 2026 a partir de R$ 149 por usuário ao mês | O guia não automatiza nem integra o WhatsApp. Em troca, não cobra mensalidade, ensina o método e traz as regras do conselho. Quando o volume crescer, migre para um CRM e leve o método |
 | Gestão e marketplace | Agenda, prontuário, teleconsulta, marketplace de pacientes | Trata da captação própria, da rede de colegas e da rotina semanal, fora do marketplace |
@@ -41,8 +42,10 @@ Não avaliamos cursos pagos nem mentorias, por não termos acesso a conteúdo co
 ### Limites
 
 - Ainda sem testes com um grupo de profissionais, sem casos reais e sem revisão jurídica.
+- A hipótese central, de que o paciente que chega por confiança agenda, comparece e adere mais, ainda não foi medida em consultórios reais. Por isso o guia ensina cada profissional a medi-la no próprio CRM (Parte 13).
+- Exige tempo do profissional: a diferença não pode ser terceirizada por inteiro.
 - Sem integração com WhatsApp, agenda ou prontuário; sem uso por vários usuários.
 - Os dados não sincronizam entre aparelhos.
 - Os CRMs e marketplaces têm equipe, suporte e escala que um guia independente não tem.
 
-**Posicionamento:** complemento, não substituto. O guia ensina o método e a rotina; o CRM executa quando o volume pede.
+**Posicionamento:** em relação aos CRMs e aos sistemas de gestão, é um complemento: o guia ensina o método e a rotina, e o CRM executa quando o volume pede. Em relação à fábrica de leads, é uma alternativa de jogo, mas não uma oposição: anúncio e agência continuam úteis quando amplificam uma diferença que já existe.

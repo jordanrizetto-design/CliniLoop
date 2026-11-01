@@ -3,12 +3,20 @@ tipo: parte
 num: 8
 etapa: No roteiro · Etapa 3 de 6 · Gere autoridade e demanda
 titulo: A decisão dos colegas: a rede de indicação
-lead: A indicação de um colega é o paciente mais qualificado que existe. Chega com confiança prévia, comparece mais e adere mais ao tratamento.
-nesta: Quem indica quem · Os cinco movimentos da indicação · Limites éticos · Collabs entre colegas
+lead: Na fábrica de leads, os colegas quase não aparecem. Neste guia, eles são um canal. O paciente indicado por quem ele já confia chega pela porta da confiança, com boa parte das dúvidas resolvidas antes do primeiro contato.
+nesta: Por que o colega indica você · Quem indica quem · Os cinco movimentos da indicação · Limites éticos · Collabs entre colegas
 grupo: Etapa 3 · Gere autoridade e demanda
 marca: PARTE 08
 ---
-A indicação não se compra; se conquista com três coisas: competência visível, comunicação de retorno e facilidade de encaminhar.
+A indicação não se compra; se conquista com quatro coisas: um foco claro, competência visível, comunicação de retorno e facilidade de encaminhar.
+
+## Por que o colega indica você
+
+Um colega encaminha um paciente quando, diante de um caso, lembra de um nome. Ninguém lembra de "um bom fisioterapeuta". Lembra de "a fisioterapeuta que pega corredor com dor no joelho e manda relatório depois". O foco é o que transforma competência em lembrança.
+
+É por isso que a diferenciação da Parte 3 vale para os colegas tanto quanto para os pacientes. Para o paciente, ela responde "por que você?". Para o colega, responde "em que caso eu mando para você?". Quanto mais clara a resposta, mais fácil indicar.
+
+Há também uma razão de qualidade. O paciente indicado chega com a confiança emprestada de quem indicou. A hipótese deste guia é que ele agenda, comparece e adere mais do que o paciente que chegou comparando preço. Registre a origem de cada indicação no CRM e confira, com os seus números, se isso se confirma no seu consultório (Parte 13).
 
 ## Quem indica quem
 
@@ -23,9 +31,9 @@ A indicação não se compra; se conquista com três coisas: competência visív
 ## Os cinco movimentos da indicação
 
 1. **Mapear.** Liste no CRM de 20 a 50 profissionais da sua região que atendem o mesmo paciente antes ou depois de você. Registre especialidade, endereço, canal preferido e quem já indicou.
-2. **Apresentar-se com valor.** Uma mensagem curta ou visita com um material técnico de uma página: o que você trata, quando encaminhar, como encaminhar e o que o colega recebe de volta.
+2. **Apresentar-se com foco.** Uma mensagem curta ou visita com um material técnico de uma página: o que você trata com mais frequência, em quais casos encaminhar, como encaminhar e o que o colega recebe de volta. O foco vem antes da lista de serviços.
 3. **Facilitar o encaminhamento.** Um link ou número de WhatsApp exclusivo para colegas, com prioridade de agenda para pacientes encaminhados e um formulário simples de encaminhamento.
-4. **Devolver informação (contrarreferência).** Com autorização do paciente, envie ao colega um relatório breve de avaliação e, depois, de alta. É o gesto que mais gera novas indicações.
+4. **Devolver informação (contrarreferência).** Com autorização do paciente, envie ao colega um relatório breve de avaliação e, depois, de alta. É o gesto que mais gera novas indicações, e um dos diferenciais mais raros: poucos profissionais fazem isso com regularidade.
 5. **Manter o relacionamento.** Agradecimento a cada indicação, convites para aulas e discussões de caso, conteúdo técnico no LinkedIn, collabs no Instagram com temas complementares.
 
 ::: {.box .atencao}
@@ -34,12 +42,12 @@ A indicação não se compra; se conquista com três coisas: competência visív
 
 ## Collabs entre colegas
 
-Um ortopedista e um fisioterapeuta gravam juntos "Quando operar e quando fazer fisioterapia no menisco". Um dentista e um fisioterapeuta, "Dor na mandíbula: o que é DTM". O público de um conhece o outro, e a autoridade se soma.
+Um ortopedista e um fisioterapeuta gravam juntos "Quando operar e quando fazer fisioterapia no menisco". Um dentista e um fisioterapeuta, "Dor na mandíbula: o que é DTM". O público de um conhece o outro, a autoridade se soma e cada um sai com o foco mais claro: o paciente vê quem faz o quê.
 
 ::: {.box .prompt}
 **Carta de apresentação a colegas**
 
-Escreva uma mensagem de até 120 palavras, em tom cordial e técnico, de um(a) [PROFISSÃO] especializado(a) em [ÁREA] para um(a) [ESPECIALIDADE DO COLEGA] da região de [BAIRRO/CIDADE]. Objetivo: apresentar o serviço, explicar em quais casos o encaminhamento ajuda o paciente, como encaminhar ([CANAL]) e que o colega receberá relatório de avaliação e alta com autorização do paciente. Sem bajulação, sem oferta de vantagem, sem superlativos.
+Escreva uma mensagem de até 120 palavras, em tom cordial e técnico, de um(a) [PROFISSÃO] especializado(a) em [ÁREA] para um(a) [ESPECIALIDADE DO COLEGA] da região de [BAIRRO/CIDADE]. Comece pelo meu foco: [SUA PROPOSTA DE VALOR]. Objetivo: explicar em quais casos o encaminhamento ajuda o paciente, como encaminhar ([CANAL]) e que o colega receberá relatório de avaliação e alta com autorização do paciente. Sem bajulação, sem oferta de vantagem, sem superlativos.
 :::
 
 {{exemplo:carta}}
@@ -56,10 +64,17 @@ Anotações: [COLE AQUI, SEM DADOS IDENTIFICÁVEIS]
 
 {{exemplo:contrarref}}
 
-**Métricas no CRM:** colegas ativos (indicaram nos últimos 90 dias), indicações por colega por mês, taxa de agendamento e de fechamento dos pacientes indicados, e relatórios de contrarreferência enviados.
+**Métricas no CRM:** colegas ativos (indicaram nos últimos 90 dias), indicações por colega por mês, taxa de agendamento, de comparecimento e de adesão dos pacientes indicados, e relatórios de contrarreferência enviados. Compare as taxas dos indicados com as das outras origens: é um dos testes mais diretos da hipótese deste guia.
+
+::: {.box .diferencial}
+- **Eliminar:** a carta genérica com a lista de todos os serviços que você oferece.
+- **Reduzir:** o contato só quando você precisa de pacientes.
+- **Elevar:** o retorno ao colega: relatório de avaliação e de alta, com autorização do paciente.
+- **Criar:** um canal exclusivo de encaminhamento, com prioridade de agenda, e uma frase de foco que o colega consegue repetir para o paciente.
+:::
 
 ::: {.box .pratica}
-Cadastre no CRM dez colegas que atendem o mesmo paciente antes ou depois de você e envie a carta de apresentação para os três mais próximos.
+Cadastre no CRM dez colegas que atendem o mesmo paciente antes ou depois de você. Escreva em uma linha em que caso cada um deveria lembrar de você e envie a carta de apresentação para os três mais próximos.
 :::
 
 ::: {.box .noapp}

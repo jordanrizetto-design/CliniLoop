@@ -8,11 +8,14 @@ nesta: O que o app faz por você · Como o app se organiza · Tutorial: o primei
 grupo: Etapa 6 · Meça e escale com CRM
 marca: PARTE 14
 ---
-Esta parte é o manual de uso do app. Cada ferramenta nasceu de uma parte do guia: o guia explica o porquê, o app põe em prática. Por isso o sistema Loop é o guia *O Prompt do Sim* e o app CliniLoop juntos, e o resultado vem do uso dos dois.
+Esta parte é o manual de uso do app. Cada ferramenta nasceu de uma parte do guia: o guia explica o porquê, o app põe em prática. Por isso o Sistema Loop é o guia *O Prompt do Sim* e o app CliniLoop juntos, e o resultado vem do uso dos dois.
+
+O app também resolve um problema que este guia aponta desde a Apresentação: a IA, sozinha, escreve o texto médio da internet. No CliniLoop, a proposta de valor, as quatro ações do Oceano Azul e o tom de voz que você guardou entram automaticamente no contexto de todos os prompts. A diferença que você definiu uma vez passa a orientar cada peça.
 
 ## O que o app faz por você
 
-- **Gera prompts prontos.** Cada ferramenta monta o pedido para a inteligência artificial com o perfil do seu consultório, o seu paciente ideal e as regras do seu conselho. Você copia, cola na sua IA preferida (Claude, ChatGPT, Gemini, Grok, DeepSeek ou Meta AI) e recebe o texto.
+- **Leva o seu diferencial a todas as peças.** A proposta de valor do Perfil do consultório e as decisões que você guarda nas ferramentas de posicionamento (Público, Persona do profissional, Nicho e diferencial, Estratégia Oceano Azul) entram no contexto dos prompts das outras ferramentas.
+- **Gera prompts prontos.** Cada ferramenta monta o pedido para a inteligência artificial com o perfil do seu consultório, o seu paciente ideal, o seu diferencial e as regras do seu conselho. Você copia, cola na sua IA preferida (Claude, ChatGPT, Gemini, Grok, DeepSeek ou Meta AI) e recebe o texto.
 - **Monta roteiros de conteúdo.** Reels, carrosséis, Stories, vídeos de YouTube e posts de LinkedIn, com ganchos, versão em blocos para o teleprompter e checklist antes de publicar.
 - **Monta roteiros de campanha.** Plano de impulsionamento, textos, títulos, palavras-chave e públicos para Meta Ads e Google Ads, com a sugestão de campanha por mídia na Jornada.
 - **Indica as ferramentas certas.** O kit de gravação, o editor de vídeo e o gerador de imagem que cabem no seu orçamento, e o pedido de imagem para a IA com os cuidados da sua profissão.
@@ -107,8 +110,8 @@ Os dados ficam só neste navegador. Em **Configurações**, na parte "Seus dados
 | Comece aqui | Escolhe o tipo de profissional (médico, psiquiatra, dentista, psicólogo, fisioterapeuta, nutricionista ou clínica multiprofissional), reordena as ferramentas e carrega as regras do conselho certo | 1 e 2 |
 | Público, ICP e persona | Descreve quem você atende e gera o perfil do paciente ideal | 3 |
 | Persona do profissional | Registra sua história, seus valores e o seu tom de voz | 3 e 4 |
-| Nicho e diferencial | Analisa nicho e concorrência e gera a proposta de valor | Apresentação |
-| Estratégia Oceano Azul | Guia em quatro passos: onde a sua área compete, as quatro ações (eliminar, reduzir, elevar, criar), a curva de valor ao lado da do mercado e a proposta | Apresentação |
+| Nicho e diferencial | Analisa nicho e concorrência e gera a proposta de valor | Apresentação e 3 |
+| Estratégia Oceano Azul | Guia em quatro passos: onde a sua área compete, as quatro ações (eliminar, reduzir, elevar, criar), a curva de valor ao lado da do mercado e a proposta. As escolhas guardadas orientam as demais ferramentas | Apresentação, 3 e todas as partes |
 | Perfis e presença | Checklists de configuração e auditoria do Google, Instagram, YouTube, LinkedIn e TikTok | 3 |
 | Pautas e palavras-chave | Banco de dúvidas reais, palavras-chave por serviço e cidade, pautas e calendário | 4 |
 | Roteiros e copy | Reels, carrosséis, Stories, vídeos de YouTube e posts de LinkedIn, com cinco ganchos e versão em blocos para o teleprompter | 4 e 6 |
@@ -160,8 +163,15 @@ O CliniLoop foi pensado para o profissional que trabalha sozinho: os dados ficam
 **Integrações futuras.** WhatsApp Business, agenda (Google ou Outlook) e importação de conversões offline para Meta e Google estão previstas, mas ainda não existem. Hoje, o Rastreador exporta planilha e gera lembretes que você abre no seu calendário.
 :::
 
+::: {.box .diferencial}
+- **Eliminar:** prompts genéricos digitados do zero, sem o contexto do seu consultório.
+- **Reduzir:** o tempo gasto repetindo as mesmas informações a cada pedido.
+- **Elevar:** a proposta de valor e as decisões guardadas, que passam a orientar todas as ferramentas.
+- **Criar:** o hábito de guardar a versão final de cada ferramenta de posicionamento, para que a diferença se acumule.
+:::
+
 ::: {.box .pratica}
-Preencha o Perfil do consultório uma única vez: profissão, registro, especialidade, cidade, serviços, público ideal e temas de conteúdo. Ele alimenta todas as ferramentas.
+Preencha o Perfil do consultório uma única vez: profissão, registro, especialidade, cidade, serviços, público ideal, proposta de valor e temas de conteúdo. Depois, faça a Estratégia Oceano Azul e guarde a versão final. Os dois alimentam todas as ferramentas.
 :::
 
 ::: {.box .noapp}

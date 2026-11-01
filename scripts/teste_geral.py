@@ -23,7 +23,7 @@ with sync_playwright() as p:
     ok('roteiro 6 etapas', pg.evaluate("document.querySelectorAll('#livro-roteiro .lr-etapa').length")==7)
     ok('16 partes no roteiro', pg.evaluate("document.querySelectorAll('#livro-roteiro .lr-parte').length")==16)
     pg.click('.livro-tabs [data-tab=glossario]')
-    ok('glossário 76', pg.evaluate("document.querySelectorAll('#glos-lista dt').length")==76)
+    ok('glossário 79', pg.evaluate("document.querySelectorAll('#glos-lista dt').length")==79)
     pg.fill('#glos-busca','no-show'); ok('busca glossário', pg.evaluate("document.querySelectorAll('#glos-lista dt').length")>=1 and 'Falta' in pg.inner_text('#glos-lista'))
     pg.click('.livro-tabs [data-tab=sins]'); ok('sete sins', pg.evaluate("document.querySelectorAll('#livro-sins .sin').length")==7)
     pg.click('.livro-tabs [data-tab=ia]'); ok('regras IA', pg.evaluate("document.querySelectorAll('#livro-regras li').length")==4)

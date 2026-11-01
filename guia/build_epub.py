@@ -22,7 +22,7 @@ AUTOR = 'JR Tosoni'
 EDITORA = 'Loop University'
 
 ROTULOS = {'prompt': 'Prompt pronto', 'pratica': 'Na prática · até 30 minutos, hoje', 'noapp': 'No CliniLoop',
-           'destaque': 'A ideia central', 'atencao': 'Atenção'}
+           'destaque': 'A ideia central', 'atencao': 'Atenção', 'diferencial': 'Oceano Azul · seu diferencial nesta parte'}
 
 FONTES = [('poppins-latin-400-normal.woff2', 400, 'normal'), ('poppins-latin-400-italic.woff2', 400, 'italic'),
           ('poppins-latin-500-normal.woff2', 500, 'normal'), ('poppins-latin-600-normal.woff2', 600, 'normal'),
@@ -65,6 +65,11 @@ hr{border:0;border-top:1px solid #D9E0E2;margin:1.5em 0;}
 .destaque .box-label{color:#185860;}
 .atencao{background:#FFF3EE;border-left:5px solid #C2502F;}
 .atencao .box-label{color:#C2502F;}
+.diferencial{background:#EEF4FA;border-left:5px solid #2E6A99;}
+.diferencial .box-label{color:#2E6A99;}
+.diferencial th{background:#2E6A99;}
+blockquote{margin:1em 0 1.4em;padding:.8em 1em;border-left:4px solid #F4BFA4;background:#FFF6EF;font-style:italic;color:#3A5059;}
+blockquote p:last-child{margin-bottom:0;}
 .exemplo{background:#FBFAF6;border:1px dashed #B8C5C8;}
 .exemplo .box-label{color:#3A5059;}
 .ex-h{font-size:.75em;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#185860;margin:1em 0 .3em;}

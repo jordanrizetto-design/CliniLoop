@@ -245,6 +245,12 @@ a.glos-link{color:inherit;text-decoration:underline dotted;text-decoration-color
 .destaque::before{content:"A ideia central";color:var(--teal-d);}
 .atencao{background:#FFF3EE;border-left:1.6mm solid var(--rust);}
 .atencao::before{content:"Atenção";color:var(--rust);}
+.diferencial{background:#EEF4FA;border-left:1.6mm solid #2E6A99;}
+.diferencial::before{content:"Oceano Azul · seu diferencial nesta parte";color:#2E6A99;}
+.diferencial table{margin:2mm 0 0;font-size:8.8pt;background:#fff;}
+.diferencial th{background:#2E6A99;}
+blockquote{margin:4mm 0 6mm;padding:4mm 6mm;border-left:1.2mm solid var(--peach);background:var(--peachbg);font-style:italic;color:var(--soft);}
+blockquote p:last-child{margin-bottom:0;}
 .exemplo{background:#FBFAF6;border:.35mm dashed #B8C5C8;}
 .exemplo .box-label{font:600 7.6pt Poppins;letter-spacing:.17em;text-transform:uppercase;color:var(--soft);margin-bottom:3.4mm;}
 .exemplo::before{content:none;}
@@ -432,7 +438,7 @@ def build_html(pages):
             for hid, ht in subs:
                 toc.append(f'<a class="sub" href="#{hid}"><span class="n"></span><span class="t">{E(ht)}</span><span class="p">{pages.get(hid, "")}</span></a>')
     toc.append('</section>')
-    fim = ('<section class="fim"><h2>O Prompt do Sim</h2><p>Conhecimentos dirigidos e um app de CRM: o sistema Loop. O app CliniLoop, que completa este guia, registra pacientes, colegas e campanhas no seu navegador, '
+    fim = ('<section class="fim"><h2>O Prompt do Sim</h2><p>Conhecimentos dirigidos e um app de CRM: o Sistema Loop. O app CliniLoop, que completa este guia, registra pacientes, colegas e campanhas no seu navegador, '
            'sem servidor, e leva os prompts para o seu dia a dia.</p><p class="nota" style="color:#9FB6BB">Este guia não substitui a orientação do seu conselho profissional nem assessoria jurídica.</p></section>')
     doc = f'<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>O Prompt do Sim</title><style>{CSS}</style></head><body>{cover_html()}{"".join(toc)}{"".join(sections)}{fim}</body></html>'
     # âncoras de sumário

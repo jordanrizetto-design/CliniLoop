@@ -3,8 +3,8 @@ tipo: parte
 num: 12
 etapa: No roteiro · Etapa 5 de 6 · Feche e acompanhe o tratamento
 titulo: A decisão de tratar: fechamento com ética
-lead: Na saúde, fechar não é vender. É o paciente entender o plano, confiar nele e decidir começar.
-nesta: Por que precisa de processo · O fechamento em cinco momentos · Fisioterapia · Clínicas · Objeções honestas
+lead: Na saúde, fechar não é vender. É o paciente entender o plano, confiar nele e decidir começar. É também o momento em que a diferença prometida no conteúdo precisa ser entregue de verdade.
+nesta: Por que precisa de processo · Onde a diferença é cumprida · O fechamento em cinco momentos · Fisioterapia · Clínicas · Objeções honestas
 grupo: Etapa 5 · Feche e acompanhe o tratamento
 marca: PARTE 12
 ---
@@ -16,6 +16,14 @@ Clínicas e fisioterapeutas sentem isso mais que ninguém, porque o resultado de
 - O paciente recebe o plano e diz "vou pensar". Sem acompanhamento, ele não volta.
 - A adesão cai depois das primeiras sessões, quando a dor melhora e o paciente abandona antes da alta.
 - A equipe (recepção, coordenação, profissional) precisa falar a mesma língua.
+
+## Onde a diferença é cumprida
+
+Todo o trabalho das Partes 3 a 11 cria uma expectativa: o paciente chega porque viu como você explica, como você atende e o que você faz de diferente. Na consulta, essa expectativa é conferida. Se o atendimento for igual ao de qualquer outro, a confiança construída no conteúdo se desfaz, e a decisão volta para o preço.
+
+O contrário também vale. Um atendimento que cumpre o que o conteúdo mostrou é a melhor prova da sua diferença. É ele que gera a avaliação espontânea no Google, a indicação ao amigo e o retorno ao colega que encaminhou. A decisão 7 alimenta, de novo, as decisões 1 a 3.
+
+Por isso, o fechamento abaixo não é uma técnica de venda. É a forma de entregar, no consultório, o que você elevou e criou na Parte 3: a explicação clara, o plano por escrito, o acompanhamento entre as consultas.
 
 ## O fechamento em cinco momentos
 
@@ -42,6 +50,7 @@ Clínicas e fisioterapeutas sentem isso mais que ninguém, porque o resultado de
 - **Reunião semanal de 30 minutos** sobre planos em aberto.
 - **Indicadores por profissional:** taxa de aceitação de planos, tempo médio até iniciar, taxa de conclusão até a alta.
 - **Encaminhamentos internos registrados** (dentista para fisioterapia de DTM, fisioterapeuta para nutricionista), sempre por critério clínico.
+- **A mesma diferença em todos os profissionais.** Se a clínica promete plano por escrito, todos entregam plano por escrito. Diferença que depende de quem atende não é diferença da clínica.
 
 ::: {.box .atencao}
 **Médicos, psiquiatras e psicólogos: o fechamento é a adesão.** Não há "fechar" no sentido comercial. O equivalente é o paciente entender a conduta, agendar o retorno e seguir o tratamento. Em saúde mental, o vínculo terapêutico é o centro, e qualquer contato de acompanhamento deve partir de critério clínico, nunca de meta comercial.
@@ -56,6 +65,8 @@ Clínicas e fisioterapeutas sentem isso mais que ninguém, porque o resultado de
 | "Já melhorei" (fisioterapia) | Mostre o objetivo combinado e os testes da reavaliação: o que falta para a alta e o risco de recidiva, sem alarmismo. |
 | "Não tenho tempo" | Ajuste frequência e horários, exercícios domiciliares, teleatendimento quando permitido. |
 
+Anote no CRM a objeção de cada plano não iniciado, junto com a origem do paciente. Com o tempo, você vai ver quais objeções aparecem mais em cada porta de entrada. Se "está caro" se concentra em quem chegou por anúncio genérico, a correção não está no fechamento: está no anúncio.
+
 ::: {.box .prompt}
 **Plano de tratamento compreensível**
 
@@ -66,8 +77,15 @@ Não prometa resultado. Marque com [CONFIRMAR] o que faltar. Use apenas iniciais
 
 {{exemplo:plano}}
 
+::: {.box .diferencial}
+- **Eliminar:** o plano só verbal e o "vou pensar" sem data de retorno.
+- **Reduzir:** a linguagem técnica na explicação do plano.
+- **Elevar:** o plano por escrito, as metas mensuráveis e a reavaliação com os mesmos testes.
+- **Criar:** um acompanhamento entre as consultas que o paciente não encontra em outro lugar e que confirma o que o seu conteúdo prometeu.
+:::
+
 ::: {.box .pratica}
-Liste os planos propostos nos últimos 30 dias que não começaram. Para cada um, registre o motivo provável e marque um contato de acompanhamento com data.
+Liste os planos propostos nos últimos 30 dias que não começaram. Para cada um, registre a origem do paciente, o motivo provável e um contato de acompanhamento com data.
 :::
 
 ::: {.box .noapp}

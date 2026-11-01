@@ -5,7 +5,7 @@ marca: COMO COMEÇAR
 titulo: Como começar
 ---
 ::: lead
-Antes da Parte 1, separe uma hora para abrir as contas que o guia usa. Você não precisa de todas no primeiro dia, mas vai precisar delas ao longo do roteiro.
+Antes da Parte 1, separe uma hora para abrir as contas que o guia usa e para escrever, em uma linha, por que um paciente deveria procurar você. Essa linha vai mudar ao longo do roteiro, e é bom que mude.
 :::
 
 ## 1. Uma conta em uma ferramenta de IA
@@ -24,9 +24,11 @@ Se você ainda não usa inteligência artificial, abra uma conta em uma das ferr
 
 O app funciona com todas elas: em Configurações, escolha a sua preferida. Nunca cole dados de pacientes em nenhuma IA, e confira onde cada uma guarda o que você escreve. O DeepSeek, por exemplo, armazena os dados na China.
 
+A IA é a mesma para você e para o seu concorrente. O que muda o resultado é o que você coloca nela: a sua experiência clínica, as dúvidas dos seus pacientes e o seu diferencial. Por isso, o guia insiste no contexto de cada prompt.
+
 ### Quando vale pagar
 
-Sem assinatura, há limite no número de mensagens por dia e o acesso aos modelos mais recentes. Se você passar a usar a IA toda semana, uma assinatura paga costuma compensar. Há dois caminhos.
+Sem assinatura, há limite no número de mensagens por dia e no acesso aos modelos mais recentes. Se você passar a usar a IA toda semana, uma assinatura paga costuma compensar. Há dois caminhos.
 
 **Assinar uma ferramenta.** Claude, ChatGPT e Gemini têm planos individuais pagos, com mais uso, modelos mais avançados e recursos como a leitura de arquivos longos. Escolha uma e aprenda a usá-la bem antes de pensar em outra.
 
@@ -48,7 +50,7 @@ A Parte 3 ensina a configurar cada canal passo a passo. Por enquanto, garanta qu
 | LinkedIn | Autoridade entre colegas, indicações e publicações mais técnicas | linkedin.com |
 | TikTok | Vídeos curtos para alcançar pessoas que ainda não conhecem você | tiktok.com ou o aplicativo |
 
-Anote em um lugar seguro qual e-mail e qual telefone estão ligados a cada conta e ative a verificação em duas etapas em todas. Se alguém da equipe for ajudar, dê acesso pelas ferramentas de gestão de cada rede, sem compartilhar a sua senha.
+Anote em um lugar seguro qual e-mail e qual telefone estão ligados a cada conta e ative a verificação em duas etapas em todas. Se alguém da equipe ou de uma agência for ajudar, dê acesso pelas ferramentas de gestão de cada rede, sem compartilhar a sua senha. As contas e o conteúdo devem ficar no seu nome: eles são o patrimônio que este guia ajuda a construir.
 
 ## 3. O app CliniLoop
 
@@ -57,3 +59,11 @@ Abra o CliniLoop pelo link que você recebeu na compra, no navegador do computad
 ::: {.box .noapp}
 **Configure seu consultório.** Escolha o tipo de profissional. O app reordena as ferramentas e carrega as regras do conselho certo. Preencha o Perfil do consultório uma única vez: ele alimenta todas as ferramentas.
 :::
+
+## 4. Um rascunho do seu diferencial
+
+Antes de seguir, escreva em uma linha por que um paciente deveria procurar você, e não outro colega da sua cidade. Não precisa estar bom. Use o formato abaixo e guarde a frase:
+
+> Eu ajudo [QUEM] a [RESOLVER QUAL PROBLEMA], com [O QUE EU FAÇO DE DIFERENTE NO ATENDIMENTO].
+
+Se a frase servir para qualquer colega da sua especialidade, ela ainda está no Oceano Vermelho. Isso é normal no primeiro rascunho. No dia 4 do plano de 30 dias, a ferramenta Nicho e diferencial e a Estratégia Oceano Azul ajudam a transformá-la em uma proposta de valor que o paciente reconhece, dentro das regras do seu conselho.

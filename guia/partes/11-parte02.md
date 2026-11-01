@@ -3,12 +3,14 @@ tipo: parte
 num: 2
 etapa: No roteiro · Etapa 1 de 6 · Entenda o jogo e as regras
 titulo: Ética primeiro: conselhos e LGPD
-lead: Na saúde, a ética é a própria estratégia. O paciente procura segurança, e um post sensacionalista destrói em minutos a confiança que o conteúdo levou meses para construir.
-nesta: Regras que valem para todas as profissões · O que muda por profissão · LGPD · Políticas das plataformas
+lead: Na saúde, a ética é a própria estratégia. Ela fecha as portas do preço e da promessa, e por isso obriga a competir pela única coisa que sobra: a diferença real, demonstrada.
+nesta: Regras que valem para todas as profissões · O que muda por profissão · Diferenciar dentro das regras · LGPD · Políticas das plataformas
 grupo: Etapa 1 · Entenda o jogo e as regras
 marca: PARTE 02
 ---
 Toda peça deste guia, orgânica ou paga, passa pelo filtro desta parte antes de ser publicada. O que é permitido em uma profissão pode ser proibido em outra, então nunca generalize.
+
+Há uma razão estratégica, além da obrigação. As regras dos conselhos proíbem quase tudo o que a fábrica de leads usa para se destacar: preço, desconto, promessa de resultado, superlativo e urgência artificial. Quem tenta disputar por esses atalhos corre risco ético e ainda fica igual aos outros. Quem aceita as regras é empurrado para o jogo que este guia propõe: mostrar, com conteúdo e atendimento, uma diferença que o paciente consegue verificar.
 
 ## Regras que valem para todas as profissões
 
@@ -41,9 +43,28 @@ Psiquiatria e psicologia lidam com pessoas vulneráveis. Evite conteúdo que est
 
 As regras mudam conforme o tipo de conta. Na odontologia, por exemplo, o perfil da clínica fica com conteúdo educativo, bastidores éticos e informação; resultado com paciente só aparece no perfil do profissional que executou, dentro das regras.
 
-### Cuidado com guias estrangeiros
+### Cuidado com guias estrangeiros e com modelos prontos
 
-Muitos guias americanos recomendam promoções mensais, antes e depois como "ativo mais persuasivo" e prometem leads. Isso conflita com as regras brasileiras. Aproveite só as ideias de formato.
+Muitos guias americanos recomendam promoções mensais, antes e depois como "ativo mais persuasivo" e prometem leads. Muitos pacotes de agência trazem modelos de anúncio pensados para vários clientes ao mesmo tempo. As duas coisas costumam conflitar com as regras brasileiras e, mesmo quando não conflitam, deixam você igual aos outros. Aproveite só as ideias de formato.
+
+## Diferenciar dentro das regras
+
+O conselho não proíbe a diferença. Proíbe dizê-la com adjetivos, promessas e preço. A saída é trocar a afirmação pela demonstração: em vez de dizer que você é diferente, mostre o que você faz de diferente e deixe o paciente concluir. O guia chama isso de **diferencial ético**.
+
+| Em vez de dizer | Mostre |
+|---|---|
+| "O melhor especialista da cidade" | Para quem você atende com frequência e o que costuma ver nesses casos |
+| "Resultado garantido" | Como você acompanha o tratamento e o que o paciente faz em cada etapa |
+| "Preço justo" ou "condições especiais" | O que acontece na primeira consulta e quanto tempo ela dura |
+| "Atendimento humanizado" | Uma situação concreta: como você explica um exame, como responde a uma dúvida |
+| "Tecnologia de ponta" | O que muda para o paciente, em uma frase simples e sem superlativo |
+| "Único na região" | O foco que você escolheu e por que escolheu |
+
+Antes de publicar, faça a pergunta que separa os dois oceanos: **um colega da mesma especialidade poderia publicar este texto sem mudar nada?** Se sim, ele ainda não carrega o seu diferencial. Se não, confira se a diferença está demonstrada por fatos e não por adjetivos.
+
+::: {.box .atencao}
+**O limite muda por profissão.** Em algumas profissões, até a forma de mostrar resultado é proibida ou restrita, como o antes e depois na odontologia em perfil de clínica ou a imagem corporal na nutrição. O diferencial ético nunca passa por cima da tabela acima. Na dúvida, passe o texto pelo Verificador ético e confira a norma vigente.
+:::
 
 ## LGPD: dado de saúde é dado sensível
 
@@ -55,16 +76,25 @@ A Lei 13.709/2018 exige base legal, finalidade clara e segurança para dados de 
 - **Restrinja o acesso por função:** a secretária vê agenda, não vê evolução clínica.
 - **Transcrições** de consultas, atendimentos e lives podem conter dados de pacientes. Não use como fonte de conteúdo sem autorização formal e anonimização.
 
+O cuidado com dados também diferencia. Um paciente que percebe que as informações dele são tratadas com discrição confia mais, e confiança é a porta de entrada que este guia procura.
+
 ## Políticas das plataformas
 
 Meta e Google têm regras próprias para saúde, além das dos conselhos. A Meta não permite anúncios que afirmem ou insinuem atributos pessoais do usuário, como condições de saúde ("Você sofre de ansiedade?"). Escreva sobre o tema, não sobre a pessoa ("Ansiedade tem tratamento").
 
 ## A revisão em duas etapas
 
-Todo roteiro passa primeiro por **revisão editorial** (é específico, compreensível e entrega a promessa?) e depois por **aprovação clínica e ética** do profissional responsável. A IA aponta problemas, mas não assume responsabilidade profissional nem garante conformidade. Nenhum conteúdo é declarado pronto enquanto houver pendência de fonte, autorização de imagem ou norma aplicável.
+Todo roteiro passa primeiro por **revisão editorial**: é específico, compreensível, entrega a promessa e carrega o seu diferencial? Depois, passa por **aprovação clínica e ética** do profissional responsável. A IA aponta problemas, mas não assume responsabilidade profissional nem garante conformidade. Nenhum conteúdo é declarado pronto enquanto houver pendência de fonte, autorização de imagem ou norma aplicável.
+
+::: {.box .diferencial}
+- **Eliminar:** superlativos, promessas, preço como chamariz e qualquer frase que precise da palavra "melhor".
+- **Reduzir:** a dependência de modelos prontos e de ideias de guias estrangeiros.
+- **Elevar:** a demonstração por fatos: o que você faz, para quem e como acompanha.
+- **Criar:** o seu teste de diferença, aplicado a cada peça: um colega poderia publicar isto sem mudar nada?
+:::
 
 ::: {.box .pratica}
-Abra os seus três últimos posts e o seu último anúncio. Confira identificação profissional, ausência de superlativos e de promessa, e exposição de paciente. Corrija ou arquive o que não passar.
+Abra os seus três últimos posts e o seu último anúncio. Confira identificação profissional, ausência de superlativos e de promessa, e exposição de paciente. Depois aplique o teste da diferença: um colega poderia ter publicado aquilo? Corrija, reescreva ou arquive o que não passar.
 :::
 
 ::: {.box .noapp}

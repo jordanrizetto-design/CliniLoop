@@ -3,12 +3,33 @@ tipo: parte
 num: 3
 etapa: No roteiro · Etapa 2 de 6 · Posicione-se
 titulo: Os canais, um a um: manual de configuração
-lead: Antes de postar ou anunciar, o paciente precisa encontrar, em qualquer canal, a mesma resposta para três perguntas: quem é você, quem você ajuda e como marcar uma consulta.
-nesta: Perfil da Empresa no Google · Instagram · YouTube · LinkedIn · TikTok · Como postar em cada canal · Onde tudo converge
+lead: Antes de postar ou anunciar, o paciente precisa encontrar, em qualquer canal, a mesma resposta para três perguntas: quem é você, para quem você é a escolha certa e como marcar uma consulta.
+nesta: Primeiro a proposta de valor · Perfil da Empresa no Google · Instagram · YouTube · LinkedIn · TikTok · Onde tudo converge
 grupo: Etapa 2 · Posicione-se
 marca: PARTE 03
 ---
-Perfil incompleto desperdiça todas as visitas que chegam até ele. Esta parte explica, canal por canal, o que é cada um, para que serve na saúde e como configurá-lo. Comece pelo Perfil da Empresa no Google e pelo Instagram; YouTube e LinkedIn vêm em seguida, e o TikTok entra quando a sua rotina permitir.
+Posicionar-se é decidir em que você quer ser lembrado e repetir essa decisão em todos os lugares em que o paciente procura por você. Um perfil incompleto desperdiça as visitas que chegam até ele. Um perfil completo, mas genérico, desperdiça de outro jeito: a pessoa encontra você, não percebe nenhuma diferença e volta para a lista.
+
+Esta parte começa pela proposta de valor e depois explica, canal por canal, o que é cada um, para que serve na saúde e como configurá-lo para que a mesma diferença apareça em todos. Comece pelo Perfil da Empresa no Google e pelo Instagram. YouTube e LinkedIn vêm em seguida, e o TikTok entra quando a sua rotina permitir.
+
+## Primeiro a proposta de valor
+
+Nenhum canal resolve a pergunta "por que você?". Ela precisa estar respondida antes de configurar o primeiro. A resposta é a proposta de valor: uma frase curta que diz quem você ajuda, com o quê e o que você faz de diferente no atendimento.
+
+Para chegar a ela, aplique as quatro ações do Oceano Azul ao seu atendimento, e não à sua comunicação:
+
+1. **Liste os fatores em que todos competem** na sua especialidade e cidade: localização, convênio, horário, preço, tempo de espera, equipamento, título.
+2. **Para cada fator, decida** se você vai eliminar, reduzir, elevar ou manter. Não dá para elevar tudo.
+3. **Crie um ou dois fatores** que os colegas não oferecem e que o seu paciente valoriza, como um plano por escrito ao fim da avaliação, um retorno por mensagem na semana seguinte ou um foco em um público específico.
+4. **Escreva a frase** a partir do que você elevou e criou: "Ajudo [público] a [entender ou cuidar de algo], com [o que você faz de diferente]".
+
+Na saúde, a promessa da frase é de informação e atendimento, nunca de resultado individual. Se ela servir para qualquer colega da sua especialidade, volte ao passo 3.
+
+::: {.box .exemplo}
+**Exemplo.** Fisioterapeuta em Moema. Fatores em que todos competem: convênio, aparelhos, localização. Ela reduz a ênfase em aparelhos, eleva o tempo de avaliação para 60 minutos e cria um plano de exercícios por escrito, revisado por mensagem depois de uma semana. Frase: "Ajudo quem tem dor lombar a voltar a treinar, com avaliação de uma hora e plano de exercícios acompanhado".
+:::
+
+Com a frase pronta, cada canal abaixo tem um lugar para ela: a descrição do Google, a bio do Instagram, a descrição do canal do YouTube, o título e o Sobre do LinkedIn. A mesma ideia, em palavras ajustadas a cada um.
 
 | Canal | O que é | Para que serve na saúde | Prioridade |
 |---|---|---|---|
@@ -32,12 +53,12 @@ Perfil incompleto desperdiça todas as visitas que chegam até ele. Esta parte e
 4. Preencha endereço, telefone, WhatsApp, site ou página de agendamento e horários, incluindo feriados.
 5. Faça a verificação que o Google pedir (vídeo, ligação, SMS, e-mail ou carta). Sem verificação, a ficha não aparece completa.
 6. Publique fotos reais: fachada, recepção, salas e equipe, além de logotipo e capa. Nunca fotos de pacientes.
-7. Cadastre os serviços com descrição informativa e os atributos (acessibilidade, estacionamento).
+7. Cadastre os serviços com descrição informativa e os atributos (acessibilidade, estacionamento). Na descrição da ficha, use a sua proposta de valor: quem você atende, como é o atendimento e onde.
 8. Se você é o único profissional da clínica, mantenha uma ficha só. Em clínicas com vários profissionais, cada um pode ter a própria ficha, além da ficha da clínica.
 
 **O que publicar.** Atualizações curtas (novidades, horários especiais, um conteúdo educativo), fotos novas a cada mês e respostas às perguntas do público.
 
-**Avaliações.** Peça de forma neutra, após o atendimento, a todos os pacientes, nunca só aos satisfeitos e nunca em troca de benefício. Responda todas, inclusive as negativas, sem confirmar que a pessoa é paciente nem citar dados clínicos.
+**Avaliações.** Peça de forma neutra, após o atendimento, a todos os pacientes, nunca só aos satisfeitos e nunca em troca de benefício. Responda todas, inclusive as negativas, sem confirmar que a pessoa é paciente nem citar dados clínicos. Com o tempo, as avaliações passam a repetir o que você faz de diferente, com as palavras dos pacientes. É a prova mais forte do seu diferencial, e a única que você não escreve.
 
 ### Como postar uma atualização
 
@@ -70,8 +91,8 @@ Um perfil que capta nasce de decisões tomadas antes do primeiro post. Responda 
 
 - **Público:** quem deve se interessar e que problema enfrenta?
 - **Objetivo:** gerar conversas para agendar, atrair seguidores qualificados ou encaminhar para um conteúdo completo?
-- **Posicionamento:** que experiência ou perspectiva diferencia você de outros bons profissionais? Use as quatro ações do Oceano Azul (Apresentação) para responder.
-- **Proposta de valor:** complete a frase "Ajudo [público] a [entender ou cuidar de algo]". Na saúde, a promessa é de informação e atendimento, nunca de resultado individual.
+- **Posicionamento:** que experiência ou perspectiva diferencia você de outros bons profissionais? Use as quatro ações do Oceano Azul, como no início desta parte.
+- **Proposta de valor:** a frase que você escreveu acima. Ela orienta a bio, os destaques e os temas de conteúdo.
 - **Voz:** como você fala com o paciente, que expressões usa e o que evita.
 - **Fontes disponíveis:** aulas, palestras, podcasts, entrevistas e as perguntas que você mais ouve no consultório.
 - **Restrição principal:** falta tempo, falta segurança para gravar, falta edição ou falta revisão?
@@ -79,7 +100,7 @@ Um perfil que capta nasce de decisões tomadas antes do primeiro post. Responda 
 
 A maioria dos especialistas não tem falta de conhecimento, e sim de reaproveitamento: o conteúdo de aulas e entrevistas já existe e não chega ao perfil (Parte 5). A IA ajuda a organizar e adaptar, mas o perfil precisa continuar soando como você.
 
-**Pesquisa de referências.** Em uma janela anônima, analise de 10 a 20 perfis da sua área e de outras áreas. Anote o formato, a pergunta central, como cada peça começa e como termina. O objetivo é entender o que funciona e como fazer diferente, nunca copiar texto ou identidade.
+**Pesquisa de referências.** Em uma janela anônima, analise de 10 a 20 perfis da sua área e de outras áreas. Anote o formato, a pergunta central, como cada peça começa e como termina. Anote também o que todos fazem igual: é o Oceano Vermelho da sua especialidade, e o que você vai evitar repetir. O objetivo é entender o que funciona e como fazer diferente, nunca copiar texto ou identidade.
 
 **Identidade.** Escolha até cinco adjetivos que você quer que o paciente associe a você (por exemplo: claro, acolhedor, técnico, próximo, organizado). Defina uma cor principal, uma ou duas fontes legíveis e use-as sempre. Consistência importa mais que sofisticação.
 
@@ -92,7 +113,7 @@ A maioria dos especialistas não tem falta de conhecimento, e sim de reaproveita
 3. **Nome de usuário (@).** Curto, fácil de soletrar por telefone e igual nos outros canais.
 4. **Nome do perfil.** Nome mais especialidade, em palavras que o paciente pesquisa ("Dra. Ana Lima | Fisioterapia de Coluna"). Esse campo entra na busca do Instagram.
 5. **Credenciais.** Médicos trazem nome, CRM, a palavra "MÉDICO" e o RQE; dentistas, nome e CRO; psicólogos, nome, "psicólogo(a)" e CRP; fisioterapeutas, nome e CREFITO; nutricionistas, nome, profissão e CRN com a região.
-6. **Bio em quatro linhas:** quem você ajuda, com o quê, onde atende e o registro profissional. Exemplo: "Ajudo quem tem dor lombar a voltar a treinar · Fisioterapia e Pilates clínico · Moema, SP · CREFITO-3 000000-F". Sem slogan de resultado.
+6. **Bio em quatro linhas:** quem você ajuda, com o quê e de que jeito, onde atende e o registro profissional. Exemplo: "Ajudo quem tem dor lombar a voltar a treinar · Avaliação de 1 hora e plano acompanhado · Moema, SP · CREFITO-3 000000-F". Sem slogan de resultado.
 7. **Link.** Um destino só: WhatsApp com mensagem pronta ou uma página de agendamento, com a origem rastreada (Parte 13).
 8. **Destaques:** Comece aqui, Como funciona a consulta, Convênios e valores (quando permitido), Localização, Dúvidas, Equipe.
 9. **Posts fixados.** Fixe no topo até três conteúdos que apresentem você e respondam às dúvidas mais comuns.
@@ -134,7 +155,7 @@ A maioria dos especialistas não tem falta de conhecimento, e sim de reaproveita
 ### Como configurar
 
 1. Com a conta Google da clínica, crie um canal com o nome do profissional ou da clínica, igual ao do Instagram.
-2. Foto, banner com especialidade e cidade, descrição com proposta de valor, registro profissional e links para agendamento.
+2. Foto, banner com especialidade e cidade, descrição com a sua proposta de valor, registro profissional e links para agendamento.
 3. Verifique o canal com o número de telefone. Isso libera miniaturas personalizadas e vídeos mais longos.
 4. Organize playlists por problema do paciente ("Dor no joelho", "Ansiedade", "Implantes"), não por formato.
 5. Fixe um vídeo de apresentação: quem você é, quem atende, como é a primeira consulta.
@@ -191,7 +212,7 @@ O perfil precisa vencer duas provas. A primeira é **ser encontrado** quando um 
 | Licenças e certificados | Registro no conselho, títulos de especialista, certificações | Registro ausente |
 | Recomendações | Trazer vozes de colegas, professores e parceiros | Nenhuma recente |
 
-**O título: 220 caracteres que trabalham por você.** O título aparece nos resultados de busca, nos comentários e nos convites. Fórmula: [profissão e especialidade] | [área de atuação ou público] | [prova: título, formação ou experiência] | [onde atende]. Exemplo: "Ortopedista | Cirurgia do Joelho e Medicina Esportiva | RQE 00000 | Atendimento em Campinas".
+**O título: 220 caracteres que trabalham por você.** O título aparece nos resultados de busca, nos comentários e nos convites. Fórmula: [profissão e especialidade] | [área de atuação ou público] | [prova: título, formação ou experiência] | [onde atende]. Exemplo: "Ortopedista | Cirurgia do Joelho e Medicina Esportiva | RQE 00000 | Atendimento em Campinas". Para o colega que vai indicar, o foco escrito no título é o que diz quando encaminhar o paciente para você.
 
 **O Sobre em quatro blocos.** O Sobre aceita até 2.600 caracteres, mas só as primeiras linhas aparecem antes do "ver mais". Escreva em primeira pessoa:
 
@@ -264,27 +285,37 @@ Quando houver equipe, crie também a página da clínica no LinkedIn e vincule o
 
 ## Onde tudo converge: WhatsApp Business e CRM
 
-Todos os canais levam ao mesmo lugar: uma conversa no WhatsApp Business (Parte 10) registrada no CRM (Parte 13) com a origem marcada. Sem esse registro, você não sabe qual canal trouxe pacientes e qual só trouxe curtidas.
+Todos os canais levam ao mesmo lugar: uma conversa no WhatsApp Business (Parte 10) registrada no CRM (Parte 13) com a origem marcada. Sem esse registro, você não sabe qual canal trouxe pacientes e qual só trouxe curtidas, nem qual porta de entrada traz os pacientes que ficam.
+
+Faça um teste de coerência antes de seguir: abra os seus perfis lado a lado. Se uma pessoa visse só um deles, entenderia a mesma coisa sobre quem você atende e como? Se cada canal conta uma história diferente, o paciente não forma uma ideia clara de você, e a diferença se perde.
 
 ::: {.box .prompt}
 **Auditoria de perfis e canais**
 
 Você é consultor de marketing ético para profissionais de saúde no Brasil.
 
-Analise meus perfis abaixo e devolva, para cada canal: (1) o que impede um paciente ou colega de confiar, (2) o que impede de agendar ou encaminhar, (3) a correção sugerida. Depois escreva uma bio de Instagram de até 150 caracteres, um título de LinkedIn de até 220 caracteres e a descrição do Perfil da Empresa no Google. Respeite as normas do [CONSELHO], não use superlativos nem promessas de resultado e não invente títulos ou números.
+Analise meus perfis abaixo e devolva, para cada canal: (1) o que impede um paciente ou colega de confiar, (2) o que impede de agendar ou encaminhar, (3) se a minha proposta de valor aparece ou se o perfil poderia ser de qualquer colega, (4) a correção sugerida. Depois escreva uma bio de Instagram de até 150 caracteres, um título de LinkedIn de até 220 caracteres e a descrição do Perfil da Empresa no Google, todos a partir da minha proposta de valor. Respeite as normas do [CONSELHO], não use superlativos nem promessas de resultado e não invente títulos ou números.
 
 Profissão: [PROFISSÃO] | Especialidade: [ESPECIALIDADE] | Cidade: [CIDADE]\
 Público ideal: [QUEM VOCÊ QUER ATENDER]\
+Proposta de valor: [SUA FRASE DE DIFERENCIAL]\
 Instagram: [COLE A BIO] | LinkedIn: [COLE TÍTULO E SOBRE]\
 Google: [COLE A DESCRIÇÃO] | YouTube ou TikTok: [COLE A DESCRIÇÃO]
 :::
 
 {{exemplo:auditoria}}
 
+::: {.box .diferencial}
+- **Eliminar:** perfis abandonados em canais que você não alimenta e descrições copiadas de colegas.
+- **Reduzir:** a lista de títulos e cursos na bio; uma prova bem escolhida vale mais que dez.
+- **Elevar:** a clareza sobre para quem você é a escolha certa, repetida em todos os canais.
+- **Criar:** uma frase de proposta de valor que só você poderia assinar, e um vídeo fixado que a explica.
+:::
+
 ::: {.box .pratica}
-Pesquise seu nome e sua clínica no Google Maps. Se a ficha não existir ou estiver incompleta, crie ou reivindique o Perfil da Empresa no Google e reescreva a bio do Instagram em quatro linhas.
+Escreva a sua proposta de valor com as quatro ações. Depois pesquise seu nome e sua clínica no Google Maps: se a ficha não existir ou estiver incompleta, crie ou reivindique o Perfil da Empresa no Google com a nova descrição, e reescreva a bio do Instagram em quatro linhas.
 :::
 
 ::: {.box .noapp}
-**Perfis e presença.** Traz o checklist de configuração de cada canal (Google, Instagram, YouTube, LinkedIn e TikTok) e audita e reescreve bio, título e descrições a partir do Perfil do consultório.
+**Estratégia Oceano Azul, Nicho e diferencial, e Perfis e presença.** As duas primeiras guiam as quatro ações e a frase de proposta de valor. A terceira traz o checklist de configuração de cada canal (Google, Instagram, YouTube, LinkedIn e TikTok) e audita e reescreve bio, título e descrições a partir do Perfil do consultório e do seu diferencial.
 :::

@@ -12,7 +12,7 @@ Os aplicativos mudam nomes de botões e menus com frequência, e alguns recursos
 
 ## 1. Antes de criar: posicione-se
 
-Conteúdo sem posicionamento vira mais um post parecido com os outros. Antes de abrir qualquer editor, responda às perguntas abaixo. Elas reúnem a escada de crescimento e os formatos recorrentes da Parte 4, as quatro ações do Oceano Azul da Apresentação e o princípio de que o conteúdo vem antes da bio.
+Conteúdo sem posicionamento vira mais um post parecido com os outros, e é exatamente isso que este guia procura evitar. Antes de abrir qualquer editor, responda às perguntas abaixo. Elas reúnem a proposta de valor e as quatro ações do Oceano Azul (Apresentação e Parte 3), a escada de crescimento e os formatos recorrentes da Parte 4 e o princípio de que o conteúdo vem antes da bio.
 
 ### A sua página de identidade
 
@@ -237,7 +237,7 @@ O app CliniLoop monta esse pedido para você, com as regras do seu conselho, na 
 
 ## 7. Anúncio no Instagram, passo a passo
 
-O jeito mais simples de anunciar é impulsionar um post pelo botão **Turbinar**, descrito na Parte 9. Quando quiser mais controle (escolher o objetivo exato, testar vários criativos, levar a conversa direto para o WhatsApp), use o Gerenciador de Anúncios da Meta.
+O jeito mais simples de anunciar é impulsionar um post pelo botão **Turbinar**, descrito na Parte 9. Em qualquer caminho, vale a regra da Parte 9: o anúncio amplifica o que já é seu, então o criativo é, de preferência, um conteúdo seu que já funcionou no orgânico. Quando quiser mais controle (escolher o objetivo exato, testar vários criativos, levar a conversa direto para o WhatsApp), use o Gerenciador de Anúncios da Meta.
 
 ### Antes de começar (uma vez só)
 
@@ -309,11 +309,12 @@ O TikTok tem dois caminhos: o **Promote** (promover), feito no próprio aplicati
    - Ou envie um vídeo novo, vertical, com som e legenda.
    - **Texto** curto e informativo, **chamada** (Saiba mais, Fale conosco, Agende agora) e o **link de destino**.
 5. Clique em **Enviar**. O anúncio passa por análise antes de veicular.
-6. Depois de 7 dias, compare custo por clique, por conversa e por agendamento, e registre a origem no CRM.
+6. Depois de 7 dias, compare custo por clique, por conversa e por agendamento, e registre a origem no CRM. Ao longo das semanas, acompanhe também o custo por paciente que compareceu.
 
 ## 9. Checklist final de publicação
 
 - Página de identidade respeitada: promessa, tema, série e tom
+- Teste da diferença: um colega não publicaria esta peça igual
 - Gancho legível nos três primeiros segundos
 - Legenda revisada palavra por palavra
 - Rosto, textos e legendas na zona segura

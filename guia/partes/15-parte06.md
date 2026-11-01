@@ -3,7 +3,7 @@ tipo: parte
 num: 6
 etapa: No roteiro · Etapa 3 de 6 · Gere autoridade e demanda
 titulo: Vídeo: como produzir com o que você tem
-lead: O paciente quer ver e ouvir quem vai atendê-lo. Um vídeo claro, bem iluminado e com som limpo vale mais que um vídeo caro, e o celular que está no seu bolso já basta para começar.
+lead: O vídeo é a prova de diferença mais difícil de copiar: mostra como você explica, como trata quem pergunta e se transmite segurança. Um vídeo claro, bem iluminado e com som limpo vale mais que um vídeo caro, e o celular no seu bolso já basta.
 nesta: O kit por nível · Celular ou câmera · Luz · Som · Fundo e cenário · Enquadramento e postura · Teleprompter · A sessão de gravação · Medo da câmera
 grupo: Etapa 3 · Gere autoridade e demanda
 marca: PARTE 06
@@ -14,7 +14,9 @@ A Parte 4 ensinou o que dizer. Esta parte ensina como gravar: equipamento, luz, 
 
 O Reel é o principal meio de ser descoberto por quem ainda não segue você, e o YouTube é o lugar onde o paciente pesquisa dúvidas e encontra respostas por anos. Em vídeo, a pessoa avalia algo que nenhum texto mostra: como você explica, como trata quem pergunta e se transmite segurança. É a decisão da confiança (Parte 1) acontecendo antes da primeira consulta.
 
-Isso não exige estúdio. A plataforma premia retenção, e retenção vem de uma pergunta clara, uma resposta útil e um som que se entende, não de câmera cara.
+É também onde a diferença entre os dois jogos fica mais visível. O vídeo genérico de banco de imagens, com locução e música, pode até chamar atenção, mas não mostra ninguém. O seu vídeo, gravado no seu consultório, com a sua voz explicando uma dúvida real, mostra exatamente o que o paciente vai encontrar. Nenhuma agência consegue produzi-lo sem você.
+
+Isso não exige estúdio. A plataforma premia retenção, e retenção vem de uma pergunta clara, uma resposta útil e um som que se entende, não de câmera cara. Um vídeo simples e verdadeiro diferencia mais que um vídeo sofisticado e impessoal.
 
 ## O kit por nível
 
@@ -72,6 +74,7 @@ O fundo comunica tanto quanto você.
 - **Consultório organizado,** com profundidade: afaste-se cerca de um metro da parede para o fundo não "colar" em você.
 - **Nada de dados de pacientes:** prontuários, telas de computador, agendas, exames e pessoas identificáveis ficam fora do quadro. Confira o reflexo em vidros e espelhos.
 - **Identidade:** uma cor da sua marca, um objeto que remete à sua área (modelo anatômico, livro, planta) e iluminação limpa. Evite excesso de elementos.
+- **O cenário do seu diferencial:** se o que você elevou ou criou tem um lugar, grave ali. A mesa onde você entrega o plano por escrito, a sala pensada para quem tem medo, o espaço onde a avaliação acontece. O paciente reconhece o lugar quando chega.
 - **Marcas comerciais:** evite produtos e logotipos de fabricantes em destaque. Para nutricionistas, associar a própria imagem a marcas de alimentos é vedado.
 - **Equipe e terceiros:** quem aparecer precisa autorizar o uso da imagem, por escrito.
 - **Fundo neutro ou tela verde** servem para formatos de explicação com ilustração atrás de você. A tela verde exige luz uniforme no fundo para o recorte funcionar.
@@ -156,13 +159,20 @@ Atue como diretor(a) de vídeo para [PROFISSÃO] no Brasil, seguindo as normas d
 
 Entregue: (1) o texto em blocos de até 20 segundos, com frases curtas e palavras que eu usaria no consultório; (2) três versões do gancho, com aberturas diferentes; (3) o fechamento que retoma a abertura; (4) de três a cinco imagens de apoio que eu possa gravar sem pacientes nem dados identificáveis; (5) o texto na tela de cada bloco, com no máximo seis palavras; (6) a lista de pendências de fonte e de autorização.
 
-Não acrescente promessas de resultado, superlativos nem afirmações clínicas que não estejam no roteiro original.
+Não acrescente promessas de resultado, superlativos nem afirmações clínicas que não estejam no roteiro original. Preserve o meu jeito de falar e os exemplos do meu consultório; eles são o que diferencia o vídeo.
 
 Roteiro: [COLE AQUI O ROTEIRO]
 :::
 
+::: {.box .diferencial}
+- **Eliminar:** vídeos de banco de imagens com locução genérica e filtros que mudam a sua aparência.
+- **Reduzir:** a preocupação com equipamento caro antes de ter rotina.
+- **Elevar:** o som, a clareza da explicação e o olhar para a lente, que fazem o paciente sentir que você fala com ele.
+- **Criar:** um cenário que mostra o seu diferencial e que o paciente reconhece quando chega ao consultório.
+:::
+
 ::: {.box .pratica}
-Grave hoje um teste de 30 segundos com a câmera traseira do celular, apoiado na altura dos olhos, de frente para a janela. Assista com fone e anote um único ajuste para o próximo.
+Grave hoje um teste de 30 segundos com a câmera traseira do celular, apoiado na altura dos olhos, de frente para a janela, explicando uma dúvida com um exemplo do seu atendimento. Assista com fone e anote um único ajuste para o próximo.
 :::
 
 ::: {.box .noapp}
