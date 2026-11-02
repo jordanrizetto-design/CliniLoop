@@ -50,6 +50,9 @@ hr{border:0;border-top:1px solid #D9E0E2;margin:1.5em 0;}
 .opener .num{font-size:3.6em;font-weight:600;line-height:1;color:#F4BFA4;margin:.2em 0 .1em;}
 .opener h1{margin-top:.1em;}
 .nesta{font-size:.9em;color:#3A5059;}
+.opener .jornada{font-style:italic;font-weight:500;color:#185860;margin:.2em 0 0;}
+.passagem{margin:2em 0 0;padding-top:1em;border-top:1px solid #D9E0E2;font-style:italic;color:#3A5059;}
+.passagem strong{font-style:normal;color:#185860;}
 .nesta b{display:block;font-size:.78em;letter-spacing:.14em;text-transform:uppercase;color:#1F6F78;margin-bottom:.3em;}
 .box{margin:1.3em 0;padding:.9em 1em;border-radius:6px;page-break-inside:avoid;break-inside:avoid;}
 .box p:last-child,.box ul:last-child{margin-bottom:0;}
@@ -156,7 +159,8 @@ def main():
         subs = [(sid, re.sub(r'<[^>]+>', '', t)) for sid, t in re.findall(r'<h2 id="([^"]+)"[^>]*>(.*?)</h2>', h)]
         if kind == 'parte':
             n = int(meta['num'])
-            topo = (f'<section class="opener" id="{bg.slug(key)}"><p class="etapa">{E(meta["etapa"])}</p><p class="num">{n:02d}</p>'
+            jor = f'<p class="jornada">Na jornada · {E(meta["jornada"])}</p>' if meta.get('jornada') else ''
+            topo = (f'<section class="opener" id="{bg.slug(key)}"><p class="etapa">{E(meta["etapa"])}</p>{jor}<p class="num">{n:02d}</p>'
                     f'<h1>{E(meta["titulo"])}</h1><p class="lead">{E(meta["lead"])}</p>'
                     f'<p class="nesta"><b>Nesta parte · {E(key.title())}</b>{bg.link_nesta(meta["nesta"].split("·"), h)}</p></section>')
             titulo = f'{n:02d}. {meta["titulo"]}'

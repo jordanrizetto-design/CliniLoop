@@ -5,12 +5,12 @@ marca: COMO USAR
 titulo: Antes de começar
 ---
 ::: lead
-Na saúde, o que sustenta um consultório vem de sete decisões em sequência. Este guia ensina a conquistar cada uma delas pela diferença que só você tem, com ética, conteúdo, indicação de colegas e um bom trabalho de CRM.
+Antes de qualquer travessia, o herói arruma a mochila. Aqui ela leva três coisas: o mapa do terreno, as caixas que o guia usa em cada parte e o jeito certo de pedir ajuda à inteligência artificial.
 :::
 
 ## O terreno é diferente
 
-O que funciona para vender um tênis não funciona para escolher um médico. Na saúde, o mercado é regulado, a publicidade sensacionalista é proibida e o paciente decide por segurança, não por impulso. Por isso, a diferença precisa ser demonstrada, e não anunciada.
+Na saúde, o que sustenta um consultório vem de sete decisões em sequência, e o terreno em que elas acontecem tem regras próprias. O que funciona para vender um tênis não funciona para escolher um médico. Na saúde, o mercado é regulado, a publicidade sensacionalista é proibida e o paciente decide por segurança, não por impulso. Por isso, a diferença precisa ser demonstrada, e não anunciada.
 
 | Em outros mercados | Na saúde |
 |---|---|
@@ -29,13 +29,13 @@ O guia foi escrito para várias gerações, de quem acabou de se formar a quem a
 
 ## Para quem não é
 
-Este guia não é para quem quer contatos amanhã sem dedicar tempo ao processo. A diferenciação leva semanas para aparecer e depende de constância: de 25 a 30 minutos por dia útil no primeiro mês e um ritual semanal depois. Quem precisa de volume imediato e não tem esse tempo pode preferir começar por anúncios e voltar a este guia quando quiser que esses anúncios deixem de ser genéricos.
+Toda jornada tem um preço, e convém dizê-lo antes da partida. Este guia não é para quem quer contatos amanhã sem dedicar tempo ao processo. A diferenciação leva semanas para aparecer e depende de constância: de 25 a 30 minutos por dia útil no primeiro mês e um ritual semanal depois. Quem precisa de volume imediato e não tem esse tempo pode preferir começar por anúncios e voltar a este guia quando quiser que esses anúncios deixem de ser genéricos.
 
 ## Como ler
 
-Leia primeiro a Apresentação e as Partes 1 e 2. A Apresentação explica o jogo que o guia escolhe, a Parte 1 mostra as sete decisões do paciente e a Parte 2 define o que pode e o que não pode ser dito. Depois, use as demais partes na ordem do roteiro, como manual de consulta.
+Leia primeiro a Apresentação, As jornadas do paciente e as Partes 1 e 2. Elas explicam o jogo que o guia escolhe, os caminhos por onde o paciente chega, as sete decisões que ele toma e o que pode e o que não pode ser dito. Depois, siga as demais partes na ordem do roteiro e volte a elas como manual de consulta.
 
-Em cada parte você encontra quatro tipos de caixa:
+Cada parte abre com o ponto da jornada em que você está e termina com uma passagem para a próxima. No meio, você encontra quatro tipos de caixa:
 
 ::: {.box .diferencial}
 **As quatro ações do Oceano Azul aplicadas àquela parte:** o que eliminar, reduzir, elevar e criar para que o paciente perceba a sua diferença naquela etapa.
@@ -86,3 +86,7 @@ Para usar os prompts do guia, copie o texto da caixa, troque o que estiver entre
 :::
 
 As normas dos conselhos citadas neste guia foram conferidas em outubro de 2026, em fontes públicas, e devem ser checadas na versão vigente antes de qualquer publicação.
+
+::: passagem
+**Próxima passagem.** A mochila está pronta. Falta abrir as contas que você vai usar no caminho e escrever, em uma linha, a primeira versão da sua diferença.
+:::

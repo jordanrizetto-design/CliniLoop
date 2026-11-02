@@ -2,12 +2,15 @@
 tipo: parte
 num: 5
 etapa: No roteiro · Etapa 3 de 6 · Gere autoridade e demanda
+jornada: As provas: o tesouro esquecido
 titulo: Reaproveitamento: uma aula, quatro entregas
 lead: As aulas, palestras, podcasts e entrevistas que você já deu são a fonte mais rica da sua diferença. Ali está o seu raciocínio clínico, com a sua voz, sem roteiro de agência. O trabalho é fazer esse material chegar ao paciente.
 nesta: Por que reaproveitar diferencia · Fontes boas e fontes proibidas · Do episódio ao conjunto de peças · As quatro entregas · Comentário que leva ao guia · Bastidores · A página da bio
 grupo: Etapa 3 · Gere autoridade e demanda
 marca: PARTE 05
 ---
+Muitos heróis descobrem, no meio do caminho, que já carregavam o que procuravam. Aqui, o tesouro esquecido são as aulas, palestras, podcasts e entrevistas que você já deu.
+
 Antes de criar conteúdo novo, procure o que já existe. O gargalo de quem já fala bem sobre saúde quase nunca é falta de ideia. É transformar o que já foi dito em peças que o paciente encontra. A IA entra entre a experiência humana e a distribuição; o profissional continua sendo a fonte, o revisor e quem grava.
 
 ## Por que reaproveitar diferencia
@@ -97,4 +100,8 @@ Escolha uma aula, podcast ou entrevista em que você participou bem. Liste as id
 
 ::: {.box .noapp}
 **Reaproveitamento de conteúdo.** Cole a transcrição de uma aula ou podcast e receba o registro de ideias, o carrossel, o guia e o Reel em duas versões, com as pendências de fonte, autoria e compliance.
+:::
+
+::: passagem
+**Próxima passagem.** O material está escolhido. Falta enfrentar o guardião que barra a passagem de muita gente boa: a câmera.
 :::

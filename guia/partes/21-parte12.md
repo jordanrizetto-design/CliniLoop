@@ -2,12 +2,15 @@
 tipo: parte
 num: 12
 etapa: No roteiro · Etapa 5 de 6 · Feche e acompanhe o tratamento
+jornada: A provação
 titulo: A decisão de tratar: fechamento com ética
 lead: Na saúde, fechar não é vender. É o paciente entender o plano, confiar nele e decidir começar. É também o momento em que a diferença prometida no conteúdo precisa ser entregue de verdade.
 nesta: Por que precisa de processo · Onde a diferença é cumprida · O fechamento em cinco momentos · Fisioterapia · Clínicas · Objeções honestas
 grupo: Etapa 5 · Feche e acompanhe o tratamento
 marca: PARTE 12
 ---
+Toda jornada tem uma provação, o momento em que o herói enfrenta a prova mais séria e descobre do que é feito. Na sua, a provação é a consulta. Tudo o que você mostrou no conteúdo, no perfil e na conversa é conferido ali, de perto, pelo paciente.
+
 Clínicas e fisioterapeutas sentem isso mais que ninguém, porque o resultado depende de um plano com várias sessões, e um plano proposto e não iniciado é o maior vazamento de receita do consultório.
 
 ## Por que é preciso um processo de fechamento
@@ -22,6 +25,8 @@ Clínicas e fisioterapeutas sentem isso mais que ninguém, porque o resultado de
 Todo o trabalho das Partes 3 a 11 cria uma expectativa: o paciente chega porque viu como você explica, como você atende e o que você faz de diferente. Na consulta, essa expectativa é conferida. Se o atendimento for igual ao de qualquer outro, a confiança construída no conteúdo se desfaz, e a decisão volta para o preço.
 
 O contrário também vale. Um atendimento que cumpre o que o conteúdo mostrou é a melhor prova da sua diferença. É ele que gera a avaliação espontânea no Google, a indicação ao amigo e o retorno ao colega que encaminhou. A decisão 7 alimenta, de novo, as decisões 1 a 3.
+
+A provação é a mesma para todos os caminhos. O paciente que chegou pelo convênio, pela plataforma ou pela fachada passa pela mesma consulta que o paciente indicado. Se ela cumprir o que você promete no conteúdo, esse paciente também passa a indicar, e um caminho de conveniência vira, na próxima volta, um caminho de confiança.
 
 Por isso, o fechamento abaixo não é uma técnica de venda. É a forma de entregar, no consultório, o que você elevou e criou na Parte 3: a explicação clara, o plano por escrito, o acompanhamento entre as consultas.
 
@@ -90,4 +95,8 @@ Liste os planos propostos nos últimos 30 dias que não começaram. Para cada um
 
 ::: {.box .noapp}
 **Rastreador e Assistente da semana.** Destaca planos propostos sem decisão em 2, 7 e 15 dias e monta a agenda de acompanhamentos da semana.
+:::
+
+::: passagem
+**Próxima passagem.** A provação passou. Agora é hora de colher a recompensa, que nesta jornada não é um troféu, e sim um conhecimento: saber quais caminhos trazem os pacientes que ficam.
 :::

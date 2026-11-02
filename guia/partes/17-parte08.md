@@ -2,12 +2,15 @@
 tipo: parte
 num: 8
 etapa: No roteiro · Etapa 3 de 6 · Gere autoridade e demanda
+jornada: Os aliados
 titulo: A decisão dos colegas: a rede de indicação
 lead: Na fábrica de leads, os colegas quase não aparecem. Neste guia, eles são um canal. O paciente indicado por quem ele já confia chega pela porta da confiança, com boa parte das dúvidas resolvidas antes do primeiro contato.
 nesta: Por que o colega indica você · Quem indica quem · Os cinco movimentos da indicação · Limites éticos · Collabs entre colegas
 grupo: Etapa 3 · Gere autoridade e demanda
 marca: PARTE 08
 ---
+Nenhum herói chega ao fim sozinho. Os aliados aparecem no caminho, e na saúde eles têm nome, especialidade e consultório: são os colegas que atendem o seu paciente antes ou depois de você.
+
 A indicação não se compra; se conquista com quatro coisas: um foco claro, competência visível, comunicação de retorno e facilidade de encaminhar.
 
 ## Por que o colega indica você
@@ -64,6 +67,8 @@ Anotações: [COLE AQUI, SEM DADOS IDENTIFICÁVEIS]
 
 {{exemplo:contrarref}}
 
+**Na clínica com várias especialidades,** o aliado mais próximo está no corredor. O encaminhamento interno segue as mesmas regras: critério clínico, registro da origem como encaminhamento interno e retorno ao colega que encaminhou.
+
 **Métricas no CRM:** colegas ativos (indicaram nos últimos 90 dias), indicações por colega por mês, taxa de agendamento, de comparecimento e de adesão dos pacientes indicados, e relatórios de contrarreferência enviados. Compare as taxas dos indicados com as das outras origens: é um dos testes mais diretos da hipótese deste guia.
 
 ::: {.box .diferencial}
@@ -79,4 +84,8 @@ Cadastre no CRM dez colegas que atendem o mesmo paciente antes ou depois de voc�
 
 ::: {.box .noapp}
 **Rede de colegas.** Funil de colegas, carta de apresentação, relatório de contrarreferência e registro de quem indicou cada paciente.
+:::
+
+::: passagem
+**Próxima passagem.** Com aliados ao lado, aparece uma arma poderosa e perigosa ao mesmo tempo: o anúncio pago. Nas mãos certas, ele amplifica a sua diferença. Nas erradas, devolve você ao Oceano Vermelho.
 :::

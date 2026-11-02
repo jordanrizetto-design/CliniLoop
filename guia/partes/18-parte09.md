@@ -2,12 +2,15 @@
 tipo: parte
 num: 9
 etapa: No roteiro · Etapa 3 de 6 · Gere autoridade e demanda
+jornada: A arma de dois gumes
 titulo: Anúncios: Meta Ads e Google Ads
 lead: Este guia não é contra anúncio. Anúncio amplifica o que já é seu: leva a sua diferença a mais gente. O que ele não faz é criar essa diferença. A métrica final não é clique nem mensagem: é o custo por paciente que compareceu.
 nesta: Anúncio amplifica o que já é seu · Se você trabalha com agência · Qual plataforma para qual intenção · Meta Ads · Google Ads · Mensagens éticas · Impulsionamento passo a passo
 grupo: Etapa 3 · Gere autoridade e demanda
 marca: PARTE 09
 ---
+Toda jornada oferece ao herói uma arma de dois gumes. Aqui, ela se chama anúncio. Usada para amplificar o que é seu, leva a sua diferença a quem nunca ouviria falar de você. Usada no lugar da diferença, devolve você à disputa por preço.
+
 Anúncio não conserta perfil fraco nem atendimento lento. Por isso a ordem é: proposta de valor e perfis prontos (Parte 3), conteúdo orgânico testado (Parte 4), atendimento e CRM prontos (Partes 10 a 13), e só então dinheiro em mídia.
 
 ## Anúncio amplifica o que já é seu
@@ -196,4 +199,8 @@ Antes de investir, confira se o Pixel ou a tag do Google estão instalados e se 
 
 ::: {.box .noapp}
 **Gerador de campanhas.** Monta o plano de impulsionamento, os textos, títulos, palavras-chave e públicos para Meta Ads e Google Ads e liga cada campanha aos pacientes que ela trouxe.
+:::
+
+::: passagem
+**Próxima passagem.** Conteúdo, colegas e anúncios trazem pessoas até a porta. Agora começa o trecho mais perigoso da travessia, aquele em que a maioria dos pacientes se perde: a conversa no WhatsApp.
 :::

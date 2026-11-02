@@ -2,12 +2,15 @@
 tipo: parte
 num: 7
 etapa: No roteiro · Etapa 3 de 6 · Gere autoridade e demanda
+jornada: As provas: a forja
 titulo: Edição de vídeo: das ferramentas nativas às externas
 lead: Editar não é enfeitar. É cortar o que sobra, deixar o gancho legível nos primeiros segundos, garantir que se entenda cada palavra e entregar o vídeo no formato certo para cada rede.
 nesta: O que a edição resolve · Três níveis de ferramenta · Comparativo · Como escolher · Legendas · Avatares e voz por IA · Imagens com IA · Exportar sem perder qualidade
 grupo: Etapa 3 · Gere autoridade e demanda
 marca: PARTE 07
 ---
+Na forja, o metal bruto vira ferramenta. Na edição, a gravação vira vídeo. A regra é a mesma nos dois casos: tirar o excesso sem perder o que dá força à peça.
+
 Comece pelo editor que já existe dentro da rede onde você vai publicar. Só passe para um aplicativo externo quando sentir falta de algum recurso. Esta parte apresenta as opções e ajuda a escolher; os passos de cada uma, toque por toque, estão no **Anexo A**.
 
 Uma regra atravessa todas as ferramentas: a edição serve à clareza, não à padronização. Modelos prontos, trilhas da moda e efeitos que todos usam deixam o vídeo com cara de qualquer perfil. Corte o que sobra, mas preserve o seu jeito de explicar, os exemplos do seu consultório e as pausas que fazem parte da sua fala. É isso que o paciente vai reconhecer.
@@ -120,4 +123,8 @@ Edite o teste da Parte 6 no editor do próprio Instagram ou no Edits: corte as p
 
 ::: {.box .noapp}
 **Ferramentas recomendadas.** Indica o editor, o kit de gravação e o gerador de imagem que cabem no seu orçamento, e monta o prompt de imagem com as regras do seu conselho. Para delegar, use o **Briefing para terceiros**.
+:::
+
+::: passagem
+**Próxima passagem.** Até aqui você caminhou sozinho, e nenhum herói chega ao fim assim. É hora de encontrar os aliados: os colegas que atendem o mesmo paciente antes ou depois de você.
 :::

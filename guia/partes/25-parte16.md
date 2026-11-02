@@ -2,12 +2,15 @@
 tipo: parte
 num: 16
 etapa: No roteiro · Etapa 6 de 6 · Meça e escale com CRM
+jornada: O retorno com o elixir
 titulo: Ferramentas para materializar as campanhas
 lead: Comece com o mínimo: celular, Canva, WhatsApp Business, Meta Business Suite e o CliniLoop. As demais entram quando o volume pedir. As ferramentas são as mesmas para todos; a diferença está no que você coloca nelas.
 nesta: Mapa de ferramentas por necessidade · Delegar sem perder a diferença
 grupo: Etapa 6 · Meça e escale com CRM
 marca: PARTE 16
 ---
+O herói volta para casa trazendo algo que serve a outros: o elixir. Aqui, o elixir é o método que você agora domina e que pode passar a uma secretária, a um editor ou a uma agência sem perder a sua diferença no caminho.
+
 As ferramentas abaixo foram listadas, não avaliadas: confira planos, preços e adequação à LGPD antes de contratar.
 
 Nenhuma delas diferencia você. O seu concorrente usa o mesmo Canva, o mesmo CapCut e a mesma IA. Use os modelos prontos como ponto de partida e troque sempre cores, fontes, exemplos e textos pelos seus, com a identidade definida na Parte 3.
@@ -67,4 +70,8 @@ Escolha uma ferramenta por linha, no máximo. Ferramenta demais é registro dupl
 
 ::: {.box .noapp}
 **Exportação, lembretes e Briefing para terceiros.** O Rastreador exporta em planilha (.csv) e gera lembretes para Google Agenda ou Outlook, para conversar com as ferramentas que você já usa. O Briefing para terceiros monta o documento para agência, social media ou editor a partir do seu perfil e das decisões guardadas.
+:::
+
+::: passagem
+**O fim que é começo.** A jornada termina onde começou: no consultório, numa segunda-feira comum. Só que agora você sabe quem é o seu paciente, por onde ele chega e o que fazer em cada etapa. Na próxima volta, o caminho é mais curto e mais seguro. É isso que o Loop quer dizer. Os anexos ficam na mochila para quando você precisar deles.
 :::

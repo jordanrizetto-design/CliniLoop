@@ -2,12 +2,15 @@
 tipo: parte
 num: 3
 etapa: No roteiro · Etapa 2 de 6 · Posicione-se
+jornada: A travessia do primeiro limiar
 titulo: Os canais, um a um: manual de configuração
 lead: Antes de postar ou anunciar, o paciente precisa encontrar, em qualquer canal, a mesma resposta para três perguntas: quem é você, para quem você é a escolha certa e como marcar uma consulta.
 nesta: Primeiro a proposta de valor · Perfil da Empresa no Google · Instagram · YouTube · LinkedIn · TikTok · Onde tudo converge
 grupo: Etapa 2 · Posicione-se
 marca: PARTE 03
 ---
+Em toda jornada há um limiar, um ponto depois do qual não dá para voltar ao mundo comum. Aqui, o limiar é escrever a sua proposta de valor e colocá-la em todos os lugares em que o paciente procura por você. Depois disso, você deixa de ser "mais um bom profissional" e passa a ser alguém específico.
+
 Posicionar-se é decidir em que você quer ser lembrado e repetir essa decisão em todos os lugares em que o paciente procura por você. Um perfil incompleto desperdiça as visitas que chegam até ele. Um perfil completo, mas genérico, desperdiça de outro jeito: a pessoa encontra você, não percebe nenhuma diferença e volta para a lista.
 
 Esta parte começa pela proposta de valor e depois explica, canal por canal, o que é cada um, para que serve na saúde e como configurá-lo para que a mesma diferença apareça em todos. Comece pelo Perfil da Empresa no Google e pelo Instagram. YouTube e LinkedIn vêm em seguida, e o TikTok entra quando a sua rotina permitir.
@@ -70,6 +73,8 @@ Com a frase pronta, cada canal abaixo tem um lugar para ela: a descrição do Go
 6. Toque em **Publicar**. Repita a cada uma ou duas semanas; perfil atualizado transmite que a clínica está ativa.
 
 **O que medir.** No painel de desempenho: ligações, pedidos de rota e cliques no site ou no WhatsApp.
+
+**Plataformas de agendamento.** Se você também aparece em plataformas como a Doctoralia, use nelas a mesma foto, a mesma proposta de valor e a mesma descrição de atendimento. O paciente que chega por um caminho intermediado também confere quem você é (Anexo D).
 
 **IA como apoio.** Um assistente de IA ajuda a escrever a descrição da ficha e dos serviços, a redigir atualizações curtas e a preparar respostas educadas às avaliações. Cole só o texto público da avaliação, nunca dados do paciente, e revise antes de publicar.
 
@@ -318,4 +323,8 @@ Escreva a sua proposta de valor com as quatro ações. Depois pesquise seu nome 
 
 ::: {.box .noapp}
 **Estratégia Oceano Azul, Nicho e diferencial, e Perfis e presença.** As duas primeiras guiam as quatro ações e a frase de proposta de valor. A terceira traz o checklist de configuração de cada canal (Google, Instagram, YouTube, LinkedIn e TikTok) e audita e reescreve bio, título e descrições a partir do Perfil do consultório e do seu diferencial.
+:::
+
+::: passagem
+**Próxima passagem.** O limiar ficou para trás. Do outro lado começam as provas, e a primeira é a que mais pede de você: transformar o que você sabe em conteúdo que só você poderia publicar.
 :::

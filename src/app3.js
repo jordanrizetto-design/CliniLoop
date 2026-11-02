@@ -695,7 +695,8 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
 
   // ===================== Rastreador de pacientes =====================
   // Origens do guia (Parte 13). Campanhas e impulsionamentos registrados entram como origem própria.
-  const ORIGENS = ['Instagram orgânico', 'Google orgânico (busca ou Perfil da Empresa)', 'Meta Ads', 'Google Ads', 'YouTube', 'TikTok', 'Indicação de colega', 'Indicação de paciente', 'Retorno (paciente antigo)', 'Doctoralia ou plataforma', 'Site', 'Passou em frente', 'Outro'];
+  // Agrupadas pelas jornadas do guia: conteúdo, busca, indicação, mídia paga e caminhos intermediados.
+  const ORIGENS = ['Instagram orgânico', 'YouTube', 'TikTok', 'LinkedIn', 'Conteúdo citado (vídeo, post ou guia)', 'Google orgânico (busca ou Perfil da Empresa)', 'Site', 'Assistente de IA (ChatGPT, Gemini e outros)', 'Indicação de colega', 'Encaminhamento interno (profissional da clínica)', 'Indicação de paciente', 'Retorno (paciente antigo)', 'Meta Ads', 'Google Ads', 'Convênio ou plano de saúde', 'Doctoralia ou plataforma', 'Hospital, plantão ou pronto atendimento', 'Imprensa, palestra ou evento', 'Parceria (empresa, escola, academia)', 'Passou em frente', 'Outro'];
   const campOrigem = (c) => (c.tipo === 'Impulsionamento' ? 'Impulsionamento: ' : 'Campanha: ') + c.nome;
   const CLIN_RE = /\b(diagnost\w*|cid\b|exame|exames|medicament\w*|remedio|doenca|transtorno|depress\w*|ansiedade|cancer|tumor|hiv|gravid\w*|cirurgia|fratura|hernia|laudo|receita)/;
   function renderOrigemOptions() {

@@ -2,12 +2,15 @@
 tipo: parte
 num: 11
 etapa: No roteiro · Etapa 4 de 6 · Converta contatos em consultas
+jornada: O fundo da caverna
 titulo: A decisão de comparecer
 lead: Cada falta é uma hora de agenda perdida que não volta. Boa parte das faltas se evita com confirmação ativa, lembrete e facilidade para remarcar. E o paciente que já sabe quem vai encontrar tem menos motivo para desistir.
 nesta: Sequência de confirmação · Boas práticas · Comparecimento por origem · Meta prática
 grupo: Etapa 4 · Converta contatos em consultas
 marca: PARTE 11
 ---
+O agendamento é uma vitória, mas a caverna ainda não acabou. Entre o dia em que a consulta foi marcada e o dia em que ela acontece, o paciente tem tempo para esquecer, adiar ou desistir.
+
 Meça a taxa de faltas (no-show) por profissional, por origem e por dia da semana no CRM. A coluna da origem é a mais importante para este guia.
 
 ## Sequência de confirmação
@@ -53,4 +56,8 @@ Configure a mensagem de confirmação de 48 horas e anote a taxa de faltas deste
 
 ::: {.box .noapp}
 **Rastreador de pacientes.** Gera os lembretes de confirmação (.ics) e mostra a taxa de comparecimento por profissional, origem e dia da semana.
+:::
+
+::: passagem
+**Próxima passagem.** O paciente chegou. Agora vem a provação, o momento em que tudo o que você mostrou no caminho é posto à prova diante dele.
 :::

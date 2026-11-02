@@ -2,12 +2,15 @@
 tipo: parte
 num: 10
 etapa: No roteiro · Etapa 4 de 6 · Converta contatos em consultas
+jornada: A aproximação da caverna
 titulo: Do clique à consulta: a decisão de agendar
 lead: A conversa no WhatsApp é o primeiro contato direto com a sua diferença. Quem chega pela porta da confiança quer confirmar o que já viu. Quem chega pela porta do preço precisa descobrir, ali, por que vale escolher você.
 nesta: Padrões de atendimento · Duas conversas diferentes · Roteiro de agendamento em cinco mensagens · Preço · Retomadas
 grupo: Etapa 4 · Converta contatos em consultas
 marca: PARTE 10
 ---
+Nas histórias, a caverna é o lugar onde o perigo é maior e onde está o que o herói procura. No consultório, a caverna é a conversa no WhatsApp. É ali que se perde boa parte dos pacientes que você trabalhou para atrair.
+
 O paciente que chama no WhatsApp muitas vezes está conversando com mais de um consultório ao mesmo tempo. Velocidade e clareza contam muito. Mas, se todos responderem rápido e com o mesmo texto, a decisão volta para o preço. A diferença precisa aparecer também aqui.
 
 ## Padrões de atendimento
@@ -23,6 +26,8 @@ A Parte 1 descreveu duas portas de entrada. Elas pedem conversas diferentes.
 **Quem chega pela porta da confiança** ("vi o seu vídeo sobre…", "a Dra. Fulana me indicou") já sabe quem você é. Não repita o que a pessoa viu; confirme e facilite. Agradeça a indicação, mencione o conteúdo citado e vá direto aos horários. Registre no CRM o conteúdo ou o colega de origem.
 
 **Quem chega pela porta do preço** ("quanto custa uma consulta?") ainda não sabe por que escolher você. Antes de qualquer valor, explique em duas frases como é o seu atendimento, usando o que você elevou e criou na Parte 3. Se fizer sentido, envie um conteúdo seu que responde à dúvida da pessoa. Você está levando a conversa da porta do preço para a porta da confiança.
+
+**Quem chega por um caminho intermediado** (convênio, plataforma de agendamento, plantão) muitas vezes escolheu você por conveniência: estava na lista, tinha horário, ficava perto. Trate essa conversa como uma chance de mostrar a diferença pela primeira vez. A mesma explicação de duas frases sobre o seu atendimento vale aqui, e o Anexo D mostra o que mais fazer nesses caminhos.
 
 ## Roteiro de agendamento em cinco mensagens
 
@@ -65,4 +70,8 @@ Cadastre as respostas rápidas no WhatsApp Business, incluindo a pergunta "como 
 
 ::: {.box .noapp}
 **Atendimento e agendamento.** Respostas rápidas, roteiro de agendamento e retomadas de quem não marcou, registradas no Rastreador de pacientes.
+:::
+
+::: passagem
+**Próxima passagem.** A consulta está marcada. Mas entre o agendamento e a cadeira ainda há um trecho escuro, em que o paciente pode simplesmente não aparecer.
 :::

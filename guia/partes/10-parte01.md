@@ -2,12 +2,15 @@
 tipo: parte
 num: 1
 etapa: No roteiro · Etapa 1 de 6 · Entenda o jogo e as regras
+jornada: As leis do mundo novo
 titulo: A jornada das sete decisões
 lead: Um consultório cheio não depende de um post viral. Depende de sete decisões em sequência. A forma como o paciente entra na primeira define como ele atravessa as últimas.
 nesta: As sete decisões · Duas portas de entrada · O papel de cada canal · O caminho entre os canais
 grupo: Etapa 1 · Entenda o jogo e as regras
 marca: PARTE 01
 ---
+A primeira lição de todo mundo novo é que ele tem leis próprias. No mundo em que o paciente escolhe o profissional, a lei principal é esta: ninguém chega à sua cadeira de uma vez. Chega aos poucos, decisão por decisão, e pode desistir em qualquer uma delas.
+
 Quem perde o paciente entre o "oi" no WhatsApp e a cadeira do consultório costuma achar que tem um problema de marketing. Quase sempre, tem um problema de diferenciação e de CRM.
 
 ## As sete decisões
@@ -44,6 +47,8 @@ O paciente pode chegar à decisão 4 por duas portas diferentes, e cada uma muda
 | O que o guia espera nas decisões 5 a 7 | Mais desistência e mais faltas | Mais agendamentos, presença e adesão |
 
 A última linha é a hipótese central deste guia, e é por isso que ela está escrita como expectativa, não como certeza. O CRM vai mostrar se ela vale para o seu consultório: basta registrar a origem de cada contato desde o primeiro dia (Parte 13).
+
+O capítulo As jornadas do paciente, no início do guia, mostra as sete famílias de caminhos que levam até essas portas, da indicação de um colega ao convênio. Aqui basta guardar a ideia central: o caminho importa menos que a porta pela qual a pessoa entra na conversa.
 
 As duas portas não se excluem. Um anúncio pode levar à porta da confiança quando mostra o seu conteúdo, a sua voz e o seu diferencial, e não uma promessa genérica. É o que a Parte 9 chama de anúncio que amplifica o que já é seu.
 
@@ -98,4 +103,8 @@ Escreva as sete decisões numa folha e, ao lado de cada uma, anote quantos pacie
 
 ::: {.box .noapp}
 **Configure seu consultório.** Escolha o tipo de profissional. O app reordena as ferramentas e carrega as regras do conselho certo. No Rastreador, todo contato tem um campo de origem: preencha sempre.
+:::
+
+::: passagem
+**Próxima passagem.** Agora você sabe por onde o paciente passa. Antes de dar o primeiro passo em direção a ele, falta conhecer o código que não se quebra: as regras da sua profissão.
 :::

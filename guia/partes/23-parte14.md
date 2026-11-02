@@ -2,12 +2,15 @@
 tipo: parte
 num: 14
 etapa: No roteiro · Etapa 6 de 6 · Meça e escale com CRM
+jornada: O caminho de volta
 titulo: O app CliniLoop: guia das ferramentas
 lead: O CliniLoop é o app de CRM que acompanha este guia. Um Perfil do consultório alimenta todas as ferramentas, o funil registra cada paciente e o painel Hoje mostra a próxima ação.
 nesta: O que o app faz por você · Como o app se organiza · Tutorial: o primeiro uso · Do guia à ferramenta · Status do Rastreador · O que fica registrado · Privacidade · Clínicas com vários usuários
 grupo: Etapa 6 · Meça e escale com CRM
 marca: PARTE 14
 ---
+O caminho de volta é a parte da jornada em que o herói aprende a repetir sem o mentor por perto. As ferramentas do CliniLoop servem para isso: fazer, toda semana, o que o guia ensinou uma vez.
+
 Esta parte é o manual de uso do app. Cada ferramenta nasceu de uma parte do guia: o guia explica o porquê, o app põe em prática. Por isso o Sistema Loop é o guia *O Prompt do Sim* e o app CliniLoop juntos, e o resultado vem do uso dos dois.
 
 O app também resolve um problema que este guia aponta desde a Apresentação: a IA, sozinha, escreve o texto médio da internet. No CliniLoop, a proposta de valor, as quatro ações do Oceano Azul e o tom de voz que você guardou entram automaticamente no contexto de todos os prompts. A diferença que você definiu uma vez passa a orientar cada peça.
@@ -176,4 +179,8 @@ Preencha o Perfil do consultório uma única vez: profissão, registro, especial
 
 ::: {.box .noapp}
 **Hoje.** Abra o painel e siga a próxima ação. Se faltar algum campo, o app diz qual.
+:::
+
+::: passagem
+**Próxima passagem.** As ferramentas estão à mão. A próxima parte mostra como juntá-las numa campanha completa, que leva tudo o que você aprendeu a mais gente de uma só vez.
 :::

@@ -2,12 +2,15 @@
 tipo: parte
 num: 15
 etapa: No roteiro · Etapa 6 de 6 · Meça e escale com CRM
+jornada: A última prova
 titulo: Gerador de campanhas e biblioteca de prompts
 lead: Uma campanha completa cabe em uma página: objetivo, público, diferencial, mensagem, peças, canal, orçamento, atendimento e medição.
 nesta: A ficha da campanha · Quatro modelos · Biblioteca de prompts · Verificador ético
 grupo: Etapa 6 · Meça e escale com CRM
 marca: PARTE 15
 ---
+Perto do fim de muitas histórias, o herói enfrenta uma última prova, maior que as anteriores, e só a vence porque usa tudo o que aprendeu no caminho. A campanha é essa prova: conteúdo, colegas, anúncio, atendimento e medição trabalhando juntos, com o seu diferencial no centro.
+
 O gerador abaixo produz essa página com IA, e o Verificador ético revisa antes de publicar. Uma campanha deste guia não é um pacote de anúncios genéricos: ela parte do seu diferencial e usa, como peças, o conteúdo que você já produziu e que já provou funcionar.
 
 ## A ficha da campanha
@@ -103,4 +106,8 @@ Preencha a ficha de uma campanha para o seu serviço principal, começando pelo 
 
 ::: {.box .noapp}
 **Gerador de campanhas e Verificador ético.** A ficha da campanha vira um formulário; o resultado passa pelo verificador antes de ir para o ar.
+:::
+
+::: passagem
+**Próxima passagem.** A campanha está desenhada. Falta escolher as ferramentas que a tornam real e preparar o retorno, quando outras pessoas passarão a ajudar você na jornada.
 :::

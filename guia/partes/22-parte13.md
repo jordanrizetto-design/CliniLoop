@@ -2,12 +2,15 @@
 tipo: parte
 num: 13
 etapa: No roteiro · Etapa 6 de 6 · Meça e escale com CRM
+jornada: A recompensa
 titulo: O CRM: a gestão do relacionamento com o paciente
 lead: A clínica que cresce não é a que recebe mais mensagens. É a que sabe onde cada paciente está, qual é o próximo passo e por qual porta entraram os pacientes que ficam.
 nesta: O funil do paciente em sete etapas · O funil dos colegas · O que registrar · Métricas · A conta da hipótese · O ritual semanal · Automações
 grupo: Etapa 6 · Meça e escale com CRM
 marca: PARTE 13
 ---
+Depois da provação, o herói recebe a recompensa. Nesta jornada, ela não é um troféu: é saber. Saber onde cada paciente está, qual é o próximo passo e por qual porta entraram os que ficaram. Quem tem esse conhecimento depende menos da sorte.
+
 Uma linha sem próximo passo é um paciente parado, e um paciente parado é alguém que vai se tratar em outro lugar, ou não vai se tratar.
 
 O CRM tem dois papéis neste guia. O primeiro é o de sempre: nada se perde entre o primeiro contato e a alta. O segundo é o que torna este guia honesto: é no CRM que você descobre se a diferenciação está trazendo, para o seu consultório, pacientes que agendam, comparecem e aderem mais. Sem registro, a hipótese continua sendo só uma ideia.
@@ -37,7 +40,7 @@ Um segundo funil, menor, para a rede de indicação: Mapeado, Apresentado, Prime
 ## O que registrar (e o que ignorar)
 
 - **Pessoa:** nome, telefone, canal preferido, consentimento de comunicação com data.
-- **Origem:** conteúdo orgânico (e qual peça, quando a pessoa citar), Instagram, YouTube, Google orgânico, Meta Ads (campanha e criativo), Google Ads, indicação de colega (qual), indicação de paciente, retorno.
+- **Origem:** a família do caminho, com os nomes do capítulo As jornadas do paciente: conteúdo (e qual peça, quando a pessoa citar), busca, indicação (de colega, qual; interna; de paciente), retorno, mídia paga (campanha e criativo), caminhos intermediados (convênio, plataforma, hospital, fachada) e presença fora do digital.
 - **Serviço de interesse e profissional.**
 - **Etapa e próximo passo com data:** o campo mais importante para o dia a dia.
 - **Valor do plano proposto** (clínicas e fisioterapia).
@@ -65,7 +68,7 @@ A origem é o campo que mais se perde, porque ninguém pergunta. Inclua "como no
 A Apresentação propôs uma hipótese: o paciente que chega por confiança tende a agendar, comparecer e aderir mais do que o que chega pelo preço. Esta é a conta que confirma ou desmente essa ideia no seu consultório.
 
 1. **Espere 90 dias de registro** com a origem preenchida. Antes disso, os números são pequenos demais.
-2. **Agrupe as origens em duas portas.** Confiança: conteúdo orgânico, indicação de colega, indicação de paciente, retorno. Preço ou desconhecida: anúncios com criativo genérico, Google sem conteúdo associado, origem não informada. Anúncios feitos a partir do seu conteúdo podem ficar em um terceiro grupo.
+2. **Agrupe as origens pelas portas.** Confiança: conteúdo, indicação, presença fora do digital e retorno. Preço ou conveniência: anúncios com criativo genérico, caminhos intermediados, busca sem conteúdo associado e origem não informada. Anúncios feitos a partir do seu conteúdo podem ficar num grupo à parte, e os caminhos intermediados também, se forem uma fatia grande da sua agenda.
 3. **Para cada grupo, calcule** as taxas de agendamento, comparecimento, aceitação de planos e conclusão.
 4. **Compare.** Se o grupo da confiança tiver taxas maiores, a hipótese se confirma no seu consultório, e vale investir mais tempo em conteúdo e colegas. Se não tiver, olhe as etapas uma a uma: o problema pode estar no atendimento, no conteúdo ou na própria diferença.
 5. **Refaça a conta a cada trimestre.** Uma leitura isolada não prova nada; a tendência sim.
@@ -74,6 +77,7 @@ A Apresentação propôs uma hipótese: o paciente que chega por confiança tend
 |---|---|---|---|---|
 | Confiança | [nº] | [%] | [%] | [%] |
 | Anúncio a partir do seu conteúdo | [nº] | [%] | [%] | [%] |
+| Caminhos intermediados | [nº] | [%] | [%] | [%] |
 | Preço ou desconhecida | [nº] | [%] | [%] | [%] |
 
 Não existe um número de referência para comparar, e este guia não inventa um. O padrão que importa é o seu. Se algum dia você quiser falar desses resultados em público, lembre-se de que as regras do seu conselho valem também para números (Parte 2).
@@ -122,4 +126,8 @@ Liste de memória os dez últimos pacientes que pediram informação e não agen
 
 ::: {.box .noapp}
 **Rastreador, Painel e Playbook.** Funil de sete etapas com próximos passos vencidos, painel semanal com o gargalo, comparecimento por origem no Rastreador e revisões quinzenais agendadas.
+:::
+
+::: passagem
+**Próxima passagem.** Com a recompensa nas mãos, começa o caminho de volta. Para percorrê-lo toda semana sem esforço, você precisa conhecer bem as ferramentas da mochila.
 :::

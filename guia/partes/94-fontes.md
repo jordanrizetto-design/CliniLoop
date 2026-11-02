@@ -1,7 +1,7 @@
 ---
 tipo: secao
 grupo: Anexos
-marca: ANEXO D
+marca: ANEXO E
 titulo: Fontes e agradecimentos
 ---
 ::: lead
@@ -10,7 +10,7 @@ Este guia só existe porque muita gente generosa já publicou o que sabe. Aqui e
 
 ## Agradecimentos
 
-Agradecemos a **JR Tosoni**, autor do e-book interativo *Prompt do Sim* e do aplicativo BuscaLoop, em cuja estrutura de método, funil, registro e ritual semanal este guia foi construído; a **Pat Machadu**, pelo método de crescimento de perfis em sete etapas que inspirou a escada de crescimento da Parte 4; a **Diandra Santos**, pela síntese de formatos recorrentes de vídeo que inspirou a seção sobre séries reconhecíveis; a **Thiago Lemos** e **Alexandre Abramo**, pela análise sobre reaproveitamento de conteúdo e sobre a ordem "primeiro o conteúdo, depois a bio"; a **W. Chan Kim** e **Renée Mauborgne**, pelos conceitos de Oceano Azul e Oceano Vermelho; a **Rafael Kiso**, fundador da mLabs, pela metodologia Unbound Marketing e pelo modelo dos cinco comportamentos nas mídias sociais, que inspiraram o caminho entre os canais na Parte 1, as camadas de conteúdo, a escuta do mercado, os indicadores da ressonância e a busca por credibilidade na Parte 4 e a sequência de anúncios na Parte 9; e a **Adam Mosseri**, pela confirmação pública dos principais sinais de alcance do Instagram.
+Agradecemos a **JR Tosoni**, autor do e-book interativo *Prompt do Sim* e do aplicativo BuscaLoop, em cuja estrutura de método, funil, registro e ritual semanal este guia foi construído; a **Pat Machadu**, pelo método de crescimento de perfis em sete etapas que inspirou a escada de crescimento da Parte 4; a **Diandra Santos**, pela síntese de formatos recorrentes de vídeo que inspirou a seção sobre séries reconhecíveis; a **Thiago Lemos** e **Alexandre Abramo**, pela análise sobre reaproveitamento de conteúdo e sobre a ordem "primeiro o conteúdo, depois a bio"; a **W. Chan Kim** e **Renée Mauborgne**, pelos conceitos de Oceano Azul e Oceano Vermelho; a **Joseph Campbell**, **Christopher Vogler** e **Donald Miller**, pela estrutura da jornada do herói que organiza a narrativa deste guia; a **Rafael Kiso**, fundador da mLabs, pela metodologia Unbound Marketing e pelo modelo dos cinco comportamentos nas mídias sociais, que inspiraram o caminho entre os canais na Parte 1, as camadas de conteúdo, a escuta do mercado, os indicadores da ressonância e a busca por credibilidade na Parte 4 e a sequência de anúncios na Parte 9; e a **Adam Mosseri**, pela confirmação pública dos principais sinais de alcance do Instagram.
 
 Agradecemos também aos criadores clínicos brasileiros cujas estruturas de conteúdo foram analisadas como referência na Parte 4: Ana Escobar (@draanaescobar), Bruna Conde (@drabrunaconde), José Arbex Filho (@arbexfilho), Paulo Muzy (@paulomuzy), Dayan Siebra (@dayansiebra), Leonardo Ávila (@tudosobredor), Bernardo Sampaio (@bernardosam) e Robson Sitta (@dr.robsonsitta). A inclusão é editorial, não implica endosso do guia por eles, e as estruturas, não os conselhos clínicos, é que foram aproveitadas.
 
@@ -22,6 +22,9 @@ Os exemplos preenchidos usam uma personagem fictícia, a Dra. Bia Nunes, criada 
 
 - Tosoni, JR. *Prompt do Sim* (e-book interativo e aplicativo BuscaLoop), 2026. Base do método, do funil, do registro e do ritual semanal.
 - Kim, W. Chan; Mauborgne, Renée. *A Estratégia do Oceano Azul* (*Blue Ocean Strategy*). Harvard Business School Press, 2005. Base dos conceitos de Oceano Azul e Oceano Vermelho e das quatro ações.
+- Campbell, Joseph. *O herói de mil faces* (*The Hero with a Thousand Faces*), 1949. Origem da estrutura da jornada do herói.
+- Vogler, Christopher. *A jornada do escritor* (*The Writer's Journey*), 1992. Organização da jornada do herói em etapas, usada para nomear os momentos de cada parte.
+- Miller, Donald. *Building a StoryBrand*, 2017. A ideia de que o cliente é o herói e quem o ajuda é o guia.
 - Machadu, Pat. Método Foguete (e-book). Método de crescimento de perfis, adaptado do YouTube ao Instagram.
 - Santos, Diandra (@segueadi). Curso Efeito Di, usado por meio de síntese autoral adaptada a clínicas (consulta de 12/10/2026).
 - Kiso, Rafael. *Unbound Marketing: como construir uma estratégia exponencial usando o marketing em ambiente digital*. DVS Editora, 2022. E mLabs, "Unbound Marketing: otimize resultados através das redes sociais" (mlabs.com.br/blog/unbound-marketing). Base da sequência de cinco passos da Parte 9 e da proporção entre o que se sabe e o que se atende, na Parte 4.

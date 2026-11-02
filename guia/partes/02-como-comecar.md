@@ -5,7 +5,7 @@ marca: COMO COMEÇAR
 titulo: Como começar
 ---
 ::: lead
-Antes da Parte 1, separe uma hora para abrir as contas que o guia usa e para escrever, em uma linha, por que um paciente deveria procurar você. Essa linha vai mudar ao longo do roteiro, e é bom que mude.
+O limiar está perto. Antes da Parte 1, separe uma hora para abrir as contas que o guia usa e para escrever, em uma linha, por que um paciente deveria procurar você. Essa linha vai mudar ao longo do caminho, e é bom que mude.
 :::
 
 ## 1. Uma conta em uma ferramenta de IA
@@ -67,3 +67,7 @@ Antes de seguir, escreva em uma linha por que um paciente deveria procurar você
 > Eu ajudo [QUEM] a [RESOLVER QUAL PROBLEMA], com [O QUE EU FAÇO DE DIFERENTE NO ATENDIMENTO].
 
 Se a frase servir para qualquer colega da sua especialidade, ela ainda está no Oceano Vermelho. Isso é normal no primeiro rascunho. No dia 4 do plano de 30 dias, a ferramenta Nicho e diferencial e a Estratégia Oceano Azul ajudam a transformá-la em uma proposta de valor que o paciente reconhece, dentro das regras do seu conselho.
+
+::: passagem
+**Próxima passagem.** Com as contas abertas e a frase no bolso, falta olhar o mapa inteiro: as seis etapas da travessia, o plano de 30 dias e os marcos que mostram se você está no rumo.
+:::

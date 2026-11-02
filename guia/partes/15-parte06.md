@@ -2,12 +2,15 @@
 tipo: parte
 num: 6
 etapa: No roteiro · Etapa 3 de 6 · Gere autoridade e demanda
+jornada: As provas: o guardião da câmera
 titulo: Vídeo: como produzir com o que você tem
 lead: O vídeo é a prova de diferença mais difícil de copiar: mostra como você explica, como trata quem pergunta e se transmite segurança. Um vídeo claro, bem iluminado e com som limpo vale mais que um vídeo caro, e o celular no seu bolso já basta.
 nesta: O kit por nível · Celular ou câmera · Luz · Som · Fundo e cenário · Enquadramento e postura · Teleprompter · A sessão de gravação · Medo da câmera
 grupo: Etapa 3 · Gere autoridade e demanda
 marca: PARTE 06
 ---
+Em quase toda jornada há um guardião na porta, alguém que testa se o herói está pronto para seguir. Para muitos profissionais de saúde, esse guardião é a câmera do celular. Ele assusta mais do que machuca, e se vence com repetição, não com coragem.
+
 A Parte 4 ensinou o que dizer. Esta parte ensina como gravar: equipamento, luz, som, fundo, a sua posição diante da câmera e os aplicativos que ajudam a falar o texto sem decorar. A edição vem na Parte 7. O passo a passo detalhado dos aplicativos está no **Anexo A**.
 
 ## Por que vídeo
@@ -177,4 +180,8 @@ Grave hoje um teste de 30 segundos com a câmera traseira do celular, apoiado na
 
 ::: {.box .noapp}
 **Roteiros e copy.** Gera o roteiro em blocos curtos, pronto para o teleprompter, com três versões do gancho. Em **Ferramentas recomendadas**, monte o kit de gravação que cabe no seu orçamento.
+:::
+
+::: passagem
+**Próxima passagem.** O vídeo está gravado. Antes de mostrá-lo ao mundo, ele passa pela forja da edição, onde se corta o que sobra sem apagar quem você é.
 :::

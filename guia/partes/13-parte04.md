@@ -2,12 +2,15 @@
 tipo: parte
 num: 4
 etapa: No roteiro · Etapa 3 de 6 · Gere autoridade e demanda
+jornada: As provas: o conteúdo
 titulo: Conteúdo que gera autoridade e alcance
 lead: O conteúdo é onde a sua diferença deixa de ser uma frase e vira prova. Ele cresce quando responde, em poucos segundos e com segurança, uma dúvida real, e quando só poderia ter sido feito por você.
 nesta: Conteúdo que só você poderia publicar · O que o Instagram premia · A escada de crescimento · Três temas por profissão · O que você sabe e o que você atende · Pautas · Formatos recorrentes · Roteiro de Reel · Indicadores da ressonância · Ser citado
 grupo: Etapa 3 · Gere autoridade e demanda
 marca: PARTE 04
 ---
+Do outro lado do limiar, as provas começam. A primeira é a do conteúdo, e ela tem um adversário silencioso: o texto correto, educado e igual ao de todo mundo, que a inteligência artificial agora produz em segundos.
+
 Esta parte combina um método de crescimento de perfis, uma síntese de formatos de vídeo adaptada a clínicas e a pesquisa sobre o algoritmo feita em outubro de 2026. Viralizar nunca é garantido e, para uma clínica, nem é o objetivo. O objetivo é que a pessoa certa reconheça você: entenda como você pensa, como explica e para que tipo de caso você é a escolha certa, antes de chamar.
 
 ## Conteúdo que só você poderia publicar
@@ -270,4 +273,8 @@ Liste as dez perguntas que você mais ouve no consultório. Escolha uma, encaixe
 
 ::: {.box .noapp}
 **Pautas e roteiros de conteúdo.** Transforma dúvidas reais em pautas por tema e gera roteiros de Reels, carrosséis e vídeos com a palavra-chave da sua cidade e o diferencial que você definiu na Estratégia Oceano Azul.
+:::
+
+::: passagem
+**Próxima passagem.** A prova do conteúdo assusta menos quando você descobre que já carrega um tesouro: as aulas, palestras e entrevistas que já deu.
 :::

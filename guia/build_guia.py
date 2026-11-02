@@ -203,6 +203,11 @@ h1.sec-title{font-size:30pt;font-weight:600;margin:0 0 6mm;}
 .opener .band{position:absolute;left:0;top:0;bottom:0;width:9mm;background:var(--teal);}
 .opener .num{font:600 120pt/0.9 Poppins;color:var(--peach);margin:12mm 0 4mm -2mm;}
 .opener .etapa{font:600 8.4pt Poppins;letter-spacing:.17em;text-transform:uppercase;color:var(--rust);margin:0;}
+.opener .jornada{font:italic 500 10.5pt Poppins;color:var(--teal-d);margin:3mm 0 0;}
+.opener.alt .jornada{color:var(--peach);}
+.passagem{margin:9mm 0 0;padding-top:5mm;border-top:1px solid var(--line);font-style:italic;color:var(--soft);}
+.passagem p{margin:0;}
+.passagem strong{font-style:normal;color:var(--teal-d);}
 .opener h1{font:600 31pt/1.1 Poppins;letter-spacing:-.01em;margin:0 0 9mm;max-width:150mm;}
 .opener .lead{max-width:136mm;font-size:13.4pt;}
 .opener .nesta{margin-top:auto;border-top:1px solid var(--line);padding-top:6mm;font-size:9.6pt;color:var(--soft);}
@@ -339,7 +344,7 @@ def slug(key):
 
 URL_RE = re.compile(r'(?<![\w@/.-])((?:https?://)?(?:[a-z0-9-]+\.)+(?:com\.br|org\.br|gov\.br|com|org|net|io|ai|tv|digital|app)(?:/[^\s<>)\]"]*[^\s<>)\]".,;:])?)(?![\w-])', re.I)
 PARTE_RE = re.compile(r'\b(Partes?) (\d{1,2})((?:(?:, | e | a )\d{1,2})*)')
-ANEXO_RE = re.compile(r'\bAnexo ([A-D])\b')
+ANEXO_RE = re.compile(r'\bAnexo ([A-E])\b')
 
 
 def _link_text(t):
@@ -411,7 +416,8 @@ def build_html(pages):
             n = int(meta['num'])
             nesta = ''.join(f'<span>{E(x.strip())}</span>' for x in meta['nesta'].split('·'))
             alt = ' alt' if n % 2 == 0 else ''
-            opener = (f'<section class="opener{alt}" id="{slug(key)}"><div class="band"></div><p class="etapa">{E(meta["etapa"])}</p><div class="num">{n:02d}</div>'
+            jor = f'<p class="jornada">Na jornada · {E(meta["jornada"])}</p>' if meta.get('jornada') else ''
+            opener = (f'<section class="opener{alt}" id="{slug(key)}"><div class="band"></div><p class="etapa">{E(meta["etapa"])}</p>{jor}<div class="num">{n:02d}</div>'
                       f'<h1>{E(meta["titulo"])}</h1><p class="lead">{E(meta["lead"])}</p>'
                       f'<div class="nesta"><b>Nesta parte · {E(key)}</b>{link_nesta(meta["nesta"].split("·"), body_html)}</div></section>')
             sections.append(opener + f'<section class="sec-body">{body_html}</section>')

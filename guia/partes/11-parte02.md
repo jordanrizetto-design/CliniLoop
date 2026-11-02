@@ -2,12 +2,15 @@
 tipo: parte
 num: 2
 etapa: No roteiro · Etapa 1 de 6 · Entenda o jogo e as regras
+jornada: O código do herói
 titulo: Ética primeiro: conselhos e LGPD
 lead: Na saúde, a ética é a própria estratégia. Ela fecha as portas do preço e da promessa, e por isso obriga a competir pela única coisa que sobra: a diferença real, demonstrada.
 nesta: Regras que valem para todas as profissões · O que muda por profissão · Diferenciar dentro das regras · LGPD · Políticas das plataformas
 grupo: Etapa 1 · Entenda o jogo e as regras
 marca: PARTE 02
 ---
+Todo herói tem um código. O do profissional de saúde está escrito nas resoluções dos conselhos e na LGPD, e ele não é um obstáculo no caminho: é o que separa a jornada do atalho.
+
 Toda peça deste guia, orgânica ou paga, passa pelo filtro desta parte antes de ser publicada. O que é permitido em uma profissão pode ser proibido em outra, então nunca generalize.
 
 Há uma razão estratégica, além da obrigação. As regras dos conselhos proíbem quase tudo o que a fábrica de leads usa para se destacar: preço, desconto, promessa de resultado, superlativo e urgência artificial. Quem tenta disputar por esses atalhos corre risco ético e ainda fica igual aos outros. Quem aceita as regras é empurrado para o jogo que este guia propõe: mostrar, com conteúdo e atendimento, uma diferença que o paciente consegue verificar.
@@ -99,4 +102,8 @@ Abra os seus três últimos posts e o seu último anúncio. Confira identificaç
 
 ::: {.box .noapp}
 **Verificador ético.** Cole qualquer post, anúncio ou mensagem e receba os pontos que conflitam com o seu conselho, a LGPD e as políticas da Meta e do Google.
+:::
+
+::: passagem
+**Próxima passagem.** Com as leis e o código na mochila, chegou a hora do primeiro gesto que não tem volta: dizer em público quem você é e para quem você é a escolha certa.
 :::
