@@ -24,7 +24,9 @@
       nutricionista: { elevar: ['Plano alimentar adaptado à rotina real'], criar: ['Acompanhamento por mensagem entre as consultas'] }
     };
     const ACOES = ['eliminar', 'reduzir', 'elevar', 'criar'];
-    const st = Object.assign({ fatores: [], extra: '', eliminar: '', reduzir: '', elevar: '', criar: '', notas: {}, publico: '', proposta: '', propostaManual: false }, storeGet(KEY, {}) || {});
+    const TEXTOS = { avaliacoes: 'oa-avaliacoes', pacientes: 'oa-pacientes', nc1: 'oa-nc1', nc2: 'oa-nc2', nc3: 'oa-nc3' };
+    const st = Object.assign({ fatores: [], extra: '', eliminar: '', reduzir: '', elevar: '', criar: '', notas: {}, publico: '', proposta: '', propostaManual: false, avaliacoes: '', pacientes: '', nc1: '', nc2: '', nc3: '', impl: {} }, storeGet(KEY, {}) || {});
+    if (!st.impl || typeof st.impl !== 'object') st.impl = {};
     const save = () => storeSet(KEY, st);
     const linhas = (t) => (t || '').split(/\n|;/).map((x) => x.replace(/^[-•*]\s*/, '').trim()).filter(Boolean);
     const el = (id) => document.getElementById(id);
@@ -35,6 +37,7 @@
     boxF.querySelectorAll('input').forEach((c) => { c.checked = st.fatores.includes(c.value); });
     el('oa-extra').value = st.extra;
     ACOES.forEach((a) => { el('oa-' + a).value = st[a]; });
+    Object.entries(TEXTOS).forEach(([k, id]) => { el(id).value = st[k] || ''; });
     if (st.publico) el('oa-publico').value = st.publico;
     el('oa-proposta').value = st.proposta;
 
@@ -45,7 +48,7 @@
         const a = box.dataset.acao;
         const lista = [...(extra[a] || []), ...SUG[a]];
         const sug = box.querySelector('.oa-sug');
-        sug.innerHTML = lista.map((t) => `<button type="button" class="oa-chip">+ ${escapeHtml(t)}</button>`).join('');
+        sug.innerHTML = lista.map((t) => `<button type="button" class="oa-chip comum" title="Sugestão comum a todos da sua profissão: escreva como você faz de um jeito próprio">+ ${escapeHtml(t)}</button>`).join('');
         sug.querySelectorAll('.oa-chip').forEach((b, i) => b.addEventListener('click', () => {
           const ta = el('oa-' + a);
           const atual = linhas(ta.value);
@@ -108,7 +111,32 @@
       el('oa-curva').value = fs.map((f) => `${f}: mercado ${nota(f).m}, você ${nota(f).v}`).join('; ');
     }
 
-    // Passo 4: rascunho da proposta
+    // Passo 6: fazer antes de mostrar
+    const STATUS = [['ja', 'Já faço'], ['vou', 'Vou implementar'], ['nao', 'Ainda não sei se consigo']];
+    function itensProva() { return [...new Set([...linhas(el('oa-elevar').value), ...linhas(el('oa-criar').value)])].slice(0, 10); }
+    function provasTxt() {
+      const lab = Object.fromEntries(STATUS);
+      return itensProva().map((t) => { const p = st.impl[t] || {}; return `${t}: ${lab[p.s] || 'situação não informada'}; como mostrar: ${p.m || 'não definido'}`; }).join(' | ');
+    }
+    function renderProvas() {
+      const box = el('oa-provas');
+      const itens = itensProva();
+      if (!itens.length) { box.innerHTML = '<p class="oa-hint">Escreva no passo 4 o que você vai elevar e criar.</p>'; el('oa-provas-txt').value = ''; return; }
+      box.innerHTML = itens.map((t, i) => {
+        const p = st.impl[t] || (st.impl[t] = { s: '', m: '' });
+        return `<div class="oa-prova"><span class="oa-f">${escapeHtml(t)}</span>
+          <label><span class="visually-hidden">Situação de ${escapeHtml(t)}</span><select data-i="${i}" data-k="s"><option value="">Situação…</option>${STATUS.map(([v, l]) => `<option value="${v}"${p.s === v ? ' selected' : ''}>${l}</option>`).join('')}</select></label>
+          <label><span class="visually-hidden">Como mostrar ${escapeHtml(t)}</span><input type="text" data-i="${i}" data-k="m" value="${escapeHtml(p.m || '')}" placeholder="Como mostrar: o que filmar ou contar"></label></div>`;
+      }).join('');
+      box.querySelectorAll('[data-k]').forEach((c) => c.addEventListener(c.tagName === 'SELECT' ? 'change' : 'input', () => {
+        const t = itens[+c.dataset.i];
+        st.impl[t] = Object.assign(st.impl[t] || {}, { [c.dataset.k]: c.value });
+        el('oa-provas-txt').value = provasTxt(); save();
+      }));
+      el('oa-provas-txt').value = provasTxt();
+    }
+
+    // Passo 7: rascunho da proposta
     function rascunho() {
       const pub = el('oa-publico').value.trim() || '[público]';
       const cr = linhas(el('oa-criar').value), ev = linhas(el('oa-elevar').value), el1 = linhas(el('oa-eliminar').value);
@@ -122,17 +150,19 @@
     el('oa-proposta').addEventListener('input', () => { st.propostaManual = !!el('oa-proposta').value.trim(); st.proposta = el('oa-proposta').value; save(); });
 
     form.addEventListener('input', (e) => {
-      if (e.target.type === 'range' || e.target.id === 'oa-proposta') return;
+      if (e.target.type === 'range' || e.target.id === 'oa-proposta' || e.target.closest('#oa-provas')) return;
+      Object.entries(TEXTOS).forEach(([k, id]) => { st[k] = el(id).value; });
+      if (Object.values(TEXTOS).includes(e.target.id)) { save(); return; }
       st.fatores = [...boxF.querySelectorAll('input:checked')].map((c) => c.value);
       st.extra = el('oa-extra').value;
       ACOES.forEach((a) => { st[a] = el('oa-' + a).value; });
       st.publico = el('oa-publico').value;
-      renderRows(); updProposta(); save();
+      renderRows(); renderProvas(); updProposta(); save();
     });
-    form.addEventListener('change', (e) => { if (e.target.type === 'checkbox') form.dispatchEvent(new Event('input')); });
+    form.addEventListener('change', (e) => { if (e.target.type === 'checkbox') form.dispatchEvent(new Event('input', { bubbles: true })); });
     const det = form.closest('details');
-    if (det) det.addEventListener('toggle', () => { if (det.open) { renderSug(); renderRows(); updProposta(); } });
-    renderSug(); renderRows(); updProposta();
+    if (det) det.addEventListener('toggle', () => { if (det.open) { renderSug(); renderRows(); renderProvas(); updProposta(); } });
+    renderSug(); renderRows(); renderProvas(); updProposta();
   })();
 
   // Painel do topo: cada ferramenta do funil abre a ferramenta no app

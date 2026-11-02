@@ -854,6 +854,13 @@
   .oa-sug{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px;}
   .oa-chip{font:inherit; font-size:.78rem; line-height:1.3; padding:5px 10px; border-radius:999px; border:1px solid var(--border-strong); background:#fff; color:var(--ink); cursor:pointer; text-align:left;}
   .oa-chip:hover,.oa-chip:focus-visible{border-color:var(--teal); color:var(--teal);}
+  .oa-chip.comum::after{content:" · comum"; color:var(--ink-soft); font-size:.72rem;}
+  .oa-provas{display:grid; gap:10px;}
+  .oa-prova{display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,.9fr) minmax(0,1.6fr); gap:10px; align-items:start; font-size:.88rem; padding:10px 0; border-top:1px solid var(--border);}
+  .oa-prova:first-child{border-top:0;}
+  .oa-prova .oa-f{font-weight:600; padding-top:6px;}
+  .oa-prova select,.oa-prova input{width:100%;}
+  @media (max-width:720px){ .oa-prova{grid-template-columns:1fr;} }
   .oa-rows{display:grid; gap:4px; margin-bottom:12px;}
   .oa-row{display:grid; grid-template-columns:minmax(0,1.4fr) 1fr 1fr; gap:10px; align-items:center; font-size:.88rem;}
   .oa-row.oa-head{font-weight:600; color:var(--ink-soft); font-size:.78rem; text-transform:uppercase; letter-spacing:.06em;}
@@ -1542,22 +1549,50 @@
 
       <details class="tool" data-id="oceano">
         <summary>
-          <div class="tool-title"><span class="pin">04</span><div><h3>Estratégia Oceano Azul</h3><span class="sub">Em quatro passos: onde todos competem, as quatro ações, sua curva de valor e sua proposta</span></div></div>
+          <div class="tool-title"><span class="pin">04</span><div><h3>Estratégia Oceano Azul</h3><span class="sub">Posicionamento com as ferramentas do Oceano Azul, em sete passos: do que o paciente diz à proposta que você consegue mostrar</span></div></div>
           <span class="chevron">▸</span>
         </summary>
         <div class="tool-body">
-          <p class="desc">Sair da disputa em que todos oferecem o mesmo e competem pelo menor valor. Em uns 15 minutos você marca onde a sua área compete, decide o que eliminar, reduzir, elevar e criar, vê a sua curva de valor ao lado da do mercado e sai com uma proposta própria e ética. O guia explica o método na Apresentação.</p>
+          <p class="desc">Sair da disputa em que todos oferecem o mesmo e competem pelo menor valor. Em uns 30 minutos, mais o tempo de ouvir alguns pacientes, você marca onde a sua área compete, olha para quem ainda não procura ninguém, decide o que eliminar, reduzir, elevar e criar, vê a sua curva de valor ao lado da do mercado e sai com uma proposta própria, ética e possível de mostrar nas redes. Seja realista: na maioria dos consultórios, o resultado é uma diferença clara dentro do mercado que já existe, e não um oceano inteiramente novo. A ferramenta diz qual é o seu caso. O guia explica o método na Apresentação e na Parte 3.</p>
           <form class="tool-form" data-tool="oceano" id="oa-form">
             <fieldset class="field oa-step">
               <legend>Passo 1 · Em que todos competem na sua área e na sua cidade?</legend>
-              <p class="oa-hint">Marque de 4 a 8 fatores. Eles formam a curva de valor do passo 3.</p>
+              <p class="oa-hint">Marque de 4 a 8 fatores. Eles formam a curva de valor do passo 5.</p>
               <div class="checks" id="oa-fatores"></div>
               <label for="oa-extra" class="visually-hidden">Outros fatores</label>
               <input type="text" id="oa-extra" name="fatoresExtra" placeholder="Outros fatores, separados por vírgula">
             </fieldset>
             <fieldset class="field oa-step">
-              <legend>Passo 2 · As quatro ações</legend>
-              <p class="oa-hint">Toque numa sugestão para acrescentar, ou escreva com as suas palavras. Uma ideia por linha.</p>
+              <legend>Passo 2 · O que os pacientes dizem</legend>
+              <p class="oa-hint">Antes de dar notas, ouça. Sem este passo, a curva de valor vira opinião sua sobre você mesmo. Nunca registre nomes nem dados clínicos.</p>
+              <div class="field">
+                <label for="oa-avaliacoes">O que os pacientes elogiam e reclamam nas avaliações de outros profissionais da sua área (leia pelo menos 10 no Google)</label>
+                <textarea id="oa-avaliacoes" name="avaliacoes" rows="3" placeholder="Ex: elogiam a explicação e a pontualidade; reclamam de espera, pressa na consulta e falta de retorno"></textarea>
+              </div>
+              <div class="field">
+                <label for="oa-pacientes">O que 5 pacientes seus disseram que valorizam, e o que fez falta (pergunte no fim da consulta ou por mensagem)</label>
+                <textarea id="oa-pacientes" name="vozPacientes" rows="3" placeholder="Ex: gostaram de sair com o plano por escrito; sentiram falta de saber o que fazer entre as sessões"></textarea>
+              </div>
+            </fieldset>
+            <fieldset class="field oa-step">
+              <legend>Passo 3 · Quem ainda não procura ninguém da sua área</legend>
+              <p class="oa-hint">No livro, os espaços novos costumam nascer dos não clientes: quem poderia precisar de você e não procura ninguém. Responda o que souber; uma linha basta.</p>
+              <div class="field">
+                <label for="oa-nc1">Quem começa a procurar e desiste no meio do caminho, e por quê</label>
+                <textarea id="oa-nc1" name="naoClientes1" rows="2" placeholder="Ex: quem pede orçamento e some; quem não encontra horário depois do trabalho"></textarea>
+              </div>
+              <div class="field">
+                <label for="oa-nc2">Quem decide não procurar ninguém da sua área, e por quê</label>
+                <textarea id="oa-nc2" name="naoClientes2" rows="2" placeholder="Ex: acha que dor nas costas passa sozinha; teve uma experiência ruim e não voltou"></textarea>
+              </div>
+              <div class="field">
+                <label for="oa-nc3">Quem nunca pensou que precisava, e o que mudaria isso</label>
+                <textarea id="oa-nc3" name="naoClientes3" rows="2" placeholder="Ex: corredores iniciantes que não sabem que existe avaliação preventiva"></textarea>
+              </div>
+            </fieldset>
+            <fieldset class="field oa-step">
+              <legend>Passo 4 · As quatro ações</legend>
+              <p class="oa-hint">Toque numa sugestão para acrescentar, ou escreva com as suas palavras. Uma ideia por linha. As sugestões são as mesmas para todos da sua profissão: use-as como ponto de partida e escreva como você faz de um jeito próprio. Se ficar igual ao que qualquer colega poderia fazer, não diferencia.</p>
               <div class="oa-acoes">
                 <div class="oa-acao" data-acao="eliminar"><label for="oa-eliminar"><b>Eliminar</b> · o que a sua área faz e o paciente não valoriza</label><div class="oa-sug"></div><textarea id="oa-eliminar" name="eliminar" rows="3"></textarea></div>
                 <div class="oa-acao" data-acao="reduzir"><label for="oa-reduzir"><b>Reduzir</b> · o que está acima do necessário</label><div class="oa-sug"></div><textarea id="oa-reduzir" name="reduzir" rows="3"></textarea></div>
@@ -1566,14 +1601,20 @@
               </div>
             </fieldset>
             <fieldset class="field oa-step">
-              <legend>Passo 3 · Sua curva de valor</legend>
-              <p class="oa-hint">De 0 a 5, quanto o mercado entrega em cada fator e quanto você vai entregar depois das quatro ações. O que você criou entra com o mercado em zero.</p>
+              <legend>Passo 5 · Sua curva de valor</legend>
+              <p class="oa-hint">De 0 a 5, quanto o mercado entrega em cada fator e quanto você vai entregar depois das quatro ações. Use o que ouviu no passo 2 para não se superestimar. O que você criou entra com o mercado em zero.</p>
               <div id="oa-rows" class="oa-rows"></div>
               <div id="oa-canvas" class="oa-canvas"></div>
               <input type="hidden" name="curva" id="oa-curva">
             </fieldset>
             <fieldset class="field oa-step">
-              <legend>Passo 4 · Sua proposta</legend>
+              <legend>Passo 6 · Fazer antes de mostrar</legend>
+              <p class="oa-hint">Para cada coisa que você vai elevar ou criar, diga se já acontece no seu atendimento e como o paciente poderia ver isso nas redes. Conteúdo sobre uma diferença que ainda não existe promete o que a consulta não entrega.</p>
+              <div id="oa-provas" class="oa-provas"></div>
+              <input type="hidden" name="provas" id="oa-provas-txt">
+            </fieldset>
+            <fieldset class="field oa-step">
+              <legend>Passo 7 · Sua proposta</legend>
               <div class="field">
                 <label for="oa-publico">Para quem é</label>
                 <input type="text" id="oa-publico" name="publico" data-prefill="publico" placeholder="Ex: corredores amadores com dor no joelho, da zona sul">
@@ -3116,7 +3157,7 @@
     publico: { nome: 'Público, ICP e persona do paciente', fazer: 'Descreva quem você atende hoje e as dúvidas que mais ouve, gere o prompt e guarde o ICP e a persona principal.', revisar: 'Confira se os contatos das últimas semanas são do ICP e acrescente as dúvidas novas.' },
     profissional: { nome: 'Persona do profissional e marca', fazer: 'Responda às perguntas sobre sua história e seus valores, gere sua persona de marca e guarde o tom de voz.', revisar: 'Veja se os últimos conteúdos soaram como você e ajuste o "faço / não faço".' },
     nicho: { nome: 'Nicho e diferencial', fazer: 'Liste formações e métodos, gere a análise de nicho e concorrência e guarde a proposta de valor escolhida.', revisar: 'Revise a concorrência local e veja se o nicho está trazendo o paciente certo.' },
-    oceano: { nome: 'Estratégia Oceano Azul', fazer: 'Marque em que a sua área compete, faça as quatro ações (eliminar, reduzir, elevar, criar), ajuste a curva de valor e guarde a proposta.', revisar: 'Compare a curva de valor com o que os pacientes elogiam e reclamam, e veja se o que você criou já aparece nos perfis e no atendimento.' },
+    oceano: { nome: 'Estratégia Oceano Azul', fazer: 'Ouça o que os pacientes dizem, olhe para quem ainda não procura ninguém, faça as quatro ações (eliminar, reduzir, elevar, criar), ajuste a curva de valor, diga o que já faz e como mostraria, e guarde a proposta.', revisar: 'Compare a curva de valor com o que os pacientes elogiam e reclamam, e veja se o que você criou já aparece nos perfis e no atendimento.' },
     perfil: { nome: 'Perfis e presença', fazer: 'Cole os textos atuais dos perfis, gere a auditoria e aplique bio, destaques, link e Perfil da Empresa no Google.', revisar: 'Atualize destaques, fixados e fotos do Google com o que funcionou.' },
     pautas: { nome: 'Pautas e palavras-chave', fazer: 'Anote no banco as dúvidas reais dos pacientes, gere palavras-chave, 30 pautas e o calendário, e guarde a frequência que vai manter.', revisar: 'Acrescente as dúvidas novas ao banco e gere as próximas 4 semanas de pautas.' },
     roteiro: { nome: 'Roteiros de conteúdo e copy', fazer: 'Escolha a primeira pauta do calendário e gere o roteiro com 5 ganchos. Grave vários de uma vez e registre no Diário de conteúdo.', revisar: 'Reaproveite os ganchos com mais envios e salvamentos nos próximos roteiros.' },
@@ -3133,7 +3174,7 @@
   };
   const SAVE_TOOLS = ['publico', 'profissional', 'nicho', 'oceano', 'perfil', 'pautas', 'formacao', 'atendimento'];
   const SAVE_TITLES = {
-    publico: 'Público, ICP e persona do paciente', profissional: 'Marca e tom de voz do profissional', nicho: 'Nicho, proposta de valor e diferencial', oceano: 'Estratégia Oceano Azul (quatro ações e curva de valor)',
+    publico: 'Público, ICP e persona do paciente', profissional: 'Marca e tom de voz do profissional', nicho: 'Nicho, proposta de valor e diferencial', oceano: 'Estratégia Oceano Azul (quatro ações, curva de valor e plano para mostrar a diferença)',
     perfil: 'Textos aprovados dos perfis', pautas: 'Palavras-chave, pautas e calendário', formacao: 'Plano de formação e autoridade',
     atendimento: 'Respostas rápidas e roteiros de atendimento'
   };
@@ -3298,7 +3339,7 @@
       { n: 6, nome: 'Meça e escale com CRM', partes: [13, 14, 15, 16] }
     ],
     partes: {
-      0: { titulo: 'Oceano Vermelho e Oceano Azul', etapa: 0, tools: ['oceano', 'nicho'], sinergia: 'Estratégia Oceano Azul', sinTxt: 'Em quatro passos: onde a sua área compete, as quatro ações (eliminar, reduzir, elevar, criar), a sua curva de valor ao lado da do mercado e a proposta que nasce delas.', pratica: 'Faça as quatro ações do Oceano Azul em relação ao padrão do seu setor: o que eliminar, o que reduzir, o que elevar e o que criar.' },
+      0: { titulo: 'A ferramenta do herói: o Oceano Azul', etapa: 0, tools: ['oceano', 'nicho'], sinergia: 'Estratégia Oceano Azul', sinTxt: 'Em sete passos: onde a sua área compete, o que os pacientes dizem, quem ainda não procura ninguém, as quatro ações, a curva de valor, o que você já faz e como mostrar, e a proposta. Diz com honestidade se o resultado é um espaço novo ou uma diferença dentro do mercado existente.', pratica: 'Faça as quatro ações do Oceano Azul em relação ao padrão do seu setor: o que eliminar, o que reduzir, o que elevar e o que criar.' },
       1: { titulo: 'A jornada das sete decisões', etapa: 1, tools: ['config', 'painel'], sinergia: 'Configure seu consultório', sinTxt: 'Escolha o tipo de profissional. O app reordena as ferramentas e carrega as regras do conselho certo.', pratica: 'Escreva as sete decisões numa folha e, ao lado de cada uma, anote quantos pacientes passaram por ela no último mês. Onde você não sabe o número, está o primeiro campo do seu CRM.' },
       2: { titulo: 'Ética primeiro: conselhos e LGPD', etapa: 1, tools: ['etica'], sinergia: 'Verificador ético', sinTxt: 'Cole qualquer post, anúncio ou mensagem e receba os pontos que conflitam com o seu conselho, a LGPD e as políticas da Meta e do Google.', pratica: 'Abra os seus três últimos posts e o seu último anúncio. Confira identificação profissional, ausência de superlativos e de promessa, e exposição de paciente. Corrija ou arquive o que não passar.' },
       3: { titulo: 'Os canais, um a um: manual de configuração', etapa: 2, tools: ['perfil', 'publico', 'profissional', 'nicho', 'formacao'], sinergia: 'Perfis e presença', sinTxt: 'Traz o checklist de configuração de cada canal (Google, Instagram, YouTube, LinkedIn e TikTok) e audita e reescreve bio, título e descrições a partir do Perfil do consultório.', pratica: 'Pesquise seu nome e sua clínica no Google Maps. Se a ficha não existir ou estiver incompleta, crie ou reivindique o Perfil da Empresa no Google e reescreva a bio do Instagram em quatro linhas.' },
@@ -3570,6 +3611,7 @@ Texto: [COLE AQUI]` }
     ["CRM", "Do inglês Customer Relationship Management, gestão do relacionamento com o cliente: registro de contatos, etapas, próximos passos e resultados"],
     ["CTA", "Do inglês Call to Action, chamada para ação: o pedido feito ao final de um conteúdo ou anúncio"],
     ["CTR", "Do inglês Click-Through Rate, taxa de cliques: cliques divididos por impressões"],
+    ["Curva de valor", "No Oceano Azul, o gráfico que compara, fator por fator, o quanto o mercado entrega e o quanto você entrega; mostra onde você é igual aos outros e onde se diferencia"],
     ["Destaques", "Stories fixados no perfil do Instagram, organizados por assunto"],
     ["Diferencial ético", "Uma diferença real entre você e outros profissionais, demonstrada pelo conteúdo e pelo atendimento e dita dentro das regras do conselho: por fatos que o paciente verifica, nunca por superlativos, promessas ou preço"],
     ["Direct", "Mensagens privadas do Instagram"],
@@ -3591,6 +3633,7 @@ Texto: [COLE AQUI]` }
     ["Meta Business Suite", "Painel gratuito da Meta para gerenciar posts, mensagens e anúncios de Instagram e Facebook"],
     ["Decisões (as sete)", "Atenção, confiança, indicação, contato, agendamento, comparecimento e adesão: as decisões que o paciente toma em sequência até seguir o tratamento"],
     ["No-show", "Falta do paciente sem aviso"],
+    ["Não clientes", "No Oceano Azul, as pessoas que poderiam precisar de um serviço e não procuram ninguém da área: quem desiste no caminho, quem decide não procurar e quem nunca pensou que precisava. Delas costumam nascer os espaços novos"],
     ["Oceano Azul", "Espaço de mercado ainda não disputado, criado por uma proposta de valor própria; conceito de estratégia de mercado"],
     ["Oceano Vermelho", "Mercado já existente, em que todos disputam os mesmos clientes com os mesmos argumentos"],
     ["Orçamento diário", "Valor máximo que a plataforma pode gastar por dia com um anúncio"],
@@ -4085,9 +4128,18 @@ Entregue:
 6. Posicionamento em uma frase e 10 palavras-chave para bio, Google e legendas (serviço + cidade ou bairro).
 7. Como testar o nicho em 30 dias antes de mudar tudo, e o que medir.`,
 
-    oceano: (get, getAll) => `Aja como estrategista de posicionamento para profissionais de saúde, usando a Estratégia do Oceano Azul (W. Chan Kim e Renée Mauborgne) e as regras de publicidade do meu conselho.
+    oceano: (get, getAll) => `Aja como estrategista de posicionamento para profissionais de saúde, usando as ferramentas da Estratégia do Oceano Azul (W. Chan Kim e Renée Mauborgne) e as regras de publicidade do meu conselho. Seja honesto: se o que eu tenho é uma diferenciação dentro do mercado que já existe, e não um espaço realmente novo, diga isso com clareza. As duas coisas têm valor, mas não são a mesma.
 
 Meu Oceano Vermelho (fatores em que todos competem na minha área e cidade): ${[getAll('fatores'), get('fatoresExtra')].filter((x) => x && x !== '(nenhum selecionado)').join(', ') || '(não marquei: proponha os fatores típicos da minha área)'}
+
+O que os pacientes dizem (sem nomes nem dados clínicos):
+- Nas avaliações de outros profissionais da minha área: ${nv(get('avaliacoes'))}
+- O que os meus pacientes disseram que valorizam e o que fez falta: ${nv(get('vozPacientes'))}
+
+Não clientes:
+- Quem começa a procurar e desiste: ${nv(get('naoClientes1'))}
+- Quem decide não procurar ninguém da minha área: ${nv(get('naoClientes2'))}
+- Quem nunca pensou que precisava: ${nv(get('naoClientes3'))}
 
 As quatro ações que pensei:
 - Eliminar: ${nv(get('eliminar').split('\n').map((x) => x.replace(/^[-•*]\s*/, '').trim()).filter(Boolean).join('; '))}
@@ -4096,16 +4148,20 @@ As quatro ações que pensei:
 - Criar: ${nv(get('criar').split('\n').map((x) => x.replace(/^[-•*]\s*/, '').trim()).filter(Boolean).join('; '))}
 
 Minha curva de valor (0 a 5, mercado e eu depois das quatro ações): ${nv(get('curva'))}
+O que já faço e como mostraria: ${nv(get('provas'))}
 Público: ${nv(get('publico'), cfg.publico)}
 Rascunho de proposta: ${nv(get('proposta'))}
 
 Entregue:
-1. Diagnóstico da minha curva: onde ela se parece com a do mercado (risco de continuar no Oceano Vermelho) e onde se diferencia de verdade.
-2. As quatro ações revisadas em tabela (ação, o que fazer, por que o paciente valoriza, custo ou esforço, como comprovar), com no máximo 3 itens por ação. Corte o que for promessa, superlativo, preço como chamariz ou qualquer coisa que o meu conselho proíba, e diga o motivo.
-3. Três versões da proposta de valor no formato "Para [público], [o que ofereço de diferente], [como comprovo]", sem promessa de resultado.
-4. Onde a estratégia aparece na prática: bio e Perfil da Empresa no Google, roteiro de atendimento, primeira consulta e três pautas de conteúdo.
-5. Um teste de 30 dias para validar a estratégia antes de mudar tudo, com o que medir no CRM (contatos, agendamentos, comparecimentos e origem).
-6. Riscos: o que um concorrente copiaria primeiro e como manter a diferença.`,
+1. Veredito em duas linhas: isto é um espaço novo (atende não clientes ou cria um valor que ninguém da região oferece) ou uma diferenciação dentro do mercado existente? Justifique com os dados acima.
+2. Diagnóstico da minha curva: onde ela se parece com a do mercado e onde se diferencia de verdade. Confronte as notas que dei com o que os pacientes disseram; aponte onde parece que me superestimei.
+3. Não clientes: que necessidade não atendida aparece nas respostas, se há um caminho ético e viável para atendê-la e o que eu teria de mudar no atendimento.
+4. As quatro ações revisadas em tabela (ação, o que fazer, por que o paciente valoriza, custo ou esforço, como comprovar, genérico ou próprio), com no máximo 3 itens por ação. Marque como "genérico" o que qualquer colega da minha profissão poderia fazer igual e proponha uma versão própria. Corte o que for promessa, superlativo, preço como chamariz ou qualquer coisa que o meu conselho proíba, e diga o motivo.
+5. Três versões da proposta de valor no formato "Para [público], [o que ofereço de diferente], [como comprovo]", sem promessa de resultado e usando só o que eu já faço ou vou implementar.
+6. Fazer antes de mostrar: para cada item ainda não implementado, o que precisa acontecer no consultório antes de virar conteúdo. Não recomende conteúdo sobre o que ainda não existe.
+7. Plano de 12 semanas para demonstrar a diferença nas redes: uma série recorrente com nome, uma peça por semana (formato, ideia, o que filmar ou mostrar, sem pacientes identificáveis), ligada ao que eu já faço, e onde a diferença aparece também na bio, no Perfil da Empresa no Google e no roteiro de atendimento.
+8. Um teste de 30 dias para validar a estratégia antes de mudar tudo, com o que medir no CRM (contatos, agendamentos, comparecimentos e origem).
+9. Riscos: o que um concorrente copiaria primeiro e como manter a diferença com o que é mais difícil de copiar (foco clínico, forma de explicar, rede de colegas).`,
 
     perfil: (get, getAll) => `Você é consultor de marketing ético para profissionais de saúde no Brasil.
 
@@ -6952,7 +7008,9 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
       nutricionista: { elevar: ['Plano alimentar adaptado à rotina real'], criar: ['Acompanhamento por mensagem entre as consultas'] }
     };
     const ACOES = ['eliminar', 'reduzir', 'elevar', 'criar'];
-    const st = Object.assign({ fatores: [], extra: '', eliminar: '', reduzir: '', elevar: '', criar: '', notas: {}, publico: '', proposta: '', propostaManual: false }, storeGet(KEY, {}) || {});
+    const TEXTOS = { avaliacoes: 'oa-avaliacoes', pacientes: 'oa-pacientes', nc1: 'oa-nc1', nc2: 'oa-nc2', nc3: 'oa-nc3' };
+    const st = Object.assign({ fatores: [], extra: '', eliminar: '', reduzir: '', elevar: '', criar: '', notas: {}, publico: '', proposta: '', propostaManual: false, avaliacoes: '', pacientes: '', nc1: '', nc2: '', nc3: '', impl: {} }, storeGet(KEY, {}) || {});
+    if (!st.impl || typeof st.impl !== 'object') st.impl = {};
     const save = () => storeSet(KEY, st);
     const linhas = (t) => (t || '').split(/\n|;/).map((x) => x.replace(/^[-•*]\s*/, '').trim()).filter(Boolean);
     const el = (id) => document.getElementById(id);
@@ -6963,6 +7021,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     boxF.querySelectorAll('input').forEach((c) => { c.checked = st.fatores.includes(c.value); });
     el('oa-extra').value = st.extra;
     ACOES.forEach((a) => { el('oa-' + a).value = st[a]; });
+    Object.entries(TEXTOS).forEach(([k, id]) => { el(id).value = st[k] || ''; });
     if (st.publico) el('oa-publico').value = st.publico;
     el('oa-proposta').value = st.proposta;
 
@@ -6973,7 +7032,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
         const a = box.dataset.acao;
         const lista = [...(extra[a] || []), ...SUG[a]];
         const sug = box.querySelector('.oa-sug');
-        sug.innerHTML = lista.map((t) => `<button type="button" class="oa-chip">+ ${escapeHtml(t)}</button>`).join('');
+        sug.innerHTML = lista.map((t) => `<button type="button" class="oa-chip comum" title="Sugestão comum a todos da sua profissão: escreva como você faz de um jeito próprio">+ ${escapeHtml(t)}</button>`).join('');
         sug.querySelectorAll('.oa-chip').forEach((b, i) => b.addEventListener('click', () => {
           const ta = el('oa-' + a);
           const atual = linhas(ta.value);
@@ -7036,7 +7095,32 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
       el('oa-curva').value = fs.map((f) => `${f}: mercado ${nota(f).m}, você ${nota(f).v}`).join('; ');
     }
 
-    // Passo 4: rascunho da proposta
+    // Passo 6: fazer antes de mostrar
+    const STATUS = [['ja', 'Já faço'], ['vou', 'Vou implementar'], ['nao', 'Ainda não sei se consigo']];
+    function itensProva() { return [...new Set([...linhas(el('oa-elevar').value), ...linhas(el('oa-criar').value)])].slice(0, 10); }
+    function provasTxt() {
+      const lab = Object.fromEntries(STATUS);
+      return itensProva().map((t) => { const p = st.impl[t] || {}; return `${t}: ${lab[p.s] || 'situação não informada'}; como mostrar: ${p.m || 'não definido'}`; }).join(' | ');
+    }
+    function renderProvas() {
+      const box = el('oa-provas');
+      const itens = itensProva();
+      if (!itens.length) { box.innerHTML = '<p class="oa-hint">Escreva no passo 4 o que você vai elevar e criar.</p>'; el('oa-provas-txt').value = ''; return; }
+      box.innerHTML = itens.map((t, i) => {
+        const p = st.impl[t] || (st.impl[t] = { s: '', m: '' });
+        return `<div class="oa-prova"><span class="oa-f">${escapeHtml(t)}</span>
+          <label><span class="visually-hidden">Situação de ${escapeHtml(t)}</span><select data-i="${i}" data-k="s"><option value="">Situação…</option>${STATUS.map(([v, l]) => `<option value="${v}"${p.s === v ? ' selected' : ''}>${l}</option>`).join('')}</select></label>
+          <label><span class="visually-hidden">Como mostrar ${escapeHtml(t)}</span><input type="text" data-i="${i}" data-k="m" value="${escapeHtml(p.m || '')}" placeholder="Como mostrar: o que filmar ou contar"></label></div>`;
+      }).join('');
+      box.querySelectorAll('[data-k]').forEach((c) => c.addEventListener(c.tagName === 'SELECT' ? 'change' : 'input', () => {
+        const t = itens[+c.dataset.i];
+        st.impl[t] = Object.assign(st.impl[t] || {}, { [c.dataset.k]: c.value });
+        el('oa-provas-txt').value = provasTxt(); save();
+      }));
+      el('oa-provas-txt').value = provasTxt();
+    }
+
+    // Passo 7: rascunho da proposta
     function rascunho() {
       const pub = el('oa-publico').value.trim() || '[público]';
       const cr = linhas(el('oa-criar').value), ev = linhas(el('oa-elevar').value), el1 = linhas(el('oa-eliminar').value);
@@ -7050,17 +7134,19 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     el('oa-proposta').addEventListener('input', () => { st.propostaManual = !!el('oa-proposta').value.trim(); st.proposta = el('oa-proposta').value; save(); });
 
     form.addEventListener('input', (e) => {
-      if (e.target.type === 'range' || e.target.id === 'oa-proposta') return;
+      if (e.target.type === 'range' || e.target.id === 'oa-proposta' || e.target.closest('#oa-provas')) return;
+      Object.entries(TEXTOS).forEach(([k, id]) => { st[k] = el(id).value; });
+      if (Object.values(TEXTOS).includes(e.target.id)) { save(); return; }
       st.fatores = [...boxF.querySelectorAll('input:checked')].map((c) => c.value);
       st.extra = el('oa-extra').value;
       ACOES.forEach((a) => { st[a] = el('oa-' + a).value; });
       st.publico = el('oa-publico').value;
-      renderRows(); updProposta(); save();
+      renderRows(); renderProvas(); updProposta(); save();
     });
-    form.addEventListener('change', (e) => { if (e.target.type === 'checkbox') form.dispatchEvent(new Event('input')); });
+    form.addEventListener('change', (e) => { if (e.target.type === 'checkbox') form.dispatchEvent(new Event('input', { bubbles: true })); });
     const det = form.closest('details');
-    if (det) det.addEventListener('toggle', () => { if (det.open) { renderSug(); renderRows(); updProposta(); } });
-    renderSug(); renderRows(); updProposta();
+    if (det) det.addEventListener('toggle', () => { if (det.open) { renderSug(); renderRows(); renderProvas(); updProposta(); } });
+    renderSug(); renderRows(); renderProvas(); updProposta();
   })();
 
   // Painel do topo: cada ferramenta do funil abre a ferramenta no app

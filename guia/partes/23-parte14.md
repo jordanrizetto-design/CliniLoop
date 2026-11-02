@@ -114,7 +114,7 @@ Os dados ficam só neste navegador. Em **Configurações**, na parte "Seus dados
 | Público, ICP e persona | Descreve quem você atende e gera o perfil do paciente ideal | 3 |
 | Persona do profissional | Registra sua história, seus valores e o seu tom de voz | 3 e 4 |
 | Nicho e diferencial | Analisa nicho e concorrência e gera a proposta de valor | Apresentação e 3 |
-| Estratégia Oceano Azul | Guia em quatro passos: onde a sua área compete, as quatro ações (eliminar, reduzir, elevar, criar), a curva de valor ao lado da do mercado e a proposta. As escolhas guardadas orientam as demais ferramentas | Apresentação, 3 e todas as partes |
+| Estratégia Oceano Azul | Guia em sete passos: onde a sua área compete, o que os pacientes dizem, quem ainda não procura ninguém, as quatro ações, a curva de valor, o que você já faz e como mostrar, e a proposta. O prompt diz se o resultado é um espaço novo ou uma diferença no mercado existente e monta um plano de 12 semanas de conteúdo. As escolhas guardadas orientam as demais ferramentas | Apresentação, 3, 4 e todas as partes |
 | Perfis e presença | Checklists de configuração e auditoria do Google, Instagram, YouTube, LinkedIn e TikTok | 3 |
 | Pautas e palavras-chave | Banco de dúvidas reais, palavras-chave por serviço e cidade, pautas e calendário | 4 |
 | Roteiros e copy | Reels, carrosséis, Stories, vídeos de YouTube e posts de LinkedIn, com cinco ganchos e versão em blocos para o teleprompter | 4 e 6 |

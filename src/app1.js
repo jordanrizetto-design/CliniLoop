@@ -276,7 +276,7 @@
     publico: { nome: 'Público, ICP e persona do paciente', fazer: 'Descreva quem você atende hoje e as dúvidas que mais ouve, gere o prompt e guarde o ICP e a persona principal.', revisar: 'Confira se os contatos das últimas semanas são do ICP e acrescente as dúvidas novas.' },
     profissional: { nome: 'Persona do profissional e marca', fazer: 'Responda às perguntas sobre sua história e seus valores, gere sua persona de marca e guarde o tom de voz.', revisar: 'Veja se os últimos conteúdos soaram como você e ajuste o "faço / não faço".' },
     nicho: { nome: 'Nicho e diferencial', fazer: 'Liste formações e métodos, gere a análise de nicho e concorrência e guarde a proposta de valor escolhida.', revisar: 'Revise a concorrência local e veja se o nicho está trazendo o paciente certo.' },
-    oceano: { nome: 'Estratégia Oceano Azul', fazer: 'Marque em que a sua área compete, faça as quatro ações (eliminar, reduzir, elevar, criar), ajuste a curva de valor e guarde a proposta.', revisar: 'Compare a curva de valor com o que os pacientes elogiam e reclamam, e veja se o que você criou já aparece nos perfis e no atendimento.' },
+    oceano: { nome: 'Estratégia Oceano Azul', fazer: 'Ouça o que os pacientes dizem, olhe para quem ainda não procura ninguém, faça as quatro ações (eliminar, reduzir, elevar, criar), ajuste a curva de valor, diga o que já faz e como mostraria, e guarde a proposta.', revisar: 'Compare a curva de valor com o que os pacientes elogiam e reclamam, e veja se o que você criou já aparece nos perfis e no atendimento.' },
     perfil: { nome: 'Perfis e presença', fazer: 'Cole os textos atuais dos perfis, gere a auditoria e aplique bio, destaques, link e Perfil da Empresa no Google.', revisar: 'Atualize destaques, fixados e fotos do Google com o que funcionou.' },
     pautas: { nome: 'Pautas e palavras-chave', fazer: 'Anote no banco as dúvidas reais dos pacientes, gere palavras-chave, 30 pautas e o calendário, e guarde a frequência que vai manter.', revisar: 'Acrescente as dúvidas novas ao banco e gere as próximas 4 semanas de pautas.' },
     roteiro: { nome: 'Roteiros de conteúdo e copy', fazer: 'Escolha a primeira pauta do calendário e gere o roteiro com 5 ganchos. Grave vários de uma vez e registre no Diário de conteúdo.', revisar: 'Reaproveite os ganchos com mais envios e salvamentos nos próximos roteiros.' },
@@ -293,7 +293,7 @@
   };
   const SAVE_TOOLS = ['publico', 'profissional', 'nicho', 'oceano', 'perfil', 'pautas', 'formacao', 'atendimento'];
   const SAVE_TITLES = {
-    publico: 'Público, ICP e persona do paciente', profissional: 'Marca e tom de voz do profissional', nicho: 'Nicho, proposta de valor e diferencial', oceano: 'Estratégia Oceano Azul (quatro ações e curva de valor)',
+    publico: 'Público, ICP e persona do paciente', profissional: 'Marca e tom de voz do profissional', nicho: 'Nicho, proposta de valor e diferencial', oceano: 'Estratégia Oceano Azul (quatro ações, curva de valor e plano para mostrar a diferença)',
     perfil: 'Textos aprovados dos perfis', pautas: 'Palavras-chave, pautas e calendário', formacao: 'Plano de formação e autoridade',
     atendimento: 'Respostas rápidas e roteiros de atendimento'
   };

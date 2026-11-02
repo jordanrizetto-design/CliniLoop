@@ -210,9 +210,18 @@ Entregue:
 6. Posicionamento em uma frase e 10 palavras-chave para bio, Google e legendas (serviço + cidade ou bairro).
 7. Como testar o nicho em 30 dias antes de mudar tudo, e o que medir.`,
 
-    oceano: (get, getAll) => `Aja como estrategista de posicionamento para profissionais de saúde, usando a Estratégia do Oceano Azul (W. Chan Kim e Renée Mauborgne) e as regras de publicidade do meu conselho.
+    oceano: (get, getAll) => `Aja como estrategista de posicionamento para profissionais de saúde, usando as ferramentas da Estratégia do Oceano Azul (W. Chan Kim e Renée Mauborgne) e as regras de publicidade do meu conselho. Seja honesto: se o que eu tenho é uma diferenciação dentro do mercado que já existe, e não um espaço realmente novo, diga isso com clareza. As duas coisas têm valor, mas não são a mesma.
 
 Meu Oceano Vermelho (fatores em que todos competem na minha área e cidade): ${[getAll('fatores'), get('fatoresExtra')].filter((x) => x && x !== '(nenhum selecionado)').join(', ') || '(não marquei: proponha os fatores típicos da minha área)'}
+
+O que os pacientes dizem (sem nomes nem dados clínicos):
+- Nas avaliações de outros profissionais da minha área: ${nv(get('avaliacoes'))}
+- O que os meus pacientes disseram que valorizam e o que fez falta: ${nv(get('vozPacientes'))}
+
+Não clientes:
+- Quem começa a procurar e desiste: ${nv(get('naoClientes1'))}
+- Quem decide não procurar ninguém da minha área: ${nv(get('naoClientes2'))}
+- Quem nunca pensou que precisava: ${nv(get('naoClientes3'))}
 
 As quatro ações que pensei:
 - Eliminar: ${nv(get('eliminar').split('\n').map((x) => x.replace(/^[-•*]\s*/, '').trim()).filter(Boolean).join('; '))}
@@ -221,16 +230,20 @@ As quatro ações que pensei:
 - Criar: ${nv(get('criar').split('\n').map((x) => x.replace(/^[-•*]\s*/, '').trim()).filter(Boolean).join('; '))}
 
 Minha curva de valor (0 a 5, mercado e eu depois das quatro ações): ${nv(get('curva'))}
+O que já faço e como mostraria: ${nv(get('provas'))}
 Público: ${nv(get('publico'), cfg.publico)}
 Rascunho de proposta: ${nv(get('proposta'))}
 
 Entregue:
-1. Diagnóstico da minha curva: onde ela se parece com a do mercado (risco de continuar no Oceano Vermelho) e onde se diferencia de verdade.
-2. As quatro ações revisadas em tabela (ação, o que fazer, por que o paciente valoriza, custo ou esforço, como comprovar), com no máximo 3 itens por ação. Corte o que for promessa, superlativo, preço como chamariz ou qualquer coisa que o meu conselho proíba, e diga o motivo.
-3. Três versões da proposta de valor no formato "Para [público], [o que ofereço de diferente], [como comprovo]", sem promessa de resultado.
-4. Onde a estratégia aparece na prática: bio e Perfil da Empresa no Google, roteiro de atendimento, primeira consulta e três pautas de conteúdo.
-5. Um teste de 30 dias para validar a estratégia antes de mudar tudo, com o que medir no CRM (contatos, agendamentos, comparecimentos e origem).
-6. Riscos: o que um concorrente copiaria primeiro e como manter a diferença.`,
+1. Veredito em duas linhas: isto é um espaço novo (atende não clientes ou cria um valor que ninguém da região oferece) ou uma diferenciação dentro do mercado existente? Justifique com os dados acima.
+2. Diagnóstico da minha curva: onde ela se parece com a do mercado e onde se diferencia de verdade. Confronte as notas que dei com o que os pacientes disseram; aponte onde parece que me superestimei.
+3. Não clientes: que necessidade não atendida aparece nas respostas, se há um caminho ético e viável para atendê-la e o que eu teria de mudar no atendimento.
+4. As quatro ações revisadas em tabela (ação, o que fazer, por que o paciente valoriza, custo ou esforço, como comprovar, genérico ou próprio), com no máximo 3 itens por ação. Marque como "genérico" o que qualquer colega da minha profissão poderia fazer igual e proponha uma versão própria. Corte o que for promessa, superlativo, preço como chamariz ou qualquer coisa que o meu conselho proíba, e diga o motivo.
+5. Três versões da proposta de valor no formato "Para [público], [o que ofereço de diferente], [como comprovo]", sem promessa de resultado e usando só o que eu já faço ou vou implementar.
+6. Fazer antes de mostrar: para cada item ainda não implementado, o que precisa acontecer no consultório antes de virar conteúdo. Não recomende conteúdo sobre o que ainda não existe.
+7. Plano de 12 semanas para demonstrar a diferença nas redes: uma série recorrente com nome, uma peça por semana (formato, ideia, o que filmar ou mostrar, sem pacientes identificáveis), ligada ao que eu já faço, e onde a diferença aparece também na bio, no Perfil da Empresa no Google e no roteiro de atendimento.
+8. Um teste de 30 dias para validar a estratégia antes de mudar tudo, com o que medir no CRM (contatos, agendamentos, comparecimentos e origem).
+9. Riscos: o que um concorrente copiaria primeiro e como manter a diferença com o que é mais difícil de copiar (foco clínico, forma de explicar, rede de colegas).`,
 
     perfil: (get, getAll) => `Você é consultor de marketing ético para profissionais de saúde no Brasil.
 

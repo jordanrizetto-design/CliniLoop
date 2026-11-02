@@ -91,6 +91,8 @@ Diferenciar-se é fácil de dizer e difícil de fazer. Existe um oceano de bons 
 | Elevar | O que deveria estar bem acima do padrão? | Clareza sobre como funcionam a avaliação e o tratamento |
 | Criar | O que o setor ainda não oferece? | Um quadro recorrente que responde às dúvidas reais do consultório |
 
+Uma palavra de realismo. O livro fala de criar mercados novos, e a melhor fonte deles são os **não clientes**: as pessoas que poderiam precisar de você e não procuram ninguém da sua área. Às vezes um consultório encontra um espaço assim, como um público que ninguém atende bem na cidade. Na maioria das vezes, o resultado é mais modesto e igualmente útil: uma diferença clara dentro do mercado que já existe, suficiente para sair da comparação por preço. O guia não promete o primeiro e trabalha para garantir o segundo.
+
 As quatro ações acompanham você por toda a travessia. **Em cada parte, uma caixa mostra o que eliminar, reduzir, elevar e criar naquela etapa**, do perfil no Google ao lembrete de consulta.
 
 ::: {.box .diferencial}

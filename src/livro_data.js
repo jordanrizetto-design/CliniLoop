@@ -15,7 +15,7 @@
       { n: 6, nome: 'Meça e escale com CRM', partes: [13, 14, 15, 16] }
     ],
     partes: {
-      0: { titulo: 'Oceano Vermelho e Oceano Azul', etapa: 0, tools: ['oceano', 'nicho'], sinergia: 'Estratégia Oceano Azul', sinTxt: 'Em quatro passos: onde a sua área compete, as quatro ações (eliminar, reduzir, elevar, criar), a sua curva de valor ao lado da do mercado e a proposta que nasce delas.', pratica: 'Faça as quatro ações do Oceano Azul em relação ao padrão do seu setor: o que eliminar, o que reduzir, o que elevar e o que criar.' },
+      0: { titulo: 'A ferramenta do herói: o Oceano Azul', etapa: 0, tools: ['oceano', 'nicho'], sinergia: 'Estratégia Oceano Azul', sinTxt: 'Em sete passos: onde a sua área compete, o que os pacientes dizem, quem ainda não procura ninguém, as quatro ações, a curva de valor, o que você já faz e como mostrar, e a proposta. Diz com honestidade se o resultado é um espaço novo ou uma diferença dentro do mercado existente.', pratica: 'Faça as quatro ações do Oceano Azul em relação ao padrão do seu setor: o que eliminar, o que reduzir, o que elevar e o que criar.' },
       1: { titulo: 'A jornada das sete decisões', etapa: 1, tools: ['config', 'painel'], sinergia: 'Configure seu consultório', sinTxt: 'Escolha o tipo de profissional. O app reordena as ferramentas e carrega as regras do conselho certo.', pratica: 'Escreva as sete decisões numa folha e, ao lado de cada uma, anote quantos pacientes passaram por ela no último mês. Onde você não sabe o número, está o primeiro campo do seu CRM.' },
       2: { titulo: 'Ética primeiro: conselhos e LGPD', etapa: 1, tools: ['etica'], sinergia: 'Verificador ético', sinTxt: 'Cole qualquer post, anúncio ou mensagem e receba os pontos que conflitam com o seu conselho, a LGPD e as políticas da Meta e do Google.', pratica: 'Abra os seus três últimos posts e o seu último anúncio. Confira identificação profissional, ausência de superlativos e de promessa, e exposição de paciente. Corrija ou arquive o que não passar.' },
       3: { titulo: 'Os canais, um a um: manual de configuração', etapa: 2, tools: ['perfil', 'publico', 'profissional', 'nicho', 'formacao'], sinergia: 'Perfis e presença', sinTxt: 'Traz o checklist de configuração de cada canal (Google, Instagram, YouTube, LinkedIn e TikTok) e audita e reescreve bio, título e descrições a partir do Perfil do consultório.', pratica: 'Pesquise seu nome e sua clínica no Google Maps. Se a ficha não existir ou estiver incompleta, crie ou reivindique o Perfil da Empresa no Google e reescreva a bio do Instagram em quatro linhas.' },
@@ -287,6 +287,7 @@ Texto: [COLE AQUI]` }
     ["CRM", "Do inglês Customer Relationship Management, gestão do relacionamento com o cliente: registro de contatos, etapas, próximos passos e resultados"],
     ["CTA", "Do inglês Call to Action, chamada para ação: o pedido feito ao final de um conteúdo ou anúncio"],
     ["CTR", "Do inglês Click-Through Rate, taxa de cliques: cliques divididos por impressões"],
+    ["Curva de valor", "No Oceano Azul, o gráfico que compara, fator por fator, o quanto o mercado entrega e o quanto você entrega; mostra onde você é igual aos outros e onde se diferencia"],
     ["Destaques", "Stories fixados no perfil do Instagram, organizados por assunto"],
     ["Diferencial ético", "Uma diferença real entre você e outros profissionais, demonstrada pelo conteúdo e pelo atendimento e dita dentro das regras do conselho: por fatos que o paciente verifica, nunca por superlativos, promessas ou preço"],
     ["Direct", "Mensagens privadas do Instagram"],
@@ -308,6 +309,7 @@ Texto: [COLE AQUI]` }
     ["Meta Business Suite", "Painel gratuito da Meta para gerenciar posts, mensagens e anúncios de Instagram e Facebook"],
     ["Decisões (as sete)", "Atenção, confiança, indicação, contato, agendamento, comparecimento e adesão: as decisões que o paciente toma em sequência até seguir o tratamento"],
     ["No-show", "Falta do paciente sem aviso"],
+    ["Não clientes", "No Oceano Azul, as pessoas que poderiam precisar de um serviço e não procuram ninguém da área: quem desiste no caminho, quem decide não procurar e quem nunca pensou que precisava. Delas costumam nascer os espaços novos"],
     ["Oceano Azul", "Espaço de mercado ainda não disputado, criado por uma proposta de valor própria; conceito de estratégia de mercado"],
     ["Oceano Vermelho", "Mercado já existente, em que todos disputam os mesmos clientes com os mesmos argumentos"],
     ["Orçamento diário", "Valor máximo que a plataforma pode gastar por dia com um anúncio"],

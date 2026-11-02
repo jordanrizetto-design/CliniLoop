@@ -23,6 +23,8 @@ Hoje, qualquer pessoa gera em segundos um texto correto sobre "5 cuidados com a 
 
 A inteligência artificial é ótima para organizar, rascunhar e revisar esse material. Sem ele, ela produz o conteúdo médio da internet, que é exatamente o Oceano Vermelho. Por isso, todo prompt deste guia pede o seu contexto e o seu diferencial.
 
+Uma regra decide o que entra nessa terceira origem: **só vira conteúdo a diferença que já acontece no consultório.** Um Reel sobre o plano por escrito que você ainda não entrega promete o que a consulta não cumpre, e isso destrói a confiança que o conteúdo deveria construir. A ferramenta Estratégia Oceano Azul pergunta, item por item, o que já está implementado e como mostrar, e monta um plano de 12 semanas para demonstrar a diferença com uma série recorrente.
+
 ::: {.box .destaque}
 **O teste da diferença também vale para o conteúdo.** Um colega da mesma especialidade poderia publicar este vídeo sem mudar nada? Se sim, falta uma das três origens acima. Acrescente um exemplo do seu consultório, a sua forma de explicar ou um bastidor do seu atendimento.
 :::

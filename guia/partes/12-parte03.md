@@ -19,14 +19,17 @@ Esta parte começa pela proposta de valor e depois explica, canal por canal, o q
 
 Nenhum canal resolve a pergunta "por que você?". Ela precisa estar respondida antes de configurar o primeiro. A resposta é a proposta de valor: uma frase curta que diz quem você ajuda, com o quê e o que você faz de diferente no atendimento.
 
-Para chegar a ela, aplique as quatro ações do Oceano Azul ao seu atendimento, e não à sua comunicação:
+Para chegar a ela, aplique as ferramentas do Oceano Azul ao seu atendimento, e não à sua comunicação:
 
-1. **Liste os fatores em que todos competem** na sua especialidade e cidade: localização, convênio, horário, preço, tempo de espera, equipamento, título.
-2. **Para cada fator, decida** se você vai eliminar, reduzir, elevar ou manter. Não dá para elevar tudo.
-3. **Crie um ou dois fatores** que os colegas não oferecem e que o seu paciente valoriza, como um plano por escrito ao fim da avaliação, um retorno por mensagem na semana seguinte ou um foco em um público específico.
-4. **Escreva a frase** a partir do que você elevou e criou: "Ajudo [público] a [entender ou cuidar de algo], com [o que você faz de diferente]".
+1. **Ouça antes de decidir.** Leia pelo menos dez avaliações de outros profissionais da sua área no Google e anote o que os pacientes elogiam e do que reclamam. Pergunte a cinco pacientes seus o que valorizaram e o que fez falta. Sem isso, a estratégia vira a sua opinião sobre você mesmo.
+2. **Liste os fatores em que todos competem** na sua especialidade e cidade: localização, convênio, horário, preço, tempo de espera, equipamento, título.
+3. **Olhe para quem não procura ninguém.** Quem começa a procurar e desiste? Quem decide não procurar? Quem nunca pensou que precisava? É nesses não clientes que costumam estar os espaços novos.
+4. **Para cada fator, decida** se você vai eliminar, reduzir, elevar ou manter. Não dá para elevar tudo.
+5. **Crie um ou dois fatores** que os colegas não oferecem e que o seu paciente valoriza, como um plano por escrito ao fim da avaliação, um retorno por mensagem na semana seguinte ou um foco em um público específico. Se for algo que qualquer colega poderia copiar amanhã, procure a versão que só você faz.
+6. **Faça antes de mostrar.** Para cada coisa que você elevou ou criou, responda: isso já acontece no meu atendimento? Como o paciente poderia ver isso nas redes? Só vira conteúdo o que já existe.
+7. **Escreva a frase** a partir do que você elevou e criou: "Ajudo [público] a [entender ou cuidar de algo], com [o que você faz de diferente]".
 
-Na saúde, a promessa da frase é de informação e atendimento, nunca de resultado individual. Se ela servir para qualquer colega da sua especialidade, volte ao passo 3.
+Na saúde, a promessa da frase é de informação e atendimento, nunca de resultado individual. Se ela servir para qualquer colega da sua especialidade, volte ao passo 5.
 
 ::: {.box .exemplo}
 **Exemplo.** Fisioterapeuta em Moema. Fatores em que todos competem: convênio, aparelhos, localização. Ela reduz a ênfase em aparelhos, eleva o tempo de avaliação para 60 minutos e cria um plano de exercícios por escrito, revisado por mensagem depois de uma semana. Frase: "Ajudo quem tem dor lombar a voltar a treinar, com avaliação de uma hora e plano de exercícios acompanhado".
@@ -322,7 +325,7 @@ Escreva a sua proposta de valor com as quatro ações. Depois pesquise seu nome 
 :::
 
 ::: {.box .noapp}
-**Estratégia Oceano Azul, Nicho e diferencial, e Perfis e presença.** As duas primeiras guiam as quatro ações e a frase de proposta de valor. A terceira traz o checklist de configuração de cada canal (Google, Instagram, YouTube, LinkedIn e TikTok) e audita e reescreve bio, título e descrições a partir do Perfil do consultório e do seu diferencial.
+**Estratégia Oceano Azul, Nicho e diferencial, e Perfis e presença.** A primeira percorre os sete passos acima, diz com honestidade se o resultado é um espaço novo ou uma diferença dentro do mercado existente e entrega um plano de 12 semanas para mostrar a diferença nas redes. A segunda ajuda a escolher o nicho e a frase. A terceira traz o checklist de configuração de cada canal (Google, Instagram, YouTube, LinkedIn e TikTok) e audita e reescreve bio, título e descrições a partir do Perfil do consultório e do seu diferencial.
 :::
 
 ::: passagem
