@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Sistema Loop · CliniLoop</title>
-<meta name="description" content="Guia O Prompt do Sim + app CliniLoop: do primeiro post ao paciente em tratamento, com IA e as regras do seu conselho. Para médicos, dentistas, psicólogos, fisioterapeutas e nutricionistas.">
+<meta name="description" content="Que o paciente chegue sabendo por que escolheu você. Guia O Prompt do Sim + app CliniLoop: diferenciação ética com o Oceano Azul, IA e CRM para médicos, dentistas, psicólogos, fisioterapeutas e nutricionistas.">
 <meta property="og:title" content="Sistema Loop: guia O Prompt do Sim + app CliniLoop">
-<meta property="og:description" content="O paciente não decide num post. Decide em sete passos. Organize cada um, com IA e as regras do seu conselho.">
+<meta property="og:description" content="Pare de disputar paciente pelo preço. Construa uma diferença que o paciente reconhece antes de marcar, com ética, IA e 25 minutos por dia.">
 <meta property="og:image" content="https://loopuniversity.com.br/assets/capa-guia.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" href="/assets/icon-192.png">
@@ -133,7 +133,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .destaques li{color:var(--tinta-suave);font-size:.95rem}
 .destaques b{color:var(--tinta)}
 
-.caixas-parte{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}
+.caixas-parte{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px}
 .caixas-parte div{background:var(--cartao);border:1px solid var(--linha);border-radius:12px;padding:16px;display:grid;gap:4px}
 .caixas-parte b{color:var(--terracota);font-size:.9rem;letter-spacing:.04em}
 .caixas-parte span{font-size:.9rem;color:var(--tinta-suave)}
@@ -259,6 +259,70 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
   .cartao-oferta{padding:26px}
   .pessoa{grid-template-columns:1fr}
 }
+
+/* criativo da abertura: as duas portas */
+.criativo{display:grid;gap:14px}
+.porta{border-radius:18px;padding:18px 18px 16px;display:grid;gap:10px}
+.porta.preco{background:rgba(244,242,236,.06);border:1px solid rgba(244,242,236,.14)}
+.porta.confianca{background:#F4F2EC;color:var(--tinta);box-shadow:0 30px 60px -24px rgba(0,0,0,.6)}
+.porta .tag{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.porta.preco .tag{color:var(--pessego)}
+.porta.confianca .tag{color:#1F6F78}
+.bolha{max-width:88%;padding:10px 14px;border-radius:16px 16px 16px 4px;font-size:.98rem;line-height:1.45}
+.porta.preco .bolha{background:#24505C;color:var(--sobre-escuro)}
+.porta.confianca .bolha{background:#FFFFFF;border:1px solid var(--linha)}
+.bolha.sua{justify-self:end;border-radius:16px 16px 4px 16px;background:#DCF3E4!important;border:1px solid rgba(22,163,74,.25)!important;color:var(--tinta)}
+.bolha small{display:block;font-size:.72rem;opacity:.65;margin-top:4px;text-align:right}
+.porta .leitura{font-size:.86rem}
+.porta.preco .leitura{color:var(--sobre-escuro-suave)}
+.porta.confianca .leitura{color:var(--tinta-suave)}
+.criativo .rodape-criativo{font-size:.78rem;color:var(--sobre-escuro-suave);text-align:right}
+.sob-cta{margin-top:18px;font-size:.88rem;color:var(--sobre-escuro-suave)}
+
+/* dois jogos */
+.jogos{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:44px}
+.jogo{border-radius:20px;padding:30px;display:grid;gap:16px;align-content:start}
+.jogo.vermelho{background:var(--cartao);border:1px solid var(--linha)}
+.jogo.azul{background:var(--petroleo);color:var(--sobre-escuro)}
+.jogo h3{font-size:1.3rem}
+.jogo .tag{font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.jogo.vermelho .tag{color:var(--terracota)}
+.jogo.azul .tag{color:var(--agua)}
+.jogo dl{margin:0;display:grid;gap:12px}
+.jogo dt{font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;opacity:.7}
+.jogo dd{margin:2px 0 0;font-size:1rem}
+.amplifica{margin-top:24px;background:var(--pessego-claro);border-radius:var(--raio);padding:20px 24px;display:grid;gap:6px;max-width:860px}
+.amplifica b{font-size:1.05rem}
+.amplifica span{color:var(--tinta-suave)}
+
+/* o plano */
+.plano{list-style:none;padding:0;margin:44px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:passo}
+.plano li{counter-increment:passo;background:rgba(244,242,236,.06);border:1px solid rgba(244,242,236,.14);border-radius:18px;padding:28px;display:grid;gap:10px;align-content:start}
+.plano li::before{content:counter(passo);width:44px;height:44px;border-radius:50%;background:var(--agua);color:var(--petroleo);font-weight:800;font-size:1.2rem;display:grid;place-items:center}
+.plano h3{font-size:1.2rem}
+.plano p{color:var(--sobre-escuro-suave);font-size:.98rem}
+.plano .ferramenta{font-size:.85rem;color:var(--pessego)}
+.ciclo{margin-top:26px;color:var(--sobre-escuro-suave);max-width:64ch}
+.ciclo b{color:var(--agua)}
+
+/* daqui a 90 dias */
+.noventa{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.noventa > div{border-radius:var(--raio);padding:28px}
+.noventa .igual{border:1px dashed var(--linha)}
+.noventa .loop90{background:var(--cartao);border:1px solid var(--linha);border-top:4px solid var(--agua)}
+.noventa h3{font-size:1.15rem;margin-bottom:14px}
+.noventa ul{margin:0;padding-left:20px;display:grid;gap:8px;color:var(--tinta-suave)}
+.ressalva-90{margin-top:18px;font-size:.88rem;color:var(--tinta-suave);max-width:70ch}
+
+/* custo real */
+.custo{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.custo > div{background:var(--cartao);border:1px solid var(--linha);border-radius:var(--raio);padding:26px;display:grid;gap:8px;align-content:start}
+.custo b{font-size:1.6rem;font-weight:800;letter-spacing:-.01em;line-height:1.1}
+.custo span{color:var(--tinta-suave);font-size:.95rem}
+.etapas li .jor{font-size:.82rem;font-style:italic;color:#1F6F78}
+@media (max-width: 900px){
+  .jogos,.plano,.noventa,.custo{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -275,26 +339,137 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
 
 <main id="inicio">
 
-  <!-- 1. Abertura -->
+  <!-- 1. Abertura: a promessa e as duas portas -->
   <section class="faixa escura abertura">
     <div class="miolo grade">
       <div>
         <p class="rotulo">Para médicos, dentistas, psicólogos, fisioterapeutas e nutricionistas</p>
-        <h1>Do primeiro contato ao tratamento: captação de pacientes com <em>sistema</em>, IA e as regras do seu conselho.</h1>
-        <p class="lead">O guia <i>O Prompt do Sim</i> ensina o caminho em seis etapas. O app CliniLoop transforma cada etapa em prompts prontos, com o seu perfil e as normas da sua profissão, e acompanha cada paciente até o tratamento.</p>
+        <h1>Que o paciente chegue sabendo <em>por que</em> escolheu você.</h1>
+        <p class="lead">Pare de disputar paciente com anúncio genérico e preço. O Sistema Loop, o guia <i>O Prompt do Sim</i> com o app CliniLoop, ensina a construir uma diferença que o paciente reconhece antes de marcar, com ética, inteligência artificial e de 25 a 30 minutos por dia.</p>
         <div class="acoes">
           <a class="btn js-comprar" href="#oferta">Quero o Sistema Loop</a>
           <p class="preco-curto"><span class="valor">R$ 24,75</span> <span class="vezes">x12 sem juros</span><br>ou R$ 297 à vista · garantia de 7 dias</p>
         </div>
+        <p class="sob-cta">Regras do CFM, CFO, CFP, COFFITO e CFN em cada prompt · acesso vitalício</p>
       </div>
-      <div class="video" id="video" data-youtube="">
-        <img class="poster" src="/assets/app-painel.jpg" alt="Painel do app CliniLoop com o funil do paciente e as 19 ferramentas" width="1200" height="915">
-        <span class="selo">Por dentro do app CliniLoop</span>
+      <div class="criativo" id="video" aria-label="Duas conversas no WhatsApp: uma que começa pelo preço e outra que começa pela confiança">
+        <div class="porta preco">
+          <span class="tag">A porta do preço</span>
+          <p class="bolha">Oi, quanto custa a consulta?<small>09:12</small></p>
+          <p class="leitura">Ele não sabe quem você é. Vai comparar o valor com mais três consultórios.</p>
+        </div>
+        <div class="porta confianca">
+          <span class="tag">A porta da confiança</span>
+          <p class="bolha">Oi! Vi o seu vídeo explicando a dor no joelho de quem corre. Você tem horário na quinta?<small>09:14</small></p>
+          <p class="bolha sua">Tenho às 18h. A avaliação dura uma hora e você sai com o plano por escrito.<small>09:15</small></p>
+          <p class="leitura">Ele já sabe como você trabalha. A conversa começa pelo horário.</p>
+        </div>
+        <p class="rodape-criativo">Conversas ilustrativas</p>
       </div>
     </div>
   </section>
 
-  <!-- 2. O que você recebe -->
+  <!-- 2. O problema -->
+  <section class="faixa">
+    <div class="miolo">
+      <p class="rotulo">Você se reconhece?</p>
+      <h2 class="titulo">Você é bom no que faz. Na tela, parece igual a todo mundo.</h2>
+      <div class="dores">
+        <div class="dor"><p>O paciente chama, pergunta o preço e some.</p><span>Sem saber quem você é, ele compara o que dá para comparar.</span></div>
+        <div class="dor"><p>Você posta, impulsiona e não sabe se algum paciente veio de lá.</p><span>Curtida não é consulta. E ninguém registrou a origem.</span></div>
+        <div class="dor"><p>O medo do conselho faz você postar o mesmo que todos, ou nada.</p><span>As regras fecham o atalho do preço e da promessa. Sobra o quê?</span></div>
+      </div>
+      <p class="lead" style="margin-top:32px"><b>Não é falta de esforço nem de competência.</b> Na maior parte das vezes, é o jogo errado.</p>
+    </div>
+  </section>
+
+  <!-- 3. Os dois jogos -->
+  <section class="faixa" style="padding-top:0">
+    <div class="miolo">
+      <p class="rotulo">A escolha</p>
+      <h2 class="titulo">Existem dois jogos para encher uma agenda. Só um deles é seu.</h2>
+      <div class="jogos">
+        <article class="jogo vermelho">
+          <span class="tag">A fábrica de leads</span>
+          <h3>Compra volume</h3>
+          <dl>
+            <div><dt>O que você paga</dt><dd>Verba de anúncio e mensalidade, todo mês</dd></div>
+            <div><dt>O criativo</dt><dd>Modelos genéricos, iguais para muitos profissionais</dd></div>
+            <div><dt>Como o paciente chega</dt><dd>Sem saber quem você é, comparando preço</dd></div>
+            <div><dt>O que fica com você</dt><dd>Os contatos do mês, enquanto a verba durar</dd></div>
+          </dl>
+        </article>
+        <article class="jogo azul">
+          <span class="tag">A qualificação por diferenciação</span>
+          <h3>Constrói a sua diferença</h3>
+          <dl>
+            <div><dt>O que você investe</dt><dd>Método e de 25 a 30 minutos por dia; anúncio quando fizer sentido</dd></div>
+            <div><dt>O criativo</dt><dd>Nasce da sua experiência clínica, com a sua voz</dd></div>
+            <div><dt>Como o paciente chega</dt><dd>Sabendo quem você é, muitas vezes indicado por um colega</dd></div>
+            <div><dt>O que fica com você</dt><dd>A reputação, o conteúdo e o registro de cada relação</dd></div>
+          </dl>
+        </article>
+      </div>
+      <div class="amplifica">
+        <b>O Sistema Loop não é contra anúncio.</b>
+        <span>Anúncio amplifica o que já é seu. O guia ensina Meta Ads e Google Ads passo a passo, e mostra como entregar a uma agência o que só você tem, para que o anúncio deixe de ser genérico.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Quem está por trás (o mentor) -->
+  <section class="faixa" style="padding-top:0">
+    <div class="miolo">
+      <p class="rotulo">Quem está por trás</p>
+      <h2 class="titulo">Nasceu dentro de uma clínica e foi organizado por quem faz marketing há mais de 20 anos.</h2>
+      <div class="bastidores">
+        <article class="pessoa">
+          <div class="foto" aria-hidden="true">D</div>
+          <div>
+            <h3>Debora Muniz</h3>
+            <p class="papel">Protética e empreendedora · dona de clínica no interior de São Paulo</p>
+            <p>Viveu na rotina da clínica os problemas que o Sistema Loop resolve: posts sem retorno medido, receio das regras do conselho e contatos perdidos no WhatsApp.</p>
+          </div>
+        </article>
+        <article class="pessoa">
+          <div class="foto" aria-hidden="true">JR</div>
+          <div>
+            <h3>JR Tosoni</h3>
+            <p class="papel">Autor do guia e criador do CliniLoop</p>
+            <p>Mais de 20 anos em marketing internacional. MBA pela USP e mestrado pela FGV-SP, com certificações pela CommSchool e em IA pela StartSe.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. O plano em três movimentos -->
+  <section class="faixa escura">
+    <div class="miolo">
+      <p class="rotulo">O plano</p>
+      <h2 class="titulo">Três movimentos. Um ciclo que fica mais fácil a cada volta.</h2>
+      <ol class="plano">
+        <li>
+          <h3>Defina a sua diferença</h3>
+          <p>Ouça o que os pacientes valorizam, olhe para quem ainda não procura ninguém e aplique as quatro ações do Oceano Azul: eliminar, reduzir, elevar e criar. Saia com uma proposta de valor que um colega não poderia assinar.</p>
+          <span class="ferramenta">No app: Estratégia Oceano Azul, em sete passos</span>
+        </li>
+        <li>
+          <h3>Mostre onde o paciente procura</h3>
+          <p>Perfis coerentes no Google, no Instagram e no LinkedIn, conteúdo que só você poderia publicar, colegas que indicam e anúncios que amplificam o que já funciona.</p>
+          <span class="ferramenta">No app: perfis, pautas, roteiros, colegas e campanhas</span>
+        </li>
+        <li>
+          <h3>Meça quem fica</h3>
+          <p>Cada contato entra no CRM com a origem e o próximo passo. Em 90 dias, você sabe por qual porta entram os pacientes que agendam, comparecem e seguem o tratamento.</p>
+          <span class="ferramenta">No app: Rastreador de pacientes e painel da semana</span>
+        </li>
+      </ol>
+      <p class="ciclo">Depois, o ciclo recomeça com o que você aprendeu. É daí que vem o nome: <b>Loop</b>.</p>
+    </div>
+  </section>
+
+  <!-- 6. O que você recebe -->
   <section class="faixa" id="recebe">
     <div class="miolo">
       <p class="rotulo">O que você recebe</p>
@@ -305,11 +480,11 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
           <div class="texto">
             <h3>Guia <i>O Prompt do Sim</i></h3>
             <ul>
-              <li><b>16 partes em 196 páginas</b>, em PDF</li>
-              <li><b>14 prompts prontos</b> para usar na sua IA</li>
-              <li>Um passo <b>"Na prática"</b> de até 30 minutos por parte</li>
-              <li>Manual de criação, edição e anúncios</li>
-              <li>Glossário de 76 termos e tutorial ilustrado do app</li>
+              <li><b>237 páginas, em PDF e ePub,</b> para ler no computador, no tablet ou no leitor de e-book</li>
+              <li>Contado como uma <b>jornada do herói</b>: 16 partes em seis etapas, do primeiro post ao tratamento</li>
+              <li>As <b>quatro ações do Oceano Azul</b> aplicadas em cada parte</li>
+              <li><b>14 prompts prontos</b> e um passo "Na prática" de até 30 minutos por parte</li>
+              <li>As jornadas do paciente, um anexo sobre convênios e plataformas, manual prático e glossário de 81 termos</li>
             </ul>
           </div>
         </article>
@@ -318,10 +493,10 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
           <div class="texto">
             <h3>App CliniLoop</h3>
             <ul>
-              <li><b>19 ferramentas</b> ligadas ao funil do paciente</li>
-              <li>Prompts com o <b>seu perfil e as regras do seu conselho</b>, para a IA que você já usa</li>
-              <li>Estratégia Oceano Azul, roteiros, campanhas e rede de colegas</li>
-              <li><b>Rastreador de pacientes</b> do primeiro contato ao tratamento</li>
+              <li><b>19 ferramentas</b> ligadas ao caminho do paciente</li>
+              <li>Prompts com o <b>seu diferencial, o seu perfil e as regras do seu conselho</b>, para a IA que você já usa</li>
+              <li><b>Estratégia Oceano Azul</b> em sete passos, com um plano de 12 semanas para mostrar a sua diferença nas redes</li>
+              <li><b>Rastreador de pacientes</b> com a origem de cada contato, do primeiro "oi" ao tratamento</li>
               <li>No computador e no celular, com os dados guardados no seu aparelho</li>
             </ul>
           </div>
@@ -330,15 +505,16 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 3. O guia -->
+  <!-- 7. O guia -->
   <section class="faixa" id="guia" style="padding-top:0">
     <div class="miolo vitrine">
-      <div class="vitrine-imagem pagina"><img src="/assets/guia-pagina.jpg" alt="Página do guia com as caixas Na prática e No CliniLoop no fim da Parte 1" width="1000" height="799" loading="lazy"></div>
+      <div class="vitrine-imagem pagina"><img src="/assets/guia-pagina.jpg" alt="Página do guia com as caixas Oceano Azul, Na prática e No CliniLoop e a passagem para a parte seguinte" width="1000" height="1188" loading="lazy"></div>
       <div class="vitrine-texto">
         <p class="rotulo">O guia</p>
-        <h2 class="titulo"><i>O Prompt do Sim</i>: o caminho, em seis etapas.</h2>
-        <p class="lead">Explica o porquê e o como de cada decisão do paciente, do primeiro post ao tratamento, com as regras do seu conselho. Cada uma das 16 partes termina em três caixas:</p>
+        <h2 class="titulo"><i>O Prompt do Sim</i>: uma travessia em seis etapas.</h2>
+        <p class="lead">Cada parte abre dizendo em que ponto da jornada você está e termina com uma passagem para a próxima. No caminho, quatro caixas transformam leitura em trabalho:</p>
         <div class="caixas-parte">
+          <div><b>Oceano Azul</b><span>O que eliminar, reduzir, elevar e criar naquela etapa.</span></div>
           <div><b>Prompt</b><span>O pedido pronto para colar na sua IA.</span></div>
           <div><b>Na prática</b><span>O passo de até 30 minutos para fazer hoje.</span></div>
           <div><b>No CliniLoop</b><span>A ferramenta do app que faz o trabalho.</span></div>
@@ -347,27 +523,27 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 4. O app -->
+  <!-- 8. O app -->
   <section class="faixa escura" id="app">
     <div class="miolo">
       <p class="rotulo">O app</p>
-      <h2 class="titulo">CliniLoop: você preenche o seu perfil uma vez, e o app faz o resto.</h2>
-      <p class="lead">O guia vira trabalho feito. No computador ou no celular, cada ferramenta monta o pedido pronto para a sua IA, com a sua especialidade, a sua cidade e as normas da sua profissão.</p>
+      <h2 class="titulo">CliniLoop: você define a sua diferença uma vez, e ela entra em tudo o que o app escreve.</h2>
+      <p class="lead">A proposta de valor e as decisões que você guarda entram em cada prompt: roteiro, bio, resposta do WhatsApp, carta aos colegas e anúncio. A IA para de escrever o texto médio da internet e passa a escrever a partir de você.</p>
       <figure class="tela-grande">
         <img src="/assets/app-painel.jpg" alt="Painel do app CliniLoop: as 19 ferramentas organizadas pelo funil do paciente" width="1200" height="915" loading="lazy">
       </figure>
     </div>
   </section>
 
-  <!-- 5. O que o app faz -->
+  <!-- 9. O que o app faz -->
   <section class="faixa" id="ferramentas">
     <div class="miolo">
       <p class="rotulo">O que o app faz</p>
       <h2 class="titulo">19 ferramentas, organizadas pelo caminho do paciente.</h2>
       <div class="estagios">
-        <article class="estagio"><h3>Posicionamento <span>4</span></h3><p>Quem você quer atender, por que você e como você fala.</p><ul><li>Público e persona</li><li>Persona do profissional</li><li>Nicho e diferencial</li><li>Estratégia Oceano Azul</li></ul></article>
-        <article class="estagio"><h3>Conteúdo <span>5</span></h3><p>Perfis prontos, pautas de dúvidas reais e roteiros com constância.</p><ul><li>Perfis e presença</li><li>Pautas e palavras-chave</li><li>Roteiros e copy</li><li>Reaproveitamento de conteúdo</li><li>Formação e autoridade</li></ul></article>
-        <article class="estagio"><h3>Captação <span>2</span></h3><p>Campanhas medidas por paciente, não por clique, e colegas que indicam.</p><ul><li>Gerador de campanhas</li><li>Rede de colegas</li></ul></article>
+        <article class="estagio"><h3>Posicionamento <span>4</span></h3><p>Quem você quer atender, o que só você oferece e como você fala.</p><ul><li>Público e persona</li><li>Persona do profissional</li><li>Nicho e diferencial</li><li>Estratégia Oceano Azul</li></ul></article>
+        <article class="estagio"><h3>Conteúdo <span>5</span></h3><p>Perfis coerentes, pautas de dúvidas reais e roteiros com a sua voz.</p><ul><li>Perfis e presença</li><li>Pautas e palavras-chave</li><li>Roteiros e copy</li><li>Reaproveitamento de conteúdo</li><li>Formação e autoridade</li></ul></article>
+        <article class="estagio"><h3>Captação <span>2</span></h3><p>Campanhas que amplificam o seu conteúdo, medidas por paciente, e colegas que indicam.</p><ul><li>Gerador de campanhas</li><li>Rede de colegas</li></ul></article>
         <article class="estagio"><h3>Conversa e agenda <span>2</span></h3><p>Resposta rápida no WhatsApp, agendamento e cada contato acompanhado até o tratamento.</p><ul><li>Atendimento e agendamento</li><li>Rastreador de pacientes</li></ul></article>
         <article class="estagio todas"><h3>Em todas as etapas <span>6</span></h3><p>A rotina da semana, os números e a revisão ética antes de publicar.</p><ul><li>Assistente da semana</li><li>Painel e diagnóstico</li><li>Verificador ético</li><li>Briefing para terceiros</li><li>Ferramentas recomendadas</li><li>Playbook da clínica</li></ul></article>
       </div>
@@ -383,7 +559,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
           </figure>
           <ul class="destaques">
             <li><b>Funciona com a IA que você já tem,</b> gratuita ou paga.</li>
-            <li><b>Regras do seu conselho</b> em cada prompt, com revisão ética antes de publicar.</li>
+            <li><b>O seu diferencial e as regras do seu conselho</b> em cada prompt, com revisão ética antes de publicar.</li>
             <li><b>Dados dos pacientes no seu aparelho,</b> nunca num servidor nem dentro dos prompts.</li>
             <li><b>Próxima ação do dia</b> e os números da semana na tela Hoje.</li>
           </ul>
@@ -392,11 +568,11 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 6. Depoimentos -->
+  <!-- 10. Depoimentos -->
   <section class="faixa escura depoimentos" id="depoimentos" data-aprovado="nao">
     <div class="miolo">
       <p class="rotulo">Quem já usa</p>
-      <h2 class="titulo">O que muda quando cada contato tem dono, etapa e próximo passo.</h2>
+      <h2 class="titulo">O que muda quando cada contato tem origem, etapa e próximo passo.</h2>
       <div class="falas">
         <figure class="fala">
           <blockquote>"Eu achava que o problema era postar pouco. Quando passamos a registrar cada contato, de onde veio, em que etapa estava e qual era o próximo passo, ficou claro onde a gente perdia pacientes: na resposta demorada do WhatsApp e na falta de retorno depois da avaliação. O CRM mudou a nossa rotina mais do que qualquer post."</blockquote>
@@ -411,25 +587,12 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 7. Identificação -->
-  <section class="faixa">
+  <!-- 11. A jornada do paciente: sete decisões -->
+  <section class="faixa escura virada" style="padding-top:0">
     <div class="miolo">
-      <p class="rotulo">Você se reconhece?</p>
-      <h2 class="titulo">Muito profissional de saúde posta toda semana e não sabe o que trouxe paciente.</h2>
-      <div class="dores">
-        <div class="dor"><p>Postou, impulsionou e não sabe se algum paciente veio de lá.</p><span>O número que importa não é curtida. É quem agendou.</span></div>
-        <div class="dor"><p>Apagou ou deixou de publicar com medo do conselho.</p><span>As regras mudam e cada profissão tem as suas.</span></div>
-        <div class="dor"><p>Perdeu contato no WhatsApp, entre uma consulta e outra.</p><span>A pessoa chamou, a resposta atrasou, e ela marcou em outro lugar.</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 8. A virada: sete decisões -->
-  <section class="faixa escura virada">
-    <div class="miolo">
-      <p class="rotulo">A virada</p>
+      <p class="rotulo">A jornada do paciente</p>
       <h2 class="frase">O paciente não decide num post. Decide em sete passos.</h2>
-      <p class="lead">O problema não é postar pouco. É tratar a captação como um post, e não como uma jornada. Cada decisão tem um canal que pesa mais e um número para acompanhar.</p>
+      <p class="lead">E a maior parte das clínicas investe no primeiro e perde pacientes do quarto ao sétimo. A porta pela qual ele entra muda o que acontece no fim.</p>
       <div class="loop" role="img" aria-label="As sete decisões do paciente, em sequência: atenção, confiança, indicação, contato, agendamento, comparecimento e adesão. A adesão volta para a indicação, fechando o ciclo.">
         <svg viewBox="0 0 1080 270" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <defs>
@@ -445,28 +608,28 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
           </g>
         </svg>
       </div>
-      <p class="loop-nota">É daí que vem o nome: quando cada passo vira etapa, o paciente bem atendido indica o próximo, e os números da semana mostram onde agir na seguinte.</p>
+      <p class="loop-nota">A hipótese do Sistema Loop é que o paciente que chega por confiança agenda, comparece e segue o tratamento mais do que o que chega pelo preço. É uma hipótese, e o app ajuda você a conferi-la com os seus próprios números.</p>
     </div>
   </section>
 
-  <!-- 9. O método em seis etapas -->
+  <!-- 12. A travessia em seis etapas -->
   <section class="faixa">
     <div class="miolo">
       <p class="rotulo">O caminho</p>
       <h2 class="titulo">Seis etapas, do posicionamento ao tratamento.</h2>
-      <p class="lead">Cada parte do guia termina com um passo prático de até 30 minutos e indica a ferramenta do app que faz o trabalho.</p>
+      <p class="lead">O guia conta o caminho como uma jornada: você é o herói, e cada etapa termina com um passo prático e a ferramenta do app que faz o trabalho.</p>
       <ol class="etapas">
-        <li><h3>Entenda o jogo e as regras</h3><p>As sete decisões do paciente, as normas do seu conselho e a LGPD.</p></li>
-        <li><h3>Posicione-se</h3><p>Público, nicho, proposta de valor e perfis no Instagram, no Google e no LinkedIn.</p></li>
-        <li><h3>Gere autoridade e demanda</h3><p>Conteúdo, vídeo, reaproveitamento de aulas, rede de colegas e anúncios.</p></li>
-        <li><h3>Converta contatos em consultas</h3><p>Atendimento no WhatsApp, agendamento e confirmação para reduzir faltas.</p></li>
-        <li><h3>Feche e acompanhe o tratamento</h3><p>Plano compreensível, decisão de tratar com ética e acompanhamento.</p></li>
-        <li><h3>Meça e escale com CRM</h3><p>Rastreador de pacientes, painel da semana e gerador de campanhas.</p></li>
+        <li><h3>Entenda o jogo e as regras</h3><span class="jor">Na jornada: as leis do mundo novo</span><p>As sete decisões do paciente, as normas do seu conselho e a LGPD.</p></li>
+        <li><h3>Posicione-se</h3><span class="jor">Na jornada: a travessia do limiar</span><p>A proposta de valor com o Oceano Azul e os perfis no Google, no Instagram e no LinkedIn.</p></li>
+        <li><h3>Gere autoridade e demanda</h3><span class="jor">Na jornada: provas, aliados e inimigos</span><p>Conteúdo que só você publica, vídeo, reaproveitamento de aulas, colegas e anúncios.</p></li>
+        <li><h3>Converta contatos em consultas</h3><span class="jor">Na jornada: a caverna</span><p>Atendimento no WhatsApp, agendamento e confirmação para reduzir faltas.</p></li>
+        <li><h3>Feche e acompanhe o tratamento</h3><span class="jor">Na jornada: a provação</span><p>Plano compreensível, decisão de tratar com ética e acompanhamento.</p></li>
+        <li><h3>Meça e escale com CRM</h3><span class="jor">Na jornada: a recompensa e o retorno</span><p>A origem de cada paciente, o painel da semana e campanhas com o seu diferencial.</p></li>
       </ol>
     </div>
   </section>
 
-  <!-- 10. Vídeo da Débora: as seis etapas por dentro -->
+  <!-- 13. Vídeo da Débora: as seis etapas por dentro -->
   <section class="faixa escura passeio" id="por-dentro-com-a-debora">
     <div class="miolo grade-passeio">
       <div class="passeio-texto">
@@ -492,28 +655,71 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 11. Para quem é -->
+  <!-- 14. Daqui a 90 dias -->
   <section class="faixa">
     <div class="miolo">
+      <p class="rotulo">Daqui a 90 dias</p>
+      <h2 class="titulo">Dois consultórios, a mesma segunda-feira.</h2>
+      <div class="noventa">
+        <div class="igual">
+          <h3>Se nada mudar</h3>
+          <ul>
+            <li>Os posts continuam parecidos com os dos colegas</li>
+            <li>O WhatsApp continua começando pelo preço</li>
+            <li>A agenda depende do mês, da sorte ou de quanto se gastou em anúncio</li>
+            <li>Ninguém sabe dizer de onde veio o último paciente que ficou</li>
+          </ul>
+        </div>
+        <div class="loop90">
+          <h3>Com o Sistema Loop em uso</h3>
+          <ul>
+            <li>Uma proposta de valor que um colega não poderia assinar, em todos os perfis</li>
+            <li>Um plano de 12 semanas de conteúdo que mostra a sua diferença</li>
+            <li>Respostas prontas no WhatsApp e confirmações que reduzem faltas</li>
+            <li>A origem de cada contato registrada, e a primeira leitura de qual porta traz quem fica</li>
+          </ul>
+        </div>
+      </div>
+      <p class="ressalva-90">A segunda lista é trabalho feito, e não um número de pacientes prometido. O Sistema Loop não garante resultado: ele organiza o caminho e mede o que acontece nele.</p>
+    </div>
+  </section>
+
+  <!-- 15. O custo real -->
+  <section class="faixa" style="padding-top:0">
+    <div class="miolo">
+      <p class="rotulo">O que isso custa de verdade</p>
+      <h2 class="titulo">Não é uma agência mais barata. É outro jogo, e ele cobra em outra moeda.</h2>
+      <div class="custo">
+        <div><b>R$ 297</b><span>Uma vez, ou 12x de R$ 24,75 sem juros. Guia e app, com acesso vitalício.</span></div>
+        <div><b>25 a 30 min</b><span>Por dia útil no primeiro mês, seguindo o plano de 30 dias. Depois, um ritual de 30 minutos por semana.</span></div>
+        <div><b>O seu conhecimento</b><span>Ninguém produz por você o conteúdo que nasce da sua experiência. A IA ajuda; a diferença é sua.</span></div>
+      </div>
+      <p class="lead">Se esse tempo não cabe na sua rotina agora, é melhor saber antes de comprar. Se cabe, o que você constrói fica com você.</p>
+    </div>
+  </section>
+
+  <!-- 16. Para quem é -->
+  <section class="faixa" style="padding-top:0">
+    <div class="miolo">
       <p class="rotulo">Para quem é</p>
-      <h2 class="titulo">Feito para quem atende particular e quer depender menos da sorte.</h2>
+      <h2 class="titulo">Feito para quem atende bem e quer ser escolhido por isso.</h2>
       <div class="quem">
         <div class="sim">
           <h3>É para você se</h3>
           <ul>
             <li>Você é médico, psiquiatra, dentista, psicólogo, fisioterapeuta ou nutricionista</li>
-            <li>Atende particular, sozinho ou numa clínica pequena</li>
-            <li>Quer saber de onde vêm os seus pacientes</li>
+            <li>Atende particular, sozinho ou numa clínica pequena, com ou sem convênio</li>
+            <li>Quer que o paciente chegue sabendo quem você é</li>
             <li>Quer usar IA sem correr risco com o conselho</li>
-            <li>Tem pouco tempo e precisa de um passo por vez</li>
+            <li>Consegue reservar de 25 a 30 minutos por dia no primeiro mês</li>
           </ul>
         </div>
         <div class="nao">
           <h3>Não é para você se</h3>
           <ul>
+            <li>Quer contatos amanhã sem dedicar tempo ao processo</li>
             <li>Quer viralizar a qualquer custo ou comprar seguidores</li>
-            <li>Quer postar antes e depois sem regra</li>
-            <li>Procura promessa de agenda cheia em poucos dias</li>
+            <li>Quer postar antes e depois ou promessa fora das regras</li>
             <li>Precisa de um sistema para recepção e vários profissionais usarem os mesmos registros</li>
           </ul>
         </div>
@@ -521,69 +727,45 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 12. Ética primeiro -->
+  <!-- 17. Ética primeiro -->
   <section class="faixa escura">
     <div class="miolo etica">
       <div>
         <p class="rotulo">Ética primeiro</p>
-        <h2 class="titulo">Cada prompt já sai com as regras do seu conselho.</h2>
+        <h2 class="titulo">Diferença mostrada com fatos, não com adjetivos.</h2>
         <div class="conselhos" aria-label="Conselhos cobertos"><span>CFM</span><span>CFO</span><span>CFP</span><span>COFFITO</span><span>CFN</span><span>LGPD</span></div>
         <p class="ressalva">Regras conferidas em outubro de 2026. O Sistema Loop não substitui a orientação do seu conselho nem uma assessoria jurídica.</p>
       </div>
       <ul class="lista-etica">
-        <li>Nada de antes e depois fora das regras, promessa de resultado ou preço promocional.</li>
-        <li>O Verificador ético revisa cada peça antes de você publicar.</li>
-        <li>A IA marca com [CONFIRMAR] o que precisa da sua revisão técnica.</li>
+        <li>Nada de "o melhor", promessa de resultado, preço como chamariz ou antes e depois fora das regras.</li>
+        <li>No lugar dos adjetivos, o que o paciente pode verificar: para quem você atende, como atende e como acompanha.</li>
+        <li>O Verificador ético revisa cada peça antes de você publicar, e a IA marca com [CONFIRMAR] o que precisa da sua revisão técnica.</li>
         <li>Dados de pacientes ficam no seu aparelho e nunca entram nos prompts.</li>
       </ul>
     </div>
   </section>
 
-  <!-- 13. Quem está por trás -->
-  <section class="faixa">
-    <div class="miolo">
-      <p class="rotulo">Quem está por trás</p>
-      <h2 class="titulo">Nasceu dentro de uma clínica e foi organizado por quem faz marketing há 20 anos.</h2>
-      <div class="bastidores">
-        <article class="pessoa">
-          <div class="foto" aria-hidden="true">D</div>
-          <div>
-            <h3>Debora Muniz</h3>
-            <p class="papel">Protética e empreendedora · dona de clínica no interior de São Paulo</p>
-            <p>Viveu na rotina da clínica os problemas que o Sistema Loop resolve: posts sem retorno medido, receio das regras do conselho e contatos perdidos no WhatsApp.</p>
-          </div>
-        </article>
-        <article class="pessoa">
-          <div class="foto" aria-hidden="true">JR</div>
-          <div>
-            <h3>JR Tosoni</h3>
-            <p class="papel">Autor do guia e criador do CliniLoop</p>
-            <p>Mais de 20 anos em marketing internacional. MBA pela USP e mestrado pela FGV-SP, com certificações pela CommSchool e em IA pela StartSe.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- 14. Oferta -->
+  <!-- 18. Oferta -->
   <section class="faixa funda oferta" id="oferta">
     <div class="miolo grade">
       <div>
         <p class="rotulo">A oferta</p>
         <h2 class="titulo">Guia e app, com acesso vitalício.</h2>
         <div class="ancora" style="margin-top:28px">
-          <div class="linha-ancora"><b>Pagamento único</b><span>Um CRM de WhatsApp para clínicas custa a partir de R$ 149 por usuário, todo mês.</span></div>
+          <div class="linha-ancora"><b>Pagamento único</b><span>Sem mensalidade. O que você constrói com o método fica com você.</span></div>
           <div class="linha-ancora"><b>Menos de R$ 25 por mês</b><span>Em 12 parcelas iguais, sem juros.</span></div>
           <div class="linha-ancora"><b>Funciona com a IA que você já tem</b><span>Gratuita ou paga: ChatGPT, Claude, Gemini e outras.</span></div>
+          <div class="linha-ancora"><b>Garantia de 7 dias</b><span>Se não for para você, o reembolso é integral, sem perguntas.</span></div>
         </div>
       </div>
       <div class="cartao-oferta">
         <h3>Sistema Loop</h3>
         <ul>
-          <li><span>Guia <i>O Prompt do Sim</i> em PDF, 196 páginas</span></li>
+          <li><span>Guia <i>O Prompt do Sim</i> em PDF e ePub, 237 páginas</span></li>
           <li>App CliniLoop com 19 ferramentas, no computador e no celular</li>
-          <li>Acesso vitalício, com os ajustes de conteúdo que forem feitos</li>
+          <li>Estratégia Oceano Azul em sete passos, com plano de 12 semanas de conteúdo</li>
           <li>Regras do CFM, CFO, CFP, COFFITO e CFN em cada prompt</li>
+          <li>Acesso vitalício, com os ajustes de conteúdo que forem feitos</li>
         </ul>
         <div class="preco">
           <p class="parcela">R$ 24,75 <small>x12 sem juros</small></p>
@@ -595,44 +777,46 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
-  <!-- 15. Garantia -->
+  <!-- 19. Garantia -->
   <section class="faixa">
     <div class="miolo">
       <div class="garantia">
         <div class="selo-garantia" aria-hidden="true"><div><b>7</b><span>dias</span></div></div>
         <div>
           <h2>Garantia de 7 dias</h2>
-          <p>Se o Sistema Loop não for para você, peça o reembolso pela Hotmart em até 7 dias depois da compra e receba o valor integral, sem precisar explicar o motivo.</p>
+          <p>Leia a Apresentação, faça o primeiro passo do plano e abra o app. Se o Sistema Loop não for para você, peça o reembolso pela Hotmart em até 7 dias depois da compra e receba o valor integral, sem precisar explicar o motivo.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 16. Perguntas -->
+  <!-- 20. Perguntas -->
   <section class="faixa" style="padding-top:0">
     <div class="miolo">
       <p class="rotulo">Perguntas frequentes</p>
       <h2 class="titulo">Antes de comprar</h2>
       <div class="perguntas">
+        <details><summary>O Sistema Loop garante mais pacientes?</summary><p>Não. Nenhum método sério pode garantir isso, e as regras dos conselhos proíbem prometer. O Sistema Loop organiza o caminho, ajuda a construir a sua diferença e mede o que acontece. A hipótese é que o paciente que chega por confiança agenda, comparece e adere mais, e o app mostra se isso vale para o seu consultório.</p></details>
+        <details><summary>Quanto tempo preciso dedicar?</summary><p>De 25 a 30 minutos por dia útil no primeiro mês, seguindo o plano de 30 dias, e um ritual de 30 minutos por semana depois. A inteligência artificial reduz muito o trabalho, mas o ponto de partida é sempre o que você sabe.</p></details>
+        <details><summary>Substitui a minha agência ou o meu gestor de tráfego?</summary><p>Não precisa substituir. O guia ensina a entregar a eles o que só você tem, como a proposta de valor, as dúvidas reais e os seus melhores vídeos, e a pedir relatórios por paciente que compareceu. Se você não tem agência, o guia ensina a impulsionar e a anunciar por conta própria.</p></details>
+        <details><summary>O que é Oceano Azul, e eu vou ter um?</summary><p>É um método de estratégia, de W. Chan Kim e Renée Mauborgne, para sair da disputa em que todos oferecem o mesmo. Sendo realista: a maioria dos consultórios chega a uma diferença clara dentro do mercado que já existe, e não a um mercado inteiramente novo. Isso já basta para sair da comparação por preço. A ferramenta do app diz com honestidade qual é o seu caso.</p></details>
+        <details><summary>Preciso aparecer em vídeo?</summary><p>Ajuda muito, porque o vídeo é a prova de diferença mais difícil de copiar. Mas dá para começar com carrosséis, textos e vídeos sem rosto, e o guia tem uma parte inteira para quem tem medo da câmera.</p></details>
+        <details><summary>Atendo convênio. Serve para mim?</summary><p>Serve. O guia tem um anexo sobre convênios, plataformas de agendamento, hospitais e a porta da rua, e mostra como levar a sua diferença também a quem chega por esses caminhos.</p></details>
         <details><summary>Preciso saber usar inteligência artificial?</summary><p>Não. O app monta o pedido pronto. Você copia, cola na IA e ajusta a resposta na conversa. O guia tem um capítulo para quem nunca usou IA e um tutorial ilustrado do app.</p></details>
         <details><summary>Preciso assinar alguma IA?</summary><p>Não é obrigatório. Os prompts funcionam nas versões gratuitas do ChatGPT, do Claude, do Gemini e de outras. Com assinatura, o limite de mensagens é maior e você ganha pesquisa aprofundada na web.</p></details>
         <details><summary>Serve para a minha profissão?</summary><p>O guia e o app cobrem medicina, psiquiatria, odontologia, psicologia, fisioterapia e nutrição, com as regras de publicidade de cada conselho. Outras profissões de saúde aproveitam o método, mas precisam conferir as regras do próprio conselho.</p></details>
-        <details><summary>O meu conselho permite?</summary><p>O Sistema Loop foi feito para seguir as regras do CFM, do CFO, do CFP, do COFFITO e do CFN, conferidas em outubro de 2026, e o Verificador ético revisa cada peça. Ele não substitui a orientação do seu conselho: em caso de dúvida sobre uma peça específica, consulte-o.</p></details>
         <details><summary>Onde ficam os dados dos meus pacientes?</summary><p>No navegador do seu aparelho. O CliniLoop não guarda em servidor o rastreador, os contatos ou as suas decisões, e os prompts nunca levam dados de pacientes. Para usar em outro aparelho, você faz um backup e restaura.</p></details>
-        <details><summary>Por quanto tempo tenho acesso?</summary><p>O acesso ao guia e ao app é vitalício. O conteúdo passa por ajustes periódicos, sem calendário fixo, e os ajustes chegam sem custo.</p></details>
-        <details><summary>Como recebo o acesso?</summary><p>Assim que o pagamento é aprovado, você recebe um e-mail da Hotmart com a área de membros, onde está o guia, e o app fica liberado para o e-mail da compra. No app, você entra com um código de 6 dígitos enviado para esse e-mail.</p></details>
-        <details><summary>Funciona no celular?</summary><p>Sim, no navegador do celular, e dá para adicionar à tela inicial. Para preencher formulários longos, o computador é mais confortável.</p></details>
+        <details><summary>Por quanto tempo tenho acesso, e como recebo?</summary><p>O acesso é vitalício, e os ajustes de conteúdo chegam sem custo. Assim que o pagamento é aprovado, você recebe um e-mail da Hotmart com a área de membros, onde estão o guia em PDF e ePub, e o app fica liberado para o e-mail da compra, com entrada por um código de 6 dígitos.</p></details>
         <details><summary>Serve para uma clínica com vários profissionais?</summary><p>O CliniLoop foi pensado para o profissional que trabalha sozinho: os dados ficam no aparelho de quem usa. Para uma solução com vários usuários, escreva para atendimento@loopuniversity.com.br.</p></details>
-        <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia. Peça o reembolso pela Hotmart e receba o valor integral.</p></details>
       </div>
     </div>
   </section>
 
-  <!-- 17. Fechamento -->
+  <!-- 21. Fechamento -->
   <section class="faixa escura fecho">
     <div class="miolo">
       <p class="rotulo">Comece hoje</p>
-      <h2 class="titulo">Pare de postar no escuro. Acompanhe cada paciente do primeiro contato ao tratamento.</h2>
+      <h2 class="titulo">O paciente certo já está procurando. Que ele encontre você, e não o preço.</h2>
       <p class="lead">Guia <i>O Prompt do Sim</i> + app CliniLoop, com acesso vitalício e garantia de 7 dias.</p>
       <div class="acoes">
         <a class="btn js-comprar" href="#oferta">Quero o Sistema Loop</a>
@@ -660,7 +844,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
 <script>
   // Link do pagamento da Hotmart. Enquanto estiver vazio, os botões levam à oferta.
   var CHECKOUT_URL = '';
-  // ID do vídeo no YouTube (só o código depois de "v="). Enquanto estiver vazio, aparece a tela do app.
+  // ID do vídeo no YouTube (só o código depois de "v="). Enquanto estiver vazio, a abertura mostra o criativo das duas portas.
   var YOUTUBE_ID = '';
   // ID do vídeo da Débora com as seis etapas por dentro.
   var YOUTUBE_ID_ETAPAS = '';
@@ -673,7 +857,10 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
   }
   function colocaVideo(idCaixa, idYoutube, titulo) {
     if (!idYoutube) return;
-    document.getElementById(idCaixa).innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(idYoutube) + '?rel=0" title="' + titulo + '" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    var caixa = document.getElementById(idCaixa);
+    caixa.className = 'video';
+    caixa.removeAttribute('aria-label');
+    caixa.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(idYoutube) + '?rel=0" title="' + titulo + '" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
   }
   colocaVideo('video', YOUTUBE_ID, 'Vídeo do Sistema Loop');
   colocaVideo('video-etapas', YOUTUBE_ID_ETAPAS, 'Vídeo da Débora: as seis etapas por dentro');
