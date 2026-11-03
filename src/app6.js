@@ -1,58 +1,5 @@
 
-  // ===================== Modo guiado, primeiro ganho, feedback e instalação =====================
-
-  function modoAtual() { return storeGet(MODO_KEY, '') === 'completo' ? 'completo' : 'guiado'; }
-
-  // As ferramentas que mais ajudam agora: as 3 primeiras ações da lista de "Hoje" que apontam para uma ferramenta.
-  function idsGuiados() {
-    const ids = [];
-    const ti = onbComplete() ? trilhaInfo() : null;
-    if (ti && !ti.t.rotina && ti.pend.length) [ti.atual, ...ti.pend].forEach((id) => { if (id && ids.indexOf(id) < 0) ids.push(id); });
-    else computeActions().forEach((a) => { if (a.tool && PB_TOOLS[a.tool] && ids.indexOf(a.tool) < 0) ids.push(a.tool); });
-    const base = ids.slice(0, 3);
-    if (pacientes.length && base.indexOf('rastreador') < 0) base.push('rastreador');
-    return base;
-  }
-  function revealTool(id) {
-    reveladas.add(id);
-    const t = document.querySelector(`#tools-list .tool[data-id="${id}"]`);
-    if (t) t.hidden = false;
-  }
-  function applyModo() {
-    const list = document.getElementById('tools-list');
-    if (!list) return;
-    const tools = [...list.querySelectorAll('.tool[data-id]')];
-    const guiaIds = idsGuiados();
-    const guiado = modoAtual() === 'guiado' && guiaIds.length > 0;
-    const vis = new Set([...guiaIds, ...reveladas]);
-    let n = 0;
-    tools.forEach((t) => {
-      const mostrar = !guiado || vis.has(t.dataset.id) || t.open;
-      t.hidden = !mostrar;
-      if (mostrar) n++;
-    });
-    list.querySelectorAll('.tool-sep').forEach((s) => { s.hidden = guiado; });
-    list.classList.toggle('modo-guiado', guiado);
-    let bar = document.getElementById('modo-bar');
-    if (!bar) {
-      bar = document.createElement('div');
-      bar.id = 'modo-bar';
-      bar.className = 'modo-bar';
-      bar.setAttribute('aria-live', 'polite');
-      list.parentNode.insertBefore(bar, list);
-      tools.forEach((t) => t.addEventListener('toggle', () => { if (t.open) reveladas.add(t.dataset.id); }));
-    }
-    bar.innerHTML = '';
-    const txt = document.createElement('span');
-    txt.innerHTML = guiado
-      ? `<b>Modo guiado:</b> ${n} de ${tools.length} ferramentas, as que mais ajudam agora, na ordem do seu roteiro.`
-      : `<b>Todas as ferramentas:</b> ${tools.length} ferramentas, agrupadas por etapa do funil.`;
-    const btn = document.createElement('button');
-    btn.type = 'button'; btn.className = 'btn btn-outline btn-sm';
-    btn.textContent = guiado ? `Mostrar as ${tools.length}` : 'Voltar ao modo guiado';
-    btn.addEventListener('click', () => { storeSet(MODO_KEY, guiado ? 'completo' : 'guiado'); reveladas.clear(); applyModo(); });
-    bar.append(txt, btn);
-  }
+  // ===================== Aviso de beta, feedback e instalação =====================
 
   // Aviso honesto de versão beta.
   function renderBeta() {
@@ -74,7 +21,7 @@
     n.hidden = false;
   }
 
-  function renderExtras() { applyModo(); renderBeta(); if (typeof renderJornada === 'function') renderJornada(); }
+  function renderExtras() { renderBeta(); if (typeof renderCaminho === 'function') renderCaminho(); }
 
   // Feedback de teste: sem dados de pacientes, vai por cópia do texto.
   (function feedback() {

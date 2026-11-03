@@ -325,7 +325,7 @@ Escreva a sua proposta de valor com as quatro ações. Depois pesquise seu nome 
 :::
 
 ::: {.box .noapp}
-**Estratégia Oceano Azul, Nicho e diferencial, e Perfis e presença.** A primeira percorre os sete passos acima, diz com honestidade se o resultado é um espaço novo ou uma diferença dentro do mercado existente e entrega um plano de 12 semanas para mostrar a diferença nas redes. A segunda ajuda a escolher o nicho e a frase. A terceira traz o checklist de configuração de cada canal (Google, Instagram, YouTube, LinkedIn e TikTok) e audita e reescreve bio, título e descrições a partir do Perfil do consultório e do seu diferencial.
+**Passos 3 e 4 do caminho, e Nicho e diferencial.** O passo 3, Estratégia Oceano Azul, percorre os sete passos acima, diz com honestidade se o resultado é um espaço novo ou uma diferença dentro do mercado existente e entrega um plano de 12 semanas para mostrar a diferença nas redes. O passo 4 tem um cartão para cada canal (Google, Instagram, LinkedIn, YouTube e TikTok): você cola o texto de hoje, gera o prompt daquele canal, que audita e reescreve bio, título e descrições a partir do seu perfil e do seu diferencial, e marca o checklist de configuração. Na Caixa de ferramentas, Nicho e diferencial ajuda a escolher o nicho e a frase.
 :::
 
 ::: passagem

@@ -54,10 +54,10 @@ Anote em um lugar seguro qual e-mail e qual telefone estão ligados a cada conta
 
 ## 3. O app CliniLoop
 
-Abra o CliniLoop pelo link que você recebeu na compra, no navegador do computador ou do celular. Os seus registros ficam no seu aparelho, não num servidor. Na primeira vez, o app pede o tipo de profissional e os dados do consultório, e passa a mostrar sempre o próximo passo do dia. O tutorial com as telas, passo a passo, está na Parte 14.
+Abra o CliniLoop pelo link que você recebeu na compra, no navegador do computador ou do celular. Os seus registros ficam no seu aparelho, não num servidor. Ele conduz você por um caminho de nove passos, em ordem, e cada passo reúne os campos, o prompt e o que guardar. Na primeira vez, o passo 1 pede o tipo de profissional, os dados do consultório e o objetivo. O tutorial com as telas, passo a passo, está na Parte 14.
 
 ::: {.box .noapp}
-**Configure seu consultório.** Escolha o tipo de profissional. O app reordena as ferramentas e carrega as regras do conselho certo. Preencha o Perfil do consultório uma única vez: ele alimenta todas as ferramentas.
+**Passo 1 · Seu consultório e objetivo.** Escolha o tipo de profissional: o app carrega as regras do conselho certo em todos os prompts. Preencha uma única vez: esses dados alimentam todos os passos seguintes.
 :::
 
 ## 4. Um rascunho do seu diferencial

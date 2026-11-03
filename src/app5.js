@@ -217,21 +217,26 @@
     const rows = [...new Set(ks.map((k) => QUEM_INDICA[k]).filter(Boolean))];
     box.innerHTML = rows.length ? `<div class="num-wrap"><table class="num-table qi-table"><tr><th>Você é</th><th>Quem pode indicar você</th><th>Para quem você pode indicar</th></tr>${rows.map((r) => `<tr>${r.map((c) => `<td style="text-align:left">${escapeHtml(c)}</td>`).join('')}</tr>`).join('')}</table></div><p class="plan-note"><b>Limites inegociáveis:</b> não pague, não receba e não prometa vantagem financeira por encaminhamento. Indicação se retribui com qualidade, retorno técnico e reciprocidade quando faz sentido clínico. O paciente sempre tem liberdade de escolher outro profissional.</p>` : '';
   }
+  // Checklist de configuração de cada canal, dentro do cartão da rede no passo 4.
   function renderCanaisCheck() {
-    const box = document.getElementById('canais-check');
     const st = storeGet(CANAIS_KEY, {}) || {};
-    const abertos = new Set([...box.querySelectorAll('details[open]')].map((d) => d.dataset.canal));
-    box.innerHTML = CANAIS_CHECK.map(([id, nome, prio, itens]) => {
+    document.querySelectorAll('.canal-slot[data-canal]').forEach((slot) => {
+      const c = CANAIS_CHECK.find((x) => x[0] === slot.dataset.canal);
+      if (!c) return;
+      const [id, , , itens] = c;
       const feitos = itens.filter((_, i) => st[`${id}-${i}`]).length;
-      return `<details class="canal" data-canal="${id}"${abertos.has(id) ? ' open' : ''}><summary><b>${escapeHtml(nome)}</b><span class="canal-prio">${escapeHtml(prio)}</span><span class="canal-n${feitos === itens.length ? ' ok' : ''}">${feitos} de ${itens.length}</span><span class="chevron">▸</span></summary><ul>${itens.map((t, i) => `<li><label><input type="checkbox" data-k="${id}-${i}"${st[`${id}-${i}`] ? ' checked' : ''}> ${escapeHtml(t)}</label></li>`).join('')}</ul></details>`;
-    }).join('');
-    box.querySelectorAll('input[data-k]').forEach((cb) => cb.addEventListener('change', () => {
-      const s = storeGet(CANAIS_KEY, {}) || {};
-      if (cb.checked) s[cb.dataset.k] = todayISO(); else delete s[cb.dataset.k];
-      storeSet(CANAIS_KEY, s);
-      markUsed('perfil', true);
-      renderCanaisCheck();
-    }));
+      let box = slot.querySelector('.canal');
+      if (!box) { box = document.createElement('div'); box.className = 'canal'; box.dataset.canal = id; slot.appendChild(box); }
+      box.innerHTML = `<p class="canal-h"><b>Checklist</b><span class="canal-n${feitos === itens.length ? ' ok' : ''}">${feitos} de ${itens.length}</span></p><ul>${itens.map((t, i) => `<li><label><input type="checkbox" data-k="${id}-${i}"${st[`${id}-${i}`] ? ' checked' : ''}> ${escapeHtml(t)}</label></li>`).join('')}</ul>`;
+      box.querySelectorAll('input[data-k]').forEach((cb) => cb.addEventListener('change', () => {
+        const s2 = storeGet(CANAIS_KEY, {}) || {};
+        if (cb.checked) s2[cb.dataset.k] = todayISO(); else delete s2[cb.dataset.k];
+        storeSet(CANAIS_KEY, s2);
+        markUsed('perfil', true);
+        renderCanaisCheck();
+        if (typeof renderCaminho === 'function') renderCaminho();
+      }));
+    });
   }
   function renderTemasSug() {
     const el = document.getElementById('cfg-temas-sug');

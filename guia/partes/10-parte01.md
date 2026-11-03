@@ -102,7 +102,7 @@ Escreva as sete decisões numa folha e, ao lado de cada uma, anote quantos pacie
 :::
 
 ::: {.box .noapp}
-**Configure seu consultório.** Escolha o tipo de profissional. O app reordena as ferramentas e carrega as regras do conselho certo. No Rastreador, todo contato tem um campo de origem: preencha sempre.
+**Passo 1 · Seu consultório e objetivo.** Escolha o tipo de profissional. O app carrega as regras do conselho certo em todos os prompts. No Rastreador, todo contato tem um campo de origem: preencha sempre.
 :::
 
 ::: passagem

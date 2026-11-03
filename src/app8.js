@@ -76,7 +76,7 @@
     function renderRows() {
       const fs = fatoresAtuais();
       const rows = el('oa-rows');
-      if (!fs.length) { rows.innerHTML = '<p class="oa-hint">Marque os fatores no passo 1 para montar a curva.</p>'; el('oa-canvas').innerHTML = ''; return; }
+      if (!fs.length) { rows.innerHTML = '<p class="oa-hint">Marque os fatores na etapa 1 para montar a curva.</p>'; el('oa-canvas').innerHTML = ''; return; }
       rows.innerHTML = `<div class="oa-row oa-head"><span>Fator</span><span>Mercado</span><span>Você</span></div>` + fs.map((f, i) => {
         const n = nota(f);
         return `<div class="oa-row"><span class="oa-f">${escapeHtml(f)}</span>
@@ -121,7 +121,7 @@
     function renderProvas() {
       const box = el('oa-provas');
       const itens = itensProva();
-      if (!itens.length) { box.innerHTML = '<p class="oa-hint">Escreva no passo 4 o que você vai elevar e criar.</p>'; el('oa-provas-txt').value = ''; return; }
+      if (!itens.length) { box.innerHTML = '<p class="oa-hint">Escreva na etapa 4 o que você vai elevar e criar.</p>'; el('oa-provas-txt').value = ''; return; }
       box.innerHTML = itens.map((t, i) => {
         const p = st.impl[t] || (st.impl[t] = { s: '', m: '' });
         return `<div class="oa-prova"><span class="oa-f">${escapeHtml(t)}</span>
@@ -165,5 +165,3 @@
     renderSug(); renderRows(); renderProvas(); updProposta();
   })();
 
-  // Painel do topo: cada ferramenta do funil abre a ferramenta no app
-  document.querySelectorAll('.hero-funil [data-open]').forEach((b) => b.addEventListener('click', () => openTool(b.dataset.open)));

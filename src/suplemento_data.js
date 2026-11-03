@@ -4,7 +4,7 @@
 
   const PLANO30 = [
     { sem: 1, tema: 'Base e regras', parte: '1 a 3', dias: [
-      { d: 1, tool: 'config', min: 25, titulo: 'Defina o objetivo e o perfil', acao: 'Preencha "Comece aqui": uma frase com o resultado que você quer (serviço, número, prazo), tipo de profissional, cidade, serviços e sua história profissional.', entrega: 'Perfil do consultório salvo no app.' },
+      { d: 1, tool: 'config', min: 25, titulo: 'Defina o objetivo e o perfil', acao: 'Preencha o passo 1 do caminho: uma frase com o resultado que você quer (serviço, número, prazo), tipo de profissional, cidade, serviços e sua história profissional.', entrega: 'Perfil do consultório salvo no app.' },
       { d: 2, tool: 'etica', min: 25, titulo: 'Conheça os limites do seu conselho', acao: 'Leia o quadro do seu conselho e cole a bio e os três últimos posts no Verificador ético.', entrega: 'Lista do que corrigir antes de qualquer divulgação.' },
       { d: 3, tool: 'publico', min: 30, titulo: 'Escreva as dúvidas reais dos pacientes', acao: 'Liste 10 perguntas que você ouviu no consultório nesta semana, nas palavras dos pacientes, sem nomes. Gere o ICP e a persona.', entrega: '10 dúvidas e um paciente ideal descrito.' },
       { d: 4, tool: 'nicho', min: 30, titulo: 'Escolha uma proposta de valor', acao: 'Liste formações e métodos, gere a análise de nicho e escolha uma frase de diferencial que você consiga provar com o que já fez.', entrega: 'Uma frase de proposta de valor guardada.' },

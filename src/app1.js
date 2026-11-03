@@ -258,20 +258,12 @@
   const CAMERA = { alto: 'gosto de aparecer na câmera', medio: 'apareço, mas sem muita exposição', baixo: 'prefiro não aparecer na câmera' };
 
   const TOOL_NAMES = {
-    config: 'Comece aqui', publico: 'Público, ICP e persona', profissional: 'Persona do profissional', nicho: 'Nicho e diferencial', oceano: 'Estratégia Oceano Azul',
+    config: 'Seu consultório e objetivo', publico: 'Público, ICP e persona', profissional: 'Persona do profissional', nicho: 'Nicho e diferencial', oceano: 'Estratégia Oceano Azul',
     perfil: 'Perfis e presença', pautas: 'Pautas e palavras-chave', roteiro: 'Roteiros e copy', reaproveitamento: 'Reaproveitamento de conteúdo', formacao: 'Formação e autoridade',
     campanha: 'Gerador de campanhas', colegas: 'Rede de colegas', atendimento: 'Atendimento e agendamento', rastreador: 'Rastreador de pacientes',
     assistente: 'Assistente da semana', painel: 'Painel e diagnóstico', etica: 'Verificador ético', briefing: 'Briefing para terceiros',
     ferramentas: 'Ferramentas', ebook: 'Playbook da clínica'
   };
-  const FUNNEL_STAGES = [
-    { nome: 'Posicionamento', desc: 'Quem você quer atender, por que você e como você fala.', tools: ['config', 'publico', 'profissional', 'nicho', 'oceano'], num: null },
-    { nome: 'Conteúdo', desc: 'Perfis prontos, pautas de dúvidas reais e roteiros publicados com constância.', tools: ['perfil', 'pautas', 'roteiro', 'reaproveitamento', 'formacao'], num: 'conteudos', numLabel: 'publicados' },
-    { nome: 'Captação', desc: 'Campanhas medidas e rede de colegas que indica.', tools: ['campanha', 'colegas'], num: 'contatos', numLabel: 'novos contatos' },
-    { nome: 'Conversa', desc: 'Resposta rápida, agendamento, confirmação e retomada.', tools: ['atendimento', 'rastreador'], num: 'agendados', numLabel: 'agendados' },
-    { nome: 'Tratamento', desc: 'Avaliação, plano compreensível e início do tratamento.', tools: ['rastreador'], num: 'iniciados', numLabel: 'iniciaram' }
-  ];
-  const LOOP_TOOLS = ['assistente', 'painel', 'etica', 'briefing', 'ferramentas'];
   const PB_TOOLS = {
     publico: { nome: 'Público, ICP e persona do paciente', fazer: 'Descreva quem você atende hoje e as dúvidas que mais ouve, gere o prompt e guarde o ICP e a persona principal.', revisar: 'Confira se os contatos das últimas semanas são do ICP e acrescente as dúvidas novas.' },
     profissional: { nome: 'Persona do profissional e marca', fazer: 'Responda às perguntas sobre sua história e seus valores, gere sua persona de marca e guarde o tom de voz.', revisar: 'Veja se os últimos conteúdos soaram como você e ajuste o "faço / não faço".' },

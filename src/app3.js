@@ -93,7 +93,7 @@
         const block = form.querySelector('.output-block');
         block.querySelector('.js-output').value = prompt;
         block.hidden = false;
-        markUsed(tool === 'plano' ? 'atendimento' : (tool === 'registro' ? 'rastreador' : (tool === 'imagem' ? 'ferramentas' : tool)));
+        markUsed(tool === 'plano' ? 'atendimento' : (tool === 'registro' ? 'rastreador' : (tool === 'imagem' ? 'ferramentas' : (tool.indexOf('rede-') === 0 ? 'perfil' : tool))));
         msg.className = 'form-msg ok';
         msg.textContent = tool === 'imagem' ? '✓ Pedido de imagem gerado logo abaixo. Clique em "Copiar prompt" e cole na ferramenta que você escolheu.' : tool === 'briefing'
           ? '✓ Briefing montado acima. Abaixo, um prompt opcional para revisá-lo com o Claude.'
@@ -103,7 +103,7 @@
         if (!profInfo()) {
           const w = document.createElement('p');
           w.className = 'form-warn';
-          w.textContent = 'Você ainda não escolheu o tipo de profissional em "Comece aqui". O prompt usa só as regras gerais; escolha para incluir as regras do seu conselho.';
+          w.textContent = 'Você ainda não escolheu o tipo de profissional no passo 1 do caminho. O prompt usa só as regras gerais; escolha para incluir as regras do seu conselho.';
           msg.after(w);
         }
         (tool === 'briefing' ? document.getElementById('bf-area') : block).scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -153,10 +153,6 @@
   document.getElementById('bf-para').addEventListener('change', (e) => {
     const bf = document.getElementById('bf-entregas');
     if (!bf.value || bf.dataset.autofilled === '1') { bf.value = ROLES[e.target.value].entregas; bf.dataset.autofilled = '1'; }
-  });
-  document.getElementById('cfg-fill-all').addEventListener('click', () => {
-    prefillFields(true);
-    document.getElementById('cfg-status').textContent = 'Pronto: os campos vazios das ferramentas foram preenchidos com o seu perfil.';
   });
 
   // ===================== Resultados guardados =====================
@@ -288,7 +284,7 @@
     const box = document.getElementById('council-box');
     const cs = councilObjs();
     if (!cs.length) {
-      box.innerHTML = '<div class="council"><h4>Escolha o tipo de profissional</h4><p class="norma">Em "Comece aqui", passo 2, escolha o tipo de profissional para ver as regras do seu conselho.</p><button type="button" class="btn btn-outline btn-sm" id="cb-config">Ir para "Comece aqui"</button></div>';
+      box.innerHTML = '<div class="council"><h4>Escolha o tipo de profissional</h4><p class="norma">No passo 1 do caminho, escolha o tipo de profissional para ver as regras do seu conselho.</p><button type="button" class="btn btn-outline btn-sm" id="cb-config">Ir ao passo 1</button></div>';
       document.getElementById('cb-config').addEventListener('click', () => openTool('config'));
       return;
     }
@@ -311,15 +307,10 @@
     const p = PROF_ROTA[cfg.profissional] || [];
     return [...new Set([...o.slice(0, 3), ...p, ...o.slice(3)])].slice(0, 6);
   }
+  // Abre a ferramenta onde ela mora: no passo do caminho ou na caixa de ferramentas.
   function openTool(id) {
-    if (id === 'config') {
-      configEl.classList.remove('collapsed');
-      syncCollapseUI();
-      configEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      return;
-    }
+    if (typeof abrirNoCaminho === 'function' && abrirNoCaminho(id)) return;
     if (id === 'ajustes') { const aj = document.getElementById('ajustes'); aj.open = true; aj.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
-    if (typeof revealTool === 'function') revealTool(id);
     const el = document.querySelector(`.tool[data-id="${id}"]`);
     if (!el) return;
     el.open = true;
@@ -329,69 +320,6 @@
     openTool(tool);
     if (anchor) setTimeout(() => { const el = document.getElementById(anchor); if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); const f = /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName) ? el : (el.querySelector && el.querySelector('input,select,textarea')); if (f) f.focus({ preventScroll: true }); } }, 60);
   }
-  function renderFunnel() {
-    const rota = computeRota();
-    const sem = weekStats(mondayISO());
-    const box = document.getElementById('funil');
-    document.getElementById('rota-titulo').textContent = `Seu funil — ${objInfo().label}${profInfo() ? ' · ' + profInfo().label : ''}`;
-    document.getElementById('rota-porque').textContent = objInfo().porque;
-    box.innerHTML = '';
-    const chip = (id) => {
-      const b = document.createElement('button');
-      b.type = 'button';
-      const idx = rota.indexOf(id);
-      if (idx >= 0) { b.classList.add('prio'); const n = document.createElement('span'); n.className = 'n'; n.textContent = String(idx + 1); b.appendChild(n); }
-      b.appendChild(document.createTextNode(TOOL_NAMES[id] || id));
-      b.addEventListener('click', () => openTool(id));
-      return b;
-    };
-    FUNNEL_STAGES.forEach((st) => {
-      const row = document.createElement('div');
-      row.className = 'f-row';
-      const seg = document.createElement('div');
-      seg.className = 'f-seg';
-      if (st.num) {
-        seg.innerHTML = `<em class="f-name">${st.nome}</em><b>${sem[st.num] || 0}</b><span>${st.numLabel}</span>`;
-        seg.setAttribute('aria-label', `${st.nome}: ${sem[st.num] || 0} ${st.numLabel} nesta semana`);
-      } else {
-        seg.innerHTML = `<em class="f-name">${st.nome}</em><b>★</b><span>base do funil</span>`;
-      }
-      const info = document.createElement('div');
-      info.className = 'f-info';
-      info.innerHTML = `<h4>${st.nome}</h4><p>${st.desc}</p>`;
-      const chips = document.createElement('div');
-      chips.className = 'f-chips';
-      st.tools.forEach((id) => chips.appendChild(chip(id)));
-      info.appendChild(chips);
-      row.append(seg, info);
-      box.appendChild(row);
-    });
-    const loop = document.createElement('div');
-    loop.className = 'f-loop';
-    loop.innerHTML = '<span>Toda semana e a cada 2 semanas:</span>';
-    const chipsL = document.createElement('div');
-    chipsL.className = 'f-chips';
-    LOOP_TOOLS.forEach((id) => chipsL.appendChild(chip(id)));
-    loop.appendChild(chipsL);
-    const pb = document.createElement('button');
-    pb.type = 'button';
-    pb.innerHTML = '<span class="n">19</span>Gerar o playbook da clínica';
-    pb.addEventListener('click', () => openTool('ebook'));
-    loop.appendChild(pb);
-    box.appendChild(loop);
-
-    // Selo de prioridade em cada ferramenta
-    document.querySelectorAll('.tool[data-id]').forEach((el) => {
-      const id = el.dataset.id;
-      const idx = rota.indexOf(id);
-      el.classList.toggle('is-prio', idx >= 0);
-      const h3 = el.querySelector('.tool-title h3');
-      const old = h3.querySelector('.badge-prio');
-      if (old) old.remove();
-      if (idx >= 0) { const b = document.createElement('span'); b.className = 'badge-prio'; b.textContent = `Prioridade ${idx + 1}`; h3.appendChild(b); }
-    });
-  }
-
   // ===================== Configuração: salvar e reagir =====================
   function onConfigChange() {
     cfg = readConfig();
@@ -410,11 +338,11 @@
   function renderObjHint() {
     const box = document.getElementById('obj-hint');
     const avisos = [];
-    if (!cfg.profissional && (cfg.metaFrase || cfg.especialidade)) avisos.push(['info', 'Escolha o tipo de profissional no passo 2: as regras de publicidade mudam de um conselho para outro.']);
+    if (!cfg.profissional && (cfg.metaFrase || cfg.especialidade)) avisos.push(['info', 'Escolha o tipo de profissional, logo acima: as regras de publicidade mudam de um conselho para outro.']);
     const riscos = riskScan(cfg.metaFrase + ' ' + cfg.transformacao + ' ' + cfg.servicos);
     if (riscos.length) avisos.push(['warn', `Seu objetivo ou perfil menciona algo que o seu conselho restringe: ${riscos.join(' ')}`]);
     if ((cfg.objetivo === 'autoridade' || cfg.objetivo === 'online') && cfg.tempo === 'ate1' && cfg.produtor === 'eu') avisos.push(['info', 'Com até 1 hora por semana e produção própria, autoridade e atendimento online demoram mais. Comece com 2 conteúdos por semana ou delegue parte da produção com o Briefing para terceiros.']);
-    if (cfg.objetivo === 'online' && (cfg.atendimento || []).indexOf('online') < 0) avisos.push(['warn', 'Seu objetivo é atender online, mas o atendimento online não está marcado no passo 2. Deseja ajustar?']);
+    if (cfg.objetivo === 'online' && (cfg.atendimento || []).indexOf('online') < 0) avisos.push(['warn', 'Seu objetivo é atender online, mas o atendimento online não está marcado em "Atendimento, pagamento, tipo de conta e equipe", logo acima. Deseja ajustar?']);
     if (cfg.objetivo === 'online' && ['dentista', 'fisioterapeuta'].includes(cfg.profissional)) avisos.push(['info', 'Atendimento a distância tem regras próprias no seu conselho. Confirme o que pode ser feito online antes de divulgar.']);
     if (cfg.profissional === 'multi' && !(cfg.multiProf || []).length) avisos.push(['warn', 'Marque as profissões da clínica para carregar as regras de cada conselho.']);
     if (!avisos.length) { box.hidden = true; box.innerHTML = ''; return; }

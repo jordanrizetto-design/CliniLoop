@@ -1,0 +1,1246 @@
+  <section id="caminho" class="caminho-sec">
+    <div class="wrap">
+      <div class="hoje" id="hoje" aria-labelledby="hoje-titulo" hidden>
+        <div class="hoje-head">
+          <h2 id="hoje-titulo">Hoje</h2>
+          <span class="hoje-data" id="hoje-data"></span>
+        </div>
+        <div class="hoje-grid">
+          <article class="hoje-card hoje-next" aria-live="polite">
+            <p class="hoje-label" id="cm-prog-t">Seu caminho</p>
+            <div class="meter cm-meter"><span id="cm-prog-bar"></span></div>
+            <p class="hoje-where" id="cm-onde"></p>
+            <h3 id="cm-acao"></h3>
+            <div class="form-actions"><button type="button" id="cm-continuar" class="btn btn-gold btn-sm" data-ico="arrow">Continuar</button></div>
+          </article>
+          <article class="hoje-card" aria-live="polite">
+            <p class="hoje-label">Próximos passos vencidos</p>
+            <p class="hoje-big" id="hj-atr-n">0</p>
+            <ul class="hoje-list" id="hj-atr-list"></ul>
+            <button type="button" id="hj-rastreador" class="btn btn-outline btn-sm" data-ico="bell">Abrir rastreador</button>
+          </article>
+          <article class="hoje-card">
+            <p class="hoje-label">Esta semana</p>
+            <p class="hoje-big"><span id="hj-posts">0</span><span class="hoje-of"> de <label class="visually-hidden" for="hj-meta-n">Meta de conteúdos na semana</label><input type="number" id="hj-meta-n" min="1" max="30" inputmode="numeric"> conteúdos</span></p>
+            <div class="meter" role="progressbar" aria-label="Conteúdos publicados na semana" aria-valuemin="0" id="hj-meter"><span id="hj-meta-bar"></span></div>
+            <p class="hoje-rate" id="hj-semana"></p>
+            <div class="post-row">
+              <button type="button" class="btn btn-outline btn-sm" id="hj-conteudo" data-ico="plus">Registrar conteúdo</button>
+              <button type="button" class="btn btn-outline btn-sm" id="hj-contato" data-ico="plus">Novo contato</button>
+            </div>
+          </article>
+        </div>
+        <div class="hoje-backup" id="hj-backup" hidden></div>
+      </div>
+
+      <div class="mov" data-mov="1">
+        <p class="mov-n">Movimento 1 de 3</p>
+        <h2>Defina a sua diferença</h2>
+        <p>Quem você atende, para quem e por que você. Sem isso, todo perfil e todo anúncio parecem com os de qualquer colega.</p>
+      </div>
+
+      <section class="passo" id="passo-1" data-passo="1" data-mov="1">
+        <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-1-corpo">
+          <span class="passo-n" aria-hidden="true">1</span>
+          <span class="passo-tt"><span class="passo-titulo">Seu consultório e objetivo</span><span class="passo-resumo" data-vazio="Profissão, registro, serviços e o resultado dos próximos 90 dias">Profissão, registro, serviços e o resultado dos próximos 90 dias</span></span>
+          <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
+        </button></h3>
+        <div class="passo-corpo" id="passo-1-corpo" hidden>
+          <p class="passo-meta"><span>Uns 10 minutos</span><span>Guia: Partes 1 e 2</span></p>
+          <p class="passo-why">Preencha uma vez. A profissão e o registro carregam as regras do seu conselho em todos os prompts; o objetivo decide o que vem primeiro. Tudo fica salvo neste navegador enquanto você digita.</p>
+          <div class="cfg-campos">
+              <fieldset class="field">
+                <legend>Tipo de profissional *</legend>
+                <div class="type-grid prof-grid" role="radiogroup">
+                  <label class="type-card"><input type="radio" name="profissional" value="medico"><span class="t-name">Médico(a)</span><span class="t-hint">CFM · CRM e RQE</span></label>
+                  <label class="type-card"><input type="radio" name="profissional" value="psiquiatra"><span class="t-name">Psiquiatra</span><span class="t-hint">CFM · CRM e RQE</span></label>
+                  <label class="type-card"><input type="radio" name="profissional" value="dentista"><span class="t-name">Dentista</span><span class="t-hint">CFO · CRO</span></label>
+                  <label class="type-card"><input type="radio" name="profissional" value="psicologo"><span class="t-name">Psicólogo(a)</span><span class="t-hint">CFP · CRP</span></label>
+                  <label class="type-card"><input type="radio" name="profissional" value="fisioterapeuta"><span class="t-name">Fisioterapeuta</span><span class="t-hint">COFFITO · CREFITO</span></label>
+                  <label class="type-card"><input type="radio" name="profissional" value="nutricionista"><span class="t-name">Nutricionista</span><span class="t-hint">CFN · CRN</span></label>
+                  <label class="type-card"><input type="radio" name="profissional" value="multi"><span class="t-name">Clínica multiprofissional</span><span class="t-hint">Regras de cada conselho</span></label>
+                </div>
+              </fieldset>
+              <fieldset class="field" id="cfg-multi" hidden>
+                <legend>Profissões na clínica</legend>
+                <div class="checks">
+                  <label><input type="checkbox" name="multiProf" value="medico" checked> Medicina</label>
+                  <label><input type="checkbox" name="multiProf" value="dentista"> Odontologia</label>
+                  <label><input type="checkbox" name="multiProf" value="psicologo"> Psicologia</label>
+                  <label><input type="checkbox" name="multiProf" value="fisioterapeuta"> Fisioterapia</label>
+                  <label><input type="checkbox" name="multiProf" value="nutricionista"> Nutrição</label>
+                </div>
+              </fieldset>
+              <div class="row2">
+                <div class="field">
+                  <label for="cfg-nome">Nome do profissional ou da clínica</label>
+                  <input type="text" id="cfg-nome" name="nome" placeholder="Ex: Dra. Ana Lima · Clínica Sorriso Vivo">
+                </div>
+                <div class="field">
+                  <label for="cfg-registro">Registro no conselho *</label>
+                  <input type="text" id="cfg-registro" name="registro" placeholder="Ex: CRM-SP 00000 · RQE 0000 · CRO-SP 00000 · CRP 06/00000 · CREFITO-3 0000 · CRN-3 00000">
+                  <small>Obrigatório na publicidade de todas as profissões. Clínica: inclua o responsável técnico.</small>
+                </div>
+              </div>
+              <div class="row2">
+                <div class="field">
+                  <label for="cfg-espec">Especialidade ou área de atuação *</label>
+                  <input type="text" id="cfg-espec" name="especialidade" placeholder="Ex: implantodontia · dermatologia · terapia de casal · fisioterapia pélvica">
+                  <small>Só anuncie como especialidade o que estiver registrado no seu conselho.</small>
+                </div>
+                <div class="field">
+                  <label for="cfg-cidade">Cidade e bairro *</label>
+                  <input type="text" id="cfg-cidade" name="cidade" placeholder="Ex: Moema, São Paulo">
+                </div>
+              </div>
+              <div class="field">
+                <label for="cfg-servicos">Serviços que você quer divulgar *</label>
+                <input type="text" id="cfg-servicos" name="servicos" placeholder="Separe por vírgula. Ex: implantes, lentes de contato dental, clareamento">
+                <small>Viram as opções de serviço no Rastreador de pacientes e nas campanhas.</small>
+              </div>
+              <div class="field">
+                <label for="cfg-sobre">Formação, experiência e diferenciais *</label>
+                <textarea id="cfg-sobre" name="sobre" rows="4" placeholder="Ex: 12 anos de formada, especialização em implantes, escaneamento digital, atendimento sem pressa; pacientes dizem que explico tudo com calma"></textarea>
+                <small>Não inclua nomes ou dados de pacientes.</small>
+              </div>
+            <details class="mais-campos">
+              <summary>Atendimento, pagamento, tipo de conta e equipe <span class="chevron">▸</span></summary>
+                <div class="row3">
+                  <fieldset class="field">
+                    <legend>Atendimento</legend>
+                    <div class="checks">
+                      <label><input type="checkbox" name="atendimento" value="presencial" checked> Presencial</label>
+                      <label><input type="checkbox" name="atendimento" value="online"> Online</label>
+                      <label><input type="checkbox" name="atendimento" value="domiciliar"> Domiciliar</label>
+                    </div>
+                  </fieldset>
+                  <div class="field">
+                    <label for="cfg-pagamento">Forma de pagamento</label>
+                    <select id="cfg-pagamento" name="pagamento">
+                      <option value="particular">Particular</option>
+                      <option value="convênios">Convênios</option>
+                      <option value="particular e convênios">Particular e convênios</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="cfg-conta">Tipo de conta principal</label>
+                    <select id="cfg-conta" name="conta">
+                      <option value="profissional">Perfil do profissional</option>
+                      <option value="clinica">Perfil da clínica (pessoa jurídica)</option>
+                      <option value="ambos">Os dois</option>
+                    </select>
+                  </div>
+                </div>
+                <p class="field-note">O tipo de conta muda regras: na odontologia, por exemplo, antes e depois é proibido no perfil da clínica.</p>
+                <div class="field">
+                  <label for="cfg-equipe">Profissionais da equipe (opcional)</label>
+                  <input type="text" id="cfg-equipe" name="equipe" placeholder="Ex: Dra. Ana, Dr. Paulo, recepção">
+                </div>
+            </details>
+            <h4 class="passo-sub">Qual resultado você quer nos próximos 90 dias?</h4>
+              <fieldset class="field">
+                <legend>Objetivo principal</legend>
+                <div class="type-grid obj-grid" role="radiogroup">
+                  <label class="type-card"><input type="radio" name="objetivo" value="agenda" checked><span class="t-name">Encher a agenda</span><span class="t-hint">Mais primeiras consultas</span></label>
+                  <label class="type-card"><input type="radio" name="objetivo" value="ticket"><span class="t-name">Tratamentos de maior valor</span><span class="t-hint">Atrair o caso certo</span></label>
+                  <label class="type-card"><input type="radio" name="objetivo" value="autoridade"><span class="t-name">Virar referência no tema</span><span class="t-hint">Autoridade e influência</span></label>
+                  <label class="type-card"><input type="radio" name="objetivo" value="online"><span class="t-name">Atender online</span><span class="t-hint">Pacientes de outras cidades</span></label>
+                  <label class="type-card"><input type="radio" name="objetivo" value="fidelizar"><span class="t-name">Fidelizar e gerar indicações</span><span class="t-hint">Pacientes e colegas</span></label>
+                </div>
+              </fieldset>
+              <div class="field">
+                <label for="cfg-meta">Em uma frase: qual resultado, para qual serviço e em quanto tempo? *</label>
+                <input type="text" id="cfg-meta" name="metaFrase" placeholder="Ex: 8 novas avaliações de implante por mês, em Sorocaba, nos próximos 90 dias">
+                <small>Quanto mais concreto, melhores as recomendações. Não use dados de pacientes reais.</small>
+              </div>
+          </div>
+          <div class="obj-hint" id="obj-hint" hidden></div>
+          <p class="save-status" id="cfg-status" aria-live="polite">Salvo automaticamente neste navegador.</p>
+          <div class="passo-foot">
+            <p class="passo-falta" aria-live="polite" hidden></p>
+            <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="passo" id="passo-2" data-passo="2" data-mov="1">
+        <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-2-corpo">
+          <span class="passo-n" aria-hidden="true">2</span>
+          <span class="passo-tt"><span class="passo-titulo">Seu paciente ideal</span><span class="passo-resumo" data-vazio="Quem você mais ajuda, a dúvida dele e o que ele valoriza">Quem você mais ajuda, a dúvida dele e o que ele valoriza</span></span>
+          <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
+        </button></h3>
+        <div class="passo-corpo" id="passo-2-corpo" hidden>
+          <p class="passo-meta"><span>Uns 10 minutos</span><span>Guia: Parte 3</span></p>
+          <p class="passo-why">O paciente que você mais ajuda e que mais valoriza o seu trabalho. É dele que saem os ganchos, as pautas e as respostas às objeções. Responda sobre o perfil típico, nunca sobre um paciente real.</p>
+          <div class="cfg-campos">
+              <div class="field">
+                <label for="cfg-publico">Quem é o seu paciente ideal? *</label>
+                <input type="text" id="cfg-publico" name="publico" placeholder="Ex: adultos de 40 a 65 anos que perderam dentes, da zona sul">
+              </div>
+              <div class="icp-block" id="icp-block">
+                <h5>Seu paciente ideal (ICP)</h5>
+                <div class="row2">
+                  <div class="field">
+                    <label for="cfg-icp-dor">Qual a principal dor ou dúvida dele? *</label>
+                    <input type="text" id="cfg-icp-dor" name="icpDor" placeholder="Ex: tenho medo de perder o dente e não sei se implante dói">
+                  </div>
+                  <div class="field">
+                    <label for="cfg-icp-valoriza">O que ele valoriza na hora de escolher?</label>
+                    <input type="text" id="cfg-icp-valoriza" name="icpValoriza" placeholder="Ex: explicação clara, atendimento sem pressa, perto de casa">
+                  </div>
+                </div>
+                <div class="row2">
+                  <div class="field">
+                    <label for="cfg-icp-objecao">Qual a objeção mais comum?</label>
+                    <input type="text" id="cfg-icp-objecao" name="icpObjecao" placeholder="Ex: acha caro, tem medo, não tem tempo">
+                  </div>
+                  <div class="field">
+                    <label for="cfg-icp-onde">Onde ele procura informação?</label>
+                    <input type="text" id="cfg-icp-onde" name="icpOnde" placeholder="Ex: Google, Instagram, indicação do clínico geral">
+                  </div>
+                </div>
+                <small>Responda sobre o perfil típico, sem dados de pacientes reais.</small>
+              </div>
+          </div>
+          <p class="passo-opc">Quer aprofundar? A IA monta o ICP completo e a persona a partir do que você atende hoje.</p>
+        <details class="tool in-sub" data-id="publico">
+          <summary>
+            <div class="tool-title"><div><h3>Público, ICP e persona do paciente</h3><span class="sub">Quem é o paciente ideal, quem não é, o que ele sente e como decide</span></div></div>
+            <span class="chevron">▸</span>
+          </summary>
+          <div class="tool-body">
+            <p class="desc">ICP (perfil de cliente ideal) é o paciente que você mais ajuda e que mais valoriza seu trabalho. A persona transforma o ICP numa pessoa concreta, de onde saem ganchos, pautas e respostas às objeções.</p>
+            <form class="tool-form" data-tool="publico">
+              <div class="field">
+                <label for="pu-hoje">Quem você atende hoje? *</label>
+                <textarea id="pu-hoje" name="hoje" required rows="3" placeholder="Faixa etária, principais queixas, de onde vêm, particular ou convênio... (padrões gerais, sem dados de pacientes)"></textarea>
+              </div>
+              <div class="row2">
+                <div class="field">
+                  <label for="pu-melhores">Seus melhores pacientes: o que têm em comum?</label>
+                  <textarea id="pu-melhores" name="melhores" rows="3" placeholder="Ex: chegam por indicação, seguem o tratamento até o fim, valorizam explicação"></textarea>
+                </div>
+                <div class="field">
+                  <label for="pu-duvidas">Dúvidas que você mais ouve *</label>
+                  <textarea id="pu-duvidas" name="duvidas" required rows="3" placeholder="Uma por linha. Ex: Dói? Quanto tempo dura? Convênio cobre?"></textarea>
+                </div>
+              </div>
+              <div class="row2">
+                <div class="field">
+                  <label for="pu-objecoes">Objeções e medos</label>
+                  <input type="text" id="pu-objecoes" name="objecoes" placeholder="Ex: medo de dor, acha caro, experiência ruim, falta de tempo">
+                </div>
+                <div class="field">
+                  <label for="pu-palavras">Como os pacientes descrevem o problema</label>
+                  <input type="text" id="pu-palavras" name="palavras" placeholder="Ex: 'tenho vergonha de sorrir', 'travou a coluna'">
+                </div>
+              </div>
+              <div class="row2">
+                <div class="field">
+                  <label for="pu-servicos">Serviços a priorizar</label>
+                  <input type="text" id="pu-servicos" name="servicos" data-prefill="servicos">
+                </div>
+                <div class="field">
+                  <label for="pu-evitar">Perfis que você prefere não atrair (opcional)</label>
+                  <input type="text" id="pu-evitar" name="evitar" placeholder="Ex: quem procura só o menor preço">
+                </div>
+              </div>
+              <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar prompt</button></div>
+              <div class="output-block" hidden></div>
+            </form>
+            <div class="saved-slot" data-save="publico" data-label="público, ICP e persona"></div>
+          </div>
+        </details>
+          <div class="passo-foot">
+            <p class="passo-falta" aria-live="polite" hidden></p>
+            <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="passo" id="passo-3" data-passo="3" data-mov="1">
+        <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-3-corpo">
+          <span class="passo-n" aria-hidden="true">3</span>
+          <span class="passo-tt"><span class="passo-titulo">Oceano Azul: sua proposta de valor</span><span class="passo-resumo" data-vazio="Sete etapas até uma proposta que um colega não poderia assinar">Sete etapas até uma proposta que um colega não poderia assinar</span></span>
+          <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
+        </button></h3>
+        <div class="passo-corpo" id="passo-3-corpo" hidden>
+          <p class="passo-meta"><span>Uns 30 minutos, mais o tempo de ouvir alguns pacientes</span><span>Guia: Apresentação e Parte 3</span></p>
+          <p class="passo-why">O passo que tira você da disputa pelo preço. Ouça o que os pacientes valorizam, olhe para quem ainda não procura ninguém e decida o que eliminar, reduzir, elevar e criar. No fim, a proposta em uma frase entra em todos os perfis, roteiros e campanhas dos próximos passos.</p>
+        <details class="tool in-solo" data-id="oceano" open>
+          <summary>
+            <div class="tool-title"><div><h3>Estratégia Oceano Azul</h3><span class="sub">Posicionamento com as ferramentas do Oceano Azul, em sete etapas: do que o paciente diz à proposta que você consegue mostrar</span></div></div>
+            <span class="chevron">▸</span>
+          </summary>
+          <div class="tool-body">
+            <p class="desc">Sair da disputa em que todos oferecem o mesmo e competem pelo menor valor. Em uns 30 minutos, mais o tempo de ouvir alguns pacientes, você marca onde a sua área compete, olha para quem ainda não procura ninguém, decide o que eliminar, reduzir, elevar e criar, vê a sua curva de valor ao lado da do mercado e sai com uma proposta própria, ética e possível de mostrar nas redes. Seja realista: na maioria dos consultórios, o resultado é uma diferença clara dentro do mercado que já existe, e não um oceano inteiramente novo. A ferramenta diz qual é o seu caso. O guia explica o método na Apresentação e na Parte 3.</p>
+            <form class="tool-form" data-tool="oceano" id="oa-form">
+              <fieldset class="field oa-step">
+                <legend>Etapa 1 · Em que todos competem na sua área e na sua cidade?</legend>
+                <p class="oa-hint">Marque de 4 a 8 fatores. Eles formam a curva de valor da etapa 5.</p>
+                <div class="checks" id="oa-fatores"></div>
+                <label for="oa-extra" class="visually-hidden">Outros fatores</label>
+                <input type="text" id="oa-extra" name="fatoresExtra" placeholder="Outros fatores, separados por vírgula">
+              </fieldset>
+              <fieldset class="field oa-step">
+                <legend>Etapa 2 · O que os pacientes dizem</legend>
+                <p class="oa-hint">Antes de dar notas, ouça. Sem este passo, a curva de valor vira opinião sua sobre você mesmo. Nunca registre nomes nem dados clínicos.</p>
+                <div class="field">
+                  <label for="oa-avaliacoes">O que os pacientes elogiam e reclamam nas avaliações de outros profissionais da sua área (leia pelo menos 10 no Google)</label>
+                  <textarea id="oa-avaliacoes" name="avaliacoes" rows="3" placeholder="Ex: elogiam a explicação e a pontualidade; reclamam de espera, pressa na consulta e falta de retorno"></textarea>
+                </div>
+                <div class="field">
+                  <label for="oa-pacientes">O que 5 pacientes seus disseram que valorizam, e o que fez falta (pergunte no fim da consulta ou por mensagem)</label>
+                  <textarea id="oa-pacientes" name="vozPacientes" rows="3" placeholder="Ex: gostaram de sair com o plano por escrito; sentiram falta de saber o que fazer entre as sessões"></textarea>
+                </div>
+              </fieldset>
+              <fieldset class="field oa-step">
+                <legend>Etapa 3 · Quem ainda não procura ninguém da sua área</legend>
+                <p class="oa-hint">No livro, os espaços novos costumam nascer dos não clientes: quem poderia precisar de você e não procura ninguém. Responda o que souber; uma linha basta.</p>
+                <div class="field">
+                  <label for="oa-nc1">Quem começa a procurar e desiste no meio do caminho, e por quê</label>
+                  <textarea id="oa-nc1" name="naoClientes1" rows="2" placeholder="Ex: quem pede orçamento e some; quem não encontra horário depois do trabalho"></textarea>
+                </div>
+                <div class="field">
+                  <label for="oa-nc2">Quem decide não procurar ninguém da sua área, e por quê</label>
+                  <textarea id="oa-nc2" name="naoClientes2" rows="2" placeholder="Ex: acha que dor nas costas passa sozinha; teve uma experiência ruim e não voltou"></textarea>
+                </div>
+                <div class="field">
+                  <label for="oa-nc3">Quem nunca pensou que precisava, e o que mudaria isso</label>
+                  <textarea id="oa-nc3" name="naoClientes3" rows="2" placeholder="Ex: corredores iniciantes que não sabem que existe avaliação preventiva"></textarea>
+                </div>
+              </fieldset>
+              <fieldset class="field oa-step">
+                <legend>Etapa 4 · As quatro ações</legend>
+                <p class="oa-hint">Toque numa sugestão para acrescentar, ou escreva com as suas palavras. Uma ideia por linha. As sugestões são as mesmas para todos da sua profissão: use-as como ponto de partida e escreva como você faz de um jeito próprio. Se ficar igual ao que qualquer colega poderia fazer, não diferencia.</p>
+                <div class="oa-acoes">
+                  <div class="oa-acao" data-acao="eliminar"><label for="oa-eliminar"><b>Eliminar</b> · o que a sua área faz e o paciente não valoriza</label><div class="oa-sug"></div><textarea id="oa-eliminar" name="eliminar" rows="3"></textarea></div>
+                  <div class="oa-acao" data-acao="reduzir"><label for="oa-reduzir"><b>Reduzir</b> · o que está acima do necessário</label><div class="oa-sug"></div><textarea id="oa-reduzir" name="reduzir" rows="3"></textarea></div>
+                  <div class="oa-acao" data-acao="elevar"><label for="oa-elevar"><b>Elevar</b> · o que deveria estar bem acima do padrão</label><div class="oa-sug"></div><textarea id="oa-elevar" name="elevar" rows="3"></textarea></div>
+                  <div class="oa-acao" data-acao="criar"><label for="oa-criar"><b>Criar</b> · o que ninguém na sua região oferece</label><div class="oa-sug"></div><textarea id="oa-criar" name="criar" rows="3"></textarea></div>
+                </div>
+              </fieldset>
+              <fieldset class="field oa-step">
+                <legend>Etapa 5 · Sua curva de valor</legend>
+                <p class="oa-hint">De 0 a 5, quanto o mercado entrega em cada fator e quanto você vai entregar depois das quatro ações. Use o que ouviu no passo 2 para não se superestimar. O que você criou entra com o mercado em zero.</p>
+                <div id="oa-rows" class="oa-rows"></div>
+                <div id="oa-canvas" class="oa-canvas"></div>
+                <input type="hidden" name="curva" id="oa-curva">
+              </fieldset>
+              <fieldset class="field oa-step">
+                <legend>Etapa 6 · Fazer antes de mostrar</legend>
+                <p class="oa-hint">Para cada coisa que você vai elevar ou criar, diga se já acontece no seu atendimento e como o paciente poderia ver isso nas redes. Conteúdo sobre uma diferença que ainda não existe promete o que a consulta não entrega.</p>
+                <div id="oa-provas" class="oa-provas"></div>
+                <input type="hidden" name="provas" id="oa-provas-txt">
+              </fieldset>
+              <fieldset class="field oa-step">
+                <legend>Etapa 7 · Sua proposta</legend>
+                <div class="field">
+                  <label for="oa-publico">Para quem é</label>
+                  <input type="text" id="oa-publico" name="publico" data-prefill="publico" placeholder="Ex: corredores amadores com dor no joelho, da zona sul">
+                </div>
+                <div class="field">
+                  <label for="oa-proposta">Rascunho da proposta (vai se montando com as suas respostas; edite à vontade)</label>
+                  <textarea id="oa-proposta" name="proposta" rows="3"></textarea>
+                </div>
+              </fieldset>
+              <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar prompt</button></div>
+              <div class="output-block" hidden></div>
+            </form>
+            <div class="saved-slot" data-save="oceano" data-label="estratégia Oceano Azul"></div>
+          </div>
+        </details>
+          <div class="cfg-campos proposta-final">
+              <div class="field">
+                <label for="cfg-transf">Sua proposta de valor, em uma frase *</label>
+                <input type="text" id="cfg-transf" name="transformacao" placeholder="Ajudo [público] a [entender ou cuidar de algo] com [diferencial]">
+                <small>Na saúde, a promessa é de informação e atendimento, nunca de resultado individual.</small>
+              </div>
+            <button type="button" class="btn btn-outline btn-sm" id="usar-rascunho">Usar o rascunho da etapa 7 acima</button>
+          </div>
+          <div class="passo-foot">
+            <p class="passo-falta" aria-live="polite" hidden></p>
+            <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="mov" data-mov="2">
+        <p class="mov-n">Movimento 2 de 3</p>
+        <h2>Mostre onde o paciente procura</h2>
+        <p>Perfis coerentes, conteúdo que só você poderia publicar, colegas que indicam e anúncios que amplificam o que já funciona.</p>
+      </div>
+
+      <section class="passo" id="passo-4" data-passo="4" data-mov="2">
+        <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-4-corpo">
+          <span class="passo-n" aria-hidden="true">4</span>
+          <span class="passo-tt"><span class="passo-titulo">Seus perfis, uma rede por vez</span><span class="passo-resumo" data-vazio="Google, Instagram, LinkedIn, YouTube e TikTok: um prompt para cada">Google, Instagram, LinkedIn, YouTube e TikTok: um prompt para cada</span></span>
+          <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
+        </button></h3>
+        <div class="passo-corpo" id="passo-4-corpo" hidden>
+          <p class="passo-meta"><span>Uns 15 minutos por rede</span><span>Guia: Parte 3</span></p>
+          <p class="passo-why">Uma rede por vez: abra a rede, cole o texto de hoje e gere o prompt dela. Aplique a reescrita e marque o checklist. Em todas, o paciente precisa achar a mesma resposta para três perguntas: quem é você, quem você ajuda e como marcar.</p>
+          <div class="cfg-campos">
+            <div class="row2">
+              <div class="field">
+                <label for="cfg-arroba">Seu @ principal</label>
+                <input type="text" id="cfg-arroba" name="arroba" placeholder="Ex: @dra.analima">
+              </div>
+              <div class="field">
+                <label for="cfg-site">Site, link na bio ou página de agendamento</label>
+                <input type="text" id="cfg-site" name="site" placeholder="Ex: clinicasorrisovivo.com.br">
+              </div>
+            </div>
+            <fieldset class="field">
+              <legend>Quais você já usa?</legend>
+              <div class="chip-grid">
+                <label class="chip"><input type="checkbox" name="canais" value="Instagram" checked><span>Instagram</span></label>
+                <label class="chip"><input type="checkbox" name="canais" value="WhatsApp Business"><span>WhatsApp Business</span></label>
+                <label class="chip"><input type="checkbox" name="canais" value="Perfil da Empresa no Google"><span>Google (Perfil da Empresa)</span></label>
+                <label class="chip"><input type="checkbox" name="canais" value="YouTube"><span>YouTube</span></label>
+                <label class="chip"><input type="checkbox" name="canais" value="LinkedIn"><span>LinkedIn</span></label>
+                <label class="chip"><input type="checkbox" name="canais" value="TikTok"><span>TikTok</span></label>
+                <label class="chip"><input type="checkbox" name="canais" value="site ou blog"><span>Site ou blog</span></label>
+                <label class="chip"><input type="checkbox" name="canais" value="Doctoralia ou plataforma de agendamento"><span>Doctoralia ou similar</span></label>
+                <label class="chip"><input type="checkbox" name="canais" value="indicação de colegas"><span>Indicação de colegas</span></label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="redes" id="redes-uso">
+        <details class="rede" data-rede="google" data-canal="Perfil da Empresa no Google">
+          <summary><b>Perfil da Empresa no Google</b><span class="rede-tag">Comece por aqui</span><span class="rede-st"></span><span class="chevron">▸</span></summary>
+          <form class="tool-form rede-form" data-tool="rede-google">
+            <div class="field">
+              <label for="rd-google-atual">Nome da ficha, categoria, serviços e descrição que aparecem hoje</label>
+              <textarea id="rd-google-atual" name="atual" rows="3" data-persist="rede-google" placeholder="Cole o que aparece no Google Maps. Se a clínica ainda não tem ficha, escreva 'não tenho'."></textarea>
+            </div>
+            <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar o prompt do Google</button></div>
+            <div class="output-block" hidden></div>
+          </form>
+          <div class="canal-slot" data-canal="google"><p class="canal-slot-t">Depois de aplicar a reescrita, marque o checklist do Google:</p></div>
+        </details>
+        <details class="rede" data-rede="instagram" data-canal="Instagram">
+          <summary><b>Instagram</b><span class="rede-tag">Comece por aqui</span><span class="rede-st"></span><span class="chevron">▸</span></summary>
+          <form class="tool-form rede-form" data-tool="rede-instagram">
+            <div class="field">
+              <label for="rd-instagram-atual">Nome do perfil e bio de hoje</label>
+              <textarea id="rd-instagram-atual" name="atual" rows="3" data-persist="rede-instagram" placeholder="Cole o nome e a bio. Se ainda não tem, escreva 'não tenho'."></textarea>
+            </div>
+            <div class="row2">
+              <div class="field">
+                <label for="rd-instagram-link">Para onde vai o link da bio hoje?</label>
+                <select id="rd-instagram-link" name="link" data-persist="rede-instagram-link">
+                  <option value="WhatsApp">WhatsApp</option>
+                  <option value="agenda online">Agenda online</option>
+                  <option value="site">Site</option>
+                  <option value="página de vários links">Página de vários links</option>
+                  <option value="não tenho link na bio">Não tenho link na bio</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="rd-instagram-destaques">Destaques e posts fixados hoje</label>
+                <input type="text" id="rd-instagram-destaques" name="destaques" data-persist="rede-instagram-destaques" placeholder="Ex: Dúvidas, Clínica, Equipe">
+              </div>
+            </div>
+            <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar o prompt do Instagram</button></div>
+            <div class="output-block" hidden></div>
+          </form>
+          <div class="canal-slot" data-canal="instagram"><p class="canal-slot-t">Depois de aplicar a reescrita, marque o checklist do Instagram:</p></div>
+        </details>
+        <details class="rede" data-rede="linkedin" data-canal="LinkedIn">
+          <summary><b>LinkedIn</b><span class="rede-tag">Depois</span><span class="rede-st"></span><span class="chevron">▸</span></summary>
+          <form class="tool-form rede-form" data-tool="rede-linkedin">
+            <div class="field">
+              <label for="rd-linkedin-atual">Título e "Sobre" de hoje</label>
+              <textarea id="rd-linkedin-atual" name="atual" rows="3" data-persist="rede-linkedin" placeholder="Cole o título e o Sobre. Se ainda não tem, escreva 'não tenho'."></textarea>
+            </div>
+            <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar o prompt do LinkedIn</button></div>
+            <div class="output-block" hidden></div>
+          </form>
+          <div class="canal-slot" data-canal="linkedin"><p class="canal-slot-t">Depois de aplicar a reescrita, marque o checklist do LinkedIn:</p></div>
+        </details>
+        <details class="rede" data-rede="youtube" data-canal="YouTube">
+          <summary><b>YouTube</b><span class="rede-tag">Depois</span><span class="rede-st"></span><span class="chevron">▸</span></summary>
+          <form class="tool-form rede-form" data-tool="rede-youtube">
+            <div class="field">
+              <label for="rd-youtube-atual">Nome e descrição do canal</label>
+              <textarea id="rd-youtube-atual" name="atual" rows="3" data-persist="rede-youtube" placeholder="Cole o nome e a descrição. Se ainda não tem canal, escreva 'não tenho'."></textarea>
+            </div>
+            <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar o prompt do YouTube</button></div>
+            <div class="output-block" hidden></div>
+          </form>
+          <div class="canal-slot" data-canal="youtube"><p class="canal-slot-t">Depois de aplicar a reescrita, marque o checklist do YouTube:</p></div>
+        </details>
+        <details class="rede" data-rede="tiktok" data-canal="TikTok">
+          <summary><b>TikTok</b><span class="rede-tag">Opcional</span><span class="rede-st"></span><span class="chevron">▸</span></summary>
+          <form class="tool-form rede-form" data-tool="rede-tiktok">
+            <div class="field">
+              <label for="rd-tiktok-atual">Nome do perfil e bio</label>
+              <textarea id="rd-tiktok-atual" name="atual" rows="3" data-persist="rede-tiktok" placeholder="Cole o nome e a bio. Se ainda não tem, escreva 'não tenho'."></textarea>
+            </div>
+            <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar o prompt do TikTok</button></div>
+            <div class="output-block" hidden></div>
+          </form>
+          <div class="canal-slot" data-canal="tiktok"><p class="canal-slot-t">Depois de aplicar a reescrita, marque o checklist do TikTok:</p></div>
+        </details>
+          </div>
+          <details class="redes-outras" id="redes-outras" hidden>
+            <summary>Redes que você ainda não usa <span class="chevron">▸</span></summary>
+            <div class="redes" id="redes-outras-lista"></div>
+          </details>
+        <details class="tool in-sub" data-id="perfil">
+          <summary>
+            <div class="tool-title"><div><h3>Todas as redes num prompt só</h3><span class="sub">Uma análise conjunta, com os textos que você colou em cada rede acima</span></div></div>
+            <span class="chevron">▸</span>
+          </summary>
+          <div class="tool-body">
+            <p class="desc">Para quem prefere revisar tudo de uma vez: o prompt junta os textos colados nos cartões acima e pede a reescrita de cada rede marcada, com a mesma resposta para as três perguntas do paciente.</p>
+            <form class="tool-form" data-tool="perfil">
+              <fieldset class="field">
+                <legend>Quais perfis revisar</legend>
+                <div class="checks">
+                  <label><input type="checkbox" name="redes" value="Instagram" checked> Instagram</label>
+                  <label><input type="checkbox" name="redes" value="Perfil da Empresa no Google" checked> Perfil da Empresa no Google</label>
+                  <label><input type="checkbox" name="redes" value="YouTube"> YouTube</label>
+                  <label><input type="checkbox" name="redes" value="LinkedIn"> LinkedIn</label>
+                  <label><input type="checkbox" name="redes" value="TikTok"> TikTok</label>
+                </div>
+              </fieldset>
+              <input type="hidden" id="pf-atual" name="atual">
+              <input type="hidden" id="pf-link" name="link">
+              <input type="hidden" id="pf-destaques" name="destaques">
+              <label class="inline-check"><input type="checkbox" name="assistenteBio" value="sim"> Incluir o texto-base de um assistente de orientação para a página da bio (Partes 3 e 5)</label>
+              <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar o prompt com todas as redes</button></div>
+              <div class="output-block" hidden></div>
+            </form>
+          </div>
+        </details>
+          <div class="saved-slot" data-save="perfil" data-label="textos aprovados dos perfis"></div>
+          <div class="passo-foot">
+            <p class="passo-falta" aria-live="polite" hidden></p>
+            <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="passo" id="passo-5" data-passo="5" data-mov="2">
+        <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-5-corpo">
+          <span class="passo-n" aria-hidden="true">5</span>
+          <span class="passo-tt"><span class="passo-titulo">Plano de conteúdo e roteiros</span><span class="passo-resumo" data-vazio="Pautas das dúvidas reais, calendário e o roteiro da primeira peça">Pautas das dúvidas reais, calendário e o roteiro da primeira peça</span></span>
+          <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
+        </button></h3>
+        <div class="passo-corpo" id="passo-5-corpo" hidden>
+          <p class="passo-meta"><span>Uns 30 minutos</span><span>Guia: Partes 4 a 7</span></p>
+          <p class="passo-why">Primeiro as pautas, a partir das dúvidas reais dos pacientes; depois o roteiro da primeira peça. A frequência é a que você consegue revisar: constância vale mais que volume.</p>
+          <div class="cfg-campos">
+              <div class="field">
+                <label for="cfg-baldes">Temas de conteúdo (até 3)</label>
+                <input type="text" id="cfg-baldes" name="baldes" placeholder="Ex: dúvidas sobre tratamentos, bastidores e cuidado, mitos e erros comuns">
+                <small id="cfg-temas-sug">Educar, humanizar e desmistificar (Parte 4). Todo post precisa caber em um deles.</small>
+              </div>
+            <div class="row3">
+              <div class="field">
+                <label for="cfg-tempo">Tempo por semana para conteúdo</label>
+                <select id="cfg-tempo" name="tempo">
+                  <option value="ate1">Até 1 hora</option>
+                  <option value="2a3" selected>2 a 3 horas</option>
+                  <option value="4a6">4 a 6 horas</option>
+                  <option value="7mais">7 horas ou mais</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="cfg-produtor">Quem vai produzir</label>
+                <select id="cfg-produtor" name="produtor">
+                  <option value="eu">Eu mesmo(a)</option>
+                  <option value="equipe">Eu, com ajuda da equipe</option>
+                  <option value="terceiro">Vou contratar agência ou social media</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="cfg-camera">Conforto em aparecer na câmera</label>
+                <select id="cfg-camera" name="camera">
+                  <option value="alto">Gosto de aparecer</option>
+                  <option value="medio" selected>Apareço, sem muita exposição</option>
+                  <option value="baixo">Prefiro não aparecer</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        <details class="tool in-sub" data-id="pautas" open>
+          <summary>
+            <div class="tool-title"><div><h3>Pautas e palavras-chave</h3><span class="sub">Banco de dúvidas reais, palavras-chave por serviço e cidade, calendário e frequência</span></div></div>
+            <span class="chevron">▸</span>
+          </summary>
+          <div class="tool-body">
+            <p class="desc">As melhores pautas são as dúvidas reais dos pacientes. Anote aqui as que ouvir no consultório e nas mensagens: o banco fica salvo e vira palavras-chave, pautas e um calendário com a frequência que você consegue manter.</p>
+            <form class="tool-form" data-tool="pautas">
+              <div class="field">
+                <label for="pa-banco">Banco de dúvidas reais dos pacientes *</label>
+                <textarea id="pa-banco" name="banco" required rows="6" data-persist="banco" placeholder="Uma dúvida por linha, do jeito que o paciente pergunta. Fica salvo para você ir completando."></textarea>
+                <small>Sem nomes ou dados que identifiquem quem perguntou.</small>
+              </div>
+              <fieldset class="field">
+                <legend>Formatos com que você se sente bem</legend>
+                <div class="checks">
+                  <label><input type="checkbox" name="formatos" value="Reels falando para a câmera" checked> Reels falando para a câmera</label>
+                  <label><input type="checkbox" name="formatos" value="vídeo sem aparecer"> Vídeo sem aparecer</label>
+                  <label><input type="checkbox" name="formatos" value="carrossel" checked> Carrossel</label>
+                  <label><input type="checkbox" name="formatos" value="Stories"> Stories</label>
+                  <label><input type="checkbox" name="formatos" value="YouTube"> YouTube</label>
+                  <label><input type="checkbox" name="formatos" value="posts de LinkedIn"> LinkedIn</label>
+                </div>
+              </fieldset>
+              <div class="field">
+                <label for="pa-datas">Datas, campanhas ou épocas importantes (opcional)</label>
+                <input type="text" id="pa-datas" name="datas" placeholder="Ex: Outubro Rosa, volta às aulas, fim de ano">
+              </div>
+              <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar prompt</button></div>
+              <div class="output-block" hidden></div>
+            </form>
+            <div class="saved-slot" data-save="pautas" data-label="palavras-chave, pautas e calendário"></div>
+          </div>
+        </details>
+        <details class="tool in-sub" data-id="roteiro">
+          <summary>
+            <div class="tool-title"><div><h3>Roteiros de conteúdo e copy</h3><span class="sub">Reels, carrosséis, Stories, YouTube, LinkedIn, legendas e páginas</span></div></div>
+            <span class="chevron">▸</span>
+          </summary>
+          <div class="tool-body">
+            <p class="desc">Uma promessa verdadeira e uma pergunta por peça. Em vídeo: abertura específica, resposta cedo, demonstração segura, limite da orientação, um único pedido e um final que conecta ao início. Toda peça passa por duas revisões, primeiro a editorial, depois a clínica e ética, e sai com versão curta, legenda, pendências e hipótese de teste.</p>
+            <form class="tool-form" data-tool="roteiro">
+              <div class="row2">
+                <div class="field">
+                  <label for="ro-formato">Formato</label>
+                  <select id="ro-formato" name="formato">
+                    <option value="Reels de 30 a 60 segundos">Reels 30 a 60 s</option>
+                    <option value="Reels de 60 a 90 segundos">Reels 60 a 90 s</option>
+                    <option value="Reels em tela dividida ou tela verde, explicando uma ilustração autorizada">Reels em tela dividida ou tela verde</option>
+                    <option value="Reels Lo-Fi, gravado com o celular na mão, como resposta próxima">Reels Lo-Fi (resposta próxima)</option>
+                    <option value="Reels quadro a quadro, mostrando etapas ou o ambiente sem terceiros">Reels quadro a quadro</option>
+                    <option value="Reels de ranking, com critério e fonte declarados">Reels de ranking (com critério e fonte)</option>
+                    <option value="carrossel de 7 slides">Carrossel de 7 slides</option>
+                    <option value="sequência de 5 a 8 Stories">Sequência de Stories</option>
+                    <option value="vídeo de YouTube de 6 a 10 minutos">YouTube 6 a 10 min</option>
+                    <option value="post de LinkedIn">Post de LinkedIn</option>
+                    <option value="legenda de post">Legenda de post</option>
+                    <option value="texto de página de agendamento ou site">Página de agendamento ou site</option>
+                    <option value="post no Perfil da Empresa no Google">Post no Google</option>
+                    <option value="mensagem para lista de transmissão do WhatsApp (só para quem consentiu)">Lista de transmissão</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="ro-tema">Tema ou dúvida do paciente *</label>
+                  <input type="text" id="ro-tema" name="tema" required placeholder="Ex: Implante dói? O que acontece de verdade">
+                </div>
+              </div>
+              <div class="row3">
+                <div class="field">
+                  <label for="ro-balde">Tema de conteúdo</label>
+                  <select id="ro-balde" name="balde" data-options="baldes"><option value="">(escolha)</option></select>
+                </div>
+                <div class="field">
+                  <label for="ro-objetivo">Objetivo da peça</label>
+                  <select id="ro-objetivo" name="objetivoPeca">
+                    <option value="alcançar pessoas que ainda não me seguem">Alcançar quem não me segue</option>
+                    <option value="ser salva e enviada para outras pessoas">Ser salva e compartilhada</option>
+                    <option value="levar a uma conversa no WhatsApp ou direct">Levar a uma conversa</option>
+                    <option value="aumentar a confiança de quem já me segue">Aumentar a confiança</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="ro-aparece">Como você aparece</label>
+                  <select id="ro-aparece" name="aparece">
+                    <option value="falo olhando para a câmera">Falo para a câmera</option>
+                    <option value="narração em off com imagens de apoio">Narração com imagens</option>
+                    <option value="só texto na tela, sem voz">Só texto na tela</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row2">
+                <div class="field">
+                  <label for="ro-momento">Momento da jornada do paciente</label>
+                  <select id="ro-momento" name="momento">
+                    <option value="entender um sintoma">Entender um sintoma</option>
+                    <option value="compreender a avaliação">Compreender a avaliação</option>
+                    <option value="comparar caminhos de cuidado">Comparar caminhos de cuidado</option>
+                    <option value="preparar-se para a consulta">Preparar-se para a consulta</option>
+                    <option value="acompanhar o tratamento">Acompanhar o tratamento</option>
+                    <option value="conhecer a equipe">Conhecer a equipe</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="ro-kw">Palavra-chave (serviço + cidade)</label>
+                  <input type="text" id="ro-kw" name="kw" placeholder="Ex: fisioterapia para coluna em Campinas">
+                </div>
+              </div>
+              <div class="row2">
+                <div class="field">
+                  <label for="ro-tom">Tom</label>
+                  <select id="ro-tom" name="tom">
+                    <option value="acolhedor">Acolhedor</option>
+                    <option value="didático">Didático</option>
+                    <option value="direto">Direto</option>
+                    <option value="leve, com humor respeitoso">Leve, com humor respeitoso</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="ro-quadro">Quadro recorrente (opcional)</label>
+                  <input type="text" id="ro-quadro" name="quadro" placeholder="Ex: Pergunta do consultório · Como funciona a avaliação?">
+                </div>
+              </div>
+              <div class="row2">
+                <div class="field">
+                  <label for="ro-notas">Pontos técnicos e fontes (opcional)</label>
+                  <input type="text" id="ro-notas" name="notas" placeholder="Ex: cada caso precisa de avaliação; fonte: diretriz da sociedade X">
+                </div>
+                <div class="field">
+                  <label for="ro-ref">Referência para modelar (opcional)</label>
+                  <input type="text" id="ro-ref" name="referencia" placeholder="Descreva a estrutura (como começa, sustenta e termina), sem colar texto de terceiros">
+                </div>
+              </div>
+              <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar prompt</button></div>
+              <div class="output-block" hidden></div>
+            </form>
+            <details class="profile-base ref-box">
+              <summary><span>Checklist antes de publicar</span> <span class="chevron">▸</span></summary>
+              <div class="profile-body"><ul class="check-list">
+                <li>Gancho claro nos 3 primeiros segundos, e a promessa é entregue</li>
+                <li>Legenda na tela, sem cobrir o que é demonstrado; termos clínicos revisados na legenda automática</li>
+                <li>Palavra-chave na fala, no texto na tela e na legenda; de 0 a 5 hashtags relevantes</li>
+                <li>Uma única chamada para ação, levando ao canal oficial</li>
+                <li>Fonte para cada afirmação clínica (ou marcada como pendente de validação)</li>
+                <li>Imagem autorizada e permitida para a sua profissão e o tipo de conta</li>
+                <li>Identificação profissional correta</li>
+                <li>Ressalvas preservadas na versão curta</li>
+                <li>Revisão editorial feita e revisão clínica e ética aprovada</li>
+                <li>Sem marca d'água de outra plataforma; capa legível em miniatura</li>
+                <li>Plano para a primeira hora: avisar nos Stories e responder os comentários</li>
+                <li>Registrado no Diário de conteúdo, com a variável testada</li>
+              </ul></div>
+            </details>
+            <details class="profile-base ref-box">
+              <summary><span>Referências de criadores de saúde (estrutura, não conteúdo clínico)</span> <span class="chevron">▸</span></summary>
+              <div class="profile-body" id="bench-box"></div>
+            </details>
+          </div>
+        </details>
+          <div class="passo-foot">
+            <p class="passo-falta" aria-live="polite" hidden></p>
+            <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="passo" id="passo-6" data-passo="6" data-mov="2">
+        <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-6-corpo">
+          <span class="passo-n" aria-hidden="true">6</span>
+          <span class="passo-tt"><span class="passo-titulo">Colegas e campanhas</span><span class="passo-resumo" data-vazio="Quem indica você e, depois, o primeiro anúncio">Quem indica você e, depois, o primeiro anúncio</span></span>
+          <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
+        </button></h3>
+        <div class="passo-corpo" id="passo-6-corpo" hidden>
+          <p class="passo-meta"><span>Uns 20 minutos</span><span>Guia: Partes 8 e 9</span></p>
+          <p class="passo-why">Colegas que indicam trazem pacientes que já confiam em você. Anúncio vem depois: ele amplifica o que já funciona no orgânico, não substitui a sua diferença.</p>
+        <details class="tool in-sub" data-id="colegas" id="colegas" open>
+          <summary>
+            <div class="tool-title"><div><h3>Rede de colegas</h3><span class="sub">Funil de colegas, carta de apresentação, contrarreferência e agradecimentos</span></div></div>
+            <span class="chevron">▸</span>
+          </summary>
+          <div class="tool-body">
+            <p class="desc">A indicação de um colega é o paciente mais qualificado que existe: chega com confiança prévia, comparece mais e fecha mais. Ela se conquista com competência visível, comunicação de retorno e facilidade de encaminhar. Os cinco movimentos: mapear, apresentar-se com valor, facilitar o encaminhamento, devolver informação (contrarreferência) e manter o relacionamento.</p>
+            <div id="quem-indica"></div>
+            <form id="col-form" class="tool-form">
+              <div class="row4">
+                <div class="field"><label for="cl-nome">Nome *</label><input type="text" id="cl-nome" required placeholder="Ex: Dr. Paulo Souza"></div>
+                <div class="field"><label for="cl-prof">Profissão e especialidade</label><input type="text" id="cl-prof" placeholder="Ex: médico ortopedista"></div>
+                <div class="field"><label for="cl-reg">Registro</label><input type="text" id="cl-reg" placeholder="Ex: CRM-SP 00000"></div>
+                <div class="field"><label for="cl-canal">Canal</label><input type="text" id="cl-canal" placeholder="Ex: WhatsApp, e-mail, visita"></div>
+              </div>
+              <div class="row3">
+                <div class="field"><label for="cl-end">Endereço</label><input type="text" id="cl-end" placeholder="Ex: Rua X, 100, Moema"></div>
+                <div class="field"><label for="cl-etapa">Etapa</label><select id="cl-etapa"></select></div>
+                <div class="field"><label for="cl-prox">Próximo passo e data</label><input type="date" id="cl-prox"></div>
+              </div>
+              <div class="form-actions"><button type="submit" class="btn btn-outline btn-sm" data-ico="plus">Adicionar colega</button></div>
+            </form>
+            <div class="funnel funnel5" id="col-funnel"></div>
+            <p class="plan-note" id="col-metricas"></p>
+            <div class="track-list" id="col-list"></div>
+
+            <hr class="divider">
+            <h4 style="margin:0 0 4px;font-family:var(--body)">Mensagens para colegas</h4>
+            <form class="tool-form" data-tool="colegas">
+              <div class="row3">
+                <div class="field">
+                  <label for="cm-tipo">Tipo de mensagem</label>
+                  <select id="cm-tipo" name="tipo">
+                    <option value="carta">Carta de apresentação</option>
+                    <option value="contrarreferencia">Relatório de contrarreferência (modelo)</option>
+                    <option value="agradecimento">Agradecimento por indicação</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="cm-colega">Para quem</label>
+                  <select id="cm-colega" name="colega"><option value="">(colega genérico)</option></select>
+                </div>
+                <div class="field">
+                  <label for="cm-canal">Formato</label>
+                  <select id="cm-canal" name="formato">
+                    <option value="carta ou e-mail">Carta ou e-mail</option>
+                    <option value="mensagem de WhatsApp">WhatsApp</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label for="cm-contexto">Contexto *</label>
+                <textarea id="cm-contexto" name="contexto" required rows="3" placeholder="Ex: atendo pacientes com dor lombar que você opera; quero me apresentar e combinar como devolver o acompanhamento. Na contrarreferência, use [PACIENTE], [IDADE] e [ACHADOS] no lugar dos dados reais."></textarea>
+              </div>
+              <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar prompt</button></div>
+              <div class="output-block" hidden></div>
+            </form>
+          </div>
+        </details>
+        <details class="tool in-sub" data-id="campanha" id="campanhas">
+          <summary>
+            <div class="tool-title"><div><h3>Gerador de campanhas</h3><span class="sub">Ficha da campanha, peças, Meta Ads, Google Ads, atendimento e medição</span></div></div>
+            <span class="chevron">▸</span>
+          </summary>
+          <div class="tool-body">
+            <p class="desc">Uma campanha completa cabe em uma página: objetivo, público, mensagem, peças, canal, orçamento, atendimento e medição. Comece por um modelo ou preencha do zero. Depois, revise as peças no Verificador ético e registre a campanha para medir os resultados pelo Rastreador.</p>
+            <div class="form-actions" style="margin:14px 0 4px">
+              <span class="save-status" style="margin-right:4px">Modelos:</span>
+              <button type="button" class="btn btn-outline btn-sm" data-modelo="lombar">Avaliação de dor lombar</button>
+              <button type="button" class="btn btn-outline btn-sm" data-modelo="implante">Como funciona o implante</button>
+              <button type="button" class="btn btn-outline btn-sm" data-modelo="online">Terapia online</button>
+              <button type="button" class="btn btn-outline btn-sm" data-modelo="reativacao">Reativação</button>
+            </div>
+            <form class="tool-form" data-tool="campanha">
+              <div class="field">
+                <label for="ca-tipo">O que você quer gerar</label>
+                <select id="ca-tipo" name="tipo">
+                  <option value="completa">Campanha completa (ficha, peças, anúncios, atendimento e medição)</option>
+                  <option value="impulsionamento">Plano de impulsionamento de um post (botão Turbinar)</option>
+                  <option value="anuncios">Só os anúncios: Meta Ads e Google Ads</option>
+                </select>
+              </div>
+              <div class="field" id="ca-post-wrap" hidden>
+                <label for="ca-post">Post a impulsionar</label>
+                <textarea id="ca-post" name="post" rows="3" placeholder="Cole o texto e descreva o vídeo. Só peças educativas que já foram bem no orgânico e passaram pela revisão."></textarea>
+              </div>
+              <div class="row3">
+                <div class="field">
+                  <label for="ca-servico">Serviço *</label>
+                  <input type="text" id="ca-servico" name="servico" required list="lista-servicos" placeholder="Ex: implantes">
+                </div>
+                <div class="field">
+                  <label for="ca-n">Objetivo: pacientes agendados *</label>
+                  <input type="number" id="ca-n" name="n" required min="1" placeholder="Ex: 12">
+                </div>
+                <div class="field">
+                  <label for="ca-duracao">Duração *</label>
+                  <input type="text" id="ca-duracao" name="duracao" required placeholder="Ex: 30 dias">
+                </div>
+              </div>
+              <div class="row2">
+                <div class="field">
+                  <label for="ca-orc">Orçamento de anúncios</label>
+                  <input type="text" id="ca-orc" name="orcamento" placeholder="Ex: R$ 40 por dia (deixe em branco se for só orgânico)">
+                </div>
+                <div class="field">
+                  <label for="ca-publico">Público e dúvida principal</label>
+                  <input type="text" id="ca-publico" name="publico" data-prefill="publico" placeholder="Quem é, onde mora, qual a dúvida principal">
+                </div>
+              </div>
+              <div class="field">
+                <label for="ca-msg">Mensagem central (a informação útil que abre a conversa)</label>
+                <input type="text" id="ca-msg" name="mensagem" placeholder="Ex: Cada etapa do implante, explicada">
+              </div>
+              <fieldset class="field">
+                <legend>Canais</legend>
+                <div class="checks">
+                  <label><input type="checkbox" name="canais" value="orgânico (Reels, carrossel, Stories)" checked> Orgânico</label>
+                  <label><input type="checkbox" name="canais" value="Meta Ads com destino para o WhatsApp"> Meta Ads</label>
+                  <label><input type="checkbox" name="canais" value="Google Ads (rede de pesquisa)"> Google Ads</label>
+                  <label><input type="checkbox" name="canais" value="YouTube"> YouTube</label>
+                  <label><input type="checkbox" name="canais" value="rede de colegas"> Colegas</label>
+                  <label><input type="checkbox" name="canais" value="WhatsApp para pacientes que consentiram receber lembretes"> WhatsApp (base com consentimento)</label>
+                </div>
+              </fieldset>
+              <div class="field">
+                <label for="ca-atend">Atendimento: quem responde, com qual roteiro e em quanto tempo</label>
+                <input type="text" id="ca-atend" name="atendimento" placeholder="Ex: recepção responde em até 15 min, com os scripts aprovados">
+              </div>
+              <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar prompt</button></div>
+              <div class="output-block" hidden></div>
+            </form>
+            <details class="profile-base ref-box">
+              <summary><span>Do guia: qual plataforma para qual intenção e o checklist do impulsionamento (Parte 9)</span> <span class="chevron">▸</span></summary>
+              <div class="profile-body" id="ref-trafego"></div>
+            </details>
+            <p class="kit-note"><b>Datas de conscientização</b> (Setembro Amarelo, Outubro Rosa, Novembro Azul e outras) são boas para autoridade, desde que educativas. Em Setembro Amarelo, siga as recomendações de comunicação responsável sobre suicídio, informe o CVV (188) e não use o tema para captar pacientes.</p>
+
+            <hr class="divider">
+            <h4 style="margin:0 0 4px;font-family:var(--body)">Campanhas registradas</h4>
+            <p class="desc" style="margin-top:4px">Registre cada campanha ou impulsionamento ao publicar. Contatos, agendados, comparecimentos e tratamentos iniciados vêm do Rastreador, pelos pacientes com essa origem. A métrica final não é clique nem mensagem: é custo por paciente que compareceu. Marque o que foi impulsionado, para não comparar peças pagas com orgânicas.</p>
+            <form id="camp-form" class="tool-form">
+              <div class="row5">
+                <div class="field"><label for="cp-nome">Nome *</label><input type="text" id="cp-nome" required placeholder="Ex: Implante out/26"></div>
+                <div class="field"><label for="cp-tipo">Tipo</label><select id="cp-tipo"><option value="Campanha">Campanha</option><option value="Impulsionamento">Impulsionamento</option></select></div>
+                <div class="field"><label for="cp-plat">Plataforma</label>
+                  <select id="cp-plat"><option>Orgânico</option><option>Meta Ads</option><option>Google Ads</option><option>YouTube</option><option>Colegas</option><option>WhatsApp</option><option>Várias</option></select></div>
+                <div class="field"><label for="cp-ini">Início</label><input type="date" id="cp-ini"></div>
+                <div class="field"><label for="cp-fim">Fim</label><input type="date" id="cp-fim"></div>
+              </div>
+              <div class="row3">
+                <div class="field"><label for="cp-obj">Objetivo</label><input type="text" id="cp-obj" placeholder="Ex: 12 avaliações de implante"></div>
+                <div class="field"><label for="cp-inv">Investimento (R$)</label><input type="number" id="cp-inv" min="0" step="0.01" placeholder="0"></div>
+                <div class="field"><label for="cp-criativos">Criativos</label><input type="text" id="cp-criativos" placeholder="Ex: 3 Reels, 1 carrossel, 2 anúncios"></div>
+              </div>
+              <div class="form-actions"><button type="submit" class="btn btn-outline btn-sm" data-ico="plus">Registrar campanha</button></div>
+            </form>
+            <div class="num-wrap"><table class="num-table" id="camp-table"></table></div>
+          </div>
+        </details>
+          <div class="passo-foot">
+            <p class="passo-falta" aria-live="polite" hidden></p>
+            <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="mov" data-mov="3">
+        <p class="mov-n">Movimento 3 de 3</p>
+        <h2>Meça quem fica</h2>
+        <p>Cada contato com origem e próximo passo. Em 90 dias, você sabe por qual porta entram os pacientes que ficam.</p>
+      </div>
+
+      <section class="passo" id="passo-7" data-passo="7" data-mov="3">
+        <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-7-corpo">
+          <span class="passo-n" aria-hidden="true">7</span>
+          <span class="passo-tt"><span class="passo-titulo">WhatsApp e atendimento</span><span class="passo-resumo" data-vazio="Perfil comercial, respostas rápidas e links com origem">Perfil comercial, respostas rápidas e links com origem</span></span>
+          <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
+        </button></h3>
+        <div class="passo-corpo" id="passo-7-corpo" hidden>
+          <p class="passo-meta"><span>Uns 20 minutos</span><span>Guia: Partes 10 a 12</span></p>
+          <p class="passo-why">A maior perda acontece entre o "oi" e a consulta. Resposta rápida, dois horários oferecidos e um link com origem para saber de onde veio cada contato.</p>
+          <div class="cfg-campos">
+              <div class="field">
+                <label for="cfg-whatsapp">WhatsApp do consultório (com DDD)</label>
+                <input type="text" id="cfg-whatsapp" name="whatsapp" placeholder="Ex: 11 91234-5678">
+                <small>Usado só para montar os links com origem logo abaixo.</small>
+              </div>
+          </div>
+          <div id="wa-box" class="wa-box"></div>
+        <details class="tool in-sub" data-id="atendimento">
+          <summary>
+            <div class="tool-title"><div><h3>Atendimento e agendamento</h3><span class="sub">Respostas rápidas, roteiro de agendamento, confirmação, retomadas e plano de tratamento</span></div></div>
+            <span class="chevron">▸</span>
+          </summary>
+          <div class="tool-body">
+            <p class="desc">É aqui que o conteúdo vira consulta, ou se perde. Resposta rápida, acolhimento, clareza sobre valores no privado e confirmação de consulta mudam mais o resultado do que um vídeo a mais.</p>
+            <form class="tool-form" data-tool="atendimento">
+              <div class="row3">
+                <div class="field">
+                  <label for="at-quem">Quem responde</label>
+                  <select id="at-quem" name="quem">
+                    <option value="eu mesmo(a)">Eu mesmo(a)</option>
+                    <option value="secretária ou recepção">Secretária ou recepção</option>
+                    <option value="equipe de atendimento">Equipe de atendimento</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="at-tempo">Tempo médio de resposta</label>
+                  <select id="at-tempo" name="tempoResposta">
+                    <option value="menos de 5 minutos">Menos de 5 min</option>
+                    <option value="até 1 hora" selected>Até 1 hora</option>
+                    <option value="no mesmo dia">No mesmo dia</option>
+                    <option value="mais de um dia">Mais de um dia</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="at-valores">Como você trata valores</label>
+                  <select id="at-valores" name="valores">
+                    <option value="informo o valor da consulta na conversa privada">Informo na conversa</option>
+                    <option value="só informo valores após a avaliação">Só após a avaliação</option>
+                    <option value="atendo convênios e particular">Convênios e particular</option>
+                    <option value="ainda não sei como fazer">Ainda não sei</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label for="at-perguntas">Perguntas que mais chegam *</label>
+                <textarea id="at-perguntas" name="perguntas" required rows="3" placeholder="Ex: Quanto custa? Atende convênio? Tem horário à noite? Dói?"></textarea>
+              </div>
+              <div class="row2">
+                <div class="field">
+                  <label for="at-agenda">Como o paciente agenda hoje</label>
+                  <input type="text" id="at-agenda" name="agenda" placeholder="Ex: pelo WhatsApp, a recepção confere a agenda no sistema">
+                </div>
+                <div class="field">
+                  <label for="at-faltas">Faltas (no-show)</label>
+                  <select id="at-faltas" name="faltas">
+                    <option value="baixas">Baixas</option>
+                    <option value="médias" selected>Médias</option>
+                    <option value="altas">Altas</option>
+                    <option value="não sei medir">Não sei medir</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar prompt</button></div>
+              <div class="output-block" hidden></div>
+            </form>
+            <div class="saved-slot" data-save="atendimento" data-label="respostas rápidas e roteiros aprovados"></div>
+            <details class="profile-base ref-box">
+              <summary><span>Do guia: padrões de atendimento, cinco mensagens e sequência de confirmação (Partes 10 e 11)</span> <span class="chevron">▸</span></summary>
+              <div class="profile-body" id="ref-atend"></div>
+            </details>
+
+            <hr class="divider">
+            <h4 style="margin:0 0 4px;font-family:var(--body)">Plano de tratamento compreensível</h4>
+            <p class="desc" style="margin-top:4px">Explica o plano em linguagem simples para o paciente decidir com segurança. Use dados genéricos: o texto volta com [NOME] e [DATA] para você completar fora daqui.</p>
+            <form class="tool-form" data-tool="plano">
+              <div class="row3">
+                <div class="field">
+                  <label for="pl-objetivo">Objetivo do paciente na vida real</label>
+                  <input type="text" id="pl-objetivo" name="objetivo" placeholder="Ex: voltar a correr · brincar com o neto sem dor · mastigar sem medo">
+                </div>
+                <div class="field">
+                  <label for="pl-trat">Tratamento *</label>
+                  <input type="text" id="pl-trat" name="tratamento" required list="lista-servicos" placeholder="Ex: implante unitário com coroa">
+                </div>
+                <div class="field">
+                  <label for="pl-duracao">Duração e número de sessões</label>
+                  <input type="text" id="pl-duracao" name="duracao" placeholder="Ex: 4 a 6 meses, 5 consultas">
+                </div>
+              </div>
+              <div class="field">
+                <label for="pl-criterios">Critérios de reavaliação e de alta</label>
+                <input type="text" id="pl-criterios" name="criterios" placeholder="Ex: reavaliar na sessão 5 com os mesmos testes; alta ao atingir o objetivo">
+              </div>
+              <div class="field">
+                <label for="pl-etapas">Etapas, cuidados e alternativas *</label>
+                <textarea id="pl-etapas" name="etapas" required rows="3" placeholder="Ex: exames, cirurgia, cicatrização, prótese; alternativas: ponte fixa ou prótese removível"></textarea>
+              </div>
+              <div class="row2">
+                <div class="field">
+                  <label for="pl-invest">Investimento e condições (só para a conversa privada)</label>
+                  <input type="text" id="pl-invest" name="investimento" placeholder="Ex: R$ X em até 10 vezes">
+                </div>
+                <div class="field">
+                  <label for="pl-duvidas">Dúvidas que costumam surgir</label>
+                  <input type="text" id="pl-duvidas" name="duvidas" placeholder="Ex: dói? posso trabalhar no dia seguinte?">
+                </div>
+              </div>
+              <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar prompt</button></div>
+              <div class="output-block" hidden></div>
+            </form>
+            <details class="profile-base ref-box">
+              <summary><span>Do guia: o fechamento em cinco momentos e objeções comuns (Parte 12)</span> <span class="chevron">▸</span></summary>
+              <div class="profile-body" id="ref-fecha"></div>
+            </details>
+          </div>
+        </details>
+          <div class="passo-foot">
+            <p class="passo-falta" aria-live="polite" hidden></p>
+            <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="passo" id="passo-8" data-passo="8" data-mov="3">
+        <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-8-corpo">
+          <span class="passo-n" aria-hidden="true">8</span>
+          <span class="passo-tt"><span class="passo-titulo">Rastreador de pacientes</span><span class="passo-resumo" data-vazio="Cada contato com origem, etapa, próximo passo e data">Cada contato com origem, etapa, próximo passo e data</span></span>
+          <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
+        </button></h3>
+        <div class="passo-corpo" id="passo-8-corpo" hidden>
+          <p class="passo-meta"><span>Um minuto por contato</span><span>Guia: Parte 13</span></p>
+          <p class="passo-why">Cada contato entra aqui com origem, etapa, próximo passo e data. É isso que mostra, em 90 dias, por qual porta chegam os pacientes que agendam, comparecem e seguem o tratamento. Nenhum dado clínico aqui.</p>
+        <details class="tool in-solo" data-id="rastreador" id="rastreador" open>
+          <summary>
+            <div class="tool-title"><div><h3>Rastreador de pacientes</h3><span class="sub">Funil de sete etapas, consentimento, próximos passos vencidos, lembretes e planilha</span></div></div>
+            <span class="chevron">▸</span>
+          </summary>
+          <div class="tool-body">
+            <p class="desc">O CRM do consultório, guardado só neste navegador. Registre quem entrou em contato, a etapa, o próximo passo e a data. <b>Nenhum dado clínico aqui</b>: diagnóstico, exames e evolução ficam no prontuário.</p>
+            <form id="tracker-form" class="tool-form">
+              <div class="row4">
+                <div class="field"><label for="t-nome">Nome ou apelido *</label><input type="text" id="t-nome" required placeholder="Ex: Maria S."></div>
+                <div class="field"><label for="t-tel">Telefone</label><input type="text" id="t-tel" inputmode="tel" placeholder="(11) 90000-0000"></div>
+                <div class="field"><label for="t-canal">Canal preferido</label><select id="t-canal"><option>WhatsApp</option><option>Ligação</option><option>E-mail</option><option>Direct</option></select></div>
+                <div class="field"><label for="t-servico">Serviço</label><input type="text" id="t-servico" list="lista-servicos" placeholder="Ex: implantes"></div>
+              </div>
+              <div class="row4">
+                <div class="field"><label for="t-origem">Origem</label><select id="t-origem"></select></div>
+                <div class="field" id="t-colega-wrap"><label for="t-colega">Colega que indicou</label><select id="t-colega"><option value="">(nenhum)</option></select></div>
+                <div class="field"><label for="t-prof">Profissional</label><input type="text" id="t-prof" list="lista-equipe" placeholder="Quem atende"></div>
+                <div class="field"><label for="t-etapa">Etapa</label><select id="t-etapa"></select></div>
+              </div>
+              <div class="row3">
+                <div class="field"><label for="t-passo">Próximo passo</label><input type="text" id="t-passo" placeholder="Ex: confirmar avaliação"></div>
+                <div class="field"><label for="t-data">Data do próximo passo</label><input type="date" id="t-data"></div>
+                <div class="field"><label for="t-valor">Valor do plano (R$)</label><input type="number" id="t-valor" min="0" step="0.01" placeholder="Se houver"></div>
+              </div>
+              <fieldset class="field">
+                <legend>Consentimento registrado hoje (finalidades)</legend>
+                <div class="checks">
+                  <label><input type="checkbox" id="t-c-atend" checked> Atendimento</label>
+                  <label><input type="checkbox" id="t-c-lemb"> Lembretes e retornos</label>
+                  <label><input type="checkbox" id="t-c-cont"> Conteúdos e novidades</label>
+                </div>
+                <small>Marque só o que a pessoa aceitou. Dá para revogar depois em cada contato.</small>
+              </fieldset>
+              <div class="field">
+                <label for="t-notas">Observações (sem dados clínicos)</label>
+                <input type="text" id="t-notas" placeholder="Ex: prefere horário após as 18h">
+                <small id="t-notas-aviso" class="clin-warn" hidden>Isto parece informação clínica. Guarde no prontuário, não aqui.</small>
+              </div>
+              <div class="form-actions"><button type="submit" class="btn btn-teal">Adicionar contato</button></div>
+            </form>
+
+            <div class="funnel funnel7" id="t-funnel"></div>
+            <div class="form-actions" style="margin-top:12px">
+              <label class="visually-hidden" for="t-filtro">Filtrar por etapa</label>
+              <select id="t-filtro" class="filter-select"><option value="">Todas as etapas ativas</option></select>
+              <input type="search" id="t-busca" class="filter-select" placeholder="Buscar por nome ou serviço">
+            </div>
+            <div class="track-list" id="t-list"></div>
+            <div class="form-actions" style="margin-top:14px">
+              <button type="button" id="t-ics" class="btn btn-outline btn-sm" data-ico="bell">Lembretes dos próximos passos (.ics)</button>
+              <button type="button" id="t-csv" class="btn btn-outline btn-sm" data-ico="download">Baixar planilha (.csv)</button>
+            </div>
+            <p class="kit-note">A planilha e os lembretes contêm nomes e telefones. Guarde em local seguro e não compartilhe.</p>
+
+            <hr class="divider">
+            <h4 style="margin:0 0 4px;font-family:var(--body)">Da conversa ao registro</h4>
+            <p class="desc" style="margin-top:4px">Cole uma conversa de WhatsApp e receba a etapa, o próximo passo e a mensagem de resposta. Telefones e e-mails são trocados por marcadores antes de montar o prompt; apague também nomes e qualquer informação clínica.</p>
+            <form class="tool-form" data-tool="registro">
+              <div class="field">
+                <label for="rg-conversa">Conversa (sem nomes nem dados clínicos) *</label>
+                <textarea id="rg-conversa" name="conversa" required rows="5"></textarea>
+              </div>
+              <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar prompt</button></div>
+              <div class="output-block" hidden></div>
+            </form>
+          </div>
+        </details>
+          <div class="passo-foot">
+            <p class="passo-falta" aria-live="polite" hidden></p>
+            <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="passo" id="passo-9" data-passo="9" data-mov="3">
+        <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-9-corpo">
+          <span class="passo-n" aria-hidden="true">9</span>
+          <span class="passo-tt"><span class="passo-titulo">Ritual da semana</span><span class="passo-resumo" data-vazio="O placar, o gargalo da vez e a agenda da próxima semana">O placar, o gargalo da vez e a agenda da próxima semana</span></span>
+          <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
+        </button></h3>
+        <div class="passo-corpo" id="passo-9-corpo" hidden>
+          <p class="passo-meta"><span>30 minutos, toda sexta</span><span>Guia: Parte 13</span></p>
+          <p class="passo-why">Toda sexta, 30 minutos: veja o placar, ataque o gargalo da vez e monte a semana seguinte. Este passo não termina: é o ritual que mantém o ciclo rodando.</p>
+          <div id="placar-box" class="placar-box"></div>
+        <details class="tool in-sub" data-id="assistente" open>
+          <summary>
+            <div class="tool-title"><div><h3>Assistente da semana</h3><span class="sub">Agenda com acompanhamentos, conteúdo e contatos com colegas</span></div></div>
+            <span class="chevron">▸</span>
+          </summary>
+          <div class="tool-body">
+            <p class="desc">O ritual semanal de 30 minutos (Parte 13), em horário fixo, de preferência sexta à tarde: o Assistente junta os próximos passos do Rastreador, os colegas a contatar, as campanhas ativas e a meta de conteúdo, e monta a semana em blocos. Os pacientes entram anonimizados (Contato 1, Contato 2…).</p>
+            <ol class="ritual-list" id="ritual-list"></ol>
+            <form class="tool-form" data-tool="assistente">
+              <div class="form-actions" style="margin-top:0">
+                <button type="button" id="as-import" class="btn btn-outline btn-sm" data-ico="fill">Importar da semana</button>
+                <span class="save-status" id="as-status"></span>
+              </div>
+              <div class="field">
+                <label for="as-pend">Pendências da semana *</label>
+                <textarea id="as-pend" name="pendencias" required rows="7" placeholder="Clique em 'Importar da semana' ou escreva aqui"></textarea>
+              </div>
+              <div class="row2">
+                <div class="field">
+                  <label for="as-horas">Horas livres para marketing e relacionamento</label>
+                  <input type="text" id="as-horas" name="horas" placeholder="Ex: terça e quinta das 12h às 13h, sexta à tarde">
+                </div>
+                <div class="field">
+                  <label for="as-fixos">Compromissos fixos</label>
+                  <input type="text" id="as-fixos" name="fixos" placeholder="Ex: atendimento de seg a qui das 8h às 18h">
+                </div>
+              </div>
+              <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar prompt</button></div>
+              <div class="output-block" hidden></div>
+            </form>
+          </div>
+        </details>
+        <details class="tool in-sub" data-id="painel" id="painel-semanal">
+          <summary>
+            <div class="tool-title"><div><h3>Painel e diagnóstico</h3><span class="sub">Métricas da semana, diário de conteúdo e o gargalo do funil</span></div></div>
+            <span class="chevron">▸</span>
+          </summary>
+          <div class="tool-body">
+            <p class="desc">Os números do funil vêm do Rastreador; os de conteúdo, do diário abaixo. O gargalo é a passagem do funil com a menor conversão nas últimas 4 semanas. Não compare Reels, Shorts e YouTube longo como a mesma unidade de atenção, e marque o que foi impulsionado.</p>
+            <div class="risk-box" id="gargalo"></div>
+            <div class="num-wrap"><table class="num-table" id="num-table"></table></div>
+            <h4 style="margin:18px 0 4px;font-family:var(--body)">Métricas que importam (Parte 13)</h4>
+            <p class="desc" style="margin-top:0">Últimos 90 dias, pela data do primeiro contato. Tempo da primeira resposta: meça no WhatsApp Business durante uma semana (o app não lê suas conversas).</p>
+            <div id="metricas-livro"></div>
+            <div class="form-actions" style="margin-top:12px">
+              <button type="button" id="num-csv" class="btn btn-outline btn-sm" data-ico="download">Baixar métricas (.csv)</button>
+            </div>
+
+            <hr class="divider">
+            <h4 id="diario" style="margin:0 0 4px;font-family:var(--body)">Diário de conteúdo</h4>
+            <form id="ct-form" class="tool-form">
+              <div class="row4">
+                <div class="field"><label for="ct-data">Data *</label><input type="date" id="ct-data" required></div>
+                <div class="field"><label for="ct-canal">Canal</label><select id="ct-canal"><option>Instagram</option><option>YouTube</option><option>LinkedIn</option><option>TikTok</option><option>Google</option><option>WhatsApp</option><option>Site</option></select></div>
+                <div class="field"><label for="ct-formato">Formato</label><select id="ct-formato"><option>Reels</option><option>Carrossel</option><option>Stories</option><option>Vídeo longo</option><option>Post</option><option>Live</option></select></div>
+                <div class="field"><label for="ct-balde">Tema</label><select id="ct-balde" data-options="baldes"><option value="">(nenhum)</option></select></div>
+              </div>
+              <div class="row2">
+                <div class="field"><label for="ct-gancho">Gancho ou título *</label><input type="text" id="ct-gancho" required></div>
+                <div class="field"><label for="ct-kw">Palavra-chave</label><input type="text" id="ct-kw" placeholder="Ex: implante dentário Sorocaba"></div>
+              </div>
+              <div class="row4">
+                <div class="field"><label for="ct-alcance">Alcance</label><input type="number" id="ct-alcance" min="0"></div>
+                <div class="field"><label for="ct-envios">Envios</label><input type="number" id="ct-envios" min="0"></div>
+                <div class="field"><label for="ct-salv">Salvamentos</label><input type="number" id="ct-salv" min="0"></div>
+                <div class="field"><label for="ct-msgs">Mensagens geradas</label><input type="number" id="ct-msgs" min="0"></div>
+              </div>
+              <div class="row4">
+                <div class="field"><label for="ct-quadro">Quadro ou série</label><input type="text" id="ct-quadro" placeholder="Ex: Pergunta do consultório"></div>
+                <div class="field"><label for="ct-var">Variável testada</label><select id="ct-var"><option value="">Nenhuma</option><option>Pergunta</option><option>Abertura</option><option>Demonstração</option><option>Convite (CTA)</option><option>Formato</option></select></div>
+                <div class="field"><label for="ct-ret">Retenção média (%)</label><input type="number" id="ct-ret" min="0" max="100" placeholder="Dos Insights"></div>
+                <div class="field"><label class="inline-check" style="margin-top:26px"><input type="checkbox" id="ct-boost"> Impulsionado</label></div>
+              </div>
+              <div class="form-actions"><button type="submit" class="btn btn-outline btn-sm" data-ico="plus">Registrar conteúdo</button><span class="save-status">Volte depois de 2 a 7 dias para completar os números. Compare peças com exposição parecida.</span></div>
+            </form>
+            <div class="num-wrap"><table class="num-table" id="ct-table"></table></div>
+
+            <hr class="divider">
+            <h4 style="margin:0 0 4px;font-family:var(--body)">Diagnóstico com IA</h4>
+            <form class="tool-form" data-tool="painel">
+              <div class="field">
+                <label for="pn-dados">Números das últimas semanas *</label>
+                <textarea id="pn-dados" name="dados" required rows="6" data-auto="metricas"></textarea>
+                <small>Preenchido automaticamente com o painel acima, sem nomes.</small>
+              </div>
+              <div class="field">
+                <label for="pn-contexto">O que mudou nas últimas semanas (opcional)</label>
+                <input type="text" id="pn-contexto" name="contexto" placeholder="Ex: férias da recepção, começamos anúncios no Google">
+              </div>
+              <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar prompt</button></div>
+              <div class="output-block" hidden></div>
+            </form>
+          </div>
+        </details>
+          <div class="passo-foot">
+            <p class="passo-falta" aria-live="polite" hidden></p>
+            <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
+          </div>
+        </div>
+      </section>
+      <datalist id="lista-servicos"></datalist>
+      <datalist id="lista-equipe"></datalist>
+    </div>
+  </section>

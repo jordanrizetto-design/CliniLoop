@@ -1,9 +1,11 @@
 
   // ===================== Perfil do consultório =====================
-  const configEl = document.getElementById('config');
+  // Os campos do perfil ficam espalhados pelos passos do caminho (e pelos ajustes), sempre dentro de .cfg-campos.
+  const configEl = document.getElementById('caminho');
+  const cfgCampos = () => document.querySelectorAll('.cfg-campos input, .cfg-campos select, .cfg-campos textarea');
   function readConfig() {
     const fd = new FormData();
-    configEl.querySelectorAll('input, select, textarea').forEach((el) => {
+    cfgCampos().forEach((el) => {
       if (!el.name) return;
       if ((el.type === 'radio' || el.type === 'checkbox') && !el.checked) return;
       fd.append(el.name, el.value);
@@ -20,7 +22,7 @@
     };
   }
   function applyConfig(c) {
-    configEl.querySelectorAll('input, select, textarea').forEach((el) => {
+    cfgCampos().forEach((el) => {
       if (!el.name || !(el.name in c)) return;
       const v = c[el.name];
       if (el.type === 'radio') el.checked = el.value === v;

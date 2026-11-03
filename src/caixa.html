@@ -1,0 +1,452 @@
+  <section class="alt" id="caixa">
+    <div class="wrap">
+      <p class="eyebrow">Caixa de ferramentas</p>
+      <div class="lead-block">
+        <h2>As 19 ferramentas, num lugar só.</h2>
+        <p>As que fazem parte do caminho abrem no passo delas. As outras ficam aqui, para quando você precisar: revisar um post antes de publicar, contratar alguém, aprofundar o nicho ou reaproveitar uma aula.</p>
+      </div>
+      <div class="caixa-indice" id="caixa-indice"></div>
+      <div id="tools-list">
+        <details class="tool na-caixa" data-id="etica" id="etica">
+          <summary>
+            <div class="tool-title"><div><h3>Verificador ético</h3><span class="sub">Regras do seu conselho, LGPD e políticas da Meta e do Google</span></div></div>
+            <span class="chevron">▸</span>
+          </summary>
+          <div class="tool-body">
+            <p class="desc">Resumo das regras de publicidade do seu conselho, conferido em outubro de 2026, e uma revisão frase a frase de qualquer texto ou anúncio. Não substitui a consulta à norma vigente nem orientação do conselho ou de advogado.</p>
+            <div id="council-box"></div>
+            <form class="tool-form" data-tool="etica">
+              <div class="row2">
+                <div class="field">
+                  <label for="et-tipo">O que vai ser revisado</label>
+                  <select id="et-tipo" name="tipo">
+                    <option value="post orgânico">Post orgânico</option>
+                    <option value="roteiro de vídeo">Roteiro de vídeo</option>
+                    <option value="anúncio pago na Meta">Anúncio na Meta</option>
+                    <option value="anúncio pago no Google">Anúncio no Google</option>
+                    <option value="bio ou página do perfil">Bio ou página</option>
+                    <option value="mensagem para pacientes">Mensagem para pacientes</option>
+                    <option value="material impresso ou fachada">Material impresso ou fachada</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="et-imagem">Imagens ou vídeo incluem…</label>
+                  <select id="et-imagem" name="imagem">
+                    <option value="nenhuma imagem de paciente">Nenhuma imagem de paciente</option>
+                    <option value="imagem de paciente com autorização">Paciente, com autorização</option>
+                    <option value="antes e depois">Antes e depois</option>
+                    <option value="procedimento sendo realizado">Procedimento sendo realizado</option>
+                    <option value="equipamentos ou produtos com marca">Equipamentos ou marcas</option>
+                    <option value="depoimento de paciente">Depoimento de paciente</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label for="et-texto">Cole o texto, roteiro, legenda ou anúncio *</label>
+                <textarea id="et-texto" name="texto" required rows="6"></textarea>
+              </div>
+              <div class="risk-box" id="et-scan" hidden></div>
+              <div class="form-actions">
+                <button type="button" id="et-check" class="btn btn-outline" data-ico="shield">Checagem rápida (sem IA)</button>
+                <button type="submit" class="btn btn-teal">Gerar prompt de revisão</button>
+              </div>
+              <div class="output-block" hidden></div>
+            </form>
+          </div>
+        </details>
+        <details class="tool na-caixa" data-id="briefing" id="briefing">
+          <summary>
+            <div class="tool-title"><div><h3>Briefing para terceiros</h3><span class="sub">Para agência, social media, videomaker, tráfego ou recepção</span></div></div>
+            <span class="chevron">▸</span>
+          </summary>
+          <div class="tool-body">
+            <p class="desc">Se você não vai fazer tudo sozinho(a), delegue com clareza. O briefing reúne objetivo, público, persona, tom de voz, nicho, regras do conselho, escopo, aprovação, métricas e perguntas para avaliar o fornecedor. É montado aqui no navegador; o prompt de revisão é opcional.</p>
+            <form class="tool-form" data-tool="briefing">
+              <div class="row2">
+                <div class="field">
+                  <label for="bf-para">Para quem é o briefing</label>
+                  <select id="bf-para" name="para">
+                    <option value="agencia">Agência de marketing completa</option>
+                    <option value="social">Social media (conteúdo e postagem)</option>
+                    <option value="video">Videomaker e editor</option>
+                    <option value="design">Designer</option>
+                    <option value="trafego">Gestor de tráfego (anúncios)</option>
+                    <option value="atendimento">Secretária ou recepção</option>
+                    <option value="copy">Redator(a) / copywriter</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="bf-orcamento">Orçamento mensal</label>
+                  <input type="text" id="bf-orcamento" name="orcamento" placeholder="Ex: até R$ 2.500 por mês, sem contar anúncios">
+                </div>
+              </div>
+              <div class="field">
+                <label for="bf-entregas">Entregas esperadas *</label>
+                <textarea id="bf-entregas" name="entregas" required rows="4"></textarea>
+                <small>Preenchido conforme o tipo de fornecedor. Ajuste à vontade.</small>
+              </div>
+              <div class="row2">
+                <div class="field">
+                  <label for="bf-prazo">Início e período de teste</label>
+                  <input type="text" id="bf-prazo" name="prazo" placeholder="Ex: começar em novembro, avaliar em 90 dias">
+                </div>
+                <div class="field">
+                  <label for="bf-aprovacao">Aprovação</label>
+                  <input type="text" id="bf-aprovacao" name="aprovacao" value="Nada é publicado ou enviado sem a minha aprovação, que dou em até 48 horas úteis.">
+                </div>
+              </div>
+              <div class="row2">
+                <div class="field">
+                  <label for="bf-acessos">Acessos que vou fornecer</label>
+                  <input type="text" id="bf-acessos" name="acessos" placeholder="Ex: acesso de parceiro no Meta Business Suite, pasta compartilhada">
+                </div>
+                <div class="field">
+                  <label for="bf-restricoes">O que não pode de jeito nenhum</label>
+                  <input type="text" id="bf-restricoes" name="restricoes" placeholder="Ex: dancinhas, expor pacientes, falar de preço">
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-gold" data-ico="doc">Montar briefing</button>
+              </div>
+              <div id="bf-area" hidden>
+                <div class="form-actions pb-actions">
+                  <button type="button" id="bf-pdf" class="btn btn-teal" data-ico="download">Salvar em PDF</button>
+                  <button type="button" id="bf-html" class="btn btn-outline" data-ico="download">Baixar (.html)</button>
+                  <button type="button" id="bf-md" class="btn btn-outline" data-ico="copy">Copiar como texto</button>
+                </div>
+                <iframe id="bf-frame" class="doc-frame" title="Pré-visualização do briefing"></iframe>
+              </div>
+              <div class="output-block" hidden></div>
+            </form>
+          </div>
+        </details>
+        <details class="tool na-caixa" data-id="nicho">
+          <summary>
+            <div class="tool-title"><div><h3>Nicho e diferencial</h3><span class="sub">Onde focar, por que você e como provar sem infringir regras</span></div></div>
+            <span class="chevron">▸</span>
+          </summary>
+          <div class="tool-body">
+            <p class="desc">Nicho é o foco que faz alguém pensar "isso é para mim". O diferencial precisa ser verificável: formação, método, tecnologia, experiência ou forma de atender. Inclui pesquisa dos concorrentes da sua região.</p>
+            <form class="tool-form" data-tool="nicho">
+              <div class="field">
+                <label for="ni-formacao">Formações, métodos e tecnologias que você domina *</label>
+                <textarea id="ni-formacao" name="formacao" required rows="3" data-prefill="sobre"></textarea>
+              </div>
+              <div class="row2">
+                <div class="field">
+                  <label for="ni-gosta">Que tipo de caso você mais gosta de atender?</label>
+                  <input type="text" id="ni-gosta" name="gosta" placeholder="Ex: reabilitação completa, ansiedade em adultos jovens">
+                </div>
+                <div class="field">
+                  <label for="ni-amplitude">Até onde quer focar</label>
+                  <select id="ni-amplitude" name="amplitude">
+                    <option value="um nicho bem específico">Um nicho bem específico</option>
+                    <option value="um nicho médio, com 2 ou 3 temas" selected>Um nicho médio, com 2 ou 3 temas</option>
+                    <option value="atendimento amplo com um tema de destaque">Atendimento amplo com um tema de destaque</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label for="ni-concorrentes">Concorrentes ou perfis de referência na sua região</label>
+                <textarea id="ni-concorrentes" name="concorrentes" rows="2" placeholder="Nomes ou @. Se não souber, deixe em branco: o prompt pede para pesquisar."></textarea>
+              </div>
+              <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar prompt</button></div>
+              <div class="output-block" hidden></div>
+            </form>
+            <div class="saved-slot" data-save="nicho" data-label="nicho, proposta de valor e diferencial"></div>
+          </div>
+        </details>
+        <details class="tool na-caixa" data-id="profissional">
+          <summary>
+            <div class="tool-title"><div><h3>Persona do profissional e marca</h3><span class="sub">Arquétipo, tom de voz, história, bandeiras e limites</span></div></div>
+            <span class="chevron">▸</span>
+          </summary>
+          <div class="tool-body">
+            <p class="desc">Paciente escolhe pessoa, não só técnica. Defina como quer ser percebido(a), o que defende, como fala e o que não faz nas redes, dentro do seu conforto com a câmera.</p>
+            <form class="tool-form" data-tool="profissional">
+              <div class="field">
+                <label for="pr-porque">Por que você escolheu sua área? *</label>
+                <textarea id="pr-porque" name="porque" required rows="3" placeholder="Uma história real, curta"></textarea>
+              </div>
+              <div class="row2">
+                <div class="field">
+                  <label for="pr-valores">3 a 5 valores ou crenças sobre cuidado</label>
+                  <input type="text" id="pr-valores" name="valores" placeholder="Ex: explicar antes de tratar, prevenção, sem pressa">
+                </div>
+                <div class="field">
+                  <label for="pr-elogios">Como pacientes e colegas descrevem você</label>
+                  <input type="text" id="pr-elogios" name="elogios" placeholder="Ex: calma, detalhista, sincera">
+                </div>
+              </div>
+              <div class="field">
+                <label for="pr-historias">Histórias que você pode contar (sem identificar pacientes)</label>
+                <textarea id="pr-historias" name="historias" rows="2" placeholder="Formação, virada de carreira, aprendizados, bastidores"></textarea>
+              </div>
+              <div class="row2">
+                <div class="field">
+                  <label for="pr-limites">Temas ou formatos que você não quer</label>
+                  <input type="text" id="pr-limites" name="limites" placeholder="Ex: dancinhas, vida pessoal, polêmicas">
+                </div>
+                <div class="field">
+                  <label for="pr-refs">Perfis que você admira e por quê</label>
+                  <input type="text" id="pr-refs" name="refs" placeholder="Ex: @perfil — explica sem jargão">
+                </div>
+              </div>
+              <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar prompt</button></div>
+              <div class="output-block" hidden></div>
+            </form>
+            <div class="saved-slot" data-save="profissional" data-label="marca e tom de voz"></div>
+          </div>
+        </details>
+        <details class="tool na-caixa" data-id="reaproveitamento">
+          <summary>
+            <div class="tool-title"><div><h3>Reaproveitamento de conteúdo</h3><span class="sub">Uma aula, podcast ou entrevista vira carrossel, guia, Reel e Stories</span></div></div>
+            <span class="chevron">▸</span>
+          </summary>
+          <div class="tool-body">
+            <p class="desc">O gargalo de quem já fala bem sobre saúde quase nunca é falta de ideia: é transformar o que já foi dito em conteúdo distribuído. Antes de criar do zero, procure o que já existe. A IA entra entre a experiência humana e a distribuição; você continua sendo a fonte, o revisor e quem grava.</p>
+            <div class="num-wrap"><table class="num-table fontes-table"><tr><th>Use</th><th>Não use sem autorização formal e anonimização</th></tr>
+              <tr><td>Aulas, palestras e participação em congressos</td><td>Gravações ou transcrições de consultas e atendimentos</td></tr>
+              <tr><td>Podcasts e entrevistas em que você participou</td><td>Lives em que pacientes contaram casos pessoais</td></tr>
+              <tr><td>Respostas a perguntas gerais, agregadas</td><td>Conversas privadas de Direct ou WhatsApp</td></tr>
+              <tr><td>Bastidores da rotina sem pacientes identificáveis</td><td>Telas, prontuários ou exames de terceiros</td></tr></table></div>
+            <form class="tool-form" data-tool="reaproveitamento">
+              <div class="row3">
+                <div class="field">
+                  <label for="re-fonte">Fonte</label>
+                  <select id="re-fonte" name="fonte">
+                    <option value="aula">Aula</option>
+                    <option value="palestra">Palestra</option>
+                    <option value="podcast">Podcast</option>
+                    <option value="entrevista">Entrevista</option>
+                    <option value="participação em congresso">Congresso</option>
+                    <option value="bastidor da rotina (notas e fotos, sem pacientes)">Bastidor da rotina</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="re-papel">Seu papel</label>
+                  <select id="re-papel" name="papel">
+                    <option value="apresentador(a) ou professor(a)">Apresentador(a) ou professor(a)</option>
+                    <option value="convidado(a) ou entrevistado(a)">Convidado(a) ou entrevistado(a)</option>
+                    <option value="um(a) dos participantes de uma mesa">Participante de mesa</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="re-objetivo">Objetivo do conjunto</label>
+                  <select id="re-objetivo" name="objetivo">
+                    <option value="gerar conversas para agendar">Gerar conversas para agendar</option>
+                    <option value="atrair seguidores qualificados">Atrair seguidores qualificados</option>
+                    <option value="encaminhar para o conteúdo completo">Encaminhar para o conteúdo completo</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row2">
+                <div class="field">
+                  <label for="re-publico">Público</label>
+                  <input type="text" id="re-publico" name="publico" data-prefill="publico" placeholder="Quem deve se interessar e que problema enfrenta">
+                </div>
+                <div class="field">
+                  <label for="re-link">Link do episódio completo ou destino do guia</label>
+                  <input type="text" id="re-link" name="link" placeholder="Sem link real, o guia não é divulgado">
+                </div>
+              </div>
+              <fieldset class="field">
+                <legend>Entregas</legend>
+                <div class="checks">
+                  <label><input type="checkbox" name="entregas" value="carrossel" checked> Carrossel</label>
+                  <label><input type="checkbox" name="entregas" value="guia" checked> Guia</label>
+                  <label><input type="checkbox" name="entregas" value="Reel em duas versões" checked> Reel (duas versões)</label>
+                  <label><input type="checkbox" name="entregas" value="Stories de bastidor"> Stories de bastidor</label>
+                  <label><input type="checkbox" name="entregas" value="comentário com palavra-chave que leva ao guia"> Comentário que leva ao guia</label>
+                </div>
+              </fieldset>
+              <div class="field">
+                <label for="re-voz">Sua voz: como você fala, expressões que usa e o que evita</label>
+                <input type="text" id="re-voz" name="voz" placeholder="Ex: frases curtas, sem jargão, 'vamos combinar', evito 'milagre' e 'segredo'">
+              </div>
+              <div class="field">
+                <label for="re-transcricao">Transcrição ou anotações da fonte *</label>
+                <textarea id="re-transcricao" name="transcricao" required rows="7" placeholder="Cole a transcrição (o YouTube Studio e os apps de gravação geram automaticamente). Telefones e e-mails viram marcadores no prompt."></textarea>
+                <small>Nunca transcrições de consultas. Fala de convidado não vira experiência sua.</small>
+              </div>
+              <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar prompt</button></div>
+              <div class="output-block" hidden></div>
+            </form>
+            <p class="kit-note"><b>Comece com um piloto pequeno:</b> dois episódios ou aulas de que você gostou e em que participou bem, não necessariamente os mais vistos. Um por vez: gere, revise fidelidade, voz e utilidade, e publique só com destinos reais. Avalie o tempo por conjunto, o número de correções e a identificação com a sua voz. Um resultado isolado não prova que o método funciona.</p>
+          </div>
+        </details>
+        <details class="tool na-caixa" data-id="formacao">
+          <summary>
+            <div class="tool-title"><div><h3>Formação e autoridade</h3><span class="sub">Congressos, cursos, publicações e títulos para o perfil e o LinkedIn</span></div></div>
+            <span class="chevron">▸</span>
+          </summary>
+          <div class="tool-body">
+            <p class="desc">Autoridade em saúde se constrói com formação, participação científica e boa comunicação. Este prompt pesquisa eventos e cursos atuais e mostra como comunicar o que você tem, sem anunciar títulos que não possui.</p>
+            <form class="tool-form" data-tool="formacao">
+              <div class="field">
+                <label for="fo-atual">Formação e títulos atuais *</label>
+                <textarea id="fo-atual" name="atual" required rows="3" data-prefill="sobre"></textarea>
+              </div>
+              <fieldset class="field">
+                <legend>O que você procura</legend>
+                <div class="checks">
+                  <label><input type="checkbox" name="busca" value="congressos e jornadas" checked> Congressos e jornadas</label>
+                  <label><input type="checkbox" name="busca" value="cursos e certificações" checked> Cursos e certificações</label>
+                  <label><input type="checkbox" name="busca" value="oportunidades de publicação e entrevistas"> Publicações e entrevistas</label>
+                  <label><input type="checkbox" name="busca" value="caminho para título de especialista"> Título de especialista</label>
+                  <label><input type="checkbox" name="busca" value="palestras para leigos e parcerias locais"> Palestras e parcerias</label>
+                </div>
+              </fieldset>
+              <div class="row2">
+                <div class="field">
+                  <label for="fo-orc">Tempo e orçamento por ano</label>
+                  <input type="text" id="fo-orc" name="orcamento" placeholder="Ex: 2 eventos por ano, até R$ 6.000">
+                </div>
+                <div class="field">
+                  <label for="fo-onde">Onde pode viajar</label>
+                  <input type="text" id="fo-onde" name="onde" placeholder="Ex: Brasil, online, América Latina">
+                </div>
+              </div>
+              <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar prompt</button></div>
+              <div class="output-block" hidden></div>
+            </form>
+            <div class="saved-slot" data-save="formacao" data-label="plano de formação e autoridade"></div>
+          </div>
+        </details>
+        <details class="tool na-caixa" data-id="ferramentas">
+          <summary>
+            <div class="tool-title"><div><h3>Ferramentas recomendadas</h3><span class="sub">O mínimo para gravar, editar, gerar imagens, publicar, anunciar, atender e medir</span></div></div>
+            <span class="chevron">▸</span>
+          </summary>
+          <div class="tool-body">
+            <p class="desc">Comece com o mínimo: celular, Canva, WhatsApp Business, Meta Business Suite e o CliniLoop. As demais entram quando o volume pedir. As ferramentas abaixo foram listadas, não avaliadas: confira planos, preços e adequação à LGPD antes de contratar.</p>
+            <div class="num-wrap"><table class="num-table kit-table" id="kit-table"></table></div>
+            <p class="kit-note"><b>Na prática:</b> escolha uma ferramenta por linha, no máximo. Ferramenta demais é registro duplicado, e registro duplicado é paciente esquecido.</p>
+            <hr class="divider">
+            <h4 style="margin:0 0 4px;font-family:var(--body)">Monte a sua caixa de ferramentas</h4>
+            <form class="tool-form" data-tool="ferramentas">
+              <div class="row3">
+                <div class="field">
+                  <label for="fe-orcamento">Orçamento mensal para ferramentas</label>
+                  <select id="fe-orcamento" name="orcamento">
+                    <option value="R$ 0 (só gratuitas)">R$ 0 (só gratuitas)</option>
+                    <option value="até R$ 150" selected>Até R$ 150</option>
+                    <option value="de R$ 150 a R$ 500">De R$ 150 a R$ 500</option>
+                    <option value="acima de R$ 500">Acima de R$ 500</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="fe-nivel">Familiaridade com tecnologia</label>
+                  <select id="fe-nivel" name="nivel">
+                    <option value="baixa">Baixa</option>
+                    <option value="média" selected>Média</option>
+                    <option value="alta">Alta</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="fe-equip">O que você já tem *</label>
+                  <input type="text" id="fe-equip" name="equip" required placeholder="Ex: iPhone 13, tripé, sistema de agenda X">
+                </div>
+              </div>
+              <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar prompt</button></div>
+              <div class="output-block" hidden></div>
+            </form>
+            <hr class="divider">
+            <h4 style="margin:0 0 4px;font-family:var(--body)">Imagens com IA: qual recurso usar</h4>
+            <p class="desc">Cada assistente de IA tem o seu gerador de imagens. Use para ilustrações, ícones, cenários e capas das suas peças. Três regras valem para todos: imagem gerada nunca aparece como paciente, resultado ou "antes e depois"; revise a anatomia, porque os geradores erram dentes, mãos e órgãos; e prefira ilustração a foto realista em temas clínicos. O passo a passo está no Anexo A do guia.</p>
+            <div class="num-wrap"><table class="num-table kit-table" id="img-table"></table></div>
+            <h4 style="margin:14px 0 4px;font-family:var(--body)">Monte o pedido de imagem</h4>
+            <form class="tool-form" data-tool="imagem">
+              <div class="field">
+                <label for="im-tema">O que a imagem precisa mostrar *</label>
+                <input type="text" id="im-tema" name="tema" required placeholder="Ex: modelo anatômico do joelho, destacando o menisco">
+              </div>
+              <div class="row3">
+                <div class="field">
+                  <label for="im-tipo">Tipo de imagem</label>
+                  <select id="im-tipo" name="tipo">
+                    <option value="ilustração educativa" selected>Ilustração educativa</option>
+                    <option value="ícone ou elemento gráfico">Ícone ou elemento gráfico</option>
+                    <option value="fluxograma ou infográfico">Fluxograma ou infográfico</option>
+                    <option value="cenário ou ambiente (sem pessoas)">Cenário ou ambiente (sem pessoas)</option>
+                    <option value="capa com texto">Capa com texto</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="im-formato">Onde vai ser usada</label>
+                  <select id="im-formato" name="formato">
+                    <option value="carrossel do Instagram, proporção 4:5" selected>Carrossel (4:5)</option>
+                    <option value="capa de Reel ou Story, proporção 9:16">Capa de Reel ou Story (9:16)</option>
+                    <option value="post quadrado, proporção 1:1">Post quadrado (1:1)</option>
+                    <option value="miniatura do YouTube, proporção 16:9">Miniatura do YouTube (16:9)</option>
+                    <option value="banner do LinkedIn, proporção 4:1">Banner do LinkedIn (4:1)</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="im-ferramenta">Ferramenta que vou usar</label>
+                  <select id="im-ferramenta" name="ferramenta">
+                    <option value="ChatGPT" selected>ChatGPT</option>
+                    <option value="Gemini">Gemini</option>
+                    <option value="Meta AI">Meta AI</option>
+                    <option value="Copilot">Copilot</option>
+                    <option value="Canva (Dream Lab)">Canva</option>
+                    <option value="Adobe Firefly">Adobe Firefly</option>
+                    <option value="Midjourney">Midjourney</option>
+                    <option value="Ideogram">Ideogram</option>
+                    <option value="Claude (diagrama em código)">Claude (diagrama)</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row3">
+                <div class="field">
+                  <label for="im-estilo">Estilo</label>
+                  <select id="im-estilo" name="estilo">
+                    <option value="ilustração plana e limpa" selected>Ilustração plana</option>
+                    <option value="ilustração 3D suave">Ilustração 3D</option>
+                    <option value="aquarela delicada">Aquarela</option>
+                    <option value="ícones em traço simples">Ícones em traço</option>
+                    <option value="fotografia de ambiente, sem pessoas">Foto de ambiente</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="im-cores">Cores da sua marca</label>
+                  <input type="text" id="im-cores" name="cores" placeholder="Ex: azul-petróleo e branco">
+                </div>
+                <div class="field">
+                  <label for="im-evitar">O que evitar, além do padrão</label>
+                  <input type="text" id="im-evitar" name="evitar" placeholder="Ex: sangue, agulhas">
+                </div>
+              </div>
+              <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar pedido de imagem</button></div>
+              <div class="output-block" hidden></div>
+            </form>
+          </div>
+        </details>
+        <details class="tool na-caixa" data-id="ebook" id="playbook">
+          <summary>
+            <div class="tool-title"><div><h3>Playbook da clínica <span class="badge-feat">Destaque</span></h3><span class="sub">Tudo em um documento, o que falta concluir e revisões a cada 2 semanas</span></div></div>
+            <span class="chevron">▸</span>
+          </summary>
+          <div class="tool-body">
+            <p class="desc">Feche o loop: o CliniLoop junta o perfil do consultório, as decisões guardadas, as regras do seu conselho, o funil do Rastreador, as campanhas, a rede de colegas e as métricas num guia com plano de 90 dias. Cada parte ainda não concluída vem com uma recomendação, e o plano segue um ciclo de revisão <b>no mínimo a cada 2 semanas</b>. Nomes de pacientes não entram no documento.</p>
+            <div class="form-actions">
+              <button type="button" id="pb-build" class="btn btn-gold" data-ico="book">Gerar meu playbook</button>
+              <span class="save-status">Gere de novo sempre que avançar. O playbook reflete o que está salvo neste navegador.</span>
+            </div>
+            <div id="pb-area" hidden>
+              <div class="form-actions pb-actions">
+                <button type="button" id="pb-pdf" class="btn btn-teal" data-ico="download">Salvar em PDF</button>
+                <button type="button" id="pb-html" class="btn btn-outline" data-ico="download">Baixar playbook (.html)</button>
+                <button type="button" id="pb-ics" class="btn btn-outline" data-ico="bell">Lembretes de revisão a cada 2 semanas</button>
+              </div>
+              <p class="form-msg ok" id="pb-msg" hidden></p>
+              <iframe id="pb-frame" class="pb-frame" title="Pré-visualização do seu playbook"></iframe>
+            </div>
+          </div>
+        </details>
+      </div>
+      <div class="ajustes-wrap cfg-campos">
+@@SETTINGS@@
+      </div>
+    </div>
+  </section>

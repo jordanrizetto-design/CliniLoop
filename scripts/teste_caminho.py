@@ -1,0 +1,92 @@
+"""Testa o caminho de 9 passos: ordem, campos que faltam, edição no lugar, redes, caixa e celular.
+Uso: python3 scripts/teste_caminho.py  (depois de python3 build.py)"""
+from playwright.sync_api import sync_playwright
+import json
+URL = 'file:///home/claude/cliniloop/index.html'
+R = {}
+def ok(k, v): R[k] = v; print(('OK  ' if v else 'FAIL') + ' ' + k)
+abertos = lambda pg: pg.evaluate("[...document.querySelectorAll('.passo.aberto')].map(x=>x.dataset.passo)")
+with sync_playwright() as p:
+    b = p.chromium.launch(); pg = b.new_page(viewport={'width': 1280, 'height': 900})
+    errs = []; pg.on('pageerror', lambda e: errs.append(str(e)))
+    pg.goto(URL); pg.wait_for_timeout(400)
+    ok('novo usuário: passo 1 aberto', abertos(pg) == ['1'])
+    ok('Hoje escondido antes do passo 1', not pg.is_visible('#hoje'))
+    ok('sem funil nem jornada antigos', pg.evaluate("!document.getElementById('funil') && !document.getElementById('jornada') && !document.querySelector('.hero-funil')"))
+    ok('um único caminho com 9 passos', pg.locator('.passo').count() == 9)
+    ok('Oceano Azul é o passo 3', 'Oceano Azul' in pg.inner_text('#passo-3 .passo-titulo'))
+    pg.click('#passo-1 .js-passo-ok'); pg.wait_for_timeout(300)
+    ok('lista o que falta', 'Faltam 7 campos' in pg.inner_text('#passo-1 .passo-falta'))
+    ok('foco no primeiro campo', pg.evaluate("document.activeElement.name") == 'profissional')
+    pg.click('label.type-card:has(input[value=dentista])')
+    for k, v in [('#cfg-registro', 'CRO-SP 12345'), ('#cfg-espec', 'implantodontia'), ('#cfg-cidade', 'Moema, São Paulo'), ('#cfg-servicos', 'implantes, clareamento'),
+                 ('#cfg-sobre', '12 anos, escaneamento digital'), ('#cfg-meta', '8 avaliações de implante por mês em 90 dias')]:
+        pg.fill(k, v)
+    pg.wait_for_timeout(400); pg.click('#passo-1 .js-passo-ok'); pg.wait_for_timeout(300)
+    ok('segue para o passo 2', abertos(pg) == ['2'])
+    ok('resumo do passo 1', 'Dentista · implantodontia' in pg.inner_text('#passo-1 .passo-resumo'))
+    ok('Hoje aparece com o próximo passo', pg.is_visible('#hoje') and 'Seu paciente ideal' in pg.inner_text('#cm-acao'))
+    pg.fill('#cfg-publico', 'adultos de 40 a 65 anos'); pg.fill('#cfg-icp-dor', 'medo de implante doer'); pg.wait_for_timeout(400)
+    pg.click('#passo-2 .js-passo-ok'); pg.wait_for_timeout(300)
+    ok('segue para o Oceano Azul', abertos(pg) == ['3'])
+    pg.click('#passo-3 .js-passo-ok'); pg.wait_for_timeout(200)
+    ok('passo 3 pede a proposta', 'proposta de valor' in pg.inner_text('#passo-3 .passo-falta'))
+    pg.fill('#oa-proposta', 'Ajudo adultos com medo de implante a decidir com calma'); pg.click('#usar-rascunho'); pg.wait_for_timeout(400)
+    ok('rascunho vira proposta', pg.input_value('#cfg-transf').startswith('Ajudo adultos'))
+    pg.click('#passo-3 .js-passo-ok'); pg.wait_for_timeout(300)
+    ok('segue para os perfis', abertos(pg) == ['4'])
+    ok('proposta entra no contexto', 'Ajudo adultos com medo' in pg.evaluate("contextBlock('x')"))
+    # redes: uma por vez, com prompt próprio
+    ok('Instagram entre as redes em uso', pg.locator('#redes-uso details.rede[data-rede=instagram]').count() == 1)
+    ok('Google nas redes ainda não usadas', pg.locator('#redes-outras-lista details.rede[data-rede=google]').count() == 1)
+    pg.click('label.chip:has(input[value="Perfil da Empresa no Google"])'); pg.wait_for_timeout(200)
+    ok('marcar a rede move o cartão', pg.locator('#redes-uso details.rede[data-rede=google]').count() == 1)
+    pg.click('details.rede[data-rede=google] > summary'); pg.fill('#rd-google-atual', 'Clínica Sorriso, dentista')
+    pg.click('form[data-tool=rede-google] button[type=submit]'); pg.wait_for_timeout(200)
+    out = pg.input_value('#out-rede-google')
+    ok('prompt só do Google, logo abaixo do botão', 'Perfil da Empresa no Google' in out and 'Clínica Sorriso' in out and 'Instagram:' not in out and pg.is_visible('#out-rede-google'))
+    ok('proposta no prompt da rede', 'Ajudo adultos com medo' in out)
+    ok('estado da rede', 'prompt gerado' in pg.inner_text('details.rede[data-rede=google] .rede-st'))
+    # edição no lugar de um passo concluído
+    pg.click('#passo-1 .passo-toggle'); pg.wait_for_timeout(200)
+    ok('passo feito abre ali mesmo para editar', abertos(pg) == ['1'] and pg.is_visible('#cfg-registro'))
+    ok('botão do passo feito leva ao próximo', 'passo 4' in pg.inner_text('#passo-1 .js-passo-ok'))
+    pg.fill('#cfg-espec', 'implantodontia e prótese'); pg.wait_for_timeout(500)
+    ok('resumo atualiza ao editar', 'prótese' in pg.inner_text('#passo-1 .passo-resumo'))
+    pg.click('#passo-1 .js-passo-ok'); pg.wait_for_timeout(200)
+    ok('volta ao passo em que parou', abertos(pg) == ['4'])
+    # caixa de ferramentas e atalhos
+    ok('índice da caixa', pg.locator('#caixa-indice .ci-b').count() == 20)
+    pg.click('.ci-b[data-abrir=roteiro]'); pg.wait_for_timeout(200)
+    ok('ferramenta do caminho abre no passo', abertos(pg) == ['5'] and pg.evaluate("document.querySelector('.tool[data-id=roteiro]').open"))
+    pg.click('.ci-b[data-abrir=etica]'); pg.wait_for_timeout(200)
+    ok('ferramenta da caixa abre na caixa', pg.evaluate("document.getElementById('etica').open"))
+    pg.click('nav.links a[href="#rastreador"]'); pg.wait_for_timeout(200)
+    ok('menu Pacientes abre o passo 8', abertos(pg) == ['8'])
+    pg.click('#cm-continuar'); pg.wait_for_timeout(200)
+    ok('Continuar abre o próximo passo', abertos(pg) == ['4'])
+    # WhatsApp e placar
+    pg.evaluate("abrirPasso(7,{scroll:false})"); pg.fill('#cfg-whatsapp', '11 91234-5678'); pg.wait_for_timeout(500)
+    ok('links com origem', pg.locator('#wa-box .jor-links code').count() >= 5)
+    pg.evaluate("abrirPasso(9,{scroll:false})")
+    ok('placar sem botões de ferramenta', pg.locator('#placar-box .pl-c').count() == 4)
+    # recarregar mantém o passo aberto
+    pg.reload(); pg.wait_for_timeout(400)
+    ok('lembra o passo aberto', abertos(pg) == ['9'])
+    ok('progresso 3 de 9', '3 de 9' in pg.inner_text('#cm-prog-t').lower())
+    # usuário antigo com perfil completo: passos 1 e 2 já feitos
+    pg2 = b.new_page(viewport={'width': 1280, 'height': 900}); pg2.on('pageerror', lambda e: errs.append('2:' + str(e)))
+    pg2.goto(URL)
+    CFG = {"objetivo": "agenda", "metaFrase": "20 consultas", "profissional": "nutricionista", "registro": "CRN-3 1", "especialidade": "nutrição esportiva", "cidade": "Pinheiros", "servicos": "consulta", "publico": "corredores", "icpDor": "cãibra", "sobre": "10 anos", "canais": ["Instagram"]}
+    pg2.evaluate(f"localStorage.clear(); localStorage.setItem('cliniloop.config.v1', JSON.stringify({json.dumps(CFG)}))"); pg2.reload(); pg2.wait_for_timeout(400)
+    ok('usuário antigo começa no Oceano Azul', abertos(pg2) == ['3'] and pg2.evaluate("document.getElementById('passo-1').classList.contains('feito')"))
+    # celular
+    m = b.new_page(viewport={'width': 390, 'height': 800}); m.on('pageerror', lambda e: errs.append('m:' + str(e)))
+    m.goto(URL); m.wait_for_timeout(300)
+    for n in range(1, 10):
+        m.evaluate(f"abrirPasso({n},{{scroll:false}})"); m.wait_for_timeout(60)
+        if m.evaluate("document.documentElement.scrollWidth") > 390: ok(f'celular: passo {n} sem rolagem horizontal', False)
+    ok('celular sem rolagem horizontal', m.evaluate("document.documentElement.scrollWidth") <= 390)
+    ok('sem erros de página', not errs); print(errs)
+    b.close()
+print('RESULT', sum(R.values()), 'de', len(R))
