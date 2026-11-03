@@ -363,9 +363,10 @@
   // Abre a ferramenta onde ela mora: no passo do caminho ou na caixa de ferramentas.
   function openTool(id) {
     if (typeof abrirNoCaminho === 'function' && abrirNoCaminho(id)) return;
-    if (id === 'ajustes') { const aj = document.getElementById('ajustes'); aj.open = true; aj.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
+    if (id === 'ajustes') { const aj = document.getElementById('ajustes'); if (typeof mostrarVisaoDe === 'function') mostrarVisaoDe(aj); aj.open = true; aj.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
     const el = document.querySelector(`.tool[data-id="${id}"]`);
     if (!el) return;
+    if (typeof mostrarVisaoDe === 'function') mostrarVisaoDe(el);
     el.open = true;
     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
@@ -783,6 +784,20 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     renderTracker();
   });
 
+  // Mudar de etapa: registra a data, sugere o próximo passo típico e guarda o histórico. Usado pela lista e pelo quadro.
+  function moverEtapa(p, nova, extra) {
+    const antes = p.passo;
+    p.etapa = nova;
+    fillHist(p, nova);
+    if (!String(antes || '').trim() || Object.values(PASSO_TIPICO).includes(antes)) {
+      p.passo = PASSO_TIPICO[nova] || p.passo;
+      if (nova === 'Plano proposto' && !semPacote() && (!p.data || p.data < todayISO())) p.data = addDays(todayISO(), 2);
+    }
+    if (nova === 'Encerrado') { if (extra && extra.resultado) p.resultado = extra.resultado; else if (!p.resultado) p.resultado = 'Alta e vínculo'; if (extra && extra.motivo) p.motivo = String(extra.motivo).slice(0, 200); }
+    p.ativ = (p.ativ || []).concat([{ d: todayISO(), t: 'Etapa: ' + nova, r: '' }]).slice(-50);
+    p.atualizado = todayISO();
+    return savePac();
+  }
   function isLate(p) { return p.data && p.etapa !== 'Encerrado' && p.data <= todayISO(); }
   // Filas do dia a dia: o que venceu, o que é para hoje e quem está sem próximo passo.
   const aberto = (p) => p.etapa !== 'Encerrado';
@@ -849,17 +864,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
         ${p.notas ? `<div class="notes">${escapeHtml(p.notas)}</div>` : ''}`;
       const upd = (fn) => { fn(); p.atualizado = todayISO(); savePac(); };
       el.querySelector('.js-etapa').addEventListener('change', (ev) => {
-        upd(() => {
-          const antes = p.passo;
-          p.etapa = ev.target.value;
-          fillHist(p, p.etapa);
-          if (!String(antes || '').trim() || Object.values(PASSO_TIPICO).includes(antes)) {
-            p.passo = PASSO_TIPICO[p.etapa] || p.passo;
-            if (p.etapa === 'Plano proposto' && !semPacote() && (!p.data || p.data < todayISO())) p.data = addDays(todayISO(), 2);
-          }
-          if (p.etapa === 'Encerrado' && !p.resultado) p.resultado = 'Alta e vínculo';
-          p.ativ = (p.ativ || []).concat([{ d: todayISO(), t: 'Etapa: ' + p.etapa, r: '' }]).slice(-50);
-        });
+        moverEtapa(p, ev.target.value);
         renderTracker();
       });
       el.querySelector('.js-passo').addEventListener('change', (ev) => upd(() => { p.passo = ev.target.value.slice(0, 300); }));

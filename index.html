@@ -1203,6 +1203,94 @@
   @media (max-width:420px){ nav.links > a, .nav-mais > summary{font-size:.84rem; padding:10px 3px;} nav.links{gap:0;} }
   @media (max-width:720px){ nav.links{overflow:visible; -webkit-mask-image:none; mask-image:none; padding-right:0;} }
 
+  /* ===================== Módulos: Hoje, Redes, CRM, Guia, Ferramentas ===================== */
+  body.v-hoje [data-visao]:not([data-visao~="hoje"]),
+  body.v-redes [data-visao]:not([data-visao~="redes"]),
+  body.v-crm [data-visao]:not([data-visao~="crm"]),
+  body.v-guia [data-visao]:not([data-visao~="guia"]),
+  body.v-ferramentas [data-visao]:not([data-visao~="ferramentas"]){display:none !important;}
+  body:not(.v-hoje):not(.v-redes):not(.v-crm):not(.v-todas) .caminho-sec{display:none;}
+  body.v-hoje .caminho-sec{padding-top:24px;}
+  nav.links [aria-current="page"]{color:var(--ink); font-weight:700; box-shadow:inset 0 -3px 0 var(--teal);}
+  .nav-recepcao{all:unset; cursor:pointer; padding:8px 12px; border-radius:20px; background:var(--gold); color:#fff; font-size:.84rem; font-weight:600;}
+  body.modo-recepcao nav.links > a:not([data-visao-link="crm"]){display:none;}
+  body.modo-recepcao .crm-acoes #recepcao-ligar{background:var(--gold); color:#fff; border-color:var(--gold);}
+  .hero-mods{list-style:none; margin:0; padding:0; display:grid; gap:10px;}
+  .hero-mods button{all:unset; box-sizing:border-box; cursor:pointer; width:100%; display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:14px; padding:14px 16px; border:1px solid rgba(244,241,234,.22); border-radius:14px; background:rgba(244,241,234,.05);}
+  .hero-mods button:hover{border-color:var(--gold-soft); background:rgba(244,191,164,.08);}
+  .hero-mods button:focus-visible{outline:3px solid var(--gold-soft); outline-offset:2px;}
+  .hero-mods .hm-n{display:inline-grid; place-items:center; width:38px; height:38px; border-radius:10px; background:rgba(244,241,234,.14); font-weight:700; color:#F4F1EA;}
+  .hero-mods .hm-tt b{display:block; color:#F4F1EA; font-size:1rem;}
+  .hero-mods .hm-tt span{font-size:.8rem; color:#C9D6DA;}
+  .hero-mods .hm-st{font-size:.76rem; font-weight:600; color:var(--gold-soft); white-space:nowrap;}
+  .modulo-cab{margin:6px 0 22px; padding:20px 22px; border-radius:16px; background:var(--ink); color:#F4F1EA;}
+  .modulo-cab h2{color:#F4F1EA; margin:2px 0 6px; font-size:clamp(1.3rem,2.6vw,1.8rem);}
+  .modulo-cab p{margin:0 0 8px; color:#C9D6DA; max-width:72ch;}
+  .modulo-n{font-size:.72rem !important; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--gold-soft) !important;}
+  .modulo-status{display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:6px; color:#F4F1EA;}
+  .modulo-aviso-cel{display:none;}
+  @media (max-width:760px){ .modulo-aviso-cel{display:block; padding:8px 12px; border-radius:8px; background:rgba(244,191,164,.14);} }
+  .crm-acoes{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px;}
+  .modulo-cab .btn-outline{background:transparent; color:#F4F1EA; border-color:rgba(244,241,234,.55); box-shadow:none;}
+  /* quadro */
+  .quadro{margin:0 0 26px;}
+  .quadro-cab h3{margin:0 0 4px;}
+  .quadro-cab p{margin:0 0 10px; color:var(--ink-soft); font-size:.92rem;}
+  .quadro-filtros{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:12px;}
+  .q-filas{display:flex; flex-wrap:wrap; gap:6px;}
+  #q-busca{font:inherit; padding:10px 12px; border:1.5px solid var(--border-strong); border-radius:10px; min-width:220px; flex:1 1 220px; max-width:360px; background:#fff;}
+  .quadro-cols{display:grid; grid-auto-flow:column; grid-auto-columns:minmax(220px,1fr); gap:10px; overflow-x:auto; padding:2px 2px 12px; align-items:start;}
+  .quadro-cols:focus-visible{outline:3px solid var(--teal); outline-offset:2px;}
+  .q-col{padding:0; background:var(--paper-warm); border-radius:12px; min-height:140px; border:2px solid transparent;}
+  .q-col.q-sobre{border-color:var(--teal); background:#DCEBEC;}
+  .q-col-h{display:flex; justify-content:space-between; align-items:center; padding:10px 12px 2px;}
+  .q-n{font-weight:700; font-size:.8rem; background:#fff; border-radius:20px; padding:1px 9px;}
+  .q-dica{margin:0; padding:0 12px 8px; font-size:.74rem; color:var(--ink-soft);}
+  .q-lista{display:grid; gap:8px; padding:0 8px 10px;}
+  .q-vazio{margin:0; font-size:.8rem; color:var(--ink-soft); padding:6px 4px;}
+  .q-sem{grid-column:1/-1; margin:0 0 6px; padding:12px 14px; background:#fff; border-radius:10px; border:1px dashed var(--border-strong); font-size:.9rem;}
+  .q-card{background:#fff; border:1px solid var(--border); border-radius:10px; padding:10px 10px 6px; cursor:grab; border-left:4px solid transparent;}
+  .q-card.q-arrastando{opacity:.5;}
+  .q-card.q-venc{border-left-color:var(--rust);}
+  .q-card.q-hoje{border-left-color:#B8741E;}
+  .q-card.q-sem{border-left-color:var(--border-strong);}
+  .q-card.q-novo{animation:qpisca 1.2s ease;}
+  @keyframes qpisca{0%{box-shadow:0 0 0 3px var(--teal);}100%{box-shadow:0 0 0 0 transparent;}}
+  .q-nome{margin:0; display:flex; justify-content:space-between; gap:6px; align-items:baseline; overflow-wrap:anywhere;}
+  .q-tag{font-size:.64rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em; white-space:nowrap; color:var(--ink-soft);}
+  .q-venc .q-tag{color:var(--rust);} .q-hoje .q-tag{color:#8A5A12;}
+  .q-meta{margin:2px 0 0; font-size:.76rem; color:var(--ink-soft); overflow-wrap:anywhere;}
+  .q-passo{margin:6px 0 4px; font-size:.82rem;}
+  .q-mov{display:flex; justify-content:space-between; align-items:center; gap:4px; border-top:1px solid var(--border); padding-top:4px;}
+  .q-b{all:unset; box-sizing:border-box; cursor:pointer; width:40px; height:40px; display:inline-grid; place-items:center; border-radius:8px; font-weight:700; color:var(--teal);}
+  .q-b:hover{background:var(--paper);}
+  .q-b:focus-visible, .q-det:focus-visible{outline:3px solid var(--teal); outline-offset:1px;}
+  .q-det{font-size:.8rem; min-height:40px;}
+  .q-enc{display:grid; gap:6px; margin-top:6px; font-size:.82rem;}
+  .q-enc label{display:grid; gap:2px;}
+  .q-enc select, .q-enc input{font:inherit; padding:6px 8px; border:1px solid var(--border-strong); border-radius:8px;}
+  .q-enc-bts{display:flex; gap:10px; align-items:center;}
+  .q-col-enc .q-lista{opacity:.85;}
+  .q-enc-tg{margin:0 12px 8px; font-size:.8rem;}
+  /* procedimento da recepção */
+  .procedimento{margin:0 0 22px; padding:18px 20px; background:#fff; border:1px solid var(--border-strong); border-radius:14px;}
+  .proc-cab{display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px; align-items:center;}
+  .proc-cab h3{margin:0; outline:none;}
+  .proc-bts{display:flex; gap:12px; align-items:center;}
+  .proc-sub{color:var(--ink-soft); font-size:.86rem;}
+  .procedimento h4{margin:18px 0 6px;}
+  .proc-regras{padding-left:18px; display:grid; gap:4px; font-size:.92rem;}
+  .proc-etapas{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:10px;}
+  .proc-et{padding:12px 14px; border-radius:10px; background:var(--paper); font-size:.88rem;}
+  .proc-et h5{margin:0 0 6px; font-size:.95rem;}
+  .proc-et p{margin:0 0 6px;}
+  .proc-msg{background:#fff; border-radius:8px; padding:8px 10px;}
+  .proc-nota{color:var(--ink-soft); font-size:.88rem;}
+  .proc-resp{white-space:pre-wrap; font-family:var(--body); font-size:.86rem; background:var(--paper); padding:10px 12px; border-radius:8px;}
+  body.v-hoje .caminho-sec:has(#hoje[hidden]){display:none;}
+  .quadro{padding:0;} .quadro-cols{grid-auto-columns:minmax(200px,1fr);}
+  .q-col .linkish{color:#164F56;}
+
 </style>
 </head>
 <body>
@@ -1211,20 +1299,12 @@
   <div class="nav-inner wrap">
     <a href="#top" class="brand" aria-label="CliniLoop, início"><span class="brand-text"><svg class="brand-word" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-10 -794 4640 1068"><path fill="#14303A" d="M389 -707Q506 -707 594.0 -647.0Q682 -587 717 -481H556Q532 -531 488.5 -556.0Q445 -581 388 -581Q327 -581 279.5 -552.5Q232 -524 205.5 -472.0Q179 -420 179 -350Q179 -281 205.5 -228.5Q232 -176 279.5 -147.5Q327 -119 388 -119Q445 -119 488.5 -144.5Q532 -170 556 -220H717Q682 -113 594.5 -53.5Q507 6 389 6Q289 6 208.5 -39.5Q128 -85 81.5 -166.0Q35 -247 35 -350Q35 -453 81.5 -534.5Q128 -616 208.5 -661.5Q289 -707 389 -707Z M977 -740V0H837V-740Z M1100 -702Q1100 -737 1124.5 -760.5Q1149 -784 1186 -784Q1223 -784 1247.5 -760.5Q1272 -737 1272 -702Q1272 -667 1247.5 -643.5Q1223 -620 1186 -620Q1149 -620 1124.5 -643.5Q1100 -667 1100 -702ZM1255 -554V0H1115V-554Z M1921 -325V0H1781V-306Q1781 -372 1748.0 -407.5Q1715 -443 1658 -443Q1600 -443 1566.5 -407.5Q1533 -372 1533 -306V0H1393V-554H1533V-485Q1561 -521 1604.5 -541.5Q1648 -562 1700 -562Q1799 -562 1860.0 -499.5Q1921 -437 1921 -325Z M2039 -702Q2039 -737 2063.5 -760.5Q2088 -784 2125 -784Q2162 -784 2186.5 -760.5Q2211 -737 2211 -702Q2211 -667 2186.5 -643.5Q2162 -620 2125 -620Q2088 -620 2063.5 -643.5Q2039 -667 2039 -702ZM2194 -554V0H2054V-554Z"/><path fill="#1E9E9A" d="M2472 -111H2702V0H2332V-698H2472Z M4334.24 -563Q4405.24 -563 4462.74 -528.0Q4520.24 -493 4553.74 -428.5Q4587.24 -364 4587.24 -279Q4587.24 -194 4553.74 -128.5Q4520.24 -63 4462.74 -27.0Q4405.24 9 4334.24 9Q4273.24 9 4226.74 -16.0Q4180.24 -41 4151.24 -79V264H4011.24V-554H4151.24V-474Q4178.24 -512 4225.74 -537.5Q4273.24 -563 4334.24 -563ZM4297.24 -440Q4259.24 -440 4225.74 -420.5Q4192.24 -401 4171.74 -364.0Q4151.24 -327 4151.24 -277Q4151.24 -227 4171.74 -190.0Q4192.24 -153 4225.74 -133.5Q4259.24 -114 4297.24 -114Q4336.24 -114 4369.74 -134.0Q4403.24 -154 4423.74 -191.0Q4444.24 -228 4444.24 -279Q4444.24 -329 4423.74 -365.5Q4403.24 -402 4369.74 -421.0Q4336.24 -440 4297.24 -440Z"/><path fill="none" stroke="#1E9E9A" stroke-width="140" stroke-linejoin="round" d="M3327.1 -277.0 L3448.6 -418.0 A216.0 216.0 0 1 1 3448.6 -136.0 L3205.6 -418.0 A216.0 216.0 0 1 0 3205.6 -136.0 Z"/></svg><small>pacientes, colegas e campanhas com IA</small></span></a>
     <nav class="links" aria-label="Principal">
-      <a href="#hoje" data-nav="hoje">Hoje</a>
-      <a href="#mov-1" data-nav="caminho">Caminho</a>
-      <a href="#caixa" data-nav="ferramentas">Ferramentas</a>
-      <a href="#rastreador" data-nav="contatos">Contatos</a>
-      <details class="nav-mais">
-        <summary>Mais <span aria-hidden="true">▾</span></summary>
-        <div class="nav-mais-lista">
-          <a href="#livro">O guia no app</a>
-          <a href="guia/O-Prompt-do-Sim.pdf" target="_blank" rel="noopener">Guia em PDF</a>
-          <a href="#etica">Verificador ético</a>
-          <a href="#ajustes">Ajustes e backup</a>
-          <a href="#faq">Ajuda</a>
-        </div>
-      </details>
+      <a href="#v-hoje" data-visao-link="hoje">Hoje</a>
+      <a href="#v-redes" data-visao-link="redes">Redes</a>
+      <a href="#v-crm" data-visao-link="crm">CRM</a>
+      <a href="#v-guia" data-visao-link="guia">Guia</a>
+      <a href="#v-ferramentas" data-visao-link="ferramentas">Ferramentas</a>
+      <button type="button" class="nav-recepcao" id="recepcao-sair" hidden>Sair do modo recepção</button>
     </nav>
   </div>
 </header>
@@ -1232,28 +1312,28 @@
 <main id="top">
   <div class="aviso-dados wrap" id="aviso-dados" role="alert" hidden></div>
 
-  <section class="hero hero-app">
+  <section class="hero hero-app" data-visao="hoje" id="v-hoje">
     <div class="wrap hero-inner">
       <div>
-        <p class="eyebrow">Sistema Loop · o guia <i>O Prompt do Sim</i> no seu consultório</p>
+        <p class="eyebrow">CliniLoop · guia, redes e CRM para o seu consultório</p>
         <h1 id="hero-t">Descubra sua diferença e transforme-a em ações para o consultório.</h1>
-        <p class="lead" id="hero-lead">Nesta jornada, o herói é você. O CliniLoop é o mentor: com o Oceano Azul, você define o que só você oferece, e essa diferença passa a orientar cada perfil, conteúdo, conversa e campanha que o app ajuda a preparar.</p>
+        <p class="lead" id="hero-lead">Nesta jornada, o herói é você e o CliniLoop é o mentor. O guia <i>O Prompt do Sim</i> explica o caminho, o módulo Redes leva a sua diferença a cada perfil e conteúdo, e o módulo CRM acompanha cada contato até o tratamento.</p>
         <div class="hero-ctas">
           <a href="#passo-1" class="btn btn-gold" id="hero-cta" data-ico="arrow">Construir minha diferenciação</a>
         </div>
         <p class="hero-note" id="hero-nota">Uns 20 minutos para a primeira hipótese. O que ainda for hipótese fica marcado como hipótese, e você pode continuar depois de onde parou.</p>
       </div>
-      <ol class="hero-movs" id="hero-movs" aria-label="Os três atos da jornada">
-        <li data-mov="1"><span class="hm-n">1</span><div><b>A partida · Defina a sua diferença</b><span>Passos 1 a 3 · consultório, paciente ideal e Oceano Azul</span></div><span class="hm-st"></span></li>
-        <li data-mov="2"><span class="hm-n">2</span><div><b>As provas · Mostre onde o paciente procura</b><span>Passos 4 a 6 · perfis, conteúdo, colegas e campanhas</span></div><span class="hm-st"></span></li>
-        <li data-mov="3"><span class="hm-n">3</span><div><b>O retorno · Meça quem fica</b><span>Passos 7 a 9 · WhatsApp, contatos e ritual da semana</span></div><span class="hm-st"></span></li>
+      <ol class="hero-mods" id="hero-mods" aria-label="As três partes do CliniLoop">
+        <li data-mod="guia"><button type="button" data-ir-visao="guia"><span class="hm-n" aria-hidden="true">G</span><span class="hm-tt"><b>Guia · O Prompt do Sim</b><span>O porquê e o caminho, em 16 partes, com os prompts prontos</span></span><span class="hm-st">Ler</span></button></li>
+        <li data-mod="redes"><button type="button" data-ir-visao="redes"><span class="hm-n" aria-hidden="true">R</span><span class="hm-tt"><b>Redes e posicionamento</b><span>Passos 1 a 6 · consultório, Oceano Azul, perfis, conteúdo, colegas e campanhas</span></span><span class="hm-st"></span></button></li>
+        <li data-mod="crm"><button type="button" data-ir-visao="crm"><span class="hm-n" aria-hidden="true">C</span><span class="hm-tt"><b>CRM do consultório</b><span>Passos 7 a 9 · WhatsApp, quadro de contatos e ritual da semana · melhor no computador</span></span><span class="hm-st"></span></button></li>
       </ol>
     </div>
   </section>
 
   <section id="caminho" class="caminho-sec">
     <div class="wrap">
-      <div class="hoje" id="hoje" aria-labelledby="hoje-titulo" hidden>
+      <div class="hoje" id="hoje" data-visao="hoje" aria-labelledby="hoje-titulo" hidden>
         <div class="hoje-head">
           <h2 id="hoje-titulo">Hoje</h2>
           <span class="hoje-data" id="hoje-data"></span>
@@ -1297,13 +1377,19 @@
         <div class="hoje-backup" id="hj-backup" hidden></div>
       </div>
 
-      <div class="mov" data-mov="1" id="mov-1">
+      <header class="modulo-cab" data-visao="redes" id="v-redes">
+        <p class="modulo-n">Módulo Redes e posicionamento · passos 1 a 6</p>
+        <h2>Da sua diferença ao lugar onde o paciente procura.</h2>
+        <p>Aqui você define o que só você oferece, com o Oceano Azul, e leva essa diferença aos perfis, ao conteúdo, aos colegas e às campanhas. Funciona no computador e no celular.</p>
+        <div class="modulo-status" id="redes-status"></div>
+      </header>
+      <div class="mov" data-visao="redes" data-mov="1" id="mov-1">
         <p class="mov-n">Ato 1 de 3 · A partida</p>
         <h2>Defina a sua diferença</h2>
         <p>Você sai do mundo comum, em que todo perfil parece igual ao de qualquer colega, e encontra a ferramenta do herói: o Oceano Azul. Daqui sai a sua diferença, a base de tudo o que vem depois.</p>
       </div>
 
-      <section class="passo" id="passo-1" data-passo="1" data-mov="1">
+      <section class="passo" data-visao="redes" id="passo-1" data-passo="1" data-mov="1">
         <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-1-corpo">
           <span class="passo-n" aria-hidden="true">1</span>
           <span class="passo-tt"><span class="passo-titulo">Seu consultório e objetivo</span><span class="passo-resumo" data-vazio="Profissão, registro, serviços e o resultado dos próximos 90 dias">Profissão, registro, serviços e o resultado dos próximos 90 dias</span></span>
@@ -1429,7 +1515,7 @@
         </div>
       </section>
 
-      <section class="passo" id="passo-2" data-passo="2" data-mov="1">
+      <section class="passo" data-visao="redes" id="passo-2" data-passo="2" data-mov="1">
         <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-2-corpo">
           <span class="passo-n" aria-hidden="true">2</span>
           <span class="passo-tt"><span class="passo-titulo">Seu paciente ideal</span><span class="passo-resumo" data-vazio="Quem você mais ajuda, a dúvida dele e o que ele valoriza">Quem você mais ajuda, a dúvida dele e o que ele valoriza</span></span>
@@ -1526,7 +1612,7 @@
         </div>
       </section>
 
-      <section class="passo" id="passo-3" data-passo="3" data-mov="1">
+      <section class="passo" data-visao="redes" id="passo-3" data-passo="3" data-mov="1">
         <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-3-corpo">
           <span class="passo-n" aria-hidden="true">3</span>
           <span class="passo-tt"><span class="passo-titulo">Oceano Azul: sua proposta de valor</span><span class="passo-resumo" data-vazio="Sete etapas até uma proposta que um colega não poderia assinar">Sete etapas até uma proposta que um colega não poderia assinar</span></span>
@@ -1636,13 +1722,13 @@
         </div>
       </section>
 
-      <div class="mov" data-mov="2">
+      <div class="mov" data-visao="redes" data-mov="2">
         <p class="mov-n">Ato 2 de 3 · As provas</p>
         <h2>Mostre onde o paciente procura</h2>
         <p>Com a diferença em mãos, você atravessa os canais. Perfis, conteúdo, colegas e anúncios passam a mostrar o que só você faz.</p>
       </div>
 
-      <section class="passo" id="passo-4" data-passo="4" data-mov="2">
+      <section class="passo" data-visao="redes" id="passo-4" data-passo="4" data-mov="2">
         <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-4-corpo">
           <span class="passo-n" aria-hidden="true">4</span>
           <span class="passo-tt"><span class="passo-titulo">Seus perfis, uma rede por vez</span><span class="passo-resumo" data-vazio="Google, Instagram, LinkedIn, YouTube e TikTok: um prompt para cada">Google, Instagram, LinkedIn, YouTube e TikTok: um prompt para cada</span></span>
@@ -1868,7 +1954,7 @@
         </div>
       </section>
 
-      <section class="passo" id="passo-5" data-passo="5" data-mov="2">
+      <section class="passo" data-visao="redes" id="passo-5" data-passo="5" data-mov="2">
         <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-5-corpo">
           <span class="passo-n" aria-hidden="true">5</span>
           <span class="passo-tt"><span class="passo-titulo">Plano de conteúdo e roteiros</span><span class="passo-resumo" data-vazio="Pautas das dúvidas reais, calendário e o roteiro da primeira peça">Pautas das dúvidas reais, calendário e o roteiro da primeira peça</span></span>
@@ -2081,7 +2167,7 @@
         </div>
       </section>
 
-      <section class="passo" id="passo-6" data-passo="6" data-mov="2">
+      <section class="passo" data-visao="redes" id="passo-6" data-passo="6" data-mov="2">
         <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-6-corpo">
           <span class="passo-n" aria-hidden="true">6</span>
           <span class="passo-tt"><span class="passo-titulo">Colegas e campanhas</span><span class="passo-resumo" data-vazio="Quem indica você e, depois, o primeiro anúncio">Quem indica você e, depois, o primeiro anúncio</span></span>
@@ -2259,13 +2345,42 @@
         </div>
       </section>
 
-      <div class="mov" data-mov="3">
+      <header class="modulo-cab modulo-crm" data-visao="crm" id="v-crm">
+        <p class="modulo-n">Módulo CRM do consultório · passos 7 a 9</p>
+        <h2>Cada contato, do primeiro "oi" ao tratamento.</h2>
+        <p>O quadro mostra em que etapa está cada pessoa e qual é o próximo passo. Foi pensado para o computador do consultório, onde a recepção trabalha. No celular, use para consultar.</p>
+        <p class="modulo-aviso-cel">Você está no celular: o quadro rola para o lado. Para mover cartões e atender com calma, prefira o computador.</p>
+        <div class="crm-acoes">
+          <button type="button" class="btn btn-teal btn-sm" id="q-novo" data-ico="plus">Novo contato</button>
+          <button type="button" class="btn btn-outline btn-sm" id="proc-abrir" aria-controls="procedimento" aria-expanded="false">Procedimento da recepção</button>
+          <button type="button" class="btn btn-outline btn-sm" id="recepcao-ligar">Modo recepção</button>
+        </div>
+      </header>
+      <section class="procedimento" id="procedimento" data-visao="crm" hidden aria-labelledby="proc-t">
+        <div class="proc-cab"><h3 id="proc-t">Procedimento da recepção</h3><div class="proc-bts"><button type="button" class="btn btn-outline btn-sm" id="proc-imprimir" data-ico="download">Imprimir ou salvar em PDF</button><button type="button" class="linkish" id="proc-fechar">Fechar</button></div></div>
+        <div id="proc-corpo"></div>
+        <p class="form-msg ok" id="proc-msg" hidden></p>
+      </section>
+      <section class="quadro" id="quadro" data-visao="crm" aria-labelledby="quadro-t">
+        <div class="quadro-cab">
+          <h3 id="quadro-t">Quadro de contatos</h3>
+          <p>Arraste o cartão para a etapa seguinte, ou use as setas do cartão. Cada mudança registra a data e sugere o próximo passo daquela etapa.</p>
+          <div class="quadro-filtros">
+            <div class="q-filas" id="q-filas" role="group" aria-label="Mostrar no quadro"></div>
+            <label class="visually-hidden" for="q-busca">Buscar no quadro</label>
+            <input type="search" id="q-busca" placeholder="Buscar por nome ou serviço" autocomplete="off">
+          </div>
+        </div>
+        <div class="quadro-cols" id="quadro-cols" role="region" aria-label="Etapas do quadro de contatos" tabindex="0"></div>
+        <p class="kit-note">Sem dado clínico nos cartões: diagnóstico, exames e evolução ficam no prontuário.</p>
+      </section>
+      <div class="mov" data-visao="crm" data-mov="3">
         <p class="mov-n">Ato 3 de 3 · O retorno</p>
         <h2>Meça quem fica</h2>
         <p>O herói volta com o elixir: cada contato acompanhado até o tratamento, a semana revisada, e o que você aprende volta para a estratégia.</p>
       </div>
 
-      <section class="passo" id="passo-7" data-passo="7" data-mov="3">
+      <section class="passo" data-visao="crm" id="passo-7" data-passo="7" data-mov="3">
         <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-7-corpo">
           <span class="passo-n" aria-hidden="true">7</span>
           <span class="passo-tt"><span class="passo-titulo">WhatsApp e atendimento</span><span class="passo-resumo" data-vazio="Perfil comercial, respostas rápidas e links com origem">Perfil comercial, respostas rápidas e links com origem</span></span>
@@ -2400,7 +2515,7 @@
         </div>
       </section>
 
-      <section class="passo" id="passo-8" data-passo="8" data-mov="3">
+      <section class="passo" data-visao="crm" id="passo-8" data-passo="8" data-mov="3">
         <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-8-corpo">
           <span class="passo-n" aria-hidden="true">8</span>
           <span class="passo-tt"><span class="passo-titulo">Contatos: o rastreador</span><span class="passo-resumo" data-vazio="Cada contato com origem, etapa, próximo passo e data">Cada contato com origem, etapa, próximo passo e data</span></span>
@@ -2493,7 +2608,7 @@
         </div>
       </section>
 
-      <section class="passo" id="passo-9" data-passo="9" data-mov="3">
+      <section class="passo" data-visao="crm" id="passo-9" data-passo="9" data-mov="3">
         <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-9-corpo">
           <span class="passo-n" aria-hidden="true">9</span>
           <span class="passo-tt"><span class="passo-titulo">Ritual da semana</span><span class="passo-resumo" data-vazio="O placar, o gargalo da vez e a agenda da próxima semana">O placar, o gargalo da vez e a agenda da próxima semana</span></span>
@@ -2609,9 +2724,9 @@
       <datalist id="lista-equipe"></datalist>
     </div>
   </section>
-  <section class="alt" id="caixa">
+  <section class="alt" id="caixa" data-visao="ferramentas">
     <div class="wrap">
-      <p class="eyebrow">Ferramentas</p>
+      <p class="eyebrow" id="v-ferramentas">Ferramentas</p>
       <div class="lead-block">
         <h2>Todas as ferramentas, organizadas pelo que você quer fazer.</h2>
         <p>As que fazem parte do caminho abrem no passo delas, com o seu perfil e a sua diferença já carregados. As outras abrem aqui mesmo, logo abaixo da lista.</p>
@@ -3198,17 +3313,17 @@
     </div>
   </section>
 
-  <section class="livro-sec" id="livro">
+  <section class="livro-sec" id="livro" data-visao="guia">
     <div class="wrap">
-      <p class="eyebrow">O guia e o app</p>
+      <p class="eyebrow" id="v-guia">O guia do CliniLoop</p>
       <div class="livro-head">
         <a class="livro-capa" href="guia/O-Prompt-do-Sim.pdf" target="_blank" rel="noopener" title="Abrir o guia em PDF">
           <img src="guia/capa/capa-thumb.jpg" alt="Capa do guia Prompt do Sim: marketing, inteligência artificial e CRM para profissionais da saúde" width="200" height="283" loading="lazy">
           <span class="livro-capa-btn">Baixar o guia (PDF)</span>
         </a>
         <div>
-          <h2><em>O Prompt do Sim</em> e o CliniLoop: o sistema Loop.</h2>
-          <p class="livro-lead"><i>O Prompt do Sim</i> é o guia; o CliniLoop é este app. Juntos, formam o sistema Loop, e o diferencial está nos dois juntos. O livro ensina o roteiro; o app gera os prompts, monta roteiros de conteúdo e de campanha e guarda o registro. Cada uma das 16 partes termina em três caixas: <b>Prompt</b>, o pedido pronto para a sua IA; <b>Na prática</b>, um passo de até 30 minutos para hoje; e <b>Sinergia CliniLoop</b>, a ferramenta do app que coloca a parte em prática. Em cada ferramenta abaixo, a faixa "No livro" mostra a parte correspondente, o passo de hoje e o prompt do guia já preenchido com o seu perfil.</p>
+          <h2><em>O Prompt do Sim</em>: o caminho que o CliniLoop põe em prática.</h2>
+          <p class="livro-lead">O CliniLoop tem três partes: este guia, o módulo Redes e o módulo CRM. O guia ensina o roteiro e o método Loop (diferenciar, mostrar, medir e voltar à estratégia); os módulos geram os prompts, montam roteiros de conteúdo e de campanha e acompanham cada contato. Cada uma das 16 partes termina em três caixas: <b>Prompt</b>, o pedido pronto para a sua IA; <b>Na prática</b>, um passo de até 30 minutos para hoje; e <b>Sinergia CliniLoop</b>, a ferramenta do app que coloca a parte em prática. Em cada ferramenta abaixo, a faixa "No livro" mostra a parte correspondente, o passo de hoje e o prompt do guia já preenchido com o seu perfil.</p>
           <p class="livro-ideia">"Conquistar pacientes é um projeto. Projetos têm objetivo, etapas, registros e revisões. É isso que transforma esforço em resultado."</p>
         </div>
       </div>
@@ -3269,7 +3384,7 @@
     </div>
   </section>
 
-  <section id="como-funciona">
+  <section id="como-funciona" data-visao="guia">
     <div class="wrap">
       <p class="eyebrow">Como funciona</p>
       <div class="lead-block">
@@ -3309,7 +3424,7 @@
       <div class="data-flow" id="metodo">
         <h3>Fontes e agradecimentos</h3>
         <table class="data-table">
-          <tr><th>Prompt do Sim e BuscaLoop (JR Tosoni)</th><td>Base do método, do funil, do registro e do ritual semanal, de onde nasceram o guia <i>O Prompt do Sim</i> e o sistema Loop.</td></tr>
+          <tr><th>Prompt do Sim e BuscaLoop (JR Tosoni)</th><td>Base do método, do funil, do registro e do ritual semanal, de onde nasceram o guia <i>O Prompt do Sim</i> e o CliniLoop.</td></tr>
           <tr><th>Oceano Azul (W. Chan Kim e Renée Mauborgne)</th><td>Sair da disputa por atenção com conteúdo igual ao de todos: as quatro ações (eliminar, reduzir, elevar, criar) viram uma proposta de valor própria e ética, usada em Nicho e diferencial.</td></tr>
           <tr><th>Pat Machadu</th><td>Método de crescimento de perfis em sete etapas, que inspirou a escada de crescimento.</td></tr>
           <tr><th>Diandra Santos (@segueadi)</th><td>Síntese de formatos recorrentes de vídeo, que inspirou a seção de séries reconhecíveis.</td></tr>
@@ -3327,7 +3442,7 @@
     </div>
   </section>
 
-  <section>
+  <section data-visao="guia">
     <div class="wrap">
       <p class="eyebrow">Primeiros passos</p>
       <div class="lead-block">
@@ -3357,7 +3472,7 @@
     </div>
   </section>
 
-  <section class="alt" id="faq">
+  <section class="alt" id="faq" data-visao="guia">
     <div class="wrap">
       <p class="eyebrow">Perguntas frequentes</p>
       <div class="lead-block">
@@ -3393,7 +3508,7 @@
       </details>
       <details class="faq">
         <summary>Qual a relação com o guia O Prompt do Sim? <span class="chevron">▸</span></summary>
-        <div class="faq-body"><i>O Prompt do Sim</i> é o guia; o CliniLoop é este app. Juntos, formam o sistema Loop, e o resultado vem dos dois juntos. O livro explica o porquê e o caminho; o app gera os prompts, monta os roteiros de conteúdo e de campanha, revisa a ética e guarda o registro de cada paciente. O guia tem seis etapas, 16 partes e um manual prático; cada parte termina em três caixas: Prompt (o pedido pronto), Na prática (o passo de até 30 minutos para hoje) e No CliniLoop (a ferramenta do app). Aqui, cada ferramenta mostra a parte do guia correspondente, o passo de hoje e o prompt do guia já preenchido com o seu perfil. A seção <a href="#livro">O guia</a> reúne o roteiro em seis etapas, as sete decisões com os seus números, a biblioteca com os 14 prompts, as quatro regras de IA e o glossário.</div>
+        <div class="faq-body">O CliniLoop reúne três partes: o guia <i>O Prompt do Sim</i>, o módulo Redes e o módulo CRM, e o resultado vem do uso das três. O livro explica o porquê e o caminho; o app gera os prompts, monta os roteiros de conteúdo e de campanha, revisa a ética e guarda o registro de cada paciente. O guia tem seis etapas, 16 partes e um manual prático; cada parte termina em três caixas: Prompt (o pedido pronto), Na prática (o passo de até 30 minutos para hoje) e No CliniLoop (a ferramenta do app). Aqui, cada ferramenta mostra a parte do guia correspondente, o passo de hoje e o prompt do guia já preenchido com o seu perfil. A seção <a href="#livro">O guia</a> reúne o roteiro em seis etapas, as sete decisões com os seus números, a biblioteca com os 14 prompts, as quatro regras de IA e o glossário.</div>
       </details>
       <details class="faq">
         <summary>Funciona para uma clínica com recepção e vários profissionais? <span class="chevron">▸</span></summary>
@@ -3415,7 +3530,7 @@
 <footer>
   <div class="wrap">
     <span>CliniLoop: roda 100% no navegador, sem backend. Não substitui orientação do seu conselho profissional nem assessoria jurídica.</span>
-    <span><i>O Prompt do Sim</i> e CliniLoop: o sistema Loop.</span>
+    <span>CliniLoop: o guia <i>O Prompt do Sim</i>, o módulo Redes e o módulo CRM.</span>
   </div>
 </footer>
 
@@ -3777,7 +3892,7 @@
   // As bases do sistema (créditos)
   const METODO = {
     bases: [
-      ['Sistema Loop', 'sistema', 'Conquistar pacientes é um projeto, com objetivo, etapas, registros e revisões. Seis etapas, sete decisões do paciente (atenção, confiança, indicação, contato, agendamento, comparecimento, adesão) e três caixas em cada parte: Prompt, Na prática e No CliniLoop.'],
+      ['Método Loop', 'método', 'Conquistar pacientes é um projeto, com objetivo, etapas, registros e revisões. Seis etapas, sete decisões do paciente (atenção, confiança, indicação, contato, agendamento, comparecimento, adesão) e três caixas em cada parte: Prompt, Na prática e No CliniLoop.'],
       ['Oceano Azul', 'estratégia', 'Sair da disputa por atenção com conteúdo igual ao de todos. As quatro ações (eliminar, reduzir, elevar, criar) em relação ao padrão do setor viram uma proposta de valor própria e ética.'],
       ['Escada de crescimento', 'método de perfis', 'Sete degraus: entender a plataforma, definir a promessa (transformação, adjetivos de marca, temas de conteúdo), montar a vitrine, produzir com rotina, ler os números, combinar formatos e fixar metas.'],
       ['Formatos recorrentes', 'síntese de formatos', 'Promessa, curiosidade e recompensa; quadros recorrentes, personagens editoriais, biblioteca de formatos, análise de referências, frequência que cabe na revisão e o ciclo de adaptação (Referência, Observação, Adaptação, Troca).'],
@@ -5544,9 +5659,10 @@ Entregue:
   // Abre a ferramenta onde ela mora: no passo do caminho ou na caixa de ferramentas.
   function openTool(id) {
     if (typeof abrirNoCaminho === 'function' && abrirNoCaminho(id)) return;
-    if (id === 'ajustes') { const aj = document.getElementById('ajustes'); aj.open = true; aj.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
+    if (id === 'ajustes') { const aj = document.getElementById('ajustes'); if (typeof mostrarVisaoDe === 'function') mostrarVisaoDe(aj); aj.open = true; aj.scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
     const el = document.querySelector(`.tool[data-id="${id}"]`);
     if (!el) return;
+    if (typeof mostrarVisaoDe === 'function') mostrarVisaoDe(el);
     el.open = true;
     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
@@ -5964,6 +6080,20 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     renderTracker();
   });
 
+  // Mudar de etapa: registra a data, sugere o próximo passo típico e guarda o histórico. Usado pela lista e pelo quadro.
+  function moverEtapa(p, nova, extra) {
+    const antes = p.passo;
+    p.etapa = nova;
+    fillHist(p, nova);
+    if (!String(antes || '').trim() || Object.values(PASSO_TIPICO).includes(antes)) {
+      p.passo = PASSO_TIPICO[nova] || p.passo;
+      if (nova === 'Plano proposto' && !semPacote() && (!p.data || p.data < todayISO())) p.data = addDays(todayISO(), 2);
+    }
+    if (nova === 'Encerrado') { if (extra && extra.resultado) p.resultado = extra.resultado; else if (!p.resultado) p.resultado = 'Alta e vínculo'; if (extra && extra.motivo) p.motivo = String(extra.motivo).slice(0, 200); }
+    p.ativ = (p.ativ || []).concat([{ d: todayISO(), t: 'Etapa: ' + nova, r: '' }]).slice(-50);
+    p.atualizado = todayISO();
+    return savePac();
+  }
   function isLate(p) { return p.data && p.etapa !== 'Encerrado' && p.data <= todayISO(); }
   // Filas do dia a dia: o que venceu, o que é para hoje e quem está sem próximo passo.
   const aberto = (p) => p.etapa !== 'Encerrado';
@@ -6030,17 +6160,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
         ${p.notas ? `<div class="notes">${escapeHtml(p.notas)}</div>` : ''}`;
       const upd = (fn) => { fn(); p.atualizado = todayISO(); savePac(); };
       el.querySelector('.js-etapa').addEventListener('change', (ev) => {
-        upd(() => {
-          const antes = p.passo;
-          p.etapa = ev.target.value;
-          fillHist(p, p.etapa);
-          if (!String(antes || '').trim() || Object.values(PASSO_TIPICO).includes(antes)) {
-            p.passo = PASSO_TIPICO[p.etapa] || p.passo;
-            if (p.etapa === 'Plano proposto' && !semPacote() && (!p.data || p.data < todayISO())) p.data = addDays(todayISO(), 2);
-          }
-          if (p.etapa === 'Encerrado' && !p.resultado) p.resultado = 'Alta e vínculo';
-          p.ativ = (p.ativ || []).concat([{ d: todayISO(), t: 'Etapa: ' + p.etapa, r: '' }]).slice(-50);
-        });
+        moverEtapa(p, ev.target.value);
         renderTracker();
       });
       el.querySelector('.js-passo').addEventListener('change', (ev) => upd(() => { p.passo = ev.target.value.slice(0, 300); }));
@@ -7666,6 +7786,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
   function passoEl(n) { return document.getElementById('passo-' + n); }
   function abrirPasso(n, opts) {
     opts = opts || {};
+    if (n && typeof mostrarVisao === 'function') mostrarVisao(n <= 6 ? 'redes' : 'crm');
     PASSOS.forEach((p) => {
       const el = passoEl(p.n); const corpo = el.querySelector('.passo-corpo'); const bt = el.querySelector('.passo-toggle');
       const on = p.n === n;
@@ -8026,6 +8147,7 @@ Entregue:
     rv.hidden = !rev.length && e.status !== 'revisar';
     rv.innerHTML = `<p><b>A sua estratégia mudou.</b> Estas entregas foram aprovadas com a versão anterior e precisam de revisão (as versões antigas ficam guardadas):</p><ul>${e.status === 'revisar' ? '<li><button type="button" class="linkish" data-abrir="oceano">Proposta de valor: aprovar de novo (passo 3)</button></li>' : ''}${rev.map((id) => `<li><button type="button" class="linkish" data-abrir="${id}">${escapeHtml(EST_DEPENDENTES[id][0])}${EST_DEPENDENTES[id][1] ? ' (passo ' + EST_DEPENDENTES[id][1] + ')' : ''}</button></li>`).join('')}</ul>`;
     renderFaixasDif();
+    if (typeof renderModulos === 'function') renderModulos();
     // A versão aprovada de cada entrega mostra na hora se a estratégia mudou depois dela.
     document.querySelectorAll('.saved-slot').forEach((sl) => { if (sl.querySelector('textarea')) renderSavedSlot(sl); });
     if (st.aberto) renderPasso(st.aberto);
@@ -8202,6 +8324,231 @@ Entregue:
     marca();
     let t = null;
     new MutationObserver(() => { clearTimeout(t); t = setTimeout(marca, 50); }).observe(document.body, { childList: true, subtree: true });
+  })();
+
+  // ===================== Os três módulos: Guia, Redes e CRM =====================
+  // Uma tela por vez: Hoje, Redes (passos 1 a 6), CRM (passos 7 a 9 e o quadro), Guia e Ferramentas.
+  // Só "var" e funções no topo: abrirPasso chama mostrarVisao durante a inicialização do caminho, antes deste trecho.
+  var VISAO_KEY = 'cliniloop.visao.v1';
+  var RECEPCAO_KEY = 'cliniloop.recepcao.v1';
+  var quadroOk = false;
+  function visaoAtual() { const m = document.body.className.match(/\bv-([a-z]+)\b/); return m ? m[1] : 'hoje'; }
+  function emRecepcao() { return document.body.classList.contains('modo-recepcao'); }
+  function mostrarVisao(v, opts) {
+    opts = opts || {};
+    if (emRecepcao() && v !== 'crm' && v !== 'todas') v = 'crm';
+    const antes = visaoAtual();
+    document.body.className = document.body.className.replace(/\bv-[a-z]+\b/g, '').trim() + ' v-' + v;
+    document.querySelectorAll('[data-visao-link]').forEach((a) => { if (a.dataset.visaoLink === v) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
+    if (v !== 'todas') { try { window.localStorage.setItem(VISAO_KEY, JSON.stringify(v)); } catch (e) { /* preferência, não dado */ } }
+    if (v === 'crm' && typeof renderQuadro === 'function') renderQuadro();
+    if (opts.rolar && antes !== v) window.scrollTo(0, 0);
+  }
+  // A visão de um elemento é a da seção marcada mais próxima.
+  function visaoDe(el) { const s = el && el.closest && el.closest('[data-visao]'); return s ? s.dataset.visao : null; }
+  function mostrarVisaoDe(el) { const v = visaoDe(el); if (v && v !== visaoAtual()) mostrarVisao(v); }
+
+  // --- Menu e botões que trocam de módulo ---
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('[data-visao-link],[data-ir-visao]');
+    if (!a) return;
+    e.preventDefault();
+    const v = a.dataset.visaoLink || a.dataset.irVisao;
+    mostrarVisao(v, { rolar: true });
+    window.scrollTo(0, 0);
+    const alvo = document.getElementById('v-' + v);
+    if (alvo && v !== 'hoje') { alvo.tabIndex = -1; alvo.focus({ preventScroll: true }); }
+  }, true);
+  // Links internos (#rastreador, #etica, #livro...) mostram primeiro o módulo onde o destino mora.
+  document.addEventListener('click', (e) => {
+    const l = e.target.closest('a[href^="#"]');
+    if (!l || l.hasAttribute('data-visao-link')) return;
+    const alvo = document.getElementById(l.getAttribute('href').slice(1));
+    if (alvo) mostrarVisaoDe(alvo);
+  }, true);
+
+  // --- Modo recepção: abre direto no CRM e recolhe o resto (não é controle de acesso) ---
+  function aplicarRecepcao(on) {
+    document.body.classList.toggle('modo-recepcao', on);
+    document.getElementById('recepcao-sair').hidden = !on;
+    document.getElementById('recepcao-ligar').textContent = on ? 'Modo recepção ligado' : 'Modo recepção';
+    document.getElementById('recepcao-ligar').setAttribute('aria-pressed', on ? 'true' : 'false');
+    if (on) mostrarVisao('crm', { rolar: true });
+  }
+  document.getElementById('recepcao-ligar').addEventListener('click', () => {
+    const on = !emRecepcao();
+    try { window.localStorage.setItem(RECEPCAO_KEY, JSON.stringify(on)); } catch (e) { /* preferência deste navegador */ }
+    aplicarRecepcao(on);
+  });
+  document.getElementById('recepcao-sair').addEventListener('click', () => {
+    try { window.localStorage.setItem(RECEPCAO_KEY, 'false'); } catch (e) { /* noop */ }
+    aplicarRecepcao(false);
+    mostrarVisao('hoje', { rolar: true });
+  });
+
+  // --- Situação de cada módulo (no topo do Hoje e no cabeçalho do módulo Redes) ---
+  function renderModulos() {
+    const prontos = [1, 2, 3, 4, 5, 6].filter((n) => estadoPasso(n) === 'pronto').length;
+    const abertos = pacientes.filter((p) => p.etapa !== 'Encerrado').length;
+    const venc = pacientes.filter(FILAS.vencidos[1]).length;
+    const r = document.querySelector('#hero-mods [data-mod="redes"] .hm-st'); if (r) r.textContent = `${prontos} de 6`;
+    const c = document.querySelector('#hero-mods [data-mod="crm"] .hm-st'); if (c) c.textContent = pacientes.length ? `${abertos} em aberto${venc ? ' · ' + venc + ' vencido(s)' : ''}` : 'sem contatos';
+    const prox = proximoPasso();
+    const rs = document.getElementById('redes-status');
+    if (rs) rs.innerHTML = `<span><b>${prontos} de 6</b> passos prontos</span>${prox <= 6 ? `<button type="button" class="btn btn-gold btn-sm" data-passo-abrir="${prox}">Continuar: passo ${prox}</button>` : ''}`;
+  }
+
+  // ===================== Quadro de contatos (CRM) =====================
+  let qFila = ''; let qEnc = false; let qEncerrar = ''; let qArrastado = '';
+  function qStatus(p) {
+    const h = todayISO();
+    if (p.etapa === 'Encerrado') return '';
+    if (p.data && p.data < h) return 'venc';
+    if (p.data === h) return 'hoje';
+    if (!String(p.passo || '').trim() || !p.data) return 'sem';
+    return '';
+  }
+  const Q_ROT = { venc: 'Vencido', hoje: 'Para hoje', sem: 'Sem próximo passo' };
+  function qCartao(p) {
+    const i = ETAPAS.indexOf(p.etapa);
+    const st = qStatus(p);
+    const col = p.colega ? colegaPorId(p.colega) : null;
+    const prev = ETAPAS[i - 1]; const next = ETAPAS[i + 1];
+    const enc = qEncerrar === p.id;
+    return `<article class="q-card${st ? ' q-' + st : ''}" draggable="true" data-id="${escapeHtml(p.id)}" aria-label="${escapeHtml(p.nome)}, ${escapeHtml(etapaLabel(p.etapa))}">
+      <p class="q-nome"><b>${escapeHtml(p.nome)}</b>${st ? `<span class="q-tag">${Q_ROT[st]}</span>` : ''}</p>
+      <p class="q-meta">${escapeHtml(p.origem || 'origem não informada')}${col ? ' (' + escapeHtml(col.nome) + ')' : ''}${p.servico ? ' · ' + escapeHtml(p.servico) : ''}</p>
+      ${p.etapa === 'Encerrado' ? `<p class="q-passo">${escapeHtml(p.resultado || 'Encerrado')}${p.motivo ? ' · ' + escapeHtml(p.motivo) : ''}</p>` : `<p class="q-passo">${p.passo ? escapeHtml(trim(p.passo, 70)) : 'Sem próximo passo'}${p.data ? ' · ' + (p.data === todayISO() ? 'hoje' : fmtShort(p.data)) : ''}</p>`}
+      ${enc ? `<div class="q-enc"><label>Resultado<select class="q-res">${RESULTADOS.map((x) => `<option>${x}</option>`).join('')}</select></label><label>Motivo (sem dado clínico)<input type="text" class="q-mot" maxlength="200" placeholder="Ex: escolheu outro horário"></label><div class="q-enc-bts"><button type="button" class="btn btn-teal btn-sm" data-q="confirmar">Encerrar</button><button type="button" class="linkish" data-q="cancelar">Cancelar</button></div></div>`
+        : `<div class="q-mov">${prev ? `<button type="button" class="q-b" data-q="prev" aria-label="Voltar ${escapeHtml(p.nome)} para ${escapeHtml(etapaLabel(prev))}">←</button>` : '<span></span>'}
+        <button type="button" class="linkish q-det" data-q="det">Detalhes</button>
+        ${p.etapa !== 'Encerrado' ? `<button type="button" class="linkish q-det" data-q="encerrar">Encerrar</button>` : ''}
+        ${next ? `<button type="button" class="q-b" data-q="next" aria-label="Mover ${escapeHtml(p.nome)} para ${escapeHtml(etapaLabel(next))}">→</button>` : '<span></span>'}</div>`}
+    </article>`;
+  }
+  function renderQuadro() {
+    const box = document.getElementById('quadro-cols');
+    if (!quadroOk || !box || visaoAtual() !== 'crm') return;
+    const busca = normTxt(document.getElementById('q-busca').value).trim();
+    const passa = (p) => (!qFila || FILAS[qFila][1](p)) && (!busca || normTxt(p.nome + ' ' + (p.servico || '') + ' ' + (p.origem || '')).includes(busca));
+    const nf = (k) => pacientes.filter(FILAS[k][1]).length;
+    document.getElementById('q-filas').innerHTML = `<button type="button" class="fila${qFila ? '' : ' on'}" data-qf="" aria-pressed="${!qFila}">Todos</button>` + Object.keys(FILAS).map((k) => `<button type="button" class="fila${qFila === k ? ' on' : ''}${k === 'vencidos' && nf(k) ? ' late' : ''}" data-qf="${k}" aria-pressed="${qFila === k}">${FILAS[k][0]} <b>${nf(k)}</b></button>`).join('');
+    box.innerHTML = ETAPAS.map((e) => {
+      let ps = pacientes.filter((p) => p.etapa === e && passa(p));
+      const total = ps.length;
+      if (e === 'Encerrado') ps = ps.sort((a, b) => String(b.atualizado || '').localeCompare(String(a.atualizado || ''))).slice(0, qEnc ? 50 : 0);
+      else ps.sort((a, b) => String(a.data || '9999').localeCompare(String(b.data || '9999')));
+      return `<section class="q-col${e === 'Encerrado' ? ' q-col-enc' : ''}" data-etapa="${e}" aria-label="${escapeHtml(etapaLabel(e))}: ${total} contato(s)">
+        <header class="q-col-h"><b>${escapeHtml(etapaLabel(e))}</b><span class="q-n">${total}</span></header>
+        <p class="q-dica">${escapeHtml(PASSO_TIPICO[e] || '')}</p>
+        ${e === 'Encerrado' ? `<button type="button" class="linkish q-enc-tg" data-q="enc">${qEnc ? 'Esconder encerrados' : 'Mostrar encerrados'}</button>` : ''}
+        <div class="q-lista">${ps.map(qCartao).join('') || (e === 'Encerrado' ? '' : '<p class="q-vazio">Nenhum contato aqui.</p>')}</div>
+      </section>`;
+    }).join('');
+    if (!pacientes.length) box.insertAdjacentHTML('afterbegin', '<p class="q-sem">Ainda não há contatos. Clique em "Novo contato" a cada mensagem ou ligação nova, com a origem.</p>');
+  }
+  function qAnuncia(t) { let r = document.getElementById('q-anuncio'); if (!r) { r = document.createElement('p'); r.id = 'q-anuncio'; r.className = 'visually-hidden'; r.setAttribute('aria-live', 'polite'); document.getElementById('quadro').appendChild(r); } r.textContent = t; }
+  function qMover(p, nova, extra) {
+    if (!moverEtapa(p, nova, extra)) { qAnuncia('Não consegui gravar a mudança neste navegador.'); alertaQuadro('Não consegui gravar a mudança neste navegador. Tente de novo.'); return; }
+    qEncerrar = '';
+    renderQuadro(); renderTracker();
+    qAnuncia(`${p.nome} agora em ${etapaLabel(nova)}.${p.passo ? ' Próximo passo: ' + p.passo + '.' : ''}`);
+    const c = document.querySelector(`.q-card[data-id="${CSS.escape(p.id)}"]`);
+    if (c) { c.classList.add('q-novo'); const b = c.querySelector('[data-q="next"]') || c.querySelector('[data-q="det"]'); if (b) b.focus({ preventScroll: true }); }
+  }
+  function alertaQuadro(t) { let m = document.getElementById('q-erro'); if (!m) { m = document.createElement('p'); m.id = 'q-erro'; m.className = 'form-msg error'; m.setAttribute('role', 'alert'); document.querySelector('.quadro-cab').appendChild(m); } m.textContent = t; }
+  document.getElementById('quadro').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-q],[data-qf]');
+    if (!b) return;
+    if (b.dataset.qf !== undefined) { qFila = b.dataset.qf; renderQuadro(); return; }
+    if (b.dataset.q === 'enc') { qEnc = !qEnc; renderQuadro(); return; }
+    const card = b.closest('.q-card'); if (!card) return;
+    const p = pacientes.find((x) => x.id === card.dataset.id); if (!p) return;
+    const i = ETAPAS.indexOf(p.etapa);
+    const q = b.dataset.q;
+    if (q === 'prev' && i > 0) qMover(p, ETAPAS[i - 1]);
+    else if (q === 'next' && i < ETAPAS.length - 1) { if (ETAPAS[i + 1] === 'Encerrado') { qEncerrar = p.id; renderQuadro(); const s = document.querySelector('.q-card .q-res'); if (s) s.focus(); } else qMover(p, ETAPAS[i + 1]); }
+    else if (q === 'encerrar') { qEncerrar = p.id; renderQuadro(); const s = document.querySelector('.q-card .q-res'); if (s) s.focus(); }
+    else if (q === 'cancelar') { qEncerrar = ''; renderQuadro(); }
+    else if (q === 'confirmar') qMover(p, 'Encerrado', { resultado: card.querySelector('.q-res').value, motivo: card.querySelector('.q-mot').value });
+    else if (q === 'det') {
+      openTool('rastreador');
+      const bsc = document.getElementById('t-busca'); bsc.value = p.nome; filaAtual = ''; renderTracker();
+      setTimeout(() => { const it = document.querySelector('#t-list .track-item'); if (it) { it.scrollIntoView({ behavior: 'smooth', block: 'center' }); const f = it.querySelector('select, input'); if (f) f.focus({ preventScroll: true }); } }, 120);
+    }
+  });
+  document.getElementById('q-busca').addEventListener('input', renderQuadro);
+  // Arrastar e soltar (computador). No celular e no teclado, as setas do cartão fazem o mesmo.
+  const qCols = document.getElementById('quadro-cols');
+  qCols.addEventListener('dragstart', (e) => { const c = e.target.closest('.q-card'); if (!c) return; qArrastado = c.dataset.id; e.dataTransfer.effectAllowed = 'move'; try { e.dataTransfer.setData('text/plain', qArrastado); } catch (err) { /* noop */ } c.classList.add('q-arrastando'); });
+  qCols.addEventListener('dragend', () => { qArrastado = ''; qCols.querySelectorAll('.q-sobre, .q-arrastando').forEach((x) => x.classList.remove('q-sobre', 'q-arrastando')); });
+  qCols.addEventListener('dragover', (e) => { const col = e.target.closest('.q-col'); if (!col || !qArrastado) return; e.preventDefault(); qCols.querySelectorAll('.q-sobre').forEach((x) => { if (x !== col) x.classList.remove('q-sobre'); }); col.classList.add('q-sobre'); });
+  qCols.addEventListener('drop', (e) => {
+    const col = e.target.closest('.q-col'); if (!col) return;
+    e.preventDefault();
+    const p = pacientes.find((x) => x.id === qArrastado); qArrastado = '';
+    if (!p || p.etapa === col.dataset.etapa) { renderQuadro(); return; }
+    if (col.dataset.etapa === 'Encerrado') { qEncerrar = p.id; qEnc = true; renderQuadro(); const s = document.querySelector('.q-card .q-res'); if (s) s.focus(); return; }
+    qMover(p, col.dataset.etapa);
+  });
+  document.getElementById('q-novo').addEventListener('click', () => { openTool('rastreador'); setTimeout(() => { const n = document.getElementById('t-nome'); n.scrollIntoView({ behavior: 'smooth', block: 'center' }); n.focus({ preventScroll: true }); }, 120); });
+  document.addEventListener('cliniloop:dados', () => { renderQuadro(); renderModulos(); });
+
+  // ===================== Procedimento da recepção =====================
+  function procedimentoHtml() {
+    const e = estrategia(); const r = resultados();
+    const quem = cfg.nome || (profInfo() ? 'o(a) ' + profInfo().titulo : 'o profissional');
+    const mostra = e.ja.length ? e.ja[0].charAt(0).toLowerCase() + e.ja[0].slice(1) : '';
+    const precoRestrito = ['dentista', 'psicologo', 'fisioterapeuta', 'nutricionista'].includes(cfg.profissional);
+    const P = [
+      ['Novo', 'Em até 5 minutos, no horário de atendimento.', 'Agradeça, pergunte como a pessoa conheceu o consultório (é a origem) e ofereça dois horários.', `Olá! Aqui é [seu nome], da equipe de ${quem}. Obrigada pela mensagem. Posso te oferecer dois horários para a primeira consulta: [dia e hora] ou [dia e hora]. Qual fica melhor?`],
+      ['Em conversa', 'Retome em 1, 3 e 7 dias se a pessoa não responder. Depois, encerre como "Pausado".', 'Explique como é a primeira consulta e o que a pessoa leva dela. Dúvida clínica vai para o profissional: a recepção não responde.', `Oi, [nome]! Passando para saber se algum dos horários ficou bom. Na primeira consulta, ${mostra ? 'você sai com ' + mostra : 'você sai sabendo os próximos passos'}.`],
+      ['Agendado', 'Confirme 48 horas antes; se não responder, 24 horas antes. Lembrete 2 horas antes só para quem aceitou lembretes.', 'Se a pessoa faltar, ofereça remarcar no mesmo dia, sem constranger, e registre a falta como atividade.', `Oi, [nome]! Confirmando a sua consulta de [dia] às [hora] com ${quem}. Pode responder "sim" para confirmar? Se precisar remarcar, me avise por aqui.`],
+      ['Avaliado', 'No mesmo dia da consulta.', 'Pergunte ao profissional se houve plano proposto. Se houve, mova o cartão para "Plano proposto".', ''],
+      ['Plano proposto', 'Acompanhamento em 2, 7 e 15 dias.', `Mande algo útil sobre a dúvida da pessoa, sem pressão. ${precoRestrito ? 'Valores só na conversa privada e só como o profissional autorizou; nunca como promoção ou desconto.' : 'Valores só como o profissional autorizou; nunca como promoção casada ou premiação.'}`, `Oi, [nome]! Ficou alguma dúvida sobre o plano que ${quem} explicou? Se quiser, separo um horário para conversar.`],
+      ['Em tratamento', 'Toda semana, confira as próximas sessões e reavaliações.', 'Registre faltas e remarque. O que acontece no tratamento fica no prontuário, não aqui.', ''],
+      ['Encerrado', 'Ao encerrar.', 'Escolha o resultado (alta e vínculo, perdido ou pausado) e escreva o motivo, sem dado clínico. Peça avaliação no Google a todos os pacientes, de forma neutra e sem oferecer nada em troca.', '']
+    ];
+    const regras = [
+      'Nenhum dado clínico no CRM nem nas mensagens: diagnóstico, exames, sintomas e evolução ficam no prontuário.',
+      'Dúvida clínica é do profissional. A recepção agradece e encaminha.',
+      'Consentimento só quando a pessoa aceitar, por finalidade: atendimento, lembretes e conteúdos. Pedido para não receber mensagens vale na hora.',
+      'Não prometer resultado nem cura, e não comparar com outros profissionais.',
+      'Sempre pergunte como a pessoa conheceu o consultório. Se ela não souber, marque "Não sei".',
+      'Todo contato em aberto termina o dia com próximo passo e data.'
+    ];
+    if (isMental()) regras.push('Em saúde mental, a falta pode ser sinal clínico: avise o profissional antes de qualquer retomada.');
+    return `<p class="proc-sub">${escapeHtml(cfg.nome || 'Consultório')}${cfg.registro ? ' · ' + escapeHtml(cfg.registro) : ''}${cfg.whatsapp ? ' · WhatsApp ' + escapeHtml(cfg.whatsapp) : ''} · atualizado em ${fmtDate(todayISO())}</p>
+      <h4>Regras que valem sempre</h4><ul class="proc-regras">${regras.map((x) => `<li>${escapeHtml(x)}</li>`).join('')}</ul>
+      <h4>O que fazer em cada etapa do quadro</h4>
+      <div class="proc-etapas">${P.map(([et, prazo, fazer, msg]) => `<section class="proc-et"><h5>${escapeHtml(etapaLabel(et))}</h5><p><b>Quando:</b> ${escapeHtml(prazo)}</p><p><b>O que fazer:</b> ${escapeHtml(fazer)}</p>${msg ? `<p class="proc-msg"><b>Mensagem modelo:</b> ${escapeHtml(msg)}</p>` : ''}</section>`).join('')}</div>
+      <h4>Como a nossa diferença aparece no atendimento</h4>
+      ${e.ja.length ? `<ul>${e.ja.map((x) => `<li>${escapeHtml(x)}</li>`).join('')}</ul><p class="proc-nota">Fale disso com as palavras do paciente e só do que já acontece no consultório.</p>` : '<p class="proc-nota">Quando o profissional aprovar a proposta de valor (passo 3) e marcar o que já faz, os itens aparecem aqui.</p>'}
+      <h4>Respostas aprovadas pelo profissional</h4>
+      ${r.atendimento ? `<pre class="proc-resp">${escapeHtml(r.atendimento.t)}</pre>` : '<p class="proc-nota">Ainda não há respostas aprovadas no passo 7. Até lá, use as mensagens modelo acima, trocando o que está entre colchetes.</p>'}`;
+  }
+  function abrirProcedimento(on) {
+    const s = document.getElementById('procedimento'); const b = document.getElementById('proc-abrir');
+    s.hidden = !on; b.setAttribute('aria-expanded', on ? 'true' : 'false');
+    if (on) { document.getElementById('proc-corpo').innerHTML = procedimentoHtml(); s.scrollIntoView({ behavior: 'smooth', block: 'start' }); const t = document.getElementById('proc-t'); t.tabIndex = -1; t.focus({ preventScroll: true }); }
+  }
+  document.getElementById('proc-abrir').addEventListener('click', () => abrirProcedimento(document.getElementById('procedimento').hidden));
+  document.getElementById('proc-fechar').addEventListener('click', () => { abrirProcedimento(false); document.getElementById('proc-abrir').focus(); });
+  document.getElementById('proc-imprimir').addEventListener('click', () => printDoc(docShell('Procedimento da recepção', `<h1>Procedimento da recepção</h1>${procedimentoHtml()}`), document.getElementById('proc-msg')));
+
+  // --- Início: escolhe o módulo da primeira tela ---
+  (function initModulos() {
+    quadroOk = true;
+    let rec = false; try { rec = JSON.parse(window.localStorage.getItem(RECEPCAO_KEY) || 'false') === true; } catch (e) { rec = false; }
+    let v = null; try { v = JSON.parse(window.localStorage.getItem(VISAO_KEY) || 'null'); } catch (e) { v = null; }
+    if (!['hoje', 'redes', 'crm', 'guia', 'ferramentas'].includes(v)) v = 'hoje';
+    if (estadoPasso(1) !== 'pronto' && v !== 'guia') v = 'hoje';
+    const h = location.hash.slice(1);
+    if (/^v-/.test(h)) v = h.slice(2);
+    else if (h) { const alvo = document.getElementById(h); const vv = visaoDe(alvo); if (vv) v = vv; }
+    mostrarVisao(v);
+    if (rec) aplicarRecepcao(true);
+    renderModulos();
   })();
 </script>
 </body>

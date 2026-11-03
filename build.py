@@ -81,7 +81,7 @@ for a_, b_ in [('O PacienteLoop monta os prompts, o briefing e o e-book no seu n
 body2 = body2.replace('''      <details class="faq">
         <summary>Funciona com qualquer IA?''', '''      <details class="faq">
         <summary>Qual a relação com o guia O Prompt do Sim? <span class="chevron">▸</span></summary>
-        <div class="faq-body"><i>O Prompt do Sim</i> é o guia; o CliniLoop é este app. Juntos, formam o sistema Loop, e o resultado vem dos dois juntos. O livro explica o porquê e o caminho; o app gera os prompts, monta os roteiros de conteúdo e de campanha, revisa a ética e guarda o registro de cada paciente. O guia tem seis etapas, 16 partes e um manual prático; cada parte termina em três caixas: Prompt (o pedido pronto), Na prática (o passo de até 30 minutos para hoje) e No CliniLoop (a ferramenta do app). Aqui, cada ferramenta mostra a parte do guia correspondente, o passo de hoje e o prompt do guia já preenchido com o seu perfil. A seção <a href="#livro">O guia</a> reúne o roteiro em seis etapas, as sete decisões com os seus números, a biblioteca com os 14 prompts, as quatro regras de IA e o glossário.</div>
+        <div class="faq-body">O CliniLoop reúne três partes: o guia <i>O Prompt do Sim</i>, o módulo Redes e o módulo CRM, e o resultado vem do uso das três. O livro explica o porquê e o caminho; o app gera os prompts, monta os roteiros de conteúdo e de campanha, revisa a ética e guarda o registro de cada paciente. O guia tem seis etapas, 16 partes e um manual prático; cada parte termina em três caixas: Prompt (o pedido pronto), Na prática (o passo de até 30 minutos para hoje) e No CliniLoop (a ferramenta do app). Aqui, cada ferramenta mostra a parte do guia correspondente, o passo de hoje e o prompt do guia já preenchido com o seu perfil. A seção <a href="#livro">O guia</a> reúne o roteiro em seis etapas, as sete decisões com os seus números, a biblioteca com os 14 prompts, as quatro regras de IA e o glossário.</div>
       </details>
       <details class="faq">
         <summary>Funciona para uma clínica com recepção e vários profissionais? <span class="chevron">▸</span></summary>
@@ -97,7 +97,7 @@ body2 = body2.replace('''      <details class="faq">
 # A caixa de ferramentas recebe os ajustes (modo de IA, backup), sem os fechamentos do antigo painel.
 settings = settings[:settings.rindex('</details>') + len('</details>')]
 caixa = r('caixa.html').replace('@@SETTINGS@@', settings)
-html = head + r('head_part.html') + r('caminho.html') + caixa + r('livro.html') + body2 + '\n<script>\n' + r('app1.js') + r('livro_data.js') + r('suplemento_data.js') + r('app2.js') + r('app3.js') + r('app4.js') + r('app5.js') + r('app6.js') + r('app8.js') + r('estrategia.js') + r('app9.js') + r('biblioteca.js') + '</script>\n</body>\n</html>\n'
+html = head + r('head_part.html') + r('caminho.html') + caixa + r('livro.html') + body2 + '\n<script>\n' + r('app1.js') + r('livro_data.js') + r('suplemento_data.js') + r('app2.js') + r('app3.js') + r('app4.js') + r('app5.js') + r('app6.js') + r('app8.js') + r('estrategia.js') + r('app9.js') + r('biblioteca.js') + r('modulos.js') + '</script>\n</body>\n</html>\n'
 assert 'PacienteLoop' not in html.replace('pacienteloop', ''), [m.start() for m in re.finditer('PacienteLoop', html)][:5]
 (ROOT / 'index.html').write_text(html, encoding='utf-8')
 print('index.html', len(html), 'bytes')

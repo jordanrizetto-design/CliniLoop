@@ -1,6 +1,6 @@
   <section id="caminho" class="caminho-sec">
     <div class="wrap">
-      <div class="hoje" id="hoje" aria-labelledby="hoje-titulo" hidden>
+      <div class="hoje" id="hoje" data-visao="hoje" aria-labelledby="hoje-titulo" hidden>
         <div class="hoje-head">
           <h2 id="hoje-titulo">Hoje</h2>
           <span class="hoje-data" id="hoje-data"></span>
@@ -44,13 +44,19 @@
         <div class="hoje-backup" id="hj-backup" hidden></div>
       </div>
 
-      <div class="mov" data-mov="1" id="mov-1">
+      <header class="modulo-cab" data-visao="redes" id="v-redes">
+        <p class="modulo-n">Módulo Redes e posicionamento · passos 1 a 6</p>
+        <h2>Da sua diferença ao lugar onde o paciente procura.</h2>
+        <p>Aqui você define o que só você oferece, com o Oceano Azul, e leva essa diferença aos perfis, ao conteúdo, aos colegas e às campanhas. Funciona no computador e no celular.</p>
+        <div class="modulo-status" id="redes-status"></div>
+      </header>
+      <div class="mov" data-visao="redes" data-mov="1" id="mov-1">
         <p class="mov-n">Ato 1 de 3 · A partida</p>
         <h2>Defina a sua diferença</h2>
         <p>Você sai do mundo comum, em que todo perfil parece igual ao de qualquer colega, e encontra a ferramenta do herói: o Oceano Azul. Daqui sai a sua diferença, a base de tudo o que vem depois.</p>
       </div>
 
-      <section class="passo" id="passo-1" data-passo="1" data-mov="1">
+      <section class="passo" data-visao="redes" id="passo-1" data-passo="1" data-mov="1">
         <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-1-corpo">
           <span class="passo-n" aria-hidden="true">1</span>
           <span class="passo-tt"><span class="passo-titulo">Seu consultório e objetivo</span><span class="passo-resumo" data-vazio="Profissão, registro, serviços e o resultado dos próximos 90 dias">Profissão, registro, serviços e o resultado dos próximos 90 dias</span></span>
@@ -176,7 +182,7 @@
         </div>
       </section>
 
-      <section class="passo" id="passo-2" data-passo="2" data-mov="1">
+      <section class="passo" data-visao="redes" id="passo-2" data-passo="2" data-mov="1">
         <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-2-corpo">
           <span class="passo-n" aria-hidden="true">2</span>
           <span class="passo-tt"><span class="passo-titulo">Seu paciente ideal</span><span class="passo-resumo" data-vazio="Quem você mais ajuda, a dúvida dele e o que ele valoriza">Quem você mais ajuda, a dúvida dele e o que ele valoriza</span></span>
@@ -273,7 +279,7 @@
         </div>
       </section>
 
-      <section class="passo" id="passo-3" data-passo="3" data-mov="1">
+      <section class="passo" data-visao="redes" id="passo-3" data-passo="3" data-mov="1">
         <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-3-corpo">
           <span class="passo-n" aria-hidden="true">3</span>
           <span class="passo-tt"><span class="passo-titulo">Oceano Azul: sua proposta de valor</span><span class="passo-resumo" data-vazio="Sete etapas até uma proposta que um colega não poderia assinar">Sete etapas até uma proposta que um colega não poderia assinar</span></span>
@@ -383,13 +389,13 @@
         </div>
       </section>
 
-      <div class="mov" data-mov="2">
+      <div class="mov" data-visao="redes" data-mov="2">
         <p class="mov-n">Ato 2 de 3 · As provas</p>
         <h2>Mostre onde o paciente procura</h2>
         <p>Com a diferença em mãos, você atravessa os canais. Perfis, conteúdo, colegas e anúncios passam a mostrar o que só você faz.</p>
       </div>
 
-      <section class="passo" id="passo-4" data-passo="4" data-mov="2">
+      <section class="passo" data-visao="redes" id="passo-4" data-passo="4" data-mov="2">
         <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-4-corpo">
           <span class="passo-n" aria-hidden="true">4</span>
           <span class="passo-tt"><span class="passo-titulo">Seus perfis, uma rede por vez</span><span class="passo-resumo" data-vazio="Google, Instagram, LinkedIn, YouTube e TikTok: um prompt para cada">Google, Instagram, LinkedIn, YouTube e TikTok: um prompt para cada</span></span>
@@ -615,7 +621,7 @@
         </div>
       </section>
 
-      <section class="passo" id="passo-5" data-passo="5" data-mov="2">
+      <section class="passo" data-visao="redes" id="passo-5" data-passo="5" data-mov="2">
         <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-5-corpo">
           <span class="passo-n" aria-hidden="true">5</span>
           <span class="passo-tt"><span class="passo-titulo">Plano de conteúdo e roteiros</span><span class="passo-resumo" data-vazio="Pautas das dúvidas reais, calendário e o roteiro da primeira peça">Pautas das dúvidas reais, calendário e o roteiro da primeira peça</span></span>
@@ -828,7 +834,7 @@
         </div>
       </section>
 
-      <section class="passo" id="passo-6" data-passo="6" data-mov="2">
+      <section class="passo" data-visao="redes" id="passo-6" data-passo="6" data-mov="2">
         <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-6-corpo">
           <span class="passo-n" aria-hidden="true">6</span>
           <span class="passo-tt"><span class="passo-titulo">Colegas e campanhas</span><span class="passo-resumo" data-vazio="Quem indica você e, depois, o primeiro anúncio">Quem indica você e, depois, o primeiro anúncio</span></span>
@@ -1006,13 +1012,42 @@
         </div>
       </section>
 
-      <div class="mov" data-mov="3">
+      <header class="modulo-cab modulo-crm" data-visao="crm" id="v-crm">
+        <p class="modulo-n">Módulo CRM do consultório · passos 7 a 9</p>
+        <h2>Cada contato, do primeiro "oi" ao tratamento.</h2>
+        <p>O quadro mostra em que etapa está cada pessoa e qual é o próximo passo. Foi pensado para o computador do consultório, onde a recepção trabalha. No celular, use para consultar.</p>
+        <p class="modulo-aviso-cel">Você está no celular: o quadro rola para o lado. Para mover cartões e atender com calma, prefira o computador.</p>
+        <div class="crm-acoes">
+          <button type="button" class="btn btn-teal btn-sm" id="q-novo" data-ico="plus">Novo contato</button>
+          <button type="button" class="btn btn-outline btn-sm" id="proc-abrir" aria-controls="procedimento" aria-expanded="false">Procedimento da recepção</button>
+          <button type="button" class="btn btn-outline btn-sm" id="recepcao-ligar">Modo recepção</button>
+        </div>
+      </header>
+      <section class="procedimento" id="procedimento" data-visao="crm" hidden aria-labelledby="proc-t">
+        <div class="proc-cab"><h3 id="proc-t">Procedimento da recepção</h3><div class="proc-bts"><button type="button" class="btn btn-outline btn-sm" id="proc-imprimir" data-ico="download">Imprimir ou salvar em PDF</button><button type="button" class="linkish" id="proc-fechar">Fechar</button></div></div>
+        <div id="proc-corpo"></div>
+        <p class="form-msg ok" id="proc-msg" hidden></p>
+      </section>
+      <section class="quadro" id="quadro" data-visao="crm" aria-labelledby="quadro-t">
+        <div class="quadro-cab">
+          <h3 id="quadro-t">Quadro de contatos</h3>
+          <p>Arraste o cartão para a etapa seguinte, ou use as setas do cartão. Cada mudança registra a data e sugere o próximo passo daquela etapa.</p>
+          <div class="quadro-filtros">
+            <div class="q-filas" id="q-filas" role="group" aria-label="Mostrar no quadro"></div>
+            <label class="visually-hidden" for="q-busca">Buscar no quadro</label>
+            <input type="search" id="q-busca" placeholder="Buscar por nome ou serviço" autocomplete="off">
+          </div>
+        </div>
+        <div class="quadro-cols" id="quadro-cols" role="region" aria-label="Etapas do quadro de contatos" tabindex="0"></div>
+        <p class="kit-note">Sem dado clínico nos cartões: diagnóstico, exames e evolução ficam no prontuário.</p>
+      </section>
+      <div class="mov" data-visao="crm" data-mov="3">
         <p class="mov-n">Ato 3 de 3 · O retorno</p>
         <h2>Meça quem fica</h2>
         <p>O herói volta com o elixir: cada contato acompanhado até o tratamento, a semana revisada, e o que você aprende volta para a estratégia.</p>
       </div>
 
-      <section class="passo" id="passo-7" data-passo="7" data-mov="3">
+      <section class="passo" data-visao="crm" id="passo-7" data-passo="7" data-mov="3">
         <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-7-corpo">
           <span class="passo-n" aria-hidden="true">7</span>
           <span class="passo-tt"><span class="passo-titulo">WhatsApp e atendimento</span><span class="passo-resumo" data-vazio="Perfil comercial, respostas rápidas e links com origem">Perfil comercial, respostas rápidas e links com origem</span></span>
@@ -1147,7 +1182,7 @@
         </div>
       </section>
 
-      <section class="passo" id="passo-8" data-passo="8" data-mov="3">
+      <section class="passo" data-visao="crm" id="passo-8" data-passo="8" data-mov="3">
         <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-8-corpo">
           <span class="passo-n" aria-hidden="true">8</span>
           <span class="passo-tt"><span class="passo-titulo">Contatos: o rastreador</span><span class="passo-resumo" data-vazio="Cada contato com origem, etapa, próximo passo e data">Cada contato com origem, etapa, próximo passo e data</span></span>
@@ -1240,7 +1275,7 @@
         </div>
       </section>
 
-      <section class="passo" id="passo-9" data-passo="9" data-mov="3">
+      <section class="passo" data-visao="crm" id="passo-9" data-passo="9" data-mov="3">
         <h3 class="passo-h"><button type="button" class="passo-toggle" aria-expanded="false" aria-controls="passo-9-corpo">
           <span class="passo-n" aria-hidden="true">9</span>
           <span class="passo-tt"><span class="passo-titulo">Ritual da semana</span><span class="passo-resumo" data-vazio="O placar, o gargalo da vez e a agenda da próxima semana">O placar, o gargalo da vez e a agenda da próxima semana</span></span>

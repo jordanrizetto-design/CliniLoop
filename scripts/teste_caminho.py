@@ -97,19 +97,21 @@ with sync_playwright() as p:
     ok('A6 mudar a estratégia pede revisão', pg.evaluate("estrategia().status") == 'revisar' and estado(pg, 3) == 'revisar')
     pg.click('#cfg-transf') if pg.is_visible('#cfg-transf') else None
     pg.evaluate("abrirPasso(4,{scroll:false})"); pg.wait_for_timeout(200)
-    ok('A6 entrega afetada marcada para revisar', 'precisa revisar' in pg.inner_text('.saved-slot[data-save=perfil] .saved-chip').lower() and pg.is_visible('#hj-revisar'))
+    ok('A6 entrega afetada marcada para revisar', 'precisa revisar' in pg.inner_text('.saved-slot[data-save=perfil] .saved-chip').lower() and pg.evaluate("!document.getElementById('hj-revisar').hidden"))
     pg.fill('#save-perfil', 'Bio nova com retorno em 48 horas'); pg.wait_for_timeout(450); pg.click('.saved-slot[data-save=perfil] .js-aprovar'); pg.wait_for_timeout(200)
     ok('A6 versão anterior preservada', pg.evaluate("resultados().perfil.hist.length") == 1 and 'Versões anteriores (1)' in pg.inner_text('.saved-slot[data-save=perfil] .versoes summary'))
 
     # 4 e 5. Biblioteca completa, por objetivo, com busca
     ok('A4 biblioteca com as 19 ferramentas e apoios', pg.locator('#biblioteca .bib-card').count() == 22 and pg.evaluate("document.querySelectorAll('.tool[data-id]').length") == 19)
     ok('A4 sete grupos', pg.locator('#biblioteca .bib-grupo').count() == 7)
+    pg.click('nav.links [data-visao-link=ferramentas]'); pg.wait_for_timeout(150)
+    ok('menu Ferramentas mostra só a biblioteca', pg.is_visible('#biblioteca') and not pg.is_visible('#passo-4'))
     pg.fill('#bib-q', 'anúncio'); pg.wait_for_timeout(100)
     ok('A5 busca pelo objetivo', pg.is_visible('.bib-card:has([data-abrir=campanha])') and not pg.is_visible('.bib-card:has([data-abrir=rastreador])'))
     pg.fill('#bib-q', 'bio'); pg.wait_for_timeout(100)
     pg.click('.bib-card:has([data-abrir=perfil]) [data-abrir=perfil]'); pg.wait_for_timeout(250)
     ok('A5 abre no passo, com o contexto já carregado', abertos(pg) == ['4'] and 'CRO-SP 12345' in pg.evaluate("contextBlock('rede-google')"))
-    pg.fill('#bib-q', '')
+    pg.evaluate("document.getElementById('bib-q').value=''; document.getElementById('bib-q').dispatchEvent(new Event('input'))")
 
     # 8. Contatos: origem explícita, consentimento não herdado, filas
     pg.evaluate("openTool('rastreador')"); pg.wait_for_timeout(200)
@@ -124,6 +126,25 @@ with sync_playwright() as p:
     ok('A8 formulário limpo não herda consentimento', not any(pg.is_checked(x) for x in ['#t-c-atend', '#t-c-lemb', '#t-c-cont']) and pg.input_value('#t-origem') == '')
     ok('A8 contato sem data vai para "Sem próximo passo"', 'Sem próximo passo 1' in pg.inner_text('#t-filas').replace('\n', ' '))
     ok('A7 um contato não conclui o passo 8', estado(pg, 8) == 'andamento')
+
+    # Módulo CRM: quadro com as caixas, procedimento da recepção e modo recepção
+    pg.click('nav.links [data-visao-link=crm]'); pg.wait_for_timeout(200)
+    ok('módulo CRM: quadro com as sete etapas', pg.locator('#quadro-cols .q-col').count() == 7 and not pg.is_visible('#passo-3'))
+    c = pg.locator('.q-card').first; nome = c.locator('.q-nome b').inner_text()
+    c.locator('[data-q=next]').click(); pg.wait_for_timeout(200)
+    ok('quadro: seta move para a etapa seguinte e sugere o passo', pg.evaluate(f"(() => {{ const p = pacientes.find(x => x.nome === {nome!r}); return p.etapa === 'Em conversa' && p.passo === 'Oferecer dois horários' && !!p.hist['Em conversa']; }})()"))
+    pg.locator('.q-card').first.locator('[data-q=encerrar]').click(); pg.wait_for_timeout(150)
+    ok('quadro: encerrar pede resultado e motivo', pg.is_visible('.q-card .q-res'))
+    pg.locator('.q-card .q-res').select_option('Perdido'); pg.fill('.q-card .q-mot', 'escolheu outro horário'); pg.click('.q-card [data-q=confirmar]'); pg.wait_for_timeout(150)
+    ok('quadro: encerrado com resultado escolhido', pg.evaluate(f"pacientes.find(x => x.nome === {nome!r}).resultado") == 'Perdido')
+    pg.click('#proc-abrir'); pg.wait_for_timeout(150)
+    proc = pg.inner_text('#procedimento')
+    ok('procedimento da recepção por etapa e com regras', 'Nenhum dado clínico' in proc and 'Mensagem modelo' in proc and 'Plano proposto' in proc)
+    pg.click('#recepcao-ligar'); pg.wait_for_timeout(150)
+    ok('modo recepção mostra só o CRM', pg.is_visible('#quadro') and not pg.is_visible('nav.links [data-visao-link=redes]') and pg.is_visible('#recepcao-sair'))
+    pg.click('#recepcao-sair'); pg.wait_for_timeout(150)
+    ok('sair do modo recepção', pg.is_visible('nav.links [data-visao-link=redes]'))
+    pg.evaluate("pacientes.splice(0); savePac(); notifyData()")
 
     # 7. Ritual semanal tem data e semana
     ok('ritual começa pendente nesta semana', estado(pg, 9) == 'semana-pend')

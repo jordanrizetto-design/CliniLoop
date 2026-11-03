@@ -178,6 +178,7 @@
   function passoEl(n) { return document.getElementById('passo-' + n); }
   function abrirPasso(n, opts) {
     opts = opts || {};
+    if (n && typeof mostrarVisao === 'function') mostrarVisao(n <= 6 ? 'redes' : 'crm');
     PASSOS.forEach((p) => {
       const el = passoEl(p.n); const corpo = el.querySelector('.passo-corpo'); const bt = el.querySelector('.passo-toggle');
       const on = p.n === n;
@@ -538,6 +539,7 @@ Entregue:
     rv.hidden = !rev.length && e.status !== 'revisar';
     rv.innerHTML = `<p><b>A sua estratégia mudou.</b> Estas entregas foram aprovadas com a versão anterior e precisam de revisão (as versões antigas ficam guardadas):</p><ul>${e.status === 'revisar' ? '<li><button type="button" class="linkish" data-abrir="oceano">Proposta de valor: aprovar de novo (passo 3)</button></li>' : ''}${rev.map((id) => `<li><button type="button" class="linkish" data-abrir="${id}">${escapeHtml(EST_DEPENDENTES[id][0])}${EST_DEPENDENTES[id][1] ? ' (passo ' + EST_DEPENDENTES[id][1] + ')' : ''}</button></li>`).join('')}</ul>`;
     renderFaixasDif();
+    if (typeof renderModulos === 'function') renderModulos();
     // A versão aprovada de cada entrega mostra na hora se a estratégia mudou depois dela.
     document.querySelectorAll('.saved-slot').forEach((sl) => { if (sl.querySelector('textarea')) renderSavedSlot(sl); });
     if (st.aberto) renderPasso(st.aberto);
