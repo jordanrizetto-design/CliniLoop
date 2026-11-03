@@ -35,7 +35,7 @@ O app tem um caminho só, na ordem dos três movimentos deste guia. Um passo fic
 | Defina a sua diferença | 1 Seu consultório e objetivo | Profissão, registro, especialidade, cidade, serviços, formação e o resultado dos próximos 90 dias |
 | | 2 Seu paciente ideal | Quem você mais ajuda, a dúvida principal dele, o que ele valoriza e onde procura. Se quiser, a IA monta o ICP e a persona |
 | | 3 Oceano Azul: sua proposta de valor | As sete etapas da Estratégia Oceano Azul e, no fim, a proposta em uma frase, que entra em todos os passos seguintes |
-| Mostre onde o paciente procura | 4 Seus perfis, uma rede por vez | Um cartão para cada rede (Google, Instagram, LinkedIn, YouTube e TikTok), com o texto de hoje, o prompt daquela rede logo abaixo do botão e o checklist de configuração |
+| Mostre onde o paciente procura | 4 Seus perfis, uma rede por vez | Um cartão para cada rede (Google, Instagram, LinkedIn, YouTube e TikTok), com um campo para cada parte do perfil e onde encontrá-la, o prompt daquela rede logo abaixo do botão e o checklist de configuração |
 | | 5 Plano de conteúdo e roteiros | Temas, tempo por semana, pautas a partir das dúvidas reais e o roteiro da primeira peça |
 | | 6 Colegas e campanhas | A rede de colegas que indicam e, depois, o primeiro anúncio |
 | Meça quem fica | 7 WhatsApp e atendimento | O checklist do WhatsApp Business, os links com origem e as respostas rápidas |
@@ -84,7 +84,7 @@ Os passos concluídos se fecham e mostram o que você decidiu. No topo do caminh
 
 ### 6. Passo 4: uma rede por vez
 
-Marque as redes que você já usa. Abra uma delas, cole o texto de hoje e clique em **Gerar o prompt do** Instagram, do Google ou da rede aberta. O prompt aparece logo abaixo do botão, com **Copiar prompt** e **Abrir no…**. Cole na sua IA, aplique a reescrita no perfil e marque o checklist daquela rede. Depois, passe para a próxima. Quem preferir revisar tudo de uma vez tem, no fim do passo, a opção **Todas as redes num prompt só**.
+Marque as redes que você já usa. Abra uma delas e cole cada parte do perfil no campo certo: no Instagram, o nome do perfil num campo e a bio em outro; no Google, o nome da ficha, a categoria, a descrição e as avaliações. Embaixo de cada campo, o app diz onde encontrar aquela informação na rede. Se você ainda não tem o perfil, marque **Ainda não tenho**, e o prompt cria do zero. Depois, clique em **Gerar o prompt do** Instagram, do Google ou da rede aberta. O prompt aparece logo abaixo do botão, com **Copiar prompt** e **Abrir no…**. Cole na sua IA, aplique a reescrita no perfil e marque o checklist daquela rede. Depois, passe para a próxima. Quem preferir revisar tudo de uma vez tem, no fim do passo, a opção **Todas as redes num prompt só**.
 
 ![Passo 4: o cartão do Instagram, com o prompt logo abaixo do botão](tutorial/06-redes.jpg)
 

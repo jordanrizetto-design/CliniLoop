@@ -155,16 +155,30 @@
     youtube: 'YouTube: nome igual ao do Instagram, descrição com proposta de valor, registro e link de agendamento, playlists por problema do paciente (não por formato) e roteiro do vídeo de apresentação fixado.',
     tiktok: 'TikTok: mesmos nome, foto, credenciais e proposta de valor do Instagram, conta empresarial e o cuidado de não responder dúvidas clínicas individuais nos comentários.'
   };
+  // Um campo para cada parte do perfil, com o nome que a pessoa vê na tela da rede.
+  const REDE_CAMPOS = {
+    google: [['nome', 'Nome da ficha no Google Maps'], ['categoria', 'Categoria'], ['descricao', 'Descrição'], ['servicos', 'Serviços cadastrados'], ['avaliacoes', 'Nota e número de avaliações']],
+    instagram: [['nome', 'Nome do perfil'], ['bio', 'Bio']],
+    linkedin: [['titulo', 'Título'], ['sobre', 'Sobre']],
+    youtube: [['nome', 'Nome do canal'], ['descricao', 'Descrição do canal']],
+    tiktok: [['nome', 'Nome do perfil'], ['bio', 'Bio']]
+  };
+  const redeForm = (id) => document.querySelector(`form[data-tool="rede-${id}"]`);
+  const getDe = (form) => (n) => { const el = form.querySelector(`[name="${n}"]`); return el ? (el.type === 'checkbox' ? (el.checked ? 'sim' : '') : String(el.value || '').trim()) : ''; };
+  // Texto do perfil de hoje, campo a campo. Vazio quando a pessoa ainda não tem o perfil ou não colou nada.
+  function textoRede(id, get) {
+    get = get || getDe(redeForm(id));
+    if (get('naoTenho')) return '';
+    return REDE_CAMPOS[id].map(([c, rot]) => { const v = get('f_' + c); if (!v) return ''; return v.indexOf('\n') >= 0 ? `${rot}:\n"""\n${v}\n"""` : `${rot}: ${v}`; }).filter(Boolean).join('\n');
+  }
   Object.keys(REDE_PEDIDO).forEach((id) => {
     promptBuilders['rede-' + id] = (get) => {
       const extra = id === 'instagram' ? `\nLink da bio hoje: ${get('link')}. Destaques e fixados: ${nv(get('destaques'))}${cfg.arroba ? `\nMeu @: ${cfg.arroba}` : ''}` : '';
       return `Você é consultor de marketing ético para profissionais de saúde no Brasil.
 
 Quero revisar só um canal agora: ${REDE_NOME[id] === 'Google' ? 'o Perfil da Empresa no Google' : 'o ' + REDE_NOME[id]}.${extra}
-Texto atual:
-"""
-${get('atual') || 'Ainda não tenho este perfil. Crie do zero.'}
-"""
+Como está hoje:
+${textoRede(id, get) || 'Ainda não tenho este perfil. Crie do zero.'}
 
 Antes de postar ou anunciar, o paciente precisa encontrar, em qualquer canal, a mesma resposta para três perguntas: quem é você, quem você ajuda e como marcar uma consulta.${cfg.transformacao ? ` Use a minha proposta de valor como fio condutor: "${cfg.transformacao}".` : ''}
 
@@ -201,15 +215,16 @@ Entregue:
       const itens = (CANAIS_CHECK.find((x) => x[0] === id) || [, , , []])[3];
       const f = itens.filter((_, i) => st[`${id}-${i}`]).length;
       const gerou = !!(usoT['rede-' + id] || c.querySelector('.js-output') && c.querySelector('.js-output').value);
-      c.querySelector('.rede-st').textContent = [gerou ? 'prompt gerado' : '', itens.length ? `checklist ${f} de ${itens.length}` : ''].filter(Boolean).join(' · ');
+      const nao = c.querySelector('input[name="naoTenho"]').checked;
+      c.querySelector('.rede-st').textContent = [nao ? 'ainda não tenho' : '', gerou ? 'prompt gerado' : '', itens.length ? `checklist ${f} de ${itens.length}` : ''].filter(Boolean).join(' · ');
       c.classList.toggle('ok', itens.length > 0 && f === itens.length);
     });
   }
   // A análise conjunta junta os textos colados em cada rede.
   document.querySelector('form.tool-form[data-tool="perfil"]').addEventListener('submit', () => {
     const partes = [...document.querySelectorAll('details.rede')].map((c) => {
-      const v = (c.querySelector('textarea[name="atual"]').value || '').trim();
-      return v ? `${REDE_NOME[c.dataset.rede]}: ${v}` : '';
+      const v = textoRede(c.dataset.rede);
+      return v ? `${REDE_NOME[c.dataset.rede].toUpperCase()}\n${v}` : '';
     }).filter(Boolean);
     document.getElementById('pf-atual').value = partes.length ? partes.join('\n\n') : 'Ainda não tenho textos nos perfis. Crie do zero.';
     document.getElementById('pf-link').value = document.getElementById('rd-instagram-link').value;
@@ -218,7 +233,33 @@ Entregue:
     document.querySelectorAll('form[data-tool="perfil"] input[name="redes"]').forEach((cb) => { if (!cb.dataset.mexeu) cb.checked = marcadas.has(cb.value) || (!marcadas.size && (cb.value === 'Instagram' || cb.value === 'Perfil da Empresa no Google')); });
   }, true);
   document.querySelectorAll('form[data-tool="perfil"] input[name="redes"]').forEach((cb) => cb.addEventListener('change', () => { cb.dataset.mexeu = '1'; }));
-  document.querySelectorAll('form.rede-form').forEach((f) => f.addEventListener('submit', () => setTimeout(arrumarRedes, 50)));
+  document.querySelectorAll('form.rede-form').forEach((f) => {
+    const id = f.dataset.tool.slice(5);
+    // Antes de gerar: ou a pessoa colou alguma parte do perfil, ou marcou que ainda não tem.
+    f.addEventListener('submit', (e) => {
+      if (textoRede(id) || getDe(f)('naoTenho')) { setTimeout(arrumarRedes, 50); return; }
+      e.preventDefault(); e.stopImmediatePropagation();
+      const msg = formMsg(f);
+      msg.className = 'form-msg error';
+      msg.textContent = `Cole pelo menos uma parte do seu ${REDE_NOME[id]} nos campos acima, ou marque "Ainda não tenho" no topo do cartão.`;
+      const primeiro = f.querySelector('.rede-campos input, .rede-campos textarea');
+      if (primeiro) { primeiro.classList.add('invalid'); primeiro.focus(); }
+    }, true);
+    // "Ainda não tenho": esconde os campos e o prompt cria o perfil do zero.
+    const nao = f.querySelector('input[name="naoTenho"]');
+    const aplicaNao = () => { f.querySelector('.rede-campos').hidden = nao.checked; f.querySelector('.rede-zero').hidden = !nao.checked; };
+    const salvos = storeGet(PERSIST_KEY, {}) || {};
+    nao.checked = salvos['rede-' + id + '-nao'] === 'sim';
+    // Quem colou tudo numa caixa só, na versão anterior, encontra o texto no campo principal.
+    const antigo = salvos['rede-' + id];
+    const principal = f.querySelector('textarea[name^="f_"]');
+    if (antigo && principal && !principal.value) principal.value = antigo;
+    aplicaNao();
+    nao.addEventListener('change', () => {
+      const s2 = storeGet(PERSIST_KEY, {}) || {}; s2['rede-' + id + '-nao'] = nao.checked ? 'sim' : ''; storeSet(PERSIST_KEY, s2);
+      aplicaNao(); arrumarRedes();
+    });
+  });
 
   // --- WhatsApp (passo 7): checklist e links com origem ---
   const WA_ITENS = [

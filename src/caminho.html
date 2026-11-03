@@ -410,9 +410,35 @@
         <details class="rede" data-rede="google" data-canal="Perfil da Empresa no Google">
           <summary><b>Perfil da Empresa no Google</b><span class="rede-tag">Comece por aqui</span><span class="rede-st"></span><span class="chevron">▸</span></summary>
           <form class="tool-form rede-form" data-tool="rede-google">
-            <div class="field">
-              <label for="rd-google-atual">Nome da ficha, categoria, serviços e descrição que aparecem hoje</label>
-              <textarea id="rd-google-atual" name="atual" rows="3" data-persist="rede-google" placeholder="Cole o que aparece no Google Maps. Se a clínica ainda não tem ficha, escreva 'não tenho'."></textarea>
+            <label class="inline-check rede-nao"><input type="checkbox" name="naoTenho" data-persist-check="rede-google-nao"> Ainda não tenho perfil no Google</label>
+            <p class="rede-zero" hidden>Sem problema: o prompt vai criar o perfil no Google do zero, com o seu consultório e a sua proposta de valor.</p>
+            <div class="rede-campos">
+              <p class="rede-instr">Copie cada parte do seu perfil no Google e cole no campo certo. Se algum campo não existir no seu perfil, deixe em branco.</p>
+              <div class="field">
+                <label for="rd-google-nome">Nome da ficha no Google Maps</label>
+                <input type="text" id="rd-google-nome" name="f_nome" data-persist="rede-google-nome" placeholder="Ex: Clínica Sorriso Vivo - Dra. Ana Lima">
+                <small class="onde">Abra o Google Maps, busque o nome do consultório e toque na ficha. Copie o nome que aparece em negrito, no topo.</small>
+              </div>
+              <div class="field">
+                <label for="rd-google-categoria">Categoria</label>
+                <input type="text" id="rd-google-categoria" name="f_categoria" data-persist="rede-google-categoria" placeholder="Ex: Dentista">
+                <small class="onde">Aparece logo abaixo do nome, em cinza.</small>
+              </div>
+              <div class="field">
+                <label for="rd-google-descricao">Descrição</label>
+                <textarea id="rd-google-descricao" name="f_descricao" rows="3" data-persist="rede-google-descricao" placeholder="Cole aqui a descrição da ficha"></textarea>
+                <small class="onde">No celular, toque na aba "Sobre". No computador, role a ficha até "Da empresa". Copie o texto inteiro.</small>
+              </div>
+              <div class="field">
+                <label for="rd-google-servicos">Serviços cadastrados (se houver)</label>
+                <textarea id="rd-google-servicos" name="f_servicos" rows="3" data-persist="rede-google-servicos" placeholder="Ex: Implante dentário, Clareamento"></textarea>
+                <small class="onde">Na aba "Serviços" da ficha. Pode deixar em branco.</small>
+              </div>
+              <div class="field">
+                <label for="rd-google-avaliacoes">Nota e número de avaliações</label>
+                <input type="text" id="rd-google-avaliacoes" name="f_avaliacoes" data-persist="rede-google-avaliacoes" placeholder="Ex: 4,8 com 37 avaliações">
+                <small class="onde">Aparecem ao lado das estrelas, abaixo do nome.</small>
+              </div>
             </div>
             <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar o prompt do Google</button></div>
             <div class="output-block" hidden></div>
@@ -422,24 +448,37 @@
         <details class="rede" data-rede="instagram" data-canal="Instagram">
           <summary><b>Instagram</b><span class="rede-tag">Comece por aqui</span><span class="rede-st"></span><span class="chevron">▸</span></summary>
           <form class="tool-form rede-form" data-tool="rede-instagram">
-            <div class="field">
-              <label for="rd-instagram-atual">Nome do perfil e bio de hoje</label>
-              <textarea id="rd-instagram-atual" name="atual" rows="3" data-persist="rede-instagram" placeholder="Cole o nome e a bio. Se ainda não tem, escreva 'não tenho'."></textarea>
-            </div>
-            <div class="row2">
+            <label class="inline-check rede-nao"><input type="checkbox" name="naoTenho" data-persist-check="rede-instagram-nao"> Ainda não tenho perfil no Instagram</label>
+            <p class="rede-zero" hidden>Sem problema: o prompt vai criar o perfil no Instagram do zero, com o seu consultório e a sua proposta de valor.</p>
+            <div class="rede-campos">
+              <p class="rede-instr">Copie cada parte do seu perfil no Instagram e cole no campo certo. Se algum campo não existir no seu perfil, deixe em branco.</p>
               <div class="field">
-                <label for="rd-instagram-link">Para onde vai o link da bio hoje?</label>
-                <select id="rd-instagram-link" name="link" data-persist="rede-instagram-link">
-                  <option value="WhatsApp">WhatsApp</option>
-                  <option value="agenda online">Agenda online</option>
-                  <option value="site">Site</option>
-                  <option value="página de vários links">Página de vários links</option>
-                  <option value="não tenho link na bio">Não tenho link na bio</option>
-                </select>
+                <label for="rd-instagram-nome">Nome do perfil</label>
+                <input type="text" id="rd-instagram-nome" name="f_nome" data-persist="rede-instagram-nome" placeholder="Ex: Dra. Ana Lima | Dentista">
+                <small class="onde">O nome em negrito logo acima da bio. Não é o @.</small>
               </div>
               <div class="field">
-                <label for="rd-instagram-destaques">Destaques e posts fixados hoje</label>
-                <input type="text" id="rd-instagram-destaques" name="destaques" data-persist="rede-instagram-destaques" placeholder="Ex: Dúvidas, Clínica, Equipe">
+                <label for="rd-instagram-bio">Bio</label>
+                <textarea id="rd-instagram-bio" name="f_bio" rows="3" data-persist="rede-instagram-bio" placeholder="Cole aqui a bio inteira, com os emojis"></textarea>
+                <small class="onde">No app, toque em "Editar perfil", depois em "Bio". Selecione tudo, copie e cole aqui.</small>
+              </div>
+              <div class="row2">
+                <div class="field">
+                  <label for="rd-instagram-link">Para onde vai o link da bio hoje?</label>
+                  <select id="rd-instagram-link" name="link" data-persist="rede-instagram-link">
+                    <option value="WhatsApp">WhatsApp</option>
+                    <option value="agenda online">Agenda online</option>
+                    <option value="site">Site</option>
+                    <option value="página de vários links">Página de vários links</option>
+                    <option value="não tenho link na bio">Não tenho link na bio</option>
+                  </select>
+                  <small class="onde">Toque no link que aparece na bio e veja onde ele abre.</small>
+                </div>
+                <div class="field">
+                  <label for="rd-instagram-destaques">Destaques e posts fixados</label>
+                  <input type="text" id="rd-instagram-destaques" name="destaques" data-persist="rede-instagram-destaques" placeholder="Ex: Dúvidas, Clínica, Equipe">
+                  <small class="onde">Os nomes das bolinhas abaixo da bio e os posts com o alfinete.</small>
+                </div>
               </div>
             </div>
             <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar o prompt do Instagram</button></div>
@@ -450,9 +489,20 @@
         <details class="rede" data-rede="linkedin" data-canal="LinkedIn">
           <summary><b>LinkedIn</b><span class="rede-tag">Depois</span><span class="rede-st"></span><span class="chevron">▸</span></summary>
           <form class="tool-form rede-form" data-tool="rede-linkedin">
-            <div class="field">
-              <label for="rd-linkedin-atual">Título e "Sobre" de hoje</label>
-              <textarea id="rd-linkedin-atual" name="atual" rows="3" data-persist="rede-linkedin" placeholder="Cole o título e o Sobre. Se ainda não tem, escreva 'não tenho'."></textarea>
+            <label class="inline-check rede-nao"><input type="checkbox" name="naoTenho" data-persist-check="rede-linkedin-nao"> Ainda não tenho perfil no LinkedIn</label>
+            <p class="rede-zero" hidden>Sem problema: o prompt vai criar o perfil no LinkedIn do zero, com o seu consultório e a sua proposta de valor.</p>
+            <div class="rede-campos">
+              <p class="rede-instr">Copie cada parte do seu perfil no LinkedIn e cole no campo certo. Se algum campo não existir no seu perfil, deixe em branco.</p>
+              <div class="field">
+                <label for="rd-linkedin-titulo">Título</label>
+                <input type="text" id="rd-linkedin-titulo" name="f_titulo" data-persist="rede-linkedin-titulo" placeholder="Ex: Cirurgiã-dentista | Implantes | São Paulo">
+                <small class="onde">A linha logo abaixo do seu nome, no seu perfil.</small>
+              </div>
+              <div class="field">
+                <label for="rd-linkedin-sobre">Sobre</label>
+                <textarea id="rd-linkedin-sobre" name="f_sobre" rows="3" data-persist="rede-linkedin-sobre" placeholder="Cole aqui o texto do Sobre"></textarea>
+                <small class="onde">Na seção "Sobre" do perfil, clique em "ver mais" e copie o texto inteiro.</small>
+              </div>
             </div>
             <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar o prompt do LinkedIn</button></div>
             <div class="output-block" hidden></div>
@@ -462,9 +512,20 @@
         <details class="rede" data-rede="youtube" data-canal="YouTube">
           <summary><b>YouTube</b><span class="rede-tag">Depois</span><span class="rede-st"></span><span class="chevron">▸</span></summary>
           <form class="tool-form rede-form" data-tool="rede-youtube">
-            <div class="field">
-              <label for="rd-youtube-atual">Nome e descrição do canal</label>
-              <textarea id="rd-youtube-atual" name="atual" rows="3" data-persist="rede-youtube" placeholder="Cole o nome e a descrição. Se ainda não tem canal, escreva 'não tenho'."></textarea>
+            <label class="inline-check rede-nao"><input type="checkbox" name="naoTenho" data-persist-check="rede-youtube-nao"> Ainda não tenho canal no YouTube</label>
+            <p class="rede-zero" hidden>Sem problema: o prompt vai criar o canal no YouTube do zero, com o seu consultório e a sua proposta de valor.</p>
+            <div class="rede-campos">
+              <p class="rede-instr">Copie cada parte do seu canal no YouTube e cole no campo certo. Se algum campo não existir no seu perfil, deixe em branco.</p>
+              <div class="field">
+                <label for="rd-youtube-nome">Nome do canal</label>
+                <input type="text" id="rd-youtube-nome" name="f_nome" data-persist="rede-youtube-nome" placeholder="Ex: Dra. Ana Lima">
+                <small class="onde">O nome em negrito no topo do canal.</small>
+              </div>
+              <div class="field">
+                <label for="rd-youtube-descricao">Descrição do canal</label>
+                <textarea id="rd-youtube-descricao" name="f_descricao" rows="3" data-persist="rede-youtube-descricao" placeholder="Cole aqui a descrição do canal"></textarea>
+                <small class="onde">No canal, clique na descrição curta, abaixo do nome, para abrir o texto completo, e copie.</small>
+              </div>
             </div>
             <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar o prompt do YouTube</button></div>
             <div class="output-block" hidden></div>
@@ -474,9 +535,20 @@
         <details class="rede" data-rede="tiktok" data-canal="TikTok">
           <summary><b>TikTok</b><span class="rede-tag">Opcional</span><span class="rede-st"></span><span class="chevron">▸</span></summary>
           <form class="tool-form rede-form" data-tool="rede-tiktok">
-            <div class="field">
-              <label for="rd-tiktok-atual">Nome do perfil e bio</label>
-              <textarea id="rd-tiktok-atual" name="atual" rows="3" data-persist="rede-tiktok" placeholder="Cole o nome e a bio. Se ainda não tem, escreva 'não tenho'."></textarea>
+            <label class="inline-check rede-nao"><input type="checkbox" name="naoTenho" data-persist-check="rede-tiktok-nao"> Ainda não tenho perfil no TikTok</label>
+            <p class="rede-zero" hidden>Sem problema: o prompt vai criar o perfil no TikTok do zero, com o seu consultório e a sua proposta de valor.</p>
+            <div class="rede-campos">
+              <p class="rede-instr">Copie cada parte do seu perfil no TikTok e cole no campo certo. Se algum campo não existir no seu perfil, deixe em branco.</p>
+              <div class="field">
+                <label for="rd-tiktok-nome">Nome do perfil</label>
+                <input type="text" id="rd-tiktok-nome" name="f_nome" data-persist="rede-tiktok-nome" placeholder="Ex: Dra. Ana Lima">
+                <small class="onde">O nome em negrito no topo do perfil. Não é o @.</small>
+              </div>
+              <div class="field">
+                <label for="rd-tiktok-bio">Bio</label>
+                <textarea id="rd-tiktok-bio" name="f_bio" rows="3" data-persist="rede-tiktok-bio" placeholder="Cole aqui a bio"></textarea>
+                <small class="onde">Toque em "Editar perfil", depois em "Bio", e copie o texto.</small>
+              </div>
             </div>
             <div class="form-actions"><button type="submit" class="btn btn-teal">Gerar o prompt do TikTok</button></div>
             <div class="output-block" hidden></div>

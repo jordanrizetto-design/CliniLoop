@@ -51,7 +51,7 @@ with sync_playwright() as p:
     # 6. Passo 4: uma rede
     pg.evaluate("abrirPasso(4,{scroll:false})")
     pg.click('details.rede[data-rede=instagram] > summary')
-    pg.fill('#rd-instagram-atual', 'Bia Nunes Nutri\nNutrição para quem corre 🏃‍♀️ | Agende ⬇️')
+    pg.fill('#rd-instagram-nome', 'Bia Nunes Nutri'); pg.fill('#rd-instagram-bio', 'Nutrição para quem corre 🏃‍♀️\nAgende ⬇️')
     pg.click('form[data-tool=rede-instagram] button[type=submit]'); pg.wait_for_timeout(500)
     shot(pg, 'details.rede[data-rede=instagram]', '06-redes.png', max_h=1100)
     # 7. Guardar a versão final
