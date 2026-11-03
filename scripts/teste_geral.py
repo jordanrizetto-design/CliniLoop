@@ -18,7 +18,7 @@ with sync_playwright() as p:
     ok('14 prompts na biblioteca', pg.evaluate("document.querySelectorAll('#livro-prompts .ls-prompt').length")==14)
     aud=pg.evaluate("document.querySelector('#lp-b-auditoria').value")
     ok('auditoria preenchida', 'CFN / CRN' in aud and 'nutricionista' in aud and 'Pinheiros, São Paulo' in aud and 'corredores amadores' in aud)
-    ok('link Abrir no Claude', pg.evaluate("document.querySelector('#livro-prompts .js-lp-open').href").startswith('https://claude.ai/new?q='))
+    ok('Abrir a IA sem o prompt na URL', '?q=' not in pg.evaluate("document.querySelector('#livro-prompts .js-lp-open').href"))
     ok('pendentes indicados', 'COLE A BIO' in aud)
     ok('roteiro 6 etapas', pg.evaluate("document.querySelectorAll('#livro-roteiro .lr-etapa').length")==7)
     ok('16 partes no roteiro', pg.evaluate("document.querySelectorAll('#livro-roteiro .lr-parte').length")==16)
@@ -68,6 +68,7 @@ with sync_playwright() as p:
     ok('quem indica nutricionista', 'Endocrinologistas' in pg.inner_text('#quem-indica'))
     # rastreador: passo típico e plano 2 dias
     pg.evaluate("openTool('rastreador')")
+    pg.evaluate("document.getElementById('t-mais').open=true")
     pg.fill('#t-nome','Carla'); pg.select_option('#t-origem','Instagram orgânico'); pg.select_option('#t-etapa','Em conversa')
     ok('passo típico no formulário', pg.input_value('#t-passo')=='Oferecer dois horários')
     pg.click('#tracker-form button[type=submit]'); pg.wait_for_timeout(100)

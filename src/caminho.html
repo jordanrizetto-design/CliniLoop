@@ -7,36 +7,47 @@
         </div>
         <div class="hoje-grid">
           <article class="hoje-card hoje-next" aria-live="polite">
-            <p class="hoje-label" id="cm-prog-t">Seu caminho</p>
-            <div class="meter cm-meter"><span id="cm-prog-bar"></span></div>
+            <p class="hoje-label">Sua diferença</p>
+            <p class="hj-prop" id="cm-prop"></p>
+            <div class="cm-prog"><p class="hoje-label" id="cm-prog-t">Seu caminho</p><div class="meter cm-meter" role="progressbar" aria-labelledby="cm-prog-t" aria-valuemin="0" aria-valuemax="8" id="cm-meter"><span id="cm-prog-bar"></span></div></div>
             <p class="hoje-where" id="cm-onde"></p>
             <h3 id="cm-acao"></h3>
             <div class="form-actions"><button type="button" id="cm-continuar" class="btn btn-gold btn-sm" data-ico="arrow">Continuar</button></div>
+            <ul class="hj-pend" id="cm-pend"></ul>
           </article>
           <article class="hoje-card" aria-live="polite">
-            <p class="hoje-label">Próximos passos vencidos</p>
-            <p class="hoje-big" id="hj-atr-n">0</p>
+            <p class="hoje-label">Contatos</p>
+            <div class="hj-filas" id="hj-filas"></div>
             <ul class="hoje-list" id="hj-atr-list"></ul>
-            <button type="button" id="hj-rastreador" class="btn btn-outline btn-sm" data-ico="bell">Abrir rastreador</button>
+            <button type="button" id="hj-contato" class="btn btn-teal btn-sm" data-ico="plus">Novo contato</button>
           </article>
           <article class="hoje-card">
             <p class="hoje-label">Esta semana</p>
             <p class="hoje-big"><span id="hj-posts">0</span><span class="hoje-of"> de <label class="visually-hidden" for="hj-meta-n">Meta de conteúdos na semana</label><input type="number" id="hj-meta-n" min="1" max="30" inputmode="numeric"> conteúdos</span></p>
             <div class="meter" role="progressbar" aria-label="Conteúdos publicados na semana" aria-valuemin="0" id="hj-meter"><span id="hj-meta-bar"></span></div>
             <p class="hoje-rate" id="hj-semana"></p>
+            <p class="hj-ritual" id="hj-ritual"></p>
             <div class="post-row">
               <button type="button" class="btn btn-outline btn-sm" id="hj-conteudo" data-ico="plus">Registrar conteúdo</button>
-              <button type="button" class="btn btn-outline btn-sm" id="hj-contato" data-ico="plus">Novo contato</button>
             </div>
           </article>
         </div>
+        <div class="hj-revisar" id="hj-revisar" hidden></div>
+        <nav class="hj-atalhos" aria-label="Atalhos">
+          <span>Atalhos:</span>
+          <button type="button" class="linkish" data-abrir="etica">Revisar um post (ética)</button>
+          <button type="button" class="linkish" data-abrir="roteiro">Roteiro de conteúdo</button>
+          <button type="button" class="linkish" data-abrir="atendimento">Respostas do WhatsApp</button>
+          <button type="button" class="linkish" data-abrir="assistente">Agenda da semana</button>
+          <a href="#caixa" class="linkish">Todas as ferramentas</a>
+        </nav>
         <div class="hoje-backup" id="hj-backup" hidden></div>
       </div>
 
-      <div class="mov" data-mov="1">
-        <p class="mov-n">Movimento 1 de 3</p>
+      <div class="mov" data-mov="1" id="mov-1">
+        <p class="mov-n">Ato 1 de 3 · A partida</p>
         <h2>Defina a sua diferença</h2>
-        <p>Quem você atende, para quem e por que você. Sem isso, todo perfil e todo anúncio parecem com os de qualquer colega.</p>
+        <p>Você sai do mundo comum, em que todo perfil parece igual ao de qualquer colega, e encontra a ferramenta do herói: o Oceano Azul. Daqui sai a sua diferença, a base de tudo o que vem depois.</p>
       </div>
 
       <section class="passo" id="passo-1" data-passo="1" data-mov="1">
@@ -46,8 +57,9 @@
           <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
         </button></h3>
         <div class="passo-corpo" id="passo-1-corpo" hidden>
-          <p class="passo-meta"><span>Uns 10 minutos</span><span>Guia: Partes 1 e 2</span></p>
-          <p class="passo-why">Preencha uma vez. A profissão e o registro carregam as regras do seu conselho em todos os prompts; o objetivo decide o que vem primeiro. Tudo fica salvo neste navegador enquanto você digita.</p>
+          <p class="passo-meta"><span class="jornada-tag">Na jornada · O mundo comum</span><span>Uns 10 minutos</span></p>
+          <div class="tarefa" data-tarefa="1"></div>
+          <details class="entender"><summary>Entender este passo <span class="chevron">▸</span></summary><div class="entender-corpo"><p>Preencha uma vez. A profissão e o registro carregam as regras do seu conselho em todos os prompts; o objetivo decide o que vem primeiro. Tudo fica salvo neste navegador enquanto você digita.</p><p class="entender-jornada"><b>Na jornada do herói:</b> Toda jornada começa onde você está hoje: o seu consultório, o seu conselho e o resultado que você quer. É o mapa que o mentor precisa para ajudar.</p><p class="entender-guia">Guia: Partes 1 e 2 do <i>O Prompt do Sim</i>.</p></div></details>
           <div class="cfg-campos">
               <fieldset class="field">
                 <legend>Tipo de profissional *</legend>
@@ -98,13 +110,13 @@
                 <input type="text" id="cfg-servicos" name="servicos" placeholder="Separe por vírgula. Ex: implantes, lentes de contato dental, clareamento">
                 <small>Viram as opções de serviço no Rastreador de pacientes e nas campanhas.</small>
               </div>
+            <details class="mais-campos aprofundar">
+              <summary>Aprofundar: formação, atendimento, pagamento, tipo de conta e equipe <span class="chevron">▸</span></summary>
               <div class="field">
-                <label for="cfg-sobre">Formação, experiência e diferenciais *</label>
+                <label for="cfg-sobre">Formação, experiência e diferenciais (recomendado)</label>
                 <textarea id="cfg-sobre" name="sobre" rows="4" placeholder="Ex: 12 anos de formada, especialização em implantes, escaneamento digital, atendimento sem pressa; pacientes dizem que explico tudo com calma"></textarea>
                 <small>Não inclua nomes ou dados de pacientes.</small>
               </div>
-            <details class="mais-campos">
-              <summary>Atendimento, pagamento, tipo de conta e equipe <span class="chevron">▸</span></summary>
                 <div class="row3">
                   <fieldset class="field">
                     <legend>Atendimento</legend>
@@ -156,6 +168,7 @@
           </div>
           <div class="obj-hint" id="obj-hint" hidden></div>
           <p class="save-status" id="cfg-status" aria-live="polite">Salvo automaticamente neste navegador.</p>
+          <div class="entrega" aria-live="polite"></div>
           <div class="passo-foot">
             <p class="passo-falta" aria-live="polite" hidden></p>
             <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
@@ -170,8 +183,9 @@
           <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
         </button></h3>
         <div class="passo-corpo" id="passo-2-corpo" hidden>
-          <p class="passo-meta"><span>Uns 10 minutos</span><span>Guia: Parte 3</span></p>
-          <p class="passo-why">O paciente que você mais ajuda e que mais valoriza o seu trabalho. É dele que saem os ganchos, as pautas e as respostas às objeções. Responda sobre o perfil típico, nunca sobre um paciente real.</p>
+          <p class="passo-meta"><span class="jornada-tag">Na jornada · O chamado</span><span>Uns 10 minutos</span></p>
+          <div class="tarefa" data-tarefa="2"></div>
+          <details class="entender"><summary>Entender este passo <span class="chevron">▸</span></summary><div class="entender-corpo"><p>O paciente que você mais ajuda e que mais valoriza o seu trabalho. É dele que saem os ganchos, as pautas e as respostas às objeções. Responda sobre o perfil típico, nunca sobre um paciente real.</p><p class="entender-jornada"><b>Na jornada do herói:</b> O chamado vem de alguém: o paciente que precisa do que você faz melhor. Saber quem ele é decide o resto da travessia.</p><p class="entender-guia">Guia: Parte 3 do <i>O Prompt do Sim</i>.</p></div></details>
           <div class="cfg-campos">
               <div class="field">
                 <label for="cfg-publico">Quem é o seu paciente ideal? *</label>
@@ -251,6 +265,7 @@
             <div class="saved-slot" data-save="publico" data-label="público, ICP e persona"></div>
           </div>
         </details>
+          <div class="entrega" aria-live="polite"></div>
           <div class="passo-foot">
             <p class="passo-falta" aria-live="polite" hidden></p>
             <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
@@ -265,8 +280,9 @@
           <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
         </button></h3>
         <div class="passo-corpo" id="passo-3-corpo" hidden>
-          <p class="passo-meta"><span>Uns 30 minutos, mais o tempo de ouvir alguns pacientes</span><span>Guia: Apresentação e Parte 3</span></p>
-          <p class="passo-why">O passo que tira você da disputa pelo preço. Ouça o que os pacientes valorizam, olhe para quem ainda não procura ninguém e decida o que eliminar, reduzir, elevar e criar. No fim, a proposta em uma frase entra em todos os perfis, roteiros e campanhas dos próximos passos.</p>
+          <p class="passo-meta"><span class="jornada-tag">Na jornada · A ferramenta do herói</span><span>Uns 30 minutos, mais o tempo de ouvir alguns pacientes</span></p>
+          <div class="tarefa" data-tarefa="3"></div>
+          <details class="entender"><summary>Entender este passo <span class="chevron">▸</span></summary><div class="entender-corpo"><p>O passo que tira você da disputa pelo preço. Ouça o que os pacientes valorizam, olhe para quem ainda não procura ninguém e decida o que eliminar, reduzir, elevar e criar. No fim, a proposta em uma frase entra em todos os perfis, roteiros e campanhas dos próximos passos.</p><p class="entender-jornada"><b>Na jornada do herói:</b> O Oceano Azul é a ferramenta que tira você da disputa pelo preço. Com ela, você decide o que eliminar, reduzir, elevar e criar, e sai com uma diferença que um colega não poderia assinar.</p><p class="entender-guia">Guia: Apresentação e Parte 3 do <i>O Prompt do Sim</i>.</p></div></details>
         <details class="tool in-solo" data-id="oceano" open>
           <summary>
             <div class="tool-title"><div><h3>Estratégia Oceano Azul</h3><span class="sub">Posicionamento com as ferramentas do Oceano Azul, em sete etapas: do que o paciente diz à proposta que você consegue mostrar</span></div></div>
@@ -358,6 +374,8 @@
               </div>
             <button type="button" class="btn btn-outline btn-sm" id="usar-rascunho">Usar o rascunho da etapa 7 acima</button>
           </div>
+          <div class="est-aprovacao" id="est-aprovacao" aria-live="polite"></div>
+          <div class="entrega" aria-live="polite"></div>
           <div class="passo-foot">
             <p class="passo-falta" aria-live="polite" hidden></p>
             <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
@@ -366,9 +384,9 @@
       </section>
 
       <div class="mov" data-mov="2">
-        <p class="mov-n">Movimento 2 de 3</p>
+        <p class="mov-n">Ato 2 de 3 · As provas</p>
         <h2>Mostre onde o paciente procura</h2>
-        <p>Perfis coerentes, conteúdo que só você poderia publicar, colegas que indicam e anúncios que amplificam o que já funciona.</p>
+        <p>Com a diferença em mãos, você atravessa os canais. Perfis, conteúdo, colegas e anúncios passam a mostrar o que só você faz.</p>
       </div>
 
       <section class="passo" id="passo-4" data-passo="4" data-mov="2">
@@ -378,8 +396,9 @@
           <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
         </button></h3>
         <div class="passo-corpo" id="passo-4-corpo" hidden>
-          <p class="passo-meta"><span>Uns 15 minutos por rede</span><span>Guia: Parte 3</span></p>
-          <p class="passo-why">Uma rede por vez: abra a rede, cole o texto de hoje e gere o prompt dela. Aplique a reescrita e marque o checklist. Em todas, o paciente precisa achar a mesma resposta para três perguntas: quem é você, quem você ajuda e como marcar.</p>
+          <p class="passo-meta"><span class="jornada-tag">Na jornada · A travessia do primeiro limiar</span><span>Uns 15 minutos por rede</span></p>
+          <div class="tarefa" data-tarefa="4"></div>
+          <details class="entender"><summary>Entender este passo <span class="chevron">▸</span></summary><div class="entender-corpo"><p>Uma rede por vez: abra a rede, cole o texto de hoje e gere o prompt dela. Aplique a reescrita e marque o checklist. Em todas, o paciente precisa achar a mesma resposta para três perguntas: quem é você, quem você ajuda e como marcar.</p><p class="entender-jornada"><b>Na jornada do herói:</b> O primeiro limiar é o lugar onde o paciente procura você: o Google, o Instagram, o LinkedIn. Atravessar é fazer cada perfil responder quem você é, quem você ajuda e como marcar.</p><p class="entender-guia">Guia: Parte 3 do <i>O Prompt do Sim</i>.</p></div></details>
           <div class="cfg-campos">
             <div class="row2">
               <div class="field">
@@ -588,6 +607,7 @@
           </div>
         </details>
           <div class="saved-slot" data-save="perfil" data-label="textos aprovados dos perfis"></div>
+          <div class="entrega" aria-live="polite"></div>
           <div class="passo-foot">
             <p class="passo-falta" aria-live="polite" hidden></p>
             <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
@@ -602,15 +622,18 @@
           <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
         </button></h3>
         <div class="passo-corpo" id="passo-5-corpo" hidden>
-          <p class="passo-meta"><span>Uns 30 minutos</span><span>Guia: Partes 4 a 7</span></p>
-          <p class="passo-why">Primeiro as pautas, a partir das dúvidas reais dos pacientes; depois o roteiro da primeira peça. A frequência é a que você consegue revisar: constância vale mais que volume.</p>
+          <p class="passo-meta"><span class="jornada-tag">Na jornada · As provas</span><span>Uns 30 minutos</span></p>
+          <div class="tarefa" data-tarefa="5"></div>
+          <details class="entender"><summary>Entender este passo <span class="chevron">▸</span></summary><div class="entender-corpo"><p>Primeiro as pautas, a partir das dúvidas reais dos pacientes; depois o roteiro da primeira peça. A frequência é a que você consegue revisar: constância vale mais que volume.</p><p class="entender-jornada"><b>Na jornada do herói:</b> As provas são semanais: dúvidas reais viram pautas, pautas viram peças, e cada peça mostra um pedaço da sua diferença.</p><p class="entender-guia">Guia: Partes 4 a 7 do <i>O Prompt do Sim</i>.</p></div></details>
           <div class="cfg-campos">
               <div class="field">
                 <label for="cfg-baldes">Temas de conteúdo (até 3)</label>
                 <input type="text" id="cfg-baldes" name="baldes" placeholder="Ex: dúvidas sobre tratamentos, bastidores e cuidado, mitos e erros comuns">
                 <small id="cfg-temas-sug">Educar, humanizar e desmistificar (Parte 4). Todo post precisa caber em um deles.</small>
               </div>
-            <div class="row3">
+            <details class="mais-campos aprofundar">
+              <summary>Aprofundar: tempo por semana, quem produz e câmera <span class="chevron">▸</span></summary>
+              <div class="row3">
               <div class="field">
                 <label for="cfg-tempo">Tempo por semana para conteúdo</label>
                 <select id="cfg-tempo" name="tempo">
@@ -637,6 +660,7 @@
                 </select>
               </div>
             </div>
+            </details>
           </div>
         <details class="tool in-sub" data-id="pautas" open>
           <summary>
@@ -796,6 +820,7 @@
             </details>
           </div>
         </details>
+          <div class="entrega" aria-live="polite"></div>
           <div class="passo-foot">
             <p class="passo-falta" aria-live="polite" hidden></p>
             <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
@@ -810,8 +835,9 @@
           <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
         </button></h3>
         <div class="passo-corpo" id="passo-6-corpo" hidden>
-          <p class="passo-meta"><span>Uns 20 minutos</span><span>Guia: Partes 8 e 9</span></p>
-          <p class="passo-why">Colegas que indicam trazem pacientes que já confiam em você. Anúncio vem depois: ele amplifica o que já funciona no orgânico, não substitui a sua diferença.</p>
+          <p class="passo-meta"><span class="jornada-tag">Na jornada · Os aliados e a arma de dois gumes</span><span>Uns 20 minutos</span></p>
+          <div class="tarefa" data-tarefa="6"></div>
+          <details class="entender"><summary>Entender este passo <span class="chevron">▸</span></summary><div class="entender-corpo"><p>Colegas que indicam trazem pacientes que já confiam em você. Anúncio vem depois: ele amplifica o que já funciona no orgânico, não substitui a sua diferença.</p><p class="entender-jornada"><b>Na jornada do herói:</b> Aliados são os colegas que indicam e recebem os seus pacientes. O anúncio é a arma de dois gumes: amplifica o que já funciona, e amplifica também o que é genérico.</p><p class="entender-guia">Guia: Partes 8 e 9 do <i>O Prompt do Sim</i>.</p></div></details>
         <details class="tool in-sub" data-id="colegas" id="colegas" open>
           <summary>
             <div class="tool-title"><div><h3>Rede de colegas</h3><span class="sub">Funil de colegas, carta de apresentação, contrarreferência e agradecimentos</span></div></div>
@@ -972,6 +998,7 @@
             <div class="num-wrap"><table class="num-table" id="camp-table"></table></div>
           </div>
         </details>
+          <div class="entrega" aria-live="polite"></div>
           <div class="passo-foot">
             <p class="passo-falta" aria-live="polite" hidden></p>
             <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
@@ -980,9 +1007,9 @@
       </section>
 
       <div class="mov" data-mov="3">
-        <p class="mov-n">Movimento 3 de 3</p>
+        <p class="mov-n">Ato 3 de 3 · O retorno</p>
         <h2>Meça quem fica</h2>
-        <p>Cada contato com origem e próximo passo. Em 90 dias, você sabe por qual porta entram os pacientes que ficam.</p>
+        <p>O herói volta com o elixir: cada contato acompanhado até o tratamento, a semana revisada, e o que você aprende volta para a estratégia.</p>
       </div>
 
       <section class="passo" id="passo-7" data-passo="7" data-mov="3">
@@ -992,8 +1019,9 @@
           <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
         </button></h3>
         <div class="passo-corpo" id="passo-7-corpo" hidden>
-          <p class="passo-meta"><span>Uns 20 minutos</span><span>Guia: Partes 10 a 12</span></p>
-          <p class="passo-why">A maior perda acontece entre o "oi" e a consulta. Resposta rápida, dois horários oferecidos e um link com origem para saber de onde veio cada contato.</p>
+          <p class="passo-meta"><span class="jornada-tag">Na jornada · A aproximação da caverna</span><span>Uns 20 minutos</span></p>
+          <div class="tarefa" data-tarefa="7"></div>
+          <details class="entender"><summary>Entender este passo <span class="chevron">▸</span></summary><div class="entender-corpo"><p>A maior perda acontece entre o "oi" e a consulta. Resposta rápida, dois horários oferecidos e um link com origem para saber de onde veio cada contato.</p><p class="entender-jornada"><b>Na jornada do herói:</b> A caverna é a conversa no WhatsApp, onde a maioria dos pacientes se perde. É ali que a diferença anunciada precisa aparecer de verdade.</p><p class="entender-guia">Guia: Partes 10 a 12 do <i>O Prompt do Sim</i>.</p></div></details>
           <div class="cfg-campos">
               <div class="field">
                 <label for="cfg-whatsapp">WhatsApp do consultório (com DDD)</label>
@@ -1111,6 +1139,7 @@
             </details>
           </div>
         </details>
+          <div class="entrega" aria-live="polite"></div>
           <div class="passo-foot">
             <p class="passo-falta" aria-live="polite" hidden></p>
             <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
@@ -1125,8 +1154,9 @@
           <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
         </button></h3>
         <div class="passo-corpo" id="passo-8-corpo" hidden>
-          <p class="passo-meta"><span>Um minuto por contato</span><span>Guia: Parte 13</span></p>
-          <p class="passo-why">Cada contato entra aqui com origem, etapa, próximo passo e data. É isso que mostra, em 90 dias, por qual porta chegam os pacientes que agendam, comparecem e seguem o tratamento. Nenhum dado clínico aqui.</p>
+          <p class="passo-meta"><span class="jornada-tag">Na jornada · A recompensa</span><span>Um minuto por contato</span></p>
+          <div class="tarefa" data-tarefa="8"></div>
+          <details class="entender"><summary>Entender este passo <span class="chevron">▸</span></summary><div class="entender-corpo"><p>Cada contato entra aqui com origem, etapa, próximo passo e data. É isso que mostra, em 90 dias, por qual porta chegam os pacientes que agendam, comparecem e seguem o tratamento. Nenhum dado clínico aqui.</p><p class="entender-jornada"><b>Na jornada do herói:</b> A recompensa é saber, com números, por qual porta entram os pacientes que agendam, comparecem e seguem o tratamento.</p><p class="entender-guia">Guia: Parte 13 do <i>O Prompt do Sim</i>.</p></div></details>
         <details class="tool in-solo" data-id="rastreador" id="rastreador" open>
           <summary>
             <div class="tool-title"><div><h3>Rastreador de pacientes</h3><span class="sub">Funil de sete etapas, consentimento, próximos passos vencidos, lembretes e planilha</span></div></div>
@@ -1135,40 +1165,47 @@
           <div class="tool-body">
             <p class="desc">O CRM do consultório, guardado só neste navegador. Registre quem entrou em contato, a etapa, o próximo passo e a data. <b>Nenhum dado clínico aqui</b>: diagnóstico, exames e evolução ficam no prontuário.</p>
             <form id="tracker-form" class="tool-form">
-              <div class="row4">
-                <div class="field"><label for="t-nome">Nome ou apelido *</label><input type="text" id="t-nome" required placeholder="Ex: Maria S."></div>
-                <div class="field"><label for="t-tel">Telefone</label><input type="text" id="t-tel" inputmode="tel" placeholder="(11) 90000-0000"></div>
-                <div class="field"><label for="t-canal">Canal preferido</label><select id="t-canal"><option>WhatsApp</option><option>Ligação</option><option>E-mail</option><option>Direct</option></select></div>
-                <div class="field"><label for="t-servico">Serviço</label><input type="text" id="t-servico" list="lista-servicos" placeholder="Ex: implantes"></div>
+              <p class="rapido-t">Cadastro rápido: quem é, de onde veio e qual o próximo passo. O resto fica em "Mais detalhes".</p>
+              <div class="row2">
+                <div class="field"><label for="t-nome">Nome ou apelido *</label><input type="text" id="t-nome" required placeholder="Ex: Maria S." autocomplete="off"></div>
+                <div class="field"><label for="t-origem">De onde veio? *</label><select id="t-origem" required></select><small>Se não souber, escolha "Não sei". O app nunca escolhe por você.</small></div>
               </div>
-              <div class="row4">
-                <div class="field"><label for="t-origem">Origem</label><select id="t-origem"></select></div>
-                <div class="field" id="t-colega-wrap"><label for="t-colega">Colega que indicou</label><select id="t-colega"><option value="">(nenhum)</option></select></div>
-                <div class="field"><label for="t-prof">Profissional</label><input type="text" id="t-prof" list="lista-equipe" placeholder="Quem atende"></div>
-                <div class="field"><label for="t-etapa">Etapa</label><select id="t-etapa"></select></div>
+              <div class="field" id="t-colega-wrap"><label for="t-colega">Colega que indicou</label><select id="t-colega"><option value="">(nenhum)</option></select></div>
+              <div class="row2">
+                <div class="field"><label for="t-passo">Próximo passo</label><input type="text" id="t-passo" placeholder="Ex: oferecer dois horários"></div>
+                <div class="field"><label for="t-data">Quando</label><input type="date" id="t-data"><small>Sem data, o contato aparece na fila "Sem próximo passo".</small></div>
               </div>
-              <div class="row3">
-                <div class="field"><label for="t-passo">Próximo passo</label><input type="text" id="t-passo" placeholder="Ex: confirmar avaliação"></div>
-                <div class="field"><label for="t-data">Data do próximo passo</label><input type="date" id="t-data"></div>
-                <div class="field"><label for="t-valor">Valor do plano (R$)</label><input type="number" id="t-valor" min="0" step="0.01" placeholder="Se houver"></div>
-              </div>
-              <fieldset class="field">
-                <legend>Consentimento registrado hoje (finalidades)</legend>
-                <div class="checks">
-                  <label><input type="checkbox" id="t-c-atend" checked> Atendimento</label>
-                  <label><input type="checkbox" id="t-c-lemb"> Lembretes e retornos</label>
-                  <label><input type="checkbox" id="t-c-cont"> Conteúdos e novidades</label>
+              <details class="mais-campos" id="t-mais">
+                <summary>Mais detalhes: contato, serviço, etapa, consentimento e observações <span class="chevron">▸</span></summary>
+                <div class="row2">
+                  <div class="field"><label for="t-canal">Como prefere ser contatado</label><select id="t-canal"><option>WhatsApp</option><option>Ligação</option><option>E-mail</option><option>Direct</option></select></div>
+                  <div class="field"><label for="t-tel" id="t-tel-lab">Telefone</label><input type="text" id="t-tel" inputmode="tel" placeholder="(11) 90000-0000"></div>
                 </div>
-                <small>Marque só o que a pessoa aceitou. Dá para revogar depois em cada contato.</small>
-              </fieldset>
-              <div class="field">
-                <label for="t-notas">Observações (sem dados clínicos)</label>
-                <input type="text" id="t-notas" placeholder="Ex: prefere horário após as 18h">
-                <small id="t-notas-aviso" class="clin-warn" hidden>Isto parece informação clínica. Guarde no prontuário, não aqui.</small>
-              </div>
+                <div class="row3">
+                  <div class="field"><label for="t-servico">Serviço</label><input type="text" id="t-servico" list="lista-servicos" placeholder="Ex: implantes"></div>
+                  <div class="field"><label for="t-etapa">Etapa</label><select id="t-etapa"></select></div>
+                  <div class="field"><label for="t-prof">Profissional</label><input type="text" id="t-prof" list="lista-equipe" placeholder="Quem atende"></div>
+                </div>
+                <div class="field"><label for="t-valor">Valor do plano (R$)</label><input type="number" id="t-valor" min="0" step="0.01" placeholder="Se houver"></div>
+                <fieldset class="field">
+                  <legend>Consentimento que a pessoa deu hoje (marque só o que ela aceitou)</legend>
+                  <div class="checks">
+                    <label><input type="checkbox" id="t-c-atend"> Atendimento</label>
+                    <label><input type="checkbox" id="t-c-lemb"> Lembretes e retornos</label>
+                    <label><input type="checkbox" id="t-c-cont"> Conteúdos e novidades</label>
+                  </div>
+                  <small>Tudo começa desmarcado: cadastrar alguém não é consentimento. Dá para registrar ou revogar depois em cada contato. Em caso de dúvida sobre a base legal, consulte quem assessora você em proteção de dados.</small>
+                </fieldset>
+                <div class="field">
+                  <label for="t-notas">Observações (sem dados clínicos)</label>
+                  <input type="text" id="t-notas" placeholder="Ex: prefere horário após as 18h">
+                  <small id="t-notas-aviso" class="clin-warn" hidden>Isto parece informação clínica. Guarde no prontuário, não aqui.</small>
+                </div>
+              </details>
               <div class="form-actions"><button type="submit" class="btn btn-teal">Adicionar contato</button></div>
             </form>
 
+            <div class="t-filas" id="t-filas" role="group" aria-label="Filas de contatos"></div>
             <div class="funnel funnel7" id="t-funnel"></div>
             <div class="form-actions" style="margin-top:12px">
               <label class="visually-hidden" for="t-filtro">Filtrar por etapa</label>
@@ -1195,6 +1232,7 @@
             </form>
           </div>
         </details>
+          <div class="entrega" aria-live="polite"></div>
           <div class="passo-foot">
             <p class="passo-falta" aria-live="polite" hidden></p>
             <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
@@ -1209,8 +1247,9 @@
           <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
         </button></h3>
         <div class="passo-corpo" id="passo-9-corpo" hidden>
-          <p class="passo-meta"><span>30 minutos, toda sexta</span><span>Guia: Parte 13</span></p>
-          <p class="passo-why">Toda sexta, 30 minutos: veja o placar, ataque o gargalo da vez e monte a semana seguinte. Este passo não termina: é o ritual que mantém o ciclo rodando.</p>
+          <p class="passo-meta"><span class="jornada-tag">Na jornada · O retorno com o elixir</span><span>30 minutos, toda sexta</span></p>
+          <div class="tarefa" data-tarefa="9"></div>
+          <details class="entender"><summary>Entender este passo <span class="chevron">▸</span></summary><div class="entender-corpo"><p>Toda sexta, 30 minutos: veja o placar, ataque o gargalo da vez e monte a semana seguinte. Este passo não termina: é o ritual que mantém o ciclo rodando.</p><p class="entender-jornada"><b>Na jornada do herói:</b> O ritual da semana é o retorno: o que você aprendeu volta para o conteúdo, o atendimento e, quando os dados pedirem, para a própria estratégia.</p><p class="entender-guia">Guia: Parte 13 do <i>O Prompt do Sim</i>.</p></div></details>
           <div id="placar-box" class="placar-box"></div>
         <details class="tool in-sub" data-id="assistente" open>
           <summary>
@@ -1306,6 +1345,7 @@
             </form>
           </div>
         </details>
+          <div class="entrega" aria-live="polite"></div>
           <div class="passo-foot">
             <p class="passo-falta" aria-live="polite" hidden></p>
             <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>

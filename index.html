@@ -1043,6 +1043,166 @@
   .rede .onde{display:block; margin-top:4px; font-size:.8rem; color:var(--ink-soft);}
   .rede .onde::before{content:'Onde encontrar: '; font-weight:600; color:var(--teal);}
 
+  /* ===================== Jornada amigável ===================== */
+  html{scroll-padding-top:104px;}
+  @media (max-width:860px){ html{scroll-padding-top:120px;} }
+  .aviso-dados{margin-top:14px; padding:12px 16px; border-radius:12px; background:#FFF1EC; border:1px solid var(--gold); color:var(--ink); font-size:.92rem;}
+  .aviso-dados p{margin:0 0 4px;}
+  .copia-aviso{flex-basis:100%; margin:6px 0 0; font-size:.86rem; color:var(--rust);}
+  .copia-falhou{border-color:var(--rust) !important;}
+  /* navegação curta */
+  nav.links{display:flex; align-items:center; gap:18px;}
+  .nav-mais{position:relative;}
+  .nav-mais > summary{list-style:none; cursor:pointer; color:var(--ink-soft); font-weight:500; padding:6px 2px;}
+  .nav-mais > summary::-webkit-details-marker{display:none}
+  .nav-mais-lista{position:absolute; right:0; top:calc(100% + 8px); z-index:60; min-width:220px; background:#fff; border:1px solid var(--border-strong); border-radius:12px; box-shadow:0 12px 30px rgba(20,48,58,.16); padding:6px; display:grid;}
+  .nav-mais-lista a{padding:10px 12px; border-radius:8px; color:var(--ink); text-decoration:none;}
+  .nav-mais-lista a:hover, .nav-mais-lista a:focus-visible{background:var(--paper);}
+  @media (max-width:860px){ nav.links{gap:4px; justify-content:space-between; width:100%;} nav.links > a, .nav-mais > summary{padding:10px 6px; min-height:44px; display:inline-flex; align-items:center; font-size:.92rem;} }
+  /* primeira visita */
+  .hero-app .hero-note{color:#C9D6DA; font-size:.9rem; margin-top:4px;}
+  .hero-movs b{font-size:.96rem;}
+  /* padrão de tarefa */
+  .jornada-tag{color:var(--teal); font-weight:700;}
+  .passo-meta span.jornada-tag::before{content:'';}
+  .tarefa{margin:12px 0 14px; padding:14px 16px; border-radius:12px; background:var(--paper);}
+  .tarefa-sai{margin:0 0 6px; font-size:.98rem;}
+  .tarefa-ja{margin:0; font-size:.86rem; color:var(--ink-soft);}
+  .tarefa-ja p{margin:0 0 4px;}
+  .tarefa-ja ul{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:6px;}
+  .tarefa-ja li{background:#fff; border:1px solid var(--border); border-radius:20px; padding:3px 10px; overflow-wrap:anywhere;}
+  .entender{margin:0 0 16px; border:1px solid var(--border); border-radius:10px;}
+  .entender > summary{cursor:pointer; list-style:none; padding:10px 14px; font-size:.9rem; font-weight:600; color:var(--teal); display:flex; justify-content:space-between;}
+  .entender > summary::-webkit-details-marker{display:none}
+  .entender[open] > summary .chevron{transform:rotate(90deg);}
+  .entender-corpo{padding:0 14px 12px; font-size:.92rem; color:var(--ink-soft);}
+  .entender-corpo p{margin:0 0 8px;}
+  .entrega{margin-top:22px; padding:14px 16px; border-radius:12px; border:1px dashed var(--border-strong);}
+  .entrega.est-pronto, .entrega.est-semana-ok{border-style:solid; border-color:var(--teal); background:#EAF4F5;}
+  .entrega.est-revisar{border-style:solid; border-color:var(--gold); background:#FFF6F1;}
+  .entrega-t{margin:0 0 8px; display:flex; flex-wrap:wrap; gap:8px; align-items:center;}
+  .entrega-rev{margin:0 0 8px; font-size:.9rem; color:#8A3418;}
+  .entrega ul{list-style:none; margin:0; padding:0; display:grid; gap:4px; font-size:.9rem;}
+  .entrega li{display:flex; gap:8px; color:var(--ink-soft);}
+  .entrega li.ok{color:var(--ink);}
+  .entrega li .ck{width:1.2em; flex:none; font-weight:700; color:var(--ink-soft);}
+  .entrega li.ok .ck{color:var(--teal);}
+  .entrega li.opc span:last-child::after{content:' · opcional'; font-size:.8em; color:var(--ink-soft);}
+  .estado{font-size:.7rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:3px 9px; border-radius:20px; background:var(--paper-warm); color:var(--ink);}
+  .estado.pronto, .estado.semana-ok{background:var(--teal); color:#fff;}
+  .estado.revisar{background:var(--gold); color:#fff;}
+  .passo.andamento .passo-n{background:#F5D9CC;}
+  .passo.revisar .passo-n{background:var(--gold); color:#fff;}
+  .passo.revisar .passo-st{color:#9A3B20;}
+  .passo.andamento .passo-st, .passo.semana-pend .passo-st{color:#7A4A12;}
+  /* faixa da diferença em cada prompt */
+  .dif-faixa{margin:14px 0; padding:12px 14px; border-radius:12px; border-left:4px solid var(--teal); background:#EAF4F5; font-size:.9rem;}
+  .dif-faixa p{margin:0 0 4px;}
+  .dif-faixa.st-vazia{border-left-color:var(--gold); background:#FFF6F1;}
+  .dif-faixa.st-hipotese, .dif-faixa.st-revisar{border-left-color:#B8741E; background:#FFF8EC;}
+  .dif-acoes, .dif-nota{color:var(--ink-soft);}
+  .dif-badge{display:inline-block; font-size:.68rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:2px 8px; border-radius:20px; background:var(--teal); color:#fff; vertical-align:1px;}
+  .dif-badge.hipotese, .dif-badge.revisar{background:#8A5A12;}
+  .dif-badge.vazia{background:var(--gold);}
+  .hoje-next .dif-badge{box-shadow:0 0 0 1px rgba(255,255,255,.3);}
+  /* Oceano Azul em etapas */
+  .oa-nav{margin:4px 0 14px; padding:10px 12px; border-radius:12px; background:#fff; border:1px solid var(--border-strong); box-shadow:0 4px 14px rgba(20,48,58,.06);}
+  .oa-nav-t{margin:0 0 8px; font-weight:700; outline:none;}
+  .oa-tipo{margin-left:6px; font-size:.68rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:2px 8px; border-radius:20px; background:var(--paper-warm); color:var(--ink);}
+  .oa-dots{list-style:none; margin:0; padding:0; display:flex; gap:6px; flex-wrap:wrap;}
+  .oa-dots button{all:unset; box-sizing:border-box; cursor:pointer; width:44px; height:44px; border-radius:50%; display:inline-grid; place-items:center; font-weight:700; background:var(--paper-warm); color:var(--ink);}
+  .oa-dots button.ok{background:#CFE7E8; color:var(--teal);}
+  .oa-dots button.on{background:var(--teal); color:#fff;}
+  .oa-dots button:focus-visible{outline:3px solid var(--gold); outline-offset:2px;}
+  .oa-pe{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:6px 0 4px;}
+  .oa-depois{flex-basis:100%; margin:0; font-size:.86rem; color:var(--ink-soft);}
+  .oa-hip{margin:0 0 10px; padding:8px 12px; border-radius:8px; background:#FFF8EC; font-size:.86rem;}
+  .oa-hip.ok{background:#EAF4F5;}
+  #passo-3:not(.oa-e7) #oa-form > .form-actions, #passo-3:not(.oa-e7) #oa-form > .output-block, #passo-3:not(.oa-e7) #oa-form > .form-msg,
+  #passo-3:not(.oa-e7) .proposta-final, #passo-3:not(.oa-e7) .est-aprovacao, #passo-3:not(.oa-e7) .saved-slot[data-save="oceano"]{display:none !important;}
+  .est-aprovacao{margin-top:14px; padding:14px 16px; border-radius:12px; border:1px solid var(--border-strong); background:#fff;}
+  .est-linhas p{margin:0 0 6px;}
+  .est-slogan{margin:8px 0; padding:8px 12px; border-radius:8px; background:#FFF1EC; font-size:.9rem;}
+  .est-pend ul{margin:4px 0 8px; padding-left:18px; display:grid; gap:4px; font-size:.9rem;}
+  .est-pend small{color:var(--ink-soft);}
+  .est-ok{color:var(--teal); font-weight:600;}
+  .est-confirma{margin-top:10px; border:1px solid var(--border); border-radius:10px; padding:10px 14px; display:grid; gap:8px;}
+  .est-confirma label{display:flex; gap:8px; align-items:flex-start; font-size:.9rem;}
+  .est-confirma label input{margin-top:4px;}
+  /* rastreador */
+  .rapido-t{margin:4px 0 12px; font-size:.9rem; color:var(--ink-soft);}
+  .t-filas{display:flex; flex-wrap:wrap; gap:8px; margin:16px 0 10px;}
+  .fila{all:unset; box-sizing:border-box; cursor:pointer; min-height:44px; padding:8px 14px; border-radius:22px; border:1px solid var(--border-strong); background:#fff; font-size:.9rem; display:inline-flex; gap:8px; align-items:center;}
+  .fila.on{background:var(--ink); color:#fff; border-color:var(--ink);}
+  .fila.late b{color:var(--rust);}
+  .fila.on.late b{color:#FFB59E;}
+  .fila:focus-visible{outline:3px solid var(--teal); outline-offset:2px;}
+  /* Hoje */
+  .hj-prop{margin:0 0 12px; font-size:.95rem; color:#F4F2EC; line-height:1.45;}
+  .hj-prop .linkish{color:#F4BFA4;}
+  .cm-prog .hoje-label{margin-bottom:4px;}
+  .hj-pend{list-style:none; margin:10px 0 0; padding:0; font-size:.82rem; color:#CFD6CC; display:grid; gap:4px;}
+  .hj-pend .linkish{color:#F4BFA4;}
+  .hj-pend-t{font-weight:600;}
+  .hj-filas{display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin:4px 0 10px;}
+  .hj-fila{all:unset; box-sizing:border-box; cursor:pointer; min-height:44px; padding:8px; border-radius:10px; background:var(--paper); display:grid; text-align:center;}
+  .hj-fila b{font-size:1.4rem; line-height:1.1;}
+  .hj-fila span{font-size:.72rem; color:var(--ink-soft);}
+  .hj-fila.late b{color:var(--rust);}
+  .hj-fila:focus-visible{outline:3px solid var(--teal); outline-offset:2px;}
+  .hj-ritual{margin:6px 0 0; font-size:.82rem; color:var(--ink-soft);}
+  .hj-revisar{margin-top:12px; padding:12px 16px; border-radius:12px; background:#FFF6F1; border-left:4px solid var(--gold); font-size:.9rem;}
+  .hj-revisar p, .hj-revisar ul{margin:0 0 4px;}
+  .hj-atalhos{display:flex; flex-wrap:wrap; gap:6px 16px; align-items:center; margin-top:14px; font-size:.88rem; color:var(--ink-soft);}
+  .hj-atalhos .linkish{min-height:32px;}
+  /* ciclo da IA */
+  .ciclo-ia{list-style:none; counter-reset:c; margin:6px 0 10px; padding:0; display:flex; flex-wrap:wrap; gap:6px;}
+  .ciclo-ia li{counter-increment:c; font-size:.84rem; padding:5px 12px 5px 6px; border-radius:20px; background:var(--paper); display:inline-flex; gap:6px; align-items:center;}
+  .ciclo-ia li::before{content:counter(c); display:inline-grid; place-items:center; width:22px; height:22px; border-radius:50%; background:#fff; font-weight:700; font-size:.76rem;}
+  .ciclo-ia li.ok{background:#EAF4F5;}
+  .ciclo-ia li.ok::before{content:'✓'; background:var(--teal); color:#fff;}
+  .ciclo-volta{margin:10px 0; padding:12px 14px; border-radius:10px; background:#FFF8EC; font-size:.9rem;}
+  .ciclo-volta p{margin:0 0 8px;}
+  .ciclo-aviso{margin:6px 0 0; font-size:.8rem; color:var(--ink-soft);}
+  .saved-chip.rev{background:var(--gold); color:#fff;}
+  .versoes{margin-top:10px; font-size:.88rem;}
+  .versoes > summary{cursor:pointer; font-weight:600; color:var(--teal);}
+  .versoes ol{padding-left:18px;}
+  .versoes pre{white-space:pre-wrap; font-family:var(--body); font-size:.84rem; background:var(--paper); padding:8px 10px; border-radius:8px; margin:4px 0;}
+  .v-d{margin:8px 0 2px; font-weight:600;}
+  /* biblioteca */
+  .bib-busca{max-width:560px; margin:0 0 18px;}
+  .bib-busca label{display:block; font-weight:600; margin-bottom:6px;}
+  .bib-busca input{width:100%; font:inherit; padding:12px 14px; border:1.5px solid var(--border-strong); border-radius:10px; background:#fff;}
+  .bib-grupo{padding:0; margin:0 0 22px;}
+  .bib-grupo h3{margin:0 0 2px; font-size:1.1rem;}
+  .bib-gd{margin:0 0 10px; font-size:.88rem; color:var(--ink-soft);}
+  .bib-cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:10px;}
+  .bib-card{background:#fff; border:1px solid var(--border); border-radius:12px; padding:14px; display:flex; flex-direction:column; gap:6px;}
+  .bib-h{display:flex; justify-content:space-between; gap:8px; align-items:baseline;}
+  .bib-h h4{margin:0; font-size:1rem;}
+  .bib-onde{font-size:.72rem; font-weight:700; white-space:nowrap; color:var(--teal);}
+  .bib-eixo{font-size:.64rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:2px 7px; border-radius:20px; background:var(--teal); color:#fff; vertical-align:2px;}
+  .bib-serve{margin:0; font-size:.92rem;}
+  .bib-card dl{margin:0 0 4px; display:grid; grid-template-columns:auto 1fr; gap:2px 8px; font-size:.82rem; color:var(--ink-soft);}
+  .bib-card dt{font-weight:700; color:var(--ink);}
+  .bib-card dd{margin:0;}
+  .bib-card .btn{align-self:flex-start; margin-top:auto;}
+  .bib-aqui-t{margin:30px 0 12px;}
+  .placar-vazio{margin:0; padding:12px 14px; border-radius:10px; background:var(--paper); font-size:.92rem;}
+  .linkish{color:var(--teal);}
+  .hoje-next .linkish, .hero .linkish, .route-panel .linkish{color:#F4BFA4;}
+  .passo-falta .linkish{color:var(--rust);}
+  .entender-corpo .livro-strip{margin-top:10px;}
+  .oa-ia-nota{margin:16px 0 6px; font-size:.88rem; color:var(--ink-soft);}
+  #passo-3:not(.oa-e7) .oa-ia-nota{display:none;}
+  /* contraste mínimo de 4,5:1 em texto pequeno */
+  .eyebrow{color:#9A3B20;} .eyebrow::before{background:#9A3B20;}
+  .hero .eyebrow{color:var(--gold-soft);} .hero .eyebrow::before{background:var(--gold-soft);}
+  .ls-tag{background:#23703C !important;}
+  @media (max-width:420px){ nav.links > a, .nav-mais > summary{font-size:.84rem; padding:10px 3px;} nav.links{gap:0;} }
+  @media (max-width:720px){ nav.links{overflow:visible; -webkit-mask-image:none; mask-image:none; padding-right:0;} }
+
 </style>
 </head>
 <body>
@@ -1050,47 +1210,43 @@
 <header class="nav">
   <div class="nav-inner wrap">
     <a href="#top" class="brand" aria-label="CliniLoop, início"><span class="brand-text"><svg class="brand-word" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-10 -794 4640 1068"><path fill="#14303A" d="M389 -707Q506 -707 594.0 -647.0Q682 -587 717 -481H556Q532 -531 488.5 -556.0Q445 -581 388 -581Q327 -581 279.5 -552.5Q232 -524 205.5 -472.0Q179 -420 179 -350Q179 -281 205.5 -228.5Q232 -176 279.5 -147.5Q327 -119 388 -119Q445 -119 488.5 -144.5Q532 -170 556 -220H717Q682 -113 594.5 -53.5Q507 6 389 6Q289 6 208.5 -39.5Q128 -85 81.5 -166.0Q35 -247 35 -350Q35 -453 81.5 -534.5Q128 -616 208.5 -661.5Q289 -707 389 -707Z M977 -740V0H837V-740Z M1100 -702Q1100 -737 1124.5 -760.5Q1149 -784 1186 -784Q1223 -784 1247.5 -760.5Q1272 -737 1272 -702Q1272 -667 1247.5 -643.5Q1223 -620 1186 -620Q1149 -620 1124.5 -643.5Q1100 -667 1100 -702ZM1255 -554V0H1115V-554Z M1921 -325V0H1781V-306Q1781 -372 1748.0 -407.5Q1715 -443 1658 -443Q1600 -443 1566.5 -407.5Q1533 -372 1533 -306V0H1393V-554H1533V-485Q1561 -521 1604.5 -541.5Q1648 -562 1700 -562Q1799 -562 1860.0 -499.5Q1921 -437 1921 -325Z M2039 -702Q2039 -737 2063.5 -760.5Q2088 -784 2125 -784Q2162 -784 2186.5 -760.5Q2211 -737 2211 -702Q2211 -667 2186.5 -643.5Q2162 -620 2125 -620Q2088 -620 2063.5 -643.5Q2039 -667 2039 -702ZM2194 -554V0H2054V-554Z"/><path fill="#1E9E9A" d="M2472 -111H2702V0H2332V-698H2472Z M4334.24 -563Q4405.24 -563 4462.74 -528.0Q4520.24 -493 4553.74 -428.5Q4587.24 -364 4587.24 -279Q4587.24 -194 4553.74 -128.5Q4520.24 -63 4462.74 -27.0Q4405.24 9 4334.24 9Q4273.24 9 4226.74 -16.0Q4180.24 -41 4151.24 -79V264H4011.24V-554H4151.24V-474Q4178.24 -512 4225.74 -537.5Q4273.24 -563 4334.24 -563ZM4297.24 -440Q4259.24 -440 4225.74 -420.5Q4192.24 -401 4171.74 -364.0Q4151.24 -327 4151.24 -277Q4151.24 -227 4171.74 -190.0Q4192.24 -153 4225.74 -133.5Q4259.24 -114 4297.24 -114Q4336.24 -114 4369.74 -134.0Q4403.24 -154 4423.74 -191.0Q4444.24 -228 4444.24 -279Q4444.24 -329 4423.74 -365.5Q4403.24 -402 4369.74 -421.0Q4336.24 -440 4297.24 -440Z"/><path fill="none" stroke="#1E9E9A" stroke-width="140" stroke-linejoin="round" d="M3327.1 -277.0 L3448.6 -418.0 A216.0 216.0 0 1 1 3448.6 -136.0 L3205.6 -418.0 A216.0 216.0 0 1 0 3205.6 -136.0 Z"/></svg><small>pacientes, colegas e campanhas com IA</small></span></a>
-    <nav class="links">
-      <a href="#caminho">Seu caminho</a>
-      <a href="#rastreador">Pacientes</a>
-      <a href="#etica">Ética</a>
-      <a href="#caixa">Ferramentas</a>
-      <a href="#livro">O guia</a>
-      <a href="#ajustes">Ajustes</a>
-      <a href="guia/O-Prompt-do-Sim.pdf" target="_blank" rel="noopener" class="nav-pdf">Guia em PDF</a>
+    <nav class="links" aria-label="Principal">
+      <a href="#hoje" data-nav="hoje">Hoje</a>
+      <a href="#mov-1" data-nav="caminho">Caminho</a>
+      <a href="#caixa" data-nav="ferramentas">Ferramentas</a>
+      <a href="#rastreador" data-nav="contatos">Contatos</a>
+      <details class="nav-mais">
+        <summary>Mais <span aria-hidden="true">▾</span></summary>
+        <div class="nav-mais-lista">
+          <a href="#livro">O guia no app</a>
+          <a href="guia/O-Prompt-do-Sim.pdf" target="_blank" rel="noopener">Guia em PDF</a>
+          <a href="#etica">Verificador ético</a>
+          <a href="#ajustes">Ajustes e backup</a>
+          <a href="#faq">Ajuda</a>
+        </div>
+      </details>
     </nav>
   </div>
 </header>
 
 <main id="top">
+  <div class="aviso-dados wrap" id="aviso-dados" role="alert" hidden></div>
 
   <section class="hero hero-app">
     <div class="wrap hero-inner">
       <div>
-        <p class="eyebrow">Sistema Loop · para profissionais de saúde e clínicas</p>
-        <h1 id="hero-t">Nove passos, em ordem. Um de cada vez.</h1>
-        <p class="lead" id="hero-lead">Primeiro você define a sua diferença, depois mostra onde o paciente procura e, por fim, mede quem fica. Cada passo reúne os campos, o prompt para a sua IA e o que guardar, no mesmo lugar. O guia <a href="#livro" class="hero-livro"><i>O Prompt do Sim</i></a> explica o porquê de cada um.</p>
+        <p class="eyebrow">Sistema Loop · o guia <i>O Prompt do Sim</i> no seu consultório</p>
+        <h1 id="hero-t">Descubra sua diferença e transforme-a em ações para o consultório.</h1>
+        <p class="lead" id="hero-lead">Nesta jornada, o herói é você. O CliniLoop é o mentor: com o Oceano Azul, você define o que só você oferece, e essa diferença passa a orientar cada perfil, conteúdo, conversa e campanha que o app ajuda a preparar.</p>
         <div class="hero-ctas">
-          <a href="#passo-1" class="btn btn-gold" id="hero-cta" data-ico="arrow">Começar pelo passo 1</a>
-          <a href="guia/O-Prompt-do-Sim.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Baixar o guia (PDF)</a>
+          <a href="#passo-1" class="btn btn-gold" id="hero-cta" data-ico="arrow">Construir minha diferenciação</a>
         </div>
-        <div class="hero-ias">
-          <p class="hi-t">Use a IA que você já tem, com ou sem assinatura:</p>
-          <div class="hi-links">
-            <a href="https://claude.ai/" target="_blank" rel="noopener">Claude</a>
-            <a href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPT</a>
-            <a href="https://gemini.google.com/" target="_blank" rel="noopener">Gemini</a>
-            <a href="https://grok.com/" target="_blank" rel="noopener">Grok</a>
-            <a href="https://chat.deepseek.com/" target="_blank" rel="noopener">DeepSeek</a>
-            <a href="https://www.meta.ai/" target="_blank" rel="noopener">Meta AI</a>
-          </div>
-          <p class="hi-aviso">Nunca cole dados de pacientes em nenhuma IA, e confira onde cada uma guarda o que você escreve (o DeepSeek, por exemplo, armazena na China).</p>
-        </div>
+        <p class="hero-note" id="hero-nota">Uns 20 minutos para a primeira hipótese. O que ainda for hipótese fica marcado como hipótese, e você pode continuar depois de onde parou.</p>
       </div>
-      <ol class="hero-movs" id="hero-movs" aria-label="Os três movimentos do caminho">
-        <li data-mov="1"><span class="hm-n">1</span><div><b>Defina a sua diferença</b><span>Passos 1 a 3 · consultório, paciente ideal e Oceano Azul</span></div><span class="hm-st"></span></li>
-        <li data-mov="2"><span class="hm-n">2</span><div><b>Mostre onde o paciente procura</b><span>Passos 4 a 6 · perfis, conteúdo, colegas e campanhas</span></div><span class="hm-st"></span></li>
-        <li data-mov="3"><span class="hm-n">3</span><div><b>Meça quem fica</b><span>Passos 7 a 9 · WhatsApp, rastreador e ritual da semana</span></div><span class="hm-st"></span></li>
+      <ol class="hero-movs" id="hero-movs" aria-label="Os três atos da jornada">
+        <li data-mov="1"><span class="hm-n">1</span><div><b>A partida · Defina a sua diferença</b><span>Passos 1 a 3 · consultório, paciente ideal e Oceano Azul</span></div><span class="hm-st"></span></li>
+        <li data-mov="2"><span class="hm-n">2</span><div><b>As provas · Mostre onde o paciente procura</b><span>Passos 4 a 6 · perfis, conteúdo, colegas e campanhas</span></div><span class="hm-st"></span></li>
+        <li data-mov="3"><span class="hm-n">3</span><div><b>O retorno · Meça quem fica</b><span>Passos 7 a 9 · WhatsApp, contatos e ritual da semana</span></div><span class="hm-st"></span></li>
       </ol>
     </div>
   </section>
@@ -1104,36 +1260,47 @@
         </div>
         <div class="hoje-grid">
           <article class="hoje-card hoje-next" aria-live="polite">
-            <p class="hoje-label" id="cm-prog-t">Seu caminho</p>
-            <div class="meter cm-meter"><span id="cm-prog-bar"></span></div>
+            <p class="hoje-label">Sua diferença</p>
+            <p class="hj-prop" id="cm-prop"></p>
+            <div class="cm-prog"><p class="hoje-label" id="cm-prog-t">Seu caminho</p><div class="meter cm-meter" role="progressbar" aria-labelledby="cm-prog-t" aria-valuemin="0" aria-valuemax="8" id="cm-meter"><span id="cm-prog-bar"></span></div></div>
             <p class="hoje-where" id="cm-onde"></p>
             <h3 id="cm-acao"></h3>
             <div class="form-actions"><button type="button" id="cm-continuar" class="btn btn-gold btn-sm" data-ico="arrow">Continuar</button></div>
+            <ul class="hj-pend" id="cm-pend"></ul>
           </article>
           <article class="hoje-card" aria-live="polite">
-            <p class="hoje-label">Próximos passos vencidos</p>
-            <p class="hoje-big" id="hj-atr-n">0</p>
+            <p class="hoje-label">Contatos</p>
+            <div class="hj-filas" id="hj-filas"></div>
             <ul class="hoje-list" id="hj-atr-list"></ul>
-            <button type="button" id="hj-rastreador" class="btn btn-outline btn-sm" data-ico="bell">Abrir rastreador</button>
+            <button type="button" id="hj-contato" class="btn btn-teal btn-sm" data-ico="plus">Novo contato</button>
           </article>
           <article class="hoje-card">
             <p class="hoje-label">Esta semana</p>
             <p class="hoje-big"><span id="hj-posts">0</span><span class="hoje-of"> de <label class="visually-hidden" for="hj-meta-n">Meta de conteúdos na semana</label><input type="number" id="hj-meta-n" min="1" max="30" inputmode="numeric"> conteúdos</span></p>
             <div class="meter" role="progressbar" aria-label="Conteúdos publicados na semana" aria-valuemin="0" id="hj-meter"><span id="hj-meta-bar"></span></div>
             <p class="hoje-rate" id="hj-semana"></p>
+            <p class="hj-ritual" id="hj-ritual"></p>
             <div class="post-row">
               <button type="button" class="btn btn-outline btn-sm" id="hj-conteudo" data-ico="plus">Registrar conteúdo</button>
-              <button type="button" class="btn btn-outline btn-sm" id="hj-contato" data-ico="plus">Novo contato</button>
             </div>
           </article>
         </div>
+        <div class="hj-revisar" id="hj-revisar" hidden></div>
+        <nav class="hj-atalhos" aria-label="Atalhos">
+          <span>Atalhos:</span>
+          <button type="button" class="linkish" data-abrir="etica">Revisar um post (ética)</button>
+          <button type="button" class="linkish" data-abrir="roteiro">Roteiro de conteúdo</button>
+          <button type="button" class="linkish" data-abrir="atendimento">Respostas do WhatsApp</button>
+          <button type="button" class="linkish" data-abrir="assistente">Agenda da semana</button>
+          <a href="#caixa" class="linkish">Todas as ferramentas</a>
+        </nav>
         <div class="hoje-backup" id="hj-backup" hidden></div>
       </div>
 
-      <div class="mov" data-mov="1">
-        <p class="mov-n">Movimento 1 de 3</p>
+      <div class="mov" data-mov="1" id="mov-1">
+        <p class="mov-n">Ato 1 de 3 · A partida</p>
         <h2>Defina a sua diferença</h2>
-        <p>Quem você atende, para quem e por que você. Sem isso, todo perfil e todo anúncio parecem com os de qualquer colega.</p>
+        <p>Você sai do mundo comum, em que todo perfil parece igual ao de qualquer colega, e encontra a ferramenta do herói: o Oceano Azul. Daqui sai a sua diferença, a base de tudo o que vem depois.</p>
       </div>
 
       <section class="passo" id="passo-1" data-passo="1" data-mov="1">
@@ -1143,8 +1310,9 @@
           <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
         </button></h3>
         <div class="passo-corpo" id="passo-1-corpo" hidden>
-          <p class="passo-meta"><span>Uns 10 minutos</span><span>Guia: Partes 1 e 2</span></p>
-          <p class="passo-why">Preencha uma vez. A profissão e o registro carregam as regras do seu conselho em todos os prompts; o objetivo decide o que vem primeiro. Tudo fica salvo neste navegador enquanto você digita.</p>
+          <p class="passo-meta"><span class="jornada-tag">Na jornada · O mundo comum</span><span>Uns 10 minutos</span></p>
+          <div class="tarefa" data-tarefa="1"></div>
+          <details class="entender"><summary>Entender este passo <span class="chevron">▸</span></summary><div class="entender-corpo"><p>Preencha uma vez. A profissão e o registro carregam as regras do seu conselho em todos os prompts; o objetivo decide o que vem primeiro. Tudo fica salvo neste navegador enquanto você digita.</p><p class="entender-jornada"><b>Na jornada do herói:</b> Toda jornada começa onde você está hoje: o seu consultório, o seu conselho e o resultado que você quer. É o mapa que o mentor precisa para ajudar.</p><p class="entender-guia">Guia: Partes 1 e 2 do <i>O Prompt do Sim</i>.</p></div></details>
           <div class="cfg-campos">
               <fieldset class="field">
                 <legend>Tipo de profissional *</legend>
@@ -1195,13 +1363,13 @@
                 <input type="text" id="cfg-servicos" name="servicos" placeholder="Separe por vírgula. Ex: implantes, lentes de contato dental, clareamento">
                 <small>Viram as opções de serviço no Rastreador de pacientes e nas campanhas.</small>
               </div>
+            <details class="mais-campos aprofundar">
+              <summary>Aprofundar: formação, atendimento, pagamento, tipo de conta e equipe <span class="chevron">▸</span></summary>
               <div class="field">
-                <label for="cfg-sobre">Formação, experiência e diferenciais *</label>
+                <label for="cfg-sobre">Formação, experiência e diferenciais (recomendado)</label>
                 <textarea id="cfg-sobre" name="sobre" rows="4" placeholder="Ex: 12 anos de formada, especialização em implantes, escaneamento digital, atendimento sem pressa; pacientes dizem que explico tudo com calma"></textarea>
                 <small>Não inclua nomes ou dados de pacientes.</small>
               </div>
-            <details class="mais-campos">
-              <summary>Atendimento, pagamento, tipo de conta e equipe <span class="chevron">▸</span></summary>
                 <div class="row3">
                   <fieldset class="field">
                     <legend>Atendimento</legend>
@@ -1253,6 +1421,7 @@
           </div>
           <div class="obj-hint" id="obj-hint" hidden></div>
           <p class="save-status" id="cfg-status" aria-live="polite">Salvo automaticamente neste navegador.</p>
+          <div class="entrega" aria-live="polite"></div>
           <div class="passo-foot">
             <p class="passo-falta" aria-live="polite" hidden></p>
             <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
@@ -1267,8 +1436,9 @@
           <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
         </button></h3>
         <div class="passo-corpo" id="passo-2-corpo" hidden>
-          <p class="passo-meta"><span>Uns 10 minutos</span><span>Guia: Parte 3</span></p>
-          <p class="passo-why">O paciente que você mais ajuda e que mais valoriza o seu trabalho. É dele que saem os ganchos, as pautas e as respostas às objeções. Responda sobre o perfil típico, nunca sobre um paciente real.</p>
+          <p class="passo-meta"><span class="jornada-tag">Na jornada · O chamado</span><span>Uns 10 minutos</span></p>
+          <div class="tarefa" data-tarefa="2"></div>
+          <details class="entender"><summary>Entender este passo <span class="chevron">▸</span></summary><div class="entender-corpo"><p>O paciente que você mais ajuda e que mais valoriza o seu trabalho. É dele que saem os ganchos, as pautas e as respostas às objeções. Responda sobre o perfil típico, nunca sobre um paciente real.</p><p class="entender-jornada"><b>Na jornada do herói:</b> O chamado vem de alguém: o paciente que precisa do que você faz melhor. Saber quem ele é decide o resto da travessia.</p><p class="entender-guia">Guia: Parte 3 do <i>O Prompt do Sim</i>.</p></div></details>
           <div class="cfg-campos">
               <div class="field">
                 <label for="cfg-publico">Quem é o seu paciente ideal? *</label>
@@ -1348,6 +1518,7 @@
             <div class="saved-slot" data-save="publico" data-label="público, ICP e persona"></div>
           </div>
         </details>
+          <div class="entrega" aria-live="polite"></div>
           <div class="passo-foot">
             <p class="passo-falta" aria-live="polite" hidden></p>
             <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
@@ -1362,8 +1533,9 @@
           <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
         </button></h3>
         <div class="passo-corpo" id="passo-3-corpo" hidden>
-          <p class="passo-meta"><span>Uns 30 minutos, mais o tempo de ouvir alguns pacientes</span><span>Guia: Apresentação e Parte 3</span></p>
-          <p class="passo-why">O passo que tira você da disputa pelo preço. Ouça o que os pacientes valorizam, olhe para quem ainda não procura ninguém e decida o que eliminar, reduzir, elevar e criar. No fim, a proposta em uma frase entra em todos os perfis, roteiros e campanhas dos próximos passos.</p>
+          <p class="passo-meta"><span class="jornada-tag">Na jornada · A ferramenta do herói</span><span>Uns 30 minutos, mais o tempo de ouvir alguns pacientes</span></p>
+          <div class="tarefa" data-tarefa="3"></div>
+          <details class="entender"><summary>Entender este passo <span class="chevron">▸</span></summary><div class="entender-corpo"><p>O passo que tira você da disputa pelo preço. Ouça o que os pacientes valorizam, olhe para quem ainda não procura ninguém e decida o que eliminar, reduzir, elevar e criar. No fim, a proposta em uma frase entra em todos os perfis, roteiros e campanhas dos próximos passos.</p><p class="entender-jornada"><b>Na jornada do herói:</b> O Oceano Azul é a ferramenta que tira você da disputa pelo preço. Com ela, você decide o que eliminar, reduzir, elevar e criar, e sai com uma diferença que um colega não poderia assinar.</p><p class="entender-guia">Guia: Apresentação e Parte 3 do <i>O Prompt do Sim</i>.</p></div></details>
         <details class="tool in-solo" data-id="oceano" open>
           <summary>
             <div class="tool-title"><div><h3>Estratégia Oceano Azul</h3><span class="sub">Posicionamento com as ferramentas do Oceano Azul, em sete etapas: do que o paciente diz à proposta que você consegue mostrar</span></div></div>
@@ -1455,6 +1627,8 @@
               </div>
             <button type="button" class="btn btn-outline btn-sm" id="usar-rascunho">Usar o rascunho da etapa 7 acima</button>
           </div>
+          <div class="est-aprovacao" id="est-aprovacao" aria-live="polite"></div>
+          <div class="entrega" aria-live="polite"></div>
           <div class="passo-foot">
             <p class="passo-falta" aria-live="polite" hidden></p>
             <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
@@ -1463,9 +1637,9 @@
       </section>
 
       <div class="mov" data-mov="2">
-        <p class="mov-n">Movimento 2 de 3</p>
+        <p class="mov-n">Ato 2 de 3 · As provas</p>
         <h2>Mostre onde o paciente procura</h2>
-        <p>Perfis coerentes, conteúdo que só você poderia publicar, colegas que indicam e anúncios que amplificam o que já funciona.</p>
+        <p>Com a diferença em mãos, você atravessa os canais. Perfis, conteúdo, colegas e anúncios passam a mostrar o que só você faz.</p>
       </div>
 
       <section class="passo" id="passo-4" data-passo="4" data-mov="2">
@@ -1475,8 +1649,9 @@
           <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
         </button></h3>
         <div class="passo-corpo" id="passo-4-corpo" hidden>
-          <p class="passo-meta"><span>Uns 15 minutos por rede</span><span>Guia: Parte 3</span></p>
-          <p class="passo-why">Uma rede por vez: abra a rede, cole o texto de hoje e gere o prompt dela. Aplique a reescrita e marque o checklist. Em todas, o paciente precisa achar a mesma resposta para três perguntas: quem é você, quem você ajuda e como marcar.</p>
+          <p class="passo-meta"><span class="jornada-tag">Na jornada · A travessia do primeiro limiar</span><span>Uns 15 minutos por rede</span></p>
+          <div class="tarefa" data-tarefa="4"></div>
+          <details class="entender"><summary>Entender este passo <span class="chevron">▸</span></summary><div class="entender-corpo"><p>Uma rede por vez: abra a rede, cole o texto de hoje e gere o prompt dela. Aplique a reescrita e marque o checklist. Em todas, o paciente precisa achar a mesma resposta para três perguntas: quem é você, quem você ajuda e como marcar.</p><p class="entender-jornada"><b>Na jornada do herói:</b> O primeiro limiar é o lugar onde o paciente procura você: o Google, o Instagram, o LinkedIn. Atravessar é fazer cada perfil responder quem você é, quem você ajuda e como marcar.</p><p class="entender-guia">Guia: Parte 3 do <i>O Prompt do Sim</i>.</p></div></details>
           <div class="cfg-campos">
             <div class="row2">
               <div class="field">
@@ -1685,6 +1860,7 @@
           </div>
         </details>
           <div class="saved-slot" data-save="perfil" data-label="textos aprovados dos perfis"></div>
+          <div class="entrega" aria-live="polite"></div>
           <div class="passo-foot">
             <p class="passo-falta" aria-live="polite" hidden></p>
             <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
@@ -1699,15 +1875,18 @@
           <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
         </button></h3>
         <div class="passo-corpo" id="passo-5-corpo" hidden>
-          <p class="passo-meta"><span>Uns 30 minutos</span><span>Guia: Partes 4 a 7</span></p>
-          <p class="passo-why">Primeiro as pautas, a partir das dúvidas reais dos pacientes; depois o roteiro da primeira peça. A frequência é a que você consegue revisar: constância vale mais que volume.</p>
+          <p class="passo-meta"><span class="jornada-tag">Na jornada · As provas</span><span>Uns 30 minutos</span></p>
+          <div class="tarefa" data-tarefa="5"></div>
+          <details class="entender"><summary>Entender este passo <span class="chevron">▸</span></summary><div class="entender-corpo"><p>Primeiro as pautas, a partir das dúvidas reais dos pacientes; depois o roteiro da primeira peça. A frequência é a que você consegue revisar: constância vale mais que volume.</p><p class="entender-jornada"><b>Na jornada do herói:</b> As provas são semanais: dúvidas reais viram pautas, pautas viram peças, e cada peça mostra um pedaço da sua diferença.</p><p class="entender-guia">Guia: Partes 4 a 7 do <i>O Prompt do Sim</i>.</p></div></details>
           <div class="cfg-campos">
               <div class="field">
                 <label for="cfg-baldes">Temas de conteúdo (até 3)</label>
                 <input type="text" id="cfg-baldes" name="baldes" placeholder="Ex: dúvidas sobre tratamentos, bastidores e cuidado, mitos e erros comuns">
                 <small id="cfg-temas-sug">Educar, humanizar e desmistificar (Parte 4). Todo post precisa caber em um deles.</small>
               </div>
-            <div class="row3">
+            <details class="mais-campos aprofundar">
+              <summary>Aprofundar: tempo por semana, quem produz e câmera <span class="chevron">▸</span></summary>
+              <div class="row3">
               <div class="field">
                 <label for="cfg-tempo">Tempo por semana para conteúdo</label>
                 <select id="cfg-tempo" name="tempo">
@@ -1734,6 +1913,7 @@
                 </select>
               </div>
             </div>
+            </details>
           </div>
         <details class="tool in-sub" data-id="pautas" open>
           <summary>
@@ -1893,6 +2073,7 @@
             </details>
           </div>
         </details>
+          <div class="entrega" aria-live="polite"></div>
           <div class="passo-foot">
             <p class="passo-falta" aria-live="polite" hidden></p>
             <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
@@ -1907,8 +2088,9 @@
           <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
         </button></h3>
         <div class="passo-corpo" id="passo-6-corpo" hidden>
-          <p class="passo-meta"><span>Uns 20 minutos</span><span>Guia: Partes 8 e 9</span></p>
-          <p class="passo-why">Colegas que indicam trazem pacientes que já confiam em você. Anúncio vem depois: ele amplifica o que já funciona no orgânico, não substitui a sua diferença.</p>
+          <p class="passo-meta"><span class="jornada-tag">Na jornada · Os aliados e a arma de dois gumes</span><span>Uns 20 minutos</span></p>
+          <div class="tarefa" data-tarefa="6"></div>
+          <details class="entender"><summary>Entender este passo <span class="chevron">▸</span></summary><div class="entender-corpo"><p>Colegas que indicam trazem pacientes que já confiam em você. Anúncio vem depois: ele amplifica o que já funciona no orgânico, não substitui a sua diferença.</p><p class="entender-jornada"><b>Na jornada do herói:</b> Aliados são os colegas que indicam e recebem os seus pacientes. O anúncio é a arma de dois gumes: amplifica o que já funciona, e amplifica também o que é genérico.</p><p class="entender-guia">Guia: Partes 8 e 9 do <i>O Prompt do Sim</i>.</p></div></details>
         <details class="tool in-sub" data-id="colegas" id="colegas" open>
           <summary>
             <div class="tool-title"><div><h3>Rede de colegas</h3><span class="sub">Funil de colegas, carta de apresentação, contrarreferência e agradecimentos</span></div></div>
@@ -2069,6 +2251,7 @@
             <div class="num-wrap"><table class="num-table" id="camp-table"></table></div>
           </div>
         </details>
+          <div class="entrega" aria-live="polite"></div>
           <div class="passo-foot">
             <p class="passo-falta" aria-live="polite" hidden></p>
             <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
@@ -2077,9 +2260,9 @@
       </section>
 
       <div class="mov" data-mov="3">
-        <p class="mov-n">Movimento 3 de 3</p>
+        <p class="mov-n">Ato 3 de 3 · O retorno</p>
         <h2>Meça quem fica</h2>
-        <p>Cada contato com origem e próximo passo. Em 90 dias, você sabe por qual porta entram os pacientes que ficam.</p>
+        <p>O herói volta com o elixir: cada contato acompanhado até o tratamento, a semana revisada, e o que você aprende volta para a estratégia.</p>
       </div>
 
       <section class="passo" id="passo-7" data-passo="7" data-mov="3">
@@ -2089,8 +2272,9 @@
           <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
         </button></h3>
         <div class="passo-corpo" id="passo-7-corpo" hidden>
-          <p class="passo-meta"><span>Uns 20 minutos</span><span>Guia: Partes 10 a 12</span></p>
-          <p class="passo-why">A maior perda acontece entre o "oi" e a consulta. Resposta rápida, dois horários oferecidos e um link com origem para saber de onde veio cada contato.</p>
+          <p class="passo-meta"><span class="jornada-tag">Na jornada · A aproximação da caverna</span><span>Uns 20 minutos</span></p>
+          <div class="tarefa" data-tarefa="7"></div>
+          <details class="entender"><summary>Entender este passo <span class="chevron">▸</span></summary><div class="entender-corpo"><p>A maior perda acontece entre o "oi" e a consulta. Resposta rápida, dois horários oferecidos e um link com origem para saber de onde veio cada contato.</p><p class="entender-jornada"><b>Na jornada do herói:</b> A caverna é a conversa no WhatsApp, onde a maioria dos pacientes se perde. É ali que a diferença anunciada precisa aparecer de verdade.</p><p class="entender-guia">Guia: Partes 10 a 12 do <i>O Prompt do Sim</i>.</p></div></details>
           <div class="cfg-campos">
               <div class="field">
                 <label for="cfg-whatsapp">WhatsApp do consultório (com DDD)</label>
@@ -2208,6 +2392,7 @@
             </details>
           </div>
         </details>
+          <div class="entrega" aria-live="polite"></div>
           <div class="passo-foot">
             <p class="passo-falta" aria-live="polite" hidden></p>
             <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
@@ -2222,8 +2407,9 @@
           <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
         </button></h3>
         <div class="passo-corpo" id="passo-8-corpo" hidden>
-          <p class="passo-meta"><span>Um minuto por contato</span><span>Guia: Parte 13</span></p>
-          <p class="passo-why">Cada contato entra aqui com origem, etapa, próximo passo e data. É isso que mostra, em 90 dias, por qual porta chegam os pacientes que agendam, comparecem e seguem o tratamento. Nenhum dado clínico aqui.</p>
+          <p class="passo-meta"><span class="jornada-tag">Na jornada · A recompensa</span><span>Um minuto por contato</span></p>
+          <div class="tarefa" data-tarefa="8"></div>
+          <details class="entender"><summary>Entender este passo <span class="chevron">▸</span></summary><div class="entender-corpo"><p>Cada contato entra aqui com origem, etapa, próximo passo e data. É isso que mostra, em 90 dias, por qual porta chegam os pacientes que agendam, comparecem e seguem o tratamento. Nenhum dado clínico aqui.</p><p class="entender-jornada"><b>Na jornada do herói:</b> A recompensa é saber, com números, por qual porta entram os pacientes que agendam, comparecem e seguem o tratamento.</p><p class="entender-guia">Guia: Parte 13 do <i>O Prompt do Sim</i>.</p></div></details>
         <details class="tool in-solo" data-id="rastreador" id="rastreador" open>
           <summary>
             <div class="tool-title"><div><h3>Rastreador de pacientes</h3><span class="sub">Funil de sete etapas, consentimento, próximos passos vencidos, lembretes e planilha</span></div></div>
@@ -2232,40 +2418,47 @@
           <div class="tool-body">
             <p class="desc">O CRM do consultório, guardado só neste navegador. Registre quem entrou em contato, a etapa, o próximo passo e a data. <b>Nenhum dado clínico aqui</b>: diagnóstico, exames e evolução ficam no prontuário.</p>
             <form id="tracker-form" class="tool-form">
-              <div class="row4">
-                <div class="field"><label for="t-nome">Nome ou apelido *</label><input type="text" id="t-nome" required placeholder="Ex: Maria S."></div>
-                <div class="field"><label for="t-tel">Telefone</label><input type="text" id="t-tel" inputmode="tel" placeholder="(11) 90000-0000"></div>
-                <div class="field"><label for="t-canal">Canal preferido</label><select id="t-canal"><option>WhatsApp</option><option>Ligação</option><option>E-mail</option><option>Direct</option></select></div>
-                <div class="field"><label for="t-servico">Serviço</label><input type="text" id="t-servico" list="lista-servicos" placeholder="Ex: implantes"></div>
+              <p class="rapido-t">Cadastro rápido: quem é, de onde veio e qual o próximo passo. O resto fica em "Mais detalhes".</p>
+              <div class="row2">
+                <div class="field"><label for="t-nome">Nome ou apelido *</label><input type="text" id="t-nome" required placeholder="Ex: Maria S." autocomplete="off"></div>
+                <div class="field"><label for="t-origem">De onde veio? *</label><select id="t-origem" required></select><small>Se não souber, escolha "Não sei". O app nunca escolhe por você.</small></div>
               </div>
-              <div class="row4">
-                <div class="field"><label for="t-origem">Origem</label><select id="t-origem"></select></div>
-                <div class="field" id="t-colega-wrap"><label for="t-colega">Colega que indicou</label><select id="t-colega"><option value="">(nenhum)</option></select></div>
-                <div class="field"><label for="t-prof">Profissional</label><input type="text" id="t-prof" list="lista-equipe" placeholder="Quem atende"></div>
-                <div class="field"><label for="t-etapa">Etapa</label><select id="t-etapa"></select></div>
+              <div class="field" id="t-colega-wrap"><label for="t-colega">Colega que indicou</label><select id="t-colega"><option value="">(nenhum)</option></select></div>
+              <div class="row2">
+                <div class="field"><label for="t-passo">Próximo passo</label><input type="text" id="t-passo" placeholder="Ex: oferecer dois horários"></div>
+                <div class="field"><label for="t-data">Quando</label><input type="date" id="t-data"><small>Sem data, o contato aparece na fila "Sem próximo passo".</small></div>
               </div>
-              <div class="row3">
-                <div class="field"><label for="t-passo">Próximo passo</label><input type="text" id="t-passo" placeholder="Ex: confirmar avaliação"></div>
-                <div class="field"><label for="t-data">Data do próximo passo</label><input type="date" id="t-data"></div>
-                <div class="field"><label for="t-valor">Valor do plano (R$)</label><input type="number" id="t-valor" min="0" step="0.01" placeholder="Se houver"></div>
-              </div>
-              <fieldset class="field">
-                <legend>Consentimento registrado hoje (finalidades)</legend>
-                <div class="checks">
-                  <label><input type="checkbox" id="t-c-atend" checked> Atendimento</label>
-                  <label><input type="checkbox" id="t-c-lemb"> Lembretes e retornos</label>
-                  <label><input type="checkbox" id="t-c-cont"> Conteúdos e novidades</label>
+              <details class="mais-campos" id="t-mais">
+                <summary>Mais detalhes: contato, serviço, etapa, consentimento e observações <span class="chevron">▸</span></summary>
+                <div class="row2">
+                  <div class="field"><label for="t-canal">Como prefere ser contatado</label><select id="t-canal"><option>WhatsApp</option><option>Ligação</option><option>E-mail</option><option>Direct</option></select></div>
+                  <div class="field"><label for="t-tel" id="t-tel-lab">Telefone</label><input type="text" id="t-tel" inputmode="tel" placeholder="(11) 90000-0000"></div>
                 </div>
-                <small>Marque só o que a pessoa aceitou. Dá para revogar depois em cada contato.</small>
-              </fieldset>
-              <div class="field">
-                <label for="t-notas">Observações (sem dados clínicos)</label>
-                <input type="text" id="t-notas" placeholder="Ex: prefere horário após as 18h">
-                <small id="t-notas-aviso" class="clin-warn" hidden>Isto parece informação clínica. Guarde no prontuário, não aqui.</small>
-              </div>
+                <div class="row3">
+                  <div class="field"><label for="t-servico">Serviço</label><input type="text" id="t-servico" list="lista-servicos" placeholder="Ex: implantes"></div>
+                  <div class="field"><label for="t-etapa">Etapa</label><select id="t-etapa"></select></div>
+                  <div class="field"><label for="t-prof">Profissional</label><input type="text" id="t-prof" list="lista-equipe" placeholder="Quem atende"></div>
+                </div>
+                <div class="field"><label for="t-valor">Valor do plano (R$)</label><input type="number" id="t-valor" min="0" step="0.01" placeholder="Se houver"></div>
+                <fieldset class="field">
+                  <legend>Consentimento que a pessoa deu hoje (marque só o que ela aceitou)</legend>
+                  <div class="checks">
+                    <label><input type="checkbox" id="t-c-atend"> Atendimento</label>
+                    <label><input type="checkbox" id="t-c-lemb"> Lembretes e retornos</label>
+                    <label><input type="checkbox" id="t-c-cont"> Conteúdos e novidades</label>
+                  </div>
+                  <small>Tudo começa desmarcado: cadastrar alguém não é consentimento. Dá para registrar ou revogar depois em cada contato. Em caso de dúvida sobre a base legal, consulte quem assessora você em proteção de dados.</small>
+                </fieldset>
+                <div class="field">
+                  <label for="t-notas">Observações (sem dados clínicos)</label>
+                  <input type="text" id="t-notas" placeholder="Ex: prefere horário após as 18h">
+                  <small id="t-notas-aviso" class="clin-warn" hidden>Isto parece informação clínica. Guarde no prontuário, não aqui.</small>
+                </div>
+              </details>
               <div class="form-actions"><button type="submit" class="btn btn-teal">Adicionar contato</button></div>
             </form>
 
+            <div class="t-filas" id="t-filas" role="group" aria-label="Filas de contatos"></div>
             <div class="funnel funnel7" id="t-funnel"></div>
             <div class="form-actions" style="margin-top:12px">
               <label class="visually-hidden" for="t-filtro">Filtrar por etapa</label>
@@ -2292,6 +2485,7 @@
             </form>
           </div>
         </details>
+          <div class="entrega" aria-live="polite"></div>
           <div class="passo-foot">
             <p class="passo-falta" aria-live="polite" hidden></p>
             <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
@@ -2306,8 +2500,9 @@
           <span class="passo-st"></span><span class="chevron" aria-hidden="true">▸</span>
         </button></h3>
         <div class="passo-corpo" id="passo-9-corpo" hidden>
-          <p class="passo-meta"><span>30 minutos, toda sexta</span><span>Guia: Parte 13</span></p>
-          <p class="passo-why">Toda sexta, 30 minutos: veja o placar, ataque o gargalo da vez e monte a semana seguinte. Este passo não termina: é o ritual que mantém o ciclo rodando.</p>
+          <p class="passo-meta"><span class="jornada-tag">Na jornada · O retorno com o elixir</span><span>30 minutos, toda sexta</span></p>
+          <div class="tarefa" data-tarefa="9"></div>
+          <details class="entender"><summary>Entender este passo <span class="chevron">▸</span></summary><div class="entender-corpo"><p>Toda sexta, 30 minutos: veja o placar, ataque o gargalo da vez e monte a semana seguinte. Este passo não termina: é o ritual que mantém o ciclo rodando.</p><p class="entender-jornada"><b>Na jornada do herói:</b> O ritual da semana é o retorno: o que você aprendeu volta para o conteúdo, o atendimento e, quando os dados pedirem, para a própria estratégia.</p><p class="entender-guia">Guia: Parte 13 do <i>O Prompt do Sim</i>.</p></div></details>
           <div id="placar-box" class="placar-box"></div>
         <details class="tool in-sub" data-id="assistente" open>
           <summary>
@@ -2403,6 +2598,7 @@
             </form>
           </div>
         </details>
+          <div class="entrega" aria-live="polite"></div>
           <div class="passo-foot">
             <p class="passo-falta" aria-live="polite" hidden></p>
             <button type="button" class="btn btn-gold js-passo-ok" data-ico="arrow">Concluir e seguir</button>
@@ -2415,12 +2611,18 @@
   </section>
   <section class="alt" id="caixa">
     <div class="wrap">
-      <p class="eyebrow">Caixa de ferramentas</p>
+      <p class="eyebrow">Ferramentas</p>
       <div class="lead-block">
-        <h2>As 19 ferramentas, num lugar só.</h2>
-        <p>As que fazem parte do caminho abrem no passo delas. As outras ficam aqui, para quando você precisar: revisar um post antes de publicar, contratar alguém, aprofundar o nicho ou reaproveitar uma aula.</p>
+        <h2>Todas as ferramentas, organizadas pelo que você quer fazer.</h2>
+        <p>As que fazem parte do caminho abrem no passo delas, com o seu perfil e a sua diferença já carregados. As outras abrem aqui mesmo, logo abaixo da lista.</p>
       </div>
-      <div class="caixa-indice" id="caixa-indice"></div>
+      <div class="bib-busca">
+        <label for="bib-q">Buscar ferramenta pelo nome ou pelo objetivo</label>
+        <input type="search" id="bib-q" placeholder="Ex: bio, anúncio, colega, WhatsApp, ética" autocomplete="off" aria-describedby="bib-n">
+        <p class="save-status" id="bib-n" aria-live="polite"></p>
+      </div>
+      <div class="biblioteca" id="biblioteca"></div>
+      <h3 class="bib-aqui-t" id="ferramentas-aqui">Ferramentas que abrem nesta página</h3>
       <div id="tools-list">
         <details class="tool na-caixa" data-id="etica" id="etica">
           <summary>
@@ -3264,6 +3466,8 @@
   };
 
   // Etapas do Rastreador de pacientes (funil de sete etapas)
+  // Origem que a pessoa marcou explicitamente como desconhecida (nunca é escolhida pelo app).
+  const ORIGEM_NI = 'Não informada';
   const ETAPAS = ['Novo', 'Em conversa', 'Agendado', 'Avaliado', 'Plano proposto', 'Em tratamento', 'Encerrado'];
   const RESULTADOS = ['Alta e vínculo', 'Perdido', 'Pausado'];
   // Funil dos colegas do guia (Parte 13). Parceiro ativo = indicou nos últimos 90 dias.
@@ -3603,11 +3807,43 @@
   };
 
   // --- Utilidades
+  // Leitura e gravação no navegador. Nunca anuncia sucesso sem confirmação: falha de leitura é diferente de "não há dados",
+  // e falha de gravação (armazenamento bloqueado, cota cheia) aparece num aviso no topo da página.
+  var storeErros = { leitura: [], gravacao: [] };
+  function avisoDados() {
+    const box = document.getElementById('aviso-dados');
+    if (!box) return;
+    const L = [];
+    if (storeErros.gravacao.length) L.push('<b>Não consegui salvar neste navegador.</b> O armazenamento pode estar bloqueado (janela anônima, configuração de privacidade) ou cheio. O que você fizer agora pode se perder ao fechar a página: faça um backup em Ajustes assim que possível.');
+    if (storeErros.leitura.length) L.push('<b>Não consegui ler parte dos dados salvos.</b> Nada foi apagado: guardei uma cópia do conteúdo original e continuei sem ele. Se algo sumiu, restaure o seu último backup em Ajustes.');
+    box.innerHTML = L.map((x) => `<p>${x}</p>`).join('');
+    box.hidden = !L.length;
+  }
   function storeGet(key, fallback) {
-    try { const raw = window.localStorage.getItem(key); return raw ? JSON.parse(raw) : fallback; } catch (e) { return fallback; }
+    let raw;
+    try { raw = window.localStorage.getItem(key); } catch (e) {
+      if (storeErros.leitura.indexOf(key) < 0) { storeErros.leitura.push(key); setTimeout(avisoDados, 0); }
+      return fallback;
+    }
+    if (!raw) return fallback;
+    try { return JSON.parse(raw); } catch (e) {
+      // Conteúdo ilegível: preserva o original antes que qualquer gravação o substitua.
+      try { if (!window.localStorage.getItem(key + '.ilegivel')) window.localStorage.setItem(key + '.ilegivel', raw); } catch (e2) { /* sem espaço para a cópia */ }
+      if (storeErros.leitura.indexOf(key) < 0) { storeErros.leitura.push(key); setTimeout(avisoDados, 0); }
+      return fallback;
+    }
   }
   function storeSet(key, value) {
-    try { window.localStorage.setItem(key, JSON.stringify(value)); return true; } catch (e) { return false; }
+    try {
+      window.localStorage.setItem(key, JSON.stringify(value));
+      const i = storeErros.gravacao.indexOf(key);
+      if (i >= 0) { storeErros.gravacao.splice(i, 1); setTimeout(avisoDados, 0); }
+      return true;
+    } catch (e) {
+      if (storeErros.gravacao.indexOf(key) < 0) storeErros.gravacao.push(key);
+      setTimeout(avisoDados, 0);
+      return false;
+    }
   }
   function storeDel(key) { try { window.localStorage.removeItem(key); } catch (e) { /* noop */ } }
   function appKeys(incluirChave) {
@@ -3638,19 +3874,34 @@
     document.body.appendChild(a); a.click(); a.remove();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
-  function copyText(txt, btn) {
-    const original = btn.textContent;
-    const done = () => { btn.textContent = 'Copiado ✓'; setTimeout(() => { btn.textContent = original; }, 1800); };
+  // Copiar: só diz "Copiado" quando a cópia foi confirmada. Se falhar, seleciona o texto e orienta a cópia manual.
+  function copyText(txt, btn, alvo) {
+    const original = btn.dataset.rotulo || btn.textContent;
+    btn.dataset.rotulo = original;
+    const ok = () => { btn.textContent = 'Copiado ✓'; btn.classList.remove('copia-falhou'); setTimeout(() => { btn.textContent = original; }, 1800); copiaAviso(btn, ''); };
+    const falhou = () => {
+      btn.textContent = original; btn.classList.add('copia-falhou');
+      if (alvo && alvo.select) { alvo.focus(); alvo.select(); }
+      copiaAviso(btn, alvo ? 'Não consegui copiar sozinho. O texto já está selecionado: use Ctrl+C (no celular, toque e segure e escolha Copiar).' : 'Não consegui copiar sozinho. Selecione o texto e use Ctrl+C (no celular, toque e segure e escolha Copiar).');
+    };
     if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(txt).then(done).catch(() => fallbackCopyText(txt, done));
-    } else fallbackCopyText(txt, done);
+      navigator.clipboard.writeText(txt).then(ok).catch(() => (fallbackCopyText(txt) ? ok() : falhou()));
+    } else if (fallbackCopyText(txt)) ok(); else falhou();
   }
-  function fallbackCopyText(txt, done) {
+  function copiaAviso(btn, msg) {
+    let p = btn.parentNode.querySelector(':scope > .copia-aviso');
+    if (!msg) { if (p) p.remove(); return; }
+    if (!p) { p = document.createElement('p'); p.className = 'copia-aviso'; p.setAttribute('role', 'alert'); btn.parentNode.appendChild(p); }
+    p.textContent = msg;
+  }
+  function fallbackCopyText(txt) {
     const ta = document.createElement('textarea');
     ta.value = txt; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
     document.body.appendChild(ta); ta.select();
-    try { document.execCommand('copy'); } catch (e) { /* noop */ }
-    ta.remove(); done();
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    ta.remove();
+    return !!ok;
   }
   function notifyData() { document.dispatchEvent(new Event('cliniloop:dados')); }
 
@@ -4323,13 +4574,19 @@ Esta revisão não substitui a consulta à norma vigente.`,
 
   // --- Resultados guardados (decisões que alimentam as próximas ferramentas)
   function resultados() { const r = storeGet(RES_KEY, {}); return r && typeof r === 'object' ? r : {}; }
+  // Guarda a versão aprovada. Marca com qual estratégia ela foi feita e mantém as versões anteriores.
   function saveResultado(id, txt) {
     const r = resultados();
-    if (txt && txt.trim()) r[id] = { t: txt.slice(0, 20000), d: todayISO() };
-    else delete r[id];
-    storeSet(RES_KEY, r);
-    if (txt && txt.trim()) markUsed(id, true);
+    const ant = r[id];
+    if (txt && txt.trim()) {
+      const hist = (ant && Array.isArray(ant.hist)) ? ant.hist.slice() : [];
+      if (ant && ant.t && ant.t !== txt) hist.unshift({ t: ant.t, d: ant.d, ev: ant.ev || '' });
+      r[id] = { t: txt.slice(0, 20000), d: todayISO(), ev: typeof estrategia === 'function' ? estrategia().hash : '', hist: hist.slice(0, 5) };
+    } else delete r[id];
+    const ok = storeSet(RES_KEY, r);
+    if (ok && txt && txt.trim()) markUsed(id, true);
     notifyData();
+    return ok;
   }
 
   function planoLinha() {
@@ -4350,7 +4607,6 @@ Esta revisão não substitui a consulta à norma vigente.`,
     if (cfg.equipe) L.push(`- Equipe: ${cfg.equipe}`);
     if (cfg.servicos) L.push(`- Serviços a divulgar: ${cfg.servicos}`);
     if (cfg.publico) L.push(`- Público ideal: ${cfg.publico}`);
-    if (cfg.transformacao) L.push(`- Proposta de valor: ${cfg.transformacao}`);
     if (cfg.baldes) L.push(`- Temas de conteúdo: ${cfg.baldes}`);
     if ((cfg.canais || []).length) L.push(`- Canais que uso: ${cfg.canais.join(', ')}${cfg.arroba ? ' (' + cfg.arroba + ')' : ''}`);
     L.push(`- Objetivo dos próximos 90 dias: ${o.label}${cfg.metaFrase ? ' — ' + cfg.metaFrase : ''}`);
@@ -4380,7 +4636,7 @@ Esta revisão não substitui a consulta à norma vigente.`,
 ---
 Contexto do meu consultório (considere em toda a resposta):
 ${L.join('\n')}
-- Orientação para o meu objetivo: ${o.guia}
+- Orientação para o meu objetivo: ${o.guia}${typeof estrategiaBloco === 'function' ? estrategiaBloco(selfId) : ''}
 ${dec.length ? `\nDecisões que já tomei (use como base, sem repetir):\n${dec.join('\n\n')}\n` : ''}
 Regras que você deve seguir:
 ${R.join('\n')}${planoLinha()}
@@ -4936,10 +5192,11 @@ Entregue:
   let lastBriefingHtml = '';
   let lastEbook = '';
   const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
-  function savePac() { storeSet(PAC_KEY, pacientes); notifyData(); }
-  function saveCol() { storeSet(COL_KEY, colegas); notifyData(); }
-  function saveCamp() { storeSet(CAMP_KEY, campanhas); notifyData(); }
-  function saveCont() { storeSet(CONT_KEY, conteudos); notifyData(); }
+  // Cada gravação devolve true só quando o navegador confirmou.
+  function savePac() { const ok = storeSet(PAC_KEY, pacientes); notifyData(); return ok; }
+  function saveCol() { const ok = storeSet(COL_KEY, colegas); notifyData(); return ok; }
+  function saveCamp() { const ok = storeSet(CAMP_KEY, campanhas); notifyData(); return ok; }
+  function saveCont() { const ok = storeSet(CONT_KEY, conteudos); notifyData(); return ok; }
 
   function markUsed(id, silent) {
     if (!id) return;
@@ -4968,8 +5225,10 @@ Entregue:
   function validate(form) {
     const missing = [...form.querySelectorAll('[required]')].filter((el) => !String(el.value).trim());
     const msg = formMsg(form);
+    form.querySelectorAll('[aria-invalid="true"]').forEach((el) => { el.removeAttribute('aria-invalid'); el.removeAttribute('aria-describedby'); });
     if (missing.length) {
-      missing.forEach((el) => el.classList.add('invalid'));
+      if (!msg.id) msg.id = 'msg-' + Math.random().toString(36).slice(2, 8);
+      missing.forEach((el) => { el.classList.add('invalid'); el.setAttribute('aria-invalid', 'true'); el.setAttribute('aria-describedby', msg.id); });
       msg.className = 'form-msg error';
       msg.textContent = `Falta preencher: ${missing.map(fieldLabel).join(', ')}. Os campos estão destacados em vermelho.`;
       missing[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -4980,24 +5239,47 @@ Entregue:
   }
   document.querySelectorAll('form').forEach((form) => {
     form.noValidate = true;
-    form.addEventListener('input', (e) => { if (e.target.classList) e.target.classList.remove('invalid'); });
+    form.addEventListener('input', (e) => { if (e.target.classList) { e.target.classList.remove('invalid'); e.target.removeAttribute('aria-invalid'); } });
+    form.addEventListener('change', (e) => { if (e.target.classList) { e.target.classList.remove('invalid'); e.target.removeAttribute('aria-invalid'); } });
   });
 
   // Bloco de saída de cada prompt
+  // Bloco de saída de cada prompt, com o ciclo completo: copiar, abrir a IA, voltar e revisar, guardar a versão aprovada.
+  function slotDaSaida(block) {
+    const t = block.closest('.tool'); const p = block.closest('.passo');
+    return (t && t.querySelector('.saved-slot')) || (p && p.querySelector(':scope .passo-corpo > .saved-slot')) || null;
+  }
   document.querySelectorAll('form.tool-form[data-tool] .output-block').forEach((block) => {
     const tool = block.closest('form').dataset.tool;
     const id = `out-${tool}`;
-    block.innerHTML = `<p class="output-title">Seu prompt está pronto: copie e cole na sua IA</p>
+    const slot = slotDaSaida(block);
+    block.innerHTML = `<p class="output-title">Seu prompt está pronto</p>
+      <ol class="ciclo-ia" aria-label="Como usar este prompt">
+        <li data-c="1"><b>Copie</b> o prompt</li><li data-c="2"><b>Abra a sua IA</b> e cole</li><li data-c="3"><b>Volte aqui</b> e revise a resposta</li><li data-c="4">${slot ? '<b>Guarde</b> a versão aprovada' : '<b>Revise</b> antes de usar'}</li>
+      </ol>
       <label for="${id}" class="visually-hidden">Prompt gerado</label>
       <textarea id="${id}" class="js-output" readonly rows="8"></textarea>
       <div class="output-actions">
         <button type="button" class="btn btn-teal js-run-api" data-ico="play" hidden>Gerar resposta aqui (API)</button>
         <button type="button" class="btn btn-outline js-copy" data-ico="copy">Copiar prompt</button>
-        <a class="btn btn-outline" data-ico="ext" href="https://claude.ai/new" target="_blank" rel="noopener">Abrir no Claude.ai</a>
+        <a class="btn btn-outline js-abrir-ia" data-ico="ext" href="https://claude.ai/new" target="_blank" rel="noopener">Abrir no Claude.ai</a>
       </div>
+      <div class="ciclo-volta" hidden>${slot ? '<p>Quando a IA responder, peça os ajustes na própria conversa. Depois, revise e cole a versão final aqui no app: só ela entra nos próximos passos.</p><button type="button" class="btn btn-gold btn-sm js-ir-guardar" data-ico="arrow">Ir para "Guardar a versão aprovada"</button>' : '<p>Antes de usar a resposta, revise: identificação profissional, promessas, dados de pacientes e se ela mostra a sua diferença.</p><button type="button" class="btn btn-outline btn-sm" data-abrir="etica">Passar no Verificador ético</button>'}</div>
+      <p class="ciclo-aviso">Nunca cole nomes ou dados de pacientes na IA. Revise tudo antes de publicar: a IA pode errar.</p>
       ${WEB_TOOLS.includes(tool) ? '<p class="pro-tip" hidden>Claude Pro/Max: no Claude.ai, clique em "+" e ative Research antes de enviar este prompt. A pesquisa fica bem mais profunda.</p>' : ''}
       <div class="api-area"></div>`;
-    block.querySelector('.js-copy').addEventListener('click', (e) => copyText(block.querySelector('.js-output').value, e.currentTarget));
+    const marca = (c) => { const li = block.querySelector(`.ciclo-ia [data-c="${c}"]`); if (li) li.classList.add('ok'); };
+    const out = block.querySelector('.js-output');
+    const cp = block.querySelector('.js-copy');
+    cp.addEventListener('click', (e) => { copyText(out.value, e.currentTarget, out); setTimeout(() => { if (cp.textContent.indexOf('Copiado') === 0) marca(1); }, 300); });
+    // Abrir a IA nunca leva o prompt na URL: copia antes e abre a página inicial da IA escolhida.
+    block.querySelector('.js-abrir-ia').addEventListener('click', () => {
+      copyText(out.value, cp, out);
+      setTimeout(() => { if (cp.textContent.indexOf('Copiado') === 0) marca(1); }, 300);
+      marca(2); block.querySelector('.ciclo-volta').hidden = false;
+    });
+    const ir = block.querySelector('.js-ir-guardar');
+    if (ir) ir.addEventListener('click', () => { marca(3); const d = slot.querySelector('details.saved'); d.open = true; const ta = slot.querySelector('textarea'); ta.scrollIntoView({ behavior: 'smooth', block: 'center' }); setTimeout(() => ta.focus({ preventScroll: true }), 250); });
     block.querySelector('.js-run-api').addEventListener('click', () => runApiFor(block, null));
   });
 
@@ -5081,31 +5363,58 @@ Entregue:
   });
 
   // ===================== Resultados guardados =====================
+  // Versão aprovada: o rascunho é salvo enquanto a pessoa digita, mas só vira decisão quando ela clica em "Aprovar e guardar".
+  function rascunhoGet(id) { const s2 = storeGet(PERSIST_KEY, {}) || {}; return typeof s2['rasc-' + id] === 'string' ? s2['rasc-' + id] : null; }
+  function rascunhoSet(id, v) { const s2 = storeGet(PERSIST_KEY, {}) || {}; if (v === null) delete s2['rasc-' + id]; else s2['rasc-' + id] = v.slice(0, 20000); return storeSet(PERSIST_KEY, s2); }
+  function renderSavedSlot(slot) {
+    const id = slot.dataset.save;
+    const r = resultados()[id];
+    const ta = slot.querySelector('textarea');
+    const chip = slot.querySelector('.saved-chip');
+    const st = slot.querySelector('.js-sv-st');
+    // EST_DEPENDENTES vem do núcleo da estratégia, carregado depois: na primeira pintura ainda pode não existir.
+    const rev = !!(r && r.ev && EST_DEPENDENTES && EST_DEPENDENTES[id] && r.ev !== estrategia().hash);
+    const difere = r ? ta.value.trim() !== r.t.trim() : !!ta.value.trim();
+    chip.className = 'saved-chip' + (rev ? ' rev' : (r ? ' ok' : ''));
+    chip.textContent = rev ? 'Precisa revisar' : (r ? 'Aprovada em ' + fmtDate(r.d) : 'Ainda não aprovada');
+    if (slot.dataset.erro) { st.textContent = slot.dataset.erro; } else st.textContent = rev ? 'A sua estratégia mudou depois desta versão. Revise o texto para que ele mostre a diferença atual e aprove de novo.' : (difere ? (r ? 'Há mudanças ainda não aprovadas.' : 'Rascunho salvo, ainda não aprovado.') : '');
+    const vs = slot.querySelector('.versoes');
+    const hist = (r && r.hist) || [];
+    vs.hidden = !hist.length;
+    vs.querySelector('summary').textContent = `Versões anteriores (${hist.length})`;
+    vs.querySelector('ol').innerHTML = hist.map((h, i) => `<li><p class="v-d">Aprovada em ${fmtDate(h.d)}</p><pre>${escapeHtml(trim(h.t, 600))}</pre><button type="button" class="linkish" data-v="${i}">Trazer esta versão para o campo acima</button></li>`).join('');
+    vs.querySelectorAll('[data-v]').forEach((b) => b.addEventListener('click', () => { ta.value = hist[+b.dataset.v].t; rascunhoSet(id, ta.value); renderSavedSlot(slot); ta.focus(); }));
+  }
   document.querySelectorAll('.saved-slot').forEach((slot) => {
     const id = slot.dataset.save;
     const r = resultados()[id];
-    slot.innerHTML = `<details class="saved"${r ? '' : ''}>
-      <summary><span>Guardar a versão final: ${escapeHtml(slot.dataset.label)}</span><span class="saved-chip${r ? ' ok' : ''}">${r ? 'Guardado em ' + fmtDate(r.d) : 'Ainda não guardado'}</span><span class="chevron">▸</span></summary>
+    slot.innerHTML = `<details class="saved">
+      <summary><span>Guardar a versão aprovada: ${escapeHtml(slot.dataset.label)}</span><span class="saved-chip"></span><span class="chevron">▸</span></summary>
       <div class="saved-body">
-        <p>Depois de ajustar a resposta com o Claude, cole aqui a versão que você aprovou. Ela entra nos próximos prompts, no briefing, no arquivo do Projeto e no playbook.</p>
-        <label class="visually-hidden" for="save-${id}">Versão final</label>
-        <textarea id="save-${id}" placeholder="Cole aqui a versão final"></textarea>
+        <p>Cole aqui a resposta da IA depois de revisar: identificação profissional, promessas, dados de pacientes e se ela mostra a sua diferença. <b>Guardar é aprovar:</b> esta versão passa a entrar nos próximos prompts, no briefing, no arquivo do Projeto e no playbook.</p>
+        <label class="visually-hidden" for="save-${id}">Versão aprovada: ${escapeHtml(slot.dataset.label)}</label>
+        <textarea id="save-${id}" placeholder="Cole aqui a versão que você revisou"></textarea>
+        <div class="form-actions"><button type="button" class="btn btn-teal btn-sm js-aprovar" data-ico="save">Aprovar e guardar</button><span class="save-status js-sv-st" aria-live="polite"></span></div>
+        <details class="versoes" hidden><summary>Versões anteriores</summary><ol></ol></details>
       </div>
     </details>`;
     const ta = slot.querySelector('textarea');
-    ta.value = r ? r.t : '';
+    const rasc = rascunhoGet(id);
+    ta.value = rasc !== null ? rasc : (r ? r.t : '');
     let timer = null;
-    ta.addEventListener('input', () => {
-      clearTimeout(timer);
-      timer = setTimeout(() => {
-        saveResultado(id, ta.value);
-        const chip = slot.querySelector('.saved-chip');
-        const ok = !!ta.value.trim();
-        chip.className = 'saved-chip' + (ok ? ' ok' : '');
-        chip.textContent = ok ? 'Guardado em ' + fmtDate(todayISO()) : 'Ainda não guardado';
-      }, 500);
+    ta.addEventListener('input', () => { delete slot.dataset.erro; clearTimeout(timer); timer = setTimeout(() => { rascunhoSet(id, ta.value); renderSavedSlot(slot); }, 400); });
+    slot.querySelector('.js-aprovar').addEventListener('click', () => {
+      const st = slot.querySelector('.js-sv-st');
+      if (!ta.value.trim()) { st.textContent = 'Cole o texto revisado antes de aprovar.'; ta.focus(); return; }
+      if (!saveResultado(id, ta.value)) { slot.dataset.erro = 'Não consegui guardar neste navegador. O texto continua no campo: tente de novo.'; st.textContent = slot.dataset.erro; return; }
+      delete slot.dataset.erro;
+      rascunhoSet(id, null);
+      renderSavedSlot(slot);
+      st.textContent = '✓ Versão aprovada e guardada.';
     });
+    renderSavedSlot(slot);
   });
+  document.addEventListener('cliniloop:dados', () => document.querySelectorAll('.saved-slot').forEach((sl) => { if (sl.querySelector('textarea')) renderSavedSlot(sl); }));
 
   // ===================== Regras do conselho e checagem rápida =====================
   const RISK_RULES = [
@@ -5468,19 +5777,21 @@ Entregue:
           <input type="text" id="follow-${tool}" placeholder='Peça um ajuste: "deixe mais simples", "refaça o item 3"...'>
           <button type="button" class="btn btn-teal btn-sm js-follow" data-ico="send">Enviar</button>
         </div>
-        <div class="output-actions"><button type="button" class="btn btn-outline btn-sm js-copy-answer" data-ico="copy">Copiar resposta</button>${canSave ? '<button type="button" class="btn btn-outline btn-sm js-save-answer" data-ico="save">Guardar como versão final</button>' : ''}</div>`;
+        <div class="output-actions"><button type="button" class="btn btn-outline btn-sm js-copy-answer" data-ico="copy">Copiar resposta</button>${canSave ? '<button type="button" class="btn btn-outline btn-sm js-save-answer" data-ico="save">Levar para revisão e aprovação</button>' : ''}</div>`;
       const input = area.querySelector('.api-follow input');
       const send = () => { const v = input.value.trim(); if (v) runApiFor(block, v); };
       area.querySelector('.js-follow').addEventListener('click', send);
       input.addEventListener('keydown', (ev) => { if (ev.key === 'Enter') { ev.preventDefault(); send(); } });
       area.querySelector('.js-copy-answer').addEventListener('click', (ev) => copyText(conv.text, ev.currentTarget));
       const sv = area.querySelector('.js-save-answer');
+      // A resposta da API vai para revisão; só vira versão aprovada quando a pessoa aprova.
       if (sv) sv.addEventListener('click', () => {
         const ta = document.getElementById('save-' + tool);
         ta.value = conv.text;
         ta.dispatchEvent(new Event('input'));
         ta.closest('details').open = true;
-        sv.textContent = 'Guardado ✓';
+        ta.focus();
+        sv.textContent = 'Levado para revisão ↓';
       });
     } catch (err) {
       if (followUp) conv.messages.pop();
@@ -5555,8 +5866,9 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
   function renderOrigemOptions() {
     const sel = document.getElementById('t-origem');
     const cur = sel.value;
-    sel.innerHTML = ORIGENS.map((o) => `<option>${escapeHtml(o)}</option>`).join('') +
-      campanhas.map((c) => `<option value="${escapeHtml(campOrigem(c))}">${escapeHtml(campOrigem(c))}</option>`).join('');
+    // A origem nunca vem escolhida: ou a pessoa informa, ou marca explicitamente que não sabe.
+    sel.innerHTML = '<option value="">Escolha a origem</option>' + ORIGENS.map((o) => `<option>${escapeHtml(o)}</option>`).join('') +
+      campanhas.map((c) => `<option value="${escapeHtml(campOrigem(c))}">${escapeHtml(campOrigem(c))}</option>`).join('') + `<option value="${ORIGEM_NI}">Não sei / não informada</option>`;
     if ([...sel.options].some((o) => o.value === cur)) sel.value = cur;
     const opts = '<option value="">(nenhum)</option>' + colegas.map((c) => `<option value="${escapeHtml(c.id)}">${escapeHtml(c.nome)}</option>`).join('');
     ['t-colega', 'cm-colega'].forEach((id) => {
@@ -5567,6 +5879,13 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     });
     document.getElementById('t-colega-wrap').hidden = sel.value !== 'Indicação de colega';
   }
+  // O dado de contato pedido depende do canal preferido.
+  const CANAL_DADO = { WhatsApp: ['Telefone (WhatsApp)', 'tel', '(11) 90000-0000'], 'Ligação': ['Telefone', 'tel', '(11) 90000-0000'], 'E-mail': ['E-mail', 'email', 'nome@exemplo.com'], Direct: ['@ no Instagram', 'text', '@usuario'] };
+  document.getElementById('t-canal').addEventListener('change', (e) => {
+    const [lab, mode, ph] = CANAL_DADO[e.target.value] || CANAL_DADO.WhatsApp;
+    document.getElementById('t-tel-lab').textContent = lab;
+    const t = document.getElementById('t-tel'); t.inputMode = mode; t.placeholder = ph;
+  });
   document.getElementById('t-origem').addEventListener('change', () => { document.getElementById('t-colega-wrap').hidden = document.getElementById('t-origem').value !== 'Indicação de colega'; });
   const etOpt = (e, sel) => `<option value="${e}"${sel ? ' selected' : ''}>${etapaLabel(e)}</option>`;
   function renderEtapaOptions() {
@@ -5627,23 +5946,51 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     };
     fillHist(p, p.etapa);
     pacientes.unshift(p);
-    savePac();
-    ['t-nome', 't-tel', 't-servico', 't-passo', 't-data', 't-valor', 't-notas'].forEach((id) => { document.getElementById(id).value = ''; });
-    document.getElementById('t-notas-aviso').hidden = true;
     const msg = formMsg(form);
+    if (!savePac()) {
+      pacientes.shift(); notifyData();
+      msg.className = 'form-msg error';
+      msg.textContent = 'Não consegui gravar o contato neste navegador. Os dados continuam no formulário: tente de novo ou faça um backup em Ajustes.';
+      return;
+    }
+    ['t-nome', 't-tel', 't-servico', 't-passo', 't-data', 't-valor', 't-notas'].forEach((id) => { document.getElementById(id).value = ''; });
+    // Contato novo começa do zero: sem origem escolhida e sem nenhum consentimento herdado.
+    ['t-c-atend', 't-c-lemb', 't-c-cont'].forEach((id) => { document.getElementById(id).checked = false; });
+    document.getElementById('t-origem').value = ''; document.getElementById('t-colega-wrap').hidden = true;
+    document.getElementById('t-etapa').value = 'Novo'; document.getElementById('t-etapa').dispatchEvent(new Event('change'));
+    document.getElementById('t-notas-aviso').hidden = true;
     msg.className = 'form-msg ok';
-    msg.textContent = `✓ ${p.nome} adicionado(a) na etapa ${p.etapa}.`;
+    msg.textContent = `✓ ${p.nome} adicionado(a) na etapa ${p.etapa}${p.data ? '' : '. Sem data, o contato fica na fila "Sem próximo passo"'}.`;
     renderTracker();
   });
 
   function isLate(p) { return p.data && p.etapa !== 'Encerrado' && p.data <= todayISO(); }
+  // Filas do dia a dia: o que venceu, o que é para hoje e quem está sem próximo passo.
+  const aberto = (p) => p.etapa !== 'Encerrado';
+  const FILAS = {
+    vencidos: ['Vencidos', (p) => aberto(p) && p.data && p.data < todayISO()],
+    hoje: ['Para hoje', (p) => aberto(p) && p.data === todayISO()],
+    sem: ['Sem próximo passo', (p) => aberto(p) && (!String(p.passo || '').trim() || !p.data)]
+  };
+  let filaAtual = '';
+  function renderFilas() {
+    const box = document.getElementById('t-filas');
+    if (!box) return;
+    const n = (k) => pacientes.filter(FILAS[k][1]).length;
+    box.innerHTML = Object.keys(FILAS).map((k) => `<button type="button" class="fila${filaAtual === k ? ' on' : ''}${k === 'vencidos' && n(k) ? ' late' : ''}" data-fila="${k}" aria-pressed="${filaAtual === k}">${FILAS[k][0]} <b>${n(k)}</b></button>`).join('') +
+      `<button type="button" class="fila${filaAtual ? '' : ' on'}" data-fila="" aria-pressed="${!filaAtual}">Todos em aberto <b>${pacientes.filter(aberto).length}</b></button>`;
+    box.querySelectorAll('[data-fila]').forEach((b) => b.addEventListener('click', () => { filaAtual = b.dataset.fila; renderTracker(); }));
+  }
+  function abrirFila(k) { filaAtual = k; renderTracker(); }
   function renderTracker() {
     renderEtapaOptions();
     const counts = ETAPAS.map((e) => [e, pacientes.filter((p) => p.etapa === e).length]);
     document.getElementById('t-funnel').innerHTML = counts.map(([e, n]) => `<div><b>${n}</b><span>${etapaLabel(e)}</span></div>`).join('');
     const filtro = document.getElementById('t-filtro').value;
     const busca = normTxt(document.getElementById('t-busca').value).trim();
+    renderFilas();
     let lista = pacientes.filter((p) => (filtro === '*' ? true : filtro ? p.etapa === filtro : p.etapa !== 'Encerrado'));
+    if (filaAtual) lista = pacientes.filter(FILAS[filaAtual][1]);
     if (busca) lista = lista.filter((p) => normTxt(p.nome + ' ' + p.servico + ' ' + p.origem).includes(busca));
     lista.sort((a, b) => (isLate(b) - isLate(a)) || String(a.data || '9999').localeCompare(String(b.data || '9999')));
     const box = document.getElementById('t-list');
@@ -5888,7 +6235,10 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     const ws = lastWeeks(4);
     const s = (k) => ws.reduce((a, w) => a + w[k], 0);
     const T = { contatos: s('contatos'), agendados: s('agendados'), avaliados: s('avaliados'), planos: s('planos'), iniciados: s('iniciados') };
-    if (T.contatos < 4) return { etapa: 'Topo do funil', txt: `Poucos contatos novos nas últimas 4 semanas (${T.contatos}). Antes de otimizar o atendimento, abasteça o topo: pautas de dúvidas reais, perfis prontos, uma campanha medida e a rede de colegas.`, tool: 'pautas' };
+    // Sem registro não há diagnóstico: zero contatos é ausência de dados, não falta de demanda.
+    const periodo = `de ${fmtShort(ws[ws.length - 1].seg)} a ${fmtShort(addDays(ws[0].seg, 6))}`;
+    if (!pacientes.length) return { etapa: 'Sem dados', txt: 'Ainda não há dados registrados para analisar. Registre cada contato no Rastreador (passo 8) e o painel passa a mostrar as taxas, com período e números.', tool: 'rastreador' };
+    if (T.contatos < 4) return { etapa: 'Dados insuficientes', txt: `Poucos registros para analisar: ${T.contatos} contato(s) novo(s) nas últimas 4 semanas (${periodo}). Com tão poucos, qualquer taxa engana. Por enquanto, confira se todo contato está sendo registrado, com a origem.`, tool: 'rastreador' };
     const passos = [
       ['Agendamento', T.agendados, T.contatos, 'dos contatos agendaram', 'Resposta rápida, acolhimento e roteiro de agendamento (Atendimento e agendamento).', 'atendimento'],
       ['Comparecimento', T.avaliados, T.agendados, 'dos agendados compareceram', 'Sequência de confirmação (ao agendar, 48 h, 24 h se não respondeu, 2 h antes) e reagendamento sem constranger, no mesmo dia da falta.', 'atendimento'],
@@ -5898,7 +6248,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     if (!passos.length) return { etapa: 'Dados insuficientes', txt: 'Ainda há poucos registros para apontar um gargalo. Mantenha o rastreador atualizado por mais algumas semanas.', tool: 'rastreador' };
     passos.sort((a, b) => a[6] - b[6]);
     const g = passos[0];
-    return { etapa: g[0], txt: `Gargalo provável: ${g[0].toLowerCase()}. Nas últimas 4 semanas, ${Math.round(g[6] * 100)}% ${g[3]} (${g[1]} de ${g[2]}). O que costuma ajudar: ${g[4]}`, tool: g[5] };
+    return { etapa: g[0], txt: `Gargalo provável: ${g[0].toLowerCase()}. Nas últimas 4 semanas (${periodo}), ${Math.round(g[6] * 100)}% ${g[3]} (${g[1]} de ${g[2]}). É uma leitura com poucos números${g[2] < 10 ? ' (menos de 10 na base): trate como pista, não como conclusão' : ''}. O que costuma ajudar: ${g[4]}`, tool: g[5] };
   }
   function metricasTxt() {
     const ws = lastWeeks(8).reverse();
@@ -5914,8 +6264,8 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
       ws.map((w, i) => `<tr${i === 0 ? ' class="atual"' : ''}><td>${fmtShort(w.seg)} a ${fmtShort(addDays(w.seg, 6))}${i === 0 ? ' (atual)' : ''}</td>${METRIC_COLS.map((c) => `<td>${w[c[0]]}</td>`).join('')}</tr>`).join('');
     const g = gargalo();
     const gb = document.getElementById('gargalo');
-    gb.className = 'risk-box' + (g.etapa === 'Dados insuficientes' ? ' ok' : '');
-    gb.innerHTML = `<b>Gargalo da semana:</b> ${escapeHtml(g.txt)}`;
+    gb.className = 'risk-box' + (g.etapa === 'Dados insuficientes' || g.etapa === 'Sem dados' ? ' ok' : '');
+    gb.innerHTML = `<b>${g.etapa === 'Sem dados' || g.etapa === 'Dados insuficientes' ? 'Leitura da semana' : 'Gargalo da semana'}:</b> ${escapeHtml(g.txt)}`;
     const pd = document.getElementById('pn-dados');
     if (!pd.value || pd.dataset.autofilled !== '0') { pd.value = metricasTxt(); pd.dataset.autofilled = '1'; }
   }
@@ -6041,7 +6391,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
   function camposFaltando() {
     const P = [['prof', 'profissional', 'o tipo de profissional'], ['cfg-registro', 'registro', 'o registro no conselho'],
       ['cfg-espec', 'especialidade', 'a especialidade'], ['cfg-cidade', 'cidade', 'cidade e bairro'], ['cfg-servicos', 'servicos', 'os serviços que quer divulgar'],
-      ['cfg-sobre', 'sobre', 'formação e diferenciais'], ['cfg-meta', 'metaFrase', 'o resultado que você quer (objetivo)']];
+      ['cfg-meta', 'metaFrase', 'o resultado que você quer (objetivo)']];
     return P.filter((x) => !String(cfg[x[1]] || '').trim()).map((x) => ({ id: x[0], txt: x[2] }));
   }
 
@@ -6050,17 +6400,18 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
   function renderHoje() {
     document.getElementById('hoje-data').textContent = new Date().toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' });
     const hoje = todayISO();
-    const atr = pacientes.filter(isLate).map((p) => ({ t: `${p.nome}${p.passo ? ' · ' + p.passo : ''} — ${fmtShort(p.data)}`, d: p.data }))
+    // Contatos: as três filas do dia a dia. Cada número abre o Rastreador já filtrado.
+    const nf = (k) => pacientes.filter(FILAS[k][1]).length;
+    document.getElementById('hj-filas').innerHTML = Object.keys(FILAS).map((k) => `<button type="button" class="hj-fila${k === 'vencidos' && nf(k) ? ' late' : ''}" data-fila="${k}"><b>${nf(k)}</b><span>${FILAS[k][0]}</span></button>`).join('');
+    document.querySelectorAll('#hj-filas [data-fila]').forEach((b) => b.addEventListener('click', () => { openTool('rastreador'); abrirFila(b.dataset.fila); }));
+    const atr = pacientes.filter((p) => FILAS.vencidos[1](p) || FILAS.hoje[1](p)).map((p) => ({ t: `${p.nome}${p.passo ? ' · ' + p.passo : ''} — ${p.data === hoje ? 'hoje' : fmtShort(p.data)}`, d: p.data }))
       .concat(colegas.filter((c) => c.prox && c.prox <= hoje).map((c) => ({ t: `Colega: ${c.nome} — ${fmtShort(c.prox)}`, d: c.prox })))
       .sort((a, b) => a.d.localeCompare(b.d));
-    const nEl = document.getElementById('hj-atr-n');
-    nEl.textContent = String(atr.length);
-    nEl.classList.toggle('late', atr.length > 0);
     const ul = document.getElementById('hj-atr-list');
     ul.innerHTML = '';
     const li = (txt, vazio) => { const el = document.createElement('li'); el.textContent = txt; if (vazio) el.className = 'vazio'; ul.appendChild(el); };
-    if (!pacientes.length && !colegas.length) li('Registre cada novo contato no Rastreador, com próximo passo e data.', true);
-    else if (!atr.length) li('Nenhum próximo passo vencido. Ótimo.', true);
+    if (!pacientes.length && !colegas.length) li('Ainda não há contatos registrados. Registre cada nova mensagem ou ligação, com a origem.', true);
+    else if (!atr.length) li('Nada vencido nem para hoje.', true);
     atr.slice(0, 3).forEach((x) => li(x.t));
     if (atr.length > 3) li(`e mais ${atr.length - 3}`);
 
@@ -6090,7 +6441,6 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     } else bk.hidden = true;
     if (typeof renderExtras === 'function') renderExtras();
   }
-  document.getElementById('hj-rastreador').addEventListener('click', () => openTool('rastreador'));
   document.getElementById('hj-conteudo').addEventListener('click', () => openAnchor('painel', 'ct-form'));
   document.getElementById('hj-contato').addEventListener('click', () => openAnchor('rastreador', 'tracker-form'));
   document.getElementById('hj-meta-n').addEventListener('change', (e) => {
@@ -6318,12 +6668,26 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
   });
 
   // ===================== Backup, restauração e limpeza =====================
+  // Quantos registros um conjunto de dados traz, para conferir backup e restauração.
+  function resumoDados(dados) {
+    const n = (k) => { try { const v = JSON.parse(dados[k] || '[]'); return Array.isArray(v) ? v.length : 0; } catch (e) { return -1; } };
+    const r = (() => { try { return Object.keys(JSON.parse(dados[RES_KEY] || '{}')).length; } catch (e) { return -1; } })();
+    return { contatos: n(PAC_KEY), colegas: n(COL_KEY), campanhas: n(CAMP_KEY), conteudos: n(CONT_KEY), decisoes: r, perfil: !!dados[STORE_KEY] };
+  }
+  const resumoTxt = (x) => `${x.contatos} contato(s), ${x.colegas} colega(s), ${x.campanhas} campanha(s), ${x.conteudos} conteúdo(s), ${x.decisoes} versão(ões) aprovada(s)${x.perfil ? ' e o perfil do consultório' : ''}`;
   function fazerBackup() {
-    storeSet(BACKUP_KEY, todayISO());
+    const status = document.getElementById('bk-status');
     const dados = {};
-    appKeys(false).forEach((k) => { try { dados[k] = window.localStorage.getItem(k); } catch (e) { /* noop */ } });
-    download(`cliniloop-backup-${todayISO()}.json`, JSON.stringify({ app: APP_ID, versao: 1, criadoEm: new Date().toISOString(), dados }, null, 2), 'application/json');
-    document.getElementById('bk-status').textContent = `Backup feito em ${fmtDate(todayISO())}. O arquivo contém nomes e telefones de pacientes: guarde em local seguro e não envie por mensagem.`;
+    let falhas = 0;
+    appKeys(false).filter((k) => !/\.ilegivel$/.test(k)).forEach((k) => { try { dados[k] = window.localStorage.getItem(k); } catch (e) { falhas++; } });
+    const texto = JSON.stringify({ app: APP_ID, versao: 1, criadoEm: new Date().toISOString(), dados }, null, 2);
+    // Confere o arquivo antes de entregá-lo: ele precisa ler de volta com os mesmos registros.
+    let conferido = null;
+    try { const volta = JSON.parse(texto); const a = resumoDados(dados); const b2 = resumoDados(volta.dados); conferido = JSON.stringify(a) === JSON.stringify(b2) && Object.values(a).every((v) => v !== -1) ? a : null; } catch (e) { conferido = null; }
+    if (!conferido || falhas) { status.textContent = 'Não consegui montar um backup íntegro: parte dos dados não pôde ser lida. Nada foi baixado. Tente de novo; se continuar, avise em Ajude a testar.'; return; }
+    download(`cliniloop-backup-${todayISO()}.json`, texto, 'application/json');
+    const gravou = storeSet(BACKUP_KEY, todayISO());
+    status.textContent = `Backup conferido e baixado em ${fmtDate(todayISO())}: ${resumoTxt(conferido)}. O arquivo contém nomes e telefones de pacientes: guarde em local seguro e não envie por mensagem.${gravou ? '' : ' (Não consegui registrar a data deste backup no navegador.)'}`;
     renderHoje();
   }
   document.getElementById('bk-save').addEventListener('click', fazerBackup);
@@ -6365,11 +6729,30 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
       });
       if (!entradas.length) { status.textContent = 'O backup está vazio ou não tem dados reconhecidos.'; input.value = ''; return; }
       const quando = pack.criadoEm ? fmtDate(String(pack.criadoEm).slice(0, 10)) : 'data desconhecida';
-      if (!confirm(`Restaurar o backup de ${quando}? Os dados atuais deste navegador serão substituídos (a chave da API, se houver, é mantida).`)) { input.value = ''; return; }
-      appKeys(false).forEach((k) => storeDel(k));
+      const vem = resumoDados(Object.fromEntries(entradas));
+      if (!confirm(`Restaurar o backup de ${quando}? Ele traz ${resumoTxt(vem)}. Os dados atuais deste navegador serão substituídos (a chave da API, se houver, é mantida). Se algo falhar, os dados atuais voltam como estavam.`)) { input.value = ''; return; }
+      // Fotografia dos dados atuais, para desfazer tudo se a gravação falhar no meio.
+      const antes = {};
+      try { appKeys(false).forEach((k) => { antes[k] = window.localStorage.getItem(k); }); } catch (err) { status.textContent = 'Não consegui ler os dados atuais para protegê-los. A restauração foi cancelada e nada mudou.'; input.value = ''; return; }
       let ok = true;
-      entradas.forEach(([k, v]) => { try { window.localStorage.setItem(k, v); } catch (err) { ok = false; } });
-      if (!ok) { status.textContent = 'Não foi possível gravar todos os dados neste navegador.'; return; }
+      try {
+        Object.keys(antes).forEach((k) => window.localStorage.removeItem(k));
+        entradas.forEach(([k, v]) => window.localStorage.setItem(k, v));
+        const depois = {}; entradas.forEach(([k]) => { depois[k] = window.localStorage.getItem(k); });
+        ok = JSON.stringify(resumoDados(depois)) === JSON.stringify(vem);
+      } catch (err) { ok = false; }
+      if (!ok) {
+        try {
+          appKeys(false).forEach((k) => window.localStorage.removeItem(k));
+          Object.entries(antes).forEach(([k, v]) => window.localStorage.setItem(k, v));
+          status.textContent = 'A restauração falhou no meio (o navegador recusou parte dos dados, talvez por falta de espaço). Desfiz tudo: os seus dados atuais voltaram como estavam.';
+        } catch (err2) {
+          download(`cliniloop-dados-antes-da-restauracao-${todayISO()}.json`, JSON.stringify({ app: APP_ID, versao: 1, criadoEm: new Date().toISOString(), dados: antes }, null, 2), 'application/json');
+          status.textContent = 'A restauração falhou e o navegador não aceitou recolocar os dados atuais. Baixei agora um arquivo com os dados como estavam antes: guarde-o e restaure-o depois de liberar espaço no navegador.';
+        }
+        input.value = '';
+        return;
+      }
       window.location.reload();
     };
     reader.onerror = () => { status.textContent = 'Não foi possível ler o arquivo.'; };
@@ -6446,7 +6829,6 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     return String(txt).replace(/\[([^\]]+)\]/g, (m, k) => (map[k] ? map[k] : m));
   }
   const pendentes = (t) => (String(t).match(/\[[A-ZÀ-Ú][^\]]*\]/g) || []).filter((x) => !/^\[(CONFIRMAR|PENDENTE DE VALIDAÇÃO|ESTIMATIVA)\]$/.test(x)).length;
-  const claudeLink = (t) => 'https://claude.ai/new?q=' + encodeURIComponent(t);
 
   function promptCard(pr, compact) {
     const d = document.createElement('details');
@@ -6464,8 +6846,9 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
           ${compact || !pr.tool ? '' : `<button type="button" class="btn btn-outline btn-sm js-lp-tool">Abrir ${escapeHtml(TOOL_NAMES[pr.tool] || pr.tool)}</button>`}
         </div>
       </div>`;
-    d.querySelector('.js-lp-copy').addEventListener('click', (e) => { copyText(d.querySelector('textarea').value, e.currentTarget); markUsed(pr.tool, true); });
-    d.querySelector('.js-lp-open').addEventListener('click', () => markUsed(pr.tool, true));
+    d.querySelector('.js-lp-copy').addEventListener('click', (e) => { copyText(d.querySelector('textarea').value, e.currentTarget, d.querySelector('textarea')); markUsed(pr.tool, true); });
+    // Abrir a IA nunca leva o prompt na URL: o texto vai pela área de transferência.
+    d.querySelector('.js-lp-open').addEventListener('click', () => { copyText(d.querySelector('textarea').value, d.querySelector('.js-lp-copy'), d.querySelector('textarea')); markUsed(pr.tool, true); });
     const bt = d.querySelector('.js-lp-tool');
     if (bt) bt.addEventListener('click', () => openTool(pr.tool));
     return d;
@@ -6476,7 +6859,6 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
       if (!pr) return;
       const t = fillLivro(pr.texto);
       d.querySelector('textarea').value = t;
-      d.querySelector('.js-lp-open').href = claudeLink(t);
       const n = pendentes(t);
       d.querySelector('.ls-pend').textContent = n ? `Troque os ${n} campo(s) entre colchetes que o seu perfil ainda não preenche. Os prompts das ferramentas do app são mais completos e já trazem as regras do seu conselho.` : 'Preenchido com o seu perfil. Revise antes de enviar.';
     });
@@ -6955,9 +7337,160 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
   })();
 
 
-  // ===================== O caminho: nove passos, em ordem =====================
-  // Um caminho só, em três movimentos (defina a sua diferença, mostre onde o paciente procura, meça quem fica).
-  // Cada passo reúne os campos, os prompts e o que guardar. O passo concluído mostra um resumo e se edita ali mesmo.
+  // ===================== Núcleo da estratégia (Oceano Azul) =====================
+  // Um contexto só, lido por todas as ferramentas: para quem, a proposta, as quatro ações, o que já acontece,
+  // o que ainda vai ser implantado, a evidência coletada e as pendências. Separa hipótese, evidência e decisão aprovada.
+  // Usa só "var" e funções: pode ser chamado por trechos que rodam antes deste arquivo.
+  var EST_KEY = 'cliniloop.estrategia.v1';
+  var EST_SLOGANS = ['humanizado', 'humanizada', 'qualidade', 'excelencia', 'o melhor', 'a melhor', 'os melhores', 'as melhores', 'diferenciado', 'diferenciada', 'referencia', 'de ponta', 'top', 'premium', 'completo', 'completa', 'cuidado integral', 'atendimento personalizado'];
+  // Entregas que expressam a estratégia: quando ela muda, a versão aprovada delas precisa de revisão.
+  var EST_DEPENDENTES = { perfil: ['Textos dos perfis', 4], pautas: ['Pautas e calendário', 5], atendimento: ['Respostas do atendimento', 7], formacao: ['Plano de formação e autoridade', 0], profissional: ['Marca e tom de voz', 0] };
+
+  function estLinhas(t) { return String(t || '').split(/\n|;/).map((x) => x.replace(/^[-•*]\s*/, '').trim()).filter(Boolean); }
+  function estHash(s) { let h = 0; for (let i = 0; i < s.length; i++) { h = ((h << 5) - h + s.charCodeAt(i)) | 0; } return (h >>> 0).toString(36); }
+  function estSt() { const a = storeGet(EST_KEY, null); return a && typeof a === 'object' ? a : {}; }
+  function sloganGenerico(t) {
+    const n = normTxt(t);
+    return EST_SLOGANS.filter((w) => n.indexOf(' ' + w + ' ') >= 0 || n.indexOf(' ' + w + ',') >= 0 || n.indexOf(' ' + w + '.') >= 0);
+  }
+
+  function estrategia() {
+    const o = storeGet('cliniloop.oceano.v1', {}) || {};
+    const c = (typeof cfg !== 'undefined' && cfg) || {};
+    const e = {
+      publico: String(c.publico || o.publico || '').trim(), proposta: String(c.transformacao || '').trim(),
+      eliminar: estLinhas(o.eliminar), reduzir: estLinhas(o.reduzir), elevar: estLinhas(o.elevar), criar: estLinhas(o.criar),
+      fatores: (o.fatores || []).concat(estLinhas(o.extra)), impl: (o.impl && typeof o.impl === 'object') ? o.impl : {},
+      avaliacoes: String(o.avaliacoes || '').trim(), vozPacientes: String(o.pacientes || '').trim(),
+      naoClientes: [o.nc1, o.nc2, o.nc3].map((x) => String(x || '').trim()).filter(Boolean)
+    };
+    e.hash = estHash(JSON.stringify([e.publico, e.proposta, e.eliminar, e.reduzir, e.elevar, e.criar]));
+    e.temEvidencia = !!(e.avaliacoes || e.vozPacientes);
+    const itens = [...new Set([...e.elevar, ...e.criar])];
+    const sit = (t) => (e.impl[t] || {}).s || '';
+    e.ja = itens.filter((t) => sit(t) === 'ja');
+    e.vou = itens.filter((t) => sit(t) === 'vou');
+    e.incerto = itens.filter((t) => sit(t) !== 'ja' && sit(t) !== 'vou');
+    e.comoMostrar = itens.map((t) => [t, (e.impl[t] || {}).m || '']).filter((x) => x[1]);
+    const a = estSt();
+    e.aprov = a.aprovada || null;
+    e.status = !e.proposta ? 'vazia' : (!e.aprov ? 'hipotese' : (e.aprov.hash === e.hash ? 'aprovada' : 'revisar'));
+    e.slogans = sloganGenerico(e.proposta);
+    // Pendências: o que ainda é hipótese ou falta decidir. Cada uma diz onde resolver.
+    const P = [];
+    if (e.fatores.length < 4) P.push(['Marcar em que a sua área compete na sua cidade', 1]);
+    if (!e.temEvidencia) P.push(['Ouvir o que os pacientes dizem: ler avaliações e perguntar a alguns pacientes', 2]);
+    if (!e.naoClientes.length) P.push(['Olhar para quem ainda não procura ninguém da sua área', 3]);
+    if (!e.elevar.length && !e.criar.length) P.push(['Decidir o que você vai elevar e criar', 4]);
+    if (e.incerto.length) P.push([`Dizer se já faz hoje: ${e.incerto.slice(0, 3).join('; ')}${e.incerto.length > 3 ? '…' : ''}`, 6]);
+    if (e.vou.length) P.push([`Implantar antes de anunciar: ${e.vou.slice(0, 3).join('; ')}${e.vou.length > 3 ? '…' : ''}`, 6]);
+    if (!e.proposta) P.push(['Escrever a proposta de valor em uma frase', 7]);
+    if (e.slogans.length) P.push([`Trocar palavras genéricas da proposta ("${e.slogans.join('", "')}") pelo que muda de fato para o paciente`, 7]);
+    if (e.status === 'hipotese') P.push(['Aprovar a proposta quando estiver de acordo com ela', 7]);
+    if (e.status === 'revisar') P.push(['A proposta mudou depois da aprovação: revise e aprove de novo', 7]);
+    e.pend = P;
+    return e;
+  }
+  var EST_ROTULO = { vazia: 'Não definida', hipotese: 'Hipótese', aprovada: 'Aprovada', revisar: 'Precisa revisar' };
+
+  // Bloco que entra em todos os prompts: a diferença escolhida e como ela deve aparecer na peça.
+  function estrategiaBloco(selfId) {
+    if (selfId === 'oceano') return '';
+    const e = estrategia();
+    if (e.status === 'vazia') {
+      return '\n\nMinha diferenciação (Oceano Azul): ainda não definida.\n- Não invente um diferencial nem credenciais. Escreva de forma clara e correta e, no fim, lembre que falta definir a proposta de valor no passo 3 do CliniLoop.';
+    }
+    const L = [];
+    const st = e.status === 'aprovada' ? `APROVADA por mim em ${fmtDate(e.aprov.d)}` : (e.status === 'revisar' ? 'EM REVISÃO: mudei a proposta depois de aprová-la' : 'HIPÓTESE: ainda não aprovada por mim');
+    L.push(`- Situação: ${st}; evidência: ${e.temEvidencia ? 'tenho relatos de pacientes ou avaliações (resumo abaixo)' : 'NENHUMA coletada ainda, então trate a diferença como hipótese'}.`);
+    if (e.publico) L.push(`- Para quem: ${e.publico}`);
+    L.push(`- Proposta de valor: ${e.proposta}`);
+    [['Eliminar', e.eliminar], ['Reduzir', e.reduzir], ['Elevar', e.elevar], ['Criar', e.criar]].forEach(([k, v]) => { if (v.length) L.push(`- ${k}: ${v.join('; ')}`); });
+    if (e.ja.length) L.push(`- O que eu JÁ faço hoje e pode ser mostrado: ${e.ja.join('; ')}`);
+    if (e.comoMostrar.length) L.push(`- Como mostrar: ${e.comoMostrar.map((x) => x[0] + ': ' + x[1]).join(' | ')}`);
+    if (e.vou.length || e.incerto.length) L.push(`- O que AINDA NÃO acontece (não anuncie como se existisse): ${[...e.vou, ...e.incerto].join('; ')}`);
+    if (e.temEvidencia) L.push(`- O que os pacientes dizem (padrões, sem identificar ninguém): ${trim([e.vozPacientes, e.avaliacoes].filter(Boolean).join(' / '), 600)}`);
+    return `\n\nMinha diferenciação (Oceano Azul), que deve aparecer nesta entrega:\n${L.join('\n')}
+- Como usar: a peça precisa materializar pelo menos um item de Elevar ou Criar que eu já faço, dito em linguagem concreta (o que muda para o paciente), e não em adjetivos como "humanizado" ou "qualidade". Se precisar citar algo que ainda não acontece, marque [AINDA NÃO IMPLANTADO]. Não invente credenciais, números, depoimentos nem dados sobre concorrentes. Diga, no fim, qual item da minha diferenciação a peça mostra.`;
+  }
+
+  // Entregas aprovadas antes de a estratégia mudar.
+  function entregasRevisar() {
+    const e = estrategia(); const r = resultados();
+    return Object.keys(EST_DEPENDENTES).filter((id) => r[id] && r[id].ev && r[id].ev !== e.hash);
+  }
+
+  // Faixa "a sua diferença neste prompt", no topo das ferramentas que produzem entregas.
+  var EST_FAIXA_TOOLS = ['pautas', 'roteiro', 'reaproveitamento', 'campanha', 'colegas', 'atendimento', 'briefing', 'formacao', 'profissional', 'publico'];
+  function renderFaixasDif() {
+    const e = estrategia();
+    const html = () => {
+      if (e.status === 'vazia') return `<p><span class="dif-badge vazia">Sem diferença definida</span> <b>Este prompt ainda não tem a sua diferença.</b> Sem ela, a entrega sai parecida com a de qualquer colega. <button type="button" class="linkish" data-abrir="oceano">Fazer o Oceano Azul (passo 3)</button></p>`;
+      const ac = [['Elevar', e.elevar], ['Criar', e.criar]].filter((x) => x[1].length).map(([k, v]) => `<b>${k}:</b> ${escapeHtml(v.slice(0, 3).join('; '))}`).join(' · ');
+      return `<p><span class="dif-badge ${e.status}">${EST_ROTULO[e.status]}</span> <b>A sua diferença entra neste prompt:</b> “${escapeHtml(trim(e.proposta, 160))}”</p>
+        ${ac ? `<p class="dif-acoes">${ac}</p>` : ''}
+        <p class="dif-nota">${e.status === 'hipotese' ? 'Ainda é hipótese: o prompt pede para a IA não apresentar como certo o que você não confirmou. ' : ''}${e.vou.length || e.incerto.length ? 'O que ainda não acontece no seu atendimento entra como [AINDA NÃO IMPLANTADO]. ' : ''}<button type="button" class="linkish" data-abrir="oceano">Ajustar no passo 3</button></p>`;
+    };
+    document.querySelectorAll('.dif-faixa').forEach((box) => { box.className = 'dif-faixa st-' + e.status; box.innerHTML = html(); });
+  }
+  (function montarFaixas() {
+    EST_FAIXA_TOOLS.forEach((id) => {
+      const body = document.querySelector(`.tool[data-id="${id}"] > .tool-body`);
+      if (!body || body.querySelector(':scope > .dif-faixa')) return;
+      const f = document.createElement('div'); f.className = 'dif-faixa';
+      const desc = body.querySelector(':scope > p.desc');
+      if (desc) desc.after(f); else body.prepend(f);
+    });
+    const p4 = document.getElementById('redes-uso');
+    if (p4 && !document.getElementById('dif-faixa-redes')) { const f = document.createElement('div'); f.className = 'dif-faixa'; f.id = 'dif-faixa-redes'; p4.parentNode.insertBefore(f, p4); }
+    renderFaixasDif();
+  })();
+
+  // Aprovação da proposta (passo 3): decisão separada da evidência.
+  function aprovarProposta() {
+    const e = estrategia();
+    if (!e.proposta) return false;
+    const a = estSt();
+    const hist = Array.isArray(a.hist) ? a.hist : [];
+    if (a.aprovada) hist.unshift(a.aprovada);
+    a.aprovada = { hash: e.hash, d: todayISO(), proposta: e.proposta, comEvidencia: e.temEvidencia, elevar: e.elevar, criar: e.criar };
+    a.hist = hist.slice(0, 10);
+    return storeSet(EST_KEY, a);
+  }
+  function renderAprovacao() {
+    const box = document.getElementById('est-aprovacao');
+    if (!box) return;
+    const e = estrategia();
+    const ev = e.temEvidencia ? '<span class="dif-badge aprovada">Com evidência</span> relatos de pacientes ou avaliações registrados na etapa 2' : '<span class="dif-badge hipotese">Sem evidência</span> ainda não há relatos de pacientes nem avaliações na etapa 2';
+    const dec = e.status === 'aprovada' ? `<span class="dif-badge aprovada">Aprovada em ${fmtDate(e.aprov.d)}</span>` : `<span class="dif-badge ${e.status}">${EST_ROTULO[e.status]}</span>`;
+    const pend = e.pend.filter((p) => !/^Aprovar a proposta|^A proposta mudou/.test(p[0]));
+    box.innerHTML = `<div class="est-linhas"><p><b>Decisão:</b> ${dec}</p><p><b>Evidência:</b> ${ev}</p></div>
+      ${e.slogans.length ? `<p class="est-slogan" role="status">"${escapeHtml(e.slogans.join('", "'))}" serve para qualquer colega. Diga o que muda, na prática, para o paciente: por exemplo, "sai da primeira consulta com o plano por escrito".</p>` : ''}
+      ${pend.length ? `<div class="est-pend"><p><b>O que ainda falta validar ou decidir</b> (pode ficar para depois, mas continua marcado):</p><ul>${pend.map(([t, et]) => `<li><button type="button" class="linkish" data-oa-etapa="${et}">${escapeHtml(t)}</button> <small>etapa ${et}</small></li>`).join('')}</ul></div>` : '<p class="est-ok">Nada pendente nas sete etapas.</p>'}
+      ${e.status === 'aprovada' ? '<p class="jor-sub">Se mudar a proposta ou as quatro ações, ela volta para "Precisa revisar", e as entregas feitas com a versão anterior ficam marcadas para revisão.</p>' : (e.proposta ? `<div class="est-aprovar">
+        <button type="button" class="btn btn-teal btn-sm" id="est-abrir-aprov">Aprovar esta proposta</button>
+        <fieldset class="est-confirma" hidden><legend>Antes de aprovar, confirme:</legend>
+          <label><input type="checkbox" class="est-c"> Ela diz o que muda, na prática, para o paciente, e não só adjetivos.</label>
+          <label><input type="checkbox" class="est-c"> Ela não promete resultado de tratamento nem cura.</label>
+          <label><input type="checkbox" class="est-c"> O que ela anuncia já acontece no meu atendimento, ou está marcado como "vou implementar".</label>
+          <button type="button" class="btn btn-gold btn-sm" id="est-confirmar" disabled>Confirmar aprovação</button>
+          <p class="save-status" id="est-st" aria-live="polite"></p>
+        </fieldset></div>` : '')}`;
+    const ab = document.getElementById('est-abrir-aprov');
+    if (ab) ab.addEventListener('click', () => { box.querySelector('.est-confirma').hidden = false; ab.hidden = true; box.querySelector('.est-c').focus(); });
+    const cs = [...box.querySelectorAll('.est-c')];
+    const cf = document.getElementById('est-confirmar');
+    cs.forEach((c) => c.addEventListener('change', () => { cf.disabled = !cs.every((x) => x.checked); }));
+    if (cf) cf.addEventListener('click', () => {
+      if (!aprovarProposta()) { document.getElementById('est-st').textContent = 'Não consegui gravar a aprovação neste navegador. Tente de novo.'; return; }
+      notifyData();
+    });
+  }
+
+  // ===================== O caminho: a jornada do herói em nove passos =====================
+  // Três atos (a partida, as provas, o retorno), nove passos. Cada passo segue o mesmo padrão:
+  // o que você leva daqui, o que já foi aproveitado, a ação, a entrega mínima e o próximo passo.
+  // Estados visíveis: em andamento, pronto, precisa revisar. Gerar um prompt é atividade, não entrega.
   // var (e não const): renderCaminho pode ser chamada pela inicialização antes deste trecho rodar.
   var camOk = false;
   const CAM_KEY = PREFIX + 'caminho.v1';
@@ -6969,66 +7502,164 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     { n: 5, titulo: 'Plano de conteúdo e roteiros' },
     { n: 6, titulo: 'Colegas e campanhas' },
     { n: 7, titulo: 'WhatsApp e atendimento' },
-    { n: 8, titulo: 'Rastreador de pacientes' },
+    { n: 8, titulo: 'Contatos: o rastreador' },
     { n: 9, titulo: 'Ritual da semana' }
   ];
-  // Onde mora cada ferramenta do caminho. As demais ficam na caixa de ferramentas.
+  // Onde mora cada ferramenta do caminho. As demais ficam na biblioteca de ferramentas.
   const TOOL_PASSO = { config: 1, publico: 2, oceano: 3, perfil: 4, pautas: 5, roteiro: 5, colegas: 6, campanha: 6, atendimento: 7, rastreador: 8, assistente: 9, painel: 9 };
-  // Campos obrigatórios dos três primeiros passos: [id do campo, chave em cfg, como chamar].
+  // O contexto essencial: sem ele, os passos seguintes não funcionam. O resto é aprofundamento.
   const OBRIG = {
     1: [['prof', 'profissional', 'o tipo de profissional'], ['cfg-registro', 'registro', 'o registro no conselho'], ['cfg-espec', 'especialidade', 'a especialidade'],
-      ['cfg-cidade', 'cidade', 'cidade e bairro'], ['cfg-servicos', 'servicos', 'os serviços que quer divulgar'], ['cfg-sobre', 'sobre', 'formação, experiência e diferenciais'],
-      ['cfg-meta', 'metaFrase', 'o resultado que você quer em 90 dias']],
+      ['cfg-cidade', 'cidade', 'cidade e bairro'], ['cfg-servicos', 'servicos', 'os serviços que quer divulgar'], ['cfg-meta', 'metaFrase', 'o resultado que você quer em 90 dias']],
     2: [['cfg-publico', 'publico', 'quem é o seu paciente ideal'], ['cfg-icp-dor', 'icpDor', 'a principal dor ou dúvida dele']],
-    3: [['cfg-transf', 'transformacao', 'a sua proposta de valor em uma frase']]
+    3: [['cfg-transf', 'transformacao', 'a sua proposta de valor em uma frase (pode ser uma hipótese)']]
   };
 
   function camSt() {
     const s = storeGet(CAM_KEY, null) || {};
-    return { feitos: s.feitos || {}, aberto: s.aberto === undefined ? null : s.aberto };
+    let avanco = Number(s.avanco) || 0;
+    // Migração: quem concluía passos na versão anterior continua de onde estava.
+    if (!avanco && s.feitos && typeof s.feitos === 'object') { const ns = Object.keys(s.feitos).map(Number).filter(Boolean); if (ns.length) avanco = Math.min(9, Math.max(...ns) + 1); }
+    return { avanco: avanco || 1, aberto: s.aberto === undefined ? null : s.aberto, ritual: (s.ritual && typeof s.ritual === 'object') ? s.ritual : {}, oaEtapa: Number(s.oaEtapa) || 1, feitos: s.feitos || {} };
   }
-  function camSet(s) { storeSet(CAM_KEY, s); }
+  function camSet(s) { return storeSet(CAM_KEY, s); }
   function faltandoPasso(n) {
     return (OBRIG[n] || []).filter((x) => !String(cfg[x[1]] || '').trim()).map((x) => ({ id: x[0], txt: x[2] }));
   }
   const usoDe = () => storeGet(USO_KEY, {}) || {};
-  function canaisFeitos() { const s = storeGet(CANAIS_KEY, {}) || {}; return Object.keys(s).length; }
+  const REDES_IDS = ['google', 'instagram', 'linkedin', 'youtube', 'tiktok'];
+  function checklistCompleto(id) {
+    const st = storeGet(CANAIS_KEY, {}) || {};
+    const c = CANAIS_CHECK.find((x) => x[0] === id);
+    return !!c && c[3].every((_, i) => st[`${id}-${i}`]);
+  }
+  const aberto8 = (p) => p.etapa !== 'Encerrado';
 
-  // Um passo está feito quando o profissional concluiu, ou quando os dados mostram que ele já foi percorrido.
-  function passoFeito(n, st) {
-    st = st || camSt();
-    if (n <= 3 && faltandoPasso(n).length) return false;
-    if (st.feitos[n]) return true;
-    const uso = usoDe(); const r = resultados(); const j = waSt();
+  // Entrega mínima de cada passo. [texto, feito, opcional]. O passo só fica pronto quando o que não é opcional existe.
+  function entregas(n) {
+    const r = resultados(); const u = usoDe();
     switch (n) {
-      case 1: case 2: case 3: return true;
-      case 4: return !!r.perfil || canaisFeitos() >= 3;
-      case 5: return conteudos.length > 0 || !!r.pautas;
-      case 6: return colegas.length > 0 || campanhas.length > 0;
-      case 7: return !!r.atendimento || WA_ITENS.filter(([id]) => j[id]).length >= 4;
-      case 8: return pacientes.length > 0;
-      case 9: return !!uso.assistente;
+      case 1: return [['Profissão e registro no conselho', !!(cfg.profissional && cfg.registro)], ['Especialidade, cidade e serviços', !!(cfg.especialidade && cfg.cidade && cfg.servicos)], ['O resultado que você quer em 90 dias', !!cfg.metaFrase], ['Formação e diferenciais (aprofundar)', !!cfg.sobre, true]];
+      case 2: return [['Quem é o seu paciente ideal', !!cfg.publico], ['A principal dor ou dúvida dele', !!cfg.icpDor], ['ICP e persona revisados e aprovados (aprofundar)', !!r.publico, true]];
+      case 3: {
+        const e = estrategia();
+        return [['Em que a sua área compete: 4 fatores ou mais (etapa 1)', e.fatores.length >= 4], ['O que os pacientes dizem: evidência (etapa 2)', e.temEvidencia], ['Quem ainda não procura ninguém (etapa 3)', e.naoClientes.length > 0, true],
+          ['As quatro ações, com algo a elevar ou criar (etapa 4)', e.elevar.length + e.criar.length > 0], ['Se cada item já acontece no atendimento (etapa 6)', (e.elevar.length + e.criar.length) > 0 && !e.incerto.length],
+          ['A proposta em uma frase', !!e.proposta], ['A proposta aprovada por você', e.status === 'aprovada']];
+      }
+      case 4: return [['O prompt de pelo menos uma rede preparado', REDES_IDS.some((id) => u['rede-' + id]) || !!u.perfil], ['Textos dos perfis revisados e aprovados', !!r.perfil], ['Checklist completo de pelo menos uma rede', REDES_IDS.some(checklistCompleto)]];
+      case 5: return [['Temas de conteúdo definidos', !!cfg.baldes], ['Pautas e calendário revisados e aprovados', !!r.pautas], ['A primeira peça publicada e registrada no Diário', conteudos.length > 0]];
+      case 6: return [['Pelo menos 3 colegas mapeados', colegas.length >= 3], ['Carta de apresentação enviada a pelo menos um colega', colegas.some((c) => c.etapa && c.etapa !== 'Mapeado')], ['A primeira campanha registrada (quando fizer sentido)', campanhas.length > 0, true]];
+      case 7: { const j = waSt(); const f = WA_ITENS.filter(([id]) => j[id] || (id === 'wa6' && pacientes.length)).length;
+        return [['WhatsApp do consultório informado', String(cfg.whatsapp || '').replace(/\D/g, '').length >= 10], [`Pelo menos 5 dos 7 itens do WhatsApp prontos (${f} de 7)`, f >= 5], ['Respostas do atendimento revisadas e aprovadas', !!r.atendimento]]; }
+      case 8: { const ab = pacientes.filter(aberto8);
+        return [['Pelo menos um contato registrado', pacientes.length > 0], ['Todo contato em aberto com a origem informada (ou "não sei")', pacientes.length > 0 && ab.every((p) => String(p.origem || '').trim())], ['Todo contato em aberto com próximo passo e data', pacientes.length > 0 && !pacientes.filter(FILAS.sem[1]).length]]; }
+      case 9: { const st = camSt(); return [['Agenda da semana preparada no Assistente', (u.assistente || '') >= mondayISO()], ['Ritual desta semana marcado como feito', !!st.ritual[mondayISO()]]]; }
     }
+    return [];
+  }
+  // Motivo para revisar um passo que já estava pronto (ou em andamento).
+  function revisarPasso(n) {
+    const rev = entregasRevisar();
+    if (n === 3 && estrategia().status === 'revisar') return 'Você mudou a proposta ou as quatro ações depois de aprovar. Revise e aprove de novo.';
+    if (n === 4 && rev.indexOf('perfil') >= 0) return 'A estratégia mudou depois dos textos aprovados dos perfis.';
+    if (n === 5 && rev.indexOf('pautas') >= 0) return 'A estratégia mudou depois das pautas aprovadas.';
+    if (n === 7 && rev.indexOf('atendimento') >= 0) return 'A estratégia mudou depois das respostas aprovadas do atendimento.';
+    if (n === 8) { const v = pacientes.filter(FILAS.vencidos[1]).length; if (v) return `${v} próximo(s) passo(s) vencido(s) no Rastreador.`; }
+    return '';
+  }
+  function comecou(n) {
+    if (n === 3) { const o = storeGet('cliniloop.oceano.v1', {}) || {}; return !!((o.fatores || []).length || o.eliminar || o.reduzir || o.elevar || o.criar || o.avaliacoes || o.pacientes || cfg.transformacao); }
+    if (n === 4) return REDES_IDS.some((id) => { const f = redeForm(id); return f && !!textoRede(id); });
     return false;
   }
-  function proximoPasso(st) { const p = PASSOS.find((x) => !passoFeito(x.n, st)); return p ? p.n : null; }
+  function estadoPasso(n, st) {
+    const it = entregas(n);
+    const req = it.filter((x) => !x[2]);
+    if (n === 9) return req.every((x) => x[1]) ? 'semana-ok' : 'semana-pend';
+    const pronto = req.every((x) => x[1]);
+    const motivo = revisarPasso(n);
+    if (motivo && (pronto || n === 3 || n === 8)) return 'revisar';
+    if (pronto) return 'pronto';
+    if (it.some((x) => x[1]) || comecou(n)) return 'andamento';
+    return 'novo';
+  }
+  const ESTADO_ROT = { novo: '', andamento: 'Em andamento', pronto: 'Pronto', revisar: 'Precisa revisar', 'semana-ok': 'Feito nesta semana', 'semana-pend': 'Pendente nesta semana' };
+  function passoFeito(n, st) { return estadoPasso(n, st) === 'pronto'; }
+  // Próximo passo: o primeiro não pronto a partir de onde a pessoa chegou. O que ficou para trás aparece como pendência.
+  function proximoPasso(st) {
+    st = st || camSt();
+    for (let n = Math.min(st.avanco, 9); n <= 8; n++) if (estadoPasso(n, st) !== 'pronto') return n;
+    return 9;
+  }
+  function pendentesAntes(st) {
+    st = st || camSt();
+    const L = [];
+    for (let n = 1; n < Math.min(st.avanco, 9); n++) { const e = estadoPasso(n, st); if (e !== 'pronto') L.push(n); }
+    return L;
+  }
 
-  // Resumo de uma linha que aparece no cabeçalho do passo concluído.
+  // Resumo de uma linha no cabeçalho do passo.
   function resumoPasso(n) {
     const t = (s, k) => trim(s, k || 90);
     const r = resultados();
     switch (n) {
       case 1: return [profInfo() ? profInfo().label : '', cfg.especialidade, cfg.cidade].filter(Boolean).join(' · ') + (cfg.metaFrase ? ' — ' + t(cfg.metaFrase, 70) : '');
       case 2: return cfg.publico ? t(cfg.publico, 60) + (cfg.icpDor ? ' · dúvida: ' + t(cfg.icpDor, 50) : '') : '';
-      case 3: return cfg.transformacao ? '"' + t(cfg.transformacao, 110) + '"' : '';
-      case 4: { const u = (cfg.canais || []).filter((c) => REDE_IDS[c]); return u.length ? u.map((c) => REDE_NOME[REDE_IDS[c]]).join(', ') + (r.perfil ? ' · textos aprovados guardados' : '') : ''; }
+      case 3: { const e = estrategia(); return e.proposta ? `${EST_ROTULO[e.status]}${e.temEvidencia ? '' : ', sem evidência'}: "${t(e.proposta, 100)}"` : ''; }
+      case 4: { const u = (cfg.canais || []).filter((c) => REDE_IDS[c]); return u.length ? u.map((c) => REDE_NOME[REDE_IDS[c]]).join(', ') + (r.perfil ? ' · textos aprovados' : '') : ''; }
       case 5: return [cfg.baldes ? 'Temas: ' + t(cfg.baldes, 60) : '', conteudos.length ? conteudos.length + (conteudos.length === 1 ? ' conteúdo registrado' : ' conteúdos registrados') : ''].filter(Boolean).join(' · ');
       case 6: return [colegas.length ? colegas.length + (colegas.length === 1 ? ' colega' : ' colegas') : '', campanhas.length ? campanhas.length + (campanhas.length === 1 ? ' campanha' : ' campanhas') : ''].filter(Boolean).join(' · ');
-      case 7: { const j = waSt(); const f = WA_ITENS.filter(([id]) => j[id] || (id === 'wa6' && pacientes.length)).length; return `${f} de ${WA_ITENS.length} passos do WhatsApp prontos`; }
-      case 8: { const ab = pacientes.filter((p) => p.etapa !== 'Encerrado').length; return pacientes.length ? `${pacientes.length} ${pacientes.length === 1 ? 'contato' : 'contatos'} · ${ab} em aberto` : ''; }
-      case 9: { const u = usoDe().assistente; return u ? 'Último ritual em ' + fmtDate(u) : ''; }
+      case 7: { const j = waSt(); const f = WA_ITENS.filter(([id]) => j[id] || (id === 'wa6' && pacientes.length)).length; return f ? `${f} de ${WA_ITENS.length} itens do WhatsApp prontos` : ''; }
+      case 8: { const ab = pacientes.filter(aberto8).length; return pacientes.length ? `${pacientes.length} ${pacientes.length === 1 ? 'contato' : 'contatos'} · ${ab} em aberto` : ''; }
+      case 9: { const st = camSt(); const d = st.ritual[mondayISO()]; return d ? `Ritual desta semana feito em ${fmtDate(d)}` : `Semana de ${fmtShort(mondayISO())}: ritual pendente`; }
     }
     return '';
+  }
+
+  // O que você leva do passo e o que o app já aproveitou de antes.
+  const TAREFA_SAI = {
+    1: 'o seu consultório e o objetivo dos 90 dias, que entram em todos os prompts.',
+    2: 'o paciente ideal e a dúvida principal dele, de onde saem ganchos, pautas e respostas.',
+    3: 'uma proposta de valor própria, com o que ainda é hipótese marcado como hipótese.',
+    4: 'a bio e os textos de cada rede revisados, mostrando a sua diferença.',
+    5: 'pautas das dúvidas reais e o roteiro da primeira peça, com a sua diferença dentro.',
+    6: 'colegas mapeados, a primeira carta enviada e, quando fizer sentido, a primeira campanha.',
+    7: 'o WhatsApp pronto para receber, com respostas que sustentam o que você anuncia.',
+    8: 'cada contato com origem, próximo passo e data, sem dado clínico.',
+    9: 'o placar da semana, o gargalo da vez e a agenda da próxima semana.'
+  };
+  function renderTarefa(n) {
+    const box = document.querySelector(`.tarefa[data-tarefa="${n}"]`);
+    if (!box) return;
+    const e = estrategia();
+    const chip = (rot, v) => (v ? `<li><b>${escapeHtml(rot)}:</b> ${escapeHtml(trim(v, 70))}</li>` : '');
+    const prop = e.proposta ? `${EST_ROTULO[e.status].toLowerCase()} · “${e.proposta}”` : '';
+    const acoes = [...e.elevar, ...e.criar].slice(0, 3).join('; ');
+    const usa = {
+      1: [],
+      2: [['Profissão', profInfo() ? profInfo().label + (cfg.especialidade ? ', ' + cfg.especialidade : '') : ''], ['Cidade', cfg.cidade]],
+      3: [['Paciente ideal', cfg.publico], ['A dúvida dele', cfg.icpDor], ['Serviços', cfg.servicos]],
+      4: [['Proposta', prop], ['Elevar e criar', acoes], ['Registro', cfg.registro], ['Cidade', cfg.cidade]],
+      5: [['Proposta', prop], ['Paciente e dúvida', [cfg.publico, cfg.icpDor].filter(Boolean).join(' · ')], ['Temas', cfg.baldes]],
+      6: [['Proposta', prop], ['Especialidade', cfg.especialidade], ['Serviços', cfg.servicos]],
+      7: [['Proposta', prop], ['Elevar e criar', acoes], ['Serviços', cfg.servicos]],
+      8: [['Serviços', cfg.servicos], ['Origens', 'as suas redes e campanhas registradas']],
+      9: [['Contatos', pacientes.length ? pacientes.length + ' registrados' : ''], ['Conteúdos', conteudos.length ? conteudos.length + ' no Diário' : ''], ['Colegas', colegas.length ? colegas.length + ' na rede' : '']]
+    }[n].map(([a, b]) => chip(a, b)).join('');
+    box.innerHTML = `<p class="tarefa-sai"><b>Você sai daqui com</b> ${escapeHtml(TAREFA_SAI[n])}</p>${n === 1 ? '<p class="tarefa-ja">Primeiro passo: preencha uma vez e nada mais precisa ser repetido.</p>' : (usa ? `<div class="tarefa-ja"><p>Já aproveitado, sem você repetir:</p><ul>${usa}</ul></div>` : '<p class="tarefa-ja">Ainda não há nada dos passos anteriores para aproveitar aqui.</p>')}`;
+  }
+  // A entrega mínima, com o estado do passo.
+  function renderEntrega(n) {
+    const el = passoEl(n); const box = el.querySelector('.entrega');
+    const est = estadoPasso(n); const motivo = revisarPasso(n);
+    const it = entregas(n);
+    box.className = 'entrega est-' + est;
+    box.innerHTML = `<p class="entrega-t"><b>${n === 9 ? `Ritual da semana de ${fmtShort(mondayISO())}` : 'Entrega mínima deste passo'}</b>${ESTADO_ROT[est] ? ` <span class="estado ${est}">${ESTADO_ROT[est]}</span>` : ''}</p>
+      ${motivo ? `<p class="entrega-rev">${escapeHtml(motivo)}</p>` : ''}
+      <ul>${it.map(([t, ok, opc]) => `<li class="${ok ? 'ok' : ''}${opc ? ' opc' : ''}"><span class="ck" aria-hidden="true">${ok ? '✓' : '○'}</span><span>${escapeHtml(t)}${ok ? '<span class="visually-hidden"> (feito)</span>' : '<span class="visually-hidden"> (pendente)</span>'}</span></li>`).join('')}</ul>
+      ${n === 3 ? '<p class="jor-sub">A proposta pode seguir como hipótese. O que ainda não foi validado continua marcado aqui e nos prompts, até você ouvir os pacientes e aprovar.</p>' : ''}
+      ${n === 9 ? '<p class="jor-sub">Este passo não termina: toda semana ele volta como pendente.</p>' : ''}`;
   }
 
   // --- Abrir e fechar passos (um aberto por vez) ---
@@ -7044,11 +7675,10 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     renderPasso(n);
     if (opts.scroll !== false && n) {
       const el = passoEl(n);
-      if (opts.alvo) {
-        const a = opts.alvo;
-        setTimeout(() => a.scrollIntoView({ behavior: 'smooth', block: 'start' }), 30);
-      } else el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (opts.alvo) { const a = opts.alvo; setTimeout(() => a.scrollIntoView({ behavior: 'smooth', block: 'start' }), 30); }
+      else el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+    if (opts.foco) setTimeout(() => passoEl(n).querySelector('.passo-toggle').focus({ preventScroll: true }), 40);
   }
   function fecharPassos() {
     PASSOS.forEach((p) => { const el = passoEl(p.n); el.querySelector('.passo-corpo').hidden = true; el.querySelector('.passo-toggle').setAttribute('aria-expanded', 'false'); el.classList.remove('aberto'); });
@@ -7069,38 +7699,85 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     const p = el.closest('.passo');
     if (p && p.querySelector('.passo-corpo').hidden) abrirPasso(Number(p.dataset.passo), { scroll: false });
     const det = el.closest('details'); if (det && !det.open) det.open = true;
+    if (id === 'cfg-transf' && typeof oaIr === 'function') oaIr(7);
     el.scrollIntoView({ behavior: 'smooth', block: 'center' });
     setTimeout(() => el.focus({ preventScroll: true }), 250);
   }
 
-  // --- Concluir um passo ---
-  function concluirPasso(n) {
+  // --- Seguir: avança sem chamar de pronto o que ainda não está ---
+  function seguirPasso(n) {
     const falta = faltandoPasso(n);
-    const box = passoEl(n).querySelector('.passo-falta');
-    passoEl(n).querySelectorAll('.invalid').forEach((x) => x.classList.remove('invalid'));
+    const el = passoEl(n);
+    const box = el.querySelector('.passo-falta');
+    el.querySelectorAll('[aria-invalid="true"]').forEach((x) => { x.classList.remove('invalid'); x.removeAttribute('aria-invalid'); x.removeAttribute('aria-describedby'); });
     if (falta.length) {
-      box.innerHTML = `<b>Falta${falta.length > 1 ? 'm' : ''} ${falta.length} ${falta.length > 1 ? 'campos' : 'campo'}:</b> `;
+      box.id = box.id || `passo-${n}-falta`;
+      box.innerHTML = `<b>Falta${falta.length > 1 ? 'm' : ''} ${falta.length} ${falta.length > 1 ? 'campos' : 'campo'} para seguir:</b> `;
       falta.forEach((f, i) => {
         const b = document.createElement('button');
         b.type = 'button'; b.className = 'linkish'; b.textContent = f.txt;
         b.addEventListener('click', () => irAoCampoPasso(f.id));
         if (i) box.appendChild(document.createTextNode(' · '));
         box.appendChild(b);
-        const el = f.id !== 'prof' && document.getElementById(f.id); if (el) el.classList.add('invalid');
+        const c = f.id === 'prof' ? document.querySelector('input[name="profissional"]') : document.getElementById(f.id);
+        if (c) { c.classList.add('invalid'); c.setAttribute('aria-invalid', 'true'); c.setAttribute('aria-describedby', box.id); }
       });
       box.hidden = false;
       irAoCampoPasso(falta[0].id);
       return;
     }
     box.hidden = true;
-    const st = camSt(); st.feitos[n] = st.feitos[n] || todayISO(); camSet(st);
-    if (n === 9) markUsed('assistente', true);
-    const prox = proximoPasso(st);
+    const st = camSt();
+    if (n === 9) {
+      st.ritual[mondayISO()] = todayISO();
+      Object.keys(st.ritual).sort().slice(0, -26).forEach((k) => delete st.ritual[k]);
+      if (!camSet(st)) { box.hidden = false; box.textContent = 'Não consegui gravar neste navegador. Tente de novo.'; return; }
+      renderCaminho(); renderEntrega(9);
+      return;
+    }
+    st.avanco = Math.max(st.avanco, n + 1);
+    if (!camSet(st)) { box.hidden = false; box.textContent = 'Não consegui gravar o seu avanço neste navegador. O que você preencheu continua na tela.'; return; }
     renderCaminho();
-    if (prox) abrirPasso(prox);
-    else { fecharPassos(); renderCaminho(); passoEl(9).scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    abrirPasso(proximoPasso(), { foco: true });
   }
 
+  // --- Oceano Azul em etapas: uma de cada vez, com retomada ---
+  const OA_ETAPAS = [
+    [1, 'Em que todos competem', 'O mercado'], [2, 'O que os pacientes dizem', 'Evidência'], [3, 'Quem ainda não procura', 'Evidência'],
+    [4, 'As quatro ações', 'Decisão'], [5, 'Sua curva de valor', 'Decisão'], [6, 'Fazer antes de mostrar', 'Viabilidade e prova'], [7, 'Sua proposta', 'Proposta']
+  ];
+  function oaFeita(k) {
+    const e = estrategia();
+    return [null, e.fatores.length >= 4, e.temEvidencia, e.naoClientes.length > 0, e.elevar.length + e.criar.length > 0, e.fatores.length >= 4 && (e.elevar.length + e.criar.length > 0), (e.elevar.length + e.criar.length) > 0 && !e.incerto.length, !!e.proposta][k];
+  }
+  function oaIr(k) {
+    k = Math.max(1, Math.min(7, k));
+    const st = camSt(); st.oaEtapa = k; camSet(st);
+    renderOaEtapas();
+  }
+  function renderOaEtapas() {
+    const form = document.getElementById('oa-form'); const p3 = passoEl(3);
+    if (!form) return;
+    const k = camSt().oaEtapa;
+    const fs = [...form.querySelectorAll(':scope > fieldset.oa-step')];
+    fs.forEach((f, i) => { f.hidden = i + 1 !== k; f.dataset.etapa = String(i + 1); });
+    p3.classList.toggle('oa-e7', k === 7);
+    let nav = document.getElementById('oa-nav');
+    if (!nav) { nav = document.createElement('div'); nav.id = 'oa-nav'; nav.className = 'oa-nav'; form.parentNode.insertBefore(nav, form); }
+    nav.innerHTML = `<p class="oa-nav-t" id="oa-nav-t">Etapa ${k} de 7 · ${escapeHtml(OA_ETAPAS[k - 1][1])} <span class="oa-tipo">${escapeHtml(OA_ETAPAS[k - 1][2])}</span></p>
+      <ol class="oa-dots" aria-label="Etapas do Oceano Azul">${OA_ETAPAS.map(([i, t]) => `<li><button type="button" data-oa-etapa="${i}" class="${i === k ? 'on' : ''}${oaFeita(i) ? ' ok' : ''}" ${i === k ? 'aria-current="step"' : ''} aria-label="Etapa ${i}: ${escapeHtml(t)}${oaFeita(i) ? ' (preenchida)' : ''}">${oaFeita(i) ? '✓' : i}</button></li>`).join('')}</ol>`;
+    let pe = document.getElementById('oa-pe');
+    if (!pe) { pe = document.createElement('div'); pe.id = 'oa-pe'; pe.className = 'oa-pe'; form.after(pe); }
+    const depois = k === 2 || k === 3;
+    pe.innerHTML = `${k > 1 ? '<button type="button" class="btn btn-outline btn-sm" data-oa-etapa="' + (k - 1) + '">← Etapa anterior</button>' : ''}
+      ${k < 7 ? `<button type="button" class="btn btn-teal btn-sm" data-oa-etapa="${k + 1}">${depois && !oaFeita(k) ? 'Fazer depois e seguir' : 'Próxima etapa'} →</button>` : ''}
+      ${depois && !oaFeita(k) ? '<p class="oa-depois">Pode seguir sem esta etapa hoje. Ela fica marcada como pendente, e a proposta continua como hipótese até você ouvir os pacientes.</p>' : ''}`;
+    // A curva de valor sem evidência é a percepção do profissional, não um fato.
+    let hip = document.getElementById('oa-hip');
+    const f5 = fs[4];
+    if (f5 && !hip) { hip = document.createElement('p'); hip.id = 'oa-hip'; hip.className = 'oa-hip'; f5.querySelector('legend').after(hip); }
+    if (hip) { const ev = estrategia().temEvidencia; hip.className = 'oa-hip' + (ev ? ' ok' : ''); hip.textContent = ev ? 'Você registrou o que os pacientes dizem na etapa 2: use isso para dar as notas, e não só a sua impressão.' : 'Sem a etapa 2, estas notas são a sua percepção: uma hipótese. Elas continuam úteis, mas marcadas como hipótese.'; }
+  }
   // --- Redes do passo 4 ---
   const REDE_IDS = { 'Perfil da Empresa no Google': 'google', Instagram: 'instagram', LinkedIn: 'linkedin', YouTube: 'youtube', TikTok: 'tiktok' };
   const REDE_NOME = { google: 'Google', instagram: 'Instagram', linkedin: 'LinkedIn', youtube: 'YouTube', tiktok: 'TikTok' };
@@ -7253,35 +7930,44 @@ Entregue:
       <h4 class="passo-sub">Links do WhatsApp com origem</h4><p class="jor-sub">Use um link por lugar (bio, anúncio, site). A primeira mensagem já diz de onde a pessoa veio, e o Rastreador registra a origem.</p>${links}`;
   }
 
-  // --- Placar do ritual (passo 9): o funil em números, sem botões ---
+
+  // --- Placar do ritual (passo 9): o funil em números, com período e denominadores ---
   function renderPlacar() {
     const box = document.getElementById('placar-box');
-    const lim = addDays(todayISO(), -90);
+    const hoje = todayISO(); const lim = addDays(hoje, -90);
     const co = pacientes.filter((p) => p.criado >= lim);
     const H = (k) => co.filter((p) => p.hist && p.hist[k]).length;
     const n = co.length, ag = H('Agendado'), av = H('Avaliado'), pl = H('Plano proposto'), ini = H('Em tratamento');
-    const pct = (a, b) => (b ? Math.round(a / b * 100) + '%' : '—');
-    const linhas = [['Contatos', n, 'nos últimos 90 dias'], ['Agendaram', ag, pct(ag, n) + ' dos contatos'], ['Compareceram', av, pct(av, ag) + ' dos agendados'], ['Em tratamento', ini, pct(ini, pl) + ' dos planos propostos']];
+    const pct = (a, b) => (b ? `${Math.round(a / b * 100)}% (${a} de ${b})` : 'sem base para calcular');
+    const periodo = `de ${fmtShort(lim)} a ${fmtShort(hoje)}`;
+    if (!pacientes.length) {
+      box.innerHTML = `<h4 class="passo-sub">O placar</h4><p class="placar-vazio">Ainda não há dados registrados para analisar. Isso não quer dizer falta de pacientes: quer dizer que ainda não há registros. Registre cada contato no <button type="button" class="linkish" data-abrir="rastreador">Rastreador (passo 8)</button>, com a origem, e o placar aparece aqui.</p>`;
+      return;
+    }
+    const linhas = [['Contatos', n, `criados ${periodo}`], ['Agendaram', ag, pct(ag, n) + ' dos contatos'], ['Compareceram', av, pct(av, ag) + ' dos agendados'], ['Em tratamento', ini, pct(ini, pl) + ' dos planos']];
     const taxas = [];
-    if (n >= 5) taxas.push(['agendamento', ag / n, 7, 'Responda em até 5 minutos, ofereça dois horários e faça as retomadas de 1, 3 e 7 dias.']);
-    if (ag >= 5) taxas.push(['comparecimento', av / ag, 8, 'Ative a confirmação 48 horas antes, o lembrete de 2 horas e agende o retorno antes de o paciente sair.']);
-    if (pl >= 5) taxas.push(['aceitação do plano', ini / pl, 7, 'Entregue o plano por escrito, com o objetivo do paciente, as fases e uma data para decidir, e acompanhe em 2, 7 e 15 dias.']);
+    if (n >= 5) taxas.push(['agendamento', ag / n, 7, 'Responda em até 5 minutos, ofereça dois horários e faça as retomadas de 1, 3 e 7 dias.', ag, n]);
+    if (ag >= 5) taxas.push(['comparecimento', av / ag, 8, 'Ative a confirmação 48 horas antes, o lembrete de 2 horas e agende o retorno antes de o paciente sair.', av, ag]);
+    if (pl >= 5) taxas.push(['aceitação do plano', ini / pl, 7, 'Entregue o plano por escrito, com o objetivo do paciente, as fases e uma data para decidir, e acompanhe em 2, 7 e 15 dias.', ini, pl]);
     let ajuste;
-    if (n < 5) ajuste = '<p><b>Ainda há poucos dados.</b> Com pelo menos 5 contatos no Rastreador, o placar aponta o gargalo. Enquanto isso, mantenha a rotina de conteúdo.</p>';
-    else if (!taxas.length) ajuste = '<p>Continue registrando: com mais agendamentos e planos, o placar compara as taxas e mostra o gargalo.</p>';
+    if (n < 5) ajuste = `<p><b>Poucos registros para analisar:</b> ${n} contato(s) ${periodo}. Com tão poucos, qualquer taxa engana: por enquanto, o placar só descreve. Com 5 contatos ou mais, ele compara as taxas.</p>`;
+    else if (!taxas.length) ajuste = '<p>Ainda não há agendamentos ou planos suficientes (5 ou mais) para comparar as taxas. Continue registrando cada mudança de etapa.</p>';
     else {
       taxas.sort((a, b) => a[1] - b[1]);
       const g = taxas[0];
-      ajuste = `<p><b>Seu gargalo hoje: ${escapeHtml(g[0])}.</b> É a menor das taxas que já dá para medir. ${escapeHtml(g[3])}</p><button type="button" class="btn btn-outline btn-sm" data-abrir="${g[2] === 8 ? 'rastreador' : 'atendimento'}">Ir ao passo ${g[2]}</button>`;
+      ajuste = `<p><b>Gargalo provável: ${escapeHtml(g[0])}</b>, ${Math.round(g[1] * 100)}% (${g[4]} de ${g[5]}) ${periodo}. É a menor das taxas que já dá para medir${g[5] < 10 ? ', mas com menos de 10 na base: trate como pista' : ''}. ${escapeHtml(g[3])}</p><button type="button" class="btn btn-outline btn-sm" data-abrir="${g[2] === 8 ? 'rastreador' : 'atendimento'}">Ir ao passo ${g[2]}</button>`;
     }
     box.innerHTML = `<h4 class="passo-sub">O placar</h4><div class="placar">${linhas.map(([a, b, c], i) => `<div class="pl-c"><small>${a}</small><b>${b}</b><span>${c}</span></div>${i < linhas.length - 1 ? '<span class="pl-seta" aria-hidden="true">→</span>' : ''}`).join('')}</div>
       <div class="jor-ajuste">${ajuste}</div>
-      <p class="jor-sub">A cada 90 dias, revise o objetivo no <button type="button" class="linkish" data-abrir="config">passo 1</button> e, se mudou o que você entrega, a proposta no <button type="button" class="linkish" data-abrir="oceano">passo 3</button>.</p>`;
+      <p class="jor-sub">Quando os números de algumas semanas mostrarem que a porta do preço continua trazendo mais gente que a da confiança, ou que os pacientes não reconhecem a diferença anunciada, revise a estratégia no <button type="button" class="linkish" data-abrir="oceano">passo 3</button>. Com poucos dados, não mude a estratégia: registre mais.</p>`;
   }
 
   // --- Desenho do caminho ---
   function renderPasso(n) {
-    if (n === 4) { arrumarRedes(); }
+    if (!n) return;
+    renderTarefa(n); renderEntrega(n);
+    if (n === 3) { renderOaEtapas(); renderAprovacao(); }
+    if (n === 4) arrumarRedes();
     if (n === 7) renderWa();
     if (n === 9) renderPlacar();
   }
@@ -7289,44 +7975,60 @@ Entregue:
     if (!camOk) return;
     const st = camSt();
     const prox = proximoPasso(st);
-    let feitos = 0;
+    let prontos = 0;
+    const est = {};
     PASSOS.forEach((p) => {
       const el = passoEl(p.n);
-      const ok = passoFeito(p.n, st);
-      if (ok) feitos++;
-      el.classList.toggle('feito', ok);
+      const e = estadoPasso(p.n, st); est[p.n] = e;
+      if (e === 'pronto' && p.n <= 8) prontos++;
+      ['pronto', 'andamento', 'revisar', 'semana-ok', 'semana-pend'].forEach((c) => el.classList.toggle(c, e === c));
+      el.classList.toggle('feito', e === 'pronto' || e === 'semana-ok');
       el.classList.toggle('atual', p.n === prox);
-      el.querySelector('.passo-n').textContent = ok ? '✓' : String(p.n);
-      el.querySelector('.passo-st').textContent = ok ? 'Feito' : (p.n === prox ? 'Agora' : '');
+      el.querySelector('.passo-n').textContent = (e === 'pronto' || e === 'semana-ok') ? '✓' : (e === 'revisar' ? '!' : String(p.n));
+      el.querySelector('.passo-st').textContent = ESTADO_ROT[e] || (p.n === prox ? 'Agora' : '');
       const rs = el.querySelector('.passo-resumo');
-      const resumo = ok ? resumoPasso(p.n) : '';
+      const resumo = e !== 'novo' || p.n === 9 ? resumoPasso(p.n) : '';
       rs.textContent = resumo || rs.dataset.vazio;
       const bt = el.querySelector('.js-passo-ok');
-      const ultimo = p.n === PASSOS.length;
-      if (ok) bt.textContent = ultimo ? 'Fechar' : (prox && prox !== p.n ? `Salvar e ir ao passo ${prox}` : 'Salvar e fechar');
-      else bt.textContent = ultimo ? 'Fiz o ritual desta semana' : `Concluir e seguir para o passo ${p.n + 1}`;
+      if (p.n === 9) bt.textContent = st.ritual[mondayISO()] ? 'Ritual desta semana feito ✓' : 'Fiz o ritual desta semana';
+      else if (p.n === 3) bt.textContent = estrategia().status === 'aprovada' ? 'Seguir para o passo 4' : 'Seguir com a hipótese para o passo 4';
+      else if (p.n <= 2) bt.textContent = `Salvar e seguir para o passo ${p.n + 1}`;
+      else bt.textContent = e === 'pronto' ? `Seguir para o passo ${p.n + 1}` : `Seguir para o passo ${p.n + 1} (o que falta fica pendente)`;
     });
-    // movimentos no topo
+    // Os três atos no topo
     document.querySelectorAll('#hero-movs li').forEach((li) => {
       const m = Number(li.dataset.mov); const ns = [m * 3 - 2, m * 3 - 1, m * 3];
-      const f = ns.filter((n) => passoFeito(n, st)).length;
-      li.classList.toggle('ok', f === 3); li.classList.toggle('cur', prox && ns.indexOf(prox) >= 0);
+      const f = ns.filter((n) => est[n] === 'pronto' || est[n] === 'semana-ok').length;
+      li.classList.toggle('ok', f === 3); li.classList.toggle('cur', ns.indexOf(prox) >= 0);
       li.querySelector('.hm-st').textContent = `${f} de 3`;
     });
     const cta = document.getElementById('hero-cta');
-    if (feitos === 0) { cta.textContent = 'Começar pelo passo 1'; cta.dataset.passo = '1'; }
-    else if (prox) { cta.textContent = `Continuar: passo ${prox} · ${PASSOS[prox - 1].titulo}`; cta.dataset.passo = String(prox); }
-    else { cta.textContent = 'Fazer o ritual da semana'; cta.dataset.passo = '9'; }
-    // cartão do caminho no painel Hoje
+    const nada = PASSOS.every((p) => est[p.n] === 'novo' || p.n === 9) && st.avanco === 1;
+    if (nada) { cta.textContent = 'Construir minha diferenciação'; cta.dataset.passo = '1'; }
+    else { cta.textContent = `Continuar: passo ${prox} · ${PASSOS[prox - 1].titulo}`; cta.dataset.passo = String(prox); }
+    document.getElementById('hero-nota').hidden = !nada;
+    // Painel Hoje
     const hoje = document.getElementById('hoje');
-    hoje.hidden = !passoFeito(1, st);
-    document.getElementById('cm-prog-t').textContent = `Seu caminho · ${feitos} de ${PASSOS.length} passos`;
-    document.getElementById('cm-prog-bar').style.width = Math.round(feitos / PASSOS.length * 100) + '%';
+    hoje.hidden = est[1] !== 'pronto';
+    const e = estrategia();
+    document.getElementById('cm-prop').innerHTML = e.proposta ? `<span class="dif-badge ${e.status}">${EST_ROTULO[e.status]}</span>${e.temEvidencia ? '' : ' <span class="dif-badge hipotese">Sem evidência</span>'} “${escapeHtml(trim(e.proposta, 140))}”` : 'Ainda não definida. <button type="button" class="linkish" data-abrir="oceano">Construir no passo 3</button>';
+    document.getElementById('cm-prog-t').textContent = `Seu caminho · ${prontos} de 8 passos prontos`;
+    const mt = document.getElementById('cm-meter'); mt.setAttribute('aria-valuenow', String(prontos)); mt.setAttribute('aria-valuetext', `${prontos} de 8 passos prontos`);
+    document.getElementById('cm-prog-bar').style.width = Math.round(prontos / 8 * 100) + '%';
     const onde = document.getElementById('cm-onde'); const acao = document.getElementById('cm-acao'); const cont = document.getElementById('cm-continuar');
-    if (prox) { onde.textContent = `Próximo · passo ${prox} de ${PASSOS.length}`; acao.textContent = PASSOS[prox - 1].titulo; cont.textContent = 'Continuar'; cont.dataset.passo = String(prox); }
-    else { onde.textContent = 'Caminho completo'; acao.textContent = 'Agora o ciclo é o ritual da semana: placar, gargalo e agenda.'; cont.textContent = 'Abrir o ritual'; cont.dataset.passo = '9'; }
-    const ab = st.aberto;
-    if (ab) renderPasso(ab);
+    onde.textContent = prox === 9 && st.avanco > 8 ? 'Agora, toda semana' : `Próximo · passo ${prox} de 9`;
+    acao.textContent = PASSOS[prox - 1].titulo; cont.dataset.passo = String(prox);
+    const pend = pendentesAntes(st);
+    document.getElementById('cm-pend').innerHTML = pend.length ? `<li class="hj-pend-t">Pendente em passos anteriores:</li>${pend.map((n) => `<li><button type="button" class="linkish" data-passo-abrir="${n}">Passo ${n} · ${escapeHtml(PASSOS[n - 1].titulo)}</button> <small>${ESTADO_ROT[est[n]] || 'não iniciado'}</small></li>`).join('')}` : '';
+    document.getElementById('hj-ritual').textContent = st.ritual[mondayISO()] ? `Ritual desta semana feito em ${fmtDate(st.ritual[mondayISO()])}.` : `Ritual da semana de ${fmtShort(mondayISO())}: pendente.`;
+    const rev = entregasRevisar();
+    const rv = document.getElementById('hj-revisar');
+    rv.hidden = !rev.length && e.status !== 'revisar';
+    rv.innerHTML = `<p><b>A sua estratégia mudou.</b> Estas entregas foram aprovadas com a versão anterior e precisam de revisão (as versões antigas ficam guardadas):</p><ul>${e.status === 'revisar' ? '<li><button type="button" class="linkish" data-abrir="oceano">Proposta de valor: aprovar de novo (passo 3)</button></li>' : ''}${rev.map((id) => `<li><button type="button" class="linkish" data-abrir="${id}">${escapeHtml(EST_DEPENDENTES[id][0])}${EST_DEPENDENTES[id][1] ? ' (passo ' + EST_DEPENDENTES[id][1] + ')' : ''}</button></li>`).join('')}</ul>`;
+    renderFaixasDif();
+    // A versão aprovada de cada entrega mostra na hora se a estratégia mudou depois dela.
+    document.querySelectorAll('.saved-slot').forEach((sl) => { if (sl.querySelector('textarea')) renderSavedSlot(sl); });
+    if (st.aberto) renderPasso(st.aberto);
   }
 
   // --- Eventos ---
@@ -7334,17 +8036,8 @@ Entregue:
     const n = Number(bt.closest('.passo').dataset.passo);
     if (bt.getAttribute('aria-expanded') === 'true') fecharPassos(); else abrirPasso(n);
   }));
-  document.querySelectorAll('.js-passo-ok').forEach((bt) => bt.addEventListener('click', () => {
-    const n = Number(bt.closest('.passo').dataset.passo);
-    if (passoFeito(n)) {
-      const prox = proximoPasso();
-      if (prox && prox !== n) abrirPasso(prox); else { fecharPassos(); passoEl(n).scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-      renderCaminho();
-      return;
-    }
-    concluirPasso(n);
-  }));
-  const abrirPorPasso = (e) => { e.preventDefault(); abrirPasso(Number(e.currentTarget.dataset.passo || 1)); };
+  document.querySelectorAll('.js-passo-ok').forEach((bt) => bt.addEventListener('click', () => seguirPasso(Number(bt.closest('.passo').dataset.passo))));
+  const abrirPorPasso = (e) => { e.preventDefault(); abrirPasso(Number(e.currentTarget.dataset.passo || 1), { foco: true }); };
   document.getElementById('hero-cta').addEventListener('click', abrirPorPasso);
   document.getElementById('cm-continuar').addEventListener('click', abrirPorPasso);
   document.getElementById('usar-rascunho').addEventListener('click', () => {
@@ -7356,14 +8049,25 @@ Entregue:
     f.focus();
   });
   document.addEventListener('click', (e) => {
-    const a = e.target.closest('[data-abrir],[data-copiar]');
+    const a = e.target.closest('[data-abrir],[data-copiar],[data-oa-etapa],[data-passo-abrir]');
     if (a && a.dataset.abrir) { openTool(a.dataset.abrir); return; }
     if (a && a.dataset.copiar) { copyText(a.dataset.copiar, a); return; }
+    if (a && a.dataset.oaEtapa) {
+      const k = Number(a.dataset.oaEtapa);
+      if (passoEl(3).querySelector('.passo-corpo').hidden) abrirPasso(3, { scroll: false });
+      oaIr(k);
+      const alvo = document.getElementById('oa-nav');
+      if (alvo) { alvo.scrollIntoView({ behavior: 'smooth', block: 'start' }); const t = document.getElementById('oa-nav-t'); t.tabIndex = -1; t.focus({ preventScroll: true }); }
+      return;
+    }
+    if (a && a.dataset.passoAbrir) { abrirPasso(Number(a.dataset.passoAbrir), { foco: true }); return; }
     // Links internos para algo dentro de um passo fechado: abre o passo antes de rolar.
     const l = e.target.closest('a[href^="#"]');
     if (!l) return;
     const id = l.getAttribute('href').slice(1);
     const alvo = id && document.getElementById(id);
+    const mais = l.closest('.nav-mais'); if (mais) mais.open = false;
+    if (id === 'hoje' && alvo && alvo.hidden) { e.preventDefault(); abrirPasso(proximoPasso(), { foco: true }); return; }
     if (!alvo) return;
     const p = alvo.closest('.passo');
     if (p && !alvo.classList.contains('passo')) {
@@ -7371,43 +8075,133 @@ Entregue:
       if (alvo.matches('details')) alvo.open = true;
       abrirPasso(Number(p.dataset.passo), { alvo });
     } else if (alvo.matches('details.tool, details.settings')) { e.preventDefault(); alvo.open = true; alvo.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-    else if (alvo.classList.contains('passo')) { e.preventDefault(); abrirPasso(Number(alvo.dataset.passo)); }
+    else if (alvo.classList.contains('passo')) { e.preventDefault(); abrirPasso(Number(alvo.dataset.passo), { foco: true }); }
   });
   document.addEventListener('change', (e) => {
     const w = e.target.closest && e.target.closest('[data-wa]');
     if (w) { waSet(w.dataset.wa, w.checked); renderWa(); renderCaminho(); return; }
     if (e.target.name === 'canais') arrumarRedes();
   });
-  // Os campos do perfil mudam os resumos e o que está feito.
+  // Campos do perfil e do Oceano Azul mudam resumos, estados e as faixas de diferença.
   let camTimer = null;
   document.addEventListener('input', (e) => {
-    if (!(e.target.closest && e.target.closest('.cfg-campos'))) return;
-    clearTimeout(camTimer); camTimer = setTimeout(() => { renderCaminho(); if (e.target.id === 'cfg-whatsapp') renderWa(); }, 300);
+    if (e.target.getAttribute && e.target.getAttribute('aria-invalid') === 'true') { e.target.removeAttribute('aria-invalid'); e.target.classList.remove('invalid'); }
+    if (!(e.target.closest && (e.target.closest('.cfg-campos') || e.target.closest('#oa-form') || e.target.closest('.rede-form')))) return;
+    clearTimeout(camTimer); camTimer = setTimeout(() => { renderCaminho(); if (e.target.id === 'cfg-whatsapp') renderWa(); }, 350);
   });
+  document.addEventListener('cliniloop:dados', () => renderCaminho());
 
-  // --- Índice da caixa de ferramentas ---
-  (function caixaIndice() {
-    const box = document.getElementById('caixa-indice');
-    const ordem = ['config', 'publico', 'oceano', 'perfil', 'pautas', 'roteiro', 'colegas', 'campanha', 'atendimento', 'rastreador', 'assistente', 'painel', 'etica', 'briefing', 'nicho', 'profissional', 'reaproveitamento', 'formacao', 'ferramentas', 'ebook'];
-    box.innerHTML = ordem.filter((id) => id === 'config' || document.querySelector(`.tool[data-id="${id}"]`)).map((id) => {
-      const n = TOOL_PASSO[id];
-      return `<button type="button" class="ci-b${n ? '' : ' ci-aqui'}" data-abrir="${id}"><span>${escapeHtml(TOOL_NAMES[id] || id)}</span><small>${n ? 'passo ' + n : 'aqui embaixo'}</small></button>`;
-    }).join('');
-  })();
-
-  // --- Início: abre o passo em que a pessoa parou (ou o primeiro que falta) ---
+  // --- Início: abre o passo em que a pessoa parou (ou o próximo que falta) ---
+  // Nas ferramentas que são o próprio passo, a explicação longa vai para "Entender este passo" e a faixa do guia, para o fim.
+  function moverExplicacoes() {
+    // Na etapa 7 do Oceano Azul, a frase final e a aprovação ficam logo depois do rascunho; a análise da IA vem depois, opcional.
+    const oa = document.getElementById('oa-form');
+    const f7 = oa && oa.querySelectorAll(':scope > fieldset.oa-step')[6];
+    const pf = document.querySelector('#passo-3 .proposta-final'); const ap = document.getElementById('est-aprovacao');
+    if (f7 && pf && ap) { f7.after(pf); pf.after(ap); }
+    const bt = oa && oa.querySelector(':scope > .form-actions button[type="submit"]');
+    if (bt) { bt.textContent = 'Pedir a análise da IA (opcional)'; const n = document.createElement('p'); n.className = 'oa-ia-nota'; n.textContent = 'A IA confere a sua estratégia, diz se ela é um espaço novo ou uma diferenciação dentro do mercado que já existe, aponta riscos e monta um plano de 12 semanas. Ela não valida a estratégia por você.'; bt.parentNode.before(n); }
+    document.querySelectorAll('.passo .tool.in-solo > .tool-body').forEach((body) => {
+      const ent = body.closest('.passo').querySelector('.entender-corpo');
+      if (!ent) return;
+      const d = body.querySelector(':scope > p.desc'); if (d) ent.insertBefore(d, ent.querySelector('.entender-guia'));
+      const g = body.querySelector(':scope > .livro-strip'); if (g) body.appendChild(g);
+    });
+  }
   (function initCaminho() {
     camOk = true;
+    moverExplicacoes();
     const st = camSt();
     renderCaminho();
-    const prox = proximoPasso(st);
-    const n = st.aberto === 0 ? 0 : (st.aberto || prox || 0);
+    const n = st.aberto === 0 ? 0 : (st.aberto || proximoPasso(st));
     if (n) abrirPasso(n, { scroll: false });
     if (location.hash && location.hash.length > 1) {
       const alvo = document.getElementById(location.hash.slice(1));
       const p = alvo && alvo.closest('.passo');
       if (p) abrirPasso(Number(p.dataset.passo), { alvo: alvo.classList.contains('passo') ? null : alvo });
     }
+    notifyData();
+  })();
+
+  // ===================== Biblioteca de ferramentas =====================
+  // A cesta completa, organizada por objetivo, com busca. Cada ferramenta diz para que serve, o que recebe,
+  // o que entrega e o que vem depois. Não é um segundo catálogo: cada cartão abre a ferramenta onde ela mora.
+  const BIB_GRUPOS = [
+    ['Diferenciação e posicionamento', 'O eixo de tudo: o que só você oferece, e para quem.'],
+    ['Presença digital', 'Cada perfil respondendo quem é você, quem você ajuda e como marcar.'],
+    ['Conteúdo e comunicação', 'Peças que mostram o que você decidiu elevar e criar.'],
+    ['Colegas e aquisição', 'Indicação e anúncios que amplificam a diferença, sem prometer resultado.'],
+    ['Atendimento e relacionamento', 'A conversa que sustenta o que você anuncia.'],
+    ['Gestão e evolução', 'Números com ressalvas, a rotina da semana e a revisão da estratégia.'],
+    ['Apoios', 'Ética, terceiros, ferramentas externas, o guia e os seus dados.']
+  ];
+  // [id, grupo, para que serve, recebe, entrega, depois]
+  const BIB = [
+    ['config', 0, 'Carregar as regras do seu conselho e o seu objetivo em todos os prompts.', 'Profissão, registro, especialidade, cidade, serviços e objetivo.', 'O contexto que nenhuma ferramenta pede de novo.', 'Seu paciente ideal'],
+    ['publico', 0, 'Saber quem você mais ajuda e quem não é o seu paciente.', 'Quem você atende hoje e as dúvidas que mais ouve.', 'ICP e persona do paciente, para revisar e aprovar.', 'Estratégia Oceano Azul'],
+    ['oceano', 0, 'Sair da disputa pelo preço com uma diferença que um colega não poderia assinar.', 'Fatores do mercado, o que os pacientes dizem, quem não procura e as quatro ações.', 'Proposta de valor, marcada como hipótese ou aprovada, e o que falta validar.', 'Perfis, uma rede por vez'],
+    ['nicho', 0, 'Aprofundar o nicho e olhar a concorrência local.', 'Formações, métodos e serviços.', 'Análise de nicho e uma frase para comparar com o Oceano Azul.', 'Aprovar a proposta no passo 3'],
+    ['profissional', 0, 'Definir o seu tom de voz, a sua história e os seus limites.', 'A sua trajetória e os seus valores.', 'Marca e tom de voz, para revisar e aprovar.', 'Roteiros e copy'],
+    ['formacao', 0, 'Mostrar títulos e eventos dentro das regras do conselho.', 'Formação, área e eventos dos próximos meses.', 'Plano de formação e como comunicar cada título.', 'Perfis (LinkedIn)'],
+    ['perfil', 1, 'Fazer cada rede mostrar a sua diferença e dizer como marcar.', 'O texto de hoje de cada rede, parte por parte.', 'Textos revisados por rede e o checklist de configuração.', 'Pautas e palavras-chave'],
+    ['pautas', 2, 'Transformar as dúvidas reais dos pacientes num calendário.', 'Banco de dúvidas, formatos e datas.', 'Palavras-chave, 30 pautas e o calendário de 4 semanas.', 'Roteiros e copy'],
+    ['roteiro', 2, 'Escrever a peça com a sua voz e a sua diferença.', 'Uma pauta e o formato (Reel, carrossel, YouTube, LinkedIn).', 'Roteiro com ganchos e versão em blocos para o teleprompter.', 'Verificador ético e Diário de conteúdo'],
+    ['reaproveitamento', 2, 'Fazer uma aula, um podcast ou uma entrevista render várias peças.', 'A transcrição, sem dados de pacientes.', 'Carrossel, guia, Reel e Stories, com pendências de fonte e autoria.', 'Verificador ético'],
+    ['colegas', 3, 'Ter colegas que indicam e recebem os seus pacientes.', 'Colegas que atendem o mesmo paciente antes ou depois de você.', 'Funil de colegas, carta de apresentação e contrarreferência.', 'Gerador de campanhas'],
+    ['campanha', 3, 'Amplificar com anúncio o que já funciona no orgânico.', 'Serviço, meta, prazo e o post que funcionou.', 'Ficha da campanha e as peças, para registrar e medir.', 'Verificador ético e Rastreador'],
+    ['atendimento', 4, 'Fazer a conversa no WhatsApp virar consulta, sustentando o que você anuncia.', 'As perguntas que mais chegam e quem responde.', 'Respostas rápidas, roteiro de agendamento, confirmação e retomadas.', 'Rastreador de contatos'],
+    ['rastreador', 4, 'Não esquecer nenhum contato e saber de onde cada um veio.', 'Nome, origem e próximo passo com data.', 'Filas de vencidos, de hoje e sem próximo passo, lembretes e planilha.', 'Ritual da semana'],
+    ['painel', 5, 'Ler os números da semana, com período e ressalvas.', 'Conteúdos e contatos registrados.', 'Métricas por semana e uma leitura do gargalo, quando houver dados.', 'Assistente da semana'],
+    ['assistente', 5, 'Organizar os 30 minutos do ritual semanal.', 'Pendências do rastreador, dos colegas e a meta de conteúdo.', 'A agenda da semana em blocos.', 'Marcar o ritual da semana'],
+    ['ebook', 5, 'Juntar tudo num documento para revisar a cada 2 semanas.', 'O que está salvo no app.', 'Playbook da clínica com plano de 90 dias e revisões.', 'Revisar a estratégia quando os dados pedirem'],
+    ['etica', 6, 'Revisar qualquer texto ou anúncio antes de publicar.', 'O texto, a legenda ou o anúncio.', 'Os pontos que conflitam com o seu conselho, a LGPD e as plataformas.', 'Corrigir e publicar'],
+    ['briefing', 6, 'Contratar agência, social media ou editor sem perder a sua diferença.', 'Quem vai produzir e o que você precisa.', 'Briefing com escopo, regras do conselho, aprovação e métricas.', 'Enviar a 2 ou 3 fornecedores'],
+    ['ferramentas', 6, 'Gravar, editar e criar imagens com o que cabe no orçamento.', 'O tipo de peça e o seu orçamento.', 'Kit de gravação, editores, geradores de imagem e o pedido de imagem para a IA.', 'Roteiros e copy'],
+    ['#livro', 6, 'Consultar o guia sem sair do app.', 'Nada: é leitura.', 'Roteiro em seis etapas, plano de 30 dias, biblioteca de prompts e glossário.', 'Voltar ao seu passo'],
+    ['#ajustes', 6, 'Escolher a sua IA, fazer backup e restaurar os seus dados.', 'Sua preferência de IA e o arquivo de backup.', 'Backup conferido, restauração com proteção e o Projeto para o Claude.', 'Voltar ao caminho']
+  ];
+  const BIB_NOME = { '#livro': 'O guia no app', '#ajustes': 'Ajustes e backup' };
+  // Palavras que as pessoas usam para procurar cada ferramenta.
+  const BIB_KW = {
+    config: 'perfil consultorio registro conselho objetivo meta', publico: 'icp persona paciente ideal publico', oceano: 'oceano azul diferenca diferencial proposta de valor posicionamento estrategia',
+    nicho: 'nicho concorrencia diferencial', profissional: 'marca pessoal tom de voz historia', formacao: 'titulos congresso cursos autoridade linkedin',
+    perfil: 'bio instagram google maps ficha linkedin youtube tiktok perfil rede social', pautas: 'pautas calendario palavras-chave seo duvidas', roteiro: 'roteiro reels carrossel video legenda copy texto post',
+    reaproveitamento: 'aula podcast entrevista transcricao reaproveitar', colegas: 'colegas indicacao encaminhamento carta medico', campanha: 'anuncio anuncios impulsionar turbinar meta ads google ads trafego campanha',
+    atendimento: 'whatsapp mensagem resposta agendamento confirmacao falta', rastreador: 'crm contatos pacientes leads funil retorno lembrete', painel: 'metricas numeros gargalo resultado',
+    assistente: 'semana agenda ritual rotina', ebook: 'playbook documento plano 90 dias', etica: 'etica conselho cfm cfo crp coffito cfn lgpd revisar post anuncio',
+    briefing: 'agencia social media terceiros fornecedor contratar', ferramentas: 'canva capcut camera microfone imagem ia editor', '#livro': 'guia livro prompts glossario plano 30 dias', '#ajustes': 'backup restaurar ia chave api projeto claude configuracoes'
+  };
+  function bibOnde(id) {
+    if (id[0] === '#') return 'Nesta página';
+    const n = TOOL_PASSO[id];
+    return n ? `Passo ${n}` : 'Abre logo abaixo';
+  }
+  (function montarBiblioteca() {
+    const box = document.getElementById('biblioteca');
+    if (!box) return;
+    box.innerHTML = BIB_GRUPOS.map(([g, d], gi) => `<section class="bib-grupo" data-g="${gi}" aria-labelledby="bib-g${gi}"><h3 id="bib-g${gi}">${escapeHtml(g)}</h3><p class="bib-gd">${escapeHtml(d)}</p><div class="bib-cards">${BIB.filter((x) => x[1] === gi).map(([id, , serve, recebe, entrega, depois]) => {
+      const nome = BIB_NOME[id] || TOOL_NAMES[id] || id;
+      const busca = normTxt([nome, serve, recebe, entrega, BIB_GRUPOS[gi][0], BIB_KW[id] || ''].join(' '));
+      const abrir = id[0] === '#' ? `<a class="btn btn-outline btn-sm" href="${id}">Abrir</a>` : `<button type="button" class="btn btn-outline btn-sm" data-abrir="${id}">Abrir</button>`;
+      return `<article class="bib-card" data-busca="${escapeHtml(busca)}"><div class="bib-h"><h4>${escapeHtml(nome)}${id === 'oceano' ? ' <span class="bib-eixo">eixo do sistema</span>' : ''}</h4><span class="bib-onde">${bibOnde(id)}</span></div><p class="bib-serve">${escapeHtml(serve)}</p><dl><dt>Recebe</dt><dd>${escapeHtml(recebe)}</dd><dt>Entrega</dt><dd>${escapeHtml(entrega)}</dd><dt>Depois</dt><dd>${escapeHtml(depois)}</dd></dl>${abrir}</article>`;
+    }).join('')}</div></section>`).join('');
+    const q = document.getElementById('bib-q'); const n = document.getElementById('bib-n');
+    const filtra = () => {
+      const t = normTxt(q.value).trim();
+      let vis = 0;
+      box.querySelectorAll('.bib-card').forEach((c) => { const ok = !t || t.split(/\s+/).every((w) => c.dataset.busca.indexOf(w) >= 0); c.hidden = !ok; if (ok) vis++; });
+      box.querySelectorAll('.bib-grupo').forEach((g) => { g.hidden = !g.querySelector('.bib-card:not([hidden])'); });
+      n.textContent = t ? (vis ? `${vis} ferramenta(s) encontrada(s).` : 'Nenhuma ferramenta com esse termo. Tente outra palavra, como "perfil", "anúncio" ou "paciente".') : '';
+    };
+    q.addEventListener('input', filtra);
+  })();
+
+  // Tabelas largas rolam para o lado: precisam ser alcançáveis pelo teclado e ter nome para o leitor de tela.
+  (function tabelasRolaveis() {
+    const marca = () => document.querySelectorAll('.num-wrap:not([tabindex])').forEach((w) => { w.tabIndex = 0; w.setAttribute('role', 'region'); w.setAttribute('aria-label', 'Tabela: role para o lado para ver todas as colunas'); });
+    marca();
+    let t = null;
+    new MutationObserver(() => { clearTimeout(t); t = setTimeout(marca, 50); }).observe(document.body, { childList: true, subtree: true });
   })();
 </script>
 </body>

@@ -74,13 +74,19 @@
 
   // --- Resultados guardados (decisões que alimentam as próximas ferramentas)
   function resultados() { const r = storeGet(RES_KEY, {}); return r && typeof r === 'object' ? r : {}; }
+  // Guarda a versão aprovada. Marca com qual estratégia ela foi feita e mantém as versões anteriores.
   function saveResultado(id, txt) {
     const r = resultados();
-    if (txt && txt.trim()) r[id] = { t: txt.slice(0, 20000), d: todayISO() };
-    else delete r[id];
-    storeSet(RES_KEY, r);
-    if (txt && txt.trim()) markUsed(id, true);
+    const ant = r[id];
+    if (txt && txt.trim()) {
+      const hist = (ant && Array.isArray(ant.hist)) ? ant.hist.slice() : [];
+      if (ant && ant.t && ant.t !== txt) hist.unshift({ t: ant.t, d: ant.d, ev: ant.ev || '' });
+      r[id] = { t: txt.slice(0, 20000), d: todayISO(), ev: typeof estrategia === 'function' ? estrategia().hash : '', hist: hist.slice(0, 5) };
+    } else delete r[id];
+    const ok = storeSet(RES_KEY, r);
+    if (ok && txt && txt.trim()) markUsed(id, true);
     notifyData();
+    return ok;
   }
 
   function planoLinha() {
@@ -101,7 +107,6 @@
     if (cfg.equipe) L.push(`- Equipe: ${cfg.equipe}`);
     if (cfg.servicos) L.push(`- Serviços a divulgar: ${cfg.servicos}`);
     if (cfg.publico) L.push(`- Público ideal: ${cfg.publico}`);
-    if (cfg.transformacao) L.push(`- Proposta de valor: ${cfg.transformacao}`);
     if (cfg.baldes) L.push(`- Temas de conteúdo: ${cfg.baldes}`);
     if ((cfg.canais || []).length) L.push(`- Canais que uso: ${cfg.canais.join(', ')}${cfg.arroba ? ' (' + cfg.arroba + ')' : ''}`);
     L.push(`- Objetivo dos próximos 90 dias: ${o.label}${cfg.metaFrase ? ' — ' + cfg.metaFrase : ''}`);
@@ -131,7 +136,7 @@
 ---
 Contexto do meu consultório (considere em toda a resposta):
 ${L.join('\n')}
-- Orientação para o meu objetivo: ${o.guia}
+- Orientação para o meu objetivo: ${o.guia}${typeof estrategiaBloco === 'function' ? estrategiaBloco(selfId) : ''}
 ${dec.length ? `\nDecisões que já tomei (use como base, sem repetir):\n${dec.join('\n\n')}\n` : ''}
 Regras que você deve seguir:
 ${R.join('\n')}${planoLinha()}

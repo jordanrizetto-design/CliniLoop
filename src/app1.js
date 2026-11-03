@@ -44,6 +44,8 @@
   };
 
   // Etapas do Rastreador de pacientes (funil de sete etapas)
+  // Origem que a pessoa marcou explicitamente como desconhecida (nunca é escolhida pelo app).
+  const ORIGEM_NI = 'Não informada';
   const ETAPAS = ['Novo', 'Em conversa', 'Agendado', 'Avaliado', 'Plano proposto', 'Em tratamento', 'Encerrado'];
   const RESULTADOS = ['Alta e vínculo', 'Perdido', 'Pausado'];
   // Funil dos colegas do guia (Parte 13). Parceiro ativo = indicou nos últimos 90 dias.
@@ -383,11 +385,43 @@
   };
 
   // --- Utilidades
+  // Leitura e gravação no navegador. Nunca anuncia sucesso sem confirmação: falha de leitura é diferente de "não há dados",
+  // e falha de gravação (armazenamento bloqueado, cota cheia) aparece num aviso no topo da página.
+  var storeErros = { leitura: [], gravacao: [] };
+  function avisoDados() {
+    const box = document.getElementById('aviso-dados');
+    if (!box) return;
+    const L = [];
+    if (storeErros.gravacao.length) L.push('<b>Não consegui salvar neste navegador.</b> O armazenamento pode estar bloqueado (janela anônima, configuração de privacidade) ou cheio. O que você fizer agora pode se perder ao fechar a página: faça um backup em Ajustes assim que possível.');
+    if (storeErros.leitura.length) L.push('<b>Não consegui ler parte dos dados salvos.</b> Nada foi apagado: guardei uma cópia do conteúdo original e continuei sem ele. Se algo sumiu, restaure o seu último backup em Ajustes.');
+    box.innerHTML = L.map((x) => `<p>${x}</p>`).join('');
+    box.hidden = !L.length;
+  }
   function storeGet(key, fallback) {
-    try { const raw = window.localStorage.getItem(key); return raw ? JSON.parse(raw) : fallback; } catch (e) { return fallback; }
+    let raw;
+    try { raw = window.localStorage.getItem(key); } catch (e) {
+      if (storeErros.leitura.indexOf(key) < 0) { storeErros.leitura.push(key); setTimeout(avisoDados, 0); }
+      return fallback;
+    }
+    if (!raw) return fallback;
+    try { return JSON.parse(raw); } catch (e) {
+      // Conteúdo ilegível: preserva o original antes que qualquer gravação o substitua.
+      try { if (!window.localStorage.getItem(key + '.ilegivel')) window.localStorage.setItem(key + '.ilegivel', raw); } catch (e2) { /* sem espaço para a cópia */ }
+      if (storeErros.leitura.indexOf(key) < 0) { storeErros.leitura.push(key); setTimeout(avisoDados, 0); }
+      return fallback;
+    }
   }
   function storeSet(key, value) {
-    try { window.localStorage.setItem(key, JSON.stringify(value)); return true; } catch (e) { return false; }
+    try {
+      window.localStorage.setItem(key, JSON.stringify(value));
+      const i = storeErros.gravacao.indexOf(key);
+      if (i >= 0) { storeErros.gravacao.splice(i, 1); setTimeout(avisoDados, 0); }
+      return true;
+    } catch (e) {
+      if (storeErros.gravacao.indexOf(key) < 0) storeErros.gravacao.push(key);
+      setTimeout(avisoDados, 0);
+      return false;
+    }
   }
   function storeDel(key) { try { window.localStorage.removeItem(key); } catch (e) { /* noop */ } }
   function appKeys(incluirChave) {
@@ -418,18 +452,33 @@
     document.body.appendChild(a); a.click(); a.remove();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
-  function copyText(txt, btn) {
-    const original = btn.textContent;
-    const done = () => { btn.textContent = 'Copiado ✓'; setTimeout(() => { btn.textContent = original; }, 1800); };
+  // Copiar: só diz "Copiado" quando a cópia foi confirmada. Se falhar, seleciona o texto e orienta a cópia manual.
+  function copyText(txt, btn, alvo) {
+    const original = btn.dataset.rotulo || btn.textContent;
+    btn.dataset.rotulo = original;
+    const ok = () => { btn.textContent = 'Copiado ✓'; btn.classList.remove('copia-falhou'); setTimeout(() => { btn.textContent = original; }, 1800); copiaAviso(btn, ''); };
+    const falhou = () => {
+      btn.textContent = original; btn.classList.add('copia-falhou');
+      if (alvo && alvo.select) { alvo.focus(); alvo.select(); }
+      copiaAviso(btn, alvo ? 'Não consegui copiar sozinho. O texto já está selecionado: use Ctrl+C (no celular, toque e segure e escolha Copiar).' : 'Não consegui copiar sozinho. Selecione o texto e use Ctrl+C (no celular, toque e segure e escolha Copiar).');
+    };
     if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(txt).then(done).catch(() => fallbackCopyText(txt, done));
-    } else fallbackCopyText(txt, done);
+      navigator.clipboard.writeText(txt).then(ok).catch(() => (fallbackCopyText(txt) ? ok() : falhou()));
+    } else if (fallbackCopyText(txt)) ok(); else falhou();
   }
-  function fallbackCopyText(txt, done) {
+  function copiaAviso(btn, msg) {
+    let p = btn.parentNode.querySelector(':scope > .copia-aviso');
+    if (!msg) { if (p) p.remove(); return; }
+    if (!p) { p = document.createElement('p'); p.className = 'copia-aviso'; p.setAttribute('role', 'alert'); btn.parentNode.appendChild(p); }
+    p.textContent = msg;
+  }
+  function fallbackCopyText(txt) {
     const ta = document.createElement('textarea');
     ta.value = txt; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
     document.body.appendChild(ta); ta.select();
-    try { document.execCommand('copy'); } catch (e) { /* noop */ }
-    ta.remove(); done();
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    ta.remove();
+    return !!ok;
   }
   function notifyData() { document.dispatchEvent(new Event('cliniloop:dados')); }

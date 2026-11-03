@@ -1,11 +1,17 @@
   <section class="alt" id="caixa">
     <div class="wrap">
-      <p class="eyebrow">Caixa de ferramentas</p>
+      <p class="eyebrow">Ferramentas</p>
       <div class="lead-block">
-        <h2>As 19 ferramentas, num lugar só.</h2>
-        <p>As que fazem parte do caminho abrem no passo delas. As outras ficam aqui, para quando você precisar: revisar um post antes de publicar, contratar alguém, aprofundar o nicho ou reaproveitar uma aula.</p>
+        <h2>Todas as ferramentas, organizadas pelo que você quer fazer.</h2>
+        <p>As que fazem parte do caminho abrem no passo delas, com o seu perfil e a sua diferença já carregados. As outras abrem aqui mesmo, logo abaixo da lista.</p>
       </div>
-      <div class="caixa-indice" id="caixa-indice"></div>
+      <div class="bib-busca">
+        <label for="bib-q">Buscar ferramenta pelo nome ou pelo objetivo</label>
+        <input type="search" id="bib-q" placeholder="Ex: bio, anúncio, colega, WhatsApp, ética" autocomplete="off" aria-describedby="bib-n">
+        <p class="save-status" id="bib-n" aria-live="polite"></p>
+      </div>
+      <div class="biblioteca" id="biblioteca"></div>
+      <h3 class="bib-aqui-t" id="ferramentas-aqui">Ferramentas que abrem nesta página</h3>
       <div id="tools-list">
         <details class="tool na-caixa" data-id="etica" id="etica">
           <summary>

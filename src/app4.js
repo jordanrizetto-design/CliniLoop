@@ -64,7 +64,7 @@
   function camposFaltando() {
     const P = [['prof', 'profissional', 'o tipo de profissional'], ['cfg-registro', 'registro', 'o registro no conselho'],
       ['cfg-espec', 'especialidade', 'a especialidade'], ['cfg-cidade', 'cidade', 'cidade e bairro'], ['cfg-servicos', 'servicos', 'os serviços que quer divulgar'],
-      ['cfg-sobre', 'sobre', 'formação e diferenciais'], ['cfg-meta', 'metaFrase', 'o resultado que você quer (objetivo)']];
+      ['cfg-meta', 'metaFrase', 'o resultado que você quer (objetivo)']];
     return P.filter((x) => !String(cfg[x[1]] || '').trim()).map((x) => ({ id: x[0], txt: x[2] }));
   }
 
@@ -73,17 +73,18 @@
   function renderHoje() {
     document.getElementById('hoje-data').textContent = new Date().toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' });
     const hoje = todayISO();
-    const atr = pacientes.filter(isLate).map((p) => ({ t: `${p.nome}${p.passo ? ' · ' + p.passo : ''} — ${fmtShort(p.data)}`, d: p.data }))
+    // Contatos: as três filas do dia a dia. Cada número abre o Rastreador já filtrado.
+    const nf = (k) => pacientes.filter(FILAS[k][1]).length;
+    document.getElementById('hj-filas').innerHTML = Object.keys(FILAS).map((k) => `<button type="button" class="hj-fila${k === 'vencidos' && nf(k) ? ' late' : ''}" data-fila="${k}"><b>${nf(k)}</b><span>${FILAS[k][0]}</span></button>`).join('');
+    document.querySelectorAll('#hj-filas [data-fila]').forEach((b) => b.addEventListener('click', () => { openTool('rastreador'); abrirFila(b.dataset.fila); }));
+    const atr = pacientes.filter((p) => FILAS.vencidos[1](p) || FILAS.hoje[1](p)).map((p) => ({ t: `${p.nome}${p.passo ? ' · ' + p.passo : ''} — ${p.data === hoje ? 'hoje' : fmtShort(p.data)}`, d: p.data }))
       .concat(colegas.filter((c) => c.prox && c.prox <= hoje).map((c) => ({ t: `Colega: ${c.nome} — ${fmtShort(c.prox)}`, d: c.prox })))
       .sort((a, b) => a.d.localeCompare(b.d));
-    const nEl = document.getElementById('hj-atr-n');
-    nEl.textContent = String(atr.length);
-    nEl.classList.toggle('late', atr.length > 0);
     const ul = document.getElementById('hj-atr-list');
     ul.innerHTML = '';
     const li = (txt, vazio) => { const el = document.createElement('li'); el.textContent = txt; if (vazio) el.className = 'vazio'; ul.appendChild(el); };
-    if (!pacientes.length && !colegas.length) li('Registre cada novo contato no Rastreador, com próximo passo e data.', true);
-    else if (!atr.length) li('Nenhum próximo passo vencido. Ótimo.', true);
+    if (!pacientes.length && !colegas.length) li('Ainda não há contatos registrados. Registre cada nova mensagem ou ligação, com a origem.', true);
+    else if (!atr.length) li('Nada vencido nem para hoje.', true);
     atr.slice(0, 3).forEach((x) => li(x.t));
     if (atr.length > 3) li(`e mais ${atr.length - 3}`);
 
@@ -113,7 +114,6 @@
     } else bk.hidden = true;
     if (typeof renderExtras === 'function') renderExtras();
   }
-  document.getElementById('hj-rastreador').addEventListener('click', () => openTool('rastreador'));
   document.getElementById('hj-conteudo').addEventListener('click', () => openAnchor('painel', 'ct-form'));
   document.getElementById('hj-contato').addEventListener('click', () => openAnchor('rastreador', 'tracker-form'));
   document.getElementById('hj-meta-n').addEventListener('change', (e) => {
@@ -341,12 +341,26 @@
   });
 
   // ===================== Backup, restauração e limpeza =====================
+  // Quantos registros um conjunto de dados traz, para conferir backup e restauração.
+  function resumoDados(dados) {
+    const n = (k) => { try { const v = JSON.parse(dados[k] || '[]'); return Array.isArray(v) ? v.length : 0; } catch (e) { return -1; } };
+    const r = (() => { try { return Object.keys(JSON.parse(dados[RES_KEY] || '{}')).length; } catch (e) { return -1; } })();
+    return { contatos: n(PAC_KEY), colegas: n(COL_KEY), campanhas: n(CAMP_KEY), conteudos: n(CONT_KEY), decisoes: r, perfil: !!dados[STORE_KEY] };
+  }
+  const resumoTxt = (x) => `${x.contatos} contato(s), ${x.colegas} colega(s), ${x.campanhas} campanha(s), ${x.conteudos} conteúdo(s), ${x.decisoes} versão(ões) aprovada(s)${x.perfil ? ' e o perfil do consultório' : ''}`;
   function fazerBackup() {
-    storeSet(BACKUP_KEY, todayISO());
+    const status = document.getElementById('bk-status');
     const dados = {};
-    appKeys(false).forEach((k) => { try { dados[k] = window.localStorage.getItem(k); } catch (e) { /* noop */ } });
-    download(`cliniloop-backup-${todayISO()}.json`, JSON.stringify({ app: APP_ID, versao: 1, criadoEm: new Date().toISOString(), dados }, null, 2), 'application/json');
-    document.getElementById('bk-status').textContent = `Backup feito em ${fmtDate(todayISO())}. O arquivo contém nomes e telefones de pacientes: guarde em local seguro e não envie por mensagem.`;
+    let falhas = 0;
+    appKeys(false).filter((k) => !/\.ilegivel$/.test(k)).forEach((k) => { try { dados[k] = window.localStorage.getItem(k); } catch (e) { falhas++; } });
+    const texto = JSON.stringify({ app: APP_ID, versao: 1, criadoEm: new Date().toISOString(), dados }, null, 2);
+    // Confere o arquivo antes de entregá-lo: ele precisa ler de volta com os mesmos registros.
+    let conferido = null;
+    try { const volta = JSON.parse(texto); const a = resumoDados(dados); const b2 = resumoDados(volta.dados); conferido = JSON.stringify(a) === JSON.stringify(b2) && Object.values(a).every((v) => v !== -1) ? a : null; } catch (e) { conferido = null; }
+    if (!conferido || falhas) { status.textContent = 'Não consegui montar um backup íntegro: parte dos dados não pôde ser lida. Nada foi baixado. Tente de novo; se continuar, avise em Ajude a testar.'; return; }
+    download(`cliniloop-backup-${todayISO()}.json`, texto, 'application/json');
+    const gravou = storeSet(BACKUP_KEY, todayISO());
+    status.textContent = `Backup conferido e baixado em ${fmtDate(todayISO())}: ${resumoTxt(conferido)}. O arquivo contém nomes e telefones de pacientes: guarde em local seguro e não envie por mensagem.${gravou ? '' : ' (Não consegui registrar a data deste backup no navegador.)'}`;
     renderHoje();
   }
   document.getElementById('bk-save').addEventListener('click', fazerBackup);
@@ -388,11 +402,30 @@
       });
       if (!entradas.length) { status.textContent = 'O backup está vazio ou não tem dados reconhecidos.'; input.value = ''; return; }
       const quando = pack.criadoEm ? fmtDate(String(pack.criadoEm).slice(0, 10)) : 'data desconhecida';
-      if (!confirm(`Restaurar o backup de ${quando}? Os dados atuais deste navegador serão substituídos (a chave da API, se houver, é mantida).`)) { input.value = ''; return; }
-      appKeys(false).forEach((k) => storeDel(k));
+      const vem = resumoDados(Object.fromEntries(entradas));
+      if (!confirm(`Restaurar o backup de ${quando}? Ele traz ${resumoTxt(vem)}. Os dados atuais deste navegador serão substituídos (a chave da API, se houver, é mantida). Se algo falhar, os dados atuais voltam como estavam.`)) { input.value = ''; return; }
+      // Fotografia dos dados atuais, para desfazer tudo se a gravação falhar no meio.
+      const antes = {};
+      try { appKeys(false).forEach((k) => { antes[k] = window.localStorage.getItem(k); }); } catch (err) { status.textContent = 'Não consegui ler os dados atuais para protegê-los. A restauração foi cancelada e nada mudou.'; input.value = ''; return; }
       let ok = true;
-      entradas.forEach(([k, v]) => { try { window.localStorage.setItem(k, v); } catch (err) { ok = false; } });
-      if (!ok) { status.textContent = 'Não foi possível gravar todos os dados neste navegador.'; return; }
+      try {
+        Object.keys(antes).forEach((k) => window.localStorage.removeItem(k));
+        entradas.forEach(([k, v]) => window.localStorage.setItem(k, v));
+        const depois = {}; entradas.forEach(([k]) => { depois[k] = window.localStorage.getItem(k); });
+        ok = JSON.stringify(resumoDados(depois)) === JSON.stringify(vem);
+      } catch (err) { ok = false; }
+      if (!ok) {
+        try {
+          appKeys(false).forEach((k) => window.localStorage.removeItem(k));
+          Object.entries(antes).forEach(([k, v]) => window.localStorage.setItem(k, v));
+          status.textContent = 'A restauração falhou no meio (o navegador recusou parte dos dados, talvez por falta de espaço). Desfiz tudo: os seus dados atuais voltaram como estavam.';
+        } catch (err2) {
+          download(`cliniloop-dados-antes-da-restauracao-${todayISO()}.json`, JSON.stringify({ app: APP_ID, versao: 1, criadoEm: new Date().toISOString(), dados: antes }, null, 2), 'application/json');
+          status.textContent = 'A restauração falhou e o navegador não aceitou recolocar os dados atuais. Baixei agora um arquivo com os dados como estavam antes: guarde-o e restaure-o depois de liberar espaço no navegador.';
+        }
+        input.value = '';
+        return;
+      }
       window.location.reload();
     };
     reader.onerror = () => { status.textContent = 'Não foi possível ler o arquivo.'; };

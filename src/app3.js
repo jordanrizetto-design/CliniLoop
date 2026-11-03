@@ -11,10 +11,11 @@
   let lastBriefingHtml = '';
   let lastEbook = '';
   const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
-  function savePac() { storeSet(PAC_KEY, pacientes); notifyData(); }
-  function saveCol() { storeSet(COL_KEY, colegas); notifyData(); }
-  function saveCamp() { storeSet(CAMP_KEY, campanhas); notifyData(); }
-  function saveCont() { storeSet(CONT_KEY, conteudos); notifyData(); }
+  // Cada gravação devolve true só quando o navegador confirmou.
+  function savePac() { const ok = storeSet(PAC_KEY, pacientes); notifyData(); return ok; }
+  function saveCol() { const ok = storeSet(COL_KEY, colegas); notifyData(); return ok; }
+  function saveCamp() { const ok = storeSet(CAMP_KEY, campanhas); notifyData(); return ok; }
+  function saveCont() { const ok = storeSet(CONT_KEY, conteudos); notifyData(); return ok; }
 
   function markUsed(id, silent) {
     if (!id) return;
@@ -43,8 +44,10 @@
   function validate(form) {
     const missing = [...form.querySelectorAll('[required]')].filter((el) => !String(el.value).trim());
     const msg = formMsg(form);
+    form.querySelectorAll('[aria-invalid="true"]').forEach((el) => { el.removeAttribute('aria-invalid'); el.removeAttribute('aria-describedby'); });
     if (missing.length) {
-      missing.forEach((el) => el.classList.add('invalid'));
+      if (!msg.id) msg.id = 'msg-' + Math.random().toString(36).slice(2, 8);
+      missing.forEach((el) => { el.classList.add('invalid'); el.setAttribute('aria-invalid', 'true'); el.setAttribute('aria-describedby', msg.id); });
       msg.className = 'form-msg error';
       msg.textContent = `Falta preencher: ${missing.map(fieldLabel).join(', ')}. Os campos estão destacados em vermelho.`;
       missing[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -55,24 +58,47 @@
   }
   document.querySelectorAll('form').forEach((form) => {
     form.noValidate = true;
-    form.addEventListener('input', (e) => { if (e.target.classList) e.target.classList.remove('invalid'); });
+    form.addEventListener('input', (e) => { if (e.target.classList) { e.target.classList.remove('invalid'); e.target.removeAttribute('aria-invalid'); } });
+    form.addEventListener('change', (e) => { if (e.target.classList) { e.target.classList.remove('invalid'); e.target.removeAttribute('aria-invalid'); } });
   });
 
   // Bloco de saída de cada prompt
+  // Bloco de saída de cada prompt, com o ciclo completo: copiar, abrir a IA, voltar e revisar, guardar a versão aprovada.
+  function slotDaSaida(block) {
+    const t = block.closest('.tool'); const p = block.closest('.passo');
+    return (t && t.querySelector('.saved-slot')) || (p && p.querySelector(':scope .passo-corpo > .saved-slot')) || null;
+  }
   document.querySelectorAll('form.tool-form[data-tool] .output-block').forEach((block) => {
     const tool = block.closest('form').dataset.tool;
     const id = `out-${tool}`;
-    block.innerHTML = `<p class="output-title">Seu prompt está pronto: copie e cole na sua IA</p>
+    const slot = slotDaSaida(block);
+    block.innerHTML = `<p class="output-title">Seu prompt está pronto</p>
+      <ol class="ciclo-ia" aria-label="Como usar este prompt">
+        <li data-c="1"><b>Copie</b> o prompt</li><li data-c="2"><b>Abra a sua IA</b> e cole</li><li data-c="3"><b>Volte aqui</b> e revise a resposta</li><li data-c="4">${slot ? '<b>Guarde</b> a versão aprovada' : '<b>Revise</b> antes de usar'}</li>
+      </ol>
       <label for="${id}" class="visually-hidden">Prompt gerado</label>
       <textarea id="${id}" class="js-output" readonly rows="8"></textarea>
       <div class="output-actions">
         <button type="button" class="btn btn-teal js-run-api" data-ico="play" hidden>Gerar resposta aqui (API)</button>
         <button type="button" class="btn btn-outline js-copy" data-ico="copy">Copiar prompt</button>
-        <a class="btn btn-outline" data-ico="ext" href="https://claude.ai/new" target="_blank" rel="noopener">Abrir no Claude.ai</a>
+        <a class="btn btn-outline js-abrir-ia" data-ico="ext" href="https://claude.ai/new" target="_blank" rel="noopener">Abrir no Claude.ai</a>
       </div>
+      <div class="ciclo-volta" hidden>${slot ? '<p>Quando a IA responder, peça os ajustes na própria conversa. Depois, revise e cole a versão final aqui no app: só ela entra nos próximos passos.</p><button type="button" class="btn btn-gold btn-sm js-ir-guardar" data-ico="arrow">Ir para "Guardar a versão aprovada"</button>' : '<p>Antes de usar a resposta, revise: identificação profissional, promessas, dados de pacientes e se ela mostra a sua diferença.</p><button type="button" class="btn btn-outline btn-sm" data-abrir="etica">Passar no Verificador ético</button>'}</div>
+      <p class="ciclo-aviso">Nunca cole nomes ou dados de pacientes na IA. Revise tudo antes de publicar: a IA pode errar.</p>
       ${WEB_TOOLS.includes(tool) ? '<p class="pro-tip" hidden>Claude Pro/Max: no Claude.ai, clique em "+" e ative Research antes de enviar este prompt. A pesquisa fica bem mais profunda.</p>' : ''}
       <div class="api-area"></div>`;
-    block.querySelector('.js-copy').addEventListener('click', (e) => copyText(block.querySelector('.js-output').value, e.currentTarget));
+    const marca = (c) => { const li = block.querySelector(`.ciclo-ia [data-c="${c}"]`); if (li) li.classList.add('ok'); };
+    const out = block.querySelector('.js-output');
+    const cp = block.querySelector('.js-copy');
+    cp.addEventListener('click', (e) => { copyText(out.value, e.currentTarget, out); setTimeout(() => { if (cp.textContent.indexOf('Copiado') === 0) marca(1); }, 300); });
+    // Abrir a IA nunca leva o prompt na URL: copia antes e abre a página inicial da IA escolhida.
+    block.querySelector('.js-abrir-ia').addEventListener('click', () => {
+      copyText(out.value, cp, out);
+      setTimeout(() => { if (cp.textContent.indexOf('Copiado') === 0) marca(1); }, 300);
+      marca(2); block.querySelector('.ciclo-volta').hidden = false;
+    });
+    const ir = block.querySelector('.js-ir-guardar');
+    if (ir) ir.addEventListener('click', () => { marca(3); const d = slot.querySelector('details.saved'); d.open = true; const ta = slot.querySelector('textarea'); ta.scrollIntoView({ behavior: 'smooth', block: 'center' }); setTimeout(() => ta.focus({ preventScroll: true }), 250); });
     block.querySelector('.js-run-api').addEventListener('click', () => runApiFor(block, null));
   });
 
@@ -156,31 +182,58 @@
   });
 
   // ===================== Resultados guardados =====================
+  // Versão aprovada: o rascunho é salvo enquanto a pessoa digita, mas só vira decisão quando ela clica em "Aprovar e guardar".
+  function rascunhoGet(id) { const s2 = storeGet(PERSIST_KEY, {}) || {}; return typeof s2['rasc-' + id] === 'string' ? s2['rasc-' + id] : null; }
+  function rascunhoSet(id, v) { const s2 = storeGet(PERSIST_KEY, {}) || {}; if (v === null) delete s2['rasc-' + id]; else s2['rasc-' + id] = v.slice(0, 20000); return storeSet(PERSIST_KEY, s2); }
+  function renderSavedSlot(slot) {
+    const id = slot.dataset.save;
+    const r = resultados()[id];
+    const ta = slot.querySelector('textarea');
+    const chip = slot.querySelector('.saved-chip');
+    const st = slot.querySelector('.js-sv-st');
+    // EST_DEPENDENTES vem do núcleo da estratégia, carregado depois: na primeira pintura ainda pode não existir.
+    const rev = !!(r && r.ev && EST_DEPENDENTES && EST_DEPENDENTES[id] && r.ev !== estrategia().hash);
+    const difere = r ? ta.value.trim() !== r.t.trim() : !!ta.value.trim();
+    chip.className = 'saved-chip' + (rev ? ' rev' : (r ? ' ok' : ''));
+    chip.textContent = rev ? 'Precisa revisar' : (r ? 'Aprovada em ' + fmtDate(r.d) : 'Ainda não aprovada');
+    if (slot.dataset.erro) { st.textContent = slot.dataset.erro; } else st.textContent = rev ? 'A sua estratégia mudou depois desta versão. Revise o texto para que ele mostre a diferença atual e aprove de novo.' : (difere ? (r ? 'Há mudanças ainda não aprovadas.' : 'Rascunho salvo, ainda não aprovado.') : '');
+    const vs = slot.querySelector('.versoes');
+    const hist = (r && r.hist) || [];
+    vs.hidden = !hist.length;
+    vs.querySelector('summary').textContent = `Versões anteriores (${hist.length})`;
+    vs.querySelector('ol').innerHTML = hist.map((h, i) => `<li><p class="v-d">Aprovada em ${fmtDate(h.d)}</p><pre>${escapeHtml(trim(h.t, 600))}</pre><button type="button" class="linkish" data-v="${i}">Trazer esta versão para o campo acima</button></li>`).join('');
+    vs.querySelectorAll('[data-v]').forEach((b) => b.addEventListener('click', () => { ta.value = hist[+b.dataset.v].t; rascunhoSet(id, ta.value); renderSavedSlot(slot); ta.focus(); }));
+  }
   document.querySelectorAll('.saved-slot').forEach((slot) => {
     const id = slot.dataset.save;
     const r = resultados()[id];
-    slot.innerHTML = `<details class="saved"${r ? '' : ''}>
-      <summary><span>Guardar a versão final: ${escapeHtml(slot.dataset.label)}</span><span class="saved-chip${r ? ' ok' : ''}">${r ? 'Guardado em ' + fmtDate(r.d) : 'Ainda não guardado'}</span><span class="chevron">▸</span></summary>
+    slot.innerHTML = `<details class="saved">
+      <summary><span>Guardar a versão aprovada: ${escapeHtml(slot.dataset.label)}</span><span class="saved-chip"></span><span class="chevron">▸</span></summary>
       <div class="saved-body">
-        <p>Depois de ajustar a resposta com o Claude, cole aqui a versão que você aprovou. Ela entra nos próximos prompts, no briefing, no arquivo do Projeto e no playbook.</p>
-        <label class="visually-hidden" for="save-${id}">Versão final</label>
-        <textarea id="save-${id}" placeholder="Cole aqui a versão final"></textarea>
+        <p>Cole aqui a resposta da IA depois de revisar: identificação profissional, promessas, dados de pacientes e se ela mostra a sua diferença. <b>Guardar é aprovar:</b> esta versão passa a entrar nos próximos prompts, no briefing, no arquivo do Projeto e no playbook.</p>
+        <label class="visually-hidden" for="save-${id}">Versão aprovada: ${escapeHtml(slot.dataset.label)}</label>
+        <textarea id="save-${id}" placeholder="Cole aqui a versão que você revisou"></textarea>
+        <div class="form-actions"><button type="button" class="btn btn-teal btn-sm js-aprovar" data-ico="save">Aprovar e guardar</button><span class="save-status js-sv-st" aria-live="polite"></span></div>
+        <details class="versoes" hidden><summary>Versões anteriores</summary><ol></ol></details>
       </div>
     </details>`;
     const ta = slot.querySelector('textarea');
-    ta.value = r ? r.t : '';
+    const rasc = rascunhoGet(id);
+    ta.value = rasc !== null ? rasc : (r ? r.t : '');
     let timer = null;
-    ta.addEventListener('input', () => {
-      clearTimeout(timer);
-      timer = setTimeout(() => {
-        saveResultado(id, ta.value);
-        const chip = slot.querySelector('.saved-chip');
-        const ok = !!ta.value.trim();
-        chip.className = 'saved-chip' + (ok ? ' ok' : '');
-        chip.textContent = ok ? 'Guardado em ' + fmtDate(todayISO()) : 'Ainda não guardado';
-      }, 500);
+    ta.addEventListener('input', () => { delete slot.dataset.erro; clearTimeout(timer); timer = setTimeout(() => { rascunhoSet(id, ta.value); renderSavedSlot(slot); }, 400); });
+    slot.querySelector('.js-aprovar').addEventListener('click', () => {
+      const st = slot.querySelector('.js-sv-st');
+      if (!ta.value.trim()) { st.textContent = 'Cole o texto revisado antes de aprovar.'; ta.focus(); return; }
+      if (!saveResultado(id, ta.value)) { slot.dataset.erro = 'Não consegui guardar neste navegador. O texto continua no campo: tente de novo.'; st.textContent = slot.dataset.erro; return; }
+      delete slot.dataset.erro;
+      rascunhoSet(id, null);
+      renderSavedSlot(slot);
+      st.textContent = '✓ Versão aprovada e guardada.';
     });
+    renderSavedSlot(slot);
   });
+  document.addEventListener('cliniloop:dados', () => document.querySelectorAll('.saved-slot').forEach((sl) => { if (sl.querySelector('textarea')) renderSavedSlot(sl); }));
 
   // ===================== Regras do conselho e checagem rápida =====================
   const RISK_RULES = [
@@ -543,19 +596,21 @@
           <input type="text" id="follow-${tool}" placeholder='Peça um ajuste: "deixe mais simples", "refaça o item 3"...'>
           <button type="button" class="btn btn-teal btn-sm js-follow" data-ico="send">Enviar</button>
         </div>
-        <div class="output-actions"><button type="button" class="btn btn-outline btn-sm js-copy-answer" data-ico="copy">Copiar resposta</button>${canSave ? '<button type="button" class="btn btn-outline btn-sm js-save-answer" data-ico="save">Guardar como versão final</button>' : ''}</div>`;
+        <div class="output-actions"><button type="button" class="btn btn-outline btn-sm js-copy-answer" data-ico="copy">Copiar resposta</button>${canSave ? '<button type="button" class="btn btn-outline btn-sm js-save-answer" data-ico="save">Levar para revisão e aprovação</button>' : ''}</div>`;
       const input = area.querySelector('.api-follow input');
       const send = () => { const v = input.value.trim(); if (v) runApiFor(block, v); };
       area.querySelector('.js-follow').addEventListener('click', send);
       input.addEventListener('keydown', (ev) => { if (ev.key === 'Enter') { ev.preventDefault(); send(); } });
       area.querySelector('.js-copy-answer').addEventListener('click', (ev) => copyText(conv.text, ev.currentTarget));
       const sv = area.querySelector('.js-save-answer');
+      // A resposta da API vai para revisão; só vira versão aprovada quando a pessoa aprova.
       if (sv) sv.addEventListener('click', () => {
         const ta = document.getElementById('save-' + tool);
         ta.value = conv.text;
         ta.dispatchEvent(new Event('input'));
         ta.closest('details').open = true;
-        sv.textContent = 'Guardado ✓';
+        ta.focus();
+        sv.textContent = 'Levado para revisão ↓';
       });
     } catch (err) {
       if (followUp) conv.messages.pop();
@@ -630,8 +685,9 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
   function renderOrigemOptions() {
     const sel = document.getElementById('t-origem');
     const cur = sel.value;
-    sel.innerHTML = ORIGENS.map((o) => `<option>${escapeHtml(o)}</option>`).join('') +
-      campanhas.map((c) => `<option value="${escapeHtml(campOrigem(c))}">${escapeHtml(campOrigem(c))}</option>`).join('');
+    // A origem nunca vem escolhida: ou a pessoa informa, ou marca explicitamente que não sabe.
+    sel.innerHTML = '<option value="">Escolha a origem</option>' + ORIGENS.map((o) => `<option>${escapeHtml(o)}</option>`).join('') +
+      campanhas.map((c) => `<option value="${escapeHtml(campOrigem(c))}">${escapeHtml(campOrigem(c))}</option>`).join('') + `<option value="${ORIGEM_NI}">Não sei / não informada</option>`;
     if ([...sel.options].some((o) => o.value === cur)) sel.value = cur;
     const opts = '<option value="">(nenhum)</option>' + colegas.map((c) => `<option value="${escapeHtml(c.id)}">${escapeHtml(c.nome)}</option>`).join('');
     ['t-colega', 'cm-colega'].forEach((id) => {
@@ -642,6 +698,13 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     });
     document.getElementById('t-colega-wrap').hidden = sel.value !== 'Indicação de colega';
   }
+  // O dado de contato pedido depende do canal preferido.
+  const CANAL_DADO = { WhatsApp: ['Telefone (WhatsApp)', 'tel', '(11) 90000-0000'], 'Ligação': ['Telefone', 'tel', '(11) 90000-0000'], 'E-mail': ['E-mail', 'email', 'nome@exemplo.com'], Direct: ['@ no Instagram', 'text', '@usuario'] };
+  document.getElementById('t-canal').addEventListener('change', (e) => {
+    const [lab, mode, ph] = CANAL_DADO[e.target.value] || CANAL_DADO.WhatsApp;
+    document.getElementById('t-tel-lab').textContent = lab;
+    const t = document.getElementById('t-tel'); t.inputMode = mode; t.placeholder = ph;
+  });
   document.getElementById('t-origem').addEventListener('change', () => { document.getElementById('t-colega-wrap').hidden = document.getElementById('t-origem').value !== 'Indicação de colega'; });
   const etOpt = (e, sel) => `<option value="${e}"${sel ? ' selected' : ''}>${etapaLabel(e)}</option>`;
   function renderEtapaOptions() {
@@ -702,23 +765,51 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     };
     fillHist(p, p.etapa);
     pacientes.unshift(p);
-    savePac();
-    ['t-nome', 't-tel', 't-servico', 't-passo', 't-data', 't-valor', 't-notas'].forEach((id) => { document.getElementById(id).value = ''; });
-    document.getElementById('t-notas-aviso').hidden = true;
     const msg = formMsg(form);
+    if (!savePac()) {
+      pacientes.shift(); notifyData();
+      msg.className = 'form-msg error';
+      msg.textContent = 'Não consegui gravar o contato neste navegador. Os dados continuam no formulário: tente de novo ou faça um backup em Ajustes.';
+      return;
+    }
+    ['t-nome', 't-tel', 't-servico', 't-passo', 't-data', 't-valor', 't-notas'].forEach((id) => { document.getElementById(id).value = ''; });
+    // Contato novo começa do zero: sem origem escolhida e sem nenhum consentimento herdado.
+    ['t-c-atend', 't-c-lemb', 't-c-cont'].forEach((id) => { document.getElementById(id).checked = false; });
+    document.getElementById('t-origem').value = ''; document.getElementById('t-colega-wrap').hidden = true;
+    document.getElementById('t-etapa').value = 'Novo'; document.getElementById('t-etapa').dispatchEvent(new Event('change'));
+    document.getElementById('t-notas-aviso').hidden = true;
     msg.className = 'form-msg ok';
-    msg.textContent = `✓ ${p.nome} adicionado(a) na etapa ${p.etapa}.`;
+    msg.textContent = `✓ ${p.nome} adicionado(a) na etapa ${p.etapa}${p.data ? '' : '. Sem data, o contato fica na fila "Sem próximo passo"'}.`;
     renderTracker();
   });
 
   function isLate(p) { return p.data && p.etapa !== 'Encerrado' && p.data <= todayISO(); }
+  // Filas do dia a dia: o que venceu, o que é para hoje e quem está sem próximo passo.
+  const aberto = (p) => p.etapa !== 'Encerrado';
+  const FILAS = {
+    vencidos: ['Vencidos', (p) => aberto(p) && p.data && p.data < todayISO()],
+    hoje: ['Para hoje', (p) => aberto(p) && p.data === todayISO()],
+    sem: ['Sem próximo passo', (p) => aberto(p) && (!String(p.passo || '').trim() || !p.data)]
+  };
+  let filaAtual = '';
+  function renderFilas() {
+    const box = document.getElementById('t-filas');
+    if (!box) return;
+    const n = (k) => pacientes.filter(FILAS[k][1]).length;
+    box.innerHTML = Object.keys(FILAS).map((k) => `<button type="button" class="fila${filaAtual === k ? ' on' : ''}${k === 'vencidos' && n(k) ? ' late' : ''}" data-fila="${k}" aria-pressed="${filaAtual === k}">${FILAS[k][0]} <b>${n(k)}</b></button>`).join('') +
+      `<button type="button" class="fila${filaAtual ? '' : ' on'}" data-fila="" aria-pressed="${!filaAtual}">Todos em aberto <b>${pacientes.filter(aberto).length}</b></button>`;
+    box.querySelectorAll('[data-fila]').forEach((b) => b.addEventListener('click', () => { filaAtual = b.dataset.fila; renderTracker(); }));
+  }
+  function abrirFila(k) { filaAtual = k; renderTracker(); }
   function renderTracker() {
     renderEtapaOptions();
     const counts = ETAPAS.map((e) => [e, pacientes.filter((p) => p.etapa === e).length]);
     document.getElementById('t-funnel').innerHTML = counts.map(([e, n]) => `<div><b>${n}</b><span>${etapaLabel(e)}</span></div>`).join('');
     const filtro = document.getElementById('t-filtro').value;
     const busca = normTxt(document.getElementById('t-busca').value).trim();
+    renderFilas();
     let lista = pacientes.filter((p) => (filtro === '*' ? true : filtro ? p.etapa === filtro : p.etapa !== 'Encerrado'));
+    if (filaAtual) lista = pacientes.filter(FILAS[filaAtual][1]);
     if (busca) lista = lista.filter((p) => normTxt(p.nome + ' ' + p.servico + ' ' + p.origem).includes(busca));
     lista.sort((a, b) => (isLate(b) - isLate(a)) || String(a.data || '9999').localeCompare(String(b.data || '9999')));
     const box = document.getElementById('t-list');
@@ -963,7 +1054,10 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     const ws = lastWeeks(4);
     const s = (k) => ws.reduce((a, w) => a + w[k], 0);
     const T = { contatos: s('contatos'), agendados: s('agendados'), avaliados: s('avaliados'), planos: s('planos'), iniciados: s('iniciados') };
-    if (T.contatos < 4) return { etapa: 'Topo do funil', txt: `Poucos contatos novos nas últimas 4 semanas (${T.contatos}). Antes de otimizar o atendimento, abasteça o topo: pautas de dúvidas reais, perfis prontos, uma campanha medida e a rede de colegas.`, tool: 'pautas' };
+    // Sem registro não há diagnóstico: zero contatos é ausência de dados, não falta de demanda.
+    const periodo = `de ${fmtShort(ws[ws.length - 1].seg)} a ${fmtShort(addDays(ws[0].seg, 6))}`;
+    if (!pacientes.length) return { etapa: 'Sem dados', txt: 'Ainda não há dados registrados para analisar. Registre cada contato no Rastreador (passo 8) e o painel passa a mostrar as taxas, com período e números.', tool: 'rastreador' };
+    if (T.contatos < 4) return { etapa: 'Dados insuficientes', txt: `Poucos registros para analisar: ${T.contatos} contato(s) novo(s) nas últimas 4 semanas (${periodo}). Com tão poucos, qualquer taxa engana. Por enquanto, confira se todo contato está sendo registrado, com a origem.`, tool: 'rastreador' };
     const passos = [
       ['Agendamento', T.agendados, T.contatos, 'dos contatos agendaram', 'Resposta rápida, acolhimento e roteiro de agendamento (Atendimento e agendamento).', 'atendimento'],
       ['Comparecimento', T.avaliados, T.agendados, 'dos agendados compareceram', 'Sequência de confirmação (ao agendar, 48 h, 24 h se não respondeu, 2 h antes) e reagendamento sem constranger, no mesmo dia da falta.', 'atendimento'],
@@ -973,7 +1067,7 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
     if (!passos.length) return { etapa: 'Dados insuficientes', txt: 'Ainda há poucos registros para apontar um gargalo. Mantenha o rastreador atualizado por mais algumas semanas.', tool: 'rastreador' };
     passos.sort((a, b) => a[6] - b[6]);
     const g = passos[0];
-    return { etapa: g[0], txt: `Gargalo provável: ${g[0].toLowerCase()}. Nas últimas 4 semanas, ${Math.round(g[6] * 100)}% ${g[3]} (${g[1]} de ${g[2]}). O que costuma ajudar: ${g[4]}`, tool: g[5] };
+    return { etapa: g[0], txt: `Gargalo provável: ${g[0].toLowerCase()}. Nas últimas 4 semanas (${periodo}), ${Math.round(g[6] * 100)}% ${g[3]} (${g[1]} de ${g[2]}). É uma leitura com poucos números${g[2] < 10 ? ' (menos de 10 na base): trate como pista, não como conclusão' : ''}. O que costuma ajudar: ${g[4]}`, tool: g[5] };
   }
   function metricasTxt() {
     const ws = lastWeeks(8).reverse();
@@ -989,8 +1083,8 @@ ${SAVE_TOOLS.filter((id) => res[id]).map((id) => `### ${SAVE_TITLES[id]} (${fmtD
       ws.map((w, i) => `<tr${i === 0 ? ' class="atual"' : ''}><td>${fmtShort(w.seg)} a ${fmtShort(addDays(w.seg, 6))}${i === 0 ? ' (atual)' : ''}</td>${METRIC_COLS.map((c) => `<td>${w[c[0]]}</td>`).join('')}</tr>`).join('');
     const g = gargalo();
     const gb = document.getElementById('gargalo');
-    gb.className = 'risk-box' + (g.etapa === 'Dados insuficientes' ? ' ok' : '');
-    gb.innerHTML = `<b>Gargalo da semana:</b> ${escapeHtml(g.txt)}`;
+    gb.className = 'risk-box' + (g.etapa === 'Dados insuficientes' || g.etapa === 'Sem dados' ? ' ok' : '');
+    gb.innerHTML = `<b>${g.etapa === 'Sem dados' || g.etapa === 'Dados insuficientes' ? 'Leitura da semana' : 'Gargalo da semana'}:</b> ${escapeHtml(g.txt)}`;
     const pd = document.getElementById('pn-dados');
     if (!pd.value || pd.dataset.autofilled !== '0') { pd.value = metricasTxt(); pd.dataset.autofilled = '1'; }
   }

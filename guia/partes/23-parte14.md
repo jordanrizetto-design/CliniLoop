@@ -4,8 +4,8 @@ num: 14
 etapa: No roteiro · Etapa 6 de 6 · Meça e escale com CRM
 jornada: O caminho de volta
 titulo: O app CliniLoop: guia das ferramentas
-lead: O CliniLoop é o app que acompanha este guia. Ele conduz você por um caminho de nove passos, em ordem, e cada passo reúne os campos, o prompt e o que guardar, no mesmo lugar.
-nesta: O que o app faz por você · O caminho em nove passos · Tutorial: o primeiro uso · Do guia à ferramenta · Status do Rastreador · O que fica registrado · Privacidade · Clínicas com vários usuários
+lead: O CliniLoop é o app que acompanha este guia. Ele conduz você pela mesma jornada, em três atos e nove passos, e leva a diferença que você definiu no Oceano Azul a cada perfil, conteúdo, conversa e campanha.
+nesta: O que o app faz por você · O caminho em nove passos · Hipótese, evidência e decisão · Tutorial: o primeiro uso · Do guia à ferramenta · Status do Rastreador · O que fica registrado · Privacidade · Clínicas com vários usuários
 grupo: Etapa 6 · Meça e escale com CRM
 marca: PARTE 14
 ---
@@ -28,93 +28,124 @@ O app também resolve um problema que este guia aponta desde a Apresentação: a
 
 ## O caminho em nove passos
 
-O app tem um caminho só, na ordem dos três movimentos deste guia. Um passo fica aberto de cada vez. O próximo aparece destacado, e o botão do fim de cada passo leva ao seguinte.
+O app conta a mesma história deste guia: você é o herói, e o CliniLoop é o mentor. O caminho tem três atos e nove passos, em ordem, e um passo fica aberto de cada vez.
 
-| Movimento | Passo | O que você faz |
+| Ato da jornada | Passo | O que você faz |
 |------|-------|--------------|
-| Defina a sua diferença | 1 Seu consultório e objetivo | Profissão, registro, especialidade, cidade, serviços, formação e o resultado dos próximos 90 dias |
-| | 2 Seu paciente ideal | Quem você mais ajuda, a dúvida principal dele, o que ele valoriza e onde procura. Se quiser, a IA monta o ICP e a persona |
-| | 3 Oceano Azul: sua proposta de valor | As sete etapas da Estratégia Oceano Azul e, no fim, a proposta em uma frase, que entra em todos os passos seguintes |
-| Mostre onde o paciente procura | 4 Seus perfis, uma rede por vez | Um cartão para cada rede (Google, Instagram, LinkedIn, YouTube e TikTok), com um campo para cada parte do perfil e onde encontrá-la, o prompt daquela rede logo abaixo do botão e o checklist de configuração |
-| | 5 Plano de conteúdo e roteiros | Temas, tempo por semana, pautas a partir das dúvidas reais e o roteiro da primeira peça |
-| | 6 Colegas e campanhas | A rede de colegas que indicam e, depois, o primeiro anúncio |
-| Meça quem fica | 7 WhatsApp e atendimento | O checklist do WhatsApp Business, os links com origem e as respostas rápidas |
-| | 8 Rastreador de pacientes | Cada contato com origem, etapa, próximo passo, data e consentimento |
-| | 9 Ritual da semana | O placar (contatos, agendados, comparecimentos e tratamentos), o gargalo da vez e a agenda da semana |
+| A partida · Defina a sua diferença | 1 Seu consultório e objetivo | Profissão, registro, especialidade, cidade, serviços e o resultado dos próximos 90 dias. Formação e detalhes ficam em "Aprofundar" |
+| | 2 Seu paciente ideal | Quem você mais ajuda e a dúvida principal dele. Se quiser, a IA monta o ICP e a persona |
+| | 3 Oceano Azul: sua proposta de valor | As sete etapas da Estratégia Oceano Azul, uma de cada vez, até a proposta em uma frase e a sua aprovação |
+| As provas · Mostre onde o paciente procura | 4 Seus perfis, uma rede por vez | Um cartão para cada rede, com um campo para cada parte do perfil e onde encontrá-la, o prompt daquela rede e o checklist |
+| | 5 Plano de conteúdo e roteiros | Temas, pautas a partir das dúvidas reais e o roteiro da primeira peça |
+| | 6 Colegas e campanhas | A rede de colegas que indicam e, quando fizer sentido, o primeiro anúncio |
+| O retorno · Meça quem fica | 7 WhatsApp e atendimento | O checklist do WhatsApp Business, os links com origem e as respostas rápidas |
+| | 8 Contatos: o rastreador | Cada contato com origem, próximo passo e data, nas filas de vencidos, de hoje e sem próximo passo |
+| | 9 Ritual da semana | O placar, o gargalo da vez e a agenda da semana, toda semana |
 
-- **Passo concluído vira resumo.** Quando você conclui um passo, ele se fecha e mostra, numa linha, o que ficou decidido: a profissão e o objetivo, o paciente ideal, a proposta de valor. Para mudar algo, clique no passo: os campos abrem ali mesmo, e tudo é salvo enquanto você digita.
-- **Campos que faltam.** Nos três primeiros passos, se faltar algum campo obrigatório, o app lista o que falta, e cada item leva direto ao campo.
-- **Hoje.** Depois do passo 1, aparece no topo do caminho: o próximo passo, os retornos vencidos do Rastreador e os conteúdos da semana.
-- **Caixa de ferramentas.** As 19 ferramentas num lugar só. As que fazem parte do caminho abrem no passo delas; as outras ficam ali, para quando você precisar: Verificador ético, Briefing para terceiros, Nicho e diferencial, Persona do profissional, Reaproveitamento de conteúdo, Formação e autoridade, Ferramentas recomendadas e Playbook da clínica.
-- **IA preferida.** Em Configurações, você escolhe em qual IA vai colar os prompts. Os botões "Abrir no…" passam a abrir essa IA.
+### O mesmo padrão em todos os passos
+
+1. **Você sai daqui com:** o que o passo entrega.
+2. **Já aproveitado:** o que o app trouxe dos passos anteriores, para você não repetir.
+3. **A ação:** os campos e os prompts do passo. Campos extras ficam em "Aprofundar"; a teoria e a etapa da jornada, em "Entender este passo".
+4. **Entrega mínima:** a lista do que precisa existir para o passo ficar pronto, com o que já está feito marcado.
+5. **Seguir:** o botão leva ao próximo passo. Seguir não é concluir: o que faltou continua marcado como pendente e aparece na tela Hoje.
+
+Cada passo mostra um de poucos estados: **Em andamento**, **Pronto** ou **Precisa revisar**. Gerar um prompt é atividade, não entrega: o passo dos perfis só fica pronto com os textos aprovados e o checklist de uma rede completo, e o dos contatos, quando todo contato em aberto tem origem, próximo passo e data. O ritual da semana nunca fica "pronto para sempre": a cada semana ele volta como pendente.
+
+### Hipótese, evidência e decisão
+
+No Oceano Azul, o app separa três coisas que costumam se misturar:
+
+- **Hipótese:** a proposta que você escreveu, antes de aprová-la.
+- **Evidência:** o que os pacientes dizem e o que as avaliações mostram, na etapa 2. Sem ela, a curva de valor é a sua percepção, e o app diz isso na tela.
+- **Decisão:** a proposta que você aprovou, depois de confirmar que ela diz o que muda para o paciente, não promete resultado e anuncia só o que já acontece ou está marcado como "vou implementar".
+
+Você pode seguir com uma hipótese e ouvir os pacientes depois: o passo 3 continua em andamento, e os prompts avisam a IA de que ainda é hipótese. Se a proposta usar palavras que servem para qualquer colega, como "humanizado" ou "qualidade", o app pede o que muda na prática.
+
+### A sua diferença em todas as entregas
+
+A proposta, as quatro ações, o que você já faz e o que ainda vai implantar entram no contexto de todos os prompts. No topo das ferramentas, uma faixa mostra qual diferença aquele prompt vai usar e se ela é hipótese ou decisão. O que ainda não acontece no seu atendimento entra como [AINDA NÃO IMPLANTADO], nunca como fato.
+
+Quando você muda a proposta ou as quatro ações, ela volta para "Precisa revisar", e as entregas aprovadas com a versão anterior (os textos dos perfis, as pautas, as respostas do atendimento) ficam marcadas para revisão na tela Hoje. As versões anteriores ficam guardadas.
+
+### Do prompt à versão aprovada
+
+Todo prompt mostra o mesmo ciclo: **copie**, **abra a sua IA** e cole, **volte** ao app e revise a resposta, e **guarde a versão aprovada**. O botão "Abrir no…" copia o prompt antes de abrir a IA; o texto nunca vai pelo endereço da página. Se a cópia falhar, o app seleciona o texto e avisa. Em "Guardar a versão aprovada", o que você digita fica como rascunho até você clicar em **Aprovar e guardar**: só a versão aprovada entra nos próximos prompts.
+
+### Tela Hoje, Ferramentas e Contatos
+
+- **Hoje:** a sua diferença atual, com o estado dela; o próximo passo e o que ficou pendente; as filas de contatos; a semana e o ritual; e atalhos para o que se usa toda semana.
+- **Ferramentas:** todas as ferramentas, em sete grupos por objetivo, com busca. Cada uma diz para que serve, o que recebe, o que entrega e o que vem depois, e abre onde mora: no passo do caminho ou na própria página.
+- **Contatos:** o cadastro rápido pede nome, origem e próximo passo. A origem nunca vem escolhida: se não souber, escolha "Não sei". Os consentimentos começam todos desmarcados, porque cadastrar alguém não é consentimento.
+- **Mais:** o guia no app, o PDF, o Verificador ético, Ajustes e backup e a Ajuda.
 
 ## Tutorial: o primeiro uso, passo a passo
 
-Siga o tutorial uma única vez. Depois, o caminho e o ritual da semana conduzem o dia a dia. As imagens mostram o app preenchido com a Dra. Bia Nunes, a personagem fictícia dos exemplos deste guia.
+Siga o tutorial uma única vez. Depois, a tela Hoje e o ritual da semana conduzem o dia a dia. As imagens mostram o app preenchido com a Dra. Bia Nunes, a personagem fictícia dos exemplos deste guia.
 
 ### 1. Abra o app
 
-Abra o CliniLoop pelo link que você recebeu na compra, no navegador do computador ou do celular. No topo, você vê os três movimentos do caminho e quantos passos de cada um já estão feitos. Logo abaixo ficam os atalhos para as IAs. Clique em **Começar pelo passo 1**.
+Abra o CliniLoop pelo link que você recebeu na compra, no navegador do computador ou do celular. No topo, você vê os três atos da jornada e quantos passos de cada um estão prontos. Clique em **Construir minha diferenciação**.
 
-![O topo do app: os três movimentos do caminho e os atalhos para as IAs](tutorial/01-topo.jpg)
+![O topo do app: a proposta do produto e os três atos da jornada](tutorial/01-topo.jpg)
 
 ### 2. Passo 1: seu consultório e objetivo
 
-Escolha o tipo de profissional. É essa escolha que carrega as regras do seu conselho em todos os prompts. Depois, preencha registro, especialidade, cidade e bairro, serviços e a sua formação. No fim do passo, escolha o objetivo dos próximos 90 dias e escreva o resultado numa frase, com serviço, quantidade e prazo, como "20 primeiras consultas de corredores em 90 dias". Clique em **Concluir e seguir para o passo 2**.
+Escolha o tipo de profissional: é essa escolha que carrega as regras do seu conselho em todos os prompts. Preencha registro, especialidade, cidade e bairro e os serviços. No fim do passo, escolha o objetivo dos próximos 90 dias e escreva o resultado numa frase, como "20 primeiras consultas de corredores em 90 dias". A formação e os detalhes de atendimento ficam em **Aprofundar**. Clique em **Salvar e seguir para o passo 2**.
 
 ![Passo 1: o tipo de profissional, os dados do consultório e o objetivo](tutorial/02-perfil.jpg)
 
 ### 3. Passo 2: seu paciente ideal
 
-Descreva o paciente que você mais ajuda e a principal dor ou dúvida dele. Os outros campos (o que ele valoriza, a objeção mais comum, onde procura informação) deixam os prompts mais precisos. Se quiser aprofundar, abra **Público, ICP e persona do paciente**, logo abaixo, e gere o ICP completo com a IA.
+Descreva o paciente que você mais ajuda e a principal dor ou dúvida dele. Os outros campos deixam os prompts mais precisos. Para aprofundar, abra **Público, ICP e persona do paciente**, logo abaixo.
 
-![Passo 2: o paciente ideal, com a ferramenta de ICP e persona logo abaixo](tutorial/03-paciente.jpg)
+![Passo 2: o paciente ideal, com o que já foi aproveitado do passo 1](tutorial/03-paciente.jpg)
 
 ### 4. Passo 3: Oceano Azul
 
-Faça as sete etapas da Estratégia Oceano Azul, como na Apresentação e na Parte 3. No fim, escreva a sua proposta de valor em uma frase, ou clique em **Usar o rascunho da etapa 7 acima**. Essa frase entra no contexto de todos os prompts dos passos seguintes.
+Faça as sete etapas, uma de cada vez. As etapas 2 e 3, de evidência, podem ficar para depois: elas continuam marcadas como pendentes. Na etapa 7, escreva a proposta em uma frase ou use o rascunho. Leia o quadro de decisão e evidência e, quando estiver de acordo, clique em **Aprovar esta proposta** e confirme os três itens.
 
-![Passo 3: a proposta de valor que vai orientar os próximos passos](tutorial/04-oceano.jpg)
+![Passo 3: a proposta, com a decisão, a evidência e o que falta validar](tutorial/04-oceano.jpg)
 
-### 5. Veja o resumo e a tela Hoje
+### 5. Veja a tela Hoje
 
-Os passos concluídos se fecham e mostram o que você decidiu. No topo do caminho, a tela Hoje mostra o próximo passo e o botão **Continuar**. Para corrigir algo, clique no passo concluído e edite ali mesmo.
+A tela Hoje mostra a sua diferença e o estado dela, o próximo passo e o que ficou pendente. Os passos se fecham com um resumo; para corrigir algo, clique no passo e edite ali mesmo.
 
-![A tela Hoje e os passos concluídos com o resumo de cada um](tutorial/05-hoje.jpg)
+![A tela Hoje: a sua diferença, o próximo passo, os contatos e a semana](tutorial/05-hoje.jpg)
 
 ### 6. Passo 4: uma rede por vez
 
-Marque as redes que você já usa. Abra uma delas e cole cada parte do perfil no campo certo: no Instagram, o nome do perfil num campo e a bio em outro; no Google, o nome da ficha, a categoria, a descrição e as avaliações. Embaixo de cada campo, o app diz onde encontrar aquela informação na rede. Se você ainda não tem o perfil, marque **Ainda não tenho**, e o prompt cria do zero. Depois, clique em **Gerar o prompt do** Instagram, do Google ou da rede aberta. O prompt aparece logo abaixo do botão, com **Copiar prompt** e **Abrir no…**. Cole na sua IA, aplique a reescrita no perfil e marque o checklist daquela rede. Depois, passe para a próxima. Quem preferir revisar tudo de uma vez tem, no fim do passo, a opção **Todas as redes num prompt só**.
+Marque as redes que você já usa. Abra uma delas e cole cada parte do perfil no campo certo: no Instagram, o nome do perfil num campo e a bio em outro; no Google, o nome da ficha, a categoria, a descrição e as avaliações. Embaixo de cada campo, o app diz onde encontrar a informação. Se você ainda não tem o perfil, marque **Ainda não tenho**, e o prompt cria do zero. A faixa no topo mostra qual diferença o prompt vai usar. Clique em **Gerar o prompt do** Instagram, do Google ou da rede aberta e siga o ciclo: copiar, abrir a IA, voltar e revisar.
 
-![Passo 4: o cartão do Instagram, com o prompt logo abaixo do botão](tutorial/06-redes.jpg)
+![Passo 4: o cartão do Instagram, com o ciclo do prompt](tutorial/06-redes.jpg)
 
-### 7. Guarde a versão final
+### 7. Aprove e guarde a versão final
 
-Quando gostar da resposta da IA, abra **Guardar a versão final**, no próprio passo, e cole o texto aprovado. Ele passa a entrar nos próximos prompts, no briefing, no arquivo do Projeto e no playbook. É assim que o app aprende quem você é, sem você repetir.
+Quando gostar da resposta da IA, revise identificação, promessas e dados, cole o texto em **Guardar a versão aprovada** e clique em **Aprovar e guardar**. A versão aprovada entra nos próximos prompts, no briefing, no arquivo do Projeto e no playbook.
 
-![A versão aprovada guardada no passo](tutorial/07-guardar.jpg)
+![A versão aprovada, guardada no passo](tutorial/07-guardar.jpg)
 
 ### 8. Escolha a sua IA
 
-Na Caixa de ferramentas, abra **Configurações**. Em "Como você usa a IA", escolha a IA em que vai colar os prompts. Se usa o Claude, indique também o modo: sem assinatura, Pro ou Max, ou API, em que a resposta aparece na própria página.
+Em **Mais**, abra **Ajustes e backup**. Em "Como você usa a IA", escolha a IA em que vai colar os prompts. Se usa o Claude, indique também o modo: sem assinatura, Pro ou Max, ou API.
 
-![Configurações: o modo de uso do Claude e a IA preferida](tutorial/08-ia.jpg)
+![Ajustes: o modo de uso do Claude e a IA preferida](tutorial/08-ia.jpg)
 
 ### 9. Passo 8: registre o primeiro contato
 
-Para cada pessoa que entrar em contato, registre nome ou apelido, telefone, canal preferido, serviço, origem, etapa, próximo passo, data e o consentimento dado. Clique em **Adicionar contato**. Nenhum dado clínico entra aqui: diagnóstico, exames e evolução ficam no prontuário.
+No cadastro rápido, registre nome ou apelido, de onde a pessoa veio e o próximo passo com data. Em **Mais detalhes** ficam o contato, o serviço, a etapa e o consentimento que a pessoa deu. Nenhum dado clínico entra aqui: diagnóstico, exames e evolução ficam no prontuário.
 
-![O Rastreador: o primeiro contato registrado na etapa Novo](tutorial/09-rastreador.jpg)
+![Contatos: o cadastro rápido e as filas](tutorial/09-rastreador.jpg)
 
 ### 10. Passo 9: faça o ritual da semana
 
-Toda sexta, em 30 minutos, abra o passo 9. O placar mostra quantos contatos agendaram, compareceram e iniciaram o tratamento nos últimos 90 dias e aponta o gargalo da vez. Em seguida, no **Assistente da semana**, clique em **Importar da semana** e monte a semana em blocos.
+Toda semana, em 30 minutos, abra o passo 9. O placar mostra contatos, agendamentos, comparecimentos e tratamentos dos últimos 90 dias, com o período e os números de cada taxa. Com poucos registros, ele só descreve. Monte a semana no **Assistente da semana** e clique em **Fiz o ritual desta semana**.
 
-![O ritual da semana: o placar, o gargalo e o Assistente](tutorial/10-semana.jpg)
+![O ritual da semana: o placar e o Assistente](tutorial/10-semana.jpg)
 
 ### 11. Faça o backup
 
-Os dados ficam só neste navegador. Em **Configurações**, na parte "Seus dados", clique em **Fazer backup (.json)** e guarde o arquivo. Para usar em outro aparelho, abra o app nele e clique em **Restaurar backup**. Repita o backup toda semana, no fim do ritual.
+Os dados ficam só neste navegador. Em **Ajustes e backup**, clique em **Fazer backup (.json)**: o app confere o arquivo antes de baixá-lo e diz quantos registros ele traz. Para usar em outro aparelho, clique em **Restaurar backup**. Se a restauração falhar no meio, o app desfaz tudo e mantém os dados atuais.
 
 ![Seus dados: backup e restauração](tutorial/11-backup.jpg)
 
@@ -135,7 +166,7 @@ Os dados ficam só neste navegador. Em **Configurações**, na parte "Seus dados
 | Gerador de campanhas | Meta Ads, Google Ads e plano de impulsionamento, com criativos, textos, palavras-chave e público | Passo 6 | 9 e 15 |
 | Rede de colegas | Funil de colegas, carta de apresentação, relatório de contrarreferência, agradecimentos | Passo 6 | 8 |
 | Atendimento e agendamento | Respostas rápidas do WhatsApp, roteiro de agendamento, retomadas | Passo 7 | 10 |
-| Rastreador de pacientes | Funil de sete etapas, próximos passos vencidos em destaque, lembretes (.ics), exportação (.csv) | Passo 8 | 11, 12 e 13 |
+| Rastreador de pacientes (Contatos) | Funil de sete etapas, filas de vencidos, de hoje e sem próximo passo,, próximos passos vencidos em destaque, lembretes (.ics), exportação (.csv) | Passo 8 | 11, 12 e 13 |
 | Assistente da semana | Monta a agenda da semana com acompanhamentos, conteúdo e contatos com colegas | Passo 9 | 13 |
 | Painel e diagnóstico | Métricas da Parte 13 e o gargalo da semana | Passo 9 | 13 |
 | Verificador ético | Revisa qualquer texto ou anúncio contra as regras do conselho escolhido e as políticas da Meta e do Google | Caixa de ferramentas | 2 e 15 |
@@ -190,7 +221,7 @@ Faça os três primeiros passos do caminho, uma única vez: o consultório e o o
 :::
 
 ::: {.box .noapp}
-**O caminho.** Abra o app e clique em **Continuar**: ele abre o passo em que você parou. Se faltar algum campo, o app diz qual.
+**O caminho.** Abra o app e clique em **Continuar**: ele abre o passo em que você parou. A tela Hoje mostra a sua diferença, o que ficou pendente e o que precisa de revisão.
 :::
 
 ::: passagem

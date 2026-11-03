@@ -27,7 +27,6 @@
     return String(txt).replace(/\[([^\]]+)\]/g, (m, k) => (map[k] ? map[k] : m));
   }
   const pendentes = (t) => (String(t).match(/\[[A-ZÀ-Ú][^\]]*\]/g) || []).filter((x) => !/^\[(CONFIRMAR|PENDENTE DE VALIDAÇÃO|ESTIMATIVA)\]$/.test(x)).length;
-  const claudeLink = (t) => 'https://claude.ai/new?q=' + encodeURIComponent(t);
 
   function promptCard(pr, compact) {
     const d = document.createElement('details');
@@ -45,8 +44,9 @@
           ${compact || !pr.tool ? '' : `<button type="button" class="btn btn-outline btn-sm js-lp-tool">Abrir ${escapeHtml(TOOL_NAMES[pr.tool] || pr.tool)}</button>`}
         </div>
       </div>`;
-    d.querySelector('.js-lp-copy').addEventListener('click', (e) => { copyText(d.querySelector('textarea').value, e.currentTarget); markUsed(pr.tool, true); });
-    d.querySelector('.js-lp-open').addEventListener('click', () => markUsed(pr.tool, true));
+    d.querySelector('.js-lp-copy').addEventListener('click', (e) => { copyText(d.querySelector('textarea').value, e.currentTarget, d.querySelector('textarea')); markUsed(pr.tool, true); });
+    // Abrir a IA nunca leva o prompt na URL: o texto vai pela área de transferência.
+    d.querySelector('.js-lp-open').addEventListener('click', () => { copyText(d.querySelector('textarea').value, d.querySelector('.js-lp-copy'), d.querySelector('textarea')); markUsed(pr.tool, true); });
     const bt = d.querySelector('.js-lp-tool');
     if (bt) bt.addEventListener('click', () => openTool(pr.tool));
     return d;
@@ -57,7 +57,6 @@
       if (!pr) return;
       const t = fillLivro(pr.texto);
       d.querySelector('textarea').value = t;
-      d.querySelector('.js-lp-open').href = claudeLink(t);
       const n = pendentes(t);
       d.querySelector('.ls-pend').textContent = n ? `Troque os ${n} campo(s) entre colchetes que o seu perfil ainda não preenche. Os prompts das ferramentas do app são mais completos e já trazem as regras do seu conselho.` : 'Preenchido com o seu perfil. Revise antes de enviar.';
     });
