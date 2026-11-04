@@ -75,8 +75,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 /* abertura */
 .abertura{padding-block:72px 88px}
-.abertura .grade{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-.abertura h1{font-size:clamp(2rem,3.7vw,2.9rem);font-weight:800;letter-spacing:-.02em;margin-top:16px}
+.abertura .grade{display:grid;grid-template-columns:1.45fr .75fr;gap:48px;align-items:center}
+.abertura h1{font-size:clamp(2.3rem,5vw,3.9rem);font-weight:800;letter-spacing:-.025em;line-height:1.05;margin-top:16px;max-width:15ch}
 .abertura h1 em{font-style:normal;color:var(--agua)}
 .abertura .lead{font-size:1.15rem}
 .acoes{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:30px}
@@ -252,6 +252,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
   .dores,.etapas{grid-template-columns:1fr}
   .faixa{padding-block:64px}
   .abertura{padding-block:48px 64px}
+  .criativo{justify-self:start;max-width:420px}
   .garantia{grid-template-columns:1fr;text-align:left}
   .marca small{display:none}
 }
@@ -266,23 +267,38 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
   .pessoa{grid-template-columns:1fr}
 }
 
+
+/* botão de compra que acompanha a rolagem */
+.cta-flutuante{position:fixed;z-index:40;right:max(20px, env(safe-area-inset-right, 0px));bottom:max(20px, env(safe-area-inset-bottom, 0px));display:flex;align-items:center;gap:14px;background:var(--petroleo-fundo);color:var(--sobre-escuro);padding:10px 10px 10px 18px;border-radius:16px;box-shadow:0 18px 40px -12px rgba(0,0,0,.55);border:1px solid rgba(244,242,236,.14);transform:translateY(calc(100% + 40px));opacity:0;visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1), opacity .25s ease, visibility 0s linear .35s}
+.cta-flutuante.visivel{transform:none;opacity:1;visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1), opacity .25s ease, visibility 0s}
+.cta-flutuante .cf-preco{font-size:.82rem;line-height:1.3;color:var(--sobre-escuro-suave);white-space:nowrap}
+.cta-flutuante .cf-preco b{display:block;font-size:1.05rem;color:var(--sobre-escuro)}
+.cta-flutuante .btn{padding:12px 20px;font-size:.98rem;box-shadow:none;white-space:nowrap}
+@media (max-width: 640px){
+  .cta-flutuante{left:0;right:0;bottom:0;border-radius:16px 16px 0 0;padding:10px max(16px, env(safe-area-inset-right, 0px)) max(10px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));justify-content:space-between;border-width:1px 0 0}
+  .cta-flutuante .btn{flex:1;max-width:240px}
+  .topo .btn{display:none}
+  body.com-cta{padding-bottom:76px}
+}
+@media (prefers-reduced-motion: reduce){.cta-flutuante,.cta-flutuante.visivel{transition:none}}
+
 /* criativo da abertura: as duas portas */
-.criativo{display:grid;gap:14px}
-.porta{border-radius:18px;padding:18px 18px 16px;display:grid;gap:10px}
+.criativo{display:grid;gap:10px;max-width:340px;width:100%;justify-self:end}
+.porta{border-radius:14px;padding:12px 12px 11px;display:grid;gap:7px}
 .porta.preco{background:rgba(244,242,236,.06);border:1px solid rgba(244,242,236,.14)}
 .porta.confianca{background:#F4F2EC;color:var(--tinta);box-shadow:0 30px 60px -24px rgba(0,0,0,.6)}
-.porta .tag{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.porta .tag{font-size:.64rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
 .porta.preco .tag{color:var(--pessego)}
 .porta.confianca .tag{color:#1F6F78}
-.bolha{max-width:88%;padding:10px 14px;border-radius:16px 16px 16px 4px;font-size:.98rem;line-height:1.45}
+.bolha{max-width:90%;padding:7px 10px;border-radius:12px 12px 12px 3px;font-size:.8rem;line-height:1.4}
 .porta.preco .bolha{background:#24505C;color:var(--sobre-escuro)}
 .porta.confianca .bolha{background:#FFFFFF;border:1px solid var(--linha)}
-.bolha.sua{justify-self:end;border-radius:16px 16px 4px 16px;background:#DCF3E4!important;border:1px solid rgba(22,163,74,.25)!important;color:var(--tinta)}
-.bolha small{display:block;font-size:.72rem;opacity:.8;margin-top:4px;text-align:right}
-.porta .leitura{font-size:.86rem}
+.bolha.sua{justify-self:end;border-radius:12px 12px 3px 12px;background:#DCF3E4!important;border:1px solid rgba(22,163,74,.25)!important;color:var(--tinta)}
+.bolha small{display:block;font-size:.66rem;opacity:.8;margin-top:4px;text-align:right}
+.porta .leitura{font-size:.76rem;line-height:1.45}
 .porta.preco .leitura{color:var(--sobre-escuro-suave)}
 .porta.confianca .leitura{color:var(--tinta-suave)}
-.criativo .rodape-criativo{font-size:.78rem;color:var(--sobre-escuro-suave);text-align:right}
+.criativo .rodape-criativo{font-size:.7rem;color:var(--sobre-escuro-suave);text-align:right}
 .sob-cta{margin-top:18px;font-size:.88rem;color:var(--sobre-escuro-suave)}
 
 /* dois jogos */
@@ -353,7 +369,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     <div class="miolo grade">
       <div>
         <p class="rotulo">Para médicos, dentistas, psicólogos, fisioterapeutas e nutricionistas</p>
-        <h1>Que o paciente chegue sabendo <em>por que</em> escolheu você.</h1>
+        <h1>Faça o paciente chegar sabendo <em>por que</em> escolheu você!</h1>
         <p class="lead">Pare de disputar paciente com anúncio genérico e preço. O Sistema Loop, o guia <i>O Prompt do Sim</i> com o app CliniLoop, ensina a construir uma diferença que o paciente reconhece antes de marcar, com ética, inteligência artificial e de 25 a 30 minutos por dia.</p>
         <div class="acoes">
           <a class="btn js-comprar" href="#oferta">Quero o Sistema Loop</a>
@@ -835,6 +851,11 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
 
 </main>
 
+<div class="cta-flutuante" id="cta-flutuante" aria-hidden="true">
+  <p class="cf-preco"><b>R$ 24,75 x12</b>ou R$ 297 à vista</p>
+  <a class="btn js-comprar" href="#oferta" tabindex="-1">Quero o Sistema Loop</a>
+</div>
+
 <footer class="rodape">
   <div class="miolo">
     <nav aria-label="Links do rodapé">
@@ -860,6 +881,36 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
   var DEPOIMENTOS_APROVADOS = true;
 
   if (!DEPOIMENTOS_APROVADOS) { document.getElementById('depoimentos').hidden = true; }
+
+  // Botão de compra que acompanha a rolagem: aparece depois da abertura
+  // e some onde a página já mostra a oferta ou o botão final.
+  (function () {
+    var cf = document.getElementById('cta-flutuante');
+    var inicio = document.querySelector('.abertura .acoes');
+    var alvos = [inicio, document.getElementById('oferta'), document.querySelector('.fecho'), document.querySelector('.rodape')].filter(Boolean);
+    if (!cf || !inicio || !('IntersectionObserver' in window)) return;
+    var vistos = new Set();
+    var passouInicio = false;
+    function atualiza() {
+      var mostra = passouInicio && vistos.size === 0;
+      cf.classList.toggle('visivel', mostra);
+      cf.setAttribute('aria-hidden', mostra ? 'false' : 'true');
+      cf.querySelector('a').tabIndex = mostra ? 0 : -1;
+      document.body.classList.toggle('com-cta', mostra);
+    }
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.target === inicio) passouInicio = !e.isIntersecting && e.boundingClientRect.top < 0;
+        if (e.isIntersecting) vistos.add(e.target); else vistos.delete(e.target);
+      });
+      atualiza();
+    }).observe(inicio);
+    var obs = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) vistos.add(e.target); else vistos.delete(e.target); });
+      atualiza();
+    });
+    alvos.slice(1).forEach(function (a) { obs.observe(a); });
+  })();
   if (CHECKOUT_URL) {
     document.querySelectorAll('.js-comprar').forEach(function (a) { a.href = CHECKOUT_URL; });
   }
