@@ -52,9 +52,9 @@ A Parte 3 ensina a configurar cada canal passo a passo. Por enquanto, garanta qu
 
 Anote em um lugar seguro qual e-mail e qual telefone estão ligados a cada conta e ative a verificação em duas etapas em todas. Se alguém da equipe ou de uma agência for ajudar, dê acesso pelas ferramentas de gestão de cada rede, sem compartilhar a sua senha. As contas e o conteúdo devem ficar no seu nome: eles são o patrimônio que este guia ajuda a construir.
 
-## 3. O app CliniLoop
+## 3. Os módulos do CliniLoop
 
-Abra o CliniLoop pelo link que você recebeu na compra, no navegador do computador ou do celular. Os seus registros ficam no seu aparelho, não num servidor. Ele conduz você por um caminho de nove passos, em ordem, e cada passo reúne os campos, o prompt e o que guardar. Na primeira vez, o passo 1 pede o tipo de profissional, os dados do consultório e o objetivo. O tutorial com as telas, passo a passo, está na Parte 14.
+Abra o CliniLoop pelo link que você recebeu na compra, no navegador do computador ou do celular. Os seus registros ficam no seu aparelho, não num servidor. O menu tem cinco telas: Hoje, Redes, CRM, Guia e Ferramentas. Os módulos conduzem você por um caminho de nove passos, em ordem: os passos 1 a 6 ficam no módulo Redes e posicionamento, e os passos 7 a 9, no módulo CRM. Cada passo reúne os campos, o prompt e o que guardar. Na primeira vez, o passo 1 pede o tipo de profissional, os dados do consultório e o objetivo. O tutorial com as telas, passo a passo, está na Parte 14.
 
 ::: {.box .noapp}
 **Passo 1 · Seu consultório e objetivo.** Escolha o tipo de profissional: o app carrega as regras do conselho certo em todos os prompts. Preencha uma única vez: esses dados alimentam todos os passos seguintes.

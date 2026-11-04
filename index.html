@@ -1246,7 +1246,8 @@
   .q-col-h{display:flex; justify-content:space-between; align-items:center; padding:10px 12px 2px;}
   .q-n{font-weight:700; font-size:.8rem; background:#fff; border-radius:20px; padding:1px 9px;}
   .q-dica{margin:0; padding:0 12px 8px; font-size:.74rem; color:var(--ink-soft);}
-  .q-lista{display:grid; gap:8px; padding:0 8px 10px;}
+  .q-lista{display:grid; grid-template-columns:minmax(0,1fr); gap:8px; padding:0 8px 10px;}
+  .q-col, .q-card{min-width:0;}
   .q-vazio{margin:0; font-size:.8rem; color:var(--ink-soft); padding:6px 4px;}
   .q-sem{grid-column:1/-1; margin:0 0 6px; padding:12px 14px; background:#fff; border-radius:10px; border:1px dashed var(--border-strong); font-size:.9rem;}
   .q-card{background:#fff; border:1px solid var(--border); border-radius:10px; padding:10px 10px 6px; cursor:grab; border-left:4px solid transparent;}
@@ -1261,8 +1262,8 @@
   .q-venc .q-tag{color:var(--rust);} .q-hoje .q-tag{color:#8A5A12;}
   .q-meta{margin:2px 0 0; font-size:.76rem; color:var(--ink-soft); overflow-wrap:anywhere;}
   .q-passo{margin:6px 0 4px; font-size:.82rem;}
-  .q-mov{display:flex; justify-content:space-between; align-items:center; gap:4px; border-top:1px solid var(--border); padding-top:4px;}
-  .q-b{all:unset; box-sizing:border-box; cursor:pointer; width:40px; height:40px; display:inline-grid; place-items:center; border-radius:8px; font-weight:700; color:var(--teal);}
+  .q-mov{display:flex; justify-content:space-between; align-items:center; gap:2px; border-top:1px solid var(--border); padding-top:4px;}
+  .q-b{all:unset; box-sizing:border-box; cursor:pointer; width:36px; height:40px; display:inline-grid; place-items:center; border-radius:8px; font-weight:700; color:var(--teal);}
   .q-b:hover{background:var(--paper);}
   .q-b:focus-visible, .q-det:focus-visible{outline:3px solid var(--teal); outline-offset:1px;}
   .q-det{font-size:.8rem; min-height:40px;}
@@ -1708,7 +1709,7 @@
           <div class="cfg-campos proposta-final">
               <div class="field">
                 <label for="cfg-transf">Sua proposta de valor, em uma frase *</label>
-                <input type="text" id="cfg-transf" name="transformacao" placeholder="Ajudo [público] a [entender ou cuidar de algo] com [diferencial]">
+                <textarea id="cfg-transf" name="transformacao" rows="2" placeholder="Ajudo [público] a [entender ou cuidar de algo] com [diferencial]"></textarea>
                 <small>Na saúde, a promessa é de informação e atendimento, nunca de resultado individual.</small>
               </div>
             <button type="button" class="btn btn-outline btn-sm" id="usar-rascunho">Usar o rascunho da etapa 7 acima</button>
@@ -4299,7 +4300,7 @@ Texto: [COLE AQUI]` }
     ["Carrossel", "Post com várias imagens que o usuário desliza"],
     ["Central de Contas", "Área da Meta que liga Instagram, Facebook e WhatsApp da mesma pessoa ou empresa"],
     ["CFM, CFO, CFP, COFFITO, CFN", "Siglas de Conselho Federal de Medicina, Conselho Federal de Odontologia, Conselho Federal de Psicologia, Conselho Federal de Fisioterapia e Terapia Ocupacional e Conselho Federal de Nutricionistas"],
-    ["CliniLoop", "O app que acompanha o guia O Prompt do Sim. É um CRM feito para profissionais de saúde: registra pacientes, colegas e campanhas, mostra o próximo passo de cada contato, gera prompts com o seu perfil e as regras do seu conselho e reúne os números da semana. Funciona no navegador do computador e do celular, e os dados ficam no seu aparelho"],
+    ["CliniLoop", "O produto completo, feito para profissionais de saúde: o guia O Prompt do Sim, o módulo Redes e posicionamento, que leva a sua diferença a perfis, conteúdo e campanhas, e o módulo CRM, que acompanha cada contato até o tratamento. Funciona no navegador do computador e do celular, e os dados ficam no seu aparelho"],
     ["Conta profissional", "Tipo de conta do Instagram e do TikTok que libera estatísticas, botões de contato e anúncios"],
     ["Contrarreferência", "Retorno técnico ao colega que encaminhou o paciente"],
     ["Conversão offline", "Resultado que acontece fora do site (agendamento, comparecimento) e é informado à plataforma de anúncios"],
@@ -4356,7 +4357,7 @@ Texto: [COLE AQUI]` }
     ["RQE", "Sigla de Registro de Qualificação de Especialista, exigido para o médico se anunciar especialista"],
     ["Sequência de confirmação", "Mensagens programadas antes da consulta para confirmar presença; no mercado, também chamada de régua"],
     ["Shorts", "Vídeos curtos verticais do YouTube"],
-    ["Sistema Loop", "A combinação do guia O Prompt do Sim com o app CliniLoop: o guia ensina o porquê e o caminho, o app faz o trabalho e guarda o registro, num ciclo que se repete toda semana"],
+    ["Método Loop", "O ciclo do CliniLoop: diferenciar, mostrar, medir e voltar à estratégia. O guia ensina o porquê e o caminho, os módulos fazem o trabalho e guardam o registro, num ciclo que se repete toda semana"],
     ["Sobre", "Seção de apresentação do perfil do LinkedIn, com até 2.600 caracteres"],
     ["Taxa de aceitação", "Planos iniciados divididos por planos propostos"],
     ["Taxa de agendamento", "Agendados divididos por novos contatos"],
@@ -8133,7 +8134,7 @@ Entregue:
     hoje.hidden = est[1] !== 'pronto';
     const e = estrategia();
     document.getElementById('cm-prop').innerHTML = e.proposta ? `<span class="dif-badge ${e.status}">${EST_ROTULO[e.status]}</span>${e.temEvidencia ? '' : ' <span class="dif-badge hipotese">Sem evidência</span>'} “${escapeHtml(trim(e.proposta, 140))}”` : 'Ainda não definida. <button type="button" class="linkish" data-abrir="oceano">Construir no passo 3</button>';
-    document.getElementById('cm-prog-t').textContent = `Seu caminho · ${prontos} de 8 passos prontos`;
+    document.getElementById('cm-prog-t').textContent = `Seu caminho · ${prontos} de 8 passos prontos · o 9º é semanal`;
     const mt = document.getElementById('cm-meter'); mt.setAttribute('aria-valuenow', String(prontos)); mt.setAttribute('aria-valuetext', `${prontos} de 8 passos prontos`);
     document.getElementById('cm-prog-bar').style.width = Math.round(prontos / 8 * 100) + '%';
     const onde = document.getElementById('cm-onde'); const acao = document.getElementById('cm-acao'); const cont = document.getElementById('cm-continuar');

@@ -55,14 +55,15 @@ Em toda boa história, o herói hesita antes de partir. Na saúde, a hesitação
 
 Nas histórias, o mentor não faz a jornada pelo herói. Ele aparece quando o herói hesita, entrega um mapa, algumas ferramentas e um conselho, e depois sai de cena para que o herói atravesse sozinho.
 
-Este é o papel do **Sistema Loop**:
+Este é o papel do **CliniLoop**, que tem três partes:
 
 - **O guia, *O Prompt do Sim*,** é o mapa. São dezesseis partes, em seis etapas, e um manual prático no Anexo A. Cada parte explica o porquê, mostra o caminho e termina numa ação de até 30 minutos.
-- **O app CliniLoop** é a mochila de ferramentas. Ele gera os prompts de inteligência artificial já preenchidos com o perfil do seu consultório, o seu diferencial e as regras do seu conselho. Monta roteiros de vídeo e de campanha, escreve as respostas do WhatsApp e as cartas aos colegas, revisa qualquer texto contra as normas da sua profissão e, como CRM, registra cada contato, paciente e colega, com a origem e o próximo passo.
+- **O módulo Redes e posicionamento** é a mochila de ferramentas. Nele você define a sua diferença com o Oceano Azul, e o app gera os prompts de inteligência artificial já preenchidos com o perfil do seu consultório, o seu diferencial e as regras do seu conselho: perfis, pautas, roteiros de vídeo, cartas aos colegas e campanhas. Funciona no computador e no celular.
+- **O módulo CRM do consultório** é o caderno de bordo. Um quadro mostra em que etapa está cada contato, do primeiro "oi" ao tratamento, com a origem e o próximo passo. Ali também ficam as respostas do WhatsApp, o procedimento da recepção e o ritual da semana. Foi pensado para o computador do consultório.
 
 CRM é a sigla, em inglês, de gestão do relacionamento com o cliente. No consultório, é o caderno de bordo da jornada: quem entrou em contato, de onde veio, em que etapa está e qual é o próximo passo.
 
-Um mentor precisa ter passado por algum caminho parecido. O Sistema Loop nasceu da soma de três experiências: décadas de trabalho executivo em marketing de bens de consumo, indústria farmacêutica e negócios entre empresas, na Europa e na América Latina; a incorporação de tecnologia e inteligência artificial à forma como um serviço chega a quem precisa dele; e a vivência de empreender na saúde, com uma clínica odontológica de várias especialidades. Dessa soma veio uma constatação: corpo clínico qualificado, espaço bonito e equipamentos modernos não garantem agenda cheia nem paciente que adere ao tratamento. O que faz diferença é um processo contínuo, medido e ético.
+Um mentor precisa ter passado por algum caminho parecido. O CliniLoop nasceu da soma de três experiências: décadas de trabalho executivo em marketing de bens de consumo, indústria farmacêutica e negócios entre empresas, na Europa e na América Latina; a incorporação de tecnologia e inteligência artificial à forma como um serviço chega a quem precisa dele; e a vivência de empreender na saúde, com uma clínica odontológica de várias especialidades. Dessa soma veio uma constatação: corpo clínico qualificado, espaço bonito e equipamentos modernos não garantem agenda cheia nem paciente que adere ao tratamento. O que faz diferença é um processo contínuo, medido e ético.
 
 ## A bússola: uma hipótese, não uma promessa
 
@@ -114,7 +115,7 @@ O guia chama isso de **diferencial ético**: uma diferença real, demonstrada pe
 
 ## O preço da travessia
 
-O Sistema Loop não troca a mensalidade de uma agência por um preço menor. Ele troca o jogo, e o novo jogo cobra em outra moeda: **o seu tempo**.
+O CliniLoop não troca a mensalidade de uma agência por um preço menor. Ele troca o jogo, e o novo jogo cobra em outra moeda: **o seu tempo**.
 
 - **De 25 a 30 minutos por dia útil** no primeiro mês, seguindo o plano de 30 dias do roteiro.
 - **Um ritual semanal de 30 minutos** a partir daí, para publicar, responder, registrar e corrigir uma coisa por vez.

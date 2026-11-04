@@ -525,7 +525,7 @@ Entregue:
     hoje.hidden = est[1] !== 'pronto';
     const e = estrategia();
     document.getElementById('cm-prop').innerHTML = e.proposta ? `<span class="dif-badge ${e.status}">${EST_ROTULO[e.status]}</span>${e.temEvidencia ? '' : ' <span class="dif-badge hipotese">Sem evidência</span>'} “${escapeHtml(trim(e.proposta, 140))}”` : 'Ainda não definida. <button type="button" class="linkish" data-abrir="oceano">Construir no passo 3</button>';
-    document.getElementById('cm-prog-t').textContent = `Seu caminho · ${prontos} de 8 passos prontos`;
+    document.getElementById('cm-prog-t').textContent = `Seu caminho · ${prontos} de 8 passos prontos · o 9º é semanal`;
     const mt = document.getElementById('cm-meter'); mt.setAttribute('aria-valuenow', String(prontos)); mt.setAttribute('aria-valuetext', `${prontos} de 8 passos prontos`);
     document.getElementById('cm-prog-bar').style.width = Math.round(prontos / 8 * 100) + '%';
     const onde = document.getElementById('cm-onde'); const acao = document.getElementById('cm-acao'); const cont = document.getElementById('cm-continuar');

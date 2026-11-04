@@ -196,8 +196,8 @@ def main():
         c[3] = re.sub(r'href="#([^"]*)"', fix, c[3])
         c[3] = c[3].replace('href="#"', '').replace('<a >', '<a>')
 
-    fim = ('<section class="fim"><h2>O Prompt do Sim</h2><p>Conhecimentos dirigidos e um app de CRM: o Sistema Loop. O app CliniLoop, que completa este guia, '
-           'registra pacientes, colegas e campanhas no seu navegador e leva os prompts para o seu dia a dia.</p>'
+    fim = ('<section class="fim"><h2>O Prompt do Sim</h2><p>O guia do CliniLoop. Os módulos Redes e CRM, que completam este guia, '
+           'levam os prompts para o seu dia a dia e acompanham pacientes, colegas e campanhas no seu navegador.</p>'
            '<p class="nota">Este guia não substitui a orientação do seu conselho profissional nem assessoria jurídica.</p>'
            '<p class="nota">Acesso ao app: clini.loopuniversity.com.br · Atendimento: atendimento@loopuniversity.com.br</p></section>')
     capitulos[-1][3] += fim
@@ -249,7 +249,7 @@ def main():
            f'<dc:identifier id="bookid">{BOOK_ID}</dc:identifier><dc:title>{TITULO}</dc:title><dc:creator>{AUTOR}</dc:creator>'
            f'<dc:publisher>{EDITORA}</dc:publisher><dc:language>pt-BR</dc:language><dc:date>2026</dc:date>'
            '<dc:subject>Marketing na saúde</dc:subject><dc:subject>Inteligência artificial</dc:subject><dc:subject>CRM</dc:subject>'
-           '<dc:description>Marketing, inteligência artificial e CRM para profissionais da saúde. O guia do Sistema Loop, que acompanha o app CliniLoop.</dc:description>'
+           '<dc:description>Marketing, inteligência artificial e CRM para profissionais da saúde. O guia do CliniLoop, com os módulos Redes e CRM.</dc:description>'
            f'<meta property="dcterms:modified">{agora}</meta><meta name="cover" content="capa-img"/></metadata>'
            f'<manifest>{"".join(man)}</manifest><spine toc="ncx">{"".join(spine)}</spine>'
            '<guide><reference type="cover" title="Capa" href="text/capa.xhtml"/><reference type="toc" title="Sumário" href="text/nav.xhtml"/></guide></package>')

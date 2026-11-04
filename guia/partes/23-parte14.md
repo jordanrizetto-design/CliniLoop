@@ -4,14 +4,14 @@ num: 14
 etapa: No roteiro · Etapa 6 de 6 · Meça e escale com CRM
 jornada: O caminho de volta
 titulo: O app CliniLoop: guia das ferramentas
-lead: O CliniLoop é o app que acompanha este guia. Ele conduz você pela mesma jornada, em três atos e nove passos, e leva a diferença que você definiu no Oceano Azul a cada perfil, conteúdo, conversa e campanha.
-nesta: O que o app faz por você · O caminho em nove passos · Hipótese, evidência e decisão · Tutorial: o primeiro uso · Do guia à ferramenta · Status do Rastreador · O que fica registrado · Privacidade · Clínicas com vários usuários
+lead: O CliniLoop reúne este guia e dois módulos, Redes e CRM. Eles conduzem você pela mesma jornada, em três atos e nove passos, e levam a diferença que você definiu no Oceano Azul a cada perfil, conteúdo, conversa e campanha.
+nesta: O que o app faz por você · O caminho em nove passos · O módulo CRM · Hipótese, evidência e decisão · Tutorial: o primeiro uso · Do guia à ferramenta · Status do Rastreador · O que fica registrado · Privacidade · Clínicas com vários usuários
 grupo: Etapa 6 · Meça e escale com CRM
 marca: PARTE 14
 ---
 O caminho de volta é a parte da jornada em que o herói aprende a repetir sem o mentor por perto. As ferramentas do CliniLoop servem para isso: fazer, toda semana, o que o guia ensinou uma vez.
 
-Esta parte é o manual de uso do app. Cada ferramenta nasceu de uma parte do guia: o guia explica o porquê, o app põe em prática. Por isso o Sistema Loop é o guia *O Prompt do Sim* e o app CliniLoop juntos, e o resultado vem do uso dos dois.
+Esta parte é o manual de uso do app. Cada ferramenta nasceu de uma parte do guia: o guia explica o porquê, o app põe em prática. Por isso o CliniLoop reúne três partes: o guia *O Prompt do Sim*, o módulo Redes e posicionamento e o módulo CRM do consultório. O resultado vem do uso das três.
 
 O app também resolve um problema que este guia aponta desde a Apresentação: a IA, sozinha, escreve o texto médio da internet. No CliniLoop, a proposta de valor, as quatro ações do Oceano Azul e o tom de voz que você guardou entram automaticamente no contexto de todos os prompts. A diferença que você definiu uma vez passa a orientar cada peça.
 
@@ -28,7 +28,7 @@ O app também resolve um problema que este guia aponta desde a Apresentação: a
 
 ## O caminho em nove passos
 
-O app conta a mesma história deste guia: você é o herói, e o CliniLoop é o mentor. O caminho tem três atos e nove passos, em ordem, e um passo fica aberto de cada vez.
+O app conta a mesma história deste guia: você é o herói, e o CliniLoop é o mentor. O caminho tem três atos e nove passos, em ordem, e um passo fica aberto de cada vez. Os passos 1 a 6 ficam no módulo **Redes e posicionamento**, que funciona no computador e no celular. Os passos 7 a 9 ficam no módulo **CRM do consultório**, pensado para o computador.
 
 | Ato da jornada | Passo | O que você faz |
 |------|-------|--------------|
@@ -72,12 +72,22 @@ Quando você muda a proposta ou as quatro ações, ela volta para "Precisa revis
 
 Todo prompt mostra o mesmo ciclo: **copie**, **abra a sua IA** e cole, **volte** ao app e revise a resposta, e **guarde a versão aprovada**. O botão "Abrir no…" copia o prompt antes de abrir a IA; o texto nunca vai pelo endereço da página. Se a cópia falhar, o app seleciona o texto e avisa. Em "Guardar a versão aprovada", o que você digita fica como rascunho até você clicar em **Aprovar e guardar**: só a versão aprovada entra nos próximos prompts.
 
-### Tela Hoje, Ferramentas e Contatos
+### O menu: Hoje, Redes, CRM, Guia e Ferramentas
 
-- **Hoje:** a sua diferença atual, com o estado dela; o próximo passo e o que ficou pendente; as filas de contatos; a semana e o ritual; e atalhos para o que se usa toda semana.
-- **Ferramentas:** todas as ferramentas, em sete grupos por objetivo, com busca. Cada uma diz para que serve, o que recebe, o que entrega e o que vem depois, e abre onde mora: no passo do caminho ou na própria página.
-- **Contatos:** o cadastro rápido pede nome, origem e próximo passo. A origem nunca vem escolhida: se não souber, escolha "Não sei". Os consentimentos começam todos desmarcados, porque cadastrar alguém não é consentimento.
-- **Mais:** o guia no app, o PDF, o Verificador ético, Ajustes e backup e a Ajuda.
+O app mostra uma tela de cada vez.
+
+- **Hoje:** as três partes do CliniLoop, com a situação de cada uma; a sua diferença atual e o estado dela; o próximo passo e o que ficou pendente; as filas de contatos; a semana e o ritual.
+- **Redes:** os passos 1 a 6, do consultório e do Oceano Azul aos perfis, ao conteúdo, aos colegas e às campanhas.
+- **CRM:** o quadro de contatos, o procedimento da recepção e os passos 7 a 9.
+- **Guia:** este guia dentro do app, com o roteiro em seis etapas, o plano de 30 dias, a biblioteca de prompts, o glossário e a ajuda.
+- **Ferramentas:** todas as ferramentas, em sete grupos por objetivo e com busca, mais o Verificador ético e as Configurações. Cada ferramenta diz para que serve, o que recebe, o que entrega e o que vem depois, e abre onde mora.
+
+### O módulo CRM: quadro, procedimento e modo recepção
+
+- **Quadro de contatos:** uma coluna para cada etapa, de Novo a Encerrado. No computador, você arrasta o cartão para a etapa seguinte; no celular e no teclado, usa as setas do próprio cartão. Cada mudança registra a data e sugere o próximo passo daquela etapa. Cartões vencidos, para hoje e sem próximo passo ficam marcados, e os filtros do topo mostram só essas filas. Para encerrar, o app pede o resultado (alta e vínculo, perdido ou pausado) e o motivo, sem dado clínico.
+- **Novo contato:** o cadastro rápido pede nome, origem e próximo passo. A origem nunca vem escolhida: se não souber, escolha "Não sei". Os consentimentos começam todos desmarcados, porque cadastrar alguém não é consentimento.
+- **Procedimento da recepção:** para cada etapa, quando agir, o que fazer e uma mensagem modelo, com as regras que valem sempre (nenhum dado clínico, dúvida clínica é do profissional, consentimento só com aceite, nada de prometer resultado). Ele mostra também como a sua diferença aparece no atendimento e as respostas que você aprovou no passo 7. Dá para imprimir e deixar no balcão.
+- **Modo recepção:** o app abre direto no CRM e recolhe o resto, para quem atende no computador do consultório. Ele vale só naquele navegador e não é senha: os dados continuam acessíveis a quem usa o mesmo computador.
 
 ## Tutorial: o primeiro uso, passo a passo
 
@@ -85,9 +95,9 @@ Siga o tutorial uma única vez. Depois, a tela Hoje e o ritual da semana conduze
 
 ### 1. Abra o app
 
-Abra o CliniLoop pelo link que você recebeu na compra, no navegador do computador ou do celular. No topo, você vê os três atos da jornada e quantos passos de cada um estão prontos. Clique em **Construir minha diferenciação**.
+Abra o CliniLoop pelo link que você recebeu na compra, no navegador do computador ou do celular. No topo, você vê as três partes do CliniLoop: o Guia, o módulo Redes e o módulo CRM. Clique em **Construir minha diferenciação**: o app abre o módulo Redes no passo 1.
 
-![O topo do app: a proposta do produto e os três atos da jornada](tutorial/01-topo.jpg)
+![O topo do app: a proposta do produto e as três partes do CliniLoop](tutorial/01-topo.jpg)
 
 ### 2. Passo 1: seu consultório e objetivo
 
@@ -127,27 +137,33 @@ Quando gostar da resposta da IA, revise identificação, promessas e dados, cole
 
 ### 8. Escolha a sua IA
 
-Em **Mais**, abra **Ajustes e backup**. Em "Como você usa a IA", escolha a IA em que vai colar os prompts. Se usa o Claude, indique também o modo: sem assinatura, Pro ou Max, ou API.
+No menu **Ferramentas**, abra **Configurações**. Em "Como você usa a IA", escolha a IA em que vai colar os prompts. Se usa o Claude, indique também o modo: sem assinatura, Pro ou Max, ou API.
 
 ![Ajustes: o modo de uso do Claude e a IA preferida](tutorial/08-ia.jpg)
 
-### 9. Passo 8: registre o primeiro contato
+### 9. No CRM, registre o primeiro contato
 
-No cadastro rápido, registre nome ou apelido, de onde a pessoa veio e o próximo passo com data. Em **Mais detalhes** ficam o contato, o serviço, a etapa e o consentimento que a pessoa deu. Nenhum dado clínico entra aqui: diagnóstico, exames e evolução ficam no prontuário.
+No menu, abra **CRM** e clique em **Novo contato**. No cadastro rápido, registre nome ou apelido, de onde a pessoa veio e o próximo passo com data. Em **Mais detalhes** ficam o contato, o serviço, a etapa e o consentimento que a pessoa deu. Nenhum dado clínico entra aqui: diagnóstico, exames e evolução ficam no prontuário.
 
-![Contatos: o cadastro rápido e as filas](tutorial/09-rastreador.jpg)
+![O cadastro rápido de um contato](tutorial/09-rastreador.jpg)
 
-### 10. Passo 9: faça o ritual da semana
+### 10. Mova os cartões no quadro
 
-Toda semana, em 30 minutos, abra o passo 9. O placar mostra contatos, agendamentos, comparecimentos e tratamentos dos últimos 90 dias, com o período e os números de cada taxa. Com poucos registros, ele só descreve. Monte a semana no **Assistente da semana** e clique em **Fiz o ritual desta semana**.
+No quadro, arraste o cartão para a etapa seguinte ou use as setas. O app registra a data e sugere o próximo passo. Abra o **Procedimento da recepção** para ver o que fazer em cada etapa e imprima uma cópia para quem atende. Se a recepção usa o mesmo computador, ligue o **Modo recepção**.
 
-![O ritual da semana: o placar e o Assistente](tutorial/10-semana.jpg)
+![O quadro de contatos, com uma coluna por etapa](tutorial/10-quadro.jpg)
 
-### 11. Faça o backup
+### 11. Passo 9: faça o ritual da semana
 
-Os dados ficam só neste navegador. Em **Ajustes e backup**, clique em **Fazer backup (.json)**: o app confere o arquivo antes de baixá-lo e diz quantos registros ele traz. Para usar em outro aparelho, clique em **Restaurar backup**. Se a restauração falhar no meio, o app desfaz tudo e mantém os dados atuais.
+Toda semana, em 30 minutos, abra o passo 9, no fim do módulo CRM. O placar mostra contatos, agendamentos, comparecimentos e tratamentos dos últimos 90 dias, com o período e os números de cada taxa. Com poucos registros, ele só descreve. Monte a semana no **Assistente da semana** e clique em **Fiz o ritual desta semana**.
 
-![Seus dados: backup e restauração](tutorial/11-backup.jpg)
+![O ritual da semana: o placar e o Assistente](tutorial/11-semana.jpg)
+
+### 12. Faça o backup
+
+Os dados ficam só neste navegador. No menu **Ferramentas**, em **Configurações**, clique em **Fazer backup (.json)**: o app confere o arquivo antes de baixá-lo e diz quantos registros ele traz. Para usar em outro aparelho, clique em **Restaurar backup**. Se a restauração falhar no meio, o app desfaz tudo e mantém os dados atuais.
+
+![Seus dados: backup e restauração](tutorial/12-backup.jpg)
 
 ## Do guia à ferramenta
 
@@ -166,7 +182,7 @@ Os dados ficam só neste navegador. Em **Ajustes e backup**, clique em **Fazer b
 | Gerador de campanhas | Meta Ads, Google Ads e plano de impulsionamento, com criativos, textos, palavras-chave e público | Passo 6 | 9 e 15 |
 | Rede de colegas | Funil de colegas, carta de apresentação, relatório de contrarreferência, agradecimentos | Passo 6 | 8 |
 | Atendimento e agendamento | Respostas rápidas do WhatsApp, roteiro de agendamento, retomadas | Passo 7 | 10 |
-| Rastreador de pacientes (Contatos) | Funil de sete etapas, filas de vencidos, de hoje e sem próximo passo,, próximos passos vencidos em destaque, lembretes (.ics), exportação (.csv) | Passo 8 | 11, 12 e 13 |
+| Rastreador e quadro de contatos | Funil de sete etapas, filas de vencidos, de hoje e sem próximo passo,, próximos passos vencidos em destaque, lembretes (.ics), exportação (.csv) | Passo 8 | 11, 12 e 13 |
 | Assistente da semana | Monta a agenda da semana com acompanhamentos, conteúdo e contatos com colegas | Passo 9 | 13 |
 | Painel e diagnóstico | Métricas da Parte 13 e o gargalo da semana | Passo 9 | 13 |
 | Verificador ético | Revisa qualquer texto ou anúncio contra as regras do conselho escolhido e as políticas da Meta e do Google | Caixa de ferramentas | 2 e 15 |
@@ -221,7 +237,7 @@ Faça os três primeiros passos do caminho, uma única vez: o consultório e o o
 :::
 
 ::: {.box .noapp}
-**O caminho.** Abra o app e clique em **Continuar**: ele abre o passo em que você parou. A tela Hoje mostra a sua diferença, o que ficou pendente e o que precisa de revisão.
+**O caminho.** Abra o app e clique em **Continuar**: ele abre o módulo e o passo em que você parou. A tela Hoje mostra a sua diferença, o que ficou pendente e o que precisa de revisão.
 :::
 
 ::: passagem

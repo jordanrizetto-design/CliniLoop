@@ -334,8 +334,8 @@ def cover_html():
 <div class="ctext"><p class="eyebrow">Saúde · marketing digital · tecnologia</p>
 <h1>Prompt<br><em>do Sim</em></h1>
 <p class="sub">Guia digital para o sucesso do profissional da saúde.</p>
-<p class="sub2">Conhecimentos dirigidos e o app de CRM CliniLoop, para atrair pacientes e colegas com ética, método e inteligência artificial.</p></div>
-<p class="foot"><b>Edição 2026</b> · versão beta · app CliniLoop</p></section>'''
+<p class="sub2">O guia do CliniLoop, com os módulos Redes e CRM, para atrair pacientes e colegas com ética, método e inteligência artificial.</p></div>
+<p class="foot"><b>Edição 2026</b> · versão beta · CliniLoop: guia, Redes e CRM</p></section>'''
 
 
 def slug(key):
@@ -444,8 +444,8 @@ def build_html(pages):
             for hid, ht in subs:
                 toc.append(f'<a class="sub" href="#{hid}"><span class="n"></span><span class="t">{E(ht)}</span><span class="p">{pages.get(hid, "")}</span></a>')
     toc.append('</section>')
-    fim = ('<section class="fim"><h2>O Prompt do Sim</h2><p>Conhecimentos dirigidos e um app de CRM: o Sistema Loop. O app CliniLoop, que completa este guia, registra pacientes, colegas e campanhas no seu navegador, '
-           'sem servidor, e leva os prompts para o seu dia a dia.</p><p class="nota" style="color:#9FB6BB">Este guia não substitui a orientação do seu conselho profissional nem assessoria jurídica.</p></section>')
+    fim = ('<section class="fim"><h2>O Prompt do Sim</h2><p>O guia do CliniLoop. Os módulos Redes e CRM, que completam este guia, levam os prompts para o seu dia a dia e acompanham pacientes, colegas e campanhas no seu navegador, '
+           'sem servidor.</p><p class="nota" style="color:#9FB6BB">Este guia não substitui a orientação do seu conselho profissional nem assessoria jurídica.</p></section>')
     doc = f'<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><title>O Prompt do Sim</title><style>{CSS}</style></head><body>{cover_html()}{"".join(toc)}{"".join(sections)}{fim}</body></html>'
     # âncoras de sumário
     return doc, toc_items

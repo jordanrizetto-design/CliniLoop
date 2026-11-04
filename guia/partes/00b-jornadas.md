@@ -12,7 +12,7 @@ Nenhum paciente chega do nada. Cada um percorre um caminho até a sua cadeira, e
 
 Pense nos seus últimos dez pacientes novos. Um veio indicado por um colega. Outra viu um vídeo seu e chamou no Direct. Um terceiro achou você no Google Maps, uma quarta veio pelo convênio, e assim por diante. Cada um entrou por uma porta, e as portas não são iguais.
 
-| Família | Exemplos | Porta mais comum | O que o Sistema Loop faz |
+| Família | Exemplos | Porta mais comum | O que o CliniLoop faz |
 |---|---|---|---|
 | **Indicação** | Colega de outra área, encaminhamento interno da clínica, paciente atual ou antigo, família e amigos | Confiança | Otimiza: rede de colegas, contrarreferência, avaliações e indicação espontânea (Partes 8 e 12) |
 | **Conteúdo próprio** | Reels, carrosséis, vídeos no YouTube, posts no LinkedIn, um guia útil enviado por mensagem | Confiança | Otimiza: posicionamento, conteúdo, vídeo e reaproveitamento (Partes 3 a 7) |
@@ -32,7 +32,7 @@ Isso tem duas consequências. A primeira é que a diferença precisa estar em to
 
 ## O que o guia e o app otimizam
 
-O Sistema Loop faz três escolhas.
+O CliniLoop faz três escolhas.
 
 1. **Fortalecer os caminhos da confiança.** Indicação, conteúdo próprio, presença fora do digital e retorno são as famílias em que a sua diferença age com mais força. É nelas que o guia investe a maior parte das páginas.
 2. **Levar a busca e a mídia paga para a porta da confiança.** Um perfil que mostra a sua diferença transforma a busca em reconhecimento. Um anúncio feito a partir do seu conteúdo transforma o clique em interesse por você, e não pelo preço.

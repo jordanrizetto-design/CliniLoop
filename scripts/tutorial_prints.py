@@ -18,7 +18,7 @@ def shot(pg, sel, nome, max_h=None):
 
 with sync_playwright() as p:
     b = p.chromium.launch()
-    pg = b.new_page(viewport={'width': 1180, 'height': 900}, device_scale_factor=2)
+    pg = b.new_page(viewport={'width': 1180, 'height': 900}, device_scale_factor=2, locale='pt-BR')
     errs = []; pg.on('pageerror', lambda e: errs.append(str(e)))
     pg.goto(URL); pg.evaluate('localStorage.clear()'); pg.reload(); pg.wait_for_timeout(800)
     pg.add_style_tag(content='html{scroll-behavior:auto !important}')
@@ -32,13 +32,13 @@ with sync_playwright() as p:
     pg.fill('#cfg-cidade', 'Pinheiros, São Paulo'); pg.fill('#cfg-servicos', 'consulta de nutrição esportiva, plano alimentar para provas')
     pg.fill('#cfg-meta', '20 primeiras consultas de corredores em 90 dias'); pg.wait_for_timeout(400)
     shot(pg, '#passo-1', '02-perfil.png', max_h=1500)
-    pg.click('#passo-1 .js-passo-ok'); pg.wait_for_timeout(400)
+    pg.evaluate("document.querySelector('#passo-1 .js-passo-ok').click()"); pg.wait_for_timeout(400)
     # 3. Passo 2
     pg.fill('#cfg-publico', 'corredores amadores de 30 a 50 anos'); pg.fill('#cfg-icp-dor', 'cansa no fim das provas e não sabe o que comer antes de treinar')
     pg.fill('#cfg-icp-valoriza', 'explicação clara e um plano que caiba na rotina de treino'); pg.fill('#cfg-icp-onde', 'Instagram, grupos de corrida e indicação do ortopedista')
     pg.wait_for_timeout(400)
     shot(pg, '#passo-2', '03-paciente.png', max_h=1000)
-    pg.click('#passo-2 .js-passo-ok'); pg.wait_for_timeout(400)
+    pg.evaluate("document.querySelector('#passo-2 .js-passo-ok').click()"); pg.wait_for_timeout(400)
     # 4. Passo 3: Oceano Azul até a proposta
     for i in (0, 4, 10, 11, 12): pg.check(f'#oa-f{i}')
     pg.evaluate("oaIr(4)"); pg.wait_for_timeout(200)
@@ -46,14 +46,16 @@ with sync_playwright() as p:
     pg.evaluate("oaIr(7)"); pg.wait_for_timeout(300)
     pg.fill('#oa-proposta', 'Para corredores amadores de 30 a 50 anos, ofereço um plano alimentar adaptado à rotina de treino, revisado depois de cada prova.')
     pg.click('#usar-rascunho'); pg.wait_for_timeout(500)
+    pg.evaluate("(() => { const i = document.getElementById('cfg-transf'); i.blur(); i.setSelectionRange && i.setSelectionRange(0, 0); i.scrollLeft = 0; })()")
     shot(pg, '#passo-3 .proposta-final', '04a.png')
     shot(pg, '#est-aprovacao', '04b.png')
     from PIL import Image
     a_, b_ = Image.open(OUT + '04a.png'), Image.open(OUT + '04b.png')
     im = Image.new('RGB', (max(a_.width, b_.width), a_.height + b_.height + 24), (244, 241, 234)); im.paste(a_, (0, 0)); im.paste(b_, (0, a_.height + 24)); im.save(OUT + '04-oceano.png')
     import os; os.remove(OUT + '04a.png'); os.remove(OUT + '04b.png')
-    pg.click('#passo-3 .js-passo-ok'); pg.wait_for_timeout(400)
+    pg.evaluate("document.querySelector('#passo-3 .js-passo-ok').click()"); pg.wait_for_timeout(400)
     # 5. Hoje
+    pg.click('nav.links [data-visao-link="hoje"]'); pg.wait_for_timeout(300)
     pg.evaluate("document.getElementById('hoje').scrollIntoView()")
     shot(pg, '#hoje', '05-hoje.png', max_h=1050)
     # 6. Passo 4: uma rede
@@ -67,23 +69,33 @@ with sync_playwright() as p:
     pg.fill('#save-perfil', 'Instagram\nNome: Bia Nunes | Nutricionista esportiva\nBio: Nutricionista (CRN-3 00000) | Corredores de 30 a 50 anos | Pinheiros, SP | Agende pelo WhatsApp ⬇️')
     pg.wait_for_timeout(500); pg.click('.saved-slot[data-save=perfil] .js-aprovar'); pg.wait_for_timeout(400)
     shot(pg, '.saved-slot[data-save=perfil]', '07-guardar.png')
-    # 8. IA preferida
+    # 8. IA preferida (menu Ferramentas, Configurações)
+    pg.click('nav.links [data-visao-link="ferramentas"]'); pg.wait_for_timeout(200)
     pg.evaluate("document.getElementById('ajustes').open=true")
     pg.evaluate("const s=document.getElementById('ia-pref'); s.value='claude'; s.dispatchEvent(new Event('change'))")
     shot(pg, '#modo', '08-ia.png', max_h=900)
-    pg.evaluate("document.getElementById('ajustes').open=false")
-    # 9. Contatos
-    pg.evaluate("openTool('rastreador')"); pg.wait_for_timeout(200)
+    # 9. CRM: novo contato
+    pg.click('nav.links [data-visao-link="crm"]'); pg.wait_for_timeout(200)
+    pg.click('#q-novo'); pg.wait_for_timeout(300)
     pg.fill('#t-nome', 'Rafael M.'); pg.select_option('#t-origem', 'Instagram orgânico')
-    pg.fill('#t-passo', 'confirmar a primeira consulta'); pg.fill('#t-data', '2026-11-05')
-    pg.locator('#tracker-form button[type=submit]').click(); pg.wait_for_timeout(400)
-    shot(pg, '#passo-8 .passo-corpo', '09-rastreador.png', max_h=1100)
-    # 10. Ritual semanal
+    pg.fill('#t-passo', 'confirmar a primeira consulta'); pg.fill('#t-data', '2026-11-05'); pg.evaluate('document.activeElement.blur()')
+    shot(pg, '#tracker-form', '09-rastreador.png', max_h=900)
+    pg.locator('#tracker-form button[type=submit]').click(); pg.wait_for_timeout(300)
+    # mais contatos fictícios, em etapas diferentes, para o quadro
+    pg.evaluate("""(() => { const h = todayISO(); const add = (id, nome, etapa, origem, passo, data) => { const p = { id, nome, etapa, origem, passo, data, criado: addDays(h, -10), atualizado: h, hist: {}, consent: {}, revogado: {}, ativ: [] }; fillHist(p, etapa); pacientes.push(p); };
+      add('t2', 'Carla S.', 'Em conversa', 'Indicação de colega', 'Oferecer dois horários', h);
+      add('t3', 'Paulo T.', 'Agendado', 'Google orgânico', 'Confirmação 48 h antes', addDays(h, 3));
+      add('t4', 'Marina R.', 'Plano proposto', 'Não informada', 'Acompanhamento do plano (2, 7 e 15 dias)', addDays(h, -1));
+      savePac(); notifyData(); })()""")
+    pg.click('nav.links [data-visao-link="crm"]'); pg.wait_for_timeout(300)
+    shot(pg, '#quadro', '10-quadro.png', max_h=800)
+    # 11. Ritual semanal
     pg.evaluate("abrirPasso(9,{scroll:false})"); pg.wait_for_timeout(300)
-    shot(pg, '#passo-9', '10-semana.png', max_h=1000)
-    # 11. Backup
+    shot(pg, '#passo-9', '11-semana.png', max_h=1000)
+    # 12. Backup
+    pg.click('nav.links [data-visao-link="ferramentas"]'); pg.wait_for_timeout(200)
     pg.evaluate("document.getElementById('ajustes').open=true"); pg.wait_for_timeout(200)
-    shot(pg, '#bk-save >> xpath=ancestor::section[1]', '11-backup.png', max_h=500)
+    shot(pg, '#bk-save >> xpath=ancestor::section[1]', '12-backup.png', max_h=500)
     print('erros', errs)
     b.close()
 

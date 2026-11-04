@@ -26,7 +26,7 @@ Não existe benchmark brasileiro público e confiável de volume de pacientes po
 
 Não avaliamos cursos pagos nem mentorias, por não termos acesso a conteúdo comparável.
 
-| Categoria | O que entrega | Onde o Sistema Loop é diferente |
+| Categoria | O que entrega | Onde o CliniLoop é diferente |
 |---|---|---|
 | Agência de marketing ou gestor de tráfego | Anúncios, gestão das redes e relatórios, mediante mensalidade mais verba de mídia. O criativo costuma ser adaptado de modelos usados para vários clientes | Outro jogo: em vez de comprar volume, o profissional constrói a diferença com o próprio conteúdo e a rede de colegas. O custo principal é o tempo dele, de 25 a 30 minutos por dia no primeiro mês. Os dois podem conviver: o guia ensina a entregar à agência o que é só seu, para que o anúncio amplifique a diferença (Parte 9) |
 | Conteúdo gratuito de blog | Conceitos, escolha de plataforma, resumo de regras do CFM. Sem números, modelos, roteiros ou checklists | Passos de 30 minutos, 14 prompts, checklists e um registro de contatos |
