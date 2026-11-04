@@ -17,7 +17,7 @@ O banco de acessos (KV) entra em `wrangler.jsonc`, com o ID do namespace, porque
 | Variável | `EMAIL_FROM` | `CliniLoop <acesso@SEU-DOMINIO>` (domínio verificado no Resend) |
 | Variável | `APP_PRODUCT_IDS` | id do produto principal na Hotmart; vários separados por vírgula. Os order bumps não entram aqui |
 | Variável | `ACCESS_DAYS` | `0` = sem prazo; `365` = 12 meses |
-| Variável | `ADMIN_EMAILS` | seus e-mails de teste, separados por vírgula |
+| Variável | `ADMIN_EMAILS` | e-mails de administrador (vírgula, ponto e vírgula ou quebra de linha). Administradores entram sempre e abrem o painel `/auth/admin` |
 
 Nunca defina `DEV_ECHO_CODE` em produção: ele só serve para teste local e mostra o código na tela.
 
@@ -25,11 +25,22 @@ Nunca defina `DEV_ECHO_CODE` em produção: ele só serve para teste local e mos
 
 URL: `https://SEU-DOMINIO/hotmart/webhook`, versão 2.0, eventos: Compra aprovada, Compra completa, Reembolso, Chargeback, Cancelada, Protesto.
 
+## Por que um e-mail não recebe o código
+
+Só recebe código quem está em `ADMIN_EMAILS` ou tem acesso ativo no banco (compra aprovada pela Hotmart ou liberação manual). Para qualquer outro e-mail, a tela diz "Se este e-mail tiver uma compra aprovada..." e nenhum e-mail sai. É de propósito: a tela não revela quem comprou.
+
+Se o e-mail tem acesso e mesmo assim aparece "Não consegui enviar o e-mail agora", o problema é o Resend: o remetente `onboarding@resend.dev`, ou um domínio ainda não verificado, só entrega para o e-mail dono da conta Resend. O motivo exato fica em Workers & Pages > cliniloop > Logs ("Resend recusou o envio").
+
+## Painel de acessos
+
+`https://clini.loopuniversity.com.br/auth/admin`, só para quem está em `ADMIN_EMAILS` e já entrou no app. Consulta por que um e-mail entra ou não, libera acesso manual (com ou sem prazo), retira acesso e lista todos os acessos. Mostra também quais variáveis e segredos estão configurados, sem exibir os valores.
+
 ## Rotas
 
 - `/auth/login`: tela de entrada. Qualquer página protegida sem sessão também mostra a tela, com status 401 (assim o service worker não guarda a tela no lugar do app).
 - `POST /auth/codigo` e `POST /auth/entrar`: pedido e conferência do código (5 pedidos por hora e 5 tentativas por código).
 - `/auth/sair`: encerra a sessão.
+- `/auth/admin` e `POST /auth/admin/{consulta,liberar,retirar,lista}`: painel de acessos.
 - `POST /hotmart/webhook`: libera ou retira o acesso.
 
 ## Teste local
