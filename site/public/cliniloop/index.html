@@ -285,6 +285,9 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
 @media (max-width: 900px){.apresenta{padding-block:56px}}
 @media (max-width: 480px){.play span{font-size:.9rem;padding:10px 18px 10px 12px}.play svg{width:22px;height:22px}}
 
+.aviso-compra{margin-top:14px;background:#FADBCB;color:var(--tinta);border-radius:12px;padding:12px 16px;font-size:.92rem;max-width:44ch}
+.aviso-compra a{color:var(--tinta);font-weight:600}
+
 /* botão de compra que acompanha a rolagem */
 .cta-flutuante{position:fixed;z-index:40;right:max(20px, env(safe-area-inset-right, 0px));bottom:max(20px, env(safe-area-inset-bottom, 0px));display:flex;align-items:center;gap:14px;background:var(--petroleo-fundo);color:var(--sobre-escuro);padding:10px 10px 10px 18px;border-radius:16px;box-shadow:0 18px 40px -12px rgba(0,0,0,.55);border:1px solid rgba(244,242,236,.14);transform:translateY(calc(100% + 40px));opacity:0;visibility:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1), opacity .25s ease, visibility 0s linear .35s}
 .cta-flutuante.visivel{transform:none;opacity:1;visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1), opacity .25s ease, visibility 0s}
@@ -958,6 +961,24 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
   })();
   if (CHECKOUT_URL) {
     document.querySelectorAll('.js-comprar').forEach(function (a) { a.href = CHECKOUT_URL; });
+  } else {
+    // Sem link da Hotmart: os botões levam à oferta; quem já está nela vê um aviso.
+    document.querySelectorAll('.js-comprar').forEach(function (a) {
+      a.addEventListener('click', function (ev) {
+        var oferta = document.getElementById('oferta');
+        var r = oferta.getBoundingClientRect();
+        if (!(a.closest('#oferta') || (r.top < innerHeight * 0.6 && r.bottom > 0))) return;
+        ev.preventDefault();
+        var aviso = document.getElementById('aviso-compra');
+        if (!aviso) {
+          aviso = document.createElement('p');
+          aviso.id = 'aviso-compra'; aviso.className = 'aviso-compra'; aviso.setAttribute('role', 'status');
+          (oferta.querySelector('.js-comprar') || oferta).insertAdjacentElement('afterend', aviso);
+        }
+        aviso.innerHTML = 'As vendas abrem em breve. Quer ser avisado? Escreva para <a href="mailto:atendimento@loopuniversity.com.br?subject=Quero%20ser%20avisado%20do%20Sistema%20Loop">atendimento@loopuniversity.com.br</a>.';
+        aviso.scrollIntoView({ block: 'nearest' });
+      });
+    });
   }
   function colocaVideo(idCaixa, idYoutube, titulo) {
     if (!idYoutube) return;
