@@ -5,7 +5,7 @@ etapa: No roteiro · Etapa 3 de 6 · Gere autoridade e demanda
 jornada: As provas: o conteúdo
 titulo: Conteúdo que gera autoridade e alcance
 lead: O conteúdo é onde a sua diferença deixa de ser uma frase e vira prova. Ele cresce quando responde, em poucos segundos e com segurança, uma dúvida real, e quando só poderia ter sido feito por você.
-nesta: Conteúdo que só você poderia publicar · O que o Instagram premia · A escada de crescimento · Três temas por profissão · O que você sabe e o que você atende · Pautas · Formatos recorrentes · Roteiro de Reel · Indicadores da ressonância · Ser citado
+nesta: Conteúdo que só você poderia publicar · O que o Instagram premia · A escada de crescimento · Três temas por profissão · O que você sabe e o que você atende · Pautas · Google Trends e Social Searcher · Formatos recorrentes · Roteiro de Reel · Indicadores da ressonância · Ser citado
 grupo: Etapa 3 · Gere autoridade e demanda
 marca: PARTE 04
 ---
@@ -113,10 +113,55 @@ Curtidas e comentários dizem como foi o seu post. Não dizem o que o mercado es
 - **As conversas de atendimento:** as dúvidas que chegam no WhatsApp e no Direct, agregadas, sem nomes nem casos.
 - **Os comentários em perfis de referência:** as perguntas que o público faz a colegas da sua área e que ficam sem resposta.
 - **As avaliações de outras clínicas da região no Google:** o que os pacientes elogiam e do que reclamam (espera, explicação, preço, atendimento).
-- **As buscas em alta:** o Google Trends e a busca do YouTube mostram como as pessoas escrevem a dúvida.
+- **As buscas em alta:** o Google Trends e a busca do YouTube mostram como as pessoas escrevem a dúvida (passo a passo logo abaixo).
+- **O que se fala nas redes:** o Social Searcher mostra o que as pessoas estão postando e perguntando sobre um tema no Instagram, no TikTok e no YouTube.
 - **As notícias de saúde da semana:** o assunto que os pacientes vão levar para a consulta.
 
 Cada sinal vira uma pauta, um ajuste no atendimento ou uma objeção respondida no fechamento (Parte 12).
+
+### O que o seu paciente ideal está buscando: Google Trends e Social Searcher
+
+Duas ferramentas gratuitas mostram, em poucos minutos, o que o paciente ideal da sua especialidade está procurando e perguntando agora. O Google Trends conta o que as pessoas **buscam**. O Social Searcher mostra o que elas **falam** nas redes. Juntas, dizem qual dúvida está crescendo e com quais palavras o paciente a escreve.
+
+**Google Trends** (trends.google.com.br)
+
+1. **Digite o tema como o paciente escreveria,** e não com o termo técnico: "dor no joelho ao correr", e não "síndrome patelofemoral"; "dente sensível", e não "hipersensibilidade dentinária".
+2. **Ajuste o filtro:** Brasil, depois o seu estado; período de 12 meses para ver o momento e de 5 anos para ver a sazonalidade; categoria Saúde.
+3. **Compare até cinco termos** para descobrir qual palavra o paciente usa mais. Por exemplo: "lente de contato dental", "faceta" e "clareamento". Use essa palavra no título, na legenda e no seu perfil.
+4. **Abra "Assuntos relacionados" e "Pesquisas relacionadas" e escolha "Em ascensão".** Ali estão as oportunidades: dúvidas que crescem e que quase ninguém da sua área respondeu ainda. "Aumento repentino" indica um crescimento muito acima do normal.
+5. **Anote os picos do ano,** como verão, volta às aulas ou fim de ano, e programe a pauta para algumas semanas antes do pico.
+
+Os números do Trends vão de 0 a 100 e são relativos: mostram o interesse comparado ao pico, e não quantas pessoas buscaram. Em cidades pequenas, o volume pode ser baixo demais para aparecer. Nesse caso, use o estado.
+
+**Social Searcher** (social-searcher.com)
+
+1. **Busque o tema entre aspas,** em português e com as palavras que você encontrou no Trends: "dor na canela", "ansiedade antes de dormir", "aparelho invisível".
+2. **Filtre pelas redes** em que o seu paciente está, como Instagram, TikTok ou YouTube.
+3. **Leia como quem escuta a sala de espera.** Procure as perguntas que se repetem, as queixas, os mitos e as palavras exatas que as pessoas usam. Repare também no que os perfis que mais engajam no tema estão deixando sem resposta.
+4. **Copie o que importa para o seu banco de pautas,** porque o plano gratuito não guarda o histórico das buscas.
+
+::: {.box .atencao}
+Use o que encontrar só como sinal agregado. Não comente em posts de pessoas que expõem a própria saúde, não responda dúvidas individuais com orientação clínica e não use prints de terceiros no seu conteúdo. Os planos gratuitos e os menus das ferramentas mudam com frequência; confira antes de montar a rotina.
+:::
+
+**Do sinal à pauta.** Cada achado vira uma linha no banco de pautas, com a dúvida, o momento da jornada e o formato:
+
+| Exemplo do que você pode encontrar | Pauta possível |
+|---|---|
+| "Dor na canela ao correr" em ascensão no seu estado | Reel: quando a dor na canela pede uma avaliação, e o que levar para a consulta |
+| Muitos posts perguntando se "aparelho invisível dói" | Carrossel: como é a adaptação, explicada com modelo e sem promessa |
+| Pico anual de buscas por "ansiedade" no fim do ano | Série de três posts em novembro: como reconhecer sinais e quando procurar ajuda |
+| Termo "faceta" buscado três vezes mais que "lente de contato dental" | Use "faceta" no título e na legenda, explicando a diferença entre as duas |
+
+::: {.box .prompt}
+**Do sinal à pauta**
+
+Atue como estrategista de conteúdo para [PROFISSÃO] no Brasil, seguindo as normas de publicidade do [CONSELHO]. O meu paciente ideal é [PACIENTE IDEAL] e a minha proposta de valor é [SUA PROPOSTA DE VALOR].
+
+Encontrei estes sinais no Google Trends: [TERMOS EM ASCENSÃO E PICOS DO ANO]. E estas falas no Social Searcher, sem nomes: [PERGUNTAS E FRASES QUE SE REPETEM].
+
+Transforme os sinais em 8 pautas. Para cada uma: a dúvida com as palavras do paciente, o momento da jornada, o formato (Reel, carrossel, Stories ou vídeo longo), o melhor mês para publicar e o que nesta pauta só eu poderia explicar. Descarte os sinais que exigiriam promessa de resultado, autodiagnóstico ou orientação individual, dizendo por quê.
+:::
 
 ## Formatos recorrentes: séries que o público reconhece
 
@@ -270,7 +315,7 @@ Proibido: promessa de resultado, superlativos, medo, autodiagnóstico, preço co
 :::
 
 ::: {.box .pratica}
-Liste as dez perguntas que você mais ouve no consultório. Escolha uma, encaixe no tema que nasce do seu diferencial e grave hoje um Reel de 30 segundos com o roteiro em seis tempos, usando um exemplo do seu atendimento.
+Liste as dez perguntas que você mais ouve no consultório e confira no Google Trends qual delas está em ascensão no seu estado. Escolha uma, encaixe no tema que nasce do seu diferencial e grave hoje um Reel de 30 segundos com o roteiro em seis tempos, usando um exemplo do seu atendimento.
 :::
 
 ::: {.box .noapp}

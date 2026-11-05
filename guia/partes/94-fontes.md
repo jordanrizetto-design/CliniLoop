@@ -49,6 +49,7 @@ Os exemplos preenchidos usam uma personagem fictícia, a Dra. Bia Nunes, criada 
 
 - Metricool. Algoritmo do Instagram 2026. AdaptlyPost, como viralizar empilhando sinais. SocialPilot, algoritmo de Reels 2026. PostEverywhere, ranking signals do Instagram.
 - TikTok, Política de anúncios de saúde e produtos farmacêuticos (ads.tiktok.com/help) e guia do Promote (ads.tiktok.com/business). Meta, Edits (napoleoncat.com, guia de outubro de 2026). Guias de recursos e planos de CapCut, Canva, HeyGen e geradores de imagem por IA (arcade.software, aiworthit.com, datanorth.ai), consultados em outubro de 2026. Teleprompters para celular (bigvu.tv).
+- Google, Começar com o Google Trends (developers.google.com/search/docs/monitor-debug/trends-start), consultado em novembro de 2026. Social Searcher (social-searcher.com): os recursos do plano gratuito mudam com frequência; confira no site.
 - Google, Ajuda do Perfil da Empresa (support.google.com/business). Meta, Central de Ajuda para Empresas (facebook.com/business/help). Nomes de botões e menus mudam com frequência.
 
 ### Mercado (Anexo C)

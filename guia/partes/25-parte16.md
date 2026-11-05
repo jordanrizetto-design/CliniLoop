@@ -28,7 +28,8 @@ Nenhuma delas diferencia você. O seu concorrente usa o mesmo Canva, o mesmo Cap
 | Agendar e medir posts | Meta Business Suite, Metricool, mLabs | Calendário e relatórios de Instagram e YouTube |
 | Reaproveitamento | Transcrição do app de gravação ou do YouTube, Claude | Da aula ou do podcast às peças; nunca transcreva consultas |
 | Comentário que leva ao guia | Manychat | Exige configuração e teste; respeite as regras do conselho |
-| Ideias e palavras-chave | Google Trends, Answer The Public, Planejador de palavras-chave do Google Ads | Pautas a partir do que o paciente pesquisa |
+| Ideias e palavras-chave | Google Trends, Answer The Public, Planejador de palavras-chave do Google Ads | Pautas a partir do que o paciente pesquisa (Parte 4) |
+| Escuta das redes | Social Searcher (plano gratuito), Talkwalker Alerts, Google Alertas | O que se fala sobre o seu tema no Instagram, no TikTok e no YouTube (Parte 4) |
 | Vídeos curtos fora do Instagram | TikTok, TikTok Studio | Opcional; publique sem marca d'água de outra rede; anúncios pelo Promote ou TikTok Ads Manager (Anexo A) |
 | Impulsionamento | Botão Turbinar no Instagram, Meta Business Suite | O primeiro anúncio de quem nunca anunciou (Parte 9) |
 | YouTube | YouTube Studio, TubeBuddy ou vidIQ | Títulos, capítulos e análise de retenção |
