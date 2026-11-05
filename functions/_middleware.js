@@ -300,6 +300,9 @@ export async function onRequest(context) {
   if (p === '/auth/entrar' && request.method === 'POST') return entrar(request, env);
   if (p === '/auth/sair') return new Response(null, { status: 302, headers: { location: '/', 'set-cookie': cookie('', 0) } });
   if (p === '/hotmart/webhook' && request.method === 'POST') return hotmart(request, env);
+  if (p === '/hotmart/webhook') {
+    return new Response('<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Webhook CliniLoop</title></head><body style="font-family:system-ui,sans-serif;background:#F4F2EC;color:#14303A;padding:32px 16px"><main style="max-width:560px;margin:0 auto;background:#fff;border:1px solid #D9D3C4;border-radius:14px;padding:24px"><h1 style="font-size:1.3rem;margin:0 0 10px">✓ Webhook do CliniLoop no ar</h1><p style="line-height:1.5;margin:0">Este endereço está certo e recebe os avisos de compra e reembolso enviados pela Hotmart. Ele não foi feito para abrir no navegador; a Hotmart envia os avisos sozinha.</p></main></body></html>', { status: 200, headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store', 'x-robots-tag': 'noindex' } });
+  }
   if (p === '/auth/admin' || p.startsWith('/auth/admin/')) {
     const sa = await leSessao(env, request.headers.get('cookie'));
     if (!sa) return new Response(paginaLogin(), { status: 401, headers: { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'no-store' } });
