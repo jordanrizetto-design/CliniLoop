@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Sistema Loop · CliniLoop</title>
-<meta name="description" content="Que o paciente chegue sabendo por que escolheu você. Guia O Prompt do Sim + app CliniLoop: diferenciação ética com o Oceano Azul, IA e CRM para médicos, dentistas, psicólogos, fisioterapeutas e nutricionistas.">
-<meta property="og:title" content="Sistema Loop: guia O Prompt do Sim + app CliniLoop">
-<meta property="og:description" content="Pare de disputar paciente pelo preço. Construa uma diferença que o paciente reconhece antes de marcar, com ética, IA e 25 minutos por dia.">
+<title>Sistema Loop · app CliniLoop + guia para encher a agenda com o paciente certo</title>
+<meta name="description" content="App CliniLoop: o sistema que mostra, dia a dia, o que fazer para o paciente certo chegar à sua agenda sabendo por que escolheu você. Com o guia O Prompt do Sim, que ensina o porquê de cada passo. Para médicos, dentistas, psicólogos, fisioterapeutas e nutricionistas.">
+<meta property="og:title" content="Sistema Loop: app CliniLoop + guia O Prompt do Sim">
+<meta property="og:description" content="Um app que organiza o seu dia, da diferença ao paciente agendado, e um guia que ensina o porquê. Com ética, IA e 25 minutos por dia.">
 <meta property="og:image" content="https://loopuniversity.com.br/assets/capa-guia.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" href="/assets/icon-192.png">
@@ -102,6 +102,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .guia-grade{display:grid;grid-template-columns:.75fr 1.25fr;gap:56px;align-items:center}
 .guia-imagem{margin:0;background:var(--pessego-claro);border-radius:20px;padding:32px;display:flex;justify-content:center}
 .guia-imagem img{width:100%;max-width:380px;border-radius:10px;box-shadow:0 24px 50px -18px rgba(20,48,58,.5)}
+.app-grade{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center}
+.app-tela{margin:0;background:var(--pessego-claro);border-radius:20px;padding:20px}
+.app-tela img{width:100%;height:auto;border-radius:10px;box-shadow:0 24px 50px -18px rgba(20,48,58,.5);display:block}
+.app-tela figcaption{font-size:.82rem;color:var(--tinta-suave);text-align:center;margin-top:10px}
+.chip-peca{display:inline-block;vertical-align:middle;margin-left:6px;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--petroleo);color:#fff;border-radius:999px;padding:3px 10px}
 .pontos{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:16px}
 .pontos li{display:grid;gap:2px;padding-left:18px;border-left:3px solid var(--agua)}
 .pontos b{font-size:1.02rem}
@@ -228,7 +233,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
 .rodape a:hover{text-decoration:underline}
 
 @media (max-width: 900px){
-  .abertura .grade,.etica,.oferta .grade,.entrega,.quem,.bastidores,.falas,.simples,.dia-comum,.guia-grade,.muda{grid-template-columns:1fr}
+  .abertura .grade,.etica,.oferta .grade,.entrega,.quem,.bastidores,.falas,.simples,.dia-comum,.guia-grade,.app-grade,.muda{grid-template-columns:1fr}
   .guia-imagem{padding:24px}
   .guia-imagem img{max-width:300px}
   .dores{grid-template-columns:1fr}
@@ -332,13 +337,13 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     <div class="miolo grade">
       <div>
         <p class="rotulo">Para médicos, dentistas, psicólogos, fisioterapeutas e nutricionistas</p>
-        <h1>Faça o paciente chegar sabendo <em>por que</em> escolheu você!</h1>
-        <p class="lead">Pare de disputar paciente com anúncio genérico e preço. O Sistema Loop, o guia <i>O Prompt do Sim</i> com o app CliniLoop, mostra, passo a passo e em linguagem simples, o que fazer a cada dia para o paciente reconhecer a sua diferença antes de marcar. Com ética e com a IA que você já usa.</p>
+        <h1>Leve o paciente certo até a sua agenda, sabendo <em>por que</em> escolheu você.</h1>
+        <p class="lead">O <b>app CliniLoop</b> é o sistema que organiza o seu dia: mostra a próxima ação, monta o pedido pronto para a IA que você já usa e acompanha cada contato até a consulta. E vem com o guia <i>O Prompt do Sim</i>, gostoso de ler, que explica o porquê de cada passo para você aprender de verdade o que está fazendo. Tudo dentro das regras do seu conselho.</p>
         <div class="acoes">
           <a class="btn js-comprar" href="https://pay.hotmart.com/V108359340M">Quero o Sistema Loop</a>
           <p class="preco-curto"><span class="valor">12x R$ 30,72</span> <span class="vezes">no cartão</span><br>ou R$ 297 à vista · garantia de 7 dias</p>
         </div>
-        <p class="sob-cta">Você começa amanhã, em 25 minutos · regras do CFM, CFO, CFP, COFFITO e CFN em cada prompt</p>
+        <p class="sob-cta">App + guia · você começa amanhã, em 25 minutos · regras do CFM, CFO, CFP, COFFITO e CFN em cada prompt</p>
       </div>
       <div class="criativo" id="conversas" aria-label="Duas conversas no WhatsApp: uma que começa pelo preço e outra que começa pela confiança">
         <div class="porta preco">
@@ -457,14 +462,35 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     </div>
   </section>
 
+  <!-- 4b. O app (destaque) -->
+  <section class="faixa" id="app">
+    <div class="miolo app-grade">
+      <div>
+        <p class="rotulo">O app CliniLoop</p>
+        <h2 class="titulo">Todo dia, ele mostra a próxima ação. Você só executa.</h2>
+        <p class="lead">É o centro do Sistema Loop. Em vez de uma lista de tarefas soltas, o app conduz do posicionamento ao paciente agendado: o que fazer hoje, quem precisa de retorno e onde os contatos estão parando.</p>
+        <ul class="pontos">
+          <li><b>Tela Hoje: a próxima ação, sempre</b><span>Abriu o app, sabe o que fazer nos próximos 25 minutos. Sem decidir por onde começar.</span></li>
+          <li><b>Redes: da diferença ao post</b><span>A sua proposta de valor, os perfis rede a rede, o plano de conteúdo, os roteiros de vídeo e os anúncios, com o pedido pronto para a IA e as regras do seu conselho.</span></li>
+          <li><b>CRM: nenhum contato sem próximo passo</b><span>Quadro de contatos com origem e etapa, procedimento impresso para a recepção e o ritual de sexta para corrigir o que trava.</span></li>
+          <li><b>No computador e no celular</b><span>Os dados dos pacientes ficam no seu aparelho e nunca entram nos prompts.</span></li>
+        </ul>
+      </div>
+      <figure class="app-tela">
+        <img src="/assets/app-hoje-2026.jpg" alt="Tela Hoje do app CliniLoop, com a sua diferença, os contatos do dia e a semana" width="1700" height="854" loading="lazy">
+        <figcaption>A tela Hoje, com dados fictícios.</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <!-- 5. O guia -->
   <section class="faixa" id="guia">
     <div class="miolo guia-grade">
       <figure class="guia-imagem"><img src="/assets/guia-pagina.jpg" alt="Página do guia O Prompt do Sim, com as caixas Oceano Azul, Na prática e No CliniLoop" width="1000" height="1188" loading="lazy"></figure>
       <div>
-        <p class="rotulo">O guia</p>
-        <h2 class="titulo">Gostoso de ler. E ensina de verdade.</h2>
-        <p class="lead"><i>O Prompt do Sim</i> não é um manual de marketing. É uma história em que você é o herói e atravessa seis etapas, do primeiro post ao paciente em tratamento. As partes são curtas, abrem dizendo onde você está e terminam com a passagem para a próxima.</p>
+        <p class="rotulo">O guia que acompanha o app</p>
+        <h2 class="titulo">Gostoso de ler. E faz você aprender o que está fazendo.</h2>
+        <p class="lead">O app faz o trabalho com você; o guia faz você entender por que ele funciona. <i>O Prompt do Sim</i> não é um manual de marketing. É uma história em que você é o herói e atravessa seis etapas, do primeiro post ao paciente em tratamento. As partes são curtas, abrem dizendo onde você está e terminam com a passagem para a próxima.</p>
         <ul class="pontos">
           <li><b>Explica o porquê de cada coisa</b><span>As decisões do paciente, o Oceano Azul, as regras do seu conselho, a LGPD, o Google, o Instagram e os anúncios, em linguagem de consultório e sem jargão.</span></li>
           <li><b>Mostra o antes e o depois</b><span>12 exemplos com o texto original de um perfil ou de uma mensagem, a versão melhorada e o motivo de cada mudança.</span></li>
@@ -493,30 +519,30 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
   <section class="faixa" id="recebe">
     <div class="miolo">
       <p class="rotulo">O que você recebe</p>
-      <h2 class="titulo">Um guia que explica o porquê. Um app que faz o trabalho.</h2>
+      <h2 class="titulo">Um app que faz o trabalho. Um guia que explica o porquê.</h2>
       <div class="entrega">
-        <article class="peca">
-          <div class="imagem"><img src="/assets/capa-guia.jpg" alt="Capa do guia O Prompt do Sim" width="720" height="960" loading="lazy"></div>
-          <div class="texto">
-            <h3>Guia <i>O Prompt do Sim</i></h3>
-            <ul>
-              <li><b>243 páginas, em PDF e ePub,</b> para ler no computador, no tablet ou no celular</li>
-              <li><b>Plano de 30 dias:</b> uma ação por dia útil, com o tempo estimado e o que você entrega</li>
-              <li><b>14 prompts prontos</b> para colar na sua IA</li>
-              <li>Regras de cada conselho, convênios e plataformas, glossário e tutorial ilustrado do app</li>
-            </ul>
-          </div>
-        </article>
         <article class="peca">
           <div class="imagem app"><img src="/assets/app-hoje-2026.jpg" alt="Tela Hoje do app CliniLoop, com a sua diferença, os contatos do dia e a semana" width="1700" height="854" loading="lazy"></div>
           <div class="texto">
-            <h3>App CliniLoop</h3>
+            <h3>App CliniLoop <span class="chip-peca">o sistema</span></h3>
             <ul>
               <li><b>Tela Hoje:</b> a próxima ação, os contatos do dia e a semana</li>
               <li><b>Módulo Redes:</b> a sua proposta de valor, os perfis rede a rede, o plano de conteúdo, os roteiros, os colegas e os anúncios</li>
               <li><b>Módulo CRM:</b> o quadro de contatos, o procedimento da recepção e o ritual da semana</li>
               <li>Prompts com <b>o seu diferencial e as regras do seu conselho,</b> para a IA que você já usa</li>
               <li>No computador e no celular, com os dados guardados no seu aparelho</li>
+            </ul>
+          </div>
+        </article>
+        <article class="peca">
+          <div class="imagem"><img src="/assets/capa-guia.jpg" alt="Capa do guia O Prompt do Sim" width="720" height="960" loading="lazy"></div>
+          <div class="texto">
+            <h3>Guia <i>O Prompt do Sim</i> <span class="chip-peca">para aprender</span></h3>
+            <ul>
+              <li><b>243 páginas, em PDF e ePub,</b> para ler no computador, no tablet ou no celular</li>
+              <li><b>Plano de 30 dias:</b> uma ação por dia útil, com o tempo estimado e o que você entrega</li>
+              <li><b>14 prompts prontos</b> para colar na sua IA</li>
+              <li>Regras de cada conselho, convênios e plataformas, glossário e tutorial ilustrado do app</li>
             </ul>
           </div>
         </article>
@@ -621,7 +647,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     <div class="miolo grade">
       <div>
         <p class="rotulo">A oferta</p>
-        <h2 class="titulo">Guia e app, com acesso vitalício.</h2>
+        <h2 class="titulo">App e guia, com acesso vitalício.</h2>
         <div class="ancora" style="margin-top:28px">
           <div class="linha-ancora"><b>Pagamento único</b><span>Sem mensalidade. O que você constrói com o método fica com você.</span></div>
           <div class="linha-ancora"><b>12x de R$ 30,72 no cartão</b><span>Ou R$ 297 à vista, no Pix ou no cartão.</span></div>
@@ -632,8 +658,8 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
       <div class="cartao-oferta">
         <h3>Sistema Loop</h3>
         <ul>
-          <li><span>Guia <i>O Prompt do Sim</i> em PDF e ePub, 243 páginas</span></li>
-          <li>App CliniLoop com os módulos Redes e CRM, no computador e no celular</li>
+          <li>App CliniLoop com a tela Hoje e os módulos Redes e CRM, no computador e no celular</li>
+          <li><span>Guia <i>O Prompt do Sim</i> em PDF e ePub, 243 páginas, para você aprender o porquê de cada passo</span></li>
           <li>Plano de 30 dias para começar amanhã, uma ação por dia útil</li>
           <li>Regras do CFM, CFO, CFP, COFFITO e CFN em cada prompt</li>
           <li>Acesso vitalício, com os ajustes de conteúdo que forem feitos</li>
@@ -689,7 +715,7 @@ details p{padding-bottom:20px;color:var(--tinta-suave)}
     <div class="miolo">
       <p class="rotulo">Comece amanhã</p>
       <h2 class="titulo">O paciente certo já está procurando. Que ele escolha você, sabendo que você é o profissional que ele precisa.</h2>
-      <p class="lead">Amanhã, 25 minutos para o perfil do consultório. Guia <i>O Prompt do Sim</i> + app CliniLoop, com acesso vitalício e garantia de 7 dias.</p>
+      <p class="lead">Amanhã, 25 minutos para o perfil do consultório. App CliniLoop + guia <i>O Prompt do Sim</i>, com acesso vitalício e garantia de 7 dias.</p>
       <div class="acoes">
         <a class="btn js-comprar" href="https://pay.hotmart.com/V108359340M">Quero o Sistema Loop</a>
         <p class="preco-curto"><span class="valor">12x R$ 30,72</span> <span class="vezes">no cartão</span><br>ou R$ 297 à vista</p>
